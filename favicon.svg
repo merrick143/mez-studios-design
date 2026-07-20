@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 363">
+  <!-- Wings mark filled with the AI OS core (MZ-G13), flattened to a linear
+       ramp. Static: a favicon cannot run the shader. -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#69D9F4"/>
+      <stop offset="0.55" stop-color="#5C8CD0"/>
+      <stop offset="1" stop-color="#2D176E"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#g)">
+    <path d="M45,0L105.89,0A45,45 0 0 1 146.58,25.78L239.69,222.87A45,45 0 0 1 244,242.09L244,316A45,45 0 0 1 199,361L45,361A45,45 0 0 1 0,316L0,45A45,45 0 0 1 45,0Z"/>
+    <path d="M466,0L405.11,0A45,45 0 0 0 364.42,25.78L271.31,222.87A45,45 0 0 0 267,242.09L267,316A45,45 0 0 0 312,361L466,361A45,45 0 0 0 511,316L511,45A45,45 0 0 0 466,0Z"/>
+  </g>
+</svg>
