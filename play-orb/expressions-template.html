@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mez Systems · Expression system</title>
+
+<style>
+/* ==========================================================================
+   MEZ SYSTEMS · EXPRESSION SYSTEM
+   Every treatment, every product, driven by one live gradient engine.
+
+   Architecture
+   ------------
+   ONE offscreen WebGL context does all the shading. Every gradient surface is
+   a .gx element holding its own cheap 2D canvas. Each frame the engine renders
+   a surface into the shared GL canvas at viewport origin, then blits that
+   region across with drawImage. The shape (disc, card, pill, wings) is an SDF
+   in the fragment shader writing premultiplied alpha.
+
+   Why not one WebGL context per surface: this board has 50+ surfaces and
+   browsers cap WebGL contexts at roughly 16, silently killing the oldest.
+   2D contexts have no such ceiling and the blit is a GPU-side copy.
+
+   Why not one shared canvas positioned behind the whole page: that was the
+   first attempt and it fails twice over. Any opaque ancestor (a white product
+   card, the dark bundle panel) paints over it, and any transformed ancestor
+   creates a stacking context that traps the foreground beneath it. Giving each
+   surface a real canvas in normal flow makes nesting, stacking, opaque
+   parents and hover transforms all behave without special cases.
+
+   Brand rules encoded here (from the Figma brand kit, locked 12 Jul 2026)
+   ---------------------------------------------------------------------
+   - Light monochrome: the product gradient is the ONLY colour on the page.
+   - Disc is the standard product treatment. Ø190, hard edge, no halo.
+     Glow is retired.
+   - Sphere is identity only, never the default.
+   - Wings sit at 50% of disc diameter, free-floating, never in a container,
+     never recoloured. Minimum 24px.
+   - Card: #FFFFFF, radius 20, 8% ink hairline, soft drop shadow.
+   - Roundness drops as the entity grows: products are pills, the holdco is
+     softened, the parent is squared.
+   - Stack: offset 50 across, 38 down, newest card on top.
+   ========================================================================== */
+
+:root {
+  --page:    #f9f9f9;
+  --surface: #f4f4f4;
+  --card:    #ffffff;
+  --text:    #0b0b0b;
+  --text2:   #2e2e2e;
+  --text3:   #8a8a8a;
+  --hairline: rgba(11, 11, 11, 0.08);
+  --ink:     #0b0b0b;
+
+  --disc: 190px;   /* canonical disc diameter */
+
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-snap:   cubic-bezier(0.2, 0, 0, 1);
+
+  /* Inter is the specified face. It is not installed locally and this file is
+     deliberately dependency-free, so it falls through to SF Pro, which is what
+     the existing Figma cards already use. */
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 88px 40px 140px;
+}
+
+.masthead { margin-bottom: 104px; }
+.masthead h1 {
+  margin: 0 0 14px;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.022em;
+}
+.masthead p {
+  margin: 0;
+  max-width: 640px;
+  color: var(--text2);
+  font-size: 16px;
+}
+.lock {
+  display: inline-block;
+  margin-top: 26px;
+  padding: 9px 15px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+section { margin-bottom: 108px; }
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+h2 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.018em;
+}
+.lede {
+  margin: 0 0 44px;
+  max-width: 680px;
+  color: var(--text2);
+}
+
+.rule {
+  height: 1px;
+  background: var(--hairline);
+  border: 0;
+  margin: 0 0 44px;
+}
+
+/* Suite grid ladder from the brand kit: 4 columns at lg, 2 at md, 1 below.
+   Source order is never reordered. */
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+@media (max-width: 1200px) { .grid4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 920px)  { .grid4 { grid-template-columns: 1fr; } }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+  align-items: flex-end;
+}
+
+/* Treatment specimens: an even grid, so a sixth item does not orphan onto a
+   line of its own with a hole beside it. */
+#treatments, #finishes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px 20px;
+  align-items: end;
+}
+#ladder { display: flex; gap: 34px; align-items: flex-end; flex-wrap: wrap; }
+
+/* --------------------------------------------------------------------------
+   .gx · a gradient surface, filled by its own canvas.
+   -------------------------------------------------------------------------- */
+
+.gx {
+  position: relative;
+  flex: none;
+  /* Own stacking context. Without it, every .fg (z-index 2) resolves against
+     the same ancestor and overlapping cards show each other's foregrounds. */
+  isolation: isolate;
+}
+
+/* The per-surface canvas. Fills its .gx exactly; the shape is alpha from the
+   shader, so no border-radius is needed here. */
+.gxc {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Foreground sitting on a gradient surface (wings, card type). */
+.fg {
+  position: absolute;
+  inset: 0;
+  z-index: 2;          /* above this surface's own canvas */
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.wings { display: block; width: 50%; }   /* brand rule: 50% of disc diameter */
+
+/* --------------------------------------------------------------------------
+   Treatment specimens
+   -------------------------------------------------------------------------- */
+
+.spec { display: grid; justify-items: center; gap: 16px; }
+.spec__meta { display: grid; justify-items: center; gap: 3px; text-align: center; }
+.spec__name { font-size: 13px; font-weight: 600; }
+.spec__use  {
+  font-size: 11px;
+  color: var(--text3);
+  min-height: 1.35em;   /* reserve the line so captionless specimens still align */
+}
+
+.stage {
+  display: grid;
+  place-items: center;
+  min-height: 210px;
+}
+
+/* --------------------------------------------------------------------------
+   Product card (landing surface): white, radius 20, hairline, soft shadow
+   -------------------------------------------------------------------------- */
+
+.pcard {
+  background: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--hairline);
+  padding: 28px 26px 24px;
+  box-shadow: 0 1px 2px rgba(11,11,11,.04), 0 12px 28px -14px rgba(11,11,11,.14);
+  display: grid;
+  grid-template-rows: auto 1fr auto;   /* CTA pinned to the bottom edge */
+  gap: 18px;
+  justify-items: start;
+  transition: transform 320ms var(--ease-spring), box-shadow 320ms var(--ease-spring);
+}
+.pcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(11,11,11,.05), 0 22px 44px -16px rgba(11,11,11,.20);
+}
+.pcard__name { font-size: 17px; font-weight: 650; letter-spacing: -0.01em; }
+.pcard__sub {
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.11em;
+  text-transform: uppercase; color: var(--text3); margin-top: 4px;
+}
+.pcard__body { font-size: 13.5px; color: var(--text2); margin-top: 10px; }
+
+.cta {
+  margin-top: 4px;
+  padding: 10px 18px;
+  border-radius: 999px;         /* products are pills */
+  background: var(--ink);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Trading card: full-bleed gradient, eyebrow pill, wings, name
+   -------------------------------------------------------------------------- */
+
+.tcard { position: relative; }
+.tcard .fg {
+  display: block;
+  padding: 14px;
+}
+.tcard__pill {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.22);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.tcard__foot {
+  position: absolute;
+  left: 0; right: 0; bottom: 20px;
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+}
+.tcard__foot .wings { width: 34%; }
+.tcard__name {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 10px rgba(0,0,0,.22);
+}
+
+/* --------------------------------------------------------------------------
+   Stack: a fanned deck. Offset 50 across, 38 down, newest on top.
+   -------------------------------------------------------------------------- */
+
+.stack { position: relative; width: 400px; height: 340px; }
+.stack .tcard { position: absolute; top: 0; left: 0; }
+
+/* --------------------------------------------------------------------------
+   Bundle: the four cores in one dark container
+   -------------------------------------------------------------------------- */
+
+.bundle {
+  background: #101010;
+  border-radius: 26px;
+  padding: 34px 34px 30px;
+  display: grid;
+  gap: 26px;
+  justify-items: center;
+}
+.bundle__row { display: flex; gap: 18px; }
+.bundle__title { color: #fff; font-size: 21px; font-weight: 650; letter-spacing: -0.014em; }
+.bundle__sub { color: rgba(255,255,255,.5); font-size: 12px; margin-top: -16px; }
+
+/* --------------------------------------------------------------------------
+   Favicon ladder + pills
+   -------------------------------------------------------------------------- */
+
+.ladder { display: flex; gap: 34px; align-items: flex-end; }
+.ladder .spec__name { font-size: 11px; }
+
+.upill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px 7px 7px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(11,11,11,.04);
+}
+
+/* --------------------------------------------------------------------------
+   Finishes. Rarity is finish, never hue: the product owns its gradient for
+   life, so an edition can only change the surface treatment.
+   -------------------------------------------------------------------------- */
+
+.fin { position: relative; border-radius: 14px; overflow: hidden; }
+.fin--pro::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 3;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.85);
+}
+.fin--ultimate::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 3;
+  background: linear-gradient(114deg,
+    rgba(255,255,255,0) 32%, rgba(255,255,255,.62) 46%,
+    rgba(255,255,255,0) 58%),
+    linear-gradient(70deg,
+      rgba(255,0,140,.20), rgba(0,220,255,.20) 42%,
+      rgba(255,220,0,.18) 70%, rgba(120,0,255,.20));
+  mix-blend-mode: screen;
+}
+.fin--founder::after {
+  content: ""; position: absolute; inset: 5px; border-radius: 10px; z-index: 3;
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.92);
+}
+.fin__num {
+  position: absolute; top: 11px; right: 12px; z-index: 3;
+  color: #fff; font-size: 8px; font-weight: 700; letter-spacing: .1em;
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
+}
+.fin--icon::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 3;
+  background: linear-gradient(122deg, transparent 46%,
+    rgba(255,255,255,.9) 47.5%, rgba(255,255,255,.9) 49%, transparent 50%);
+}
+
+/* --------------------------------------------------------------------------
+   Hero band
+   -------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  padding: 54px 56px;
+  display: flex;
+  align-items: center;
+  gap: 46px;
+  overflow: hidden;
+}
+.hero__copy h3 {
+  margin: 0 0 10px; font-size: 30px; font-weight: 700; letter-spacing: -0.02em;
+}
+.hero__copy p { margin: 0 0 22px; color: var(--text2); max-width: 420px; }
+@media (max-width: 780px) { .hero { flex-direction: column; align-items: flex-start; } }
+
+/* --------------------------------------------------------------------------
+   Interaction: surfaces that behave like buttons
+   -------------------------------------------------------------------------- */
+
+.gx--live { cursor: pointer; transition: transform 380ms var(--ease-spring); }
+.gx--live:hover { transform: scale(1.03); }
+.gx--live:active { transform: scale(0.97); transition: transform 90ms var(--ease-snap); }
+
+.note {
+  margin-top: 18px; font-size: 12px; color: var(--text3);
+}
+
+footer {
+  border-top: 1px solid var(--hairline);
+  padding-top: 26px;
+  font-size: 11.5px;
+  color: var(--text3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard, .gx--live { transition-duration: 120ms; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Mez Systems · Expression system</h1>
+    <p>One gradient per product, many treatments. Every surface on this page is
+       the same live engine drawing into a different shape. Nothing here is a
+       static image.</p>
+    <div class="lock">Built by Claude Code · <span id="count">0</span> live surfaces</div>
+  </header>
+
+  <!-- 01 ------------------------------------------------------------------ -->
+  <section>
+    <p class="eyebrow">01 · Product gradients</p>
+    <h2>The four cores</h2>
+    <p class="lede">Each product owns exactly one library gradient, for life.
+       That is why an edition can never be signalled with colour.</p>
+    <hr class="rule">
+    <div class="grid4" id="cores"></div>
+  </section>
+
+  <!-- 02 ------------------------------------------------------------------ -->
+  <section>
+    <p class="eyebrow">02 · One gradient, many expressions</p>
+    <h2>The gradient is the product. The treatment fits the context.</h2>
+    <p class="lede">AI OS shown across the full treatment library. The disc is
+       the standard; the sphere is identity only.</p>
+    <hr class="rule">
+    <div class="row" id="treatments"></div>
+  </section>
+
+  <!-- 03 ------------------------------------------------------------------ -->
+  <section>
+    <p class="eyebrow">03 · The matrix</p>
+    <h2>Every treatment, every core</h2>
+    <p class="lede">The system holds when the core changes. Same geometry, same
+       light, same mark: only the gradient moves.</p>
+    <hr class="rule">
+    <div id="matrix"></div>
+  </section>
+
+  <!-- 04 ------------------------------------------------------------------ -->
+  <section>
+    <p class="eyebrow">04 · Cards on the page</p>
+    <h2>The product cards</h2>
+    <p class="lede">Card #FFFFFF, radius 20, 8% ink hairline, soft drop shadow.
+       The disc carries the only colour on the surface.</p>
+    <hr class="rule">
+    <div class="grid4" id="pcards"></div>
+  </section>
+
+  <!-- 05 ------------------------------------------------------------------ -->
+  <section>
+    <p class="eyebrow">05 · Stacks &amp; bundles</p>
+    <h2>Stack + bundle</h2>
+    <p class="lede">A stack is a fanned deck of trading cards, offset 50 across
+       and 38 down with the newest on top. A bundle groups them in a dark
+       container.</p>
+    <hr class="rule">
+    <div class="row" style="align-items:flex-start; gap:80px">
+      <div>
+        <p class="eyebrow">Stack · a deck</p>
+        <div class="stack" id="stack"></div>
+        <p class="note">Offset 50 across · 38 down · newest card on top.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Bundle</p>
+        <div class="bundle" id="bundle"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ------------------------------------------------------------------ -->
+  <section>
+    <p class="eyebrow">06 · Editions</p>
+    <h2>Rarity is finish, never hue</h2>
+    <p class="lede">The product owns its gradient permanently, so an edition can
+       only change the surface: matte, keyline, iridescent, foil, or stripped
+       back.</p>
+    <hr class="rule">
+    <div class="row" id="finishes"></div>
+  </section>
+
+  <!-- 07 ------------------------------------------------------------------ -->
+  <section>
+    <p class="eyebrow">07 · In context</p>
+    <h2>Down to 24px, up to a hero</h2>
+    <p class="lede">The mark holds at favicon scale because the disc is flat and
+       the wings are 50% of its diameter. Below 24px the mark is never used.</p>
+    <hr class="rule">
+    <div class="ladder" id="ladder"></div>
+    <div class="row" style="margin-top:56px; gap:20px" id="pills"></div>
+    <div style="margin-top:56px" id="hero"></div>
+  </section>
+
+  <footer>
+    Mez Systems expression system · gradients = products · everything else is
+    greyscale · one chassis, many cores.
+  </footer>
+
+</div>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ====================================================================
+     DATA · injected by build.py from the gradient PNGs
+     ==================================================================== */
+
+  const PRODUCTS = {{PRODUCTS_JSON}};
+  const BY_ID = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+
+  /* Wings geometry, traced to vector from wings.png. Mirror-symmetric about
+     x=255.5, 45px corner radius. */
+  const WINGS_L = "M45,0L105.89,0A45,45 0 0 1 146.58,25.78L239.69,222.87A45,45 0 0 1 244,242.09L244,316A45,45 0 0 1 199,361L45,361A45,45 0 0 1 0,316L0,45A45,45 0 0 1 45,0Z";
+  const WINGS_R = "M466,0L405.11,0A45,45 0 0 0 364.42,25.78L271.31,222.87A45,45 0 0 0 267,242.09L267,316A45,45 0 0 0 312,361L466,361A45,45 0 0 0 511,316L511,45A45,45 0 0 0 466,0Z";
+
+  const wingsSVG = (cls, fill) =>
+    `<svg class="${cls}" viewBox="0 0 512 363" fill="${fill}" aria-hidden="true">` +
+    `<path d="${WINGS_L}"/><path d="${WINGS_R}"/></svg>`;
+
+  /* Shape ids, mirrored in the fragment shader. */
+  const SHAPE = { disc: 0, sphere: 1, rect: 2, wings: 3 };
+
+  /* ====================================================================
+     SHADERS
+     ==================================================================== */
+
+  const VERT = `attribute vec2 aPos; void main(){ gl_Position = vec4(aPos,0.,1.); }`;
+
+  const FRAG = `
+    precision highp float;
+
+    uniform vec2  uRes;        // this surface's pixel size
+    uniform float uTime;
+    uniform float uBright;
+    uniform float uDpr;
+
+    uniform vec3  uC[4];       // palette, linear space
+    uniform vec2  uA[4];       // anchor base positions
+    uniform float uW[4];       // anchor weights
+    uniform vec4  uBloomSel;   // one-hot selector for the bloom anchor
+    uniform vec3  uShade;
+    uniform vec3  uBloom;
+
+    uniform int   uShape;      // 0 disc, 1 sphere, 2 rect, 3 wings
+    uniform float uRadius;     // rect corner radius, fraction of half-min-side
+    uniform float uOct;        // fBm octaves, LOD for small surfaces
+    uniform sampler2D uMask;   // wings alpha
+
+    vec3 mod289(vec3 x){ return x - floor(x*(1.0/289.0))*289.0; }
+    vec4 mod289(vec4 x){ return x - floor(x*(1.0/289.0))*289.0; }
+    vec4 permute(vec4 x){ return mod289(((x*34.0)+1.0)*x); }
+    vec4 taylorInvSqrt(vec4 r){ return 1.79284291400159 - 0.85373472095314*r; }
+
+    float snoise(vec3 v){
+      const vec2 C = vec2(1.0/6.0, 1.0/3.0);
+      const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+      vec3 i  = floor(v + dot(v, C.yyy));
+      vec3 x0 = v - i + dot(i, C.xxx);
+      vec3 g = step(x0.yzx, x0.xyz);
+      vec3 l = 1.0 - g;
+      vec3 i1 = min(g.xyz, l.zxy);
+      vec3 i2 = max(g.xyz, l.zxy);
+      vec3 x1 = x0 - i1 + C.xxx;
+      vec3 x2 = x0 - i2 + C.yyy;
+      vec3 x3 = x0 - D.yyy;
+      i = mod289(i);
+      vec4 p = permute(permute(permute(
+                 i.z + vec4(0.0, i1.z, i2.z, 1.0))
+               + i.y + vec4(0.0, i1.y, i2.y, 1.0))
+               + i.x + vec4(0.0, i1.x, i2.x, 1.0));
+      float n_ = 0.142857142857;
+      vec3 ns = n_ * D.wyz - D.xzx;
+      vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+      vec4 x_ = floor(j * ns.z);
+      vec4 y_ = floor(j - 7.0 * x_);
+      vec4 x = x_ * ns.x + ns.yyyy;
+      vec4 y = y_ * ns.x + ns.yyyy;
+      vec4 h = 1.0 - abs(x) - abs(y);
+      vec4 b0 = vec4(x.xy, y.xy);
+      vec4 b1 = vec4(x.zw, y.zw);
+      vec4 s0 = floor(b0)*2.0 + 1.0;
+      vec4 s1 = floor(b1)*2.0 + 1.0;
+      vec4 sh = -step(h, vec4(0.0));
+      vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy;
+      vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww;
+      vec3 p0 = vec3(a0.xy, h.x);
+      vec3 p1 = vec3(a0.zw, h.y);
+      vec3 p2 = vec3(a1.xy, h.z);
+      vec3 p3 = vec3(a1.zw, h.w);
+      vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2,p2), dot(p3,p3)));
+      p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
+      vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+      m = m*m;
+      return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
+    }
+
+    /* Octave count is a uniform so small surfaces can run cheap. A favicon at
+       24px cannot show the third octave, and this board draws 60+ surfaces
+       every frame. */
+    float fbm(vec3 p){
+      float v = 0.0, a = 0.5;
+      for (int i = 0; i < 3; i++) {
+        if (float(i) >= uOct) break;
+        v += a * snoise(p);
+        p = p * 2.02 + vec3(11.7, 5.3, 2.9);
+        a *= 0.5;
+      }
+      return v;
+    }
+
+    vec3 toLinear(vec3 c){ return pow(c, vec3(2.2)); }
+    vec3 toSRGB(vec3 c){ return pow(max(c, 0.0), vec3(1.0/2.2)); }
+
+    float hash21(vec2 p){
+      p = fract(p * vec2(123.34, 456.21));
+      p += dot(p, p + 45.32);
+      return fract(p.x * p.y);
+    }
+
+    /* Signed distance to a rounded box, half-extents b, corner radius r. */
+    float sdRoundBox(vec2 p, vec2 b, float r){
+      vec2 q = abs(p) - b + r;
+      return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - r;
+    }
+
+    void main(){
+      /* gl_FragCoord is in ABSOLUTE framebuffer coordinates, never viewport
+         relative. Each surface is therefore rendered at viewport origin in the
+         shared GL canvas and blitted out, so frag is already surface-local.
+         Rendering surfaces at their on-screen offsets instead silently puts
+         every one of them outside its own shape. */
+      vec2 frag = gl_FragCoord.xy;
+
+      float mn = min(uRes.x, uRes.y);
+      vec2 uv = (frag - 0.5*uRes) / mn;
+      float rad = length(uv) * 2.0;
+      float t = uTime;
+
+      /* ---- shape mask, antialiased in pixels ---- */
+      float aa = 1.5 / mn;
+      float alpha;
+      if (uShape == 3) {
+        // Wings: sampled from a mask texture. An SDF for this silhouette
+        // would be far more code than it is worth, and the texture is exact.
+        vec2 tuv = frag / uRes;
+        alpha = texture2D(uMask, vec2(tuv.x, 1.0 - tuv.y)).a;
+      } else if (uShape == 2) {
+        // Not named "half": that is a reserved word in GLSL and fails to compile.
+        vec2 halfExt = uRes / mn * 0.5;
+        float d = sdRoundBox(uv, halfExt, uRadius * 0.5);
+        alpha = 1.0 - smoothstep(-aa, aa, d);
+      } else {
+        alpha = 1.0 - smoothstep(0.5 - aa, 0.5 + aa, length(uv));
+      }
+      if (alpha <= 0.001) { gl_FragColor = vec4(0.0); return; }
+
+      /* ---- domain-warped mesh gradient ---- */
+      vec3 p = vec3(uv * 0.95, t * 0.075);
+      vec2 q = vec2(fbm(p), fbm(p + vec3(3.71, 1.33, 0.0)));
+      vec2 r = vec2(
+        fbm(p + 1.15*vec3(q,0.0) + vec3(1.7, 9.2, t*0.055)),
+        fbm(p + 1.15*vec3(q,0.0) + vec3(8.3, 2.8, t*0.066)));
+      vec2 w = uv + 0.42*r + 0.16*q;
+
+      float ws[4];
+      float wSum = 1e-5;
+      for (int i = 0; i < 4; i++) {
+        // Anchors drift on mismatched Lissajous orbits so the mesh never
+        // settles into a repeat.
+        float fi = float(i);
+        vec2 a = uA[i] + vec2(cos(t*(0.079 + fi*0.016) + fi*1.7),
+                              sin(t*(0.083 + fi*0.014) + fi*2.9)) * 0.23;
+        float d = dot(w - a, w - a);
+        ws[i] = pow(exp(-d * 7.5), 1.9) * uW[i];
+        wSum += ws[i];
+      }
+
+      vec3 col = vec3(0.0);
+      for (int i = 0; i < 4; i++) col += toLinear(uC[i]) * ws[i];
+      col /= wSum;
+
+      float detail = fbm(vec3(w * 2.6, t * 0.13));
+      col *= 1.0 + detail * 0.17;
+
+      float bloomW = dot(vec4(ws[0], ws[1], ws[2], ws[3]), uBloomSel);
+      float hot = smoothstep(0.15, 0.85, detail*0.5 + 0.5) * (bloomW / wSum) * 2.6;
+      col += toLinear(uBloom) * clamp(hot, 0.0, 1.0) * 0.20;
+
+      col *= uBright;
+
+      /* ---- sphere shading, identity treatment only ----
+         The disc is specified as a hard-edged flat gradient with no halo, so
+         shading is gated on the shape rather than applied everywhere. */
+      if (uShape == 1) {
+        float rim = smoothstep(0.50, 1.08, rad + detail * 0.18);
+        col = mix(col, toLinear(uShade), rim * 0.62);
+        col *= 1.0 + 0.10 * smoothstep(1.0, -0.5, uv.x*1.7 + uv.y*2.0);
+        float sLum = dot(col, vec3(0.2126, 0.7152, 0.0722));
+        col = mix(vec3(sLum), col, 1.16);
+      }
+
+      col = toSRGB(col);
+
+      /* ---- grain, sampled in CSS pixels so it survives retina ----
+         Deliberately absolute (gl_FragCoord, not frag): with surface-local
+         coordinates every same-sized surface would get byte-identical grain
+         and the repetition reads as a tiled texture. */
+      vec2 gp = gl_FragCoord.xy / max(uDpr, 1.0);
+      float fine = hash21(gp) - 0.5;
+      float mottle = (hash21(floor(gp / 2.5)) - 0.5) * 0.75;
+      float lum = dot(col, vec3(0.2126, 0.7152, 0.0722));
+      float mask = 1.0 - 0.70 * smoothstep(0.42, 0.98, lum);
+      col += (fine * 0.085 + mottle * 0.036) * mask;
+      col = min(col, vec3(0.97));
+
+      // Premultiplied: the canvas composites over the page.
+      gl_FragColor = vec4(col * alpha, alpha);
+    }
+  `;
+
+  /* ====================================================================
+     DOM CONSTRUCTION
+     ==================================================================== */
+
+  /** Create a gradient surface. Returns the element; the engine finds it. */
+  function gx(product, shape, w, h, opts) {
+    opts = opts || {};
+    const el = document.createElement('div');
+    el.className = 'gx' + (opts.cls ? ' ' + opts.cls : '');
+    el.dataset.p = product;
+    el.dataset.shape = shape;
+    if (opts.radius != null) el.dataset.radius = opts.radius;
+    el.style.width = w + 'px';
+    el.style.height = h + 'px';
+    if (opts.inner) el.innerHTML = opts.inner;
+    // Its own 2D canvas, prepended so any foreground markup paints over it.
+    const c = document.createElement('canvas');
+    c.className = 'gxc';
+    c.setAttribute('aria-hidden', 'true');
+    el.insertBefore(c, el.firstChild);
+    return el;
+  }
+
+  const specMeta = (name, use) =>
+    `<div class="spec__meta"><div class="spec__name">${name}</div>` +
+    `<div class="spec__use">${use}</div></div>`;
+
+  function spec(node, name, use) {
+    const s = document.createElement('div');
+    s.className = 'spec';
+    const stage = document.createElement('div');
+    stage.className = 'stage';
+    stage.appendChild(node);
+    s.appendChild(stage);
+    s.insertAdjacentHTML('beforeend', specMeta(name, use));
+    return s;
+  }
+
+  /** Trading card: full-bleed gradient, eyebrow pill, wings, product name. */
+  function tradingCard(p, w, h) {
+    const card = gx(p.id, SHAPE.rect, w, h, {
+      cls: 'tcard', radius: 0.20,
+      inner:
+        '<div class="fg">' +
+          '<span class="tcard__pill">MEZ SYSTEMS</span>' +
+          '<div class="tcard__foot">' +
+            wingsSVG('wings', '#fff') +
+            `<div class="tcard__name">${p.name}</div>` +
+          '</div>' +
+        '</div>'
+    });
+    return card;
+  }
+
+  // ---- 01 · the four cores -------------------------------------------------
+  const cores = document.getElementById('cores');
+  PRODUCTS.forEach(p => {
+    const cell = document.createElement('div');
+    const tile = gx(p.id, SHAPE.rect, 0, 0, {
+      cls: 'gx--live', radius: 0.13,
+      inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>'
+    });
+    tile.style.width = '100%';
+    tile.style.height = '150px';
+    cell.appendChild(tile);
+    cell.insertAdjacentHTML('beforeend',
+      `<div style="margin-top:16px"><div class="pcard__name">${p.name}</div>` +
+      `<div class="pcard__sub">${p.sub}</div></div>`);
+    cores.appendChild(cell);
+  });
+
+  // ---- 02 · treatment library (AI OS) --------------------------------------
+  const aios = BY_ID['aios'];
+  const treatments = document.getElementById('treatments');
+  [
+    [spec(gx(aios.id, SHAPE.wings, 148, 105), 'Gradient-M', 'logo &amp; favicon')],
+    [spec(gx(aios.id, SHAPE.disc, 120, 120, { cls: 'gx--live',
+        inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' }),
+        'Disc', 'flat app icon')],
+    [spec(gx(aios.id, SHAPE.sphere, 190, 190, { cls: 'gx--live',
+        inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' }),
+        'Sphere', 'hero orb · identity only')],
+    [spec(gx(aios.id, SHAPE.disc, 190, 190, { cls: 'gx--live',
+        inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' }),
+        'Disc Ø190', 'the standard · landing / ads')],
+    [spec(gx(aios.id, SHAPE.rect, 128, 128, { radius: 0.42,
+        inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' }),
+        'Squircle', 'iOS app tile')],
+    [spec(tradingCard(aios, 150, 205), 'Trading card', 'checkout / drop')]
+  ].forEach(([node]) => treatments.appendChild(node));
+
+  // ---- 03 · matrix ---------------------------------------------------------
+  const matrix = document.getElementById('matrix');
+  [
+    { key: 'gm',     label: 'Gradient-M', build: p => gx(p.id, SHAPE.wings, 112, 79) },
+    { key: 'disc',   label: 'Disc',       build: p => gx(p.id, SHAPE.disc, 112, 112,
+        { cls: 'gx--live', inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' }) },
+    { key: 'sphere', label: 'Sphere',     build: p => gx(p.id, SHAPE.sphere, 112, 112,
+        { cls: 'gx--live', inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' }) },
+    { key: 'card',   label: 'Trading card', build: p => tradingCard(p, 104, 142) }
+  ].forEach(row => {
+    const band = document.createElement('div');
+    band.style.cssText = 'display:grid;grid-template-columns:130px 1fr;gap:28px;' +
+                         'align-items:center;padding:26px 0;border-bottom:1px solid var(--hairline)';
+    band.insertAdjacentHTML('beforeend',
+      `<div class="spec__name" style="color:var(--text2)">${row.label}</div>`);
+    const strip = document.createElement('div');
+    strip.style.cssText = 'display:flex;gap:38px;flex-wrap:wrap;align-items:center';
+    PRODUCTS.forEach(p => strip.appendChild(row.build(p)));
+    band.appendChild(strip);
+    matrix.appendChild(band);
+  });
+
+  // ---- 04 · product cards --------------------------------------------------
+  const pcards = document.getElementById('pcards');
+  PRODUCTS.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'pcard';
+    const disc = gx(p.id, SHAPE.disc, 64, 64,
+      { inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' });
+    card.appendChild(disc);
+    card.insertAdjacentHTML('beforeend',
+      `<div><div class="pcard__name">${p.name}</div>` +
+      `<div class="pcard__sub">${p.sub}</div>` +
+      `<div class="pcard__body">${p.body}</div></div>` +
+      `<button class="cta">Get ${p.name}</button>`);
+    pcards.appendChild(card);
+  });
+
+  // ---- 05 · stack + bundle -------------------------------------------------
+  const stack = document.getElementById('stack');
+  // Newest on top: paint back to front, so reverse the list and let DOM order
+  // do the stacking rather than fighting z-index.
+  PRODUCTS.slice().reverse().forEach((p, i) => {
+    const c = tradingCard(p, 150, 205);
+    // Offset 50 across, 38 down, straight from the brand kit: those numbers
+    // are absolute for a card this width, not a ratio to rescale.
+    c.style.left = (i * 50) + 'px';
+    c.style.top  = (i * 38) + 'px';
+    c.style.zIndex = String(i + 1);
+    c.style.boxShadow = '0 10px 26px -10px rgba(11,11,11,.34)';
+    c.style.borderRadius = '20px';
+    stack.appendChild(c);
+  });
+
+  const bundle = document.getElementById('bundle');
+  const brow = document.createElement('div');
+  brow.className = 'bundle__row';
+  PRODUCTS.forEach(p => brow.appendChild(tradingCard(p, 116, 158)));
+  bundle.appendChild(brow);
+  bundle.insertAdjacentHTML('beforeend',
+    '<div class="bundle__title">Ultimate AI OS</div>' +
+    '<div class="bundle__sub">Every core. One operating system.</div>');
+
+  // ---- 06 · finishes -------------------------------------------------------
+  const finishes = document.getElementById('finishes');
+  [
+    ['Base', 'matte', ''],
+    ['Pro', 'keyline', 'fin--pro'],
+    ['Ultimate', 'iridescent', 'fin--ultimate'],
+    ['Founder', 'numbered foil', 'fin--founder'],
+    ['Icon', 'stripped back', 'fin--icon']
+  ].forEach(([name, use, cls]) => {
+    const card = tradingCard(aios, 130, 178);
+    card.classList.add('fin');
+    if (cls) card.classList.add(cls);
+    if (cls === 'fin--founder') {
+      card.insertAdjacentHTML('beforeend', '<div class="fin__num">001/100</div>');
+    }
+    finishes.appendChild(spec(card, name, use));
+  });
+
+  // ---- 07 · in context -----------------------------------------------------
+  const ladder = document.getElementById('ladder');
+  [24, 32, 48, 64, 96].forEach(size => {
+    const d = gx(aios.id, SHAPE.disc, size, size,
+      { inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' });
+    ladder.appendChild(spec(d, size + 'px', size === 24 ? 'minimum' : ''));
+  });
+
+  const pills = document.getElementById('pills');
+  PRODUCTS.forEach(p => {
+    const pill = document.createElement('span');
+    pill.className = 'upill';
+    const d = gx(p.id, SHAPE.disc, 32, 32,
+      { inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' });
+    pill.appendChild(d);
+    pill.insertAdjacentHTML('beforeend', p.name);
+    pills.appendChild(pill);
+  });
+
+  const hero = document.getElementById('hero');
+  hero.className = 'hero';
+  hero.innerHTML =
+    '<div class="hero__copy"><h3>' + aios.name + '</h3>' +
+    '<p>' + aios.body + '</p>' +
+    '<button class="cta">Get the AI OS</button></div>';
+  const heroOrb = gx(aios.id, SHAPE.sphere, 210, 210,
+    { cls: 'gx--live', inner: '<div class="fg">' + wingsSVG('wings', '#fff') + '</div>' });
+  heroOrb.style.marginLeft = 'auto';
+  hero.appendChild(heroOrb);
+
+  /* ====================================================================
+     ENGINE
+     ==================================================================== */
+
+  // Shared offscreen renderer. Never in the DOM; surfaces blit out of it.
+  const glCanvas = document.createElement('canvas');
+  const gl = glCanvas.getContext('webgl', {
+    alpha: true, antialias: false, depth: false, stencil: false,
+    premultipliedAlpha: true, powerPreference: 'high-performance'
+  });
+
+  const surfaces = Array.from(document.querySelectorAll('.gx'));
+  document.getElementById('count').textContent = surfaces.length;
+
+  if (!gl) {
+    // Static fallback so the board is still readable without WebGL.
+    surfaces.forEach(el => {
+      const c = el.querySelector('.gxc'); if (c) c.remove();
+      const p = BY_ID[el.dataset.p];
+      el.style.background =
+        `radial-gradient(70% 80% at 25% 20%, ${p.hex[0]}, transparent 60%),` +
+        `radial-gradient(70% 75% at 80% 30%, ${p.hex[1]}, transparent 62%),` +
+        `radial-gradient(75% 75% at 55% 90%, ${p.hex[2]}, transparent 64%), ${p.hex[3]}`;
+      const shape = +el.dataset.shape;
+      if (shape === 0 || shape === 1) el.style.borderRadius = '50%';
+      else if (shape === 2) el.style.borderRadius =
+        (el.dataset.radius * Math.min(el.offsetWidth, el.offsetHeight) * 0.5) + 'px';
+    });
+    console.warn('[expressions] WebGL unavailable, static fallback in use.');
+    return;
+  }
+
+  function compile(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+      throw new Error(gl.getShaderInfoLog(s));
+    }
+    return s;
+  }
+
+  let prog;
+  try {
+    prog = gl.createProgram();
+    gl.attachShader(prog, compile(gl.VERTEX_SHADER, VERT));
+    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, FRAG));
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      throw new Error(gl.getProgramInfoLog(prog));
+    }
+  } catch (err) {
+    console.error('[expressions] shader failed:', err.message);
+    return;
+  }
+  gl.useProgram(prog);
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  const aPos = gl.getAttribLocation(prog, 'aPos');
+  gl.enableVertexAttribArray(aPos);
+  gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+  const U = n => gl.getUniformLocation(prog, n);
+  const uRes = U('uRes'), uTime = U('uTime'), uBright = U('uBright'), uDpr = U('uDpr'),
+        uShade = U('uShade'), uBloom = U('uBloom'), uBloomSel = U('uBloomSel'),
+        uShape = U('uShape'), uRadius = U('uRadius'), uOct = U('uOct'), uMask = U('uMask');
+  const uC = [0,1,2,3].map(i => U('uC[' + i + ']'));
+  const uA = [0,1,2,3].map(i => U('uA[' + i + ']'));
+  const uW = [0,1,2,3].map(i => U('uW[' + i + ']'));
+
+  /* Wings mask texture. Rasterised once from the same path data the DOM uses,
+     so the gradient-filled mark and the white mark are the identical shape. */
+  const maskTex = gl.createTexture();
+  (function buildMask() {
+    const MW = 512, MH = 363;
+    const c = document.createElement('canvas');
+    c.width = MW; c.height = MH;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = '#fff';
+    ctx.fill(new Path2D(WINGS_L));
+    ctx.fill(new Path2D(WINGS_R));
+    gl.bindTexture(gl.TEXTURE_2D, maskTex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, c);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  })();
+  gl.activeTexture(gl.TEXTURE0);
+  gl.bindTexture(gl.TEXTURE_2D, maskTex);
+  gl.uniform1i(uMask, 0);
+
+  gl.clearColor(0, 0, 0, 0);
+
+  /* Per-surface interaction state. Hover accelerates the fluid and lifts
+     brightness; both ease rather than snap. */
+  const state = new WeakMap();
+  surfaces.forEach(el => {
+    state.set(el, {
+      speed: 1, speedT: 1, bright: 1, brightT: 1,
+      // Stagger start times so no two surfaces are ever in the same phase.
+      time: 3.2 + Math.random() * 40,
+      ctx: el.querySelector('.gxc').getContext('2d'),
+      w: 0, h: 0
+    });
+    if (!el.classList.contains('gx--live')) return;
+    const set = on => {
+      const s = state.get(el);
+      s.speedT = on ? 1.85 : 1;
+      s.brightT = on ? 1.12 : 1;
+    };
+    el.addEventListener('pointerenter', () => set(true));
+    el.addEventListener('pointerleave', () => set(false));
+  });
+
+  let dpr = 1;
+  function resize() {
+    // Capped at 2: past that the extra fragments are invisible at these sizes.
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    // The shared canvas only ever needs to be as big as the largest surface,
+    // because surfaces are rendered one at a time at the origin.
+    let mw = 1, mh = 1;
+    for (const el of surfaces) {
+      const r = el.getBoundingClientRect();
+      if (r.width > mw) mw = r.width;
+      if (r.height > mh) mh = r.height;
+    }
+    const w = Math.min(Math.ceil(mw * dpr), 2048);
+    const h = Math.min(Math.ceil(mh * dpr), 2048);
+    if (glCanvas.width !== w || glCanvas.height !== h) {
+      glCanvas.width = w; glCanvas.height = h;
+    }
+  }
+  addEventListener('resize', resize);
+  resize();
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  let last = 0;
+
+  function approach(cur, target, rate, dt) {
+    return cur + (target - cur) * (1 - Math.exp(-rate * dt));
+  }
+
+  function frame(ms) {
+    const dt = last ? Math.min((ms - last) / 1000, 1 / 20) : 1 / 60;
+    last = ms;
+
+    const vh = innerHeight, vw = innerWidth;
+    const glH = glCanvas.height;
+
+    for (let i = 0; i < surfaces.length; i++) {
+      const el = surfaces[i];
+      const r = el.getBoundingClientRect();
+      // Skip anything off screen. On a board this long that is most of it.
+      if (r.bottom < -40 || r.top > vh + 40 || r.right < 0 || r.left > vw) continue;
+      if (r.width < 1 || r.height < 1) continue;
+
+      const s2 = state.get(el);
+      s2.speed = approach(s2.speed, s2.speedT, 7, dt);
+      s2.bright = approach(s2.bright, s2.brightT, 9, dt);
+      if (!reduce.matches) s2.time += dt * s2.speed;
+
+      const pw = Math.max(1, Math.round(r.width * dpr));
+      const ph = Math.max(1, Math.round(r.height * dpr));
+
+      // Resize the surface's own canvas only when it actually changed:
+      // assigning width/height clears it and is not free.
+      if (s2.w !== pw || s2.h !== ph) {
+        s2.ctx.canvas.width = pw;
+        s2.ctx.canvas.height = ph;
+        s2.w = pw; s2.h = ph;
+      }
+
+      const p = BY_ID[el.dataset.p];
+
+      // Render at the origin of the shared canvas, so gl_FragCoord is local.
+      gl.viewport(0, 0, pw, ph);
+      gl.uniform2f(uRes, pw, ph);
+      gl.uniform1f(uTime, s2.time);
+      gl.uniform1f(uBright, s2.bright);
+      gl.uniform1f(uDpr, dpr);
+      gl.uniform1i(uShape, +el.dataset.shape);
+      gl.uniform1f(uRadius, parseFloat(el.dataset.radius || '0'));
+      // LOD: a 24px favicon cannot resolve the third octave.
+      gl.uniform1f(uOct, Math.min(r.width, r.height) < 90 ? 2 : 3);
+
+      for (let k = 0; k < 4; k++) {
+        gl.uniform3fv(uC[k], p.c[k]);
+        gl.uniform2fv(uA[k], p.a[k]);
+        gl.uniform1f(uW[k], p.w[k]);
+      }
+      gl.uniform3fv(uShade, p.shade);
+      gl.uniform3fv(uBloom, p.bloom);
+      gl.uniform4fv(uBloomSel, p.bloomSel);
+
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+
+      // Blit across. A WebGL canvas presents top-left origin, but the render
+      // sat at the GL viewport origin which is bottom-left, so the source row
+      // is measured up from the bottom of the shared canvas.
+      s2.ctx.clearRect(0, 0, pw, ph);
+      s2.ctx.drawImage(glCanvas, 0, glH - ph, pw, ph, 0, 0, pw, ph);
+    }
+
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

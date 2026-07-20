@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Play Orb / MZ-G15</title>
+
+<style>
+/* ==========================================================================
+   PLAY ORB
+   A fluid mesh-gradient disc with a static, flat play anchor at dead centre.
+
+   Layer stack (back to front):
+     1. <canvas>   WebGL fragment shader. Domain-warped simplex noise drives a
+                   four-colour aurora mesh, plus a matte paper grain.
+     2. ::after    Inner rim light. Sells the disc as a physical object.
+     3. .orb__mark  Static white wings mark. Never moves, never morphs.
+                   It is the still point the fluid moves behind.
+
+   The only things that animate on the CPU are two scalars (speed, brightness)
+   and one CSS transform. Everything visual is GPU work in the fragment shader.
+   ========================================================================== */
+
+:root {
+  --orb-size: clamp(200px, 52vmin, 300px);
+
+  /* Mark width as a ratio of the disc, so it scales with the component.
+     The wings read wider than a play triangle at the same ratio, so this
+     sits below where a circular anchor would: the mark should feel set
+     into the disc, not crowd it. */
+  --mark-ratio: 0.39;
+
+  /* Motion curves. Spring-ish overshoot for hover, near-linear snap for press. */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+
+  --stage: #efedec;
+  --ink: #1a1720;
+  --ink-dim: #9a95a4;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.25rem;
+  background: var(--stage);
+  color: var(--ink);
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  /* Barely-there warm spill so the stage is not a dead flat rectangle.
+     Kept far subtler than on a dark stage: on near-white, any tint reads
+     immediately and starts to look like a mistake. */
+  background-image:
+    radial-gradient(70vmax 70vmax at 50% 44%, rgba(140, 120, 210, 0.07), transparent 64%);
+}
+
+/* --------------------------------------------------------------------------
+   1. The orb itself
+   -------------------------------------------------------------------------- */
+
+.orb {
+  /* Reset the <button> so nothing inherits a UA look. */
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: #75B89A; /* Shows for the frame before WebGL paints. */
+  font: inherit;
+  color: inherit;
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--orb-size);
+  height: var(--orb-size);
+  border-radius: 50%;
+  overflow: hidden;      /* Clips the canvas to a perfect circle. */
+  isolation: isolate;    /* Keeps blend modes inside the component. */
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  /* Contact shadow plus a soft ambient one. On a light stage this has to
+     read as a cast shadow, not a glow: a bloom on near-white just looks
+     like a rendering error. */
+  box-shadow:
+    0 18px 40px -18px rgba(58, 38, 110, 0.38),
+    0 4px 12px -6px rgba(58, 38, 110, 0.20);
+
+  /* Promote to its own layer up front so the first hover is not the frame
+     that pays for compositing. */
+  will-change: transform;
+  transform: translateZ(0) scale(1);
+  transition:
+    transform 420ms var(--ease-spring),
+    box-shadow 420ms var(--ease-spring);
+}
+
+.orb:hover,
+.orb:focus-visible {
+  transform: translateZ(0) scale(1.03);
+  box-shadow:
+    0 26px 56px -18px rgba(58, 38, 110, 0.46),
+    0 6px 16px -6px rgba(58, 38, 110, 0.24);
+}
+
+/* Press beats hover: later rule, same specificity is not enough because
+   :hover is still matching, so this is declared after and wins on order. */
+.orb.is-pressed {
+  transform: translateZ(0) scale(0.955);
+  box-shadow:
+    0 10px 22px -14px rgba(58, 38, 110, 0.42),
+    0 2px 6px -4px rgba(58, 38, 110, 0.22);
+  transition:
+    transform 90ms var(--ease-snap),
+    box-shadow 90ms var(--ease-snap);
+}
+
+.orb:focus-visible {
+  outline: 2px solid rgba(40, 26, 78, 0.75);
+  outline-offset: 6px;
+}
+
+.orb__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Inner rim hairline. The shader now does the sphere shading, so this is
+   only here to keep the edge from looking mechanically cut. */
+.orb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.30),
+    inset 0 0 0 1px rgba(70, 50, 120, 0.07);
+}
+
+/* --------------------------------------------------------------------------
+   2. The mark: static, flat, crisp
+   -------------------------------------------------------------------------- */
+
+.orb__mark {
+  position: relative;
+  z-index: 2;
+  width: calc(var(--orb-size) * var(--mark-ratio));
+  height: auto;
+  pointer-events: none;
+
+  /* Deliberately flat: no gradient, no animation, no transition. The parallax
+     comes entirely from the fluid moving behind a fixed object.
+
+     Two stacked drop-shadows rather than one. A white mark on a pastel
+     gradient loses its edge wherever the fluid drifts pale, and a single
+     soft shadow reads as haze. The tight one holds the silhouette, the
+     wide one seats it in the disc. drop-shadow (not box-shadow) because it
+     follows the alpha of the wings, not their bounding box. */
+  filter:
+    drop-shadow(0 1px 1.5px rgba(44, 24, 82, 0.22))
+    drop-shadow(0 5px 16px rgba(44, 24, 82, 0.26));
+}
+
+/* The wings sit slightly above true centre. Their mass is in the lower two
+   thirds, so a mathematically centred mark reads as having sunk. */
+.orb__mark { margin-top: calc(var(--orb-size) * -0.015); }
+
+/* --------------------------------------------------------------------------
+   3. Demo chrome (delete when lifting the component out)
+   -------------------------------------------------------------------------- */
+
+.caption {
+  margin: 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* Bare mode, set by ?bare in the URL. Used when the comparison board embeds
+   this file in an iframe: it drops the caption and the stage colour so the
+   board supplies its own, while the orb itself stays byte-identical to the
+   standalone version. That is the point of comparing via iframes at all. */
+body[data-bare] { gap: 0; background: transparent; }
+body[data-bare] .caption { display: none; }
+body[data-bare] { --orb-size: 82vmin; }
+
+/* --------------------------------------------------------------------------
+   4. Reduced motion
+   The shader freezes on a single composed frame (handled in JS). Scale
+   feedback stays, because it is a direct response to input, not ambient
+   motion, but the springiness is flattened out.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .orb.is-pressed {
+    transition-duration: 120ms;
+    transition-timing-function: ease-out;
+  }
+  .orb:hover,
+  .orb:focus-visible { transform: translateZ(0) scale(1.015); }
+}
+</style>
+</head>
+
+<body>
+
+  <button class="orb" type="button" aria-label="Play">
+    <canvas class="orb__canvas" aria-hidden="true"></canvas>
+
+    <!-- Wings mark, traced to vector from wings.png so it stays crisp at any
+         size and can be recoloured. Geometry recovered from the source alpha:
+         mirror-symmetric about x=255.5, 45px corner radius. -->
+    <svg class="orb__mark" viewBox="0 0 512 363" fill="#fff" aria-hidden="true">
+      <path d="M45.00,0.00L105.89,0.00A45.0,45.0 0 0 1 146.58,25.78L239.69,222.87A45.0,45.0 0 0 1 244.00,242.09L244.00,316.00A45.0,45.0 0 0 1 199.00,361.00L45.00,361.00A45.0,45.0 0 0 1 0.00,316.00L0.00,45.00A45.0,45.0 0 0 1 45.00,0.00Z"/>
+      <path d="M466.00,0.00L405.11,0.00A45.0,45.0 0 0 0 364.42,25.78L271.31,222.87A45.0,45.0 0 0 0 267.00,242.09L267.00,316.00A45.0,45.0 0 0 0 312.00,361.00L466.00,361.00A45.0,45.0 0 0 0 511.00,316.00L511.00,45.00A45.0,45.0 0 0 0 466.00,0.00Z"/>
+    </svg>
+  </button>
+
+  <p class="caption">MZ-G15</p>
+
+<script>
+(() => {
+  'use strict';
+
+  // Bare mode for iframe embedding. Set before first paint so the caption
+  // never flashes in the comparison board.
+  if (location.search.indexOf('bare') !== -1) {
+    document.body.dataset.bare = '1';
+  }
+
+  /* ======================================================================
+     SHADERS
+     ====================================================================== */
+
+  const VERT = `
+    attribute vec2 aPos;
+    void main() { gl_Position = vec4(aPos, 0.0, 1.0); }
+  `;
+
+  const FRAG = `
+    precision highp float;
+
+    uniform vec2  uResolution;   // drawing buffer size, device pixels
+    uniform float uTime;         // accumulated sim time, already speed-scaled
+    uniform float uBright;       // 1.0 idle, rises on hover
+    uniform float uDpr;          // device pixel ratio, keeps grain CSS-sized
+
+    /* ------------------------------------------------------------------
+       3D simplex noise (Ashima Arts / Stefan Gustavson, MIT).
+       3D rather than 2D so the third axis can be time: the field evolves
+       in place instead of scrolling past, which is what makes it churn
+       rather than drift.
+       ------------------------------------------------------------------ */
+
+    vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+    vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+    vec4 permute(vec4 x) { return mod289(((x * 34.0) + 1.0) * x); }
+    vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+
+    float snoise(vec3 v) {
+      const vec2 C = vec2(1.0 / 6.0, 1.0 / 3.0);
+      const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+
+      vec3 i  = floor(v + dot(v, C.yyy));
+      vec3 x0 = v - i + dot(i, C.xxx);
+
+      vec3 g  = step(x0.yzx, x0.xyz);
+      vec3 l  = 1.0 - g;
+      vec3 i1 = min(g.xyz, l.zxy);
+      vec3 i2 = max(g.xyz, l.zxy);
+
+      vec3 x1 = x0 - i1 + C.xxx;
+      vec3 x2 = x0 - i2 + C.yyy;
+      vec3 x3 = x0 - D.yyy;
+
+      i = mod289(i);
+      vec4 p = permute(permute(permute(
+                 i.z + vec4(0.0, i1.z, i2.z, 1.0))
+               + i.y + vec4(0.0, i1.y, i2.y, 1.0))
+               + i.x + vec4(0.0, i1.x, i2.x, 1.0));
+
+      float n_ = 0.142857142857;
+      vec3  ns = n_ * D.wyz - D.xzx;
+
+      vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+
+      vec4 x_ = floor(j * ns.z);
+      vec4 y_ = floor(j - 7.0 * x_);
+
+      vec4 x = x_ * ns.x + ns.yyyy;
+      vec4 y = y_ * ns.x + ns.yyyy;
+      vec4 h = 1.0 - abs(x) - abs(y);
+
+      vec4 b0 = vec4(x.xy, y.xy);
+      vec4 b1 = vec4(x.zw, y.zw);
+
+      vec4 s0 = floor(b0) * 2.0 + 1.0;
+      vec4 s1 = floor(b1) * 2.0 + 1.0;
+      vec4 sh = -step(h, vec4(0.0));
+
+      vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;
+      vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;
+
+      vec3 p0 = vec3(a0.xy, h.x);
+      vec3 p1 = vec3(a0.zw, h.y);
+      vec3 p2 = vec3(a1.xy, h.z);
+      vec3 p3 = vec3(a1.zw, h.w);
+
+      vec4 norm = taylorInvSqrt(vec4(dot(p0, p0), dot(p1, p1), dot(p2, p2), dot(p3, p3)));
+      p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
+
+      vec4 m = max(0.6 - vec4(dot(x0, x0), dot(x1, x1), dot(x2, x2), dot(x3, x3)), 0.0);
+      m = m * m;
+      return 42.0 * dot(m * m, vec4(dot(p0, x0), dot(p1, x1), dot(p2, x2), dot(p3, x3)));
+    }
+
+    /* Three-octave fBm. Three, not four: a fourth octave adds detail at a
+       frequency that reads as marbling rather than fluid, which fights the
+       soft mesh. The per-octave offset breaks lattice alignment so the
+       octaves do not stack into visible grid artefacts. */
+    float fbm(vec3 p) {
+      float v = 0.0;
+      float a = 0.5;
+      for (int i = 0; i < 3; i++) {
+        v += a * snoise(p);
+        p = p * 2.02 + vec3(11.7, 5.3, 2.9);
+        a *= 0.5;
+      }
+      return v;
+    }
+
+    /* A colour anchor drifting on its own Lissajous orbit. Mismatched x/y
+       rates mean no two anchors ever fall into a repeating relationship,
+       so the mesh never visibly loops. */
+    vec2 anchor(vec2 base, float rx, float ry, float phase, float t) {
+      return base + vec2(cos(t * rx + phase), sin(t * ry + phase * 1.7)) * 0.23;
+    }
+
+    /* ------------------------------------------------------------------
+       Colour. Mixing happens in linear space: blending an electric blue
+       with a warm peach in raw sRGB goes grey through the middle, which is
+       exactly the muddiness that makes gradients look cheap.
+       ------------------------------------------------------------------ */
+
+    vec3 toLinear(vec3 c) { return pow(c, vec3(2.2)); }
+    vec3 toSRGB(vec3 c)   { return pow(max(c, 0.0), vec3(1.0 / 2.2)); }
+
+    /* Cheap high-quality hash for the grain. */
+    float hash21(vec2 p) {
+      p = fract(p * vec2(123.34, 456.21));
+      p += dot(p, p + 45.32);
+      return fract(p.x * p.y);
+    }
+
+    void main() {
+      /* Square, centred, resolution-independent coords. */
+      vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution) / min(uResolution.x, uResolution.y);
+      float rad = length(uv) * 2.0;   // 0 at centre, 1 at the rim
+
+      float t = uTime;
+
+      /* ---------------- Domain warping ----------------
+         Two chained fBm passes (the Inigo Quilez recipe, one level shallower
+         than usual). Each pass distorts the sample point of the next, so the
+         field folds back into itself instead of translating. That fold is
+         what reads as liquid.
+
+         Deliberately low frequency. High-frequency warp shatters the colour
+         fields into filaments and the result looks like marbled paper, not
+         an aurora. Broad and slow is what lets the colours bleed. */
+
+      vec3 p = vec3(uv * 0.95, t * 0.075);
+
+      vec2 q = vec2(
+        fbm(p),
+        fbm(p + vec3(3.71, 1.33, 0.0))
+      );
+
+      vec2 r = vec2(
+        fbm(p + 1.15 * vec3(q, 0.0) + vec3(1.7, 9.2, t * 0.055)),
+        fbm(p + 1.15 * vec3(q, 0.0) + vec3(8.3, 2.8, t * 0.066))
+      );
+
+      /* The warped sample point. Colour is looked up here rather than at uv,
+         which is what drags the whole mesh around as one connected fluid
+         instead of scrolling a texture past. */
+      vec2 w = uv + 0.42 * r + 0.16 * q;
+
+      /* ---------------- Palette ----------------
+         GENERATED by build.py from the source gradient PNG. Do not hand-edit
+         this block: it is overwritten on every rebuild. To tune a palette,
+         edit palettes.json and re-run with --keep-palettes.
+
+         C0..C3 are k-means cluster means, A0..A3 their centroids mapped into
+         the disc, W0..W3 their share of the source, SHADE the darkest cluster. */
+      vec3 C0 = toLinear(vec3(0.460, 0.723, 0.604));  // #75B89A  26% of source
+      vec3 C1 = toLinear(vec3(0.124, 0.651, 0.586));  // #20A695  25% of source
+      vec3 C2 = toLinear(vec3(0.712, 0.777, 0.451));  // #B6C673  23% of source
+      vec3 C3 = toLinear(vec3(0.365, 0.887, 0.826));  // #5DE2D3  11% of source
+      vec3 SHADE = toLinear(vec3(0.091, 0.526, 0.476));  // #178679  darkest cluster, drives sphere shading
+
+      vec2 A0 = anchor(vec2(0.117, 0.093), 0.113, 0.131, 0.0, t);
+      vec2 A1 = anchor(vec2(0.054, -0.131), 0.091, 0.107, 1.9, t);
+      vec2 A2 = anchor(vec2(-0.009, -0.164), 0.127, 0.083, 3.6, t);
+      vec2 A3 = anchor(vec2(-0.006, 0.099), 0.079, 0.119, 5.2, t);
+
+      float W0 = 1.116;
+      float W1 = 1.111;
+      float W2 = 1.052;
+      float W3 = 0.676;
+
+      #define BLOOM_W w3
+      vec3 BLOOM_TINT = toLinear(vec3(0.778, 0.961, 0.939));  // #C6F5EF
+
+      /* ---------------- Mesh ----------------
+         Four colour anchors drifting inside the disc, blended by Gaussian
+         falloff on distance. This is a true mesh gradient: broad soft fields
+         with no hard boundary anywhere. Sampling at the warped point w
+         rather than uv is what makes those fields churn.
+
+         The weights get a power curve before normalising. Straight Gaussian
+         averaging pulls everything towards the mean of the palette, which is
+         mud. The exponent lets whichever anchor is nearest actually win
+         while the falloff stays smooth. */
+
+      const float K = 7.5;   // falloff tightness
+      const float S = 1.9;   // dominance exponent
+
+      float w0 = pow(exp(-dot(w - A0, w - A0) * K), S) * W0;
+      float w1 = pow(exp(-dot(w - A1, w - A1) * K), S) * W1;
+      float w2 = pow(exp(-dot(w - A2, w - A2) * K), S) * W2;
+      float w3 = pow(exp(-dot(w - A3, w - A3) * K), S) * W3;
+
+      float wSum = w0 + w1 + w2 + w3 + 1e-5;
+
+      vec3 col = (C0 * w0 + C1 * w1 + C2 * w2 + C3 * w3) / wSum;
+
+      /* ---------------- Life ----------------
+         A single higher-frequency fBm modulates luminance only, never hue.
+         This restores the sense of internal movement the low-frequency mesh
+         gives up, without reintroducing veins of colour. */
+      float detail = fbm(vec3(w * 2.6, t * 0.13));
+      col *= 1.0 + detail * 0.17;
+
+      /* Bloom where the lightest anchor and a ridge coincide. Additive so it
+         blooms towards its own tint rather than just going pale. */
+      float hot = smoothstep(0.15, 0.85, detail * 0.5 + 0.5) * (BLOOM_W / wSum) * 2.6;
+      col += BLOOM_TINT * clamp(hot, 0.0, 1.0) * 0.20;
+
+      /* Hover brightness. Applied in linear space so it behaves like more
+         light rather than a washed-out overlay. */
+      col *= uBright;
+
+      /* ---------------- Sphere shading ----------------
+         The reference reads as a lit sphere, not a flat disc. The deep violet
+         gathers towards the rim while the centre stays luminous.
+
+         Perturbing the radius by the noise before the smoothstep is the whole
+         trick: a clean radial falloff reads as a vignette filter laid on top,
+         whereas a noise-bent one reads as shadow belonging to the fluid.
+
+         SHADE is the darkest cluster in the source, which on these gradients
+         is genuinely dark. Mixing it in as hard as a mid-tone would crushes
+         the outer half of the disc and every gradient converges on the same
+         muddy ring, so the falloff starts late and lands soft. */
+      float rim = smoothstep(0.58, 1.14, rad + detail * 0.18);
+      col = mix(col, SHADE, rim * 0.46);
+
+      /* Soft key from the upper left, so the form has a light direction. */
+      col *= 1.0 + 0.10 * smoothstep(1.0, -0.5, uv.x * 1.7 + uv.y * 2.0);
+
+      /* Mixing towards a desaturated violet costs chroma everywhere it
+         reaches. Push saturation back up around the existing luminance so
+         the disc stays iridescent instead of going chalky. */
+      float sLum = dot(col, vec3(0.2126, 0.7152, 0.0722));
+      col = mix(vec3(sLum), col, 1.16);
+      col *= 1.05;
+
+      col = toSRGB(col);
+
+      /* ---------------- Grain ----------------
+         Sampled in CSS pixels, not device pixels, or it vanishes on retina.
+         Two layers: fine per-pixel tooth, plus a coarse mottle that gives
+         the paper its uneven pulp. Static, because paper does not shimmer.
+
+         Scaled by a luminance mask so it bites hardest in the midtones and
+         eases off in the highlights, which is how real grain behaves. */
+
+      vec2 gp = gl_FragCoord.xy / max(uDpr, 1.0);
+
+      float fine   = hash21(gp) - 0.5;
+      float mottle = (hash21(floor(gp / 2.5)) - 0.5) * 0.75;
+
+      float lum  = dot(col, vec3(0.2126, 0.7152, 0.0722));
+      float mask = 1.0 - 0.70 * smoothstep(0.42, 0.98, lum);
+
+      col += (fine * 0.100 + mottle * 0.042) * mask;
+
+      /* Matte finish: pull the very top end down a touch so nothing reads
+         as glossy screen-white. */
+      col = min(col, vec3(0.97));
+
+      gl_FragColor = vec4(col, 1.0);
+    }
+  `;
+
+  /* ======================================================================
+     SETUP
+     ====================================================================== */
+
+  const orb    = document.querySelector('.orb');
+  const canvas = document.querySelector('.orb__canvas');
+
+  if (!orb || !canvas) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /** Last-resort look if WebGL is unavailable. Static, but on-palette. */
+  function fallbackToCSS(reason) {
+    console.warn('[play-orb] WebGL unavailable, using CSS fallback:', reason);
+    canvas.remove();
+    orb.style.background =
+      'radial-gradient(70% 80% at 22% 18%, #75B89A 0%, transparent 58%),' +
+      'radial-gradient(65% 70% at 82% 30%, #20A695 0%, transparent 60%),' +
+      'radial-gradient(75% 75% at 60% 88%, #B6C673 0%, transparent 62%),' +
+      '#5DE2D3';
+  }
+
+  let gl;
+  try {
+    gl = canvas.getContext('webgl', {
+      alpha: false,       // Opaque: the circle is cut by CSS, not by alpha.
+      antialias: false,   // No geometry edges to smooth, it is one quad.
+      depth: false,
+      stencil: false,
+      powerPreference: 'low-power',
+      preserveDrawingBuffer: false
+    });
+  } catch (err) {
+    gl = null;
+  }
+
+  if (!gl) {
+    fallbackToCSS('getContext returned null');
+    return;
+  }
+
+  function compile(type, src) {
+    const sh = gl.createShader(type);
+    gl.shaderSource(sh, src);
+    gl.compileShader(sh);
+    if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+      const log = gl.getShaderInfoLog(sh);
+      gl.deleteShader(sh);
+      throw new Error(
+        (type === gl.VERTEX_SHADER ? 'Vertex' : 'Fragment') + ' shader: ' + log
+      );
+    }
+    return sh;
+  }
+
+  let program, uRes, uTime, uBright, uDpr;
+
+  try {
+    const vs = compile(gl.VERTEX_SHADER, VERT);
+    const fs = compile(gl.FRAGMENT_SHADER, FRAG);
+
+    program = gl.createProgram();
+    gl.attachShader(program, vs);
+    gl.attachShader(program, fs);
+    gl.linkProgram(program);
+
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      throw new Error('Program link: ' + gl.getProgramInfoLog(program));
+    }
+
+    gl.deleteShader(vs);
+    gl.deleteShader(fs);
+    gl.useProgram(program);
+
+    // One full-viewport triangle. Cheaper than a quad and avoids the
+    // diagonal seam two triangles produce in some drivers.
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+
+    const aPos = gl.getAttribLocation(program, 'aPos');
+    gl.enableVertexAttribArray(aPos);
+    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+    uRes    = gl.getUniformLocation(program, 'uResolution');
+    uTime   = gl.getUniformLocation(program, 'uTime');
+    uBright = gl.getUniformLocation(program, 'uBright');
+    uDpr    = gl.getUniformLocation(program, 'uDpr');
+  } catch (err) {
+    fallbackToCSS(err.message);
+    return;
+  }
+
+  /* ======================================================================
+     SIZING
+     ====================================================================== */
+
+  let dpr = 1;
+
+  function resize() {
+    // Cap DPR at 2. Past that the extra fragments are invisible and the
+    // fill cost triples on 3x phones.
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    const rect = canvas.getBoundingClientRect();
+    const w = Math.max(1, Math.round(rect.width  * dpr));
+    const h = Math.max(1, Math.round(rect.height * dpr));
+
+    if (canvas.width === w && canvas.height === h) return false;
+
+    canvas.width = w;
+    canvas.height = h;
+    gl.viewport(0, 0, w, h);
+    return true;
+  }
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(() => { if (resize()) requestFrame(); }).observe(canvas);
+  } else {
+    window.addEventListener('resize', () => { if (resize()) requestFrame(); });
+  }
+
+  /* ======================================================================
+     INTERACTION STATE
+     Two scalars, each eased towards a target. Nothing here touches layout,
+     so no interaction can cause a reflow.
+     ====================================================================== */
+
+  const IDLE = { speed: 1.00, bright: 1.00 };
+  const HOVER = { speed: 1.85, bright: 1.14 };
+
+  let speed  = IDLE.speed,  speedTarget  = IDLE.speed;
+  let bright = IDLE.bright, brightTarget = IDLE.bright;
+
+  let simTime = 3.2;   // Start mid-evolution so frame one is already composed.
+  let lastMs  = 0;
+  let rafId   = 0;
+  let visible = true;
+
+  /** Frame-rate independent exponential smoothing. */
+  function approach(current, target, rate, dt) {
+    return current + (target - current) * (1 - Math.exp(-rate * dt));
+  }
+
+  function setHovered(on) {
+    speedTarget  = on ? HOVER.speed  : IDLE.speed;
+    brightTarget = on ? HOVER.bright : IDLE.bright;
+    requestFrame();
+  }
+
+  orb.addEventListener('pointerenter', () => setHovered(true));
+  orb.addEventListener('pointerleave', () => {
+    setHovered(false);
+    orb.classList.remove('is-pressed');
+  });
+
+  orb.addEventListener('focus', () => setHovered(true));
+  orb.addEventListener('blur',  () => {
+    setHovered(false);
+    orb.classList.remove('is-pressed');
+  });
+
+  // Press. pointerdown/up rather than :active so it survives the pointer
+  // sliding off mid-press, and so keyboard activation gets the same feel.
+  orb.addEventListener('pointerdown', () => orb.classList.add('is-pressed'));
+  window.addEventListener('pointerup',     () => orb.classList.remove('is-pressed'));
+  window.addEventListener('pointercancel', () => orb.classList.remove('is-pressed'));
+
+  orb.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') orb.classList.add('is-pressed');
+  });
+  orb.addEventListener('keyup', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') orb.classList.remove('is-pressed');
+  });
+
+  // Replace with real playback wiring.
+  orb.addEventListener('click', () => {
+    orb.dispatchEvent(new CustomEvent('orb:play', { bubbles: true }));
+  });
+
+  /* ======================================================================
+     RENDER LOOP
+     ====================================================================== */
+
+  function draw() {
+    gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.uniform1f(uTime, simTime);
+    gl.uniform1f(uBright, bright);
+    gl.uniform1f(uDpr, dpr);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+  }
+
+  function frame(ms) {
+    rafId = 0;
+
+    const dt = lastMs ? Math.min((ms - lastMs) / 1000, 1 / 20) : 1 / 60;
+    lastMs = ms;
+
+    speed  = approach(speed,  speedTarget,  7.0, dt);
+    bright = approach(bright, brightTarget, 9.0, dt);
+
+    if (!reduceMotion.matches) simTime += dt * speed;
+
+    draw();
+
+    // Under reduced motion, stop once the eased scalars have settled.
+    const settled =
+      Math.abs(speed - speedTarget) < 0.001 &&
+      Math.abs(bright - brightTarget) < 0.001;
+
+    if (!reduceMotion.matches || !settled) requestFrame();
+  }
+
+  function requestFrame() {
+    if (!rafId && visible) rafId = requestAnimationFrame(frame);
+  }
+
+  function stop() {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = 0;
+    lastMs = 0;   // Reset so the first frame back does not jump.
+  }
+
+  /* Do not burn GPU on an orb nobody is looking at. */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting;
+      visible ? requestFrame() : stop();
+    }, { threshold: 0 }).observe(orb);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { stop(); }
+    else { lastMs = 0; requestFrame(); }
+  });
+
+  reduceMotion.addEventListener('change', () => { lastMs = 0; requestFrame(); });
+
+  /* Context loss is routine on laptops that switch GPUs. Without this the
+     orb goes permanently black. */
+  canvas.addEventListener('webglcontextlost', (e) => {
+    e.preventDefault();
+    stop();
+  });
+  canvas.addEventListener('webglcontextrestored', () => {
+    fallbackToCSS('context restored, reload for shader');
+  });
+
+  resize();
+  requestFrame();
+})();
+</script>
+
+</body>
+</html>

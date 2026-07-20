@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mez Studios · Design</title>
+<meta name="description" content="A public workbench for Mez Studios design experiments. Live, interactive, built in the open.">
+<meta property="og:title" content="Mez Studios · Design">
+<meta property="og:description" content="A public workbench for design experiments. Live, interactive, built in the open.">
+<meta property="og:type" content="website">
+
+<style>
+/* ==========================================================================
+   MEZ STUDIOS · DESIGN
+   Public index of design experiments.
+
+   Same house rules as the work it links to: light monochrome, greyscale
+   everywhere, colour only ever arriving through a piece's own gradient.
+   ========================================================================== */
+
+:root {
+  --page:  #f9f9f9;
+  --card:  #ffffff;
+  --text:  #0b0b0b;
+  --text2: #2e2e2e;
+  --text3: #8a8a8a;
+  --hairline: rgba(11, 11, 11, 0.08);
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Helvetica Neue", Arial, sans-serif;
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 96px 40px 120px; }
+
+/* ---- masthead ---- */
+
+header { margin-bottom: 84px; }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 34px;
+}
+/* The mark is greyscale here. Colour is reserved for the work itself. */
+.brand svg { width: 30px; height: auto; display: block; }
+.brand span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: clamp(34px, 5.5vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.05;
+}
+.lede {
+  margin: 0;
+  max-width: 560px;
+  font-size: 17px;
+  color: var(--text2);
+}
+
+/* ---- work list ---- */
+
+.section-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 14px;
+  margin-bottom: 34px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+
+.work { display: grid; gap: 26px; }
+
+.item {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  gap: 34px;
+  align-items: center;
+  padding: 26px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 2px rgba(11,11,11,.04), 0 12px 28px -18px rgba(11,11,11,.14);
+  transition: transform 320ms var(--ease-spring), box-shadow 320ms var(--ease-spring);
+}
+.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(11,11,11,.05), 0 22px 46px -20px rgba(11,11,11,.20);
+}
+@media (max-width: 720px) {
+  .item { grid-template-columns: 1fr; gap: 22px; }
+}
+
+/* Live preview. An iframe rather than a screenshot, so the index never drifts
+   out of date with the piece it is pointing at. */
+.item__preview {
+  width: 100%;
+  height: 190px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--page);
+  pointer-events: none;   /* the whole card is the click target */
+  color-scheme: light;
+}
+
+.item__title {
+  margin: 0 0 8px;
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -0.014em;
+}
+.item__desc { margin: 0 0 16px; color: var(--text2); font-size: 14.5px; max-width: 46ch; }
+.item__meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text3);
+}
+
+.sub { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 18px; }
+.sub a { font-size: 13px; color: var(--text2); }
+
+footer {
+  margin-top: 84px;
+  padding-top: 26px;
+  border-top: 1px solid var(--hairline);
+  font-size: 12px;
+  color: var(--text3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+}
+footer a { color: var(--text3); }
+
+@media (prefers-reduced-motion: reduce) {
+  .item { transition-duration: 120ms; }
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <!-- Wings, traced to vector. Greyscale on this page by house rule. -->
+      <svg viewBox="0 0 512 363" fill="#0b0b0b" aria-label="Mez Studios">
+        <path d="M45,0L105.89,0A45,45 0 0 1 146.58,25.78L239.69,222.87A45,45 0 0 1 244,242.09L244,316A45,45 0 0 1 199,361L45,361A45,45 0 0 1 0,316L0,45A45,45 0 0 1 45,0Z"/>
+        <path d="M466,0L405.11,0A45,45 0 0 0 364.42,25.78L271.31,222.87A45,45 0 0 0 267,242.09L267,316A45,45 0 0 0 312,361L466,361A45,45 0 0 0 511,316L511,45A45,45 0 0 0 466,0Z"/>
+      </svg>
+      <span>Mez Studios · Design</span>
+    </div>
+
+    <h1>A public workbench.</h1>
+    <p class="lede">Design experiments from Mez Studios, built in the open.
+       Everything here is live and interactive. None of it is a screenshot.</p>
+  </header>
+
+  <div class="section-label">
+    <span>Work</span>
+    <span>2026</span>
+  </div>
+
+  <div class="work">
+
+    <a class="item" href="/play-orb/">
+      <iframe class="item__preview" src="/play-orb/orbs/MZ-G13.html?bare"
+              title="Live gradient orb" loading="lazy" scrolling="no"></iframe>
+      <div>
+        <h2 class="item__title">Play Orb · expression system</h2>
+        <p class="item__desc">One gradient per core, many treatments. A
+           domain-warped mesh gradient rendered in WebGL, expressed as discs,
+           spheres, marks, cards, stacks and bundles. Fifty-three live surfaces
+           on one page, all driven by a single shader.</p>
+        <div class="item__meta">
+          <span class="tag">WebGL</span>
+          <span class="tag">GLSL</span>
+          <span class="tag">Design system</span>
+          <span class="tag">Zero dependencies</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="sub">
+    <a href="/play-orb/compare.html">Gradient comparison board</a>
+    <a href="/play-orb/orbs/MZ-G13.html">Single orb, standalone</a>
+  </div>
+
+  <footer>
+    <span>Mez Studios. Built with Claude Code.</span>
+    <a href="https://github.com/merrick143/mez-studios-design">Source on GitHub</a>
+  </footer>
+
+</div>
+</body>
+</html>
