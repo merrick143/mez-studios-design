@@ -45,6 +45,8 @@ New design-system decisions are made only under `brand-kit/`. The previous Mezco
 
 The ordinary working authority is `merrick143/mez-studios-design` on `main`, path `brand-kit/`, as recorded in `brand-kit/authority/current.json`. The cutover branch and activation records remain provenance, not continuing branch requirements.
 
+The two temporary migration worktrees have been removed. The normal working checkout is the repository root; portable documentation and commands remain repository-relative.
+
 The website repository is a future consumer. It is not part of the design-system authoring environment and must not be changed until the consumer-proof phase names it explicitly.
 
 ## Next task

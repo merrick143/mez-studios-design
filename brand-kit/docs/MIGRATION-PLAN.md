@@ -158,8 +158,10 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Knowledge-portability commit `131435e` validates from a clean remote clone with zero drift.
 - [x] Target migration branch merged to `mez-studios-design/main` and current authority normalised to `main`.
 - [x] Normalised `main` commit `369d961` validates from a clean remote clone with zero drift.
-- [ ] Internal design branch merged through a clean worktree.
-- [ ] Everyday Mezcorp changes classified and protected before switching that checkout.
-- [ ] Old worktrees removed only after verification.
+- [x] Internal archive branch fast-forwarded into local Mezcorp `main` at `df33c67` after its remote recovery branch was pushed.
+- [x] Everyday Mezcorp changes classified, checked for transition overlap and preserved unchanged while that checkout switched to local `main`.
+- [x] Temporary design-system worktrees removed only after branch, remote and ancestry verification.
 
 Typography, foundation tokens, the product-expression suite and consumer proof remain required roadmap outcomes. They are deliberately not migration-branch blockers under `DEC-MIGRATION-SEQUENCE-001`.
+
+The Mezcorp checkout is now on local `main` with its pre-existing 88 visible status entries preserved. That local `main` is 134 commits ahead of `origin/main`; publishing that accumulated history is a separate Mezcorp repository decision and was intentionally not performed as part of the design-system migration.
