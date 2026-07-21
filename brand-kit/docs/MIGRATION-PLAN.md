@@ -157,6 +157,7 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Post-migration foundations, expressions and consumer proof removed from the migration-close gate.
 - [x] Knowledge-portability commit `131435e` validates from a clean remote clone with zero drift.
 - [x] Target migration branch merged to `mez-studios-design/main` and current authority normalised to `main`.
+- [x] Normalised `main` commit `369d961` validates from a clean remote clone with zero drift.
 - [ ] Internal design branch merged through a clean worktree.
 - [ ] Everyday Mezcorp changes classified and protected before switching that checkout.
 - [ ] Old worktrees removed only after verification.

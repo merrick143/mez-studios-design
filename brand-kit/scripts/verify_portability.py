@@ -42,6 +42,7 @@ def main() -> int:
         BRAND_KIT / "llm/tasks/TASK-FND-01-TYPOGRAPHY.json",
         BRAND_KIT / "governance/evidence-paths.json",
         BRAND_KIT / "authority/current.json",
+        BRAND_KIT / "authority/main-normalisation-proof.json",
         BRAND_KIT / "authority/knowledge-portability-proof.json",
         BRAND_KIT / "skills/codex-made-it/SKILL.md",
         BRAND_KIT / "skills/codex-made-it/references/product-disc-contract.md",
@@ -107,6 +108,9 @@ def main() -> int:
             failures.append("current authority must resolve to merrick143/mez-studios-design main:brand-kit")
         if current.get("basisCutoverId") != "CUTOVER-2026-07-21-01" or current.get("productionAuthority") is not True:
             failures.append("current authority must preserve the activated cutover and production authority")
+        proof_path = current.get("mainNormalisationProof")
+        if proof_path != "authority/main-normalisation-proof.json" or not (BRAND_KIT / proof_path).is_file():
+            failures.append("current authority must name the clean-clone main normalisation proof")
 
     active_docs = [
         BRAND_KIT / "START-HERE.md",
