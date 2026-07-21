@@ -5,7 +5,7 @@ This is the organised, non-canonical workspace for turning the current Mez Syste
 It has four jobs:
 
 1. make the real animated Living Core visible;
-2. compare the protected Claude Code palette benchmark with the systemised re-extraction;
+2. preserve the protected Claude Code benchmark and expose why WebP re-extraction is invalid;
 3. generate and review Context Engine candidates without editing canonical files;
 4. show exactly which foundations, product expressions and release gates are stable or unresolved.
 
@@ -16,6 +16,8 @@ This repository is a workbench and future distribution home. It is **not yet can
 The current canonical source remains the Mez Systems pack at commit `84eb5a9` on `codex/mez-gradient-system`. Files under `source-pack/` are an imported snapshot. `source-manifest.json` records their provenance. Candidate generation writes only to the gitignored `workspace/` directory.
 
 The existing Claude Code work at `/play-orb/` is preserved untouched as the protected visual benchmark.
+
+The complete source-PNG library and every approved expression live at `/brand-kit/gradient-library/`. Its generator preserves all 43 supplied IDs, flags duplicate visual sources and keeps product assignment decisions separate from palette extraction.
 
 ## Run locally
 
@@ -51,6 +53,7 @@ brand-kit/
 │   ├── design-system-export/
 │   └── living-core/
 ├── candidates/README.md          candidate contract
+├── gradient-library/             43-ID source library, generator and expression board
 ├── releases/README.md            portable release gates
 ├── scripts/
 │   ├── build_claude_catalogue.py reproducible benchmark adapter

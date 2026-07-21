@@ -428,6 +428,17 @@ class LivingCoreRenderer {
     return state;
   }
 
+  setCore(element, reference) {
+    const state = this.surfaces.get(element);
+    const core = this.cores.get(reference);
+    if (!state) throw new Error("Living-core surface is not mounted");
+    if (!core) throw new Error("Unknown living core: " + reference);
+    state.core = core;
+    state.time = 3.2;
+    this.applySurfaceMode(state);
+    return state;
+  }
+
   applySurfaceMode(state) {
     if (this.isStaticMode() || !this.ready) {
       setStaticSurface(state.element, state.core, state.shape, state.radius, this.staticBase, this.wingsUrl);

@@ -48,6 +48,15 @@ def main() -> int:
         BRAND_KIT / "source-pack/design-system-export/gradients.json",
         BRAND_KIT / "source-pack/design-system-export/mz-core.js",
         BRAND_KIT / "source-pack/design-system-export/assets/wings.svg",
+        BRAND_KIT / "gradient-library/index.html",
+        BRAND_KIT / "gradient-library/app.js",
+        BRAND_KIT / "gradient-library/styles.css",
+        BRAND_KIT / "gradient-library/build_library.py",
+        BRAND_KIT / "gradient-library/verify_library.py",
+        BRAND_KIT / "gradient-library/library-manifest.json",
+        BRAND_KIT / "gradient-library/catalogue.json",
+        BRAND_KIT / "gradient-library/palettes.json",
+        BRAND_KIT / "gradient-library/assignments.json",
     ]
     for path in required:
         if not path.is_file() or path.stat().st_size == 0:
@@ -94,7 +103,7 @@ def main() -> int:
     context_block = re.search(r'<article class="core-family__item core-family__item--empty">(.*?)</article>', html, re.S)
     if not context_block or "data-mz-core" in context_block.group(1):
         failures.append("Context Engine must remain visibly unassigned")
-    for phrase in ("Claude original", "Systemised snapshot", "Exact authority", "Non-canonical workbench"):
+    for phrase in ("Claude original", "Historical systemisation error", "Exact authority", "Non-canonical workbench"):
         if phrase not in html:
             failures.append(f"workbench missing clarity label: {phrase}")
 

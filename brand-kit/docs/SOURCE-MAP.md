@@ -11,7 +11,7 @@
 | Portable releases | `/brand-kit/releases/` | Future immutable distributions after all release gates pass | Only as a named release mirror |
 | Figma | recorded Mez Systems file and gradient library | Human authoring and exact source-gradient reference | No independent token authority |
 
-## Known conflict requiring a human decision
+## Resolved extraction authority
 
 The Claude Code `palettes.json` and the systemised canonical `palettes.json` are not identical.
 
@@ -20,7 +20,9 @@ The Claude Code `palettes.json` and the systemised canonical `palettes.json` are
 - The renderer remains animated in both systems.
 - The difference is colour-anchor data, spatial centroids and cluster shares.
 
-Until a comparison gate is completed, do not overwrite either dataset and do not describe the systemised anchors as a faithful freeze of Claude's original result.
+The source-PNG extraction is authoritative. The WebP re-extraction remains only as historical evidence of an invalid derivation path. Never extract new palette data from a WebP, screenshot or rendered Living Core.
+
+The complete 43-ID research library now lives under `brand-kit/gradient-library/`. Its `source-masters/` PNGs, source hashes, duplicate-ID groups, extraction cache, catalogue and static twins are generated and validated together. Product assignments remain separately governed.
 
 ## Stable imports
 

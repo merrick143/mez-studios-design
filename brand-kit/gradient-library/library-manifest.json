@@ -1,0 +1,498 @@
+{
+  "schemaVersion": "1.0.0",
+  "productionAuthority": false,
+  "sourceRole": "research library pending canonical transfer",
+  "sourceSetSha256": "ddcc929e765f404e16e6da9265b23ddf2c12d3b6b0e2b5c5a0776b2394fc7aad",
+  "sourceCount": 43,
+  "uniqueVisualCount": 33,
+  "ids": [
+    "MZ-G01",
+    "MZ-G02",
+    "MZ-G03",
+    "MZ-G04",
+    "MZ-G05",
+    "MZ-G06",
+    "MZ-G07",
+    "MZ-G08",
+    "MZ-G09",
+    "MZ-G10",
+    "MZ-G11",
+    "MZ-G12",
+    "MZ-G13",
+    "MZ-G14",
+    "MZ-G15",
+    "MZ-G16",
+    "MZ-G17",
+    "MZ-G18",
+    "MZ-G19",
+    "MZ-G20",
+    "MZ-G21",
+    "MZ-G22",
+    "MZ-G23",
+    "MZ-G24",
+    "MZ-G25",
+    "MZ-G26",
+    "MZ-G27",
+    "MZ-G28",
+    "MZ-G29",
+    "MZ-G30",
+    "MZ-G31",
+    "MZ-G32",
+    "MZ-G34",
+    "MZ-G35",
+    "MZ-G39",
+    "MZ-G41",
+    "MZ-G42",
+    "MZ-G43",
+    "MZ-G45",
+    "MZ-G46",
+    "MZ-G48",
+    "MZ-G51",
+    "MZ-G52"
+  ],
+  "missingIdsWithinRange": [
+    "MZ-G33",
+    "MZ-G36",
+    "MZ-G37",
+    "MZ-G38",
+    "MZ-G40",
+    "MZ-G44",
+    "MZ-G47",
+    "MZ-G49",
+    "MZ-G50"
+  ],
+  "duplicateIdGroups": [
+    [
+      "MZ-G02",
+      "MZ-G24"
+    ],
+    [
+      "MZ-G03",
+      "MZ-G25"
+    ],
+    [
+      "MZ-G04",
+      "MZ-G26"
+    ],
+    [
+      "MZ-G05",
+      "MZ-G27"
+    ],
+    [
+      "MZ-G06",
+      "MZ-G28"
+    ],
+    [
+      "MZ-G07",
+      "MZ-G29"
+    ],
+    [
+      "MZ-G08",
+      "MZ-G30"
+    ],
+    [
+      "MZ-G09",
+      "MZ-G31"
+    ],
+    [
+      "MZ-G10",
+      "MZ-G32"
+    ],
+    [
+      "MZ-G21",
+      "MZ-G23"
+    ]
+  ],
+  "qualityExceptions": [
+    "MZ-G01"
+  ],
+  "sources": [
+    {
+      "id": "MZ-G01",
+      "file": "MZ-G01.png",
+      "sha256": "5adf5a0c0218e6bfc8569360bc941fac7076b7cd1ece73b03a545a563bb9a71a",
+      "width": 250,
+      "height": 250,
+      "mode": "RGBA",
+      "quality": "below-minimum"
+    },
+    {
+      "id": "MZ-G02",
+      "file": "MZ-G02.png",
+      "sha256": "ab10b55ac6a284dc377b16fdda3f257ddb8168a1344a59071b12b6840b88a7cd",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G03",
+      "file": "MZ-G03.png",
+      "sha256": "0b80e59bb800305044a95ccffaf92bb3623191388134b6d7d8768db130cfd292",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G04",
+      "file": "MZ-G04.png",
+      "sha256": "c2e2d3ec1332f589cfce6d05237f63257812d22846c11dfc6657caacf1172ce6",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G05",
+      "file": "MZ-G05.png",
+      "sha256": "d61acc91c4f7fb67151f3ecdb3e5a84568d10d9ab931259e892149e3f145a252",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G06",
+      "file": "MZ-G06.png",
+      "sha256": "6ebddb23fd212685d3b93fbb37808a41bcc233d498dc170a294010f6f48aef22",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G07",
+      "file": "MZ-G07.png",
+      "sha256": "6a7e6410ce7e2112681f77092be669a49eec4cce7b1a5116260f8fc5c3b047cd",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G08",
+      "file": "MZ-G08.png",
+      "sha256": "2cd2f2025d68f81cbacc92a0d05125304db491067e9dda4ee4b8b474bdebcbe5",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G09",
+      "file": "MZ-G09.png",
+      "sha256": "e0d97cf1672e2a75011780f42fd23bf4dd089f18c8f7b9a74c0a77abe1a2a200",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G10",
+      "file": "MZ-G10.png",
+      "sha256": "7295d1b85d86e8ab81dc76cc0ab3b0a3404d8f27687f643741b636d8679d0178",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G11",
+      "file": "MZ-G11.png",
+      "sha256": "aae45aad3835fbe442a03b0103e63f9c846e3c794eda40df3b0a1bcb05c25d97",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G12",
+      "file": "MZ-G12.png",
+      "sha256": "8f0b39f124c3679e32066e7356b5741abd3eb642811d595bb5ee73163a7584ab",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G13",
+      "file": "MZ-G13.png",
+      "sha256": "7932fb83949329ad562a13010221d2c0e6cad9f24312993acf781935547a946e",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G14",
+      "file": "MZ-G14.png",
+      "sha256": "35c2186a1b4d1e5f31a0796fcc7f8c2116afb4c7f8b88385934a745f31d3abfc",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G15",
+      "file": "MZ-G15.png",
+      "sha256": "663fa616cf8869ae3f0ad3438c31a88eb16729b2db023569ce151a676d9e25a4",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G16",
+      "file": "MZ-G16.png",
+      "sha256": "7feed76478de821e2648bc76e204c164bcfc97b7390beee575daf991c3f75be9",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G17",
+      "file": "MZ-G17.png",
+      "sha256": "54287f55be02073bd3e32b717511c52f94672cb6e49879af85ef2acf58dcbfef",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G18",
+      "file": "MZ-G18.png",
+      "sha256": "9f325de802847d92ae18101dedb89fd7db8647b2d5a2c4bd7fc636693488ff3a",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G19",
+      "file": "MZ-G19.png",
+      "sha256": "80f0af2ddd398983280e35f53c01a65548aa03970872b9d66303cccabc6e14a8",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G20",
+      "file": "MZ-G20.png",
+      "sha256": "c8d3837616d46e4b15d2655ee75907e0cd25b751b2bb8cc8c84acd54bc6facf6",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G21",
+      "file": "MZ-G21.png",
+      "sha256": "99d00fd1f04b02134d44b6ae1ab8dfa21c57c1269a8671645da4c82c6b3dc91d",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G22",
+      "file": "MZ-G22.png",
+      "sha256": "7d75dfb6bc66704420b22a22fe82881b8005869dedd70d92f8d4162bb95188a6",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G23",
+      "file": "MZ-G23.png",
+      "sha256": "99d00fd1f04b02134d44b6ae1ab8dfa21c57c1269a8671645da4c82c6b3dc91d",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G24",
+      "file": "MZ-G24.png",
+      "sha256": "ab10b55ac6a284dc377b16fdda3f257ddb8168a1344a59071b12b6840b88a7cd",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G25",
+      "file": "MZ-G25.png",
+      "sha256": "0b80e59bb800305044a95ccffaf92bb3623191388134b6d7d8768db130cfd292",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G26",
+      "file": "MZ-G26.png",
+      "sha256": "c2e2d3ec1332f589cfce6d05237f63257812d22846c11dfc6657caacf1172ce6",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G27",
+      "file": "MZ-G27.png",
+      "sha256": "d61acc91c4f7fb67151f3ecdb3e5a84568d10d9ab931259e892149e3f145a252",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G28",
+      "file": "MZ-G28.png",
+      "sha256": "6ebddb23fd212685d3b93fbb37808a41bcc233d498dc170a294010f6f48aef22",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G29",
+      "file": "MZ-G29.png",
+      "sha256": "6a7e6410ce7e2112681f77092be669a49eec4cce7b1a5116260f8fc5c3b047cd",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G30",
+      "file": "MZ-G30.png",
+      "sha256": "2cd2f2025d68f81cbacc92a0d05125304db491067e9dda4ee4b8b474bdebcbe5",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G31",
+      "file": "MZ-G31.png",
+      "sha256": "e0d97cf1672e2a75011780f42fd23bf4dd089f18c8f7b9a74c0a77abe1a2a200",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G32",
+      "file": "MZ-G32.png",
+      "sha256": "7295d1b85d86e8ab81dc76cc0ab3b0a3404d8f27687f643741b636d8679d0178",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G34",
+      "file": "MZ-G34.png",
+      "sha256": "cd2616313cea7389797c2944f1d8072a2c1a0928eb6267ed8e082ab6ae57caf8",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G35",
+      "file": "MZ-G35.png",
+      "sha256": "2be6de240f55b5e12dc9bc289e7602ce325cb87221a7d1cbde1579a83a9227e5",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G39",
+      "file": "MZ-G39.png",
+      "sha256": "a69a2b9b065fba5029a780c2a10c42a6966eeb5eb1173d69beab2aadd95e4ba9",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G41",
+      "file": "MZ-G41.png",
+      "sha256": "dbc3ab010b43d3e6375b601b3a6a685de0507aba9feb09b4caacdc8d5e0d1100",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G42",
+      "file": "MZ-G42.png",
+      "sha256": "39a0ee19748f2b707b88c1845744ac466af748967767fd0bace09f319c5ddefc",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G43",
+      "file": "MZ-G43.png",
+      "sha256": "b672c3fccc2e88b9dc581da9379e3ed50d96b8b47e68766b3d214f92d3779231",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G45",
+      "file": "MZ-G45.png",
+      "sha256": "bbe71d541f4136f30ce0c0ab8bddd7130716dfd381af86b0893f465fac2cbd7b",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G46",
+      "file": "MZ-G46.png",
+      "sha256": "87048d4df7d6e5788e34b07bf3efa0bf01d9577fd04d992bd0ce5de75c9036ee",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G48",
+      "file": "MZ-G48.png",
+      "sha256": "5343cc761dc41c3d01cec36d0aa7325993308135ef16ddbdf7bf8432304857c6",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G51",
+      "file": "MZ-G51.png",
+      "sha256": "e091860a74d6387cd8c7c6050394f5bc200c85ba1ff48bfddca7906caa099c72",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    },
+    {
+      "id": "MZ-G52",
+      "file": "MZ-G52.png",
+      "sha256": "e647c3b998569906a6cb3242aaa93b8196dc93e6c11223b39a31e5e4ce22b4f4",
+      "width": 1000,
+      "height": 1000,
+      "mode": "RGBA",
+      "quality": "pass"
+    }
+  ]
+}

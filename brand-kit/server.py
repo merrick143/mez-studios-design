@@ -21,6 +21,7 @@ HERE = Path(__file__).resolve().parent
 REPO_ROOT = HERE.parent
 WORKSPACE = HERE / "workspace"
 CANDIDATES = WORKSPACE / "candidates"
+LIBRARY_DECISIONS = WORKSPACE / "library-decisions"
 GENERATOR = HERE / "source-pack" / "living-core" / "candidate.py"
 ID_PATTERN = re.compile(r"^MZ-G\d{2,3}$")
 SLUG_PATTERN = re.compile(r"^[a-z0-9-]+$")
@@ -56,6 +57,12 @@ def list_candidates() -> list[dict]:
     return rows
 
 
+def list_library_decisions() -> list[dict]:
+    if not LIBRARY_DECISIONS.is_dir():
+        return []
+    return [read_json(path) for path in sorted(LIBRARY_DECISIONS.glob("*.json"))]
+
+
 class WorkbenchHandler(SimpleHTTPRequestHandler):
     server_version = "MezBrandKit/1.0"
 
@@ -78,6 +85,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
         if self.path == "/api/candidates":
             self.json_response({"localApi": True, "candidates": list_candidates()})
             return
+        if self.path == "/api/library-decisions":
+            self.json_response({"localApi": True, "decisions": list_library_decisions()})
+            return
         super().do_GET()
 
     def do_POST(self) -> None:
@@ -87,6 +97,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
                 return
             if self.path == "/api/decisions":
                 self.record_decision()
+                return
+            if self.path == "/api/library-decisions":
+                self.record_library_decision()
                 return
             self.json_response({"error": "Unknown endpoint"}, HTTPStatus.NOT_FOUND)
         except (ValueError, json.JSONDecodeError) as error:
@@ -185,6 +198,35 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
             "mutatesCanonicalAuthority": False,
         }
         write_json(directory / "decision.json", decision)
+        self.json_response({"ok": True, "decision": decision})
+
+    def record_library_decision(self) -> None:
+        payload = self.read_request_json()
+        gradient_id = str(payload.get("gradientId", "")).strip().upper()
+        product_context = str(payload.get("productContext", "")).strip().lower()
+        verdict = str(payload.get("verdict", "")).strip().lower()
+        note = str(payload.get("note", "")).strip()
+        if not ID_PATTERN.fullmatch(gradient_id):
+            raise ValueError("Gradient ID must match MZ-G## or MZ-G###")
+        if not SLUG_PATTERN.fullmatch(product_context):
+            raise ValueError("Decision context is invalid")
+        if verdict not in {"select", "edit", "reject"}:
+            raise ValueError("Verdict must be select, edit or reject")
+        manifest = read_json(HERE / "gradient-library" / "library-manifest.json")
+        if gradient_id not in manifest["ids"]:
+            raise ValueError("Gradient does not exist in the source library")
+        decision = {
+            "schemaVersion": "1.0.0",
+            "gradientId": gradient_id,
+            "productContext": product_context,
+            "verdict": verdict,
+            "note": note,
+            "decidedAt": datetime.now(timezone.utc).isoformat(),
+            "productionAuthority": False,
+            "mutatesCanonicalAuthority": False,
+        }
+        LIBRARY_DECISIONS.mkdir(parents=True, exist_ok=True)
+        write_json(LIBRARY_DECISIONS / f"{product_context}--{gradient_id.lower()}.json", decision)
         self.json_response({"ok": True, "decision": decision})
 
 

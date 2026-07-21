@@ -20,16 +20,18 @@ Exit gate: a human can identify where every file came from and which source curr
 
 ## Phase 1: lock the Living Core
 
-- Compare Claude original anchors against the systemised WebP re-extraction for all four products.
-- Judge exact static source, idle animation, motion character and cross-shape coherence.
-- Select one frozen palette dataset or request edits per product.
-- Rebuild from the selected data without drift.
+- Treat the 43 original PNG masters as the only extraction authority.
+- Preserve all supplied IDs, while recording the ten exact duplicate-ID groups and the MZ-G01 source-quality exception.
+- Generate the full palette cache, runtime catalogue and static fallback library from those PNGs.
+- Judge source, idle animation, motion character and cross-shape coherence across the full board.
+- Select or edit product assignments separately; never fork palette data to create a product-specific variant.
+- Rebuild the complete source library without drift.
 - Verify one shared WebGL context, reduced motion, offscreen pause, fallback and white Wings.
 - Lock the candidate ingestion contract and its pinned Python environment.
 
-Human decision: select, edit or reject each palette family. This is the current highest-priority gate.
+Human decision: select, edit or reject product-to-gradient assignments. The source and extraction law no longer require a dataset choice.
 
-Exit gate: one renderer, one frozen core dataset per assigned product, one exact static twin, and no contradictory skill instructions.
+Exit gate: one renderer, a deterministic complete source catalogue, one frozen core dataset per ID, one static twin per ID, approved product assignments, and no contradictory skill instructions.
 
 ## Phase 2: lock foundations
 
@@ -107,7 +109,8 @@ Exit gate: there is one canonical repository, one release line and zero writable
 
 ## Branch-close checklist
 
-- [ ] Claude palette conflict decided.
+- [x] Source-PNG extraction authority resolved.
+- [ ] Complete 43-ID board reviewed and product assignments decided.
 - [ ] Context Engine source and candidate decision complete.
 - [ ] Geist asset and updated typography release complete.
 - [ ] Foundation tokens and responsive tests pass.

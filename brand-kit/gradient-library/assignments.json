@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0",
+  "productionAuthority": false,
+  "purpose": "review-only product assignment plan",
+  "products": [
+    { "slug": "aios", "name": "AI OS", "gradient": "MZ-G13", "state": "locked" },
+    { "slug": "aurora", "name": "Aurora", "gradient": "MZ-G20", "state": "candidate" },
+    { "slug": "prism", "name": "Prism", "gradient": "MZ-G06", "state": "candidate" },
+    { "slug": "forge", "name": "Forge", "gradient": "MZ-G15", "state": "candidate" },
+    { "slug": "context-engine", "name": "Context Engine", "gradient": null, "state": "unassigned" }
+  ]
+}
