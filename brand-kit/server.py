@@ -23,6 +23,7 @@ WORKSPACE = HERE / "workspace"
 CANDIDATES = WORKSPACE / "candidates"
 LIBRARY_DECISIONS = WORKSPACE / "library-decisions"
 FINISH_DECISION = WORKSPACE / "finish-decisions" / "depth-light-01.json"
+PRODUCT_ARCHITECTURE_DECISION = WORKSPACE / "product-architecture" / "product-architecture-gradient-assignment-01.json"
 GENERATOR = HERE / "source-pack" / "living-core" / "candidate.py"
 ID_PATTERN = re.compile(r"^MZ-G\d{2,3}$")
 SLUG_PATTERN = re.compile(r"^[a-z0-9-]+$")
@@ -92,6 +93,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
         if self.path == "/api/finish-decisions":
             self.json_response({"localApi": True, "decision": read_json(FINISH_DECISION) if FINISH_DECISION.is_file() else None})
             return
+        if self.path == "/api/product-architecture-decisions":
+            self.json_response({"localApi": True, "decision": read_json(PRODUCT_ARCHITECTURE_DECISION) if PRODUCT_ARCHITECTURE_DECISION.is_file() else None})
+            return
         super().do_GET()
 
     def do_POST(self) -> None:
@@ -107,6 +111,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
                 return
             if self.path == "/api/finish-decisions":
                 self.record_finish_decision()
+                return
+            if self.path == "/api/product-architecture-decisions":
+                self.record_product_architecture_decision()
                 return
             self.json_response({"error": "Unknown endpoint"}, HTTPStatus.NOT_FOUND)
         except (ValueError, json.JSONDecodeError) as error:
@@ -269,6 +276,57 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
         }
         FINISH_DECISION.parent.mkdir(parents=True, exist_ok=True)
         write_json(FINISH_DECISION, decision)
+        self.json_response({"ok": True, "decision": decision})
+
+    def record_product_architecture_decision(self) -> None:
+        payload = self.read_request_json()
+        manifest = read_json(HERE / "product-architecture" / "manifest.json")
+        if payload.get("studyId") != manifest["studyId"]:
+            raise ValueError("Product architecture study ID is invalid")
+        if payload.get("verdict") not in manifest["reviewContract"]["allowedVerdicts"]:
+            raise ValueError("Product architecture verdict must be approve or edit")
+        if payload.get("productionAuthority") is not False or payload.get("mutatesCanonicalAuthority") is not False:
+            raise ValueError("Product architecture review cannot claim canonical authority")
+        if payload.get("finishProfile") != manifest["finishProfile"]:
+            raise ValueError("Product architecture review must use the approved Deep Mineral finish")
+
+        expected_products = {row["productId"]: row for row in manifest["products"]}
+        supplied_products = payload.get("products", [])
+        if len(supplied_products) != len(expected_products):
+            raise ValueError("Product architecture review must include all five products")
+        seen_products: set[str] = set()
+        for product in supplied_products:
+            product_id = str(product.get("productId", ""))
+            if product_id in seen_products or product_id not in expected_products:
+                raise ValueError("Product architecture review contains a duplicate or unknown product")
+            seen_products.add(product_id)
+            source = expected_products[product_id]
+            if product.get("publicName") != source["publicName"] or product.get("slug") != source["slug"]:
+                raise ValueError("Public product names and slugs must match the reviewed roster")
+            allowed_gradients = {option["id"] for option in source["gradientOptions"]}
+            if product.get("gradientId") not in allowed_gradients:
+                raise ValueError(f"Gradient is not a reviewed option for {source['publicName']}")
+            if source["gradientState"] == "locked" and product.get("gradientId") != source["recommendedGradient"]:
+                raise ValueError("The locked AI OS gradient cannot change in this review")
+
+        expected_legacy = {row["legacySlug"]: row for row in manifest["legacyMappings"]}
+        supplied_legacy = payload.get("legacyMappings", [])
+        if len(supplied_legacy) != len(expected_legacy):
+            raise ValueError("Product architecture review must include all historical names")
+        seen_legacy: set[str] = set()
+        for row in supplied_legacy:
+            legacy_slug = str(row.get("legacySlug", ""))
+            if legacy_slug in seen_legacy or legacy_slug not in expected_legacy:
+                raise ValueError("Product architecture review contains a duplicate or unknown historical name")
+            seen_legacy.add(legacy_slug)
+            allowed = {option["id"] for option in expected_legacy[legacy_slug]["options"]}
+            if row.get("disposition") not in allowed:
+                raise ValueError(f"Historical disposition is not valid for {legacy_slug}")
+
+        decision = dict(payload)
+        decision["recordedAt"] = datetime.now(timezone.utc).isoformat()
+        PRODUCT_ARCHITECTURE_DECISION.parent.mkdir(parents=True, exist_ok=True)
+        write_json(PRODUCT_ARCHITECTURE_DECISION, decision)
         self.json_response({"ok": True, "decision": decision})
 
 

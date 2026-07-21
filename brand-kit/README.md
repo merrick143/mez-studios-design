@@ -21,6 +21,8 @@ The complete source-PNG library and every approved expression live at `/brand-ki
 
 `DEC-MIGRATION-SEQUENCE-001` makes canonical cutover the primary programme goal. Before cutover, the internal control plane must approve the five-product roster, stable product IDs, product-gradient assignments and a genuine Context Engine source, then validate a versioned migration snapshot and rollback path. Foundations, the product-expression suite, golden homepage, consumer proof and the production Figma library are post-cutover work in this repository.
 
+The single remaining human gate is now implemented at [`product-architecture/`](product-architecture/). It presents the approved five-product homepage family, durable product IDs, historical Aurora/Forge/Prism disposition and source-backed gradient choices under the approved Deep Mineral finish. Its save endpoint writes only to the ignored `workspace/product-architecture/` directory; it cannot mutate canonical registries.
+
 ## Run locally
 
 Use a Python environment with Pillow and NumPy:
@@ -67,6 +69,7 @@ brand-kit/
 
 - Do not hand-edit imported snapshot files.
 - Do not call Context Engine assigned until a genuine source candidate is selected.
+- Do not treat the product-architecture board as a canonical registry. Its exported decision becomes input to the atomic internal migration update.
 - Do not overwrite the Claude Code play-orb while the palette conflict is unresolved.
 - Do not publish a portable release with the old Inter-only typography claim after `DEC-TYPE-001`.
 - Do not promote this repository to canonical before the migration exit gates pass.

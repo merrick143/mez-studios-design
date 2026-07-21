@@ -6,6 +6,7 @@
   "sections": [
     {"id": "gradient-library", "name": "Complete gradient library", "status": "approved-system", "summary": "All source colours, animation and expressions are approved. 33 unique cores are active; ten duplicate IDs remain compatibility aliases."},
     {"id": "core", "name": "Living Core", "status": "approved-research-finish", "summary": "Deep Mineral is the selected finish. MZ-G01 is accepted; source palettes and product assignments are unchanged."},
+    {"id": "product-architecture", "name": "Product architecture and gradient assignment", "status": "ready-for-human-review", "summary": "The five-product roster, stable IDs, legacy-name dispositions and source-backed gradient choices are ready as the only remaining pre-cutover creative gate."},
     {"id": "foundations", "name": "Foundations", "status": "partial", "summary": "Typography and controls have approved direction; implementation and broader surface tokens remain."},
     {"id": "expressions", "name": "Product expressions", "status": "planned", "summary": "Disc, sphere, card, Wings, collection and channel plates must be locked."},
     {"id": "context", "name": "Context Engine", "status": "awaiting-source", "summary": "Candidate workflow ready; genuine source gradient required."},
