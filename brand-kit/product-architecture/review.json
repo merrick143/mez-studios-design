@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-PRODUCT-ARCHITECTURE-GRADIENT-ASSIGNMENT-01",
+  "exportedAt": "2026-07-21T13:21:00+10:00",
+  "complete": true,
+  "verdict": "approve",
+  "productionAuthority": false,
+  "mutatesCanonicalAuthority": false,
+  "sourceExpressionApproved": true,
+  "finishProfile": "deep",
+  "namingPolicy": "literal-product-names-only",
+  "historicalNames": [],
+  "products": [
+    {"productId": "mz.systems.product.aios", "slug": "aios", "publicName": "AI OS", "gradientId": "MZ-G13", "assignmentState": "locked"},
+    {"productId": "mz.systems.product.context-engine", "slug": "context-engine", "publicName": "Context Engine", "gradientId": "MZ-G12", "assignmentState": "approved-for-migration"},
+    {"productId": "mz.systems.product.ai-ads-system", "slug": "ai-ads-system", "publicName": "AI Ads System", "gradientId": "MZ-G06", "assignmentState": "approved-for-migration"},
+    {"productId": "mz.systems.product.claude-code-os", "slug": "claude-code-os", "publicName": "Claude Code OS", "gradientId": "MZ-G15", "assignmentState": "approved-for-migration"},
+    {"productId": "mz.systems.product.organic-content-os", "slug": "organic-content-os", "publicName": "Organic Content OS", "gradientId": "MZ-G20", "assignmentState": "approved-for-migration"}
+  ],
+  "overallNote": "Remove the historical product names entirely. Use literal product names. Select MZ-G12 for Context Engine, swap MZ-G06 to AI Ads System and MZ-G20 to Organic Content OS, retain MZ-G13 for AI OS and MZ-G15 for Claude Code OS.",
+  "approvedBy": "Olli",
+  "approvedAt": "2026-07-21",
+  "approvalEvidence": "Explicit user instruction in the active Codex task.",
+  "nextAction": "Record DEC-PRODUCT-ARCHITECTURE-001 and build the versioned migration identity kernel."
+}

@@ -40,10 +40,10 @@ This phase now precedes the broader foundation and experience build under `DEC-M
 
 ### Close the identity kernel
 
-- Resolve the historical four-product roster against the approved five-product homepage family.
-- Assign stable product IDs, public names and lifecycle states.
-- Approve or change every retained product-to-gradient assignment.
-- Supply and select a genuine Context Engine source gradient.
+- Preserve the historical four-product snapshot as evidence only. **Complete.**
+- Assign stable product IDs, literal public names and lifecycle states. **Complete.**
+- Approve every product-to-gradient assignment. **Complete: MZ-G13/G12/G06/G15/G20.**
+- Select a genuine Context Engine source gradient. **Complete: MZ-G12.**
 - Keep the complete source library, alias policy and Deep Mineral finish unchanged unless explicitly reopened.
 
 ### Build the minimum canonical engine
@@ -139,11 +139,11 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 
 - [x] Source-PNG extraction authority resolved.
 - [x] Living Core depth-and-light finish selected without changing source palettes.
-- [x] Standalone recovery branch pushed at `8b5a262`.
-- [x] Internal programme ledger reconciliation pushed through `50c3b90`.
-- [ ] Complete 43-ID board reviewed and product assignments decided.
-- [ ] Context Engine source and candidate decision complete.
-- [ ] Canonical roster, stable product IDs and lifecycle states approved.
+- [x] Standalone recovery branch pushed and recoverable.
+- [x] Internal programme ledger recovery branch pushed and recoverable.
+- [x] Complete 43-ID board reviewed and product assignments decided.
+- [x] Context Engine source and candidate decision complete.
+- [x] Canonical roster, stable product IDs and lifecycle states approved.
 - [ ] Migration snapshot validates from a clean clone.
 - [ ] Canonical authority cut over atomically.
 - [ ] Geist asset and updated typography release complete.

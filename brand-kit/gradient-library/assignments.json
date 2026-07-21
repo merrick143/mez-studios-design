@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0.0",
   "productionAuthority": false,
-  "purpose": "review-only product assignment plan",
+  "purpose": "approved product assignment input for the versioned migration identity kernel",
   "products": [
     { "slug": "aios", "name": "AI OS", "gradient": "MZ-G13", "state": "locked" },
-    { "slug": "aurora", "name": "Aurora", "gradient": "MZ-G20", "state": "candidate" },
-    { "slug": "prism", "name": "Prism", "gradient": "MZ-G06", "state": "candidate" },
-    { "slug": "forge", "name": "Forge", "gradient": "MZ-G15", "state": "candidate" },
-    { "slug": "context-engine", "name": "Context Engine", "gradient": null, "state": "unassigned" }
+    { "slug": "context-engine", "name": "Context Engine", "gradient": "MZ-G12", "state": "approved-for-migration" },
+    { "slug": "ai-ads-system", "name": "AI Ads System", "gradient": "MZ-G06", "state": "approved-for-migration" },
+    { "slug": "claude-code-os", "name": "Claude Code OS", "gradient": "MZ-G15", "state": "approved-for-migration" },
+    { "slug": "organic-content-os", "name": "Organic Content OS", "gradient": "MZ-G20", "state": "approved-for-migration" }
   ]
 }

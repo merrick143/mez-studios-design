@@ -5,11 +5,11 @@
   "canonicalRepositoryTransferred": false,
   "sections": [
     {"id": "gradient-library", "name": "Complete gradient library", "status": "approved-system", "summary": "All source colours, animation and expressions are approved. 33 unique cores are active; ten duplicate IDs remain compatibility aliases."},
-    {"id": "core", "name": "Living Core", "status": "approved-research-finish", "summary": "Deep Mineral is the selected finish. MZ-G01 is accepted; source palettes and product assignments are unchanged."},
-    {"id": "product-architecture", "name": "Product architecture and gradient assignment", "status": "ready-for-human-review", "summary": "The five-product roster, stable IDs, legacy-name dispositions and source-backed gradient choices are ready as the only remaining pre-cutover creative gate."},
+    {"id": "core", "name": "Living Core", "status": "approved-research-finish", "summary": "Deep Mineral is the selected finish. Product assignments are approved migration input; source palettes remain unchanged."},
+    {"id": "product-architecture", "name": "Product architecture and gradient assignment", "status": "approved-migration-input", "summary": "The literal five-product roster, stable IDs and MZ-G13/G12/G06/G15/G20 assignments are approved. No historical product aliases remain."},
     {"id": "foundations", "name": "Foundations", "status": "partial", "summary": "Typography and controls have approved direction; implementation and broader surface tokens remain."},
     {"id": "expressions", "name": "Product expressions", "status": "planned", "summary": "Disc, sphere, card, Wings, collection and channel plates must be locked."},
-    {"id": "context", "name": "Context Engine", "status": "awaiting-source", "summary": "Candidate workflow ready; genuine source gradient required."},
+    {"id": "context", "name": "Context Engine", "status": "source-selected", "summary": "MZ-G12 is the approved source-backed Context Engine gradient for the migration identity kernel."},
     {"id": "release", "name": "Portable release", "status": "post-cutover", "summary": "Foundation-complete release and consumer proof now follow canonical cutover."},
     {"id": "migration", "name": "Repository migration", "status": "primary-goal", "summary": "Close product architecture and the minimum canonical engine, then transfer authority before broad foundation and homepage construction."}
   ]

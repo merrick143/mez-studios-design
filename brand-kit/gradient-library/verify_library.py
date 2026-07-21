@@ -60,9 +60,16 @@ def main() -> int:
                 if list(image.size) != [row["width"], row["height"]]:
                     failures.append(f"source dimensions drift: {row['id']}")
 
-    context = next((row for row in assignments["products"] if row["slug"] == "context-engine"), None)
-    if not context or context["gradient"] is not None or context["state"] != "unassigned":
-        failures.append("Context Engine must remain explicitly unassigned")
+    expected_assignments = {
+        "aios": ("AI OS", "MZ-G13", "locked"),
+        "context-engine": ("Context Engine", "MZ-G12", "approved-for-migration"),
+        "ai-ads-system": ("AI Ads System", "MZ-G06", "approved-for-migration"),
+        "claude-code-os": ("Claude Code OS", "MZ-G15", "approved-for-migration"),
+        "organic-content-os": ("Organic Content OS", "MZ-G20", "approved-for-migration"),
+    }
+    actual_assignments = {row["slug"]: (row["name"], row["gradient"], row["state"]) for row in assignments["products"]}
+    if actual_assignments != expected_assignments:
+        failures.append(f"approved migration assignments drift: {actual_assignments}")
     if assignments.get("productionAuthority") is not False:
         failures.append("assignment plan must deny production authority")
     if approval.get("status") != "approved-research-system":
@@ -92,7 +99,7 @@ def main() -> int:
     print("- 43 IDs / 33 unique source PNGs / 10 alias groups")
     print("- every source hash, palette, runtime core and static twin is present")
     print("- five approved expressions use one switchable shared renderer")
-    print("- assignments and local decisions remain non-canonical")
+    print("- approved product assignments remain non-canonical migration input")
     return 0
 
 

@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "studyId": "MEZ-PRODUCT-ARCHITECTURE-GRADIENT-ASSIGNMENT-01",
   "title": "Mez product architecture and gradient assignment 01",
-  "status": "ready-for-human-review",
+  "status": "human-review-complete-approved",
   "productionAuthority": false,
   "mutatesCanonicalAuthority": false,
   "finishProfile": "deep",
   "finishDecision": "DEC-LIVING-CORE-FINISH-001",
   "migrationDecision": "DEC-MIGRATION-SEQUENCE-001",
-  "purpose": "Resolve the five-product public family, durable product IDs, historical product-name disposition and source-backed Living Core assignments before canonical cutover.",
-  "recommendation": {
-    "legacyPolicy": "Retire Aurora and Forge as public names but retain them as migration aliases. Retire Prism without mapping it to Organic Content OS because the product function changed.",
-    "assignmentPolicy": "Preserve approved continuity where it is strong, keep AI OS locked and give Context Engine a visually distinct mineral core.",
-    "contextEngine": "MZ-G01"
-  },
+  "approvedDecision": "DEC-PRODUCT-ARCHITECTURE-001",
+  "reviewRecord": "review.json",
+  "purpose": "Freeze the literal five-product family, durable product IDs and source-backed Living Core assignments as approved input to canonical cutover.",
+  "namingPolicy": "Use literal public product names. Aurora, Forge and Prism are not product names, aliases or active migration keys.",
   "products": [
     {
       "productId": "mz.systems.product.aios",
@@ -22,12 +20,9 @@
       "function": "AI Operating System",
       "availability": "live",
       "summary": "One system your whole business runs on.",
-      "historicalSource": "AI OS",
       "gradientState": "locked",
-      "recommendedGradient": "MZ-G13",
-      "gradientOptions": [
-        {"id": "MZ-G13", "label": "Locked authority", "reason": "Approved AI OS identity and existing production assignment."}
-      ]
+      "gradientId": "MZ-G13",
+      "selectionReason": "Existing locked AI OS identity."
     },
     {
       "productId": "mz.systems.product.context-engine",
@@ -36,16 +31,9 @@
       "function": "Business context system",
       "availability": "coming-soon",
       "summary": "Turns the business into context AI can actually use.",
-      "historicalSource": null,
-      "gradientState": "unassigned",
-      "recommendedGradient": "MZ-G01",
-      "gradientOptions": [
-        {"id": "MZ-G01", "label": "Recommended · mineral", "reason": "Graphite, white and midnight blue make the foundational context layer distinct from every execution product."},
-        {"id": "MZ-G17", "label": "Alternative · signal", "reason": "Near-black cyan field with a restrained technical signal."},
-        {"id": "MZ-G43", "label": "Alternative · archive", "reason": "Dark gold and cyan suggest accumulated knowledge without copying AI OS."},
-        {"id": "MZ-G48", "label": "Alternative · connective", "reason": "Green, cyan and a small magenta accent read as linked living context."},
-        {"id": "MZ-G52", "label": "Alternative · human", "reason": "Warm multicolour field gives context a more human and editorial character."}
-      ]
+      "gradientState": "approved-for-migration",
+      "gradientId": "MZ-G12",
+      "selectionReason": "Selected by Olli from the complete source-backed gradient library."
     },
     {
       "productId": "mz.systems.product.ai-ads-system",
@@ -54,14 +42,9 @@
       "function": "Advertising operating system",
       "availability": "coming-soon",
       "summary": "Build, launch and improve advertising as a repeatable system.",
-      "historicalSource": "Aurora",
-      "gradientState": "provisional",
-      "recommendedGradient": "MZ-G20",
-      "gradientOptions": [
-        {"id": "MZ-G20", "label": "Recommended · continuity", "reason": "The existing Aurora bridge already owns a warm, high-energy advertising territory."},
-        {"id": "MZ-G19", "label": "Alternative · performance", "reason": "Hot orange and yellow feel more commercial and performance-led."},
-        {"id": "MZ-G34", "label": "Alternative · campaign", "reason": "Red-orange with cooler edges feels bolder and more campaign-like."}
-      ]
+      "gradientState": "approved-for-migration",
+      "gradientId": "MZ-G06",
+      "selectionReason": "Selected in the approved product-family reassignment."
     },
     {
       "productId": "mz.systems.product.claude-code-os",
@@ -70,14 +53,9 @@
       "function": "Software-work operating system",
       "availability": "coming-soon",
       "summary": "Repeatable software work for people building with Claude Code.",
-      "historicalSource": "Forge",
-      "gradientState": "provisional",
-      "recommendedGradient": "MZ-G15",
-      "gradientOptions": [
-        {"id": "MZ-G15", "label": "Recommended · continuity", "reason": "The existing Forge bridge is technical, alive and already visually differentiated."},
-        {"id": "MZ-G16", "label": "Alternative · focused", "reason": "A tighter teal field feels calmer and more utility-led."},
-        {"id": "MZ-G48", "label": "Alternative · agentic", "reason": "Dense green and cyan with a small warm accent feel active without becoming neon."}
-      ]
+      "gradientState": "approved-for-migration",
+      "gradientId": "MZ-G15",
+      "selectionReason": "Existing reviewed assignment retained."
     },
     {
       "productId": "mz.systems.product.organic-content-os",
@@ -86,53 +64,15 @@
       "function": "Organic content operating system",
       "availability": "coming-soon",
       "summary": "Turn ideas, proof and taste into a repeatable content operation.",
-      "historicalSource": null,
-      "gradientState": "provisional",
-      "recommendedGradient": "MZ-G06",
-      "gradientOptions": [
-        {"id": "MZ-G06", "label": "Recommended · reviewed", "reason": "The reviewed hero used this expressive violet and cyan core successfully, without inheriting Prism as a product."},
-        {"id": "MZ-G42", "label": "Alternative · expressive", "reason": "A darker magenta-led field gives content a more editorial and creator-native territory."},
-        {"id": "MZ-G52", "label": "Alternative · broad", "reason": "Warm pink, red and yellow provide the widest expressive range in the family."}
-      ]
-    }
-  ],
-  "legacyMappings": [
-    {
-      "legacySlug": "aurora",
-      "legacyName": "Aurora",
-      "recommendedDisposition": "alias-to-ai-ads-system",
-      "options": [
-        {"id": "alias-to-ai-ads-system", "label": "Retire publicly · alias to AI Ads System"},
-        {"id": "retain-public-name", "label": "Keep Aurora as the public name"},
-        {"id": "retire-no-successor", "label": "Retire without a successor"}
-      ]
-    },
-    {
-      "legacySlug": "forge",
-      "legacyName": "Forge",
-      "recommendedDisposition": "alias-to-claude-code-os",
-      "options": [
-        {"id": "alias-to-claude-code-os", "label": "Retire publicly · alias to Claude Code OS"},
-        {"id": "retain-public-name", "label": "Keep Forge as the public name"},
-        {"id": "retire-no-successor", "label": "Retire without a successor"}
-      ]
-    },
-    {
-      "legacySlug": "prism",
-      "legacyName": "Prism",
-      "recommendedDisposition": "retire-no-successor",
-      "options": [
-        {"id": "retire-no-successor", "label": "Retire · no direct successor"},
-        {"id": "alias-to-organic-content-os", "label": "Alias to Organic Content OS"},
-        {"id": "retain-public-name", "label": "Keep Prism as the public name"}
-      ]
+      "gradientState": "approved-for-migration",
+      "gradientId": "MZ-G20",
+      "selectionReason": "Selected in the approved product-family reassignment."
     }
   ],
   "reviewContract": {
     "requiredProductCount": 5,
-    "requiredLegacyMappingCount": 3,
-    "allowedVerdicts": ["approve", "edit"],
-    "decisionPath": "brand-kit/workspace/product-architecture/product-architecture-gradient-assignment-01.json",
-    "promotionRule": "The exported review is evidence only. Canonical products and gradients update atomically in the internal control plane after review."
+    "requiredHistoricalNameCount": 0,
+    "verdict": "approve",
+    "promotionRule": "Record the approved decision in the internal control plane, then update products and gradient assignments together inside the versioned migration snapshot."
   }
 }

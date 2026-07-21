@@ -108,6 +108,8 @@ h1 { max-width: 900px; margin: 0; font-size: clamp(58px, 8vw, 112px); line-heigh
 .core-family { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
 .core-family__item { min-width: 0; }
 .core-family__item > .living-core, .empty-core { width: 100%; aspect-ratio: 1; }
+.static-family-core { position: relative; width: 100%; aspect-ratio: 1; overflow: hidden; border-radius: 50%; isolation: isolate; }
+.static-family-core__source { width: 100%; height: 100%; object-fit: cover; }
 .core-family__item p { margin: 14px 0 2px; font-weight: 650; }
 .core-family__item span { color: var(--muted); font-size: 11px; }
 .empty-core { display: grid; place-items: center; border: 1px dashed var(--line-strong); border-radius: 50%; background: transparent; }

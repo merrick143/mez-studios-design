@@ -32,10 +32,13 @@ The complete 43-ID research library now lives under `brand-kit/gradient-library/
 - Current product roster and assignment states.
 - Deterministic candidate generator and extraction constants.
 
-## Unresolved imports
+## Remaining unresolved imports
 
 - Geist display font asset is not present locally.
 - Current portable release still describes Inter-only typography and therefore predates `DEC-TYPE-001`.
-- Public homepage roster and canonical four-product roster still conflict.
-- Context Engine has no source gradient or assignment.
-- Aurora, Prism and Forge core assignments remain candidates.
+
+## Resolved product architecture
+
+- The historical four-product snapshot remains preserved under `source-pack/`; it is no longer the active migration roster.
+- Context Engine is approved for MZ-G12 in the migration identity kernel.
+- The literal five-product roster and MZ-G13/G12/G06/G15/G20 assignments are recorded in `product-architecture/` and `gradient-library/assignments.json`.

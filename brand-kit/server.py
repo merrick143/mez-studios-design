@@ -94,7 +94,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
             self.json_response({"localApi": True, "decision": read_json(FINISH_DECISION) if FINISH_DECISION.is_file() else None})
             return
         if self.path == "/api/product-architecture-decisions":
-            self.json_response({"localApi": True, "decision": read_json(PRODUCT_ARCHITECTURE_DECISION) if PRODUCT_ARCHITECTURE_DECISION.is_file() else None})
+            approved_review = HERE / "product-architecture" / "review.json"
+            decision_path = approved_review if approved_review.is_file() else PRODUCT_ARCHITECTURE_DECISION
+            self.json_response({"localApi": True, "decision": read_json(decision_path) if decision_path.is_file() else None})
             return
         super().do_GET()
 
@@ -281,6 +283,8 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
     def record_product_architecture_decision(self) -> None:
         payload = self.read_request_json()
         manifest = read_json(HERE / "product-architecture" / "manifest.json")
+        if manifest.get("status") == "human-review-complete-approved":
+            raise ValueError("Product architecture is already approved; reopen the governance decision before replacing it")
         if payload.get("studyId") != manifest["studyId"]:
             raise ValueError("Product architecture study ID is invalid")
         if payload.get("verdict") not in manifest["reviewContract"]["allowedVerdicts"]:

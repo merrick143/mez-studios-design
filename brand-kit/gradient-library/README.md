@@ -11,7 +11,7 @@ The research system is approved at 33 active visual cores. The ten higher duplic
 3. `palettes.json` — deterministic five-cluster extraction cache.
 4. `catalogue.json` — portable four-anchor Living Core data.
 5. `assets/static/*.webp` — derived runtime fallback and distribution preview.
-6. `assignments.json` — non-canonical product assignment plan.
+6. `assignments.json` — approved, non-canonical product assignment input for migration.
 7. `brand-kit/workspace/library-decisions/` — local select/edit/reject records.
 
 Never extract palette data from WebP, screenshots or rendered Living Cores.

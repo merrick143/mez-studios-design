@@ -6,7 +6,7 @@ It has four jobs:
 
 1. make the real animated Living Core visible;
 2. preserve the protected Claude Code benchmark and expose why WebP re-extraction is invalid;
-3. generate and review Context Engine candidates without editing canonical files;
+3. generate and review future product candidates without editing canonical files;
 4. show exactly which foundations, product expressions and release gates are stable or unresolved.
 
 ## Authority boundary
@@ -21,7 +21,7 @@ The complete source-PNG library and every approved expression live at `/brand-ki
 
 `DEC-MIGRATION-SEQUENCE-001` makes canonical cutover the primary programme goal. Before cutover, the internal control plane must approve the five-product roster, stable product IDs, product-gradient assignments and a genuine Context Engine source, then validate a versioned migration snapshot and rollback path. Foundations, the product-expression suite, golden homepage, consumer proof and the production Figma library are post-cutover work in this repository.
 
-The single remaining human gate is now implemented at [`product-architecture/`](product-architecture/). It presents the approved five-product homepage family, durable product IDs, historical Aurora/Forge/Prism disposition and source-backed gradient choices under the approved Deep Mineral finish. Its save endpoint writes only to the ignored `workspace/product-architecture/` directory; it cannot mutate canonical registries.
+The pre-cutover human gate is complete at [`product-architecture/`](product-architecture/). It records the literal five-product family, durable product IDs and approved MZ-G13/G12/G06/G15/G20 assignments under the Deep Mineral finish. There are no historical public-name aliases in the active architecture. The tracked review is migration input only; it cannot transfer canonical authority by itself.
 
 ## Run locally
 
@@ -68,7 +68,7 @@ brand-kit/
 ## Do not do these things
 
 - Do not hand-edit imported snapshot files.
-- Do not call Context Engine assigned until a genuine source candidate is selected.
+- Do not change an approved product assignment without a new recorded governance decision.
 - Do not treat the product-architecture board as a canonical registry. Its exported decision becomes input to the atomic internal migration update.
 - Do not overwrite the Claude Code play-orb while the palette conflict is unresolved.
 - Do not publish a portable release with the old Inter-only typography claim after `DEC-TYPE-001`.

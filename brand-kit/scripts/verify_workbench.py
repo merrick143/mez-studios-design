@@ -108,13 +108,15 @@ def main() -> int:
             failures.append(f"missing exact static twin: {core_id}")
 
     html = (BRAND_KIT / "index.html").read_text(encoding="utf-8")
-    if html.count("data-mz-core=") != 5:
-        failures.append("workbench must expose one systemized comparison and four family cores")
+    if html.count("data-mz-core=") != 1:
+        failures.append("workbench must expose one systemized comparison core")
     if html.count("data-claude-core=") != 1:
         failures.append("workbench must expose one Claude source-PNG comparison core")
-    context_block = re.search(r'<article class="core-family__item core-family__item--empty">(.*?)</article>', html, re.S)
-    if not context_block or "data-mz-core" in context_block.group(1):
-        failures.append("Context Engine must remain visibly unassigned")
+    if html.count('class="static-family-core"') != 5:
+        failures.append("approved five-product family must use five exact static cores")
+    for phrase in ("AI OS", "Context Engine", "AI Ads System", "Claude Code OS", "Organic Content OS", "MZ-G12"):
+        if phrase not in html:
+            failures.append(f"approved family missing: {phrase}")
     for phrase in ("Claude original", "Historical systemisation error", "Exact authority", "Non-canonical workbench"):
         if phrase not in html:
             failures.append(f"workbench missing clarity label: {phrase}")
@@ -131,8 +133,8 @@ def main() -> int:
 
     print("BRAND KIT WORKBENCH: PASS")
     print("- canonical, Claude benchmark, snapshot and generated layers are explicit")
-    print("- four animated assigned cores and exact static twins are present")
-    print("- Context Engine remains unassigned with an isolated local candidate path")
+    print("- approved five-product family uses exact static twins")
+    print("- future candidate generation remains isolated from approved assignments")
     print("- palette and renderer snapshot hashes match the recorded provenance")
     return 0
 

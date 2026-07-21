@@ -1,71 +1,75 @@
 #!/usr/bin/env python3
-"""Validate the non-canonical product architecture review surface."""
+"""Validate the approved, non-canonical product architecture record."""
 
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 
 HERE = Path(__file__).resolve().parent
 BRAND_KIT = HERE.parent
+EXPECTED_ASSIGNMENTS = {
+    "AI OS": "MZ-G13",
+    "Context Engine": "MZ-G12",
+    "AI Ads System": "MZ-G06",
+    "Claude Code OS": "MZ-G15",
+    "Organic Content OS": "MZ-G20",
+}
 
 
 def main() -> int:
     failures: list[str] = []
-    required = [HERE / name for name in ("manifest.json", "index.html", "styles.css", "app.js")]
+    required = [HERE / name for name in ("manifest.json", "review.json", "index.html", "styles.css", "app.js")]
     for path in required:
         if not path.is_file() or path.stat().st_size == 0:
             failures.append(f"missing or empty: {path.name}")
 
     manifest = json.loads((HERE / "manifest.json").read_text(encoding="utf-8"))
+    review = json.loads((HERE / "review.json").read_text(encoding="utf-8"))
     if manifest.get("studyId") != "MEZ-PRODUCT-ARCHITECTURE-GRADIENT-ASSIGNMENT-01":
         failures.append("unexpected study ID")
+    if manifest.get("status") != "human-review-complete-approved":
+        failures.append("product architecture gate must be approved")
     if manifest.get("productionAuthority") is not False or manifest.get("mutatesCanonicalAuthority") is not False:
-        failures.append("review surface must remain non-canonical")
+        failures.append("approved review must remain non-canonical until cutover")
     if manifest.get("finishProfile") != "deep":
-        failures.append("Deep Mineral must be the review finish")
+        failures.append("Deep Mineral must be the approved finish")
 
     products = manifest.get("products", [])
-    if len(products) != 5:
-        failures.append("the review must contain exactly five products")
-    names = [row.get("publicName") for row in products]
-    expected_names = ["AI OS", "Context Engine", "AI Ads System", "Claude Code OS", "Organic Content OS"]
-    if names != expected_names:
-        failures.append(f"unexpected public roster: {names}")
+    assignments = {row.get("publicName"): row.get("gradientId") for row in products}
+    if assignments != EXPECTED_ASSIGNMENTS:
+        failures.append(f"approved assignment drift: {assignments}")
     ids = [row.get("productId") for row in products]
-    if len(ids) != len(set(ids)) or any(not value for value in ids):
-        failures.append("stable product IDs must be present and unique")
+    if len(products) != 5 or len(ids) != len(set(ids)) or any(not value for value in ids):
+        failures.append("five unique stable product IDs are required")
 
     library = json.loads((BRAND_KIT / "gradient-library/library-manifest.json").read_text(encoding="utf-8"))
     active = set(library.get("activeIds", []))
-    for product in products:
-        options = product.get("gradientOptions", [])
-        option_ids = {option.get("id") for option in options}
-        if product.get("recommendedGradient") not in option_ids:
-            failures.append(f"{product.get('publicName')} recommendation missing from options")
-        if not option_ids <= active:
-            failures.append(f"{product.get('publicName')} uses inactive or unknown gradient IDs")
-    context = next((row for row in products if row.get("publicName") == "Context Engine"), {})
-    if len(context.get("gradientOptions", [])) < 5 or context.get("recommendedGradient") != "MZ-G01":
-        failures.append("Context Engine must show five source-backed choices with MZ-G01 recommended")
+    if not set(assignments.values()) <= active:
+        failures.append("approved assignments must use active source-backed gradients")
 
-    legacy = manifest.get("legacyMappings", [])
-    if [row.get("legacyName") for row in legacy] != ["Aurora", "Forge", "Prism"]:
-        failures.append("legacy mapping set must be Aurora, Forge and Prism")
-    if len(legacy) != 3:
-        failures.append("exactly three legacy mappings are required")
+    if review.get("verdict") != "approve" or review.get("complete") is not True:
+        failures.append("tracked review must be complete and approved")
+    if review.get("productionAuthority") is not False or review.get("sourceExpressionApproved") is not True:
+        failures.append("review must approve the source expressions without claiming cutover authority")
+    if review.get("historicalNames") != [] or manifest.get("namingPolicy") != "Use literal public product names. Aurora, Forge and Prism are not product names, aliases or active migration keys.":
+        failures.append("literal-name-only policy must remove every historical alias")
+    review_assignments = {row.get("publicName"): row.get("gradientId") for row in review.get("products", [])}
+    if review_assignments != EXPECTED_ASSIGNMENTS:
+        failures.append("review and manifest assignments disagree")
 
     html = (HERE / "index.html").read_text(encoding="utf-8")
     app = (HERE / "app.js").read_text(encoding="utf-8")
-    for phrase in ("Five products.", "One clean handover.", "Zero production authority", "One export closes the human gate"):
+    visible_text = html + app
+    for retired in ("Aurora", "Forge", "Prism", "Historical names"):
+        if retired in visible_text:
+            failures.append(f"active review still exposes retired naming: {retired}")
+    for phrase in ("Five products.", "One clean handover.", "Human gate closed", "The identity kernel"):
         if phrase not in html:
-            failures.append(f"review page missing: {phrase}")
+            failures.append(f"approved page missing: {phrase}")
     if "mountLivingCores" not in app or "data-mz-core" not in app:
-        failures.append("review must use the shared Living Core renderer")
-    if "/api/product-architecture-decisions" not in app:
-        failures.append("review must save through the isolated decision endpoint")
+        failures.append("approved record must use the shared Living Core renderer")
 
     if failures:
         print("PRODUCT ARCHITECTURE REVIEW: FAIL")
@@ -74,10 +78,10 @@ def main() -> int:
         return 1
 
     print("PRODUCT ARCHITECTURE REVIEW: PASS")
-    print("- five public products and stable machine IDs")
-    print("- source-backed gradient choices under Deep Mineral")
-    print("- historical Aurora, Forge and Prism disposition")
-    print("- one shared renderer and zero production authority")
+    print("- literal five-product family with zero historical aliases")
+    print("- MZ-G13 / G12 / G06 / G15 / G20 assignments approved")
+    print("- exact sources, Deep Mineral motion and tracked review agree")
+    print("- production authority remains unchanged until cutover")
     return 0
 
 

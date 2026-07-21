@@ -41,15 +41,17 @@
     },
     {
       "id": "BK-CF-003",
-      "title": "Context Engine has no supplied gradient source or canonical assignment",
-      "status": "source-required",
-      "blocks": ["product-expression-suite", "portable-release-1"]
+      "title": "Context Engine required a supplied gradient source and assignment",
+      "status": "resolved-mz-g12-selected",
+      "resolution": "Olli selected source-backed MZ-G12 for Context Engine in MEZ-PRODUCT-ARCHITECTURE-GRADIENT-ASSIGNMENT-01.",
+      "blocks": []
     },
     {
       "id": "BK-CF-004",
-      "title": "Public five-product homepage roster differs from canonical four-product roster",
-      "status": "human-decision-required",
-      "blocks": ["product-architecture-lock", "portable-release-1"]
+      "title": "Public five-product homepage roster differed from the historical four-product snapshot",
+      "status": "resolved-literal-five-product-family",
+      "resolution": "The literal five-product family and stable IDs are approved migration input. The four-product source-pack remains evidence only.",
+      "blocks": []
     }
   ]
 }
