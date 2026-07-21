@@ -19,6 +19,8 @@ The existing Claude Code work at `/play-orb/` is preserved untouched as the prot
 
 The complete source-PNG library and every approved expression live at `/brand-kit/gradient-library/`. Its generator preserves all 43 supplied IDs, flags duplicate visual sources and keeps product assignment decisions separate from palette extraction.
 
+`DEC-MIGRATION-SEQUENCE-001` makes canonical cutover the primary programme goal. Before cutover, the internal control plane must approve the five-product roster, stable product IDs, product-gradient assignments and a genuine Context Engine source, then validate a versioned migration snapshot and rollback path. Foundations, the product-expression suite, golden homepage, consumer proof and the production Figma library are post-cutover work in this repository.
+
 ## Run locally
 
 Use a Python environment with Pillow and NumPy:

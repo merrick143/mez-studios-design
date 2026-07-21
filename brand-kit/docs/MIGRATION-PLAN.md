@@ -34,7 +34,34 @@ Human decision: select, edit or reject the renderer finish, then product-to-grad
 
 Exit gate: one renderer, a deterministic complete source catalogue, one frozen core dataset per ID, one static twin per ID, approved product assignments, and no contradictory skill instructions.
 
-## Phase 2: lock foundations
+## Phase 2: prepare and execute canonical cutover
+
+This phase now precedes the broader foundation and experience build under `DEC-MIGRATION-SEQUENCE-001`.
+
+### Close the identity kernel
+
+- Resolve the historical four-product roster against the approved five-product homepage family.
+- Assign stable product IDs, public names and lifecycle states.
+- Approve or change every retained product-to-gradient assignment.
+- Supply and select a genuine Context Engine source gradient.
+- Keep the complete source library, alias policy and Deep Mineral finish unchanged unless explicitly reopened.
+
+### Build the minimum canonical engine
+
+- Define stable schemas for products, gradients, assets, decisions and releases.
+- Generate one authority manifest with old and new locations and commits.
+- Import the required programme history and decision evidence.
+- Generate `0.1.0-alpha.1` as the migration snapshot.
+- Validate the snapshot from a clean clone.
+- Record rollback to the frozen internal canonical commit.
+- Mark this path as rank-one authority only after every cutover check passes.
+- Convert the Mezcorp pack to a pinned archive or generated consumer reference in the same operation.
+
+Human decision: one product-architecture and gradient-assignment board. No other creative gate is required before cutover.
+
+Exit gate: there is one writable canonical location, one recoverable migration snapshot and no unresolved product or gradient identity conflict.
+
+## Phase 3: lock foundations in the new canonical repository
 
 ### Typography
 
@@ -63,9 +90,9 @@ Exit gate: one renderer, a deterministic complete source catalogue, one frozen c
 
 Human decisions: final display-font proof, surface grammar and primary-button finish.
 
-Exit gate: tokens, examples and responsive tests agree across code and documentation.
+Exit gate: tokens, examples and responsive tests agree across code and documentation in the new canonical repository.
 
-## Phase 3: lock the product-expression suite
+## Phase 4: lock product expressions and the golden homepage
 
 Build one focused plate for each primitive:
 
@@ -77,49 +104,53 @@ Build one focused plate for each primitive:
 6. Collection: five-product stack, catalogue, bundle, upsell and checkout summary.
 7. Channel map: website, email, ads, social, video, documents, icons and OG images.
 
-Context Engine enters through the candidate workflow, not by borrowing an existing core. Supply genuine square source gradients, generate exact-versus-animated plates, then select, edit or reject.
+Then rebuild the revised mobile hero and one complete golden homepage from the approved foundation and expression contracts.
 
-Human decisions: Context Engine core and final expression family.
+Human decisions: final expression family, revised mobile opening, primary-button refinement and golden homepage.
 
-Exit gate: every expression has anatomy, usage law, responsive behaviour, static fallback and named channel rules.
+Exit gate: every expression has anatomy, usage law, responsive behaviour, static fallback and named channel rules, and the homepage proves them together without becoming a new source of truth.
 
-## Phase 4: build portable release candidate 1
+## Phase 5: portable release and consumer proof
 
 - Generate a self-contained release from canonical data.
 - Include tokens, assets, fonts, Wings, exact gradients, renderer, component contracts, channel rules, LLM instructions and validators.
 - Include source hashes, decision IDs, release version and migration notes.
-- Validate in a clean temporary directory with no access to the source repository.
+- Validate in a clean temporary directory with no access to the canonical checkout.
 - Integrate into one real website consumer without copying or forking values.
+- Verify update and rollback from the consumer side.
 
-Exit gate: a human or LLM can build a credible output using only the release, and automated checks detect drift.
+Exit gate: a human or LLM can build a credible output using only the release, automated checks detect drift and one real consumer pins the version successfully.
 
-## Phase 5: transfer canonical ownership
+## Phase 6: publish the Figma companion and expand channels
 
-Only after Phases 1 through 4 pass:
+- Create variables from the approved canonical tokens.
+- Build components and variants from the approved coded contracts.
+- Add Code Connect where it materially improves design-to-code transfer.
+- Mirror approved golden outputs and channel templates.
+- Record the canonical release version inside Figma.
+- Keep exploratory Figma files separate from the published library.
 
-1. Freeze the final internal pack commit.
-2. Generate the first accepted portable release.
-3. Import the relevant history and canonical files into this repository.
-4. Record the new repository as rank-one canonical location.
-5. Change the Mezcorp repository to a pinned consumer/reference.
-6. Update Figma and all skills to point at the new release.
-7. Merge the internal branch through a clean integration worktree.
-8. Push and verify both repositories before deleting any worktree or branch.
+Figma can support bounded mark and static-composition exploration earlier, but the production library waits until foundations and product expressions are stable in the new canonical repository.
 
-Exit gate: there is one canonical repository, one release line and zero writable mirrors claiming equal authority.
+Exit gate: Figma mirrors one named release and cannot silently become an independent token or component authority.
 
 ## Branch-close checklist
 
 - [x] Source-PNG extraction authority resolved.
 - [x] Living Core depth-and-light finish selected without changing source palettes.
+- [x] Standalone recovery branch pushed at `8b5a262`.
+- [ ] Internal programme ledger reconciliation pushed.
 - [ ] Complete 43-ID board reviewed and product assignments decided.
 - [ ] Context Engine source and candidate decision complete.
+- [ ] Canonical roster, stable product IDs and lifecycle states approved.
+- [ ] Migration snapshot validates from a clean clone.
+- [ ] Canonical authority cut over atomically.
 - [ ] Geist asset and updated typography release complete.
 - [ ] Foundation tokens and responsive tests pass.
 - [ ] Product-expression suite approved.
 - [ ] Portable release validates in isolation.
 - [ ] One consumer ingests the release successfully.
-- [ ] New authority model approved.
+- [x] Migration-first authority sequence approved.
 - [ ] Both repositories pushed and recoverable.
 - [ ] Internal design branch merged through a clean worktree.
 - [ ] Old worktrees removed only after verification.
