@@ -13,7 +13,7 @@ It has four jobs:
 
 This repository is a workbench and future distribution home. It is **not yet canonical**.
 
-The current canonical source remains the Mez Systems pack at commit `84eb5a9` on `codex/mez-gradient-system`. Files under `source-pack/` are an imported snapshot. `source-manifest.json` records their provenance. Candidate generation writes only to the gitignored `workspace/` directory.
+The current canonical source remains the Mez Systems pack on `codex/mez-gradient-system`. The standalone `source-pack/` snapshot came from source-system checkpoint `84eb5a9`; the internal migration-first governance reconciliation is pushed through `50c3b90`. `source-manifest.json` records both roles. Candidate generation writes only to the gitignored `workspace/` directory.
 
 The existing Claude Code work at `/play-orb/` is preserved untouched as the protected visual benchmark.
 

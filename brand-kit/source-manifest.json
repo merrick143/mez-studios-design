@@ -7,6 +7,8 @@
     "worktree": "/Users/olivermerrick/mez-design-system-worktree",
     "branch": "codex/mez-gradient-system",
     "commit": "84eb5a9",
+    "commitRole": "source-system snapshot imported by this workbench",
+    "governanceRecoveryCommit": "50c3b90",
     "pack": "departments/cmo/brand-library/brands/mez-systems"
   },
   "claudeBenchmark": {

@@ -139,7 +139,7 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Source-PNG extraction authority resolved.
 - [x] Living Core depth-and-light finish selected without changing source palettes.
 - [x] Standalone recovery branch pushed at `8b5a262`.
-- [ ] Internal programme ledger reconciliation pushed.
+- [x] Internal programme ledger reconciliation pushed through `50c3b90`.
 - [ ] Complete 43-ID board reviewed and product assignments decided.
 - [ ] Context Engine source and candidate decision complete.
 - [ ] Canonical roster, stable product IDs and lifecycle states approved.
@@ -151,6 +151,6 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [ ] Portable release validates in isolation.
 - [ ] One consumer ingests the release successfully.
 - [x] Migration-first authority sequence approved.
-- [ ] Both repositories pushed and recoverable.
+- [x] Both recovery branches pushed and recoverable.
 - [ ] Internal design branch merged through a clean worktree.
 - [ ] Old worktrees removed only after verification.
