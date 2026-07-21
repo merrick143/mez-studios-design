@@ -3,12 +3,16 @@
   "studyId": "MEZ-LIVING-CORE-DEPTH-LIGHT-01",
   "productionAuthority": false,
   "sourcePaletteChanged": false,
+  "selectedProfileId": "deep",
+  "selectionStatus": "approved-research-system",
+  "selectedAt": "2026-07-21",
+  "selectedBy": "Olli",
   "profiles": [
     {
       "id": "current",
       "number": "01",
       "name": "Current veil",
-      "description": "The approved rendering as it exists now. Mineral, soft and slightly whitewashed.",
+      "description": "The prior renderer control. Mineral, soft and slightly whitewashed.",
       "values": { "opacity": 1, "exposure": 1, "saturation": 1, "contrast": 1, "lift": 0, "shadeStrength": 0.62, "bloomStrength": 1, "grainStrength": 1 }
     },
     {

@@ -62,6 +62,7 @@ def main() -> int:
         BRAND_KIT / "gradient-library/calibration/depth-light-01/app.js",
         BRAND_KIT / "gradient-library/calibration/depth-light-01/styles.css",
         BRAND_KIT / "gradient-library/calibration/depth-light-01/profiles.json",
+        BRAND_KIT / "gradient-library/calibration/depth-light-01/decision.json",
         BRAND_KIT / "gradient-library/calibration/depth-light-01/verify_calibration.py",
     ]
     for path in required:

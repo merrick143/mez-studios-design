@@ -132,6 +132,7 @@ async function initialise() {
   if (!catalogueResponse.ok || !profilesResponse.ok) throw new Error("Calibration data failed to load");
   [catalogue, profileDocument] = await Promise.all([catalogueResponse.json(), profilesResponse.json()]);
   const hashProfile = location.hash.slice(1);
+  selectedProfile = profileDocument.selectedProfileId || selectedProfile;
   if (profileDocument.profiles.some((row) => row.id === hashProfile)) selectedProfile = hashProfile;
   renderMatrix(); renderDetail(); renderPicker();
   const query = new URLSearchParams(location.search);

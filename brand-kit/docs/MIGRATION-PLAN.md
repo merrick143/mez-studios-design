@@ -26,7 +26,7 @@ Exit gate: a human can identify where every file came from and which source curr
 - Judge source, idle animation, motion character and cross-shape coherence across the full board.
 - Select or edit product assignments separately; never fork palette data to create a product-specific variant.
 - Rebuild the complete source library without drift.
-- Select one depth-and-light finish profile without changing source palettes.
+- Use Deep Mineral as the selected research-system depth-and-light finish without changing source palettes (`DEC-LIVING-CORE-FINISH-001`).
 - Verify one shared WebGL context, reduced motion, offscreen pause, fallback and white Wings.
 - Lock the candidate ingestion contract and its pinned Python environment.
 
@@ -111,6 +111,7 @@ Exit gate: there is one canonical repository, one release line and zero writable
 ## Branch-close checklist
 
 - [x] Source-PNG extraction authority resolved.
+- [x] Living Core depth-and-light finish selected without changing source palettes.
 - [ ] Complete 43-ID board reviewed and product assignments decided.
 - [ ] Context Engine source and candidate decision complete.
 - [ ] Geist asset and updated typography release complete.

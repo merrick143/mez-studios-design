@@ -12,7 +12,7 @@
     "sourceException": { "id": "MZ-G01", "decision": "accepted as supplied" },
     "duplicatePolicy": "remove duplicate IDs from active selection while preserving compatibility aliases and provenance",
     "productAssignments": "excluded; remain separately governed",
-    "finishCalibration": "open; depth and lightness profile selection pending"
+    "finishCalibration": "Deep Mineral selected as approved research-system default under DEC-LIVING-CORE-FINISH-001"
   },
-  "approvalEvidence": "User explicitly approved all colours, animations, current expressions, MZ-G01, and prior gradient-system work in the active Codex task."
+  "approvalEvidence": "User explicitly approved all colours, animations, current expressions, MZ-G01, and prior gradient-system work, then selected Deep Mineral No. 5 for its denser colour, firmer blacks and stronger sphere depth in the active Codex task."
 }

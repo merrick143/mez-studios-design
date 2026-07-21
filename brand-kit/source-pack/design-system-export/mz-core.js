@@ -232,13 +232,13 @@ function normaliseCatalogue(source) {
 }
 
 const DEFAULT_FINISH = Object.freeze({
-  exposure: 1,
-  saturation: 1,
-  contrast: 1,
-  lift: 0,
-  shadeStrength: 0.62,
-  bloomStrength: 1,
-  grainStrength: 1,
+  exposure: 0.97,
+  saturation: 1.12,
+  contrast: 1.13,
+  lift: -0.01,
+  shadeStrength: 0.76,
+  bloomStrength: 0.9,
+  grainStrength: 1.1,
   opacity: 1
 });
 
@@ -448,8 +448,8 @@ class LivingCoreRenderer {
       core: core,
       shape: shape,
       radius: radius,
-      profileName: options.profile || "current",
-      finish: normaliseFinish(this.profiles[options.profile || "current"] || options.finish),
+      profileName: options.profile || "deep",
+      finish: normaliseFinish(this.profiles[options.profile || "deep"] || options.finish),
       speed: 1,
       speedTarget: 1,
       time: 3.2 + Math.random() * 40,
@@ -625,7 +625,7 @@ export async function mountLivingCores(root, options) {
     renderer.mount(element, reference, {
       shape: element.dataset.shape == null ? "disc" : element.dataset.shape,
       radius: element.dataset.radius || 0,
-      profile: element.dataset.profile || "current"
+      profile: element.dataset.profile || "deep"
     });
   });
   return {
@@ -644,7 +644,7 @@ export async function mountLivingCore(element, coreId, options) {
   renderer.mount(element, coreId, {
     shape: settings.shape || "disc",
     radius: settings.radius || 0,
-    profile: settings.profile || "current",
+    profile: settings.profile || "deep",
     finish: settings.finish
   });
   return renderer;

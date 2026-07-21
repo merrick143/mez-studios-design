@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "decisionId": "DEC-LIVING-CORE-FINISH-001",
+  "studyId": "MEZ-LIVING-CORE-DEPTH-LIGHT-01",
+  "profileId": "deep",
+  "profileName": "Deep mineral",
+  "verdict": "select",
+  "status": "approved-research-system",
+  "approvedAt": "2026-07-21",
+  "approvedBy": "Olli",
+  "values": {
+    "opacity": 1,
+    "exposure": 0.97,
+    "saturation": 1.12,
+    "contrast": 1.13,
+    "lift": -0.01,
+    "shadeStrength": 0.76,
+    "bloomStrength": 0.9,
+    "grainStrength": 1.1
+  },
+  "rationale": "Deep Mineral has denser colour, firmer blacks, stronger sphere depth and the least-whitewashed finish.",
+  "productionAuthority": false,
+  "sourcePaletteChanged": false,
+  "productAssignmentsChanged": false,
+  "mutatesCanonicalAuthority": false,
+  "approvalEvidence": "Olli explicitly selected Deep Mineral No. 5 in the active Codex task and described its dense colour, firmer blacks and stronger sphere depth as way better."
+}

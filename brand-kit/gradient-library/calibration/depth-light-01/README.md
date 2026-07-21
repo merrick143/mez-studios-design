@@ -25,6 +25,10 @@ This plate tests renderer finish without changing source PNGs, extracted anchors
 
 The `current` profile exactly reproduces the previous default values. Profiles are named calibration bundles, not new gradient palettes.
 
+## Selected finish
+
+`05 · Deep mineral` is the approved research-system default under `DEC-LIVING-CORE-FINISH-001`. Its values are applied by the shared runtime when no explicit comparison profile is supplied. The prior `current` treatment remains on this plate as a control.
+
 ## Expression rule
 
 The same selected finish applies to disc, sphere, rounded card, full-bleed pill and gradient Wings. PNG authority is always shown unchanged.
@@ -39,4 +43,4 @@ Append `?static=1` to force fallback QA or `?no-webgl=1` to simulate an unavaila
 
 ## Decision boundary
 
-A saved select, edit or reject record is written only to `brand-kit/workspace/finish-decisions/`. It has no production authority and cannot alter palettes or product assignments. After Olli selects a profile, the chosen values must be recorded in governance and the portable renderer contract together.
+A saved select, edit or reject record is written first to `brand-kit/workspace/finish-decisions/`. It has no production authority and cannot alter palettes or product assignments. The approved selection is then mirrored in `decision.json`, `profiles.json` and the portable renderer contract together. Production promotion remains a separate migration gate.
