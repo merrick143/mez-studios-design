@@ -1,0 +1,39 @@
+# Source map
+
+## Current ownership
+
+| Layer | Location | Role | May own decisions? |
+| --- | --- | --- | --- |
+| Canonical working pack | `mez-design-system-worktree/departments/cmo/brand-library/brands/mez-systems` | Current decisions, product data, rules, generator and release source | Yes, until migration closes |
+| Claude visual benchmark | `/play-orb/` in this repository | Original animated implementation and palette extraction from source PNGs | No; protected comparison evidence |
+| Workbench snapshot | `/brand-kit/source-pack/` | Pinned files imported from the canonical branch | No |
+| Candidate workspace | `/brand-kit/workspace/` | Uploaded images, generated plates and select/edit/reject records | No |
+| Portable releases | `/brand-kit/releases/` | Future immutable distributions after all release gates pass | Only as a named release mirror |
+| Figma | recorded Mez Systems file and gradient library | Human authoring and exact source-gradient reference | No independent token authority |
+
+## Known conflict requiring a human decision
+
+The Claude Code `palettes.json` and the systemised canonical `palettes.json` are not identical.
+
+- Claude extracted from the original source PNG library.
+- The systemised rebuild extracted from compressed WebP static twins.
+- The renderer remains animated in both systems.
+- The difference is colour-anchor data, spatial centroids and cluster shares.
+
+Until a comparison gate is completed, do not overwrite either dataset and do not describe the systemised anchors as a faithful freeze of Claude's original result.
+
+## Stable imports
+
+- Canonical Wings SVG.
+- Current dependency-free shared WebGL renderer.
+- Four exact WebP static twins.
+- Current product roster and assignment states.
+- Deterministic candidate generator and extraction constants.
+
+## Unresolved imports
+
+- Geist display font asset is not present locally.
+- Current portable release still describes Inter-only typography and therefore predates `DEC-TYPE-001`.
+- Public homepage roster and canonical four-product roster still conflict.
+- Context Engine has no source gradient or assignment.
+- Aurora, Prism and Forge core assignments remain candidates.

@@ -8,6 +8,17 @@ runtime.
 
 ## Work
 
+### Mez Systems Brand Kit Workbench (`/brand-kit/`)
+
+The organised non-canonical migration surface for the Living Core, foundations,
+product-expression suite, Context Engine candidates and the first portable release.
+It preserves the original Play Orb as a protected benchmark while imported system files
+remain pinned to a named canonical commit.
+
+- `/brand-kit/` the programme and live comparison workbench
+- `/brand-kit/docs/MIGRATION-PLAN.md` the full authority-transfer plan
+- local candidate generation through `brand-kit/server.py`
+
 ### Play Orb · expression system (`/play-orb/`)
 
 A domain-warped mesh gradient rendered in WebGL, expressed across a full
@@ -55,6 +66,9 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000`. A plain `file://` open mostly works, but
 some browsers block the iframe previews over `file://`.
+
+To enable local candidate generation, use a Python environment with the pinned Pillow and NumPy
+versions, then run `python brand-kit/server.py --port 8914` instead.
 
 ## Notes
 

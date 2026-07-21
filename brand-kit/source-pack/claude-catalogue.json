@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": "comparison-only",
+  "productionAuthority": false,
+  "source": "palettes-claude-original.json",
+  "cores": {
+    "aios": {
+      "product": "AI OS",
+      "id": "MZ-G13",
+      "state": "locked",
+      "file": "mz-g13.webp",
+      "sourceMethod": "Claude source-PNG extraction cache",
+      "anchors": [
+        {
+          "hex": "#69D9F4",
+          "pos": [
+            -0.1315,
+            0.2669
+          ],
+          "weight": 1.158,
+          "sourceShare": 0.2564
+        },
+        {
+          "hex": "#294288",
+          "pos": [
+            0.1618,
+            -0.1654
+          ],
+          "weight": 1.089,
+          "sourceShare": 0.2315
+        },
+        {
+          "hex": "#5C8CD0",
+          "pos": [
+            -0.1235,
+            -0.0459
+          ],
+          "weight": 0.873,
+          "sourceShare": 0.1602
+        },
+        {
+          "hex": "#4168AA",
+          "pos": [
+            -0.0084,
+            -0.0616
+          ],
+          "weight": 0.857,
+          "sourceShare": 0.1553
+        }
+      ],
+      "shade": "#2D176E",
+      "bloom": "#CAF2FB",
+      "bloomAnchor": 0,
+      "staticTwin": "mz-g13.webp",
+      "approximation": true
+    },
+    "aurora": {
+      "product": "Aurora",
+      "id": "MZ-G20",
+      "state": "candidate",
+      "file": "mz-g20.webp",
+      "sourceMethod": "Claude source-PNG extraction cache",
+      "anchors": [
+        {
+          "hex": "#D78446",
+          "pos": [
+            0.1572,
+            0.1954
+          ],
+          "weight": 1.025,
+          "sourceShare": 0.1954
+        },
+        {
+          "hex": "#F8CCAD",
+          "pos": [
+            0.2352,
+            -0.2345
+          ],
+          "weight": 1.011,
+          "sourceShare": 0.191
+        },
+        {
+          "hex": "#ECA57A",
+          "pos": [
+            0.1054,
+            -0.0887
+          ],
+          "weight": 1.005,
+          "sourceShare": 0.1891
+        },
+        {
+          "hex": "#DA5054",
+          "pos": [
+            -0.1919,
+            -0.079
+          ],
+          "weight": 0.958,
+          "sourceShare": 0.1747
+        }
+      ],
+      "shade": "#EE1256",
+      "bloom": "#FDEDE2",
+      "bloomAnchor": 1,
+      "staticTwin": "mz-g20.webp",
+      "approximation": true
+    },
+    "prism": {
+      "product": "Prism",
+      "id": "MZ-G06",
+      "state": "candidate",
+      "file": "mz-g06.webp",
+      "sourceMethod": "Claude source-PNG extraction cache",
+      "anchors": [
+        {
+          "hex": "#83F1EB",
+          "pos": [
+            0.2824,
+            -0.0885
+          ],
+          "weight": 1.024,
+          "sourceShare": 0.2254
+        },
+        {
+          "hex": "#D3B8EF",
+          "pos": [
+            0.1701,
+            0.1002
+          ],
+          "weight": 1.022,
+          "sourceShare": 0.2246
+        },
+        {
+          "hex": "#B175E6",
+          "pos": [
+            -0.114,
+            -0.0148
+          ],
+          "weight": 1.001,
+          "sourceShare": 0.2169
+        },
+        {
+          "hex": "#8F46D0",
+          "pos": [
+            -0.2389,
+            -0.0826
+          ],
+          "weight": 0.951,
+          "sourceShare": 0.1993
+        }
+      ],
+      "shade": "#5C30C3",
+      "bloom": "#D4FAF8",
+      "bloomAnchor": 0,
+      "staticTwin": "mz-g06.webp",
+      "approximation": true
+    },
+    "forge": {
+      "product": "Forge",
+      "id": "MZ-G15",
+      "state": "candidate",
+      "file": "mz-g15.webp",
+      "sourceMethod": "Claude source-PNG extraction cache",
+      "anchors": [
+        {
+          "hex": "#75B89A",
+          "pos": [
+            0.1166,
+            0.093
+          ],
+          "weight": 1.116,
+          "sourceShare": 0.2557
+        },
+        {
+          "hex": "#20A695",
+          "pos": [
+            0.0538,
+            -0.1312
+          ],
+          "weight": 1.111,
+          "sourceShare": 0.2538
+        },
+        {
+          "hex": "#B6C673",
+          "pos": [
+            -0.0095,
+            -0.1639
+          ],
+          "weight": 1.052,
+          "sourceShare": 0.2318
+        },
+        {
+          "hex": "#5DE2D3",
+          "pos": [
+            -0.0065,
+            0.0993
+          ],
+          "weight": 0.676,
+          "sourceShare": 0.1108
+        }
+      ],
+      "shade": "#178679",
+      "bloom": "#C6F5EF",
+      "bloomAnchor": 3,
+      "staticTwin": "mz-g15.webp",
+      "approximation": true
+    }
+  }
+}

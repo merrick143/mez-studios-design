@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{PRODUCT}} · {{ID}} Living Core candidate</title>
+  <style>
+    :root {
+      --page: #f8f8f8;
+      --recessed: #f6f5f4;
+      --card: #ffffff;
+      --ink: #0d0d0d;
+      --body: #2e2e2e;
+      --muted: rgba(46, 46, 46, .68);
+      --line: rgba(13, 13, 13, .10);
+      --shadow: 0 28px 68px -30px rgba(13, 13, 13, .34);
+      --page-width: min(1120px, calc(100vw - 48px));
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-width: 320px;
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    header, main { width: var(--page-width); margin: 0 auto; }
+    header {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 620;
+    }
+    header span:last-child { color: var(--muted); font-weight: 500; }
+    main { padding: 88px 0 120px; }
+    .intro { max-width: 820px; }
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(52px, 7vw, 86px);
+      font-weight: 680;
+      letter-spacing: -.062em;
+      line-height: .94;
+      text-wrap: balance;
+    }
+    .intro > p { max-width: 650px; margin: 24px 0 0; color: var(--body); font-size: 17px; line-height: 1.5; }
+    .notice { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    .comparison {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .panel { min-height: 440px; padding: 32px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 20px; background: var(--card); box-shadow: var(--shadow); }
+    .panel figure { margin: 0; display: grid; justify-items: center; gap: 20px; }
+    .static-source { width: min(320px, 70vw); aspect-ratio: 1; border-radius: 50%; object-fit: cover; }
+    figcaption { color: var(--muted); font-size: 12px; }
+    .core { position: relative; overflow: hidden; isolation: isolate; }
+    .disc, .sphere { width: min(320px, 70vw); aspect-ratio: 1; border-radius: 50%; }
+    .sphere::after { content: ""; position: absolute; z-index: 1; inset: 0; border-radius: 50%; box-shadow: inset -24px -28px 54px rgba(13, 13, 13, .18), inset 20px 18px 42px rgba(255, 255, 255, .16); pointer-events: none; }
+    .wings-overlay { position: absolute; z-index: 2; left: 25%; top: 50%; width: 50%; filter: brightness(0) invert(1); transform: translateY(-52%); pointer-events: none; }
+    .expressions { margin-top: 96px; }
+    .expressions h2 { margin: 0; font-size: 38px; letter-spacing: -.045em; }
+    .expressions > p { max-width: 580px; margin: 12px 0 0; color: var(--body); line-height: 1.5; }
+    .expression-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: 32px; }
+    .expression { display: grid; justify-items: center; gap: 16px; color: var(--muted); font-size: 12px; }
+    .expression .disc, .expression .sphere { width: 180px; }
+    .trading-card { position: relative; width: 180px; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 13.5px; box-shadow: var(--shadow); }
+    .trading-card::after { content: ""; position: absolute; z-index: 1; inset: 48% 0 0; background: rgba(13, 13, 13, .62); pointer-events: none; }
+    .card-lockup { position: absolute; z-index: 2; right: 16px; bottom: 16px; left: 16px; color: #f8f8f8; }
+    .card-lockup img { width: 54px; color: #f8f8f8; filter: brightness(0) invert(1); }
+    .card-lockup strong { margin-top: 10px; display: block; font-size: 16px; letter-spacing: -.025em; }
+    .gradient-wings { width: 180px; aspect-ratio: 340 / 241; }
+    .product-pill { position: relative; width: 220px; height: 64px; border-radius: 999px; }
+    .product-pill::after { content: "{{PRODUCT}}"; position: absolute; z-index: 2; inset: 0; display: grid; place-items: center; color: #f8f8f8; font-size: 14px; font-weight: 650; text-shadow: 0 1px 8px rgba(13, 13, 13, .28); }
+    @media (max-width: 780px) {
+      :root { --page-width: calc(100vw - 32px); }
+      main { padding-top: 56px; }
+      .comparison { grid-template-columns: 1fr; }
+      .expression-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 420px) {
+      .expression-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header><span>Mez Systems · Living Core candidate</span><span>{{ID}}</span></header>
+  <main>
+    <section class="intro">
+      <h1>Does this core belong to {{PRODUCT}}?</h1>
+      <p>Compare the exact static source with the parametric Living Core, then judge whether the same colour identity survives across the approved shapes.</p>
+      <p class="notice">Research only. This candidate has no production authority and does not update the product roster or canonical gradient catalogue.</p>
+    </section>
+
+    <section class="comparison" aria-label="Static and living comparison">
+      <div class="panel"><figure><img class="static-source" src="assets/static-twin.webp" alt="Exact static gradient candidate"><figcaption>Exact static twin</figcaption></figure></div>
+      <div class="panel"><figure><div class="core sphere" data-mz-core="{{ID}}" data-shape="sphere"><img class="wings-overlay" src="wings.svg" alt=""></div><figcaption>Parametric Living Core</figcaption></figure></div>
+    </section>
+
+    <section class="expressions">
+      <h2>One core, four expressions.</h2>
+      <p>The geometry stays fixed. Only the candidate colour data changes.</p>
+      <div class="expression-grid">
+        <div class="expression"><div class="core disc" data-mz-core="{{ID}}" data-shape="disc"><img class="wings-overlay" src="wings.svg" alt=""></div><span>Disc</span></div>
+        <div class="expression"><div class="trading-card"><div class="core" style="position:absolute;inset:0" data-mz-core="{{ID}}" data-shape="rect" data-radius="0.15"></div><div class="card-lockup"><img src="wings.svg" alt=""><strong>{{PRODUCT}}</strong></div></div><span>Trading card</span></div>
+        <div class="expression"><div class="core gradient-wings" data-mz-core="{{ID}}" data-shape="wings"></div><span>Wings expression</span></div>
+        <div class="expression"><div class="core product-pill" data-mz-core="{{ID}}" data-shape="rect" data-radius="1"></div><span>Product pill</span></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { mountLivingCores } from "./mz-core.js";
+    const catalogue = { cores: { candidate: {{CORE_JSON}} } };
+    mountLivingCores(document, {
+      catalogue,
+      staticBaseUrl: "./",
+      wingsUrl: "./wings.svg"
+    }).catch((error) => console.error("[mez-living-core-candidate]", error));
+  </script>
+</body>
+</html>

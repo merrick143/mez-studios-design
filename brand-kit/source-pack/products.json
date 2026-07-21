@@ -1,0 +1,48 @@
+{
+  "brand": "mez-systems",
+  "authority": "THE single source of truth for the product roster. Every doc, token, Figma board and repo component defers to this file. If anything disagrees with this file, this file wins.",
+  "naming_rule": "Public name is exactly the `name` string. 'AI OS' has a space. Banned spellings: 'AIOS' (no space) and the retired codename 'Atlas'. Slugs are for keys and file paths only.",
+  "core_status_meaning": {
+    "locked": "Final. Build with it, bake it into assets.",
+    "candidate": "Current pick, safe to build with today, Olli may reselect. Do not describe it as final in copy."
+  },
+  "products": [
+    {
+      "slug": "aios",
+      "name": "AI OS",
+      "function": "AI Operating System",
+      "description": "One system your whole business runs on.",
+      "status": "live",
+      "price": { "amount": 99, "currency": "USD", "model": "one-time", "note": "Never subscription framing." },
+      "core": { "id": "MZ-G13", "hash": "4ea105843cbc5fe3450b70aa0f3c3bcc9b487408", "file": "mz-g13.webp", "state": "locked" }
+    },
+    {
+      "slug": "aurora",
+      "name": "Aurora",
+      "function": "Auto Ads System",
+      "description": "A repeatable operating system for advertising work.",
+      "status": "planned",
+      "price": null,
+      "core": { "id": "MZ-G20", "hash": "76df089a7f3d0fe9f9fc44349a71401ed214c4d9", "file": "mz-g20.webp", "state": "candidate" }
+    },
+    {
+      "slug": "prism",
+      "name": "Prism",
+      "function": "Analytics Pack",
+      "description": "A practical analytics pack for seeing what changed and why.",
+      "status": "planned",
+      "price": null,
+      "core": { "id": "MZ-G06", "hash": "34e197fd0fc94cdc231d66446fa6c3f2b1e48fad", "file": "mz-g06.webp", "state": "candidate" }
+    },
+    {
+      "slug": "forge",
+      "name": "Forge",
+      "function": "Claude Code OS",
+      "description": "A Claude Code operating system for repeatable software work.",
+      "status": "planned",
+      "price": null,
+      "core": { "id": "MZ-G15", "hash": "876be3cf1c6da154d9a532d2b5a865199b29c939", "file": "mz-g15.webp", "state": "candidate" }
+    }
+  ],
+  "changelog": "2026-07-17: created from brand audit. Name locked as 'AI OS' (space). Forge core set to MZ-G15. Aurora/Prism/Forge marked candidate; only AI OS locked. | 2026-07-20: added product descriptions for canonical living-core reference generation."
+}

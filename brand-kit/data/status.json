@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "programme": "Mez Systems brand kit migration",
+  "workbenchStatus": "active",
+  "canonicalRepositoryTransferred": false,
+  "sections": [
+    {"id": "core", "name": "Living Core", "status": "compare", "summary": "Animated engine present; palette source conflict requires review."},
+    {"id": "foundations", "name": "Foundations", "status": "partial", "summary": "Typography and controls have approved direction; implementation and broader surface tokens remain."},
+    {"id": "expressions", "name": "Product expressions", "status": "planned", "summary": "Disc, sphere, card, Wings, collection and channel plates must be locked."},
+    {"id": "context", "name": "Context Engine", "status": "awaiting-source", "summary": "Candidate workflow ready; genuine source gradient required."},
+    {"id": "release", "name": "Portable release", "status": "blocked", "summary": "Prior export is stale against current typography and unresolved core decisions."},
+    {"id": "migration", "name": "Repository migration", "status": "gated", "summary": "Transfer canonical ownership only after the first clean consumer release."}
+  ]
+}

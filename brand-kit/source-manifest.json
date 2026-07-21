@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "workbenchStatus": "non-canonical-migration-proof",
+  "productionAuthority": false,
+  "canonicalSource": {
+    "repository": "/Users/olivermerrick/mezcorp_claude_code",
+    "worktree": "/Users/olivermerrick/mez-design-system-worktree",
+    "branch": "codex/mez-gradient-system",
+    "commit": "84eb5a9",
+    "pack": "departments/cmo/brand-library/brands/mez-systems"
+  },
+  "claudeBenchmark": {
+    "repository": "https://github.com/merrick143/mez-studios-design",
+    "localRepository": "/Users/olivermerrick/mez-studios-design",
+    "commit": "99ac623",
+    "path": "play-orb",
+    "paletteSha256": "43e1726bd8dfdb9554feea577d628b034150c9a874ad59b6faa0e0fdb93e95ba",
+    "comparisonCatalogueSha256": "28c5190e364674ab29fc533ace60963a1bb9776f7a8c121542b0d577cee185e8",
+    "protected": true
+  },
+  "systemizedSnapshot": {
+    "paletteSha256": "30afa92f4c8e79b7b9a17d9ddf349c2d05b327e0e6a8cd939ee4beea9226fe7b",
+    "rendererSha256": "23c8a228dd77d110bda6e68e76fb155f9057c8be6b6eda2edb166a74ef1ca9dc",
+    "mutatesCanonicalAuthority": false
+  },
+  "knownConflicts": [
+    {
+      "id": "BK-CF-001",
+      "title": "Claude source-PNG palettes differ from systemized WebP re-extraction",
+      "status": "human-decision-required",
+      "blocks": ["living-core-lock", "portable-release-1"]
+    },
+    {
+      "id": "BK-CF-002",
+      "title": "Portable release typography predates DEC-TYPE-001",
+      "status": "implementation-required",
+      "blocks": ["foundations-lock", "portable-release-1"]
+    },
+    {
+      "id": "BK-CF-003",
+      "title": "Context Engine has no supplied gradient source or canonical assignment",
+      "status": "source-required",
+      "blocks": ["product-expression-suite", "portable-release-1"]
+    },
+    {
+      "id": "BK-CF-004",
+      "title": "Public five-product homepage roster differs from canonical four-product roster",
+      "status": "human-decision-required",
+      "blocks": ["product-architecture-lock", "portable-release-1"]
+    }
+  ]
+}

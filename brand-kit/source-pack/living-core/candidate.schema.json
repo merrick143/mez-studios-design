@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/living-core-candidate.schema.json",
+  "title": "Mez Systems Living Core candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "candidateId", "product", "status", "productionAuthority", "sourceExpressionApproved", "source", "extraction", "cores", "promotionGate"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "candidateId": {"type": "string", "pattern": "^MZ-G[0-9]{2,3}$"},
+    "product": {"type": "string", "minLength": 1},
+    "status": {"const": "research-only"},
+    "productionAuthority": {"const": false},
+    "sourceExpressionApproved": {"const": false},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filename", "sha256", "width", "height"],
+      "properties": {
+        "filename": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "width": {"type": "integer", "minimum": 512},
+        "height": {"type": "integer", "minimum": 512}
+      }
+    },
+    "extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "clusters", "sample", "seed", "colourSpace"],
+      "properties": {
+        "method": {"const": "k-means++"},
+        "clusters": {"const": 5},
+        "sample": {"const": 160},
+        "seed": {"const": 7},
+        "colourSpace": {"const": "sRGB extraction, linear-space shader mixing"}
+      }
+    },
+    "cores": {"type": "object", "minProperties": 1, "maxProperties": 1},
+    "promotionGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "mutatesCanonicalAuthority"],
+      "properties": {
+        "required": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "mutatesCanonicalAuthority": {"const": false}
+      }
+    }
+  }
+}
