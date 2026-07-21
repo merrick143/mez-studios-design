@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-PRODUCT-FAMILY-COMMERCE-01",
+  "title": "Mez product family and commerce calibration 01",
+  "status": "human-review-complete-behaviour-approved-visual-execution-not-approved",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "purpose": "Approve a shared product-family chassis, contextual product expression and honest commerce hierarchy before rebuilding the multi-product hero.",
+  "contentSource": {
+    "name": "mez.systems homepage",
+    "notionPageId": "8bb570a0-f71a-4e42-9243-e9aa9e760733",
+    "fetchedAt": "2026-07-20",
+    "status": "review",
+    "productNamesRequireFinalConfirmation": true
+  },
+  "approvedInputs": {
+    "motionDecision": "DEC-MOTION-002",
+    "typographyDecision": "DEC-TYPE-001",
+    "controlDecision": "DEC-CONTROL-001",
+    "wingsAsset": "../../../../design-system-export/assets/wings.svg",
+    "aiOsCore": "MZ-G13"
+  },
+  "researchRoster": [
+    {"name": "AI OS", "status": "live", "core": "MZ-G13", "coreState": "locked"},
+    {"name": "Context Engine", "status": "coming-soon", "core": null, "coreState": "unassigned"},
+    {"name": "AI Ads System", "status": "coming-soon", "core": "MZ-G20", "coreState": "provisional-research-bridge"},
+    {"name": "Claude Code OS", "status": "coming-soon", "core": "MZ-G15", "coreState": "provisional-research-bridge"},
+    {"name": "Organic Content OS", "status": "coming-soon", "core": "MZ-G06", "coreState": "provisional-research-only"}
+  ],
+  "knownConflict": "The Notion homepage five-product roster conflicts with the portable four-product roster in design-system-export/products.json.",
+  "contextsTested": [
+    "aligned-product-catalogue",
+    "job-native-product-proof",
+    "featured-live-product",
+    "mixed-availability-shelf",
+    "future-bundle-scenario",
+    "single-product-checkout",
+    "mobile-product-and-purchase"
+  ],
+  "decisions": [
+    "publicRoster",
+    "familyChassis",
+    "territoryMethod",
+    "expressionMode",
+    "availabilityHierarchy",
+    "commerceSequence",
+    "mobileBehaviour"
+  ],
+  "decisionCount": 7,
+  "reviewRecord": "product-family-commerce-01-review.json",
+  "approvedDecision": "DEC-FAMILY-001",
+  "reviewProgress": {
+    "completedDecisionCount": 7,
+    "remaining": [],
+    "result": "structural-direction-approved-with-three-revisions"
+  },
+  "approvedBehaviour": {
+    "publicRoster": "homepage-five",
+    "familyChassis": "aligned-catalogue",
+    "territoryMethod": "gradient-and-copy",
+    "expressionMode": "static-core-only",
+    "availabilityHierarchy": "equal-family",
+    "commerceSequence": "live-first-bundle-later",
+    "mobileBehaviour": "vertical-catalogue-sticky-summary"
+  },
+  "visualExecutionApproved": false,
+  "reviewerStatement": "i still think in general design needs alot of work but i am assuming we arent up to right stage in our tasks yet.",
+  "interpretation": "Equal visual family weight does not imply equal availability or purchase authority. Status and actions must remain truthful, and future product cores remain unassigned until separately approved.",
+  "implementationState": "pending",
+  "nextGate": "centred-mobile-first-multi-product-hero-02",
+  "stopCondition": "Do not treat this calibration plate as approved visual execution, assign future cores, promote the public roster to production or implement commerce components before the revised hero and expression grammar pass."
+}

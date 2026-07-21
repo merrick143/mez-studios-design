@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-PHASE-2-TR4-SYNTHESIS",
+  "taskId": "TASK-PHASE-2-TR4-SYNTHESIS",
+  "contextBundleId": "CTX-PHASE-2-TR4-SYNTHESIS",
+  "agent": {"kind":"hybrid","name":"Codex with three synthesis sub-agents","model":"GPT-5"},
+  "startedAt": "2026-07-20T08:25:00+10:00",
+  "finishedAt": "2026-07-20T08:38:00+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path":"research/phase-2/COMPARATIVE-MATRIX.md","action":"created","sha256":"89a7c82dae06bea702be9315976e2633801562714b4c428c7b8aa2889faf3ad3","reason":"Human-readable comparison of seven evidence-linked mechanisms."},
+    {"path":"research/phase-2/comparative-matrix.json","action":"created","sha256":"2d49683f83ea6b4d6533e858bce16806a213799e2d8230bb32b1fa569b384489","reason":"Machine-readable matrix covering all mechanisms and research questions."},
+    {"path":"research/phase-2/PATTERN-ATLAS.md","action":"created","sha256":"a2f0faba1cb40f6a9c27761f01556bb0f429cf26d48749d995d0f46caf4aed6f","reason":"Fifteen candidate patterns with evidence, failure modes, originality boundaries, and promotion gates."},
+    {"path":"research/phase-2/ANTI-PATTERN-ATLAS.md","action":"created","sha256":"4e52effccca79f471200f37de076134ab554c0b3b613fbae4bed337969444a4d","reason":"Eighteen failure patterns with signals, exceptions, repairs, and validation tests."},
+    {"path":"research/phase-2/taste-dimensions.json","action":"created","sha256":"24536eb8f6fab2ab75b9dad8985ff808584d8866713efe521c3cc816d47ac297","reason":"Eight unapproved dimensions with channel and product modulation for controlled calibration."},
+    {"path":"governance/scripts/validate_phase_two_tr4.py","action":"created","sha256":"1cb22da5478fe8e5da41b0b236eeeee3aa537d333b690ce101818d3ead47c54f","reason":"Validates TR-4 structure, coverage, evidence references, and unapproved states."},
+    {"path":"llm/tasks/TASK-PHASE-2-TR4-SYNTHESIS.json","action":"created","sha256":"4a5d3facce16ec79182bc639e58e31cc8512d2b9b55b89404482fb7b30466b39","reason":"Records the bounded TR-4 execution contract."},
+    {"path":"AUDIT-AND-END-TO-END-ROADMAP.md","action":"modified","sha256":"992714c326d72a2294e4513d8387e3043b93ec3e97fb64686ccde94d81adad55","reason":"Marks every evidenced TR-4 task complete."},
+    {"path":"HANDOFF.md","action":"modified","sha256":"efe814e5b0477cf10979ae3ae2bc902585b38d2f81d94f394499624bf7aae262","reason":"Moves the live programme state to TR-5 preparation."}
+  ],
+  "decisionsApplied": ["DEC-H1-REFERENCE-PANEL-001", "DEC-BRAND-AMBITION-001"],
+  "tests": [
+    {"id":"V-P2-TR4","status":"pass","evidence":"Seven mechanisms, all eight RQs, 15 patterns, 18 anti-patterns, and eight taste dimensions pass deterministic validation."},
+    {"id":"V-P2-EVIDENCE-REGRESSION","status":"pass","evidence":"All five deep source reports and their evidence IDs remain valid."},
+    {"id":"V-P2-ORIGINALITY","status":"pass","evidence":"Every output separates mechanisms from source expressions and remains unapproved."},
+    {"id":"V-P0-P1-REGRESSION","status":"pass","evidence":"Phase 0 control-plane and Phase 1 release validators pass after TR-4."}
+  ],
+  "artifactsProduced": [
+    "human and machine comparative matrix",
+    "candidate pattern atlas",
+    "anti-pattern atlas",
+    "machine-readable taste dimensions",
+    "TR-4 deterministic validator"
+  ],
+  "assumptions": [
+    "Seven mechanisms are a useful synthesis unit for the approved five-source cycle.",
+    "Taste ranges describe test hypotheses rather than visual token values.",
+    "Human calibration should evaluate original Mez specimens, not source screenshots."
+  ],
+  "exceptions": [
+    "Dedicated anti-reference and broad cross-category research remain absent by explicit H1 scope.",
+    "Motion confidence remains lower because timing, easing, and reduced-motion details were not measured.",
+    "No taste dimension or candidate pattern has human approval."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired":false,"gateId":null,"status":"not-required"},
+  "nextAction": "Prepare TR-5 controlled pairs using original Mez content and one-variable changes, then request concise A, B, or neither decisions from Olli."
+}

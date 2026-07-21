@@ -1,0 +1,15 @@
+{
+  "generated_by": "codex-made-it",
+  "quality": 92,
+  "max_size": 1000,
+  "variants": [
+    {
+      "id": "MZ-G13",
+      "asset": "mz-g13.webp",
+      "source": "/Users/olivermerrick/Downloads/all-gradients/MZ-G13.png",
+      "source_sha256": "7932fb83949329ad562a13010221d2c0e6cad9f24312993acf781935547a946e",
+      "width": 1000,
+      "height": 1000
+    }
+  ]
+}

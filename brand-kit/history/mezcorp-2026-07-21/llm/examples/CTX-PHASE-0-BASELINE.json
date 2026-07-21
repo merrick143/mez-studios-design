@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-PHASE-0-BASELINE",
+  "taskId": "TASK-PHASE-0-BASELINE",
+  "generatedAt": "2026-07-19T15:59:00+10:00",
+  "systemVersion": "pre-v1-phase-0",
+  "sourceState": {
+    "repository": "/Users/olivermerrick/mezcorp_claude_code",
+    "branch": "main",
+    "commit": "c3007c75a4a38182b7c9e53328003bdd9610d2f7",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {"path":"START-HERE.md","sha256":"c0d94831ac9db223160fe64122064a7c05c891af3afe3eff055e3435f22059ef","role":"canonical","required":true,"reason":"Current entrypoint and production authority."},
+    {"path":"AUDIT-AND-END-TO-END-ROADMAP.md","sha256":"99814b9fc9a762b2207b96aa732d61bbbdd4902a580c26ed621d0f42ef1ca3bc","role":"governance","required":true,"reason":"Approved diagnosis and phase sequence."},
+    {"path":"governance/PROGRAMME-CHARTER.md","sha256":"1c9e5e44e399f112da91f02ea11144f56c409192d1eb84418fcbc2e1b8d4f540","role":"governance","required":true,"reason":"Proposed operating model and H0 choices."},
+    {"path":"governance/decision-register.json","sha256":"2c45af8bc0e1b028de5b79e1b61b35a0b67f55d6c444dea64e7328d8a2f2949d","role":"governance","required":true,"reason":"Current and proposed decision state."},
+    {"path":"governance/issue-register.json","sha256":"8c7552d898956e19aafab64738d5a3fc3bc6c9da6b3c6080138d9c4d04b1d6d8","role":"governance","required":true,"reason":"Prioritised defect set."},
+    {"path":"governance/consumer-register.json","sha256":"f34fd6cb30e6dced2ed6f643ed00d1a065c056b50049beb49cd752121a236ec4","role":"governance","required":true,"reason":"Known consumption and migration state."},
+    {"path":"baseline/2026-07-19/observations.json","sha256":"f9f677a0fbac4084018a2d9b7b98326eab603104314576726621dec26f988ea1","role":"evidence","required":true,"reason":"Live repository, Figma, and Canvas findings."}
+  ],
+  "decisions": [
+    {"id":"DEC-AUTHORITY-001","status":"approved","productionEffect":"approved-programme-direction"},
+    {"id":"DEC-SCOPE-001","status":"approved","productionEffect":"approved-programme-direction"},
+    {"id":"DEC-OWNER-001","status":"approved","productionEffect":"approved-programme-direction"},
+    {"id":"DEC-BRAND-AMBITION-001","status":"approved","productionEffect":"approved-programme-direction"},
+    {"id":"DEC-FIGMA-001","status":"approved","productionEffect":"approved-programme-direction"},
+    {"id":"DEC-CONSUMER-001","status":"approved","productionEffect":"approved-programme-direction"}
+  ],
+  "artifacts": ["ART-08B88580828A","ART-4EC621A45E81","ART-639AF2CDF07E","ART-BC97A86D7459","ART-7DC5849560A1","ART-DBBC84505C54","ART-1992C9215D4D"],
+  "consumers": ["CON-CONTROL-PLANE-001","CON-CANVAS-001","CON-EXPORT-001","CON-FIGMA-001","CON-WEB-001","CON-LLM-001"],
+  "knownConflicts": [
+    {"id":"CONFLICT-FIGMA-001","summary":"The canonical Figma page is directly accessible but omitted from top-level discovery, has no returned variables on its reference section, and has no verified published Mez library.","executionEffect":"constrain"},
+    {"id":"CONFLICT-WEB-001","summary":"The current website checkout lacks the claimed design-system integration paths.","executionEffect":"stop"},
+    {"id":"CONFLICT-RESPONSIVE-001","summary":"Home and Components overflow at the 320 px edge case.","executionEffect":"constrain"}
+  ],
+  "stopConditions": [
+    "Do not infer missing Figma pages or components.",
+    "Do not describe the website integration as shipped.",
+    "Do not change an approved H0 decision without a new recorded decision.",
+    "Do not change current production identity rules."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["governance/PROGRAMME-CHARTER.md","governance/decision-register.json","baseline/2026-07-19/observations.json"],
+    "omitByDefault": ["_archive/","aios-website/","trading-cards-fut-study/","design-system-export/","canvas/ page source after screenshot capture"]
+  },
+  "humanNotes": ["The human should make seven H0 choices, not review every inventory row or implementation detail."]
+}

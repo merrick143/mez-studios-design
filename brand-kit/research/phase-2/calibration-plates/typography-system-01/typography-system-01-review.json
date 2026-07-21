@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-TYPOGRAPHY-SYSTEM-01",
+  "exportedAt": "2026-07-20T21:00:13+10:00",
+  "complete": true,
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "decisions": {
+    "primaryFamily": {
+      "decision": "inter-tuned",
+      "note": "Approved recommendation: tuned Inter remains the primary UI and foundation family."
+    },
+    "displayFamily": {
+      "decision": "geist",
+      "note": "Geist looks good for titles."
+    },
+    "bodyFamily": {
+      "decision": "inter-tuned",
+      "note": "Tuned Inter looks good for body."
+    },
+    "serifPolicy": {
+      "decision": "contextual-only",
+      "note": "Approved recommendation: Instrument Serif is available only when the content genuinely needs an editorial voice, never as a quota."
+    },
+    "monoPolicy": {
+      "decision": "keep-ibm-plex",
+      "note": "Approved recommendation: IBM Plex Mono remains restricted to code, provenance and technical metadata."
+    },
+    "mobileType": {
+      "decision": "edit",
+      "note": "Approved recommendation: revise mobile typography using the Geist display and tuned Inter body split."
+    }
+  },
+  "overallNote": "Approved the recommended split system and remaining role policies."
+}

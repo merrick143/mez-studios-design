@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-HERO-FIRST-VIEWPORT-02",
+  "recordedAt": "2026-07-20",
+  "feedbackType": "direct-iteration-feedback",
+  "complete": false,
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "result": "promising-direction-revision-requested",
+  "note": "This feels better. Test the approved animated expressions and stack the product cards together so the family becomes a stronger homepage object.",
+  "mechanismsToPreserve": ["centred-proposition", "cleaner-direction", "five-product-homepage-read"],
+  "requestedChanges": ["use-living-cores", "use-equal-size-product-cards", "compose-cards-as-one-stack"],
+  "supersededBy": "MEZ-HERO-FIRST-VIEWPORT-03"
+}

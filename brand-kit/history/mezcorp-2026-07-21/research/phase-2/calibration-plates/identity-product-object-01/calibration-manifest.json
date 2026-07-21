@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-IDENTITY-PRODUCT-OBJECT-01",
+  "title": "Mez identity and product-object calibration 01",
+  "status": "revision-required",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "purpose": "Test one coherent AI OS product-object hypothesis before composing it into a homepage hero.",
+  "hypothesis": "The MZ-G13 disc with direct white Wings can become the canonical AI OS core across navigation, product, section and hero scales.",
+  "approvedInputs": {
+    "gradientId": "MZ-G13",
+    "gradientSource": "/Users/olivermerrick/Downloads/all-gradients/MZ-G13.png",
+    "gradientSourceSha256": "7932fb83949329ad562a13010221d2c0e6cad9f24312993acf781935547a946e",
+    "wingsAsset": "assets/wings.svg",
+    "wingsAssetSha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33",
+    "productName": "AI OS"
+  },
+  "heldConstant": [
+    "MZ-G13 source artwork",
+    "canonical two-path Wings geometry",
+    "off-white Wings directly inside gradient material",
+    "Wings width at 50 per cent of disc diameter",
+    "Wings optical position two per cent above centre",
+    "no inset white tile",
+    "no coloured halo",
+    "no invented software interface"
+  ],
+  "decisions": [
+    {"id": "canonicalCore", "question": "Should this advance as the canonical AI OS core?", "options": ["lock", "edit", "reject"]},
+    {"id": "scaleSystem", "question": "Does the unchanged core hold from 72 to 440 pixels?", "options": ["lock", "edit", "reject"]},
+    {"id": "motionBehaviour", "question": "Should the source material remain slowly alive with restrained hover energy?", "options": ["lock", "edit", "reject"]}
+  ],
+  "humanReview": {
+    "record": "identity-product-object-01-review.json",
+    "completedAt": "2026-07-20T08:14:09.443Z",
+    "result": "three-edits",
+    "canonicalDirectionSurvives": true,
+    "requiredRevision": [
+      "separate static and living allocation",
+      "replace fixed scale endpoints with contextual ranges",
+      "remove hover growth",
+      "show the wider expression family including Wings, disc and card",
+      "retain zero production authority"
+    ]
+  },
+  "nextGate": "identity-product-object-expression-atlas-02",
+  "stopCondition": "Do not build the hero plate until the revised expression atlas passes."
+}

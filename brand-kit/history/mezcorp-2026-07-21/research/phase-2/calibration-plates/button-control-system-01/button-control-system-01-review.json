@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-BUTTON-CONTROL-SYSTEM-01",
+  "exportedAt": "2026-07-20T11:42:42.112Z",
+  "complete": true,
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "decisions": {
+    "shape": {
+      "decision": "moderate-12",
+      "note": ""
+    },
+    "hierarchy": {
+      "decision": "solid-outline-text",
+      "note": ""
+    },
+    "depth": {
+      "decision": "micro-lift",
+      "note": ""
+    },
+    "scale": {
+      "decision": "48-default",
+      "note": ""
+    },
+    "iconPolicy": {
+      "decision": "selective-directional",
+      "note": ""
+    },
+    "darkSurface": {
+      "decision": "white-primary-outline-secondary",
+      "note": ""
+    },
+    "mobileBehaviour": {
+      "decision": "primary-full-secondary-link",
+      "note": ""
+    }
+  },
+  "overallNote": ""
+}

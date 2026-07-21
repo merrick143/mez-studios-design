@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review Mez Systems hero and first viewport calibration 02">
+  <title>Mez Systems · Hero review 02</title>
+  <link rel="stylesheet" href="studio.css">
+</head>
+<body>
+  <header class="review-header">
+    <a class="review-brand" href="hero.html" target="_blank" rel="noreferrer">
+      <img src="../../../../design-system-export/assets/wings.svg" alt="">
+      <span>Hero calibration 02</span>
+    </a>
+    <p>Centred multi-product opening</p>
+    <button class="review-trigger" type="button" data-open-review>Review <span data-progress>0/5</span></button>
+  </header>
+
+  <main>
+    <section class="review-intro">
+      <h1>Judge the homepage opening at full size.</h1>
+      <p>This plate applies the approved type, controls and product-family behaviour. It does not inherit the visual execution of the previous family plate.</p>
+    </section>
+
+    <section class="desktop-study" aria-labelledby="desktop-title">
+      <div class="section-heading">
+        <div>
+          <p>Desktop viewport</p>
+          <h2 id="desktop-title">One proposition. Five systems.</h2>
+        </div>
+        <a href="hero.html" target="_blank" rel="noreferrer">Open full size <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="desktop-frame">
+        <iframe src="hero.html" title="Desktop Mez Systems hero"></iframe>
+      </div>
+    </section>
+
+    <section class="mobile-study" aria-labelledby="mobile-title">
+      <div class="mobile-copy">
+        <p>Mobile viewport</p>
+        <h2 id="mobile-title">The same idea, deliberately recomposed.</h2>
+        <div class="mobile-principles">
+          <span>Centred message</span>
+          <span>Full-width primary action</span>
+          <span>All five products visible</span>
+          <span>No swipe-only product rail</span>
+        </div>
+      </div>
+      <div class="phone-frame">
+        <iframe src="hero.html" title="Mobile Mez Systems hero"></iframe>
+      </div>
+    </section>
+
+    <section class="review-callout">
+      <h2>Does this finally feel like the beginning of Mez Systems?</h2>
+      <p>Approve the mechanisms, edit what misses, or reject the composition. This still grants no production authority.</p>
+      <button class="button-primary" type="button" data-open-review>Open the review</button>
+    </section>
+  </main>
+
+  <aside class="review-drawer" aria-hidden="true" data-review-drawer>
+    <div class="drawer-heading">
+      <div><p>Human gate</p><h2>Hero decisions</h2></div>
+      <button type="button" aria-label="Close review" data-close-review>×</button>
+    </div>
+    <p class="drawer-help">Judge the actual first viewport, not whether every future homepage section already exists.</p>
+    <form data-review-form>
+      <div data-decisions></div>
+      <label class="overall-note">Anything the decisions miss<textarea rows="4" name="overallNote" placeholder="Optional. Point to the visual cause."></textarea></label>
+      <button class="export-button" type="submit">Copy review JSON</button>
+      <p class="copy-state" aria-live="polite" data-copy-state></p>
+    </form>
+  </aside>
+  <button class="drawer-backdrop" type="button" aria-label="Close review" data-backdrop></button>
+
+  <script src="review.js"></script>
+</body>
+</html>

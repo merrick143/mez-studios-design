@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "decisionId": "DEC-AUTHORITY-001",
+  "status": "archived-consumer",
+  "approvedAt": "2026-07-19",
+  "canonicalWorkingLocation": "merrick143/mez-studios-design/codex/brand-kit-workbench:brand-kit",
+  "cutover": {
+    "cutoverId": "CUTOVER-2026-07-21-01",
+    "transferRecord": "governance/AUTHORITY-TRANSFER.json",
+    "preparedTarget": "merrick143/mez-studios-design/codex/brand-kit-workbench:brand-kit",
+    "activationCommit": "19f1570fd8943c4aa7a031f3d5c65c203346366b",
+    "activationProofCommit": "6b1f0c4",
+    "effectiveAuthorityRule": "The target authority manifest is canonical-active with the same cutoverId. This internal pack is a pinned archive and consumer reference with no rank-one authority."
+  },
+  "historicalAuthorityLayers": [
+    {
+      "rank": 1,
+      "kind": "approved-decisions",
+      "sources": ["governance/decision-register.json"],
+      "owns": ["decision status", "human approvals", "exceptions", "reversibility"]
+    },
+    {
+      "rank": 2,
+      "kind": "canonical-data",
+      "sources": ["products.json", "colours.json", "fonts.json", "gradients.json"],
+      "owns": ["product roster", "names", "prices", "core assignments", "foundation values"]
+    },
+    {
+      "rank": 3,
+      "kind": "canonical-guidance",
+      "sources": ["START-HERE.md", "brand-system/00-brand-architecture.md through brand-system/19-review-checklist.md"],
+      "owns": ["brand law", "usage rules", "component contracts", "channel guidance"]
+    },
+    {
+      "rank": 4,
+      "kind": "generated-or-portable-mirrors",
+      "sources": ["design-system-export/"],
+      "owns": ["portable consumption only"],
+      "mustNotOwn": ["new decisions", "independent token values"]
+    },
+    {
+      "rank": 5,
+      "kind": "reference-implementations",
+      "sources": ["canvas/", "certified consumer builds"],
+      "owns": ["behavioural proof", "responsive proof", "visual comparison evidence"],
+      "mustNotOwn": ["undeclared token values", "brand intent"]
+    },
+    {
+      "rank": 6,
+      "kind": "human-authoring-mirror",
+      "sources": ["figma://HU0GVaDhatjWrKCiSg3wlU"],
+      "owns": ["exploration", "milestone review", "approved visual composition mirrors"],
+      "mustNotOwn": ["canonical tokens", "unrecorded production decisions"]
+    },
+    {
+      "rank": 7,
+      "kind": "consumers",
+      "sources": ["product repositories", "marketing repositories", "channel tools"],
+      "owns": ["local integration and runtime behaviour"],
+      "mustNotOwn": ["forked brand rules"]
+    }
+  ],
+  "truthTypes": {
+    "declarative": "Approved decisions, canonical data, and canonical guidance in the pack.",
+    "behavioural": "Tests and certified runtime fixtures built against a named pack version.",
+    "visual": "Approved golden outputs with hashes, viewport, content fixture, decision IDs, and certification status. Figma alone is never visual truth."
+  },
+  "referenceStates": ["candidate", "validating", "certified", "superseded", "rejected"],
+  "certificationRequirements": [
+    "reachable from a recorded path or commit",
+    "built against a named pack version or commit",
+    "all deterministic validators pass",
+    "all supported breakpoint and accessibility checks pass",
+    "content stress cases pass",
+    "visual evidence is hashed and dated",
+    "design-excellence review passes",
+    "human approver and approval date are recorded"
+  ],
+  "currentReferences": [
+    {"id":"REF-CANVAS-001","location":"canvas/","state":"candidate","reason":"Phase 1 responsive and accessibility validation passes; design-excellence review and human certification remain outstanding."},
+    {"id":"REF-WEB-001","location":"/Users/olivermerrick/Desktop/mez-studios/landing-pages/apps/ceos-notion-landingpage","state":"candidate","reason":"Named integration paths are absent from the current checkout."},
+    {"id":"REF-FIGMA-001","location":"figma://HU0GVaDhatjWrKCiSg3wlU/149:30","state":"candidate","reason":"Visual mirror is accessible but publication, variables, and component-library status are unverified."}
+  ],
+  "conflictRule": "The lower-ranked source never silently overrides a higher-ranked source. Stop, record the conflict, and update the owning source first.",
+  "repositoryDecision": "DEC-MIGRATION-SEQUENCE-001 supersedes the earlier Phase 4 timing. Activate the prepared standalone brand-kit after the identity kernel, clean-clone and rollback gates pass, then continue foundations, product expressions, golden outputs, Figma and channels only in the standalone canonical repository."
+}

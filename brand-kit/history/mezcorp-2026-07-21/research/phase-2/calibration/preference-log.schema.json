@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/tr5-preference-record.schema.json",
+  "title": "Mez Systems TR-5 preference record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "studyId", "sessionId", "startedAt", "exportedAt", "productionAuthority", "records"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "studyId": {"const": "MEZ-TR5-ROUND-01"},
+    "sessionId": {"type": "string", "minLength": 8},
+    "startedAt": {"type": "string", "format": "date-time"},
+    "exportedAt": {"type": "string", "format": "date-time"},
+    "productionAuthority": {"const": false},
+    "records": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/record"}
+    }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "studyId", "sessionId", "pairId", "sequence", "dimensionId", "oneVariable", "choice", "confidence", "comment", "contradictionFlag", "decidedAt", "decisionStatus"],
+      "properties": {
+        "schemaVersion": {"const": "1.0.0"},
+        "studyId": {"const": "MEZ-TR5-ROUND-01"},
+        "sessionId": {"type": "string"},
+        "pairId": {"pattern": "^PAIR-(0[1-9]|1[0-2])$"},
+        "sequence": {"type": "integer", "minimum": 1, "maximum": 12},
+        "dimensionId": {"enum": ["TD-001", "TD-002", "TD-003", "TD-004", "TD-005", "TD-006", "TD-007", "TD-008"]},
+        "oneVariable": {"oneOf": [{"type": "string", "minLength": 1}, {"type": "object", "minProperties": 1}]},
+        "choice": {"type": ["string", "null"], "enum": ["A", "B", "neither", null]},
+        "confidence": {"type": ["string", "null"], "enum": ["low", "medium", "high", null]},
+        "comment": {"type": "string", "maxLength": 500},
+        "contradictionFlag": {"type": "boolean"},
+        "decidedAt": {"type": ["string", "null"]},
+        "decisionStatus": {"const": "human-observation-unapproved-for-production"}
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-PHASE-2-DEEP-RESEARCH",
+  "taskId": "TASK-PHASE-2-DEEP-RESEARCH",
+  "generatedAt": "2026-07-20T08:20:00+10:00",
+  "systemVersion": "2026.07.20-phase2-research",
+  "sourceState": {
+    "repository": "/Users/olivermerrick/mezcorp_claude_code",
+    "branch": "main",
+    "commit": "c3007c75a4a38182b7c9e53328003bdd9610d2f7",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {"path":"research/phase-2/INSPIRATION-BRIEF.md","sha256":"812dce285838c826cd548265c4df63be4201d6fa42c1025788cc0001bd4affae","role":"research","required":true,"reason":"Approved questions, rights boundary, success criteria, and stop criteria."},
+    {"path":"research/phase-2/research-questions.yaml","sha256":"59f11e6cb1a296b25b917026bb452b76647755dc54a5bd069fb7e3927174c41b","role":"research","required":true,"reason":"Ranked question IDs used by every source study."},
+    {"path":"research/phase-2/source-register.yaml","sha256":"898402598b8112bfcee87fe2d40bd39022d7a91df2f7707f938a73432d9e1562","role":"research","required":true,"reason":"Olli-approved five-source panel and anti-copy boundaries."},
+    {"path":"research/phase-2/CAPTURE-PLAN.md","sha256":"da845566ee3836bced13f829dae650ecfe5c6341c19f59071fa9c91a39daa187","role":"research","required":true,"reason":"Capture depths, viewports, safe states, adapters, and qualification gate."},
+    {"path":"llm/tasks/TASK-PHASE-2-DEEP-RESEARCH.json","sha256":"88f7ad3fc158fab0e6d30d4c6026c8b3d7d84d5f51ed542414c6ffd75e115d3d","role":"governance","required":true,"reason":"Bounded task, outputs, verification, and stop conditions."}
+  ],
+  "decisions": [
+    {"id":"DEC-H1-REFERENCE-PANEL-001","status":"approved","productionEffect":"deep research on Notion, Linear, Stripe, ElevenLabs, and Ramp only"},
+    {"id":"DEC-BRAND-AMBITION-001","status":"approved","productionEffect":"evaluate mechanisms against high-authority, ownable operational software"}
+  ],
+  "artifacts": [],
+  "consumers": ["CON-CONTROL-PLANE-001", "CON-LLM-001"],
+  "knownConflicts": [
+    {"id":"CONFLICT-PANEL-COVERAGE-001","summary":"The approved panel has no standalone design-system, cross-category, or dedicated anti-reference source.","executionEffect":"constrain"},
+    {"id":"CONFLICT-SOURCE-RIGHTS-001","summary":"Source screenshots, assets, copy, values, and signature combinations remain research-only.","executionEffect":"stop"}
+  ],
+  "stopConditions": [
+    "Do not promote an external expression or measured value into Mez.",
+    "Do not access authenticated or private product surfaces.",
+    "Do not start H2 directions until cross-source synthesis and limitations are explicit."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["research/phase-2/INSPIRATION-BRIEF.md", "research/phase-2/research-questions.yaml", "research/phase-2/source-register.yaml"],
+    "omitByDefault": ["baseline/", "canvas/", "design-system-export/", "_archive/", "aios-website/"]
+  },
+  "humanNotes": ["Olli requested a sub-agent-driven approach. Independent source lanes were normalised and synthesised by the primary agent."]
+}

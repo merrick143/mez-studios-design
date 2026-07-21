@@ -1,0 +1,1065 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "unapproved",
+  "title": "Mez Systems taste dimensions",
+  "preparedAt": "2026-07-20",
+  "scale": {
+    "minimum": 0,
+    "maximum": 100,
+    "interpretation": "A position between the named low and high poles. Ranges are experiment hypotheses, not token values, visual measurements, or approved scores."
+  },
+  "provenance": {
+    "synthesis": "COMPARATIVE-SYNTHESIS.md",
+    "sourceMemos": [
+      "evidence/SRC-NOTION.md",
+      "evidence/SRC-LINEAR.md",
+      "evidence/SRC-STRIPE.md",
+      "evidence/SRC-ELEVENLABS.md",
+      "evidence/SRC-RAMP.md"
+    ],
+    "researchQuestions": "research-questions.yaml",
+    "evidenceScope": "Current official public surfaces from Notion, Linear, Stripe, ElevenLabs, and Ramp, captured or reviewed on 20 July 2026.",
+    "limitations": [
+      "The five-source panel is narrow and software-heavy.",
+      "There is no dedicated anti-reference or broad cross-category cohort.",
+      "Advertising, email, authenticated product UI, and small-size evidence are incomplete.",
+      "Motion semantics are better evidenced than duration, easing, responsive motion, or reduced-motion implementation.",
+      "Product modulation is a hypothesis based on the current Mez product jobs and must be tested in monochrome prototypes.",
+      "No source value, token, asset, composition, or signature may be transferred into Mez production from this file."
+    ],
+    "forbiddenUse": "Do not average these ranges into a style score, use them to clone a source, or promote them without the stated human gate and tests."
+  },
+  "dimensions": [
+    {
+      "id": "TD-001",
+      "name": "Recognition resilience",
+      "definition": "How strongly an output remains attributable to Mez when the wings, company name, product name, gradients, and other obvious identifiers are removed.",
+      "lowPole": {
+        "label": "Single-device and generic",
+        "description": "Recognition collapses without a mark, colour core, or familiar SaaS treatment."
+      },
+      "highPole": {
+        "label": "Distributed and resilient",
+        "description": "Composition, evidence order, relationship geometry, type hierarchy, state language, and motion purpose reinforce one authorship independently."
+      },
+      "desiredRange": {
+        "status": "hypothesis",
+        "minimum": 75,
+        "maximum": 95,
+        "rationale": "Mez needs strong authorship across channels without forcing one visual device into every output."
+      },
+      "channelModulation": [
+        {
+          "channel": "website",
+          "minimum": 80,
+          "maximum": 95,
+          "rationale": "Long-form surfaces can repeat several recognition behaviours."
+        },
+        {
+          "channel": "product-ui",
+          "minimum": 80,
+          "maximum": 95,
+          "rationale": "State language, relationships, controls, and evidence framing should carry authorship without decoration."
+        },
+        {
+          "channel": "advertising",
+          "minimum": 65,
+          "maximum": 85,
+          "rationale": "A small placement may expose fewer behaviours, but at least two non-colour cues should remain."
+        },
+        {
+          "channel": "email",
+          "minimum": 70,
+          "maximum": 85,
+          "rationale": "Recognition must survive client constraints and image blocking."
+        },
+        {
+          "channel": "reports",
+          "minimum": 75,
+          "maximum": 90,
+          "rationale": "Evidence hierarchy, annotation, and relationship geometry should identify the system in restrained print-like contexts."
+        }
+      ],
+      "productModulation": [
+        {
+          "productId": "ai-os",
+          "product": "AI OS",
+          "function": "AI Operating System",
+          "minimum": 85,
+          "maximum": 95,
+          "status": "hypothesis",
+          "rationale": "The live flagship should establish the shared operating grammar most completely."
+        },
+        {
+          "productId": "aurora",
+          "product": "Aurora",
+          "function": "Auto Ads System",
+          "minimum": 75,
+          "maximum": 90,
+          "status": "hypothesis",
+          "rationale": "Campaign expression may vary more, but evidence and relationship behaviour must retain Mez authorship."
+        },
+        {
+          "productId": "prism",
+          "product": "Prism",
+          "function": "Analytics Pack",
+          "minimum": 80,
+          "maximum": 95,
+          "status": "hypothesis",
+          "rationale": "Data framing, provenance, and comparison behaviour can become strong non-colour identifiers."
+        },
+        {
+          "productId": "forge",
+          "product": "Forge",
+          "function": "Claude Code OS",
+          "minimum": 80,
+          "maximum": 95,
+          "status": "hypothesis",
+          "rationale": "Technical objects should remain recognisably Mez rather than defaulting to generic developer-tool styling."
+        }
+      ],
+      "evidenceIds": [
+        "M-01",
+        "NTN-E01",
+        "NTN-E02",
+        "NTN-E03",
+        "LIN-E01",
+        "LIN-E02",
+        "LIN-E03",
+        "STRIPE-E-001",
+        "STRIPE-E-002",
+        "ELV-E01",
+        "ELV-E02",
+        "ELV-E03",
+        "RAMP-E-001",
+        "RAMP-E-002"
+      ],
+      "confidence": "high for the mechanism, untested for Mez authorship",
+      "tensions": [
+        "Quiet versus recognisable",
+        "Parent coherence versus product individuality",
+        "Current gradient equity versus logo-free resilience"
+      ],
+      "tests": [
+        {
+          "id": "TD-001-T01",
+          "method": "Run E-01 on five monochrome, logo-free outputs.",
+          "passCondition": "Reviewers group the family above chance and do not repeatedly attribute it to one source brand."
+        },
+        {
+          "id": "TD-001-T02",
+          "method": "Remove one recognition behaviour at a time.",
+          "passCondition": "No single removal collapses authorship or product comprehension."
+        }
+      ],
+      "approvalGate": {
+        "gate": "H2",
+        "owner": "human design lead",
+        "requiredEvidence": "Blind authorship results, originality review, and cross-channel specimens"
+      }
+    },
+    {
+      "id": "TD-002",
+      "name": "Restraint to expressiveness",
+      "definition": "How much visual energy, contrast, illustration, colour, motion, and compositional surprise an output uses after clarity and proof requirements are met.",
+      "lowPole": {
+        "label": "Severely restrained",
+        "description": "Neutral, sparse, low-chrome presentation with expression carried mainly by hierarchy and behaviour."
+      },
+      "highPole": {
+        "label": "Strongly expressive",
+        "description": "High-energy colour, imagery, motion, contrast, and composition create an emotionally prominent surface."
+      },
+      "desiredRange": {
+        "status": "hypothesis",
+        "minimum": 35,
+        "maximum": 70,
+        "rationale": "Mez should feel premium and ownable without becoming anonymous minimal software or generic AI spectacle."
+      },
+      "channelModulation": [
+        {
+          "channel": "website",
+          "minimum": 45,
+          "maximum": 75,
+          "rationale": "Marketing can establish emotional territory while yielding to literal proof."
+        },
+        {
+          "channel": "product-ui",
+          "minimum": 20,
+          "maximum": 50,
+          "rationale": "Operational comprehension and control should dominate persistent use."
+        },
+        {
+          "channel": "advertising",
+          "minimum": 55,
+          "maximum": 85,
+          "rationale": "Compact promotion benefits from stronger focal energy, bounded by one proof object."
+        },
+        {
+          "channel": "email",
+          "minimum": 30,
+          "maximum": 60,
+          "rationale": "Expression must survive client fallbacks and preserve the next action."
+        },
+        {
+          "channel": "reports",
+          "minimum": 15,
+          "maximum": 40,
+          "rationale": "Analytical trust, scan, printing, and reuse favour restraint."
+        }
+      ],
+      "productModulation": [
+        {
+          "productId": "ai-os",
+          "product": "AI OS",
+          "function": "AI Operating System",
+          "minimum": 35,
+          "maximum": 60,
+          "status": "hypothesis",
+          "rationale": "The flagship should feel calm enough for orchestration and expressive enough to establish the family."
+        },
+        {
+          "productId": "aurora",
+          "product": "Aurora",
+          "function": "Auto Ads System",
+          "minimum": 55,
+          "maximum": 80,
+          "status": "hypothesis",
+          "rationale": "Advertising work permits higher campaign energy, provided performance proof and controls remain legible."
+        },
+        {
+          "productId": "prism",
+          "product": "Prism",
+          "function": "Analytics Pack",
+          "minimum": 25,
+          "maximum": 50,
+          "status": "hypothesis",
+          "rationale": "Analytical interpretation benefits from restraint and selective emphasis."
+        },
+        {
+          "productId": "forge",
+          "product": "Forge",
+          "function": "Claude Code OS",
+          "minimum": 30,
+          "maximum": 55,
+          "status": "hypothesis",
+          "rationale": "Technical proof should lead, while avoiding anonymous dark-tool minimalism."
+        }
+      ],
+      "evidenceIds": [
+        "M-01",
+        "NTN-E01",
+        "NTN-E02",
+        "LIN-E01",
+        "LIN-E02",
+        "LIN-E10",
+        "STRIPE-E-001",
+        "STRIPE-E-002",
+        "ELV-E03",
+        "ELV-E04",
+        "RAMP-E-001",
+        "RAMP-E-007"
+      ],
+      "confidence": "medium",
+      "tensions": [
+        "Premium restraint versus anonymous SaaS",
+        "Campaign energy versus proof clarity",
+        "Product expression versus family coherence"
+      ],
+      "tests": [
+        {
+          "id": "TD-002-T01",
+          "method": "Render low, middle, and high expression variants with identical approved content.",
+          "passCondition": "The selected range improves recognition and preference without reducing claim comprehension or originality."
+        },
+        {
+          "id": "TD-002-T02",
+          "method": "Test colour-free and reduced-motion fallbacks.",
+          "passCondition": "Essential hierarchy, product territory, and proof remain intact."
+        }
+      ],
+      "approvalGate": {
+        "gate": "H2",
+        "owner": "human design lead",
+        "requiredEvidence": "Cross-channel visual territories, accessibility review, and source-signature review"
+      }
+    },
+    {
+      "id": "TD-003",
+      "name": "Editorial to operational density",
+      "definition": "How much information, control, state, annotation, and evidence is visible at once, with density determined by receiver intent and the information object.",
+      "lowPole": {
+        "label": "Editorial calm",
+        "description": "One main idea, generous orientation, few controls, and shallow evidence depth."
+      },
+      "highPole": {
+        "label": "Operational inspection",
+        "description": "Multiple objects, states, controls, exceptions, ownership, provenance, and comparison are visible for action."
+      },
+      "desiredRange": {
+        "status": "hypothesis",
+        "minimum": 30,
+        "maximum": 85,
+        "rationale": "The system needs several governed density modes rather than one preferred midpoint."
+      },
+      "channelModulation": [
+        {
+          "channel": "website",
+          "minimum": 25,
+          "maximum": 65,
+          "rationale": "Begin with orientation, then increase density at evaluation points."
+        },
+        {
+          "channel": "product-ui",
+          "minimum": 65,
+          "maximum": 90,
+          "rationale": "Objects, state, control, ownership, and exceptions must remain inspectable."
+        },
+        {
+          "channel": "advertising",
+          "minimum": 15,
+          "maximum": 35,
+          "rationale": "One claim, one proof object, and one outcome marker should dominate."
+        },
+        {
+          "channel": "email",
+          "minimum": 30,
+          "maximum": 55,
+          "rationale": "Retain context, changed state, consequence, and next action."
+        },
+        {
+          "channel": "reports",
+          "minimum": 65,
+          "maximum": 95,
+          "rationale": "Data, method, uncertainty, source, and comparison support evaluation and reuse."
+        }
+      ],
+      "productModulation": [
+        {
+          "productId": "ai-os",
+          "product": "AI OS",
+          "function": "AI Operating System",
+          "minimum": 55,
+          "maximum": 80,
+          "status": "hypothesis",
+          "rationale": "Orchestration requires several work streams while maintaining a clear system overview."
+        },
+        {
+          "productId": "aurora",
+          "product": "Aurora",
+          "function": "Auto Ads System",
+          "minimum": 40,
+          "maximum": 70,
+          "status": "hypothesis",
+          "rationale": "Campaign creation needs visual focus, while performance and approvals add operational depth."
+        },
+        {
+          "productId": "prism",
+          "product": "Prism",
+          "function": "Analytics Pack",
+          "minimum": 70,
+          "maximum": 95,
+          "status": "hypothesis",
+          "rationale": "Comparison, trends, filters, methodology, and uncertainty are core product material."
+        },
+        {
+          "productId": "forge",
+          "product": "Forge",
+          "function": "Claude Code OS",
+          "minimum": 65,
+          "maximum": 90,
+          "status": "hypothesis",
+          "rationale": "Plans, files, diffs, runs, logs, exceptions, and review create high task density."
+        }
+      ],
+      "evidenceIds": [
+        "M-04",
+        "NTN-E14",
+        "NTN-E15",
+        "NTN-E16",
+        "NTN-E17",
+        "LIN-E09",
+        "LIN-E10",
+        "STRIPE-E-009",
+        "STRIPE-E-010",
+        "STRIPE-E-011",
+        "ELV-E11",
+        "ELV-E12",
+        "RAMP-E-007",
+        "RAMP-E-008",
+        "RAMP-E-009",
+        "RAMP-E-010"
+      ],
+      "confidence": "high for channel modulation, medium for product ranges",
+      "tensions": [
+        "Evidence depth versus visual overload",
+        "Calm shell versus operational scan speed",
+        "Cross-channel consistency versus identical layout"
+      ],
+      "tests": [
+        {
+          "id": "TD-003-T01",
+          "method": "Run E-03 with one proof record across five density modes.",
+          "passCondition": "Each receiver identifies the claim, evidence class, source, result, and action within the target inspection time."
+        },
+        {
+          "id": "TD-003-T02",
+          "method": "Test responsive grouping and accessible reading order at each density.",
+          "passCondition": "No essential relationship, control, qualifier, or source is lost at supported widths."
+        }
+      ],
+      "approvalGate": {
+        "gate": "H2",
+        "owner": "human design lead with content and accessibility review",
+        "requiredEvidence": "Five-channel transformation, scan test, and responsive review"
+      }
+    },
+    {
+      "id": "TD-004",
+      "name": "Proof literalness",
+      "definition": "How directly a claim is connected to an inspectable input, system action, state change, result, provenance, and control.",
+      "lowPole": {
+        "label": "Atmospheric assertion",
+        "description": "The claim relies on decoration, logos, quotes, vague screenshots, or unsupported language."
+      },
+      "highPole": {
+        "label": "Inspectable evidence chain",
+        "description": "The receiver can see what entered, what happened, what changed, what resulted, where it came from, and what can be controlled."
+      },
+      "desiredRange": {
+        "status": "hypothesis",
+        "minimum": 80,
+        "maximum": 100,
+        "rationale": "Literal proof is the strongest cross-source answer to generic AI and software claims."
+      },
+      "channelModulation": [
+        {
+          "channel": "website",
+          "minimum": 80,
+          "maximum": 100,
+          "rationale": "Major claims should sit beside the exact mechanism and result."
+        },
+        {
+          "channel": "product-ui",
+          "minimum": 90,
+          "maximum": 100,
+          "rationale": "The real object, state, control, and provenance are available directly."
+        },
+        {
+          "channel": "advertising",
+          "minimum": 65,
+          "maximum": 85,
+          "rationale": "Compact formats may show a subset, but the proof class and one literal object must remain."
+        },
+        {
+          "channel": "email",
+          "minimum": 70,
+          "maximum": 90,
+          "rationale": "Context, changed state, result, and source path should survive compression."
+        },
+        {
+          "channel": "reports",
+          "minimum": 95,
+          "maximum": 100,
+          "rationale": "Method, uncertainty, date, source, and evidence class are mandatory."
+        }
+      ],
+      "productModulation": [
+        {
+          "productId": "ai-os",
+          "product": "AI OS",
+          "function": "AI Operating System",
+          "minimum": 90,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "System-wide orchestration claims need visible activity, ownership, result, and review."
+        },
+        {
+          "productId": "aurora",
+          "product": "Aurora",
+          "function": "Auto Ads System",
+          "minimum": 80,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Generated creative claims need input, transformation, approval, deployment, and performance evidence."
+        },
+        {
+          "productId": "prism",
+          "product": "Prism",
+          "function": "Analytics Pack",
+          "minimum": 95,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Analytics must expose data, method, comparison, uncertainty, and source."
+        },
+        {
+          "productId": "forge",
+          "product": "Forge",
+          "function": "Claude Code OS",
+          "minimum": 90,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Technical claims should resolve to plan, command, file, diff, test, and human decision."
+        }
+      ],
+      "evidenceIds": [
+        "M-03",
+        "M-07",
+        "NTN-E09",
+        "NTN-E10",
+        "NTN-E11",
+        "NTN-E12",
+        "NTN-E13",
+        "LIN-E06",
+        "LIN-E07",
+        "LIN-E08",
+        "STRIPE-E-004",
+        "STRIPE-E-012",
+        "ELV-E07",
+        "ELV-E08",
+        "ELV-E09",
+        "ELV-E10",
+        "RAMP-E-002",
+        "RAMP-E-003",
+        "RAMP-E-004",
+        "RAMP-E-008",
+        "RAMP-E-009"
+      ],
+      "confidence": "high",
+      "tensions": [
+        "Literal proof versus compact-channel limits",
+        "Transparency versus sensitive information",
+        "Evidence completeness versus visual overload"
+      ],
+      "tests": [
+        {
+          "id": "TD-004-T01",
+          "method": "Map each claim to the canonical proof record and evidence class.",
+          "passCondition": "No decorative UI, customer quote, or aggregate statistic impersonates another evidence class."
+        },
+        {
+          "id": "TD-004-T02",
+          "method": "Ask a reviewer to identify input, action, changed state, result, provenance, and control.",
+          "passCondition": "All fields required by the claim are visible or resolve through an explicit path."
+        }
+      ],
+      "approvalGate": {
+        "gate": "H2 for grammar, per-claim approval for publication",
+        "owner": "product, content, and human claim owner",
+        "requiredEvidence": "Real Mez proof record, evidence-class validation, and provenance"
+      }
+    },
+    {
+      "id": "TD-005",
+      "name": "Family coherence to product distinction",
+      "definition": "How the system balances shared parent semantics and controls with product-owned jobs, objects, proof, density, motion, and campaign posture.",
+      "lowPole": {
+        "label": "Uniform reskins",
+        "description": "Products share almost everything and differ mainly by name, copy, screenshot, or colour."
+      },
+      "highPole": {
+        "label": "Independent mini-brands",
+        "description": "Products use unrelated language, components, behaviours, and identities with weak parent recognition."
+      },
+      "desiredRange": {
+        "status": "hypothesis",
+        "minimum": 55,
+        "maximum": 75,
+        "rationale": "The target is a visible shared chassis with substantial product-owned territory, not either extreme."
+      },
+      "channelModulation": [
+        {
+          "channel": "website",
+          "minimum": 55,
+          "maximum": 80,
+          "rationale": "Portfolio pages can compare shared family and product-specific jobs directly."
+        },
+        {
+          "channel": "product-ui",
+          "minimum": 45,
+          "maximum": 70,
+          "rationale": "Core controls and state semantics should remain strongly shared while work objects differ."
+        },
+        {
+          "channel": "advertising",
+          "minimum": 60,
+          "maximum": 85,
+          "rationale": "Campaign work needs a clear product territory plus compact parent attribution."
+        },
+        {
+          "channel": "email",
+          "minimum": 50,
+          "maximum": 75,
+          "rationale": "Product context should be obvious without losing sender trust."
+        },
+        {
+          "channel": "reports",
+          "minimum": 45,
+          "maximum": 70,
+          "rationale": "Parent evidence conventions remain shared while data objects and result types identify the product."
+        }
+      ],
+      "productModulation": [
+        {
+          "productId": "ai-os",
+          "product": "AI OS",
+          "function": "AI Operating System",
+          "minimum": 45,
+          "maximum": 65,
+          "status": "hypothesis",
+          "rationale": "The flagship should demonstrate the common chassis and broad orchestration territory."
+        },
+        {
+          "productId": "aurora",
+          "product": "Aurora",
+          "function": "Auto Ads System",
+          "minimum": 60,
+          "maximum": 80,
+          "status": "hypothesis",
+          "rationale": "Campaign creation, approval, deployment, and performance need a visibly distinct proof territory."
+        },
+        {
+          "productId": "prism",
+          "product": "Prism",
+          "function": "Analytics Pack",
+          "minimum": 65,
+          "maximum": 85,
+          "status": "hypothesis",
+          "rationale": "Analytical objects, comparison behaviour, and evidence depth should distinguish Prism."
+        },
+        {
+          "productId": "forge",
+          "product": "Forge",
+          "function": "Claude Code OS",
+          "minimum": 65,
+          "maximum": 85,
+          "status": "hypothesis",
+          "rationale": "Code, files, diffs, tests, and review create a distinct technical territory within shared Mez controls."
+        }
+      ],
+      "evidenceIds": [
+        "M-02",
+        "NTN-E04",
+        "NTN-E05",
+        "NTN-E06",
+        "NTN-E07",
+        "NTN-E08",
+        "LIN-E04",
+        "LIN-E05",
+        "STRIPE-E-003",
+        "STRIPE-E-005",
+        "STRIPE-E-006",
+        "ELV-E04",
+        "ELV-E05",
+        "ELV-E06",
+        "RAMP-E-004",
+        "RAMP-E-005",
+        "RAMP-E-006"
+      ],
+      "confidence": "high for axes, medium for desired ranges",
+      "tensions": [
+        "One chassis versus product individuality",
+        "Small-size parent attribution versus product cue",
+        "Machine reuse versus product-specific composition"
+      ],
+      "tests": [
+        {
+          "id": "TD-005-T01",
+          "method": "Run E-02 with names and product colours removed.",
+          "passCondition": "All four products remain related and distinguishable by job, object, proof, density, and state."
+        },
+        {
+          "id": "TD-005-T02",
+          "method": "Swap proof objects between product specimens.",
+          "passCondition": "An inappropriate swap creates an obvious semantic failure rather than remaining visually plausible."
+        }
+      ],
+      "approvalGate": {
+        "gate": "H2",
+        "owner": "human design and product leads",
+        "requiredEvidence": "Four-product territory contracts and monochrome contact sheet"
+      }
+    },
+    {
+      "id": "TD-006",
+      "name": "Motion semantics",
+      "definition": "How strongly movement communicates system state, ownership, permission, progress, transformation, synchronisation, exception, handoff, completion, or reversal.",
+      "lowPole": {
+        "label": "Ambient and ornamental",
+        "description": "Movement creates atmosphere but carries no necessary state information."
+      },
+      "highPole": {
+        "label": "State-dependent and informative",
+        "description": "Motion makes a specific transition, owner, timing relationship, or result easier to understand."
+      },
+      "desiredRange": {
+        "status": "hypothesis",
+        "minimum": 85,
+        "maximum": 100,
+        "rationale": "Every approved product motion should earn attention by communicating state."
+      },
+      "channelModulation": [
+        {
+          "channel": "website",
+          "minimum": 75,
+          "maximum": 100,
+          "rationale": "Demonstrations may animate transformation, but should retain static meaning."
+        },
+        {
+          "channel": "product-ui",
+          "minimum": 90,
+          "maximum": 100,
+          "rationale": "Persistent motion must explain feedback, progress, ownership, or state."
+        },
+        {
+          "channel": "advertising",
+          "minimum": 65,
+          "maximum": 90,
+          "rationale": "Short motion may attract attention, but one state transition should remain clear."
+        },
+        {
+          "channel": "email",
+          "minimum": 0,
+          "maximum": 20,
+          "rationale": "Most email should rely on static states and robust fallbacks."
+        },
+        {
+          "channel": "reports",
+          "minimum": 0,
+          "maximum": 15,
+          "rationale": "Static sequence and annotation are primary; digital reports may use optional explanatory transitions."
+        }
+      ],
+      "productModulation": [
+        {
+          "productId": "ai-os",
+          "product": "AI OS",
+          "function": "AI Operating System",
+          "minimum": 90,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Routing, waiting, handoff, verification, exception, and completion define orchestration."
+        },
+        {
+          "productId": "aurora",
+          "product": "Aurora",
+          "function": "Auto Ads System",
+          "minimum": 80,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Generation, selection, approval, deployment, and performance change can drive motion meaning."
+        },
+        {
+          "productId": "prism",
+          "product": "Prism",
+          "function": "Analytics Pack",
+          "minimum": 75,
+          "maximum": 95,
+          "status": "hypothesis",
+          "rationale": "Filtering, comparison, threshold change, and time progression should remain measured and optional."
+        },
+        {
+          "productId": "forge",
+          "product": "Forge",
+          "function": "Claude Code OS",
+          "minimum": 90,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Plan, execution, file change, test, failure, review, and rollback form a strong state model."
+        }
+      ],
+      "evidenceIds": [
+        "M-05",
+        "LIN-E11",
+        "ELV-E03",
+        "ELV-E10",
+        "ELV-E13",
+        "ELV-E14"
+      ],
+      "confidence": "medium for semantics, low for visual timing specifications",
+      "tensions": [
+        "Clarity versus attention capture",
+        "Shared state semantics versus product-specific expression",
+        "Dynamic explanation versus reduced-motion equivalence"
+      ],
+      "tests": [
+        {
+          "id": "TD-006-T01",
+          "method": "Run E-04 with static, animated, and reduced-motion versions.",
+          "passCondition": "State and ownership are correctly identified in every version."
+        },
+        {
+          "id": "TD-006-T02",
+          "method": "Remove the motion from each transition.",
+          "passCondition": "If comprehension does not decrease, classify the motion as optional atmosphere and do not treat it as a system rule."
+        }
+      ],
+      "approvalGate": {
+        "gate": "H3",
+        "owner": "human design lead with accessibility review",
+        "requiredEvidence": "State vocabulary, four product storyboards, and reduced-motion equivalents"
+      }
+    },
+    {
+      "id": "TD-007",
+      "name": "Human control visibility",
+      "definition": "How visibly the system communicates source, permission, current owner, intermediate state, affected artefact, uncertainty, exception, review, and reversal around automated work.",
+      "lowPole": {
+        "label": "Hidden autonomy",
+        "description": "The system appears instant and magical, with no visible boundaries, ownership, or recovery."
+      },
+      "highPole": {
+        "label": "Observable and governable",
+        "description": "People can understand, interrupt, verify, approve, change, and reverse system actions at appropriate risk points."
+      },
+      "desiredRange": {
+        "status": "hypothesis",
+        "minimum": 85,
+        "maximum": 100,
+        "rationale": "Human receivers need trustworthy outputs without carrying an excessive manual review burden."
+      },
+      "channelModulation": [
+        {
+          "channel": "website",
+          "minimum": 70,
+          "maximum": 90,
+          "rationale": "Trust claims should reveal representative controls and review points."
+        },
+        {
+          "channel": "product-ui",
+          "minimum": 90,
+          "maximum": 100,
+          "rationale": "Risk-appropriate control, ownership, history, and reversal are product requirements."
+        },
+        {
+          "channel": "advertising",
+          "minimum": 45,
+          "maximum": 70,
+          "rationale": "Compact proof should avoid implying uncontrolled autonomy and resolve to fuller detail."
+        },
+        {
+          "channel": "email",
+          "minimum": 70,
+          "maximum": 95,
+          "rationale": "Changed state, consequence, responsible party, and next action should be explicit."
+        },
+        {
+          "channel": "reports",
+          "minimum": 85,
+          "maximum": 100,
+          "rationale": "Provenance, approval status, uncertainty, and accountable owner support evaluation."
+        }
+      ],
+      "productModulation": [
+        {
+          "productId": "ai-os",
+          "product": "AI OS",
+          "function": "AI Operating System",
+          "minimum": 90,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Cross-business orchestration requires visible authority, handoff, exception, and reversal."
+        },
+        {
+          "productId": "aurora",
+          "product": "Aurora",
+          "function": "Auto Ads System",
+          "minimum": 80,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Creative selection, claims, budgets, and deployment need explicit approval boundaries."
+        },
+        {
+          "productId": "prism",
+          "product": "Prism",
+          "function": "Analytics Pack",
+          "minimum": 80,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Interpretation, data quality, method, and confidence need a visible human decision point."
+        },
+        {
+          "productId": "forge",
+          "product": "Forge",
+          "function": "Claude Code OS",
+          "minimum": 90,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Code changes need plan review, diff visibility, tests, approval, and rollback."
+        }
+      ],
+      "evidenceIds": [
+        "M-07",
+        "NTN-E12",
+        "NTN-E18",
+        "NTN-E19",
+        "NTN-E20",
+        "LIN-E06",
+        "LIN-E07",
+        "ELV-E09",
+        "ELV-E10",
+        "ELV-E14",
+        "ELV-E17",
+        "RAMP-E-007",
+        "RAMP-E-009",
+        "RAMP-E-013"
+      ],
+      "confidence": "high for the principle, medium for risk thresholds",
+      "tensions": [
+        "Low review burden versus responsible control",
+        "Visible governance versus interface clutter",
+        "Automation speed versus verification"
+      ],
+      "tests": [
+        {
+          "id": "TD-007-T01",
+          "method": "Storyboard successful and recoverable-failure runs.",
+          "passCondition": "A reviewer can identify source, owner, permission, change, uncertainty, review, and recovery."
+        },
+        {
+          "id": "TD-007-T02",
+          "method": "Measure review time and error detection with collapsed and expanded controls.",
+          "passCondition": "Progressive disclosure reduces routine burden without hiding high-risk decisions."
+        }
+      ],
+      "approvalGate": {
+        "gate": "H3 for interaction grammar, per-product risk approval before production",
+        "owner": "human product owner with design and governance review",
+        "requiredEvidence": "Risk model, control states, failure storyboard, and reversal behaviour"
+      }
+    },
+    {
+      "id": "TD-008",
+      "name": "Machine portability",
+      "definition": "How reliably approved meaning, behaviour, evidence, and bounded variation transfer between code, Figma, templates, humans, and LLMs through one semantic contract.",
+      "lowPole": {
+        "label": "Bespoke and manually mirrored",
+        "description": "Rules live in separate prose, canvas, code, and prompts with hidden context and manual synchronisation."
+      },
+      "highPole": {
+        "label": "Registry-driven and validated",
+        "description": "Stable IDs, purpose, states, evidence, constraints, mappings, versions, provenance, deprecation, and tests serve every supported renderer."
+      },
+      "desiredRange": {
+        "status": "hypothesis",
+        "minimum": 90,
+        "maximum": 100,
+        "rationale": "LLMs will use the system more than humans, so semantic reliability and bounded variation are core identity requirements."
+      },
+      "channelModulation": [
+        {
+          "channel": "website",
+          "minimum": 90,
+          "maximum": 100,
+          "rationale": "Pages should consume approved objects and proof rather than hidden implementation context."
+        },
+        {
+          "channel": "product-ui",
+          "minimum": 95,
+          "maximum": 100,
+          "rationale": "Component API, state, accessibility, and evidence semantics must resolve deterministically."
+        },
+        {
+          "channel": "advertising",
+          "minimum": 80,
+          "maximum": 100,
+          "rationale": "Creative variation is allowed inside approved claim, source, focal, and brand boundaries."
+        },
+        {
+          "channel": "email",
+          "minimum": 90,
+          "maximum": 100,
+          "rationale": "Content and fallbacks need dependable cross-client rules and canonical claims."
+        },
+        {
+          "channel": "reports",
+          "minimum": 95,
+          "maximum": 100,
+          "rationale": "Data, method, source, date, version, and export behaviour require exact transfer."
+        }
+      ],
+      "productModulation": [
+        {
+          "productId": "ai-os",
+          "product": "AI OS",
+          "function": "AI Operating System",
+          "minimum": 95,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "The flagship should establish the shared semantic registry and orchestration states."
+        },
+        {
+          "productId": "aurora",
+          "product": "Aurora",
+          "function": "Auto Ads System",
+          "minimum": 90,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "High creative variation needs strict claim, provenance, approval, and export constraints."
+        },
+        {
+          "productId": "prism",
+          "product": "Prism",
+          "function": "Analytics Pack",
+          "minimum": 95,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Analytical objects and evidence definitions must remain exact across renderers."
+        },
+        {
+          "productId": "forge",
+          "product": "Forge",
+          "function": "Claude Code OS",
+          "minimum": 95,
+          "maximum": 100,
+          "status": "hypothesis",
+          "rationale": "Plans, commands, files, diffs, tests, and review states need stable machine contracts."
+        }
+      ],
+      "evidenceIds": [
+        "M-06",
+        "M-07",
+        "NTN-E18",
+        "NTN-E19",
+        "NTN-E20",
+        "LIN-E12",
+        "LIN-E13",
+        "LIN-E14",
+        "STRIPE-E-006",
+        "STRIPE-E-007",
+        "STRIPE-E-008",
+        "STRIPE-E-009",
+        "ELV-E15",
+        "ELV-E16",
+        "ELV-E17",
+        "RAMP-E-010",
+        "RAMP-E-011",
+        "RAMP-E-012",
+        "RAMP-E-013"
+      ],
+      "confidence": "high for the need, medium for the final architecture",
+      "tensions": [
+        "Flexible composition versus deterministic generation",
+        "Human taste versus machine reliability",
+        "One source of truth versus renderer-specific requirements"
+      ],
+      "tests": [
+        {
+          "id": "TD-008-T01",
+          "method": "Run E-05 with one object in machine contract, human guidance, HTML, Figma mapping, LLM context, and validator.",
+          "passCondition": "One human and two LLMs create semantically equivalent outputs with bounded visual variation and no hidden context."
+        },
+        {
+          "id": "TD-008-T02",
+          "method": "Change the registry version and deprecate one representation.",
+          "passCondition": "Every supported consumer identifies the new version, rejects the deprecated form, and preserves provenance."
+        }
+      ],
+      "approvalGate": {
+        "gate": "H4",
+        "owner": "design systems and engineering leads with human design approval",
+        "requiredEvidence": "Portability pilot, validator output, versioning proof, and measured review burden"
+      }
+    }
+  ]
+}

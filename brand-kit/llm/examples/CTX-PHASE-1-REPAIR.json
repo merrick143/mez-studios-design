@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-PHASE-1-REPAIR",
+  "taskId": "TASK-PHASE-1-REPAIR",
+  "generatedAt": "2026-07-19T18:58:00+10:00",
+  "systemVersion": "2026.07.19-phase1",
+  "sourceState": {
+    "repository": "/Users/olivermerrick/mezcorp_claude_code",
+    "branch": "main",
+    "commit": "c3007c75a4a38182b7c9e53328003bdd9610d2f7",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {"path":"START-HERE.md","sha256":"3d8bc0cce56f6c9040ddfed3b68ba183cb3056f7ddfd5799aeeda85a919681f9","role":"canonical","required":true,"reason":"Canonical reading order and authority summary."},
+    {"path":"governance/authority-model.json","sha256":"0a639155609aee21f18393526dc3bc08d68cbba6a4be059a47c6c8147a1278d0","role":"governance","required":true,"reason":"Approved authority hierarchy and reference certification contract."},
+    {"path":"governance/scripts/validate_phase_one.py","sha256":"47c2e0029ccb371eeed998823fc219f3e6a4a1ab2fd0fcfd6803907d01707557","role":"governance","required":true,"reason":"Deterministic Phase 1 release gate."},
+    {"path":"baseline/2026-07-19/phase-one-browser-validation.json","sha256":"fdc204d48425f63735ffcc1f414681b7568bd7ee67f4d0d23d393fe25cb0cb5d","role":"evidence","required":true,"reason":"Responsive, content-stress, and keyboard evidence."},
+    {"path":"design-system-export/export-manifest.json","sha256":"3c28c15dbfc4a37fb8e064e38b53aefd86f515d041e57f133ee193025ae683cd","role":"mirror","required":true,"reason":"Complete copied-release file set and checksums."},
+    {"path":"brand-system/19-review-checklist.md","sha256":"420949de1377cb0d6c35c3efc25d5e4836a8ae41b7e54f3e437b7ef1971a40b9","role":"canonical","required":true,"reason":"Context-aware review gate and sanctioned exceptions."}
+  ],
+  "decisions": [
+    {"id":"DEC-AUTHORITY-001","status":"approved","productionEffect":"one enforceable hierarchy and generated portable mirror"},
+    {"id":"DEC-FIGMA-001","status":"approved","productionEffect":"Figma remains optional evidence and milestone mirror"},
+    {"id":"DEC-CONSUMER-001","status":"approved","productionEffect":"named website remains a migration candidate"},
+    {"id":"DEC-TYPE-001","status":"current","productionEffect":"current font family ships while later identity research remains open"}
+  ],
+  "artifacts": [
+    "ART-08B88580828A",
+    "ART-9A995DDF917E",
+    "ART-EDAC0F7A43BB",
+    "ART-A3E344408DD8",
+    "ART-3F28BA7B8C1C",
+    "ART-E15BAA25C80F"
+  ],
+  "consumers": ["CON-CONTROL-PLANE-001", "CON-CANVAS-001", "CON-EXPORT-001", "CON-LLM-001", "CON-CHANNEL-001"],
+  "knownConflicts": [
+    {"id":"CONFLICT-FIGMA-001","summary":"The current Figma file remains research and milestone evidence, not a published canonical library.","executionEffect":"constrain"},
+    {"id":"CONFLICT-WEB-001","summary":"The named website checkout still lacks the claimed design-system integration paths.","executionEffect":"stop"},
+    {"id":"CONFLICT-CORES-001","summary":"AI OS G13 is locked; Aurora G20, Prism G06, and Forge G15 remain candidate assignments.","executionEffect":"constrain"}
+  ],
+  "stopConditions": [
+    "Do not call any candidate reference canonical or certified.",
+    "Do not change open identity decisions during the Phase 1 safety repair.",
+    "Do not require a clean consumer to access Figma or the source pack."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["START-HERE.md", "governance/authority-model.json", "brand-system/19-review-checklist.md"],
+    "omitByDefault": ["_archive/", "aios-website/", "trading-cards-fut-study/", "baseline/2026-07-19/screenshots/"]
+  },
+  "humanNotes": ["No new taste choice is required in Phase 1. The next human work begins with the Phase 2 reference shortlist."]
+}

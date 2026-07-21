@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-PHASE-1-REPAIR",
+  "receiptId": "RCP-PHASE-1-REPAIR",
+  "evaluatedAt": "2026-07-19T19:00:00+10:00",
+  "evaluator": {"kind":"hybrid","name":"Phase 1 deterministic validators plus browser inspection"},
+  "contractChecks": [
+    {"id":"AUTHORITY","status":"pass","evidence":"One approved precedence path is consistent across source and portable guidance."},
+    {"id":"DETERMINISTIC-GUIDANCE","status":"pass","evidence":"Core language, type weights, CTA actions, OG compositions, document range, Figma nodes, and sanctioned exceptions are reconciled."},
+    {"id":"ACCESSIBILITY","status":"pass","evidence":"Focus, placeholder, border, target-size, keyboard, lockup contrast, large-text, motion, and forced-colour contracts pass the Phase 1 gate."},
+    {"id":"RESPONSIVE","status":"pass","evidence":"Eight pages pass eight supported widths with zero horizontal overflow."},
+    {"id":"PORTABILITY","status":"pass","evidence":"A copied release verifies its own 74 files, hashes, links, required assets, and private-path boundary."},
+    {"id":"GRADIENT-PROVENANCE","status":"pass","evidence":"Four assigned Figma source nodes map to exact 1600 px exports with source and export SHA-256 values."},
+    {"id":"REFERENCE-STATE","status":"pass","evidence":"Canvas, Figma, and the website remain candidate references rather than being over-claimed as canonical or certified."}
+  ],
+  "qualityDimensions": [
+    {"id":"authority-clarity","score":5,"maximum":5,"evidence":"A fresh agent has one machine-readable precedence and conflict rule."},
+    {"id":"critical-accessibility","score":5,"maximum":5,"evidence":"Measured failures are corrected and protected by deterministic checks."},
+    {"id":"responsive-reliability","score":5,"maximum":5,"evidence":"The complete 64-combination matrix passes with content-stress fixtures."},
+    {"id":"portable-completeness","score":5,"maximum":5,"evidence":"The copied release contains all files needed for baseline web use and validates independently."},
+    {"id":"traceability","score":5,"maximum":5,"evidence":"Source nodes, hashes, decisions, tests, exceptions, context, and outputs are recorded."},
+    {"id":"design-excellence","score":3,"maximum":5,"evidence":"Phase 1 preserves and safely repairs the current V1. Strategic identity and channel excellence remain the work of Phases 2 onward."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["Phase 1 is complete. This pass does not certify the current Canvas as the final visual north star."]
+}

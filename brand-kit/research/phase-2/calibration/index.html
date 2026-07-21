@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mez Systems controlled taste calibration, round one.">
+  <title>Mez Systems | Taste calibration 01</title>
+  <link rel="stylesheet" href="calibration.css">
+</head>
+<body>
+  <section class="invalid-pilot-lockout" role="alert" aria-labelledby="invalid-pilot-title">
+    <p>TR-5 / ROUND 01 / INVALIDATED</p>
+    <h1 id="invalid-pilot-title">This pilot must not be used.</h1>
+    <p>The low-fidelity pair review produced contaminated evidence and has no synthesis or production authority. Continue with the source-grounded reference taste review.</p>
+    <a href="http://127.0.0.1:8907/reviews/mez-systems-reference-taste-round-01/">Open the replacement review</a>
+  </section>
+  <a class="skip-link" href="#calibration">Skip to calibration</a>
+  <header class="masthead">
+    <a class="wordmark" href="#" aria-label="Mez Systems calibration home">
+      <span class="wordmark-mark" aria-hidden="true">M</span>
+      <span>MEZ SYSTEMS</span>
+    </a>
+    <div class="run-meta">
+      <span>RESEARCH INSTRUMENT</span>
+      <span>TR-5 / ROUND 01</span>
+      <span id="save-state">LOCAL SAVE ACTIVE</span>
+    </div>
+  </header>
+
+  <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <main id="calibration" class="calibration-shell">
+    <aside class="index-rail" aria-label="Calibration progress">
+      <p class="rail-kicker">PAIR</p>
+      <p class="rail-number"><span id="pair-number">01</span><small>/12</small></p>
+      <ol id="pair-index" class="pair-index"></ol>
+    </aside>
+
+    <section class="workbench" aria-live="polite">
+      <div id="loading" class="loading-state">
+        <span class="loading-pulse" aria-hidden="true"></span>
+        Loading controlled pairs
+      </div>
+
+      <div id="pair-view" hidden>
+        <header class="pair-header">
+          <div>
+            <p class="micro-label" id="dimension-label">DIMENSION</p>
+            <h1 id="pair-title">Calibration pair</h1>
+          </div>
+          <p class="pair-question" id="pair-question"></p>
+        </header>
+
+        <div class="instruction-strip">
+          <span>Same words. Same content. One controlled variable.</span>
+          <span>Judge the result, not the idea.</span>
+        </div>
+
+        <div class="specimen-grid" id="specimen-grid">
+          <article class="specimen specimen-a" data-option="A">
+            <div class="specimen-cap"><span>OPTION A</span><span>CONTROLLED VIEW</span></div>
+            <div class="specimen-stage" id="stage-a"></div>
+            <button class="select-option" type="button" data-choice="A" aria-pressed="false">
+              <span>Choose A</span><kbd>A</kbd>
+            </button>
+          </article>
+          <article class="specimen specimen-b" data-option="B">
+            <div class="specimen-cap"><span>OPTION B</span><span>CONTROLLED VIEW</span></div>
+            <div class="specimen-stage" id="stage-b"></div>
+            <button class="select-option" type="button" data-choice="B" aria-pressed="false">
+              <span>Choose B</span><kbd>B</kbd>
+            </button>
+          </article>
+        </div>
+
+        <section class="decision-panel" aria-labelledby="decision-heading">
+          <div class="decision-main">
+            <p class="micro-label">YOUR READ</p>
+            <h2 id="decision-heading">Which feels more Mez?</h2>
+            <div class="decision-buttons" role="group" aria-label="Pair decision">
+              <button type="button" data-choice="A" aria-pressed="false">A</button>
+              <button type="button" data-choice="B" aria-pressed="false">B</button>
+              <button type="button" data-choice="neither" aria-pressed="false">Neither <kbd>N</kbd></button>
+            </div>
+          </div>
+          <div class="confidence-block">
+            <p class="micro-label">CONFIDENCE</p>
+            <div class="confidence-buttons" role="group" aria-label="Decision confidence">
+              <button type="button" data-confidence="low" aria-pressed="false">Low</button>
+              <button type="button" data-confidence="medium" aria-pressed="false">Medium</button>
+              <button type="button" data-confidence="high" aria-pressed="false">High</button>
+            </div>
+          </div>
+          <label class="note-field">
+            <span class="micro-label">OPTIONAL NOTE</span>
+            <textarea id="decision-note" rows="2" maxlength="500" placeholder="What made the difference?"></textarea>
+          </label>
+        </section>
+
+        <details id="research-notes" class="research-notes">
+          <summary>Reveal the variable and research notes</summary>
+          <div class="research-grid">
+            <div><p class="micro-label">VARIABLE</p><p id="variable-copy"></p></div>
+            <div><p class="micro-label">OPTION A INTENT</p><p id="intent-a"></p></div>
+            <div><p class="micro-label">OPTION B INTENT</p><p id="intent-b"></p></div>
+            <div><p class="micro-label">EVALUATION</p><p id="evaluation-copy"></p></div>
+          </div>
+        </details>
+
+        <nav class="pair-navigation" aria-label="Pair navigation">
+          <button id="previous-pair" type="button"><span aria-hidden="true">←</span> Previous</button>
+          <p id="completion-hint">Choose A, B, or neither to continue.</p>
+          <button id="next-pair" type="button">Next <span aria-hidden="true">→</span></button>
+        </nav>
+      </div>
+
+      <section id="summary-view" class="summary-view" hidden>
+        <p class="micro-label">ROUND 01 / REVIEW</p>
+        <h1>Your calibration record.</h1>
+        <p class="summary-lede">Review the decisions, resolve any missing confidence, then export the research record. Nothing here changes the production system automatically.</p>
+        <div class="summary-stats" id="summary-stats"></div>
+        <div class="summary-list" id="summary-list"></div>
+        <div class="export-actions">
+          <button id="return-to-pairs" type="button">Return to pairs</button>
+          <button id="copy-jsonl" type="button">Copy JSONL</button>
+          <button id="export-json" type="button" class="primary-action">Export record</button>
+        </div>
+        <p id="export-status" class="export-status" role="status"></p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="method-footer">
+    <span>PAIRWISE CALIBRATION / ORIGINAL MEZ CONCEPTS ONLY</span>
+    <span>DATA STAYS IN THIS BROWSER UNTIL EXPORTED</span>
+  </footer>
+  <script src="calibration.js" defer></script>
+</body>
+</html>

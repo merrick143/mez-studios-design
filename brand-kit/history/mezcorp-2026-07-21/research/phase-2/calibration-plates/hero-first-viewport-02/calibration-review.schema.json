@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/hero-first-viewport-02-review.schema.json",
+  "title": "Mez hero and first viewport calibration 02 review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "studyId", "exportedAt", "complete", "productionAuthority", "sourceExpressionApproved", "decisions"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "studyId": {"const": "MEZ-HERO-FIRST-VIEWPORT-02"},
+    "exportedAt": {"type": "string", "format": "date-time"},
+    "complete": {"type": "boolean"},
+    "productionAuthority": {"const": false},
+    "sourceExpressionApproved": {"const": false},
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overallDirection", "messageHierarchy", "productFamilyStage", "desktopOpening", "mobileOpening"],
+      "properties": {
+        "overallDirection": {"$ref": "#/$defs/decision"},
+        "messageHierarchy": {"$ref": "#/$defs/decision"},
+        "productFamilyStage": {"$ref": "#/$defs/decision"},
+        "desktopOpening": {"$ref": "#/$defs/decision"},
+        "mobileOpening": {"$ref": "#/$defs/decision"}
+      }
+    },
+    "overallNote": {"type": "string"}
+  },
+  "$defs": {
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "note"],
+      "properties": {
+        "decision": {"enum": ["approve", "edit", "reject"]},
+        "note": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PHASE-1-REPAIR",
+  "title": "Repair authority, portability, and critical quality failures",
+  "phase": 1,
+  "status": "complete",
+  "owner": "programme",
+  "objective": "Make the current Mez Systems baseline safe to evolve by resolving authority and deterministic-use conflicts, fixing critical accessibility and reflow defects, and releasing a self-contained portable package.",
+  "scope": {
+    "included": [
+      "Authority hierarchy and reference certification states",
+      "Contradictory copy, typography, CTA, OG, blur, and Figma guidance",
+      "Focus, form, target-size, keyboard, narrow-layout, large-text, zoom, reduced-motion, and forced-colour quality",
+      "Exact assigned gradient exports and safe lockup contrast",
+      "Self-contained fonts, licences, icons, OG, email, docs, manifest, build, and clean-copy validation"
+    ],
+    "excluded": [
+      "Certifying the Canvas for design excellence",
+      "Resolving the final holdco mark or three candidate product cores",
+      "Building the new Figma library",
+      "Migrating a live production website",
+      "Starting the Taste Reverse research cycle"
+    ]
+  },
+  "dependencies": ["TASK-PHASE-0-BASELINE", "DEC-AUTHORITY-001", "DEC-FIGMA-001", "DS-001", "DS-025"],
+  "inputs": {
+    "requiredFiles": [
+      "START-HERE.md",
+      "governance/authority-model.json",
+      "governance/decision-register.json",
+      "governance/issue-register.json",
+      "brand-system/19-review-checklist.md",
+      "canvas/",
+      "design-system-export/"
+    ],
+    "decisionIds": ["DEC-AUTHORITY-001", "DEC-FIGMA-001", "DEC-CONSUMER-001", "DEC-TYPE-001"],
+    "artifactIds": [
+      "ART-08B88580828A",
+      "ART-9A995DDF917E",
+      "ART-72BCF3DF4282",
+      "ART-EDAC0F7A43BB",
+      "ART-A3E344408DD8",
+      "ART-3F28BA7B8C1C",
+      "ART-17666544B099",
+      "ART-B6E704B1E3B4",
+      "ART-E15BAA25C80F"
+    ],
+    "consumerIds": ["CON-CONTROL-PLANE-001", "CON-CANVAS-001", "CON-EXPORT-001", "CON-LLM-001", "CON-CHANNEL-001"]
+  },
+  "deliverables": [
+    {"path":"governance/authority-model.json","acceptance":["One precedence path owns declarative, behavioural, and visual truth","Reference states and certification requirements are explicit","Conflicts fail deterministic validation"]},
+    {"path":"canvas/","acceptance":["All eight pages pass eight supported widths without overflow","Navigation and FAQ keyboard contracts pass","Large-text, zoom, reduced-motion, and forced-colour checks exist"]},
+    {"path":"design-system-export/","acceptance":["All required files and assets are inside the copied folder","Every file is checksummed","A standard-library-only clean-copy validator passes without Figma or source access"]},
+    {"path":"baseline/2026-07-19/phase-one-browser-validation.json","acceptance":["64 responsive matrix checks are recorded","Keyboard and content-stress evidence is explicit"]}
+  ],
+  "verification": [
+    {"id":"V-P1-AUTHORITY","method":"command","command":"python3 governance/scripts/validate_authority.py","passCondition":"No conflicting authority language or private portable dependency is found."},
+    {"id":"V-P1-SYSTEM","method":"command","command":"python3 governance/scripts/validate_phase_one.py","passCondition":"Authority, copy, tokens, contrast, assets, links, hashes, and browser evidence all pass."},
+    {"id":"V-P1-CLEAN-CONSUMER","method":"command","command":"python3 scripts/validate_release.py","passCondition":"A copied design-system-export validates with Python standard library only."},
+    {"id":"V-P1-BROWSER","method":"visual","passCondition":"Eight pages at eight widths, zoom proxy, large text, navigation keyboard, and FAQ keyboard tests pass."}
+  ],
+  "humanGate": {
+    "required": false,
+    "gateId": null,
+    "approver": null,
+    "approvalQuestion": null
+  },
+  "stopConditions": [
+    "Do not promote Canvas, the website, or Figma from candidate to certified.",
+    "Do not treat the three candidate product cores as human-approved finals.",
+    "Do not invent missing assets or use approximate CSS gradients.",
+    "Stop if a clean consumer needs access outside its copied release folder."
+  ],
+  "notes": ["Phase 1 is a safety repair, not the strategic identity redesign scheduled for Phases 2 and 3."]
+}

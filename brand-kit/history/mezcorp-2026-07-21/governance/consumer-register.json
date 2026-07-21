@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-19T15:55:00+10:00",
+  "consumers": [
+    {"id":"CON-CONTROL-PLANE-001","name":"Mez Systems brand-library control plane","type":"canonical-temporary","location":"departments/cmo/brand-library/brands/mez-systems","state":"active","version":"unversioned-pre-v1","owner":"programme","migrationState":"source","evidence":"baseline/2026-07-19/manifest.json"},
+    {"id":"CON-CANVAS-001","name":"Local Canvas reference implementation","type":"reference-fixture","location":"departments/cmo/brand-library/brands/mez-systems/canvas","state":"active-with-defects","version":"unversioned","owner":"unassigned","migrationState":"candidate-for-rebuild","evidence":"baseline/2026-07-19/screenshots/capture-records.json"},
+    {"id":"CON-EXPORT-001","name":"Portable design-system export","type":"hand-maintained-mirror","location":"departments/cmo/brand-library/brands/mez-systems/design-system-export","state":"active-unverified","version":"unversioned","owner":"unassigned","migrationState":"replace-with-generated-distribution","evidence":"design-system-export/README.md"},
+    {"id":"CON-FIGMA-001","name":"Recorded Mez Systems Figma file","type":"visual-authoring","location":"figma://HU0GVaDhatjWrKCiSg3wlU","state":"canonical-page-verified-library-unverified","version":"unknown","owner":"unconfirmed","migrationState":"H0-decision-required","evidence":"baseline/2026-07-19/observations.json"},
+    {"id":"CON-WEB-001","name":"CEO Notion landing page repository","type":"website-repository","location":"/Users/olivermerrick/Desktop/mez-studios/landing-pages/apps/ceos-notion-landingpage","state":"candidate-not-integrated","version":"cc4f3abc145fc7bdd96e67ab1eb06d038923a997","owner":"unconfirmed","migrationState":"H0-decision-required","evidence":"baseline/2026-07-19/observations.json"},
+    {"id":"CON-FIGMA-HUMANS-001","name":"Human Figma authors","type":"human-team","location":"Figma","state":"unmapped","version":"none","owner":"unconfirmed","migrationState":"training-and-library-release-required","evidence":"governance/PROGRAMME-CHARTER.md"},
+    {"id":"CON-LLM-001","name":"LLM creative and implementation agents","type":"machine-consumer","location":"multiple","state":"contract-pilot","version":"0.1.0","owner":"programme","migrationState":"dogfood-phase-zero","evidence":"llm/"},
+    {"id":"CON-CHANNEL-001","name":"Marketing and content operators","type":"human-team","location":"multiple","state":"unmapped","version":"none","owner":"unconfirmed","migrationState":"channel-owner-confirmation-required","evidence":"governance/H0-DECISION-PACKET.md"}
+  ]
+}

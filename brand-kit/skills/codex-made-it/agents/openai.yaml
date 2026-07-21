@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Made It"
+  short_description: "Operate the Mez Living Core system"
+  default_prompt: "Use $codex-made-it to ingest, validate, or express a Mez product gradient through the canonical Living Core and its exact static twin."

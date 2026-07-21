@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PHASE-2-TR4-SYNTHESIS",
+  "title": "Convert deep research into decision-ready synthesis infrastructure",
+  "phase": 2,
+  "status": "complete",
+  "owner": "programme",
+  "objective": "Normalise the five-source research into an evidence-linked comparative matrix, pattern atlas, anti-pattern atlas, and machine-readable taste dimensions without promoting any external expression into Mez truth.",
+  "scope": {
+    "included": [
+      "Seven cross-source mechanisms and eight research questions",
+      "Problem, evidence, mechanism, transfer, exclusion, confidence, originality, and experiment mappings",
+      "Reusable pattern and anti-pattern definitions",
+      "Unapproved taste dimensions for later human calibration"
+    ],
+    "excluded": [
+      "New external source research",
+      "Human preference calibration",
+      "Visual direction design",
+      "Canonical token, component, or brand-rule promotion"
+    ]
+  },
+  "dependencies": ["TASK-PHASE-2-DEEP-RESEARCH", "DEC-H1-REFERENCE-PANEL-001", "DS-026"],
+  "inputs": {
+    "requiredFiles": [
+      "research/phase-2/COMPARATIVE-SYNTHESIS.md",
+      "research/phase-2/evidence/",
+      "research/phase-2/research-questions.yaml",
+      "research/phase-2/CAPTURE-RESULTS.md"
+    ],
+    "decisionIds": ["DEC-H1-REFERENCE-PANEL-001", "DEC-BRAND-AMBITION-001"],
+    "artifactIds": [],
+    "consumerIds": ["CON-CONTROL-PLANE-001", "CON-LLM-001"]
+  },
+  "deliverables": [
+    {"path":"research/phase-2/COMPARATIVE-MATRIX.md","acceptance":["Humans can compare every mechanism, evidence basis, risk, and experiment without opening all source files"]},
+    {"path":"research/phase-2/comparative-matrix.json","acceptance":["LLMs and validators can consume the same seven mechanisms and all eight research questions"]},
+    {"path":"research/phase-2/PATTERN-ATLAS.md","acceptance":["Cross-source mechanisms are separated from source signatures, failure modes, and promotion gates"]},
+    {"path":"research/phase-2/ANTI-PATTERN-ATLAS.md","acceptance":["Category clichés, current Mez risks, exceptions, repairs, and tests are explicit"]},
+    {"path":"research/phase-2/taste-dimensions.json","acceptance":["At least eight unapproved dimensions can drive controlled human preference testing"]}
+  ],
+  "verification": [
+    {"id":"V-P2-TR4","method":"command","command":"python3 governance/scripts/validate_phase_two_tr4.py","passCondition":"All TR-4 files, fields, evidence links, research questions, and unapproved states pass."},
+    {"id":"V-P2-REGRESSION","method":"command","command":"python3 governance/scripts/validate_phase_two_research.py","passCondition":"The five deep source dossiers remain valid."},
+    {"id":"V-P2-ORIGINALITY","method":"manual-inspection","passCondition":"No matrix or atlas entry copies a source expression or promotes a source value into Mez."}
+  ],
+  "humanGate": {
+    "required": false,
+    "gateId": null,
+    "approver": null,
+    "approvalQuestion": null
+  },
+  "stopConditions": [
+    "Stop any row that cannot resolve to source evidence IDs.",
+    "Keep every taste dimension and candidate experiment unapproved.",
+    "Do not begin preference calibration or visual directions inside TR-4."
+  ],
+  "notes": ["TR-4 prepares the decision system. TR-5 is the next human calibration block."]
+}

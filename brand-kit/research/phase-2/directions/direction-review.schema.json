@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/tr6-direction-review-01.json",
+  "title": "Mez TR-6 direction review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "studyId", "sessionId", "startedAt", "exportedAt", "complete", "productionAuthority", "sourceExpressionApproved", "records"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "studyId": {"const": "MEZ-TR6-DIRECTION-REVIEW-01"},
+    "sessionId": {"type": "string"},
+    "startedAt": {"type": "string"},
+    "exportedAt": {"type": "string"},
+    "complete": {"type": "boolean"},
+    "productionAuthority": {"const": false},
+    "sourceExpressionApproved": {"const": false},
+    "records": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["sequence", "routeId", "routeName", "thesis", "verdict", "behavioursToKeep", "note", "decidedAt", "productionAuthority"],
+        "properties": {
+          "sequence": {"type": "integer", "minimum": 1, "maximum": 3},
+          "routeId": {"enum": ["DIR-A", "DIR-B", "DIR-C"]},
+          "routeName": {"type": "string"},
+          "thesis": {"type": "string"},
+          "verdict": {"type": ["string", "null"], "enum": ["contender", "donor", "reject", null]},
+          "behavioursToKeep": {"type": "array", "maxItems": 4, "items": {"type": "string"}, "uniqueItems": true},
+          "note": {"type": "string", "maxLength": 500},
+          "decidedAt": {"type": ["string", "null"]},
+          "productionAuthority": {"const": false}
+        }
+      }
+    }
+  }
+}

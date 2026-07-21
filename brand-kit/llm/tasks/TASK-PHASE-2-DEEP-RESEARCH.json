@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PHASE-2-DEEP-RESEARCH",
+  "title": "Run the approved five-source deep research cycle",
+  "phase": 2,
+  "status": "complete",
+  "owner": "programme",
+  "objective": "Produce comparable, evidence-linked mechanism studies for Notion, Linear, Stripe, ElevenLabs, and Ramp, then synthesise them without copying source signatures.",
+  "scope": {
+    "included": [
+      "Current official public evidence for all five approved sources",
+      "Observed evidence, mechanisms, conventions, transfer principles, exclusions, and limitations",
+      "Independent source studies followed by one comparative synthesis",
+      "Candidate Mez hypotheses clearly labelled unapproved"
+    ],
+    "excluded": [
+      "Authenticated or private product access",
+      "Copied source tokens, assets, copy, components, or signature compositions",
+      "Promotion of hypotheses into canonical Mez rules",
+      "H2 direction approval"
+    ]
+  },
+  "dependencies": ["TASK-PHASE-2-H1-RESEARCH", "DEC-H1-REFERENCE-PANEL-001", "DS-026"],
+  "inputs": {
+    "requiredFiles": [
+      "research/phase-2/INSPIRATION-BRIEF.md",
+      "research/phase-2/research-questions.yaml",
+      "research/phase-2/source-register.yaml",
+      "research/phase-2/CAPTURE-PLAN.md"
+    ],
+    "decisionIds": ["DEC-H1-REFERENCE-PANEL-001", "DEC-BRAND-AMBITION-001"],
+    "artifactIds": [],
+    "consumerIds": ["CON-CONTROL-PLANE-001", "CON-LLM-001"]
+  },
+  "deliverables": [
+    {"path":"research/phase-2/evidence/","acceptance":["All five source studies follow one comparable structure","Observed evidence and interpretation remain separate","Every candidate Mez hypothesis is unapproved and carries exclusions"]},
+    {"path":"research/phase-2/COMPARATIVE-SYNTHESIS.md","acceptance":["Cross-source mechanisms answer the three priority questions","Conventions, distinctive mechanisms, gaps, tensions, and originality risks are explicit","The synthesis recommends experiments, not copied solutions"]}
+  ],
+  "verification": [
+    {"id":"V-P2-SOURCE-SET","method":"command","command":"python3 governance/scripts/validate_phase_two_h1.py","passCondition":"The approved five-source panel and research boundary pass."},
+    {"id":"V-P2-EVIDENCE","method":"manual-inspection","passCondition":"Each source claim resolves to current official public evidence and is labelled by epistemic status."},
+    {"id":"V-P2-ORIGINALITY","method":"manual-inspection","passCondition":"No recommendation copies a source signature or promotes an external value directly into Mez."}
+  ],
+  "humanGate": {
+    "required": false,
+    "gateId": null,
+    "approver": null,
+    "approvalQuestion": null
+  },
+  "stopConditions": [
+    "Stop any claim that cannot resolve to current official public evidence.",
+    "Stop any translation that remains recognisably attributable to one source.",
+    "Do not begin H2 visual-direction production until the comparative synthesis and research gaps are reviewed."
+  ],
+  "notes": ["Sub-agents may research independent sources in parallel, but the primary agent owns normalization, comparison, validation, and the final synthesis."]
+}

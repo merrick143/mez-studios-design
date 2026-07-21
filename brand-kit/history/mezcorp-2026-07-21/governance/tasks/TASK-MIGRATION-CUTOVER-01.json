@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-MIGRATION-CUTOVER-01",
+  "title": "Cut over the Mez Systems canonical control plane",
+  "phase": "migration-first",
+  "owner": "design-system-owner",
+  "status": "complete-authority-transferred",
+  "decision": "DEC-MIGRATION-SEQUENCE-001",
+  "productionAuthority": false,
+  "internalSourceSystemCheckpoint": {
+    "repository": "merrick143/mezcorp-claudecode",
+    "branch": "codex/mez-gradient-system",
+    "commit": "15b4525",
+    "path": "departments/cmo/brand-library/brands/mez-systems",
+    "note": "15b4525 is the protected internal checkpoint immediately before recording the approved product-architecture gate. The standalone workbench still preserves 84eb5a9 as its imported source-system snapshot."
+  },
+  "target": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-workbench",
+    "commit": "6b1f0c4",
+    "approvedSystemCheckpoint": "8b5a262",
+    "path": "brand-kit",
+    "validatedSnapshotCommit": "698152ede765958e0e35323652a0dccc0470afde",
+    "activationCommit": "19f1570fd8943c4aa7a031f3d5c65c203346366b",
+    "activationProofCommit": "6b1f0c4",
+    "release": "0.1.0-alpha.1",
+    "authority": "canonical-active-rank-one"
+  },
+  "completed": [
+    "standalone recovery branch pushed through 11b04f3",
+    "source-PNG gradient authority resolved",
+    "complete gradient library approved",
+    "duplicate aliases recorded",
+    "Living Core renderer and fallbacks validated",
+    "Deep Mineral finish selected",
+    "product architecture and gradient assignment review built and validated",
+    "literal five-product architecture approved through DEC-PRODUCT-ARCHITECTURE-001",
+    "final Living Core assignments approved: AI OS MZ-G13, Context Engine MZ-G12, AI Ads System MZ-G06, Claude Code OS MZ-G15, Organic Content OS MZ-G20",
+    "approved decision record and workbench pushed at 3e5a276",
+    "0.1.0-alpha.1 identity-kernel migration snapshot generated",
+    "stable schemas generated for products, gradients, assets, decisions, releases and authority",
+    "dated migration artifact manifest generated without rewriting the 19 July baseline",
+    "prepared snapshot validated from clean clone at 698152e with zero generated drift",
+    "rollback to internal checkpoint 822aa91 recorded",
+    "target preparation and clean-clone proof pushed at 3f985dc",
+    "target canonical authority activated at 19f1570",
+    "canonical activation clean-clone proof pushed at 6b1f0c4",
+    "release tag mez-systems-v0.1.0-alpha.1 pushed",
+    "internal pack converted to pinned archive and consumer reference"
+  ],
+  "preCutoverCompleted": [
+    "canonical five-product roster and stable IDs",
+    "approved product-to-gradient assignments",
+    "genuine selected Context Engine source gradient",
+    "identity-kernel authority manifest and schemas",
+    "new dated migration artifact manifest without rewriting the 19 July baseline",
+    "versioned migration snapshot",
+    "clean-clone validation",
+    "old-canonical freeze and rollback record"
+  ],
+  "preCutoverRequired": [],
+  "postCutoverBacklog": [
+    "remaining strategy and messaging",
+    "foundation implementation",
+    "product-expression component suite",
+    "mobile hero and primary-button refinement",
+    "golden homepage",
+    "consumer proof and production release",
+    "Figma companion library",
+    "channel packs and LLM certification"
+  ],
+  "completedHumanGate": {
+    "studyId": "MEZ-PRODUCT-ARCHITECTURE-GRADIENT-ASSIGNMENT-01",
+    "reviewer": "Olli",
+    "status": "approved",
+    "decision": "DEC-PRODUCT-ARCHITECTURE-001",
+    "targetCommit": "6b1f0c4",
+    "artifactPath": "brand-kit/product-architecture/",
+    "localReviewUrl": "http://127.0.0.1:8914/brand-kit/product-architecture/",
+    "finalAssignments": [
+      {"productId": "mz.systems.product.aios", "publicName": "AI OS", "gradientId": "MZ-G13"},
+      {"productId": "mz.systems.product.context-engine", "publicName": "Context Engine", "gradientId": "MZ-G12"},
+      {"productId": "mz.systems.product.ai-ads-system", "publicName": "AI Ads System", "gradientId": "MZ-G06"},
+      {"productId": "mz.systems.product.claude-code-os", "publicName": "Claude Code OS", "gradientId": "MZ-G15"},
+      {"productId": "mz.systems.product.organic-content-os", "publicName": "Organic Content OS", "gradientId": "MZ-G20"}
+    ],
+    "productionAuthority": false
+  },
+  "nextHumanGate": null,
+  "cleanCloneProof": {
+    "status": "passed",
+    "validatedSnapshotCommit": "698152ede765958e0e35323652a0dccc0470afde",
+    "record": "merrick143/mez-studios-design@3f985dc:brand-kit/authority/clean-clone-proof.json",
+    "deterministicRebuildDiff": "zero"
+  },
+  "authorityTransfer": {
+    "cutoverId": "CUTOVER-2026-07-21-01",
+    "status": "activated-archive-confirmed",
+    "record": "governance/AUTHORITY-TRANSFER.json",
+    "activationCondition": "Satisfied by target activation commit 19f1570 and proof commit 6b1f0c4.",
+    "stateAfterActivation": "pinned-archive-and-consumer-reference",
+    "canonicalTarget": "merrick143/mez-studios-design/codex/brand-kit-workbench:brand-kit"
+  },
+  "stopConditions": [
+    "Do not create new brand rules in this archived pack; continue all design-system work in the canonical target.",
+    "Do not hand-edit the frozen historical product and gradient registries; generate the approved identity kernel atomically in the migration snapshot.",
+    "Do not build the production Figma library before canonical cutover and foundation approval.",
+    "Do not continue broad foundation or homepage construction in the Mezcorp repository.",
+    "Do not delete or merge recovery branches until clean-clone and rollback validation pass."
+  ]
+}

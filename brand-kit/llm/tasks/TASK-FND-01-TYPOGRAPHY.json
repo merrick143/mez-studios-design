@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FND-01-TYPOGRAPHY",
+  "title": "Implement and prove the approved typography foundation",
+  "phase": 1,
+  "status": "ready",
+  "owner": "design-system-agent",
+  "objective": "Turn DEC-TYPE-001 into a licensed, packaged, responsive, cross-channel typography system without reopening the approved Geist display and tuned Inter body/UI direction.",
+  "scope": {
+    "included": [
+      "font provenance, licence records, and repository packaging",
+      "semantic typography roles and generated tokens",
+      "desktop and mobile scales, line heights, tracking, line length, truncation, and fallbacks",
+      "marketing, commerce, email, document, and dense-UI fixtures",
+      "accessibility and responsive validation",
+      "a bounded human type-proof review"
+    ],
+    "excluded": [
+      "reopening the Geist plus tuned Inter pairing without new evidence",
+      "product-expression design",
+      "golden homepage composition",
+      "production Figma library"
+    ]
+  },
+  "dependencies": ["DEC-TYPE-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/governance/decisions.json",
+      "brand-kit/research/phase-2/calibration-plates/typography-system-01/typography-system-01-review.json"
+    ],
+    "decisionIds": ["DEC-TYPE-001"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/foundations/typography/",
+      "acceptance": [
+        "canonical source, tokens, guidance, fixtures, and tests agree",
+        "font files have recorded provenance and allowed distribution",
+        "supported desktop and mobile fixtures pass without overflow"
+      ]
+    },
+    {
+      "path": "brand-kit/workbench/foundations/typography/",
+      "acceptance": [
+        "review plate isolates typography judgment with realistic content",
+        "approved references and failure cases are visible",
+        "human can approve, request edits, or reject with a recorded note"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "FND-01-SCHEMA",
+      "method": "schema",
+      "passCondition": "tokens and task records validate against their schemas"
+    },
+    {
+      "id": "FND-01-RESPONSIVE",
+      "method": "visual",
+      "passCondition": "fixtures pass at 320px, 375px, tablet, desktop, and wide desktop with realistic copy"
+    },
+    {
+      "id": "FND-01-ACCESSIBILITY",
+      "method": "manual-inspection",
+      "passCondition": "zoom, reflow, legibility, contrast, and fallback behavior meet the foundation contract"
+    },
+    {
+      "id": "FND-01-HUMAN",
+      "method": "human",
+      "passCondition": "Olli approves the complete type proof"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-FND-01-TYPE-PROOF",
+    "approver": "Olli",
+    "approvalQuestion": "Does this implementation make Geist display and tuned Inter body/UI feel recognisably Mez and remain excellent across the required channels and responsive states?"
+  },
+  "stopConditions": [
+    "font licence or redistribution authority cannot be established",
+    "canonical decisions conflict",
+    "realistic content or responsive fixtures fail",
+    "implementation would require silently replacing the approved type direction"
+  ],
+  "notes": [
+    "Instrument Serif remains contextual only and IBM Plex Mono remains restricted to technical content unless a new decision changes that scope."
+  ]
+}

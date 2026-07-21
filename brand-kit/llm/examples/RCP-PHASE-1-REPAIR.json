@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-PHASE-1-REPAIR",
+  "taskId": "TASK-PHASE-1-REPAIR",
+  "contextBundleId": "CTX-PHASE-1-REPAIR",
+  "agent": {"kind":"llm","name":"Codex","model":"GPT-5"},
+  "startedAt": "2026-07-19T16:31:00+10:00",
+  "finishedAt": "2026-07-19T18:59:00+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path":"governance/authority-model.json","action":"created","sha256":"0a639155609aee21f18393526dc3bc08d68cbba6a4be059a47c6c8147a1278d0","reason":"Approved enforceable precedence, truth types, reference states, and certification contract."},
+    {"path":"governance/scripts/validate_authority.py","action":"created","sha256":"e7fd5108068a4e8c875a03b57ea71827ea6a6c9fe6ce8ee0ca99eacdff3e23ed","reason":"Fails contradictory authority guidance."},
+    {"path":"governance/scripts/validate_phase_one.py","action":"created","sha256":"47c2e0029ccb371eeed998823fc219f3e6a4a1ab2fd0fcfd6803907d01707557","reason":"Checks copy, accessibility maths, assets, links, hashes, browser evidence, and Phase 1 execution contracts."},
+    {"path":"baseline/2026-07-19/phase-one-browser-validation.json","action":"created","sha256":"fdc204d48425f63735ffcc1f414681b7568bd7ee67f4d0d23d393fe25cb0cb5d","reason":"Records 64 responsive checks and interaction stress tests."},
+    {"path":"canvas/canvas.css","action":"modified","sha256":"57d77df960836d21de1e27a1bb9daae3213cca19fd52751876d4c73726b9f2b8","reason":"Repairs narrow reflow, target sizes, forced colours, motion, and safe card lockups."},
+    {"path":"canvas/canvas.js","action":"modified","sha256":"464208e1571a5d13d7bbd3c583f133030cd87f8518f9c802d6747299d80903fe","reason":"Completes navigation and accordion keyboard/state contracts."},
+    {"path":"canvas/qa-large-text.html","action":"created","sha256":"07780b5ac18e8227060f6bc0be79601d4e28aca218fc36756bf16c6407896933","reason":"Adds realistic large-text and long-copy stress coverage."},
+    {"path":"brand-system/19-review-checklist.md","action":"modified","sha256":"420949de1377cb0d6c35c3efc25d5e4836a8ae41b7e54f3e437b7ef1971a40b9","reason":"Uses context-aware checks and documents sanctioned exceptions."},
+    {"path":"design-system-export/export-manifest.json","action":"generated","sha256":"3c28c15dbfc4a37fb8e064e38b53aefd86f515d041e57f133ee193025ae683cd","reason":"Registers and hashes the complete portable release."},
+    {"path":"AUDIT-AND-END-TO-END-ROADMAP.md","action":"modified","sha256":"c3b726ac8dac99594e2d0b9f774e4d86ef26cd1413d9f3602f1e39be5f57da3a","reason":"Records every Phase 1 task and exit criterion as complete."}
+  ],
+  "decisionsApplied": ["DEC-AUTHORITY-001", "DEC-FIGMA-001", "DEC-CONSUMER-001", "DEC-TYPE-001"],
+  "tests": [
+    {"id":"V-P1-AUTHORITY","status":"pass","evidence":"Authority validator reports one consistent hierarchy across internal and portable entrypoints."},
+    {"id":"V-P1-SYSTEM","status":"pass","evidence":"Phase 1 validator passes 74 manifest-verified files and four exact production core assets."},
+    {"id":"V-P1-CLEAN-CONSUMER","status":"pass","evidence":"A temporary copied release passed its standard-library-only validator without source or Figma access."},
+    {"id":"V-P1-BROWSER","status":"pass","evidence":"All 64 page-width combinations had zero overflow; mobile navigation, FAQ keyboard, large text, and zoom proxy checks passed."},
+    {"id":"V-P0-REGRESSION","status":"pass","evidence":"The Phase 0 control-plane validator still passes after Phase 1."}
+  ],
+  "artifactsProduced": [
+    "approved authority model and validator",
+    "accessible responsive Canvas baseline",
+    "browser-validation evidence",
+    "74-file self-contained portable release",
+    "exact assigned product-core assets",
+    "font, icon, OG, and email production assets",
+    "clean-copy release validator"
+  ],
+  "assumptions": [
+    "The approved H0 direction authorises Phase 1 implementation without another human gate.",
+    "Candidate core assignments can ship honestly when their candidate status is explicit.",
+    "Phase 1 certification covers critical safety and portability, not final design excellence."
+  ],
+  "exceptions": [
+    "Reduced-motion and forced-colour contracts were statically validated; full assistive-technology certification remains scheduled for later quality phases.",
+    "The Canvas remains candidate because human design-excellence approval has not occurred."
+  ],
+  "hiddenContextFailures": [
+    "The original Phase 0 validator incorrectly treated historical receipt hashes as current-state lockfiles; it was repaired while current-state integrity remains enforced through the artifact register."
+  ],
+  "humanStatus": {"gateRequired":false,"gateId":null,"status":"not-required"},
+  "nextAction": "Begin Phase 2 with Taste Reverse stabilisation, the first bounded inspiration cohort, and the H1 reference shortlist."
+}

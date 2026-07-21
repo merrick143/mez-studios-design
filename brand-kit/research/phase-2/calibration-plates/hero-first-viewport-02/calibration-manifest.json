@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-HERO-FIRST-VIEWPORT-02",
+  "title": "Mez hero and first viewport calibration 02",
+  "status": "direct-feedback-revision-requested",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "purpose": "Test one centred, mobile-first, multi-product homepage opening after typography, controls and product-family behaviour were approved.",
+  "directFeedback": {
+    "record": "hero-first-viewport-02-direct-feedback.json",
+    "result": "promising-direction-revision-requested",
+    "supersededBy": "MEZ-HERO-FIRST-VIEWPORT-03"
+  },
+  "approvedInputs": {
+    "motionDecision": "DEC-MOTION-002",
+    "typographyDecision": "DEC-TYPE-001",
+    "controlDecision": "DEC-CONTROL-001",
+    "familyDecision": "DEC-FAMILY-001",
+    "sourceHeroReview": "../hero-first-viewport-01/hero-first-viewport-01-review.json",
+    "wingsAsset": "../../../../design-system-export/assets/wings.svg"
+  },
+  "content": {
+    "headline": "The systems AI-native businesses run on.",
+    "primaryAction": "Explore the AI OS",
+    "secondaryAction": "See what we're building",
+    "ethos": "The intelligence is rented. The operating layer is yours."
+  },
+  "productFamily": [
+    {"name": "AI OS", "core": "MZ-G13", "coreState": "locked", "availability": "available-now"},
+    {"name": "Context Engine", "core": null, "coreState": "unassigned", "availability": "coming-soon"},
+    {"name": "AI Ads System", "core": "MZ-G20", "coreState": "provisional-research-bridge", "availability": "coming-soon"},
+    {"name": "Claude Code OS", "core": "MZ-G15", "coreState": "provisional-research-bridge", "availability": "coming-soon"},
+    {"name": "Organic Content OS", "core": "MZ-G06", "coreState": "provisional-research-only", "availability": "coming-soon"}
+  ],
+  "candidateMechanisms": [
+    "centred-proposition",
+    "aligned-five-core-line",
+    "equal-product-geometry",
+    "gradient-and-copy-territories",
+    "static-core-only-family",
+    "desktop-and-mobile-authored-composition"
+  ],
+  "refusals": [
+    "hero-container",
+    "bento-grid",
+    "staggered-product-cards",
+    "product-ui-mockup",
+    "gradient-text",
+    "decorative-micro-labels",
+    "invented-context-engine-gradient"
+  ],
+  "decisions": [
+    "overallDirection",
+    "messageHierarchy",
+    "productFamilyStage",
+    "desktopOpening",
+    "mobileOpening"
+  ],
+  "decisionCount": 5,
+  "previousVisualExecutionInherited": false,
+  "nextGate": "expression-grammar",
+  "stopCondition": "Do not record an expression grammar or build the golden homepage until this five-decision human review is complete."
+}

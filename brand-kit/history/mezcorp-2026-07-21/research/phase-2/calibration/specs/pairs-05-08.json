@@ -1,0 +1,419 @@
+[
+  {
+    "id": "PAIR-05",
+    "dimensionId": "TD-005",
+    "title": "Shared family chassis versus product-owned territory",
+    "oneVariable": "productTerritoryContrast",
+    "constantContent": {
+      "contentStatus": "Demonstration content for calibration only",
+      "eyebrow": "MEZ SYSTEMS / PRODUCT FAMILY",
+      "headline": "One system. Four specialised ways to move work.",
+      "supportingText": "The same request moves through direction, shaping, evaluation, and production with an accountable handoff at every stage.",
+      "products": [
+        {
+          "name": "AI OS",
+          "job": "Direct",
+          "proof": "Request assigned to the next accountable action",
+          "status": "Ready for review"
+        },
+        {
+          "name": "Aurora",
+          "job": "Shape",
+          "proof": "Source material organised into a usable brief",
+          "status": "Sources linked"
+        },
+        {
+          "name": "Prism",
+          "job": "Evaluate",
+          "proof": "Options compared against the approved criteria",
+          "status": "Confidence shown"
+        },
+        {
+          "name": "Forge",
+          "job": "Produce",
+          "proof": "Approved direction assembled into a checked output",
+          "status": "Validation passed"
+        }
+      ],
+      "action": "Review the product family"
+    },
+    "constantViewport": {
+      "width": 1440,
+      "height": 1024,
+      "pixelRatio": 1,
+      "mode": "desktop",
+      "background": "neutral light",
+      "motion": "static"
+    },
+    "question": "Does stronger product-owned evidence behaviour improve distinction without breaking the Mez family?",
+    "optionA": {
+      "label": "Shared-chassis dominant",
+      "intent": "Test the family when all four products use the same presentation behaviour and distinction depends mainly on content.",
+      "visualRules": [
+        "Use one identical module anatomy, evidence arrangement, information density, and status placement for all four products.",
+        "Keep product names, jobs, proof copy, order, dimensions, typography, spacing, border treatment, and neutral colour treatment identical to Option B.",
+        "Do not introduce a product-specific data form, proof framing behaviour, motion cue, icon, illustration, or accent colour.",
+        "Maintain one parent identifier and one shared action at the same size and position as Option B."
+      ],
+      "copy": {
+        "contentStatus": "Demonstration content for calibration only",
+        "eyebrow": "MEZ SYSTEMS / PRODUCT FAMILY",
+        "headline": "One system. Four specialised ways to move work.",
+        "supportingText": "The same request moves through direction, shaping, evaluation, and production with an accountable handoff at every stage.",
+        "products": [
+          {
+            "name": "AI OS",
+            "job": "Direct",
+            "proof": "Request assigned to the next accountable action",
+            "status": "Ready for review"
+          },
+          {
+            "name": "Aurora",
+            "job": "Shape",
+            "proof": "Source material organised into a usable brief",
+            "status": "Sources linked"
+          },
+          {
+            "name": "Prism",
+            "job": "Evaluate",
+            "proof": "Options compared against the approved criteria",
+            "status": "Confidence shown"
+          },
+          {
+            "name": "Forge",
+            "job": "Produce",
+            "proof": "Approved direction assembled into a checked output",
+            "status": "Validation passed"
+          }
+        ],
+        "action": "Review the product family"
+      },
+      "failureRisk": "The family may feel consistent but collapse into four labelled reskins with no product-owned visual or evidence behaviour."
+    },
+    "optionB": {
+      "label": "Product-territory dominant",
+      "intent": "Test the family when each product owns a distinct evidence behaviour inside the same parent chassis.",
+      "visualRules": [
+        "Keep the outer module anatomy, parent identifier, dimensions, typography, spacing, border treatment, and neutral colour treatment identical to Option A.",
+        "Give AI OS a directional handoff sequence, Aurora a source-to-brief grouping, Prism a criteria comparison, and Forge an output-validation sequence.",
+        "Change only the internal evidence behaviour required by each product job. Do not add product-specific accent colours, icons, marks, illustrations, or decorative motifs.",
+        "Keep product names, jobs, proof copy, order, status copy, and shared action identical to Option A."
+      ],
+      "copy": {
+        "contentStatus": "Demonstration content for calibration only",
+        "eyebrow": "MEZ SYSTEMS / PRODUCT FAMILY",
+        "headline": "One system. Four specialised ways to move work.",
+        "supportingText": "The same request moves through direction, shaping, evaluation, and production with an accountable handoff at every stage.",
+        "products": [
+          {
+            "name": "AI OS",
+            "job": "Direct",
+            "proof": "Request assigned to the next accountable action",
+            "status": "Ready for review"
+          },
+          {
+            "name": "Aurora",
+            "job": "Shape",
+            "proof": "Source material organised into a usable brief",
+            "status": "Sources linked"
+          },
+          {
+            "name": "Prism",
+            "job": "Evaluate",
+            "proof": "Options compared against the approved criteria",
+            "status": "Confidence shown"
+          },
+          {
+            "name": "Forge",
+            "job": "Produce",
+            "proof": "Approved direction assembled into a checked output",
+            "status": "Validation passed"
+          }
+        ],
+        "action": "Review the product family"
+      },
+      "failureRisk": "The product behaviours may become so different that the shared chassis no longer reads as one Mez family."
+    },
+    "relatedPatternIds": [
+      "PAT-POR-01",
+      "PAT-POR-02",
+      "PAT-REC-01"
+    ],
+    "relatedAntiPatternIds": [
+      "AP-004",
+      "AP-005",
+      "AP-017"
+    ],
+    "evaluationPrompt": "Without judging colour or copy, identify whether the four products feel related, whether each has a distinct job, and which option better balances family recognition with product distinction. Name any product that still feels like a reskin and any product that feels unrelated.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-06",
+    "dimensionId": "TD-006",
+    "title": "Continuous activity versus semantic state transition",
+    "oneVariable": "stateTransitionEncoding",
+    "constantContent": {
+      "contentStatus": "Demonstration content for calibration only",
+      "eyebrow": "AI OS / REPORT RUN",
+      "headline": "Quarterly launch report",
+      "currentState": "Preparing evidence",
+      "progress": "3 of 5 sources checked",
+      "owner": "AI OS",
+      "nextStep": "Human review follows verification",
+      "action": "View run details"
+    },
+    "constantViewport": {
+      "width": 1280,
+      "height": 800,
+      "pixelRatio": 1,
+      "mode": "desktop",
+      "background": "neutral light",
+      "motion": "eight-second loop with reduced-motion equivalent"
+    },
+    "question": "Does motion that marks a meaningful state change communicate intelligence more clearly than continuous activity?",
+    "optionA": {
+      "label": "Continuous activity",
+      "intent": "Test whether persistent, non-directional movement creates a sufficient sense of active work.",
+      "visualRules": [
+        "Keep the interface, dimensions, copy, hierarchy, controls, and start and end frames identical to Option B.",
+        "Animate one abstract activity indicator continuously at a constant visual intensity for the full eight-second loop.",
+        "Do not change layout, reveal new evidence, indicate ownership transfer, or add an exception or completion signal.",
+        "Reduced-motion equivalent: replace continuous movement with one static active-state marker beside the unchanged current-state copy."
+      ],
+      "copy": {
+        "contentStatus": "Demonstration content for calibration only",
+        "eyebrow": "AI OS / REPORT RUN",
+        "headline": "Quarterly launch report",
+        "currentState": "Preparing evidence",
+        "progress": "3 of 5 sources checked",
+        "owner": "AI OS",
+        "nextStep": "Human review follows verification",
+        "action": "View run details"
+      },
+      "failureRisk": "Persistent movement may imply activity while failing to explain what changed, who owns the work, or when the receiver should act."
+    },
+    "optionB": {
+      "label": "Semantic transition",
+      "intent": "Test whether one bounded transition from source checking to verification makes system state easier to understand.",
+      "visualRules": [
+        "Keep the interface, dimensions, copy, hierarchy, controls, and start and end frames identical to Option A.",
+        "Animate only the transition that confirms the third source check and moves attention to the verification state.",
+        "Use a clear start, changed-state acknowledgement, and rest state. No element moves after the transition has communicated its meaning.",
+        "Reduced-motion equivalent: show the checked source and verification state together in one static frame with ordering and status markers that preserve the same meaning."
+      ],
+      "copy": {
+        "contentStatus": "Demonstration content for calibration only",
+        "eyebrow": "AI OS / REPORT RUN",
+        "headline": "Quarterly launch report",
+        "currentState": "Preparing evidence",
+        "progress": "3 of 5 sources checked",
+        "owner": "AI OS",
+        "nextStep": "Human review follows verification",
+        "action": "View run details"
+      },
+      "failureRisk": "A highly explicit transition may feel mechanical or over-explain a simple state if the motion hierarchy is too forceful."
+    },
+    "relatedPatternIds": [
+      "PAT-MOT-01",
+      "PAT-REC-02"
+    ],
+    "relatedAntiPatternIds": [
+      "AP-002",
+      "AP-009"
+    ],
+    "evaluationPrompt": "After one viewing, state what changed, who currently owns the work, what happens next, and whether the movement added information. Prefer the option that remains equally understandable in its reduced-motion equivalent.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-07",
+    "dimensionId": "TD-007",
+    "title": "Deferred control versus visible control anatomy",
+    "oneVariable": "controlDisclosureLevel",
+    "constantContent": {
+      "contentStatus": "Demonstration content for calibration only",
+      "eyebrow": "FORGE / CAMPAIGN BRIEF",
+      "headline": "First draft prepared",
+      "summary": "Forge assembled the approved message, linked the working sources, and paused before publication.",
+      "actor": "Forge",
+      "permission": "Draft only",
+      "sourceStatus": "4 sources linked",
+      "reviewer": "Oliver",
+      "reviewStatus": "Awaiting approval",
+      "recovery": "Previous version available",
+      "actions": [
+        "Edit",
+        "Approve",
+        "Return"
+      ]
+    },
+    "constantViewport": {
+      "width": 1280,
+      "height": 800,
+      "pixelRatio": 1,
+      "mode": "desktop",
+      "background": "neutral light",
+      "motion": "static"
+    },
+    "question": "How much visible control anatomy is needed for a receiver to trust and safely act on an agent-prepared output?",
+    "optionA": {
+      "label": "Deferred control",
+      "intent": "Test a calm summary that keeps permission, source, reviewer, recovery, and action detail behind the run-details control.",
+      "visualRules": [
+        "Keep dimensions, copy, typography, spacing system, content order, and neutral colour treatment identical to Option B.",
+        "Show the headline, summary, review status, and one View control directly. Place actor, permission, source status, reviewer, recovery, and three actions in a collapsed detail region.",
+        "Do not delete, rename, or paraphrase hidden fields. The variable is disclosure level, not content.",
+        "Keep the output preview and all non-control visual elements identical to Option B."
+      ],
+      "copy": {
+        "contentStatus": "Demonstration content for calibration only",
+        "eyebrow": "FORGE / CAMPAIGN BRIEF",
+        "headline": "First draft prepared",
+        "summary": "Forge assembled the approved message, linked the working sources, and paused before publication.",
+        "actor": "Forge",
+        "permission": "Draft only",
+        "sourceStatus": "4 sources linked",
+        "reviewer": "Oliver",
+        "reviewStatus": "Awaiting approval",
+        "recovery": "Previous version available",
+        "actions": [
+          "Edit",
+          "Approve",
+          "Return"
+        ]
+      },
+      "failureRisk": "The calm surface may hide the exact permission, evidence, reviewer, reversal path, and available decisions at the moment they matter."
+    },
+    "optionB": {
+      "label": "Visible control anatomy",
+      "intent": "Test whether exposing permission, provenance, review, recovery, and decisions inline increases trust and action clarity.",
+      "visualRules": [
+        "Keep dimensions, copy, typography, spacing system, content order, and neutral colour treatment identical to Option A.",
+        "Show actor, permission, source status, reviewer, review status, recovery, and all three actions in the primary information hierarchy.",
+        "Use grouping and hierarchy only. Do not add badges, colour coding, icons, illustrations, new labels, or additional explanation.",
+        "Keep the output preview and all non-control visual elements identical to Option A."
+      ],
+      "copy": {
+        "contentStatus": "Demonstration content for calibration only",
+        "eyebrow": "FORGE / CAMPAIGN BRIEF",
+        "headline": "First draft prepared",
+        "summary": "Forge assembled the approved message, linked the working sources, and paused before publication.",
+        "actor": "Forge",
+        "permission": "Draft only",
+        "sourceStatus": "4 sources linked",
+        "reviewer": "Oliver",
+        "reviewStatus": "Awaiting approval",
+        "recovery": "Previous version available",
+        "actions": [
+          "Edit",
+          "Approve",
+          "Return"
+        ]
+      },
+      "failureRisk": "Exposing every control field may create proof overload and make a routine approval feel more complex than it is."
+    },
+    "relatedPatternIds": [
+      "PAT-MOT-02",
+      "PAT-TRU-01",
+      "PAT-DEN-02"
+    ],
+    "relatedAntiPatternIds": [
+      "AP-008",
+      "AP-016"
+    ],
+    "evaluationPrompt": "Identify who acted, what they were allowed to do, which sources are attached, who decides next, how to reverse the change, and which action you would take. Prefer the lowest disclosure level that preserves correct answers and confidence without proof overload.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-08",
+    "dimensionId": "TD-008",
+    "title": "Fixed template versus bounded semantic composition",
+    "oneVariable": "compositionConstraintMode",
+    "constantContent": {
+      "contentStatus": "Demonstration content for calibration only",
+      "patternId": "MEZ-PROOF-RECORD-01",
+      "eyebrow": "PRISM / VERIFIED PROOF",
+      "headline": "The recommendation is ready for a decision",
+      "claim": "Prism compared the available directions against the approved criteria.",
+      "input": "Three candidate directions",
+      "mechanism": "Comparison against five approved criteria",
+      "changedState": "One direction meets every required condition",
+      "verification": "Criteria and source links checked",
+      "owner": "Oliver",
+      "status": "Decision required",
+      "action": "Review the recommendation"
+    },
+    "constantViewport": {
+      "width": 1200,
+      "height": 900,
+      "pixelRatio": 1,
+      "mode": "desktop reference render",
+      "background": "neutral light",
+      "motion": "static"
+    },
+    "question": "Does bounded semantic composition preserve meaning and identity across renderers better than one fixed placement template?",
+    "optionA": {
+      "label": "Fixed placement template",
+      "intent": "Test portability when every renderer receives exact regions and placements for the proof record.",
+      "visualRules": [
+        "Use one prescribed two-column layout with fixed placement for eyebrow, headline, claim, input, mechanism, changed state, verification, owner, status, and action.",
+        "Keep copy, viewport, element count, typography, spacing values, neutral colour treatment, hierarchy levels, and accessibility requirements identical to Option B.",
+        "Do not allow reordering, regrouping, alternate alignment, or content-aware relationship changes.",
+        "Render the same specification once by a human and once by each participating LLM without hidden guidance."
+      ],
+      "copy": {
+        "contentStatus": "Demonstration content for calibration only",
+        "patternId": "MEZ-PROOF-RECORD-01",
+        "eyebrow": "PRISM / VERIFIED PROOF",
+        "headline": "The recommendation is ready for a decision",
+        "claim": "Prism compared the available directions against the approved criteria.",
+        "input": "Three candidate directions",
+        "mechanism": "Comparison against five approved criteria",
+        "changedState": "One direction meets every required condition",
+        "verification": "Criteria and source links checked",
+        "owner": "Oliver",
+        "status": "Decision required",
+        "action": "Review the recommendation"
+      },
+      "failureRisk": "The fixed template may produce consistent placement while failing to adapt to channel, content length, or future evidence objects."
+    },
+    "optionB": {
+      "label": "Bounded semantic composition",
+      "intent": "Test portability when renderers receive required relationships and a small set of allowed composition choices.",
+      "visualRules": [
+        "Require headline before claim, input before mechanism, changed state beside verification, and owner beside status, while allowing either one-column sequence or two-column grouping.",
+        "Keep copy, viewport, element count, typography, spacing values, neutral colour treatment, hierarchy levels, and accessibility requirements identical to Option A.",
+        "Allow only the named grouping and alignment choices. Do not allow freeform decoration, extra components, omitted fields, or copy changes.",
+        "Render the same specification once by a human and once by each participating LLM without hidden guidance."
+      ],
+      "copy": {
+        "contentStatus": "Demonstration content for calibration only",
+        "patternId": "MEZ-PROOF-RECORD-01",
+        "eyebrow": "PRISM / VERIFIED PROOF",
+        "headline": "The recommendation is ready for a decision",
+        "claim": "Prism compared the available directions against the approved criteria.",
+        "input": "Three candidate directions",
+        "mechanism": "Comparison against five approved criteria",
+        "changedState": "One direction meets every required condition",
+        "verification": "Criteria and source links checked",
+        "owner": "Oliver",
+        "status": "Decision required",
+        "action": "Review the recommendation"
+      },
+      "failureRisk": "Even bounded choices may create renderer drift if relationship rules, allowed choices, or validation errors are ambiguous."
+    },
+    "relatedPatternIds": [
+      "PAT-PORT-01",
+      "PAT-PORT-02",
+      "PAT-PRF-01",
+      "PAT-TRU-01"
+    ],
+    "relatedAntiPatternIds": [
+      "AP-005",
+      "AP-013",
+      "AP-014",
+      "AP-018"
+    ],
+    "evaluationPrompt": "Compare human and LLM renders for semantic completeness, relationship accuracy, family recognition, accessible order, useful variation, and correction time. Prefer the constraint mode that preserves every required meaning while avoiding both rigid repetition and uncontrolled drift.",
+    "decisionStatus": "unapproved"
+  }
+]

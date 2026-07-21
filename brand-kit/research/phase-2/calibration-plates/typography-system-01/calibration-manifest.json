@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-TYPOGRAPHY-SYSTEM-01",
+  "title": "Mez typography system calibration 01",
+  "status": "human-review-complete-approved-direction",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "purpose": "Select a primary typography direction and role policy before controls, product-family composition and hero revision.",
+  "sourceCopy": "research/phase-2/HOMEPAGE-DESIGN-EXPLORATION-PLAN.md",
+  "candidates": [
+    {
+      "id": "inter-tuned",
+      "family": "Inter",
+      "role": "known-baseline",
+      "source": "design-system-export/assets/fonts/inter-variable.woff2",
+      "licence": "SIL Open Font License 1.1"
+    },
+    {
+      "id": "instrument-sans",
+      "family": "Instrument Sans",
+      "role": "human-challenger",
+      "source": "https://github.com/Instrument/instrument-sans",
+      "candidateFeatures": ["ss01-round-punctuation", "ss02-single-storey-a", "ss03-rounded-y"],
+      "licence": "SIL Open Font License 1.1"
+    },
+    {
+      "id": "geist",
+      "family": "Geist",
+      "role": "technical-challenger",
+      "source": "https://github.com/vercel/geist-font",
+      "licence": "SIL Open Font License 1.1"
+    }
+  ],
+  "heldConstant": [
+    "homepage-copy",
+    "warm-neutral-chassis",
+    "ink-and-muted-colour",
+    "button-surface-and-radius",
+    "content-width",
+    "product-names"
+  ],
+  "rolesTested": [
+    "display",
+    "body",
+    "product-naming",
+    "commerce",
+    "compact-labels",
+    "numerals-and-data",
+    "controls",
+    "mobile-wrapping"
+  ],
+  "decisions": [
+    "primaryFamily",
+    "displayFamily",
+    "bodyFamily",
+    "serifPolicy",
+    "monoPolicy",
+    "mobileType"
+  ],
+  "decisionCount": 6,
+  "reviewProgress": {
+    "recordedAt": "2026-07-20T20:52:24+10:00",
+    "completedDecisionCount": 6,
+    "decisions": {
+      "primaryFamily": {
+        "decision": "inter-tuned",
+        "note": "Tuned Inter remains the primary UI and foundation family."
+      },
+      "displayFamily": {
+        "decision": "geist",
+        "note": "Geist looks good for titles."
+      },
+      "bodyFamily": {
+        "decision": "inter-tuned",
+        "note": "Tuned Inter looks good for body."
+      },
+      "serifPolicy": {
+        "decision": "contextual-only",
+        "note": "Instrument Serif is contextual only, never a quota."
+      },
+      "monoPolicy": {
+        "decision": "keep-ibm-plex",
+        "note": "IBM Plex Mono is restricted to code, provenance and technical metadata."
+      },
+      "mobileType": {
+        "decision": "edit",
+        "note": "Revise mobile typography using the Geist display and tuned Inter body split."
+      }
+    },
+    "remaining": [],
+    "productionAuthority": false
+  },
+  "reviewRecord": "typography-system-01-review.json",
+  "approvedDecision": "DEC-TYPE-001",
+  "implementationState": "approved-direction-pending-token-font-and-channel-migration",
+  "nextGate": "button-and-control-system-calibration",
+  "stopCondition": "Do not promote fonts, revise the hero or build product-family composition until this review is recorded."
+}

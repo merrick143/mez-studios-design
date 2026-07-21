@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-IDENTITY-PRODUCT-OBJECT-01",
+  "exportedAt": "2026-07-20T08:14:09.443Z",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "sourceGradient": "MZ-G13",
+  "sourceGradientSha256": "7932fb83949329ad562a13010221d2c0e6cad9f24312993acf781935547a946e",
+  "record": {
+    "decisions": {
+      "canonicalCore": {
+        "decision": "edit",
+        "note": "yes it should but i think we need to think about where the animated one goes and where the static versions go. "
+      },
+      "scaleSystem": {
+        "decision": "edit",
+        "note": "it can be smaller and also bigger id say max size if pushing it - but it depends on situation. "
+      },
+      "motionBehaviour": {
+        "decision": "edit",
+        "note": "i dont really like hover grow thing i think either rethink or rmeove "
+      }
+    },
+    "overallNote": "yes it should but i think we need to think about where the animated one goes and where the static versions go. and also the different expressions of disc, wings, card, etc",
+    "productionAuthority": false
+  }
+}

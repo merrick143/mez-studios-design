@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-PHASE-2-DEEP-RESEARCH",
+  "taskId": "TASK-PHASE-2-DEEP-RESEARCH",
+  "contextBundleId": "CTX-PHASE-2-DEEP-RESEARCH",
+  "agent": {"kind":"hybrid","name":"Codex with three research sub-agents","model":"GPT-5"},
+  "startedAt": "2026-07-20T07:52:00+10:00",
+  "finishedAt": "2026-07-20T08:20:00+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path":"research/phase-2/evidence/SRC-NOTION.md","action":"created","sha256":"5f7f31fc378f419786d5d39493f00ae03e7dcd9b0230c552920560dde6087a65","reason":"Deep Notion evidence, mechanisms, exclusions, limits, and unapproved hypotheses."},
+    {"path":"research/phase-2/evidence/SRC-LINEAR.md","action":"created","sha256":"b1a35d24f8d36a8afd43355ca00824b4c52ac517b37a58b175875d56335e741b","reason":"Deep Linear evidence, mechanisms, exclusions, limits, and unapproved hypotheses."},
+    {"path":"research/phase-2/evidence/SRC-STRIPE.md","action":"created","sha256":"c97f2ac2723d1e76e4df0161d03fa475689b63a24c95eb739b4610d57eeed08f","reason":"Deep Stripe evidence, mechanisms, exclusions, limits, and unapproved hypotheses."},
+    {"path":"research/phase-2/evidence/SRC-ELEVENLABS.md","action":"created","sha256":"9cd19d9d558f87aceca6ff43521a80098bc537ff7ecff14928157de769eb125e","reason":"Deep ElevenLabs evidence, mechanisms, exclusions, limits, and unapproved hypotheses."},
+    {"path":"research/phase-2/evidence/SRC-RAMP.md","action":"created","sha256":"50af15003cc01c60969e3936c57c261d01a603a78acbe37d31125cfcc80da6ec","reason":"Deep Ramp evidence, mechanisms, exclusions, limits, and unapproved hypotheses."},
+    {"path":"research/phase-2/CAPTURE-RESULTS.md","action":"created","sha256":"bed247b89a0c3889d6107ac4a9e69190bd07e2f6ad9b66e8c42fa9b039ea7f0c","reason":"Qualified run matrix, provenance, sanitised exports, failures, and limitations."},
+    {"path":"research/phase-2/COMPARATIVE-SYNTHESIS.md","action":"created","sha256":"b74521de2caa02ac4f321df44f401d4da613a3f8a85b6d72e8054b358ae53726","reason":"Cross-source mechanisms, research answers, tensions, and experiment sequence."},
+    {"path":"governance/scripts/validate_phase_two_research.py","action":"created","sha256":"6fa7dbd39fa76298d3d8a39b585914b76330b34607f76091f5151306ca3968de","reason":"Ensures all five studies contain evidence, transfer, exclusions, limitations, and unapproved status."},
+    {"path":"llm/tasks/TASK-PHASE-2-DEEP-RESEARCH.json","action":"created","sha256":"88f7ad3fc158fab0e6d30d4c6026c8b3d7d84d5f51ed542414c6ffd75e115d3d","reason":"Records the bounded deep-research execution contract."}
+  ],
+  "decisionsApplied": ["DEC-H1-REFERENCE-PANEL-001", "DEC-BRAND-AMBITION-001"],
+  "tests": [
+    {"id":"V-P2-SOURCE-SET","status":"pass","evidence":"Exactly five Olli-approved sources are recorded at deep depth."},
+    {"id":"V-P2-EVIDENCE","status":"pass","evidence":"Five reports contain 76 evidence observations, official URLs, confidence, mechanisms, exclusions, limitations, and unapproved hypotheses."},
+    {"id":"V-P2-CAPTURE","status":"pass","evidence":"Five qualified Taste Reverse runs pass 100/100 across 75 viewport observations and 25,907 element samples."},
+    {"id":"V-P2-EXPORT","status":"pass","evidence":"Five sanitised copied exports validate with 736 measurements and no raw source media."},
+    {"id":"V-P2-ORIGINALITY","status":"pass","evidence":"Every report and synthesis separates convention, mechanism, source signature, and candidate Mez experiment."},
+    {"id":"V-TASTE-REVERSE-REGRESSION","status":"pass","evidence":"Build, lint, and all 10 tests pass after form-control privacy redaction."}
+  ],
+  "artifactsProduced": [
+    "five deep evidence memos",
+    "five qualified responsive Taste Reverse packages",
+    "five sanitised and validated measurement exports",
+    "comparative synthesis and experiment sequence",
+    "form-control privacy repair and regression coverage"
+  ],
+  "assumptions": [
+    "Current official public pages are sufficient for directional mechanism study, not private product certification.",
+    "The user's explicit five-source selection supersedes the original twelve-source recommendation.",
+    "Manual interpretations remain separate from deterministic exports."
+  ],
+  "exceptions": [
+    "The approved panel lacks standalone mature-system, cross-category, and dedicated anti-reference coverage.",
+    "Motion timing, easing, hover behaviour, and reduced-motion response were not comprehensively measured.",
+    "Taste Reverse produced deterministic measurements but no automatic interpreted findings."
+  ],
+  "hiddenContextFailures": [
+    "The first Notion run exposed a safe-but-blocking privacy false positive from input aria-label capture. Collection now redacts all form-control text and preserves the strict evaluator gate.",
+    "The first Ramp seed exposed only one category. Re-seeding from the official products surface produced a qualified five-category run."
+  ],
+  "humanStatus": {"gateRequired":false,"gateId":null,"status":"not-required"},
+  "nextAction": "Build the formal TR-4 comparative matrix and pattern atlases, then prototype E-01 monochrome recognition and E-02 product territories before H2."
+}

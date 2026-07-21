@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "capturedAt": "2026-07-19T15:55:00+10:00",
+  "packRepository": {
+    "path": "/Users/olivermerrick/mezcorp_claude_code",
+    "branch": "main",
+    "head": "c3007c75a4a38182b7c9e53328003bdd9610d2f7",
+    "workingTree": "dirty",
+    "scopeNote": "Unrelated user changes are preserved. The Phase 0 files are isolated under the Mez Systems pack."
+  },
+  "websiteConsumer": {
+    "path": "/Users/olivermerrick/Desktop/mez-studios/landing-pages/apps/ceos-notion-landingpage",
+    "branch": "codex/mez-systems-design-system",
+    "head": "cc4f3abc145fc7bdd96e67ab1eb06d038923a997",
+    "remote": "https://github.com/mezcorp-studio/ceos-notion-landingpage.git",
+    "workingTree": "dirty-untracked-existing",
+    "claimedCommitPresentOnBranch": false,
+    "checkedCommit": "5a3b702",
+    "expectedPaths": {
+      "docs/mez-design-system": false,
+      "src/styles/mez-tokens.css": false,
+      "src/components/home": false,
+      "components/home": false
+    },
+    "conclusion": "Treat as a migration candidate, not evidence of a completed integration."
+  },
+  "figma": {
+    "fileKey": "HU0GVaDhatjWrKCiSg3wlU",
+    "topLevelPages": [{"id":"0:1","name":"Playground for ideas - branding"}],
+    "directNodeChecks": [
+      {"id":"149:30","name":"Mez Systems — Brand System","result":"accessible","notes":"Contains the system reference and numbered channel sections through Commerce in the returned metadata."},
+      {"id":"149:31","name":"The system · reference","result":"accessible","variableDefinitions":0},
+      {"id":"312:57","name":"MZ Gradient Library · raw","result":"present-under-playground"}
+    ],
+    "librariesAdded": ["Material 3 Design Kit","Simple Design System","iOS 18 and iPadOS 18"],
+    "mezLibrarySearchResult": "No published Mez Systems components or variables were returned. Search returned unrelated Detailed Frameworks assets.",
+    "publicationStatus": "unverified",
+    "expectedCanonicalPageVerifiedByDirectNode": true,
+    "conclusion": "The canonical page exists and is extensive, but it is omitted from the connector's top-level page listing. No variables were returned for its reference section and a published Mez library was not verified. Treat it as a visual reference, not a canonical token or component library."
+  },
+  "canvas": {
+    "server": "http://127.0.0.1:8905",
+    "pagesCaptured": 8,
+    "screenshotsCaptured": 64,
+    "viewports": ["320x700","360x780","375x812","390x844","768x900","920x900","1280x900","1440x1000"],
+    "edgeCaseFindings": [
+      {"page":"canvas/components.html","viewportWidth":320,"documentWidth":334,"clientWidth":305,"result":"horizontal-overflow"},
+      {"page":"canvas/sections.html","viewportWidth":320,"documentWidth":347,"clientWidth":305,"result":"horizontal-overflow"},
+      {"page":"canvas/pages/home.html","viewportWidth":320,"documentWidth":347,"clientWidth":305,"result":"horizontal-overflow"},
+      {"page":"canvas/pages/product-aurora.html","viewportWidth":320,"documentWidth":347,"clientWidth":305,"result":"horizontal-overflow"},
+      {"page":"canvas/sections.html","viewportWidth":360,"documentWidth":347,"clientWidth":345,"result":"horizontal-overflow"},
+      {"page":"canvas/pages/home.html","viewportWidth":360,"documentWidth":347,"clientWidth":345,"result":"horizontal-overflow"},
+      {"page":"canvas/pages/product-aurora.html","viewportWidth":360,"documentWidth":347,"clientWidth":345,"result":"horizontal-overflow"}
+    ],
+    "captureRecords": "baseline/2026-07-19/screenshots/capture-records.json"
+  },
+  "limitations": [
+    "This baseline records structure, provenance, and representative visual evidence. It is not a full accessibility audit.",
+    "Figma metadata is a live connector observation, not an exported backup of the file.",
+    "Website evidence reflects the named checkout at capture time and does not inspect unreachable or deleted remote branches."
+  ]
+}

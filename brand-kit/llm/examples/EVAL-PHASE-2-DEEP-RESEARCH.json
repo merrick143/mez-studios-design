@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-PHASE-2-DEEP-RESEARCH",
+  "receiptId": "RCP-PHASE-2-DEEP-RESEARCH",
+  "evaluatedAt": "2026-07-20T08:21:00+10:00",
+  "evaluator": {"kind":"hybrid","name":"Deterministic validators plus primary-agent cross-source review"},
+  "contractChecks": [
+    {"id":"APPROVED-SCOPE","status":"pass","evidence":"Only Notion, Linear, Stripe, ElevenLabs, and Ramp were studied, all at deep depth."},
+    {"id":"EVIDENCE-TRACEABILITY","status":"pass","evidence":"Every report uses official public sources, evidence IDs, confidence, and explicit limitations."},
+    {"id":"RESPONSIVE-CAPTURE","status":"pass","evidence":"All five qualified runs contain five page categories and desktop, laptop, and mobile observations."},
+    {"id":"PRIVACY-AND-PORTABILITY","status":"pass","evidence":"All raw packages pass 100/100 and all sanitised exports validate without raw media or source-repository access."},
+    {"id":"ANTI-COPY","status":"pass","evidence":"Source signatures are excluded and Mez ideas remain unapproved hypotheses derived across sources or direct Mez needs."},
+    {"id":"PANEL-RANGE","status":"warning","evidence":"The human-selected panel is software-centred and omits standalone design-system, cross-category, and dedicated anti-reference research."}
+  ],
+  "qualityDimensions": [
+    {"id":"depth","score":5,"maximum":5,"evidence":"Each source has a deep memo plus five-page responsive capture."},
+    {"id":"comparability","score":5,"maximum":5,"evidence":"All reports share observation, mechanism, convention, transfer, exclusion, limitation, and hypothesis layers."},
+    {"id":"traceability","score":5,"maximum":5,"evidence":"Raw runs, source URLs, evidence IDs, validation, export checksums, and failures are recorded."},
+    {"id":"originality-safety","score":5,"maximum":5,"evidence":"No source values, assets, screenshots, copy, or signature combination is promoted into Mez."},
+    {"id":"research-range","score":3,"maximum":5,"evidence":"The five sources are strong software references but provide intentionally narrow category range."},
+    {"id":"decision-readiness","score":4,"maximum":5,"evidence":"Structural experiments are ready. H2 visual direction is correctly deferred until the experiments are built."}
+  ],
+  "blockers": [],
+  "verdict": "pass-with-warnings",
+  "humanReviewRequired": false,
+  "notes": ["The deep-source cycle is complete. The warning is a recorded panel limitation, not a request to add unapproved sources."]
+}

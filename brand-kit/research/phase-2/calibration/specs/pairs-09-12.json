@@ -1,0 +1,399 @@
+[
+  {
+    "id": "PAIR-09",
+    "dimensionId": "TD-005",
+    "title": "Small-size parent and product hierarchy",
+    "oneVariable": "The relative visual priority of the Mez Systems parent and the AI OS product within one compact lockup.",
+    "constantContent": {
+      "product": "AI OS",
+      "function": "AI Operating System",
+      "parent": "Mez Systems",
+      "claim": "Your whole business, one system.",
+      "status": "Live"
+    },
+    "constantViewport": {
+      "width": 320,
+      "height": 100,
+      "unit": "px",
+      "context": "Free-floating compact product header"
+    },
+    "question": "Which hierarchy makes both the product and its Mez Systems relationship immediately legible without creating a separate mini-brand?",
+    "optionA": {
+      "label": "Parent-led hierarchy",
+      "intent": "Test whether leading with the parent creates trust and family coherence at the cost of product recognition.",
+      "visualRules": [
+        "Set Mez Systems as the largest and highest-contrast line.",
+        "Set AI OS one hierarchy step below the parent.",
+        "Keep the function, claim, and status in the same positions and styles used by option B.",
+        "Use the same type family, monochrome palette, spacing system, border, alignment, and total occupied area as option B.",
+        "Use no wings, gradient, disc, icon, illustration, or source-derived device."
+      ],
+      "copy": {
+        "product": "AI OS",
+        "function": "AI Operating System",
+        "parent": "Mez Systems",
+        "claim": "Your whole business, one system.",
+        "status": "Live"
+      },
+      "failureRisk": "The parent is clear but AI OS reads as a feature or secondary label rather than a distinct product."
+    },
+    "optionB": {
+      "label": "Product-led endorsement",
+      "intent": "Test whether leading with the product improves recognition while a compact parent endorsement preserves family trust.",
+      "visualRules": [
+        "Set AI OS as the largest and highest-contrast line.",
+        "Set Mez Systems one hierarchy step below the product as the endorsement.",
+        "Keep the function, claim, and status in the same positions and styles used by option A.",
+        "Use the same type family, monochrome palette, spacing system, border, alignment, and total occupied area as option A.",
+        "Use no wings, gradient, disc, icon, illustration, or source-derived device."
+      ],
+      "copy": {
+        "product": "AI OS",
+        "function": "AI Operating System",
+        "parent": "Mez Systems",
+        "claim": "Your whole business, one system.",
+        "status": "Live"
+      },
+      "failureRisk": "AI OS reads clearly, but the Mez Systems relationship becomes too weak in detached or unfamiliar contexts."
+    },
+    "relatedPatternIds": [
+      "M-01",
+      "M-02"
+    ],
+    "relatedAntiPatternIds": [
+      "AP-004",
+      "AP-017"
+    ],
+    "evaluationPrompt": "View each option for five seconds at actual size. State the product, parent, relationship, and function. Prefer the option with the higher correct response rate and no repeated mini-brand or parent-only interpretation. Ignore personal preference for larger type.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-10",
+    "dimensionId": "TD-003",
+    "title": "Repeated cards versus content-led composition",
+    "oneVariable": "The relationship structure used to compose four identical workflow steps: equal repeated cards or one content-led sequence.",
+    "constantContent": {
+      "eyebrow": "AI OS workflow",
+      "heading": "From request to verified next step.",
+      "body": "One operating flow keeps the work, owner, evidence, and decision connected.",
+      "steps": [
+        {
+          "name": "Capture request",
+          "detail": "Record the task and required outcome."
+        },
+        {
+          "name": "Route work",
+          "detail": "Assign the next action and owner."
+        },
+        {
+          "name": "Verify output",
+          "detail": "Check the result against its source."
+        },
+        {
+          "name": "Approve next step",
+          "detail": "A person accepts, changes, or returns the work."
+        }
+      ],
+      "status": "Prototype content"
+    },
+    "constantViewport": {
+      "width": 1440,
+      "height": 900,
+      "unit": "px",
+      "context": "Desktop website section"
+    },
+    "question": "Does a repeated card grid or a relationship-led sequence explain the operating flow more clearly while still feeling systematic?",
+    "optionA": {
+      "label": "Four equal cards",
+      "intent": "Test the current tendency to create consistency by giving every workflow step the same independent container.",
+      "visualRules": [
+        "Render the four steps as equal-width cards in one row.",
+        "Give every card identical radius, border, padding, heading size, and detail position.",
+        "Do not add arrows, connectors, grouping, overlap, or hierarchy between steps.",
+        "Keep section heading, body, copy, type family, monochrome palette, overall footprint, and whitespace equal to option B.",
+        "Use no product gradient, wings, decorative icon, or source-derived layout."
+      ],
+      "copy": {
+        "eyebrow": "AI OS workflow",
+        "heading": "From request to verified next step.",
+        "body": "One operating flow keeps the work, owner, evidence, and decision connected.",
+        "steps": [
+          {
+            "name": "Capture request",
+            "detail": "Record the task and required outcome."
+          },
+          {
+            "name": "Route work",
+            "detail": "Assign the next action and owner."
+          },
+          {
+            "name": "Verify output",
+            "detail": "Check the result against its source."
+          },
+          {
+            "name": "Approve next step",
+            "detail": "A person accepts, changes, or returns the work."
+          }
+        ],
+        "status": "Prototype content"
+      },
+      "failureRisk": "The cards look tidy but imply four unrelated features, hide sequence, and reproduce generic SaaS card monoculture."
+    },
+    "optionB": {
+      "label": "Content-led sequence",
+      "intent": "Test whether composition derived from order and handoff explains the workflow better than equal containers.",
+      "visualRules": [
+        "Render the same four steps as one left-to-right sequence with a clear start, progression, and human decision endpoint.",
+        "Use alignment and one restrained connector to express order without adding copy or decorative imagery.",
+        "Use containment only around the complete workflow, not around every step.",
+        "Keep section heading, body, copy, type family, monochrome palette, overall footprint, and whitespace equal to option A.",
+        "Use no product gradient, wings, decorative icon, or source-derived layout."
+      ],
+      "copy": {
+        "eyebrow": "AI OS workflow",
+        "heading": "From request to verified next step.",
+        "body": "One operating flow keeps the work, owner, evidence, and decision connected.",
+        "steps": [
+          {
+            "name": "Capture request",
+            "detail": "Record the task and required outcome."
+          },
+          {
+            "name": "Route work",
+            "detail": "Assign the next action and owner."
+          },
+          {
+            "name": "Verify output",
+            "detail": "Check the result against its source."
+          },
+          {
+            "name": "Approve next step",
+            "detail": "A person accepts, changes, or returns the work."
+          }
+        ],
+        "status": "Prototype content"
+      },
+      "failureRisk": "The sequence becomes diagrammatic decoration, overstates a strictly linear process, or sacrifices scannability for visual novelty."
+    },
+    "relatedPatternIds": [
+      "M-02",
+      "M-04"
+    ],
+    "relatedAntiPatternIds": [
+      "AP-005",
+      "AP-011"
+    ],
+    "evaluationPrompt": "Without reading the heading, identify whether the four items are peers or ordered work, where the flow starts, and where a person decides. Prefer the option that communicates the intended sequence faster without adding an untrue relationship or looking attributable to a reference brand.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-11",
+    "dimensionId": "TD-004",
+    "title": "Undifferentiated proof versus labelled evidence ladder",
+    "oneVariable": "The visual role and sequence assigned to existing evidence-class labels: equal evidence tiles or a clear evidence ladder.",
+    "constantContent": {
+      "eyebrow": "AI OS proof record",
+      "claim": "AI OS turns a weekly brief into a reviewable operating plan.",
+      "evidence": [
+        {
+          "class": "System activity",
+          "label": "Brief received",
+          "detail": "The source brief is attached to this run."
+        },
+        {
+          "class": "Literal mechanism",
+          "label": "Work routed",
+          "detail": "Tasks are assigned by owner and required outcome."
+        },
+        {
+          "class": "Customer outcome",
+          "label": "Plan approved",
+          "detail": "The reviewer accepted the proposed plan."
+        },
+        {
+          "class": "Aggregate research",
+          "label": "No research claim",
+          "detail": "This prototype does not make a population-level claim."
+        }
+      ],
+      "provenance": "Prototype evidence, not a public performance claim.",
+      "action": "Review the plan"
+    },
+    "constantViewport": {
+      "width": 1200,
+      "height": 760,
+      "unit": "px",
+      "context": "Website proof section"
+    },
+    "question": "Does visually labelling and ordering the evidence classes improve trust and prevent one proof type from impersonating another?",
+    "optionA": {
+      "label": "Equal evidence tiles",
+      "intent": "Test the failure mode where several kinds of evidence appear together but their roles and sequence receive no visual distinction.",
+      "visualRules": [
+        "Render all four evidence records as equal tiles in a two-by-two grid.",
+        "Show every class, label, detail, provenance line, and action exactly as supplied.",
+        "Give all class labels identical size, weight, colour, position, and contrast.",
+        "Do not connect the evidence records or indicate an order.",
+        "Keep copy, type family, monochrome palette, total footprint, and component quality equal to option B."
+      ],
+      "copy": {
+        "eyebrow": "AI OS proof record",
+        "claim": "AI OS turns a weekly brief into a reviewable operating plan.",
+        "evidence": [
+          {
+            "class": "System activity",
+            "label": "Brief received",
+            "detail": "The source brief is attached to this run."
+          },
+          {
+            "class": "Literal mechanism",
+            "label": "Work routed",
+            "detail": "Tasks are assigned by owner and required outcome."
+          },
+          {
+            "class": "Customer outcome",
+            "label": "Plan approved",
+            "detail": "The reviewer accepted the proposed plan."
+          },
+          {
+            "class": "Aggregate research",
+            "label": "No research claim",
+            "detail": "This prototype does not make a population-level claim."
+          }
+        ],
+        "provenance": "Prototype evidence, not a public performance claim.",
+        "action": "Review the plan"
+      },
+      "failureRisk": "All proof looks equivalent, the reading order is unclear, and a reader may infer that the approved plan is aggregate performance evidence."
+    },
+    "optionB": {
+      "label": "Labelled evidence ladder",
+      "intent": "Test whether explicit visual roles and a claim-to-activity-to-mechanism-to-outcome sequence make the proof more inspectable.",
+      "visualRules": [
+        "Render the same four evidence records in a single ordered ladder beneath the claim.",
+        "Show every class, label, detail, provenance line, and action exactly as supplied.",
+        "Use distinct but equally accessible label treatments for evidence class, evidence content, and provenance status.",
+        "Use one restrained connector and ordinal position to show the evidence path without implying causality beyond the copy.",
+        "Keep copy, type family, monochrome palette, total footprint, and component quality equal to option A."
+      ],
+      "copy": {
+        "eyebrow": "AI OS proof record",
+        "claim": "AI OS turns a weekly brief into a reviewable operating plan.",
+        "evidence": [
+          {
+            "class": "System activity",
+            "label": "Brief received",
+            "detail": "The source brief is attached to this run."
+          },
+          {
+            "class": "Literal mechanism",
+            "label": "Work routed",
+            "detail": "Tasks are assigned by owner and required outcome."
+          },
+          {
+            "class": "Customer outcome",
+            "label": "Plan approved",
+            "detail": "The reviewer accepted the proposed plan."
+          },
+          {
+            "class": "Aggregate research",
+            "label": "No research claim",
+            "detail": "This prototype does not make a population-level claim."
+          }
+        ],
+        "provenance": "Prototype evidence, not a public performance claim.",
+        "action": "Review the plan"
+      },
+      "failureRisk": "The ladder implies a stronger causal sequence than the evidence supports or adds so much labelling that the claim becomes difficult to scan."
+    },
+    "relatedPatternIds": [
+      "M-03",
+      "M-07"
+    ],
+    "relatedAntiPatternIds": [
+      "AP-006",
+      "AP-007",
+      "AP-016"
+    ],
+    "evaluationPrompt": "After ten seconds, identify the claim, each evidence class, what the prototype does not claim, and where provenance appears. Prefer the option that produces the fewest class errors and no false causal inference, while keeping the claim easy to scan.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-12",
+    "dimensionId": "TD-003",
+    "title": "Scaled-down versus channel-native compression",
+    "oneVariable": "The layout adaptation method used for identical content in a constrained email module: proportional desktop scaling or channel-native reflow and grouping.",
+    "constantContent": {
+      "eyebrow": "AI OS update",
+      "heading": "The work moved. You stay in control.",
+      "context": "The weekly operating plan is ready for review.",
+      "changedState": "Eight tasks now have owners and required outcomes.",
+      "result": "The plan is waiting for your decision.",
+      "source": "Source: Weekly operations brief",
+      "status": "Status: Needs review",
+      "action": "Review the plan"
+    },
+    "constantViewport": {
+      "width": 600,
+      "height": 420,
+      "unit": "px",
+      "context": "Responsive email content module"
+    },
+    "question": "Does channel-native reflow preserve more comprehension and action clarity than proportionally shrinking a desktop website section?",
+    "optionA": {
+      "label": "Scaled-down website section",
+      "intent": "Test the common transfer shortcut of preserving the desktop composition and reducing every element to fit the email viewport.",
+      "visualRules": [
+        "Use a two-column desktop website composition scaled proportionally into the fixed viewport.",
+        "Reduce type, spacing, label size, and action size by the same ratio.",
+        "Preserve the desktop column relationship even when lines wrap.",
+        "Show all supplied copy with no additions, omissions, rewrites, icons, gradients, or images.",
+        "Keep type family, monochrome palette, content order, total viewport, and visual finish equal to option B."
+      ],
+      "copy": {
+        "eyebrow": "AI OS update",
+        "heading": "The work moved. You stay in control.",
+        "context": "The weekly operating plan is ready for review.",
+        "changedState": "Eight tasks now have owners and required outcomes.",
+        "result": "The plan is waiting for your decision.",
+        "source": "Source: Weekly operations brief",
+        "status": "Status: Needs review",
+        "action": "Review the plan"
+      },
+      "failureRisk": "Text and controls become too small, the scan path fragments, and desktop spatial logic survives after it stops helping the receiver."
+    },
+    "optionB": {
+      "label": "Channel-native compression",
+      "intent": "Test whether an email-specific single-column hierarchy can retain the same truth while improving scan and action clarity.",
+      "visualRules": [
+        "Reflow the same content into one column with heading, context, changed state, result, source and status, then action.",
+        "Group source and status as a compact metadata block without changing either string.",
+        "Use email-appropriate readable type and a full-width robust action while preserving the same content order.",
+        "Show all supplied copy with no additions, omissions, rewrites, icons, gradients, or images.",
+        "Keep type family, monochrome palette, total viewport, and visual finish equal to option A."
+      ],
+      "copy": {
+        "eyebrow": "AI OS update",
+        "heading": "The work moved. You stay in control.",
+        "context": "The weekly operating plan is ready for review.",
+        "changedState": "Eight tasks now have owners and required outcomes.",
+        "result": "The plan is waiting for your decision.",
+        "source": "Source: Weekly operations brief",
+        "status": "Status: Needs review",
+        "action": "Review the plan"
+      },
+      "failureRisk": "The reflow becomes a new interpretation, changes the semantic order, or hides qualifiers in the name of cleaner email design."
+    },
+    "relatedPatternIds": [
+      "M-04",
+      "M-06"
+    ],
+    "relatedAntiPatternIds": [
+      "AP-005",
+      "AP-010",
+      "AP-014"
+    ],
+    "evaluationPrompt": "View each option at actual email size. Identify the changed state, result, source, status, and next action. Prefer the option with faster correct comprehension, readable type, a clear action, and no semantic loss or copy change.",
+    "decisionStatus": "unapproved"
+  }
+]

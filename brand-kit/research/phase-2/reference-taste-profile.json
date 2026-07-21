@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "MEZ-REFERENCE-TASTE-PROFILE-01",
+  "studyId": "MEZ-REFERENCE-TASTE-ROUND-01",
+  "reviewer": "Olli",
+  "reviewedAt": "2026-07-20",
+  "status": "source-level-evidence-unapproved",
+  "productionAuthority": false,
+  "record": {
+    "path": "/Users/olivermerrick/Documents/taste-reverse/reviews/mez-systems-reference-taste-round-01/responses/olli-2026-07-20.json",
+    "complete": true,
+    "references": 35,
+    "durationSeconds": 250,
+    "reactions": {"love": 6, "useful": 16, "indifferent": 7, "reject": 6, "skip": 0},
+    "notes": 0,
+    "revisions": 2
+  },
+  "positiveSignals": [
+    {"signal": "premium", "count": 9, "weight": "high"},
+    {"signal": "clear", "count": 7, "weight": "high"},
+    {"signal": "intelligent", "count": 6, "weight": "high"},
+    {"signal": "product-led", "count": 5, "weight": "high"},
+    {"signal": "well paced", "count": 4, "weight": "medium"},
+    {"signal": "precise", "count": 3, "weight": "medium"},
+    {"signal": "human", "count": 2, "weight": "tentative"},
+    {"signal": "ownable", "count": 1, "weight": "unresolved"}
+  ],
+  "sourceProfiles": {
+    "ElevenLabs": {"love": 4, "useful": 2, "indifferent": 1, "reject": 0, "role": "expression and product-specific energy"},
+    "Notion": {"love": 1, "useful": 5, "indifferent": 1, "reject": 0, "role": "clarity, precision and pacing"},
+    "Linear": {"love": 1, "useful": 4, "indifferent": 0, "reject": 2, "role": "product proof and premium operational structure"},
+    "Ramp": {"love": 0, "useful": 3, "indifferent": 4, "reject": 0, "role": "clarity baseline and comparison intelligence"},
+    "Stripe": {"love": 0, "useful": 2, "indifferent": 1, "reject": 4, "role": "bounded ecosystem proof only; dominant anti-reference"}
+  },
+  "directionConstraints": [
+    "Make premium clarity and product evidence inseparable.",
+    "Use expression only when it adds energy, intelligence, humanity, or product meaning.",
+    "Do not use a corporate gradient atmosphere.",
+    "Do not let restraint collapse into under-design.",
+    "Alternate editorial and operational density.",
+    "Create original Mez recognition behaviour beyond the source panel.",
+    "Treat trust and commercial proof as an invention problem."
+  ],
+  "uncertainties": [
+    "Exact degree of dark-section usage",
+    "Preferred human imagery model",
+    "Original non-colour recognition behaviour",
+    "Trust and customer proof composition",
+    "Exact product-family distinction level"
+  ],
+  "nextGate": "Review three complete original Mez directions across eight shared surfaces"
+}

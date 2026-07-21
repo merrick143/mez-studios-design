@@ -1,0 +1,1014 @@
+{
+  "schemaVersion": "1.0.0",
+  "snapshotId": "MEZCORP-KNOWLEDGE-2026-07-21",
+  "sourceRepository": "merrick143/mezcorp-claudecode",
+  "sourceBranch": "codex/mez-gradient-system",
+  "sourceCommit": "c742224a2e095d5671f821a33fa9d3fc35c014c0",
+  "sourcePath": "departments/cmo/brand-library/brands/mez-systems",
+  "role": "frozen-documentation-and-machine-record-evidence",
+  "productionAuthority": false,
+  "fileCount": 200,
+  "markdownCount": 104,
+  "files": [
+    {
+      "path": "AUDIT-AND-END-TO-END-ROADMAP.md",
+      "sha256": "d2abc24b5ec66db1546c938a938e071129b868c94d4bcbaf54a15958bbc5dffb",
+      "bytes": 127608
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "b87238e5ca62259d32b49d52fd8f04c1df02dfa9ca21aa354c03712aa01b6a98",
+      "bytes": 18606
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "87db37e22d0c8b35b954628db5af4a1bd02007f5bc617d82ffd992dc78b2ee21",
+      "bytes": 8848
+    },
+    {
+      "path": "baseline/2026-07-19/manifest.json",
+      "sha256": "162306e274d3d5c3cedd4bb306af46f32be9c9f24df926522568703f8574f3cb",
+      "bytes": 28797
+    },
+    {
+      "path": "baseline/2026-07-19/observations.json",
+      "sha256": "f9f677a0fbac4084018a2d9b7b98326eab603104314576726621dec26f988ea1",
+      "bytes": 3909
+    },
+    {
+      "path": "baseline/2026-07-19/phase-one-browser-validation.json",
+      "sha256": "fdc204d48425f63735ffcc1f414681b7568bd7ee67f4d0d23d393fe25cb0cb5d",
+      "bytes": 1332
+    },
+    {
+      "path": "baseline/2026-07-19/screenshots/capture-records.json",
+      "sha256": "71bac4f607390ec61257bf4e75ee1bc419329f2e60327aba41478ea33cf86e16",
+      "bytes": 34916
+    },
+    {
+      "path": "brand-system/00-brand-architecture.md",
+      "sha256": "757db1777b23496ae7d3d282ae5e1171029f2cfb831c9256fd582ce7a97a60b9",
+      "bytes": 2205
+    },
+    {
+      "path": "brand-system/01-colour.md",
+      "sha256": "1db8a78c0d508f1c16efea953927c0a94f503141b3283bc6c5e49556b0c76a80",
+      "bytes": 2889
+    },
+    {
+      "path": "brand-system/02-gradients.md",
+      "sha256": "22674366dd2875d5d4eddf6d9a1663f79230d91f65cdd2d3b337dc6be7569585",
+      "bytes": 5094
+    },
+    {
+      "path": "brand-system/03-typography.md",
+      "sha256": "f98ce41a1db99f66543f0d8fac3757974c64601bc1cf827f3db6362e16c61df3",
+      "bytes": 3014
+    },
+    {
+      "path": "brand-system/04-the-mark.md",
+      "sha256": "09d45758a8426b90836b4f0853a442b1cec8f3e1115a6c5de9bd44a29635069a",
+      "bytes": 2866
+    },
+    {
+      "path": "brand-system/05-product-system.md",
+      "sha256": "892224723ca26c5f58874eef67b71ec2bdff5b351ac2ab3d278af1d3a1778f2b",
+      "bytes": 3670
+    },
+    {
+      "path": "brand-system/06-trading-cards-and-stacks.md",
+      "sha256": "127723c9353535ea2c0ba9e6da63aaa89caf2fe01353a588ff9d2b755a0c876d",
+      "bytes": 3791
+    },
+    {
+      "path": "brand-system/07-ui-components.md",
+      "sha256": "0d18d37b5fad581c0b69d409f2424b9d0e6511faefc65b3db91ac3dcf5ed8b8a",
+      "bytes": 4023
+    },
+    {
+      "path": "brand-system/08-figma-map.md",
+      "sha256": "aef3b42ba7b1ec8ec6d34eb0c08c93633b9ea0acb6f7b0484ce25becd0250ca1",
+      "bytes": 4339
+    },
+    {
+      "path": "brand-system/09-governance.md",
+      "sha256": "8740f19b17500c446da1dd2561389e8f2c9567aa1a71379c802153ba3b1c3d91",
+      "bytes": 13713
+    },
+    {
+      "path": "brand-system/10-product-template.md",
+      "sha256": "bd2c41f096ba7dc83c14c77e487d0f4cad3a348c93c89fd67b377ee964f4bd69",
+      "bytes": 6978
+    },
+    {
+      "path": "brand-system/11-layout-and-grid.md",
+      "sha256": "d10c4c5129209ba59d17c088b097ac5fd898a0009bc65a8a5d21b35511d9aeb3",
+      "bytes": 4594
+    },
+    {
+      "path": "brand-system/12-states-and-forms.md",
+      "sha256": "4074dc7793fe102bbe3c3e4cfba51ca9d61cf9791ec259a28a20991af1066f5d",
+      "bytes": 8547
+    },
+    {
+      "path": "brand-system/13-sections.md",
+      "sha256": "1353f37cb8bbf9363d69037fc622c1a035094f8780a3037bf06f30f6129179d1",
+      "bytes": 28989
+    },
+    {
+      "path": "brand-system/14-page-archetypes.md",
+      "sha256": "4f9506a619f42930daec201c159ce14d63751874f589427678c541ea863d63b8",
+      "bytes": 29178
+    },
+    {
+      "path": "brand-system/15-commerce.md",
+      "sha256": "a075c858c3e0198685462f799dc0befa512829e1418495e6b3df4635d56b0103",
+      "bytes": 20903
+    },
+    {
+      "path": "brand-system/16-motion.md",
+      "sha256": "5db26318331b909b232d71112979309cd9adedba7a3fd6d049d9b7a19c491ab5",
+      "bytes": 6566
+    },
+    {
+      "path": "brand-system/17-voice-and-copy.md",
+      "sha256": "4e8200b62ac0432079b3f46133ed042d89ac7c5a41f10d7839d5dcb44aa0efc0",
+      "bytes": 14357
+    },
+    {
+      "path": "brand-system/18-imagery-and-og.md",
+      "sha256": "2dea4e6f731c0354d0c73751b4492246c3b4a48f92dba39ce5dd094035da6f3f",
+      "bytes": 17727
+    },
+    {
+      "path": "brand-system/19-review-checklist.md",
+      "sha256": "78daa8c721b3d0d667b7ef3fc62f9e3691cfb011da732b5c4573c5c65c8fd609",
+      "bytes": 14581
+    },
+    {
+      "path": "brand-system/20-living-core.md",
+      "sha256": "a9dd78df30d806ac0f205aa11ae694b3f6499733f771238eb185903c3ef310b1",
+      "bytes": 8788
+    },
+    {
+      "path": "brand-system/README.md",
+      "sha256": "f092f16e0720ad0b0f1e552d8cfc5957c7a21b9735fd81d50e3ca7818fab9617",
+      "bytes": 5623
+    },
+    {
+      "path": "canvas/README.md",
+      "sha256": "4116b82674148d81e878a2b9f48cb79cf877d34ce89a1e769aab62436587b88b",
+      "bytes": 868
+    },
+    {
+      "path": "canvas/SNIPPETS.md",
+      "sha256": "fee78cf2058f73b32ab275bab0dd047012e4fa11cb58889fc59335355ae012b4",
+      "bytes": 10268
+    },
+    {
+      "path": "colours.json",
+      "sha256": "bbfdceae7e5a059601ba4dfd828a210ce18f8dc0b201a166bc500d07db38f40f",
+      "bytes": 1094
+    },
+    {
+      "path": "design-system-export/AGENTS.md",
+      "sha256": "90058596ff1cac7e3b75b1ca9492b7afaf0a7eb67fd2e8e6e824295f93ba1cd0",
+      "bytes": 4147
+    },
+    {
+      "path": "design-system-export/DESIGN_SYSTEM.md",
+      "sha256": "c63f5d898d19311d1420b4978e6b52276c2aedab329ab49bcd04a6266b5609c9",
+      "bytes": 19190
+    },
+    {
+      "path": "design-system-export/README.md",
+      "sha256": "39d06ef4d061c68fae4ca2a68aea76c6e0b2677c8bfe9ed6ee6f7477c09a0e40",
+      "bytes": 3938
+    },
+    {
+      "path": "design-system-export/colours.json",
+      "sha256": "bbfdceae7e5a059601ba4dfd828a210ce18f8dc0b201a166bc500d07db38f40f",
+      "bytes": 1094
+    },
+    {
+      "path": "design-system-export/contracts/authority-model.json",
+      "sha256": "65c689b14e060c17fd370a9eba6430a614fe257918b4dfaa9e20656c994687f9",
+      "bytes": 1115
+    },
+    {
+      "path": "design-system-export/docs/00-brand-architecture.md",
+      "sha256": "757db1777b23496ae7d3d282ae5e1171029f2cfb831c9256fd582ce7a97a60b9",
+      "bytes": 2205
+    },
+    {
+      "path": "design-system-export/docs/01-colour.md",
+      "sha256": "f77fc94eb788c635424e56e1ac42a6517e8e0627333ec3e18ebeb53519c95291",
+      "bytes": 2847
+    },
+    {
+      "path": "design-system-export/docs/02-gradients.md",
+      "sha256": "22674366dd2875d5d4eddf6d9a1663f79230d91f65cdd2d3b337dc6be7569585",
+      "bytes": 5094
+    },
+    {
+      "path": "design-system-export/docs/03-typography.md",
+      "sha256": "fad21716d99af786aff12aedd096ad15c60c71efbe8ac14a2ef867019ec8fab7",
+      "bytes": 2930
+    },
+    {
+      "path": "design-system-export/docs/04-the-mark.md",
+      "sha256": "09d45758a8426b90836b4f0853a442b1cec8f3e1115a6c5de9bd44a29635069a",
+      "bytes": 2866
+    },
+    {
+      "path": "design-system-export/docs/05-product-system.md",
+      "sha256": "892224723ca26c5f58874eef67b71ec2bdff5b351ac2ab3d278af1d3a1778f2b",
+      "bytes": 3670
+    },
+    {
+      "path": "design-system-export/docs/06-trading-cards-and-stacks.md",
+      "sha256": "127723c9353535ea2c0ba9e6da63aaa89caf2fe01353a588ff9d2b755a0c876d",
+      "bytes": 3791
+    },
+    {
+      "path": "design-system-export/docs/07-ui-components.md",
+      "sha256": "0d18d37b5fad581c0b69d409f2424b9d0e6511faefc65b3db91ac3dcf5ed8b8a",
+      "bytes": 4023
+    },
+    {
+      "path": "design-system-export/docs/08-figma-map.md",
+      "sha256": "19265103a8cab14d3b993f3c6ed35bff5cb3a9c91071a1017713b0d4427b102d",
+      "bytes": 4318
+    },
+    {
+      "path": "design-system-export/docs/09-governance.md",
+      "sha256": "0c439ebc8ea878be7fe724c8d9a7eb63bbcd95b84c3f9f6396bf2231bb8df0f1",
+      "bytes": 13462
+    },
+    {
+      "path": "design-system-export/docs/10-product-template.md",
+      "sha256": "bd2c41f096ba7dc83c14c77e487d0f4cad3a348c93c89fd67b377ee964f4bd69",
+      "bytes": 6978
+    },
+    {
+      "path": "design-system-export/docs/11-layout-and-grid.md",
+      "sha256": "3e91ba4b33aaee03a7486ea6ef4331840eab796d63f8dde2ba513f3fceb1bc64",
+      "bytes": 4573
+    },
+    {
+      "path": "design-system-export/docs/12-states-and-forms.md",
+      "sha256": "4074dc7793fe102bbe3c3e4cfba51ca9d61cf9791ec259a28a20991af1066f5d",
+      "bytes": 8547
+    },
+    {
+      "path": "design-system-export/docs/13-sections.md",
+      "sha256": "1353f37cb8bbf9363d69037fc622c1a035094f8780a3037bf06f30f6129179d1",
+      "bytes": 28989
+    },
+    {
+      "path": "design-system-export/docs/14-page-archetypes.md",
+      "sha256": "4f9506a619f42930daec201c159ce14d63751874f589427678c541ea863d63b8",
+      "bytes": 29178
+    },
+    {
+      "path": "design-system-export/docs/15-commerce.md",
+      "sha256": "a075c858c3e0198685462f799dc0befa512829e1418495e6b3df4635d56b0103",
+      "bytes": 20903
+    },
+    {
+      "path": "design-system-export/docs/16-motion.md",
+      "sha256": "5db26318331b909b232d71112979309cd9adedba7a3fd6d049d9b7a19c491ab5",
+      "bytes": 6566
+    },
+    {
+      "path": "design-system-export/docs/17-voice-and-copy.md",
+      "sha256": "4e8200b62ac0432079b3f46133ed042d89ac7c5a41f10d7839d5dcb44aa0efc0",
+      "bytes": 14357
+    },
+    {
+      "path": "design-system-export/docs/18-imagery-and-og.md",
+      "sha256": "2dea4e6f731c0354d0c73751b4492246c3b4a48f92dba39ce5dd094035da6f3f",
+      "bytes": 17727
+    },
+    {
+      "path": "design-system-export/docs/19-review-checklist.md",
+      "sha256": "78daa8c721b3d0d667b7ef3fc62f9e3691cfb011da732b5c4573c5c65c8fd609",
+      "bytes": 14581
+    },
+    {
+      "path": "design-system-export/docs/20-living-core.md",
+      "sha256": "90a561939c4ae49df1c744cb39d97dc9ff5e7e6440d8c0d11d1fbb18a0cc6e8e",
+      "bytes": 4972
+    },
+    {
+      "path": "design-system-export/docs/README.md",
+      "sha256": "e03774a4d894e77470863a53469fa330a9d9c6549a8b3decf67137aa49f8667a",
+      "bytes": 5637
+    },
+    {
+      "path": "design-system-export/export-manifest.json",
+      "sha256": "b87e0db146e2cf1a866913f859daa06a544db30cfd7d2bb3947fe9e6e15ba4f4",
+      "bytes": 14559
+    },
+    {
+      "path": "design-system-export/fonts.json",
+      "sha256": "6e195409360fd270cb894964e4c0cb6db5ba0fb057c8e6f80d927c2c3e83ef26",
+      "bytes": 1294
+    },
+    {
+      "path": "design-system-export/gradients.json",
+      "sha256": "888f9d689cd31e8b5fc76389daf34fb0a5c805a3b2d89711bcbb153f014204ea",
+      "bytes": 6539
+    },
+    {
+      "path": "design-system-export/licences/FONTS.md",
+      "sha256": "5653d52a06b40a48fb7a091d6b3e6e99a740e41a0068f54e4fdfac9774adaa22",
+      "bytes": 1507
+    },
+    {
+      "path": "design-system-export/licences/IBM-Plex-Mono-OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "bytes": 4456
+    },
+    {
+      "path": "design-system-export/licences/Instrument-Serif-OFL.txt",
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+      "bytes": 4405
+    },
+    {
+      "path": "design-system-export/licences/Inter-OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "bytes": 4377
+    },
+    {
+      "path": "design-system-export/products.json",
+      "sha256": "f7a070a8c8b1b4e8d71a10921ed62aa45994f75c47b085f4281f3d0370027e32",
+      "bytes": 2394
+    },
+    {
+      "path": "design-system-export/tokens/tokens.json",
+      "sha256": "7aa441447c4fd155f26944709008b7c23f80ba2fb3b2c07f9913227acd0a6757",
+      "bytes": 7219
+    },
+    {
+      "path": "design-system-export/trading-cards-fut-study/fut-teardown.md",
+      "sha256": "b44532d4e2e909a932a156138323602f9daac3faaeb881dedc424ba8ef4c5746",
+      "bytes": 26295
+    },
+    {
+      "path": "design-system-export/typography.md",
+      "sha256": "9761403316e4e015a4f0468a667b1696052a6389cb44e997ad5921a6b19ec052",
+      "bytes": 2475
+    },
+    {
+      "path": "fonts.json",
+      "sha256": "6e195409360fd270cb894964e4c0cb6db5ba0fb057c8e6f80d927c2c3e83ef26",
+      "bytes": 1294
+    },
+    {
+      "path": "governance/AUTHORITY-TRANSFER.json",
+      "sha256": "1e05f56bb6c1f19312f2d37bc8a9a00f2564b3ccdf9e693845054db8a4d85ff3",
+      "bytes": 1707
+    },
+    {
+      "path": "governance/BRIEF-living-core.md",
+      "sha256": "dde8eab3499ece757c834b7b730f113ce911ce57db410d897127c36bead66bc2",
+      "bytes": 19136
+    },
+    {
+      "path": "governance/H0-DECISION-PACKET.md",
+      "sha256": "0454654296dc411c5d8739bb6fef8a896eda59199e83d0279438fd2f5e60fb1f",
+      "bytes": 4949
+    },
+    {
+      "path": "governance/LIVING-CORE-SYSTEMIZATION-PLAN.md",
+      "sha256": "5773135ca972c66c38c1cea2041cfe534e1b4e0e14e1631fafb27741dcde9037",
+      "bytes": 8279
+    },
+    {
+      "path": "governance/MIGRATION-FIRST-GATE.md",
+      "sha256": "8fddb6f44915edd54e058f0f0c3c0bb585e27cc550b91b2b3079841da6279c73",
+      "bytes": 7492
+    },
+    {
+      "path": "governance/PROGRAMME-CHARTER.md",
+      "sha256": "9859ac2049bd753480c2d954e3a23d05dc8330402e9cb19882bb44d118e93758",
+      "bytes": 8609
+    },
+    {
+      "path": "governance/README.md",
+      "sha256": "6aafb44524a129067a50680a4e92b36243a170806dce4f19877095d1254418cf",
+      "bytes": 2636
+    },
+    {
+      "path": "governance/REPOSITORY-WORKFLOW.md",
+      "sha256": "5f55a16c60dbeaf9e714f7007832500de3a42c996cd6c53765594cd04a71ba91",
+      "bytes": 4576
+    },
+    {
+      "path": "governance/artifact-register.json",
+      "sha256": "264912ef69a80bb4623ebb80558f5cc214e86733bf47a45e2917368ba04e49a7",
+      "bytes": 117860
+    },
+    {
+      "path": "governance/authority-model.json",
+      "sha256": "a10103ff5005e79face0ba5c9323705dac88c07163596d00054613ca4f1c6114",
+      "bytes": 4563
+    },
+    {
+      "path": "governance/consumer-register.json",
+      "sha256": "f34fd6cb30e6dced2ed6f643ed00d1a065c056b50049beb49cd752121a236ec4",
+      "bytes": 2619
+    },
+    {
+      "path": "governance/decision-register.json",
+      "sha256": "df1fa7c96ea6bf6d12a782490f10ed5d6def536f55ff866ff7fe512b03214191",
+      "bytes": 31915
+    },
+    {
+      "path": "governance/issue-register.json",
+      "sha256": "4d5249ed192b7eec52537ab2ebedcf9c6701da596dedfeae4a70cc7cdc09fe10",
+      "bytes": 17142
+    },
+    {
+      "path": "governance/reopened-decisions.md",
+      "sha256": "024af4ac41963f1b1e0131e278eb7e818250adec48ad263b77d18f8333d0116b",
+      "bytes": 2021
+    },
+    {
+      "path": "governance/tasks/TASK-MIGRATION-CUTOVER-01.json",
+      "sha256": "adefc4586b8ce20eda9f609e9efab989d918fab214b88768a3125a9a5e14315c",
+      "bytes": 5702
+    },
+    {
+      "path": "governance/tasks/TASK-PHASE-2-TR5-CALIBRATION.json",
+      "sha256": "443047a0ae2cf3f30b3f9545b82dc4297661ea3c186a938f536c0e4f28c27522",
+      "bytes": 2201
+    },
+    {
+      "path": "governance/tasks/TASK-PHASE-2-TR6-DIRECTIONS.json",
+      "sha256": "debf94f9028c6d9d74e920f9cacd4d9058217ec8a6e2e43bf65d4c910760cb67",
+      "bytes": 15385
+    },
+    {
+      "path": "gradients.json",
+      "sha256": "05a106f74745a143e954c6dffb6eaddf5ce5cf56d86e4781d92165ae56174fb8",
+      "bytes": 9055
+    },
+    {
+      "path": "living-core/README.md",
+      "sha256": "e504ff8384979cee22d5f00610f8d1b6d7c5298ae429f4d869df721fb53b9120",
+      "bytes": 3030
+    },
+    {
+      "path": "living-core/candidate.schema.json",
+      "sha256": "db3488cee79d9229ac8c24721544a575c60000a2d7ff816eb53c2716306d479d",
+      "bytes": 1925
+    },
+    {
+      "path": "living-core/palettes.json",
+      "sha256": "30afa92f4c8e79b7b9a17d9ddf349c2d05b327e0e6a8cd939ee4beea9226fe7b",
+      "bytes": 4256
+    },
+    {
+      "path": "living-core/requirements.txt",
+      "sha256": "2f9c2373746a116bc6da037400dad5f94e2263533e73b3d5a66b4c048b99164c",
+      "bytes": 28
+    },
+    {
+      "path": "llm/context-bundle.schema.json",
+      "sha256": "cf4b4e8e18fe76ed9e92f1aaf63669a1fe7925ed0981bfd5872da1b3f5454251",
+      "bytes": 2581
+    },
+    {
+      "path": "llm/evaluation-result.schema.json",
+      "sha256": "1bba0c1a26aeaa9868f688ff0d6f0d63d6d98806cc6ef136f6671d5966f64947",
+      "bytes": 1647
+    },
+    {
+      "path": "llm/examples/CTX-PHASE-0-BASELINE.json",
+      "sha256": "df2bc1c4f5097c264ae1fd8481216dabc1e690b634914bc8c78fb5768e29a049",
+      "bytes": 4042
+    },
+    {
+      "path": "llm/examples/CTX-PHASE-1-REPAIR.json",
+      "sha256": "9a478bb72042f83bf65fa69468af8778cf4cb79ba002d4b0b00c34b0d260c5ee",
+      "bytes": 3721
+    },
+    {
+      "path": "llm/examples/CTX-PHASE-2-DEEP-RESEARCH.json",
+      "sha256": "b1b470a7ccf7e3c4d0d1ebd14d55196428bb04385c04a77c5444e0d8b878dfdc",
+      "bytes": 3095
+    },
+    {
+      "path": "llm/examples/CTX-PHASE-2-TR4-SYNTHESIS.json",
+      "sha256": "2ba9461836835818f430a90b3648102203a5b5281a81ac7ab6d16608e0cf7c0e",
+      "bytes": 2998
+    },
+    {
+      "path": "llm/examples/EVAL-PHASE-0-BASELINE.json",
+      "sha256": "968aed76672dc591345b3d0d52125b9416b35a1fb4bb7079d241b5301518ee3e",
+      "bytes": 2046
+    },
+    {
+      "path": "llm/examples/EVAL-PHASE-1-REPAIR.json",
+      "sha256": "8f33f611e3b297644fc2709921fe1781b502a55c8a174986ab817e5186073b9c",
+      "bytes": 2580
+    },
+    {
+      "path": "llm/examples/EVAL-PHASE-2-DEEP-RESEARCH.json",
+      "sha256": "af82029c176f25883b8edb7e3c7198b15f234032c3260d08244a891b9aca76f4",
+      "bytes": 2503
+    },
+    {
+      "path": "llm/examples/EVAL-PHASE-2-TR4-SYNTHESIS.json",
+      "sha256": "3316fb84ce701fb2fd43a257413bd3682c90a0f012fc9591111e089f0bc81af9",
+      "bytes": 2369
+    },
+    {
+      "path": "llm/examples/RCP-PHASE-0-BASELINE.json",
+      "sha256": "d192b1581ab1489e52fc25ac722745bb11240627a082c5057c56a981b743b7cb",
+      "bytes": 5306
+    },
+    {
+      "path": "llm/examples/RCP-PHASE-1-REPAIR.json",
+      "sha256": "07ceed0bf2c63a6018b8ec1d29b7e3a30bf81fa4f49707547da696a3a20953db",
+      "bytes": 4838
+    },
+    {
+      "path": "llm/examples/RCP-PHASE-2-DEEP-RESEARCH.json",
+      "sha256": "985c75e3349816ea0ccd68677e113c055c0b16a784b2708a0404d29e6026269b",
+      "bytes": 5174
+    },
+    {
+      "path": "llm/examples/RCP-PHASE-2-TR4-SYNTHESIS.json",
+      "sha256": "deed9c7da5e55638b111b883d15310421655e152fd9b22cbbe33ab7ddd6dda10",
+      "bytes": 4186
+    },
+    {
+      "path": "llm/output-receipt.schema.json",
+      "sha256": "81744e40d6318e5e37082127a34d5c76eebcc73a26da323a40e009eff797be70",
+      "bytes": 2391
+    },
+    {
+      "path": "llm/skills/codex-made-it/SKILL.md",
+      "sha256": "f734bfcef3a4229f070e459c0fb9c41ae7d7a20df9769585f292a2f78a45d0d3",
+      "bytes": 4854
+    },
+    {
+      "path": "llm/skills/codex-made-it/agents/openai.yaml",
+      "sha256": "3bb08d5d09ba2748f8297d54262b72a6ffcfce6626b711b928d8e4639ec022e4",
+      "bytes": 256
+    },
+    {
+      "path": "llm/skills/codex-made-it/references/product-disc-contract.md",
+      "sha256": "26a235e6ee59e84a87623717a6cbf66c551453f2cfec862c37d9caca37d41a62",
+      "bytes": 2589
+    },
+    {
+      "path": "llm/task.schema.json",
+      "sha256": "c3b9bbdd51691c57b5225bc8addbbf41eb1ea436ec88e22662bd6442581eac2d",
+      "bytes": 2756
+    },
+    {
+      "path": "llm/tasks/TASK-PHASE-0-BASELINE.json",
+      "sha256": "eaed3a18360f3f78b5650eefa172f024c5f61e79e7635f555c93ebdd3d57ac1e",
+      "bytes": 3647
+    },
+    {
+      "path": "llm/tasks/TASK-PHASE-1-REPAIR.json",
+      "sha256": "99fa82491f788050c270d71d472cebd2432b2e6469f12c137e0cb2a1627b000c",
+      "bytes": 4296
+    },
+    {
+      "path": "llm/tasks/TASK-PHASE-2-DEEP-RESEARCH.json",
+      "sha256": "88f7ad3fc158fab0e6d30d4c6026c8b3d7d84d5f51ed542414c6ffd75e115d3d",
+      "bytes": 3147
+    },
+    {
+      "path": "llm/tasks/TASK-PHASE-2-H1-RESEARCH.json",
+      "sha256": "30772ecb1ad6aa80f67acdc41212d428e386919e4898589a40ccae1071be3d2b",
+      "bytes": 2793
+    },
+    {
+      "path": "llm/tasks/TASK-PHASE-2-TR4-SYNTHESIS.json",
+      "sha256": "4a5d3facce16ec79182bc639e58e31cc8512d2b9b55b89404482fb7b30466b39",
+      "bytes": 3328
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "6ccbad30ade5b88c3dce26961d909c9a1ce7fc15c64925e7712e6ef0fa96c459",
+      "bytes": 3675
+    },
+    {
+      "path": "products.json",
+      "sha256": "f7a070a8c8b1b4e8d71a10921ed62aa45994f75c47b085f4281f3d0370027e32",
+      "bytes": 2394
+    },
+    {
+      "path": "research/phase-2/ANTI-PATTERN-ATLAS.md",
+      "sha256": "4e52effccca79f471200f37de076134ab554c0b3b613fbae4bed337969444a4d",
+      "bytes": 29156
+    },
+    {
+      "path": "research/phase-2/AUTHORITY-RESET-2026-07-20.md",
+      "sha256": "eef9221b7985f8a76915c1bfef4325be68209c13ed4bfe14ac224d93f03fff0d",
+      "bytes": 7735
+    },
+    {
+      "path": "research/phase-2/CAPTURE-PLAN.md",
+      "sha256": "da845566ee3836bced13f829dae650ecfe5c6341c19f59071fa9c91a39daa187",
+      "bytes": 2549
+    },
+    {
+      "path": "research/phase-2/CAPTURE-RESULTS.md",
+      "sha256": "bed247b89a0c3889d6107ac4a9e69190bd07e2f6ad9b66e8c42fa9b039ea7f0c",
+      "bytes": 3785
+    },
+    {
+      "path": "research/phase-2/COMPARATIVE-MATRIX.md",
+      "sha256": "89a7c82dae06bea702be9315976e2633801562714b4c428c7b8aa2889faf3ad3",
+      "bytes": 29237
+    },
+    {
+      "path": "research/phase-2/COMPARATIVE-SYNTHESIS.md",
+      "sha256": "b74521de2caa02ac4f321df44f401d4da613a3f8a85b6d72e8054b358ae53726",
+      "bytes": 16926
+    },
+    {
+      "path": "research/phase-2/H1-REFERENCE-PACKET.md",
+      "sha256": "3f49cda584e95db397b5aaec9ff02e3c7c6d7f5d6616d11daa58315d133cdf43",
+      "bytes": 1540
+    },
+    {
+      "path": "research/phase-2/HOMEPAGE-DESIGN-EXPLORATION-PLAN.md",
+      "sha256": "9d237f8e8d34710588bba12aa6940edf228addd553895b7d8626cb93bbd6fbdc",
+      "bytes": 12164
+    },
+    {
+      "path": "research/phase-2/HOMEPAGE-FOUNDATION-SYNTHESIS.md",
+      "sha256": "ada7d08c0bec167a4d814d28651c65149c248397d56b7c68e7ed82ea31106f84",
+      "bytes": 8284
+    },
+    {
+      "path": "research/phase-2/INSPIRATION-BRIEF.md",
+      "sha256": "812dce285838c826cd548265c4df63be4201d6fa42c1025788cc0001bd4affae",
+      "bytes": 4959
+    },
+    {
+      "path": "research/phase-2/PATTERN-ATLAS.md",
+      "sha256": "a2f0faba1cb40f6a9c27761f01556bb0f429cf26d48749d995d0f46caf4aed6f",
+      "bytes": 43293
+    },
+    {
+      "path": "research/phase-2/README.md",
+      "sha256": "4e14faf2b6de5bbe0347d3a1abd3ab9110a4d7861f03f605fd164928c6a2f234",
+      "bytes": 7417
+    },
+    {
+      "path": "research/phase-2/REFERENCE-TASTE-SYNTHESIS.md",
+      "sha256": "9316df725e09929a75f8db07ed21aa584c7d433d550d43af9d9fa1535e98eeb7",
+      "bytes": 7730
+    },
+    {
+      "path": "research/phase-2/THREE-DIRECTION-BRIEF.md",
+      "sha256": "382115ec1459eaed875312d00cce0bc36e0fc72930adc3e03b2c9c57f535a276",
+      "bytes": 7783
+    },
+    {
+      "path": "research/phase-2/TR-0-STATUS.md",
+      "sha256": "aeab88ff53486d8d377688e9ce523cb8e8ca07e07b82a9befa074e8acc8ca662",
+      "bytes": 1376
+    },
+    {
+      "path": "research/phase-2/authority-reset.json",
+      "sha256": "3edca65ed637cd8305a50eb50c926388e0aa3457e18119a6d3c7e1464e18b5f4",
+      "bytes": 6255
+    },
+    {
+      "path": "research/phase-2/calibration/HUMAN-REVIEW-PACKET.md",
+      "sha256": "ae1ffd3d05346364ede4062a5d2c7bc0f8176a2d9392dc469b36d4de7c13527f",
+      "bytes": 1476
+    },
+    {
+      "path": "research/phase-2/calibration/README.md",
+      "sha256": "c4220825e39903726908d9353d432dcab6975ebfc2473859fbb0eef2032cad28",
+      "bytes": 2521
+    },
+    {
+      "path": "research/phase-2/calibration/invalid-pilot/INVALID-PILOT.md",
+      "sha256": "7e1c93068ac00db40d30f19f3a5f8b99fba28c36c7c38360b746d093b23bfbbb",
+      "bytes": 2372
+    },
+    {
+      "path": "research/phase-2/calibration/invalid-pilot/round-01-preference-log.jsonl",
+      "sha256": "623c3f81b084bbb9e64dac37d1a12af4b9a34b6f4bf0dc80b5fca90953a51786",
+      "bytes": 5702
+    },
+    {
+      "path": "research/phase-2/calibration/preference-log.schema.json",
+      "sha256": "23e6f241a09dddca536d027c41560adfe8b12f4135e47ced6ca1138a372797f2",
+      "bytes": 2059
+    },
+    {
+      "path": "research/phase-2/calibration/specs/pairs-01-04.json",
+      "sha256": "478a96776ee0a80f14c63cb5b20b1ba7ba79ff131486385f10a983fcdb08bdac",
+      "bytes": 27538
+    },
+    {
+      "path": "research/phase-2/calibration/specs/pairs-05-08.json",
+      "sha256": "1ea7924b4fd208f56756412d597995975ac6aa098f2cb735224c2d96ae2e30d7",
+      "bytes": 20179
+    },
+    {
+      "path": "research/phase-2/calibration/specs/pairs-09-12.json",
+      "sha256": "af33896cd9fd79f4dbec4fd391bfc7612915934f660c1145b358db20a56e5291",
+      "bytes": 18313
+    },
+    {
+      "path": "research/phase-2/calibration-plates/button-control-system-01/README.md",
+      "sha256": "99d533f6cf1c0ce3cb4991df91936d569f642a9abd3bf478bb6fc19b146df7b3",
+      "bytes": 1676
+    },
+    {
+      "path": "research/phase-2/calibration-plates/button-control-system-01/button-control-system-01-review.json",
+      "sha256": "1883903ea38548fe7ab5e305ce8774bd814968535169722fc27ceee8fd37785b",
+      "bytes": 831
+    },
+    {
+      "path": "research/phase-2/calibration-plates/button-control-system-01/calibration-manifest.json",
+      "sha256": "12b2f77698334802906e73b8108a0f2e5fd4074a85b0c197622a82418f338a23",
+      "bytes": 1922
+    },
+    {
+      "path": "research/phase-2/calibration-plates/button-control-system-01/calibration-review.schema.json",
+      "sha256": "5937950cbc841bf2731c057a8a91b9bf68ed27b0180410605977736df14e4d23",
+      "bytes": 2736
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-01/README.md",
+      "sha256": "ed68e5399bdd63361e401c281da13d974844b95550862217642ffc6060309c49",
+      "bytes": 1593
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-01/calibration-manifest.json",
+      "sha256": "46ba86258cd5ed6b6f36034c6f79ddd8455ed96cf6f7febccc60f06e63af4318",
+      "bytes": 1647
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-01/calibration-review.schema.json",
+      "sha256": "bc1cf88ec4c416370c6ee8e71668332fd0285a8749eae48190dda3568563fdfb",
+      "bytes": 1500
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-01/hero-first-viewport-01-review.json",
+      "sha256": "738c1a9823e5a0d1b6e57f91972ddc130551262a504d84257647c3bf28411256",
+      "bytes": 2418
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-02/README.md",
+      "sha256": "eba5d5b6992abfbf94487e4c6468dedb1cadfb4dac247e5386e286c3c9e76fa5",
+      "bytes": 1948
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-02/calibration-manifest.json",
+      "sha256": "3ba50572d94cbf1abbe1b1e7cf7efe27a7c312999fcef3a3ade298942a8b33ff",
+      "bytes": 2609
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-02/calibration-review.schema.json",
+      "sha256": "53242958bf4174617ce0e7f72c467e92e62e751ddb05b4b75dc7b54819941a2a",
+      "bytes": 1537
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-02/hero-first-viewport-02-direct-feedback.json",
+      "sha256": "c945200e1a7bf6d0e922cd435e1f787864dfe2776a7a72e1ba3912c3b5fa0d58",
+      "bytes": 709
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-03/README.md",
+      "sha256": "e04de454272247966ea54778bc0ba847939e2d9feda55073ad8f1838f20893d7",
+      "bytes": 1656
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-03/calibration-manifest.json",
+      "sha256": "b69990464a8a585dcbe56163847c6c63178ab31bb68b8f080e69cb16503a04a5",
+      "bytes": 3694
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-03/calibration-review.schema.json",
+      "sha256": "e7221484b16a1eee8a2b246ff3ca3fc79f8f12b4ba90bbc1bc1b402e46cb9f1b",
+      "bytes": 1617
+    },
+    {
+      "path": "research/phase-2/calibration-plates/hero-first-viewport-03/hero-first-viewport-03-review.json",
+      "sha256": "c403d8e57d25abdf2f40ca59afdf9f20dc63d529c28fb2a4ecc9843bacda4b82",
+      "bytes": 7664
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-01/README.md",
+      "sha256": "c74f35cc118ad9bedfd4804fdde7303a5d5f5b100c94dfb6141fadaa07c58c22",
+      "bytes": 2105
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-01/assets/gradients/variants.json",
+      "sha256": "4dc99e4307e2b99d357eb01d0642e9f1e996ffbbfef91d866199332ba679d192",
+      "bytes": 368
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-01/calibration-manifest.json",
+      "sha256": "ff7d76262225f01b3b707ec9f396f7420d034e23a562da79a4d6dbac6c16f303",
+      "bytes": 2315
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-01/calibration-review.schema.json",
+      "sha256": "d69b4c34b39f16ee15d26527adde40665264eb176a562f3b72b4a985be359641",
+      "bytes": 1610
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-01/identity-product-object-01-review.json",
+      "sha256": "e711419397558c1be1482c65c96dcc1674087237ee33d560bcb656bb42bbff2c",
+      "bytes": 1104
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-02/README.md",
+      "sha256": "fcad19def227af7df1a49bc602ef431e0fb9a4e9bd2fd8e1b683fde2c98921d3",
+      "bytes": 1578
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-02/assets/gradients/variants.json",
+      "sha256": "4dc99e4307e2b99d357eb01d0642e9f1e996ffbbfef91d866199332ba679d192",
+      "bytes": 368
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-02/calibration-manifest.json",
+      "sha256": "0cab613bec368abb8ee5520b462284442a305db676ded0adc68202aa420083a4",
+      "bytes": 2072
+    },
+    {
+      "path": "research/phase-2/calibration-plates/identity-product-object-02/calibration-review.schema.json",
+      "sha256": "62524ff6224ae410a0fa03603537cabd1d2672fbaed9f26503622b21701c22b4",
+      "bytes": 2488
+    },
+    {
+      "path": "research/phase-2/calibration-plates/product-family-commerce-01/README.md",
+      "sha256": "a4cfa03915d4c1f69c984b45b31fcb805fd5575cebee0fcbc51664e7520a050a",
+      "bytes": 2551
+    },
+    {
+      "path": "research/phase-2/calibration-plates/product-family-commerce-01/calibration-manifest.json",
+      "sha256": "e51959f4560a54b6588f85e26c2301675790a5426b859ef8c8527b9c9bb124df",
+      "bytes": 3415
+    },
+    {
+      "path": "research/phase-2/calibration-plates/product-family-commerce-01/calibration-review.schema.json",
+      "sha256": "ac6d84dcbc5e547175173342287e05277373dddd269ee277fdaacb7ecd164b56",
+      "bytes": 2763
+    },
+    {
+      "path": "research/phase-2/calibration-plates/product-family-commerce-01/product-family-commerce-01-review.json",
+      "sha256": "eab518cc5a3ea0122a9f19f6cfdd37d1403c64a0462ddeb13065aced0b2d84da",
+      "bytes": 882
+    },
+    {
+      "path": "research/phase-2/calibration-plates/typography-system-01/README.md",
+      "sha256": "5fdc62f1ac605aebe45a43cf4fbe9a2b715bf459c89026cc229a51c1f133c327",
+      "bytes": 2128
+    },
+    {
+      "path": "research/phase-2/calibration-plates/typography-system-01/calibration-manifest.json",
+      "sha256": "47f7d1736e5344156777a68664247e528031004c672b6ec387fc5f33fa75ccc8",
+      "bytes": 3090
+    },
+    {
+      "path": "research/phase-2/calibration-plates/typography-system-01/calibration-review.schema.json",
+      "sha256": "3ee1a5fc0f0bf6f4d5355af28ae680766ffbaef33677b693655c8a1e6cecff33",
+      "bytes": 2416
+    },
+    {
+      "path": "research/phase-2/calibration-plates/typography-system-01/typography-system-01-review.json",
+      "sha256": "866c62610665b8fcb702fa8742e9126bc33b3a11a93d18a9cf327ae926c0940e",
+      "bytes": 1250
+    },
+    {
+      "path": "research/phase-2/comparative-matrix.json",
+      "sha256": "2d49683f83ea6b4d6533e858bce16806a213799e2d8230bb32b1fa569b384489",
+      "bytes": 29129
+    },
+    {
+      "path": "research/phase-2/directions/README.md",
+      "sha256": "2b495443ac0ce5a18d985932009788ad1323852c2ad61c11ef7481b7f205ed64",
+      "bytes": 1104
+    },
+    {
+      "path": "research/phase-2/directions/direction-review.schema.json",
+      "sha256": "825721cd910ff380760897e1dcf4d16f1fff5fe4ba98083dded7ebc3babbaa7e",
+      "bytes": 1651
+    },
+    {
+      "path": "research/phase-2/directions/invalid-round/INVALID-ROUND.md",
+      "sha256": "6e8bb2cadd88bf1d32db708cb8e39150ed00e9d166ba0fc5c284852f91d0a12d",
+      "bytes": 6163
+    },
+    {
+      "path": "research/phase-2/directions/invalid-round/olli-2026-07-20.json",
+      "sha256": "ff88f0999e300919fc6428d14bc0fc3f0eca5cbd33cb03c7c6743c9be9ee0aba",
+      "bytes": 1164
+    },
+    {
+      "path": "research/phase-2/evidence/README.md",
+      "sha256": "634204954a31df557aa6d52ce02be0ef58ea6306f84c8a6e53edbc8de140249f",
+      "bytes": 802
+    },
+    {
+      "path": "research/phase-2/evidence/SRC-ELEVENLABS.md",
+      "sha256": "9cd19d9d558f87aceca6ff43521a80098bc537ff7ecff14928157de769eb125e",
+      "bytes": 20880
+    },
+    {
+      "path": "research/phase-2/evidence/SRC-LINEAR.md",
+      "sha256": "b1a35d24f8d36a8afd43355ca00824b4c52ac517b37a58b175875d56335e741b",
+      "bytes": 17380
+    },
+    {
+      "path": "research/phase-2/evidence/SRC-NOTION.md",
+      "sha256": "5f7f31fc378f419786d5d39493f00ae03e7dcd9b0230c552920560dde6087a65",
+      "bytes": 26705
+    },
+    {
+      "path": "research/phase-2/evidence/SRC-RAMP.md",
+      "sha256": "50af15003cc01c60969e3936c57c261d01a603a78acbe37d31125cfcc80da6ec",
+      "bytes": 18862
+    },
+    {
+      "path": "research/phase-2/evidence/SRC-STRIPE.md",
+      "sha256": "c97f2ac2723d1e76e4df0161d03fa475689b63a24c95eb739b4610d57eeed08f",
+      "bytes": 16987
+    },
+    {
+      "path": "research/phase-2/homepage-studio/INVALID-SYNTHESIS-01.md",
+      "sha256": "ee64c8788654c7237d072e8d256f78e5398a5b05fa05956d3c8b4c3ddda04eea",
+      "bytes": 1448
+    },
+    {
+      "path": "research/phase-2/homepage-studio/README.md",
+      "sha256": "02d13ba3e84ea24a89c1cd15300a86f7261efa9f801c4a739e30f17a3209eaa9",
+      "bytes": 2584
+    },
+    {
+      "path": "research/phase-2/homepage-studio/assets/README.md",
+      "sha256": "1f7da2c04485377a4582a9864893b2895846838aef1a5e1af928565646497d5e",
+      "bytes": 1018
+    },
+    {
+      "path": "research/phase-2/homepage-studio/homepage-foundation-review.json",
+      "sha256": "54723bc965fe7d99a52506db3b4dd8bc6ff573876265491b01bcee3967e1364a",
+      "bytes": 3151
+    },
+    {
+      "path": "research/phase-2/homepage-studio/homepage-foundation-review.schema.json",
+      "sha256": "4bf892d6b5e6ed9d91b8cfbaf0df1bba0528c277d8113bf48820ee5c1caa69fb",
+      "bytes": 2410
+    },
+    {
+      "path": "research/phase-2/homepage-studio/homepage-synthesis-review.schema.json",
+      "sha256": "54f36bbd449a33126f882f8ce5e36bf569b0657dad346176a5fa035e5c98fa75",
+      "bytes": 1969
+    },
+    {
+      "path": "research/phase-2/homepage-studio/invalid-synthesis-01-review.json",
+      "sha256": "1e6f70428f836047b7f7310187d777c20654b8b981e8b199605a4255b65fb1b4",
+      "bytes": 3110
+    },
+    {
+      "path": "research/phase-2/reference-taste-profile.json",
+      "sha256": "c85c549c0e1d506120bfd807f7f48371deb43d511c53692597dc3620153cb2f4",
+      "bytes": 2583
+    },
+    {
+      "path": "research/phase-2/research-questions.yaml",
+      "sha256": "59f11e6cb1a296b25b917026bb452b76647755dc54a5bd069fb7e3927174c41b",
+      "bytes": 1828
+    },
+    {
+      "path": "research/phase-2/source-register.yaml",
+      "sha256": "898402598b8112bfcee87fe2d40bd39022d7a91df2f7707f938a73432d9e1562",
+      "bytes": 4253
+    },
+    {
+      "path": "research/phase-2/taste-dimensions.json",
+      "sha256": "24536eb8f6fab2ab75b9dad8985ff808584d8866713efe521c3cc816d47ac297",
+      "bytes": 38872
+    },
+    {
+      "path": "research/phase-2/taste-reverse-integration.json",
+      "sha256": "7ec9536e6c71e8c2f37dd29898a74e26741ef69a46e208d405c9a3534709c9f6",
+      "bytes": 954
+    },
+    {
+      "path": "trading-cards-fut-study/fut-teardown.md",
+      "sha256": "b44532d4e2e909a932a156138323602f9daac3faaeb881dedc424ba8ef4c5746",
+      "bytes": 26295
+    }
+  ]
+}

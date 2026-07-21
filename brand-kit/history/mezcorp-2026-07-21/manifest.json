@@ -1,0 +1,46 @@
+{
+  "slug": "mez-systems",
+  "name": "Mez Systems",
+  "kind": "first-party",
+  "maintained": "manual (not fetched by the brand-library pipeline)",
+  "parent": "Mez Studios",
+  "tagline": "The systems house of Mez Studios. One chassis, many cores.",
+  "description": "Digital-products holdco inside Mez Studios. Holds AI OS, Aurora (Auto Ads System), Prism (Analytics Pack), Forge (Claude Code OS) and the wider product ladder. Off-white surface, near-black ink, and the wings; each product owns one gradient core.",
+  "files": [
+    { "path": "START-HERE.md", "note": "entry point, read before anything" },
+    { "path": "AUDIT-AND-END-TO-END-ROADMAP.md", "note": "2026-07-19 strategic audit and phased cross-channel build roadmap; planning document, not current brand truth" },
+    { "path": "governance/", "note": "Phase 0 programme charter, stable registers, decision state, and H0 approval packet" },
+    { "path": "governance/authority-model.json", "note": "approved precedence, truth types, reference states, and certification contract" },
+    { "path": "baseline/2026-07-19/", "note": "dated repository, Figma, consumer, and responsive Canvas evidence with checksums" },
+    { "path": "llm/", "note": "task, context, receipt, and evaluation schemas plus dogfooded Phase 0 examples" },
+    { "path": "products.json", "note": "product roster; single source of truth for names, prices, cores" },
+    { "path": "brand-system/README.md", "note": "written brand book index (numbered docs 00-20 in brand-system/)" },
+    { "path": "living-core/", "note": "hand-edited parametric core generator, templates and reproducible palette cache" },
+    { "path": "canvas/core.html", "note": "generated seven-section internal living-core reference board" },
+    { "path": "design-system-export/", "note": "self-contained Phase 1 release: manifest, authority contract, tokens, docs, fonts and licences, exact cores, icons, OG and email assets, build and clean-copy validators" },
+    { "path": "research/phase-2/", "note": "Phase 2 evidence brief, bounded source panel, capture plan, H1 human-review packet, and provisional Taste Reverse integration contract; research evidence only, never brand truth" },
+    { "path": "trading-cards-fut-study/fut-teardown.md", "note": "collectible trading-card study" }
+  ],
+  "brand_system_docs": "brand-system/README.md",
+  "colours_ref": "colours.json",
+  "fonts_ref": "fonts.json",
+  "gradients_ref": "gradients.json",
+  "figma": {
+    "file": "HU0GVaDhatjWrKCiSg3wlU",
+    "canonical_page": "Mez Systems — Brand System",
+    "canonical_page_node": "149:30",
+    "verification_state": "direct node 149:30 verified on 2026-07-19; top-level page listing exposes only page 0:1 and publication is unverified",
+    "authority": "milestone mirror only until the Phase 5 library audit and release gate pass"
+  },
+  "rules": [
+    "Gradients belong to products only; the holdco is monochrome (near-black #0D0D0D).",
+    "Radius is scale: product = pill, holdco = medium, parent = nearly square.",
+    "Surface V1 (locked 2026-07-12): one system, not five. Page #F8F8F8, recessed panel #F6F5F4, cards #FFFFFF, dark UI/buttons/bundles #0D0D0D.",
+    "Component radius scale: chip 8, tile 14, card 20, panel 28, pill 999. Spacing (4px base): 4, 8, 12, 16, 24, 32, 48, 64.",
+    "Flat disc on product cards: hard edge, white wings at 50% of diameter. The glow treatment is retired; never build halos.",
+    "Price is per-surface judgement; ads default price-free; checkout always shows it. Primary CTA is a dark pill: Get the AI OS.",
+    "Brand white is #F8F8F8, never pure #FFFFFF."
+  ],
+  "tier_fetched": "first-party",
+  "last_updated": "2026-07-19"
+}

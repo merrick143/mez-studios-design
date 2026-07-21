@@ -1,0 +1,3326 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-20T05:32:49.289434+00:00",
+  "idStrategy": "ART- plus the first 12 uppercase SHA-256 characters of the pack-relative path",
+  "packRoot": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems",
+  "generatedExclusions": [
+    "governance/artifact-register.json",
+    "baseline/2026-07-19/manifest.json"
+  ],
+  "counts": {
+    "total": 330,
+    "byRole": {
+      "canonical": 6,
+      "evidence": 67,
+      "execution-contract": 21,
+      "governance": 20,
+      "legacy": 14,
+      "mirror": 75,
+      "reference-fixture": 18,
+      "research": 87,
+      "unclassified": 22
+    }
+  },
+  "artifacts": [
+    {
+      "id": "ART-4EC621A45E81",
+      "path": "AUDIT-AND-END-TO-END-ROADMAP.md",
+      "role": "governance",
+      "authoritative": true,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "md",
+      "bytes": 124847,
+      "sha256": "2fbe6758606d051825ba3994397d14c221e89e0679ec08accde73aeff51d1687"
+    },
+    {
+      "id": "ART-9EF67DB77EA9",
+      "path": "HANDOFF.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 16782,
+      "sha256": "479d57d2e1fecc0425e635436e621c6748bcfa579c236e363f7404f9e161c966"
+    },
+    {
+      "id": "ART-08B88580828A",
+      "path": "START-HERE.md",
+      "role": "canonical",
+      "authoritative": true,
+      "migrationDisposition": "retain-until-approved-successor",
+      "mediaType": "md",
+      "bytes": 7554,
+      "sha256": "3d8bc0cce56f6c9040ddfed3b68ba183cb3056f7ddfd5799aeeda85a919681f9"
+    },
+    {
+      "id": "ART-22DB0BB7025A",
+      "path": "_archive/old-product-ladder/README.md",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "md",
+      "bytes": 251,
+      "sha256": "b9a67f375c24b6432c0c597cd90883782545d952450f58bc1020a20f52767f2b"
+    },
+    {
+      "id": "ART-106DCDC75D80",
+      "path": "_archive/old-product-ladder/ms-core-ai-native-roadmap@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 741551,
+      "sha256": "83a04734e335e9e2b909b0377465b2f3338b726fe5147c6507bbb55536410df5"
+    },
+    {
+      "id": "ART-3D1A4DE700CC",
+      "path": "_archive/old-product-ladder/ms-core-ai-os@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 726686,
+      "sha256": "f9daaac1761221f29bb0bd51474f4eb6b43a53a56503983dd6ddce06bc558286"
+    },
+    {
+      "id": "ART-35CA49D1403F",
+      "path": "_archive/old-product-ladder/ms-core-become-dangerous@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 716875,
+      "sha256": "a1d7c9dc540592b51776c4d170d141122597c250162d21f97a48dc174e1e538b"
+    },
+    {
+      "id": "ART-68B4C34A440C",
+      "path": "_archive/old-product-ladder/ms-core-claude-code-os@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 707981,
+      "sha256": "a8184f3ba0ed99578948bebd5542ab376be9eec7d269b879406bc550fdc58f1c"
+    },
+    {
+      "id": "ART-48C9F2008706",
+      "path": "_archive/old-product-ladder/ms-core-context-engine@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 700663,
+      "sha256": "975a585d38b143c38b6a751fc8485f683e6866a84fdb3d08f316782b4eba26e8"
+    },
+    {
+      "id": "ART-C2A8730614A1",
+      "path": "_archive/old-product-ladder/ms-core-first-principles@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 688035,
+      "sha256": "826081a381b5d48bf0dd2ae0eff9d5b4191ed5978aae45f5c7a3c50f0b631526"
+    },
+    {
+      "id": "ART-5E64C049253E",
+      "path": "_archive/old-product-ladder/ms-tile-ai-native-roadmap@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 125359,
+      "sha256": "a5411c27794b030eef9715fa53860e71cfedb3529d0aeb5693d5620faed08d3b"
+    },
+    {
+      "id": "ART-EA940EE02FF2",
+      "path": "_archive/old-product-ladder/ms-tile-ai-os@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 120379,
+      "sha256": "2179f626b705e67bdd568cfe38f173f4f947a63e271e1255ed9d75766a8e197a"
+    },
+    {
+      "id": "ART-AB20C7D0ECE9",
+      "path": "_archive/old-product-ladder/ms-tile-become-dangerous@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 123574,
+      "sha256": "361712021895c367b729133b3b2401fed44df39c711d45b4bd5eff1cd4f12d87"
+    },
+    {
+      "id": "ART-5DCD7963A4EB",
+      "path": "_archive/old-product-ladder/ms-tile-claude-code-os@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 121942,
+      "sha256": "63e981524e07c1bab297c60d71cb086c78a736ee334b0f0a199e125b01627529"
+    },
+    {
+      "id": "ART-C5C1317C0652",
+      "path": "_archive/old-product-ladder/ms-tile-context-engine@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 120541,
+      "sha256": "df852c15bca1950e7e1ee38d760f45b4d01730ea210a55d2635c5d135088d1f4"
+    },
+    {
+      "id": "ART-4F112BC089E1",
+      "path": "_archive/old-product-ladder/ms-tile-first-principles@2x.png",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "png",
+      "bytes": 117480,
+      "sha256": "1411ae18e61936a878c52aa6dd1ba173831b49019d821bdef0f79df8dd7c3244"
+    },
+    {
+      "id": "ART-446B41AE5D98",
+      "path": "aios-website/index.html",
+      "role": "legacy",
+      "authoritative": false,
+      "migrationDisposition": "archive-no-production-authority",
+      "mediaType": "html",
+      "bytes": 21762,
+      "sha256": "2e6f7826576585401f6cafbbf208db69eaf7d945cae4ffe69edbcfb4c2b4e63b"
+    },
+    {
+      "id": "ART-1992C9215D4D",
+      "path": "baseline/2026-07-19/observations.json",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "json",
+      "bytes": 3909,
+      "sha256": "f9f677a0fbac4084018a2d9b7b98326eab603104314576726621dec26f988ea1"
+    },
+    {
+      "id": "ART-A3E344408DD8",
+      "path": "baseline/2026-07-19/phase-one-browser-validation.json",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "json",
+      "bytes": 1332,
+      "sha256": "fdc204d48425f63735ffcc1f414681b7568bd7ee67f4d0d23d393fe25cb0cb5d"
+    },
+    {
+      "id": "ART-56A2F3967CD6",
+      "path": "baseline/2026-07-19/screenshots/capture-records.json",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "json",
+      "bytes": 34916,
+      "sha256": "71bac4f607390ec61257bf4e75ee1bc419329f2e60327aba41478ea33cf86e16"
+    },
+    {
+      "id": "ART-4060D064B622",
+      "path": "baseline/2026-07-19/screenshots/checkout-1280x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 43315,
+      "sha256": "a3f9f9a18ea4339de288159fe0935edb131defd7eec8df62139289f20707edea"
+    },
+    {
+      "id": "ART-FE7EB95869A0",
+      "path": "baseline/2026-07-19/screenshots/checkout-1440x1000.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 48596,
+      "sha256": "87e89649c1df9089a83995a6083df28799895c9be5ee0c257a5cfbd4c809b8f8"
+    },
+    {
+      "id": "ART-9CDC594D0626",
+      "path": "baseline/2026-07-19/screenshots/checkout-320x700.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 23729,
+      "sha256": "8828afe6fb64f1edc80dda8bad553bb64eec0762ed7fed832be1e2d1ee3c93c5"
+    },
+    {
+      "id": "ART-18DE5DA3564D",
+      "path": "baseline/2026-07-19/screenshots/checkout-360x780.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 26206,
+      "sha256": "cbab195dd590303520379b4c4ff952c78d5128eeb68c0a04cd77bf27dc6b4d41"
+    },
+    {
+      "id": "ART-F5CD3F2C3774",
+      "path": "baseline/2026-07-19/screenshots/checkout-375x812.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 28321,
+      "sha256": "406d431ee0128d0ba1b6e9dcffab05fc72c2f0ccbae510e1dc9f47d07bfe8a2d"
+    },
+    {
+      "id": "ART-D8DB49132F0B",
+      "path": "baseline/2026-07-19/screenshots/checkout-390x844.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 30587,
+      "sha256": "1769837a51afe0b970c2a36512fd0ff1dde9075f5b1361e2510128f1ed2918b0"
+    },
+    {
+      "id": "ART-1D6508164DE2",
+      "path": "baseline/2026-07-19/screenshots/checkout-768x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 39409,
+      "sha256": "e521f69e9b689c65363ad5d79e7fd941380ddf5e47872fd291f157f7f968dfd8"
+    },
+    {
+      "id": "ART-757B3FEAD9F8",
+      "path": "baseline/2026-07-19/screenshots/checkout-920x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 39570,
+      "sha256": "edeea15afc015556c9ce2dd966cd4924fc988e6db9e517dd823a23b87b362904"
+    },
+    {
+      "id": "ART-87A4C8CB2B80",
+      "path": "baseline/2026-07-19/screenshots/components-1280x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 61663,
+      "sha256": "8944d48df9232b4e456c9890eb61017b6d19871d1ca27d167f8b72e67bf15f16"
+    },
+    {
+      "id": "ART-DE6571C89C3A",
+      "path": "baseline/2026-07-19/screenshots/components-1440x1000.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 67743,
+      "sha256": "d5d656d9112e1add6b26adeb8f13c1f72b55e670a1ad3515a4b6b7f7fced415c"
+    },
+    {
+      "id": "ART-C163A2880C8B",
+      "path": "baseline/2026-07-19/screenshots/components-320x700.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 30258,
+      "sha256": "08dc260aa3026029721d7cdfbde618f80f3a41b84ab6a3307a11b84111410d45"
+    },
+    {
+      "id": "ART-BEEB189F338E",
+      "path": "baseline/2026-07-19/screenshots/components-360x780.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 32181,
+      "sha256": "27bbe07c96025453f3e5c72540a96a30e66aaee83bca390ec5b487080763d155"
+    },
+    {
+      "id": "ART-A5F1B3855E25",
+      "path": "baseline/2026-07-19/screenshots/components-375x812.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 34385,
+      "sha256": "5d03a6241f0657a3d69f2a9d34f593a64c495e3ede9f539261f03aacc4be2931"
+    },
+    {
+      "id": "ART-6609621FCE82",
+      "path": "baseline/2026-07-19/screenshots/components-390x844.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 34945,
+      "sha256": "6f914365e9df384cdf688c498ea5b576f43c8a23141d0847688cbc1ed511ba13"
+    },
+    {
+      "id": "ART-8BE7881E4026",
+      "path": "baseline/2026-07-19/screenshots/components-768x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 51466,
+      "sha256": "a48ebab4fb1b50ba9c1049f4efcd17cd3948c54fb279cbc7e175a62cc91bbf06"
+    },
+    {
+      "id": "ART-B4F2389DAA0B",
+      "path": "baseline/2026-07-19/screenshots/components-920x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 57221,
+      "sha256": "20ed18e981adb04968395987a39cad1a472b8426d35fffa3bd0faeec95386962"
+    },
+    {
+      "id": "ART-82FD1C8C1629",
+      "path": "baseline/2026-07-19/screenshots/email-1280x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 56314,
+      "sha256": "a0cb3c759f066599997390e399c489e7849b380accbcca23d8bf9e18f1c6587a"
+    },
+    {
+      "id": "ART-A650DE6C1266",
+      "path": "baseline/2026-07-19/screenshots/email-1440x1000.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 66419,
+      "sha256": "450209595826e470260a33a3868ebf348052b2df8e5f51b5ffdb9c15e8a9a672"
+    },
+    {
+      "id": "ART-DAF99E311A00",
+      "path": "baseline/2026-07-19/screenshots/email-320x700.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 28115,
+      "sha256": "b3ba3e9f77dda74069ccdb9231a13e025db771aeefae15ba8f144a2eed768121"
+    },
+    {
+      "id": "ART-9D499CE8388C",
+      "path": "baseline/2026-07-19/screenshots/email-360x780.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 32126,
+      "sha256": "96ff7e5eb0e1b1d050a8c5d26016e7efa59fbc88b0e4001cb03f4bba320a148d"
+    },
+    {
+      "id": "ART-6CD571E6CFD0",
+      "path": "baseline/2026-07-19/screenshots/email-375x812.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 34102,
+      "sha256": "7e117291bdf2f5ef9d1fdda8b67d552b44359b4123797f8e37b266776baa287e"
+    },
+    {
+      "id": "ART-830783C10355",
+      "path": "baseline/2026-07-19/screenshots/email-390x844.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 34637,
+      "sha256": "7ff8821993e6e18d0c7fbc17ceaf12b677148528ace39c866030f01c9c12c769"
+    },
+    {
+      "id": "ART-FBEECA3B7640",
+      "path": "baseline/2026-07-19/screenshots/email-768x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 53990,
+      "sha256": "b48004fd49c6b9492cc3be3aa8770f637b00900b981edbb0874a9ac74b489f40"
+    },
+    {
+      "id": "ART-94BFDE63C136",
+      "path": "baseline/2026-07-19/screenshots/email-920x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 52453,
+      "sha256": "0fe372fcdbfe2357c020f63d1b91e73c798d14a04819c7d9389fc4bcc4c7e1bd"
+    },
+    {
+      "id": "ART-13D2C295007D",
+      "path": "baseline/2026-07-19/screenshots/home-1280x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 62329,
+      "sha256": "f46e237c3a7db9f9a90d48cfd66e0ba54f3b0a15987ac30134249c953b9c23a8"
+    },
+    {
+      "id": "ART-7BD44780FC0C",
+      "path": "baseline/2026-07-19/screenshots/home-1440x1000.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 67420,
+      "sha256": "0072c10a722c87ba9c5a4f672b3b0c559cc76a022eac4b58ed2cdf9bb3d880fe"
+    },
+    {
+      "id": "ART-FBD1F0F089B8",
+      "path": "baseline/2026-07-19/screenshots/home-320x700.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 28639,
+      "sha256": "c6536668964fc818ee4a672646123c482e0d79b1bb08cb1f105f91332fb60d8d"
+    },
+    {
+      "id": "ART-D26E198D23C6",
+      "path": "baseline/2026-07-19/screenshots/home-360x780.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 32419,
+      "sha256": "51b32ac91e64e1b8edbc4f8d44af482257df5c6677d38e741e3abccdc459f10d"
+    },
+    {
+      "id": "ART-2B9BAAF568AE",
+      "path": "baseline/2026-07-19/screenshots/home-375x812.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 33932,
+      "sha256": "dec976172c778f2dcbb7bb8d9e4ef982c43631877e563857edce041f99084711"
+    },
+    {
+      "id": "ART-3AF1E5D3F024",
+      "path": "baseline/2026-07-19/screenshots/home-390x844.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 35055,
+      "sha256": "f38a153ee475bf76a426a1c6c959c7d3854a90f2411823096524c1baaae9af33"
+    },
+    {
+      "id": "ART-1AA3C9BE3FF5",
+      "path": "baseline/2026-07-19/screenshots/home-768x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 44656,
+      "sha256": "3b223036a3c5f0049b4fcef13dba5bc8618036ba7921e9260057c29f4b994d5b"
+    },
+    {
+      "id": "ART-E3D136CAF0B6",
+      "path": "baseline/2026-07-19/screenshots/home-920x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 54596,
+      "sha256": "42154839b63522af5203f142b92ba624d7fdeff532c77c3ef5f0c0fb6a0bd693"
+    },
+    {
+      "id": "ART-05FDD0E31F80",
+      "path": "baseline/2026-07-19/screenshots/index-1280x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 53234,
+      "sha256": "2932c02eca8ba5c61352cbc6823b7a4883e3b632a79360b55813a2b9643ba11b"
+    },
+    {
+      "id": "ART-22125B5108D4",
+      "path": "baseline/2026-07-19/screenshots/index-1440x1000.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 58341,
+      "sha256": "c88248b730cd5ec2166dae80f93a0adf5af9656ee176f87534a072800955269b"
+    },
+    {
+      "id": "ART-A4B62C8D7C88",
+      "path": "baseline/2026-07-19/screenshots/index-320x700.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 18335,
+      "sha256": "9c8e7033d8709882f4ab88fef60e74e470e879e17cf5b574bb72541ee7109dfa"
+    },
+    {
+      "id": "ART-6AE80F32F87C",
+      "path": "baseline/2026-07-19/screenshots/index-360x780.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 20971,
+      "sha256": "4f7c9628bc79d5004d3a809b813217e173fa568ed75dc6f13e055745d741f6d4"
+    },
+    {
+      "id": "ART-BCFD2EDACEA2",
+      "path": "baseline/2026-07-19/screenshots/index-375x812.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 24147,
+      "sha256": "1b74a6aac0dea6789ab7a18aae044e40decf72aa49e672e9c432ae65ed5ff36a"
+    },
+    {
+      "id": "ART-4D15826E86B7",
+      "path": "baseline/2026-07-19/screenshots/index-390x844.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 24513,
+      "sha256": "9498b05d3f7259bc431ed3ae9fd4783a4b493433519edad0f5d9df277bd18732"
+    },
+    {
+      "id": "ART-0C111A2773C6",
+      "path": "baseline/2026-07-19/screenshots/index-768x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 33319,
+      "sha256": "cefdcd6ca8d86478f1495ff0da429bc9199ef31573e1c46b9a0d3d32af9f1c7b"
+    },
+    {
+      "id": "ART-014E8EDD18C1",
+      "path": "baseline/2026-07-19/screenshots/index-920x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 48084,
+      "sha256": "d02408e95782ee1896f9f86ff9672f17259b5b6c1ea0717631a8b08638709814"
+    },
+    {
+      "id": "ART-B656CAC5E01C",
+      "path": "baseline/2026-07-19/screenshots/product-aurora-1280x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 45385,
+      "sha256": "d7260aaa6085291077256d91cc773946a2fa2d8d0b6501a78a5d7b0e8a4319c6"
+    },
+    {
+      "id": "ART-72504B501267",
+      "path": "baseline/2026-07-19/screenshots/product-aurora-1440x1000.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 55838,
+      "sha256": "8bb41a2604bdb05eee26a56ae40c0ae93e8dea17a66be327e48393d5752f69d2"
+    },
+    {
+      "id": "ART-DA78B4360380",
+      "path": "baseline/2026-07-19/screenshots/product-aurora-320x700.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 25957,
+      "sha256": "c4250bc43a0d6e601943aef5f9f2fe6efebba294e0e01848e9e898a85f5689d8"
+    },
+    {
+      "id": "ART-CD0B6086C37E",
+      "path": "baseline/2026-07-19/screenshots/product-aurora-360x780.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 26963,
+      "sha256": "6a957a3e1ed7af23068e4793c7d614b209c9feb1d3df6570cbc229221d953413"
+    },
+    {
+      "id": "ART-BBF61E073432",
+      "path": "baseline/2026-07-19/screenshots/product-aurora-375x812.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 26935,
+      "sha256": "01b8ec486d9b826de19e347920c1c13e88c103c21d7d7c92bf5325495508c0ee"
+    },
+    {
+      "id": "ART-4CAEB9E36EE7",
+      "path": "baseline/2026-07-19/screenshots/product-aurora-390x844.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 27477,
+      "sha256": "6740419bd617495091127fdda123786e5bf3cd258efa9f0227761c849dd38bfe"
+    },
+    {
+      "id": "ART-C465C8A5B73B",
+      "path": "baseline/2026-07-19/screenshots/product-aurora-768x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 35939,
+      "sha256": "21b928f533bfeb1dafe52d223ff9fc5dec878e53ed407426d05bd0efc4c8e9dd"
+    },
+    {
+      "id": "ART-F6F06EF352DC",
+      "path": "baseline/2026-07-19/screenshots/product-aurora-920x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 40668,
+      "sha256": "95b5f417654086fd3d6a0abb26541c9c8ce76886016e83910e92659a42cf4d15"
+    },
+    {
+      "id": "ART-2DAFFA15090F",
+      "path": "baseline/2026-07-19/screenshots/sections-1280x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 65199,
+      "sha256": "4e6a3717fc6a485c3d8618f05e6400b6e445663e2e790f999fd95245bf5b2128"
+    },
+    {
+      "id": "ART-E76D55E8F1C4",
+      "path": "baseline/2026-07-19/screenshots/sections-1440x1000.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 75160,
+      "sha256": "c4068b1ffba679bf304773b972f8e0f2b5683d3f4a50e1eb4e39626a9a2fc198"
+    },
+    {
+      "id": "ART-DE4D9C47D1F0",
+      "path": "baseline/2026-07-19/screenshots/sections-320x700.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 25510,
+      "sha256": "421bd1e5a22bb7534ca2329e222ccfd25059eedc09c2aaeba1e27f4d542a655b"
+    },
+    {
+      "id": "ART-725D7C04344E",
+      "path": "baseline/2026-07-19/screenshots/sections-360x780.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 28822,
+      "sha256": "3eab5df5c8e3e2d29a4cd92e72c2ea84d75d58686649383ebacd8186e7608dc3"
+    },
+    {
+      "id": "ART-79CDFCC1E8CC",
+      "path": "baseline/2026-07-19/screenshots/sections-375x812.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 32871,
+      "sha256": "f60b0bea0c91afb5cb391a9c7bf60877fc44673e9c6df1b15e2c76a6b335c1a7"
+    },
+    {
+      "id": "ART-EA0B4BA37FA2",
+      "path": "baseline/2026-07-19/screenshots/sections-390x844.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 36311,
+      "sha256": "af8ea07a8a6f7f5c2fa64b44437505a2680880163477b048eeb3d76f6d1c530f"
+    },
+    {
+      "id": "ART-E33A698AFDE1",
+      "path": "baseline/2026-07-19/screenshots/sections-768x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 54523,
+      "sha256": "702948b4434cfdbb68452c413b7f3d2a7f19c7846ae853b1c901cabd4e981d25"
+    },
+    {
+      "id": "ART-2585563A2B81",
+      "path": "baseline/2026-07-19/screenshots/sections-920x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 57775,
+      "sha256": "0477a652e13de6c8bfcba5363605bb29bf0da0edcdd18db4a182f41abc240daf"
+    },
+    {
+      "id": "ART-4402A203A14D",
+      "path": "baseline/2026-07-19/screenshots/tokens-1280x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 38269,
+      "sha256": "b13460ddf23fd606c27c48d49dea4707c4d7abacd80b8ae2ed9268d6fab86e18"
+    },
+    {
+      "id": "ART-892D4CD9AF5D",
+      "path": "baseline/2026-07-19/screenshots/tokens-1440x1000.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 44753,
+      "sha256": "9838f12d635702d1d8ef3a8f31693b6ee45304ecfd39e393d9d43d37a5511c84"
+    },
+    {
+      "id": "ART-78077C333664",
+      "path": "baseline/2026-07-19/screenshots/tokens-320x700.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 14698,
+      "sha256": "4dd5fbddd5ce2cccc0828bb0cd8c7c17cf3c164b5656ca74acb79f8faeda4f9e"
+    },
+    {
+      "id": "ART-826841C586D9",
+      "path": "baseline/2026-07-19/screenshots/tokens-360x780.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 17349,
+      "sha256": "fa183b2b447942a3ad87d993fa00681a133b89f19514ff35a9e28d68c095f244"
+    },
+    {
+      "id": "ART-BB129A4C3378",
+      "path": "baseline/2026-07-19/screenshots/tokens-375x812.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 19021,
+      "sha256": "872f9cf718f3f031a6d2df57cd9afdd39de9d7409f1f27967bfe1b2e4a0b355d"
+    },
+    {
+      "id": "ART-FE47C16E039B",
+      "path": "baseline/2026-07-19/screenshots/tokens-390x844.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 19639,
+      "sha256": "12ba38a31dce47ebd1cdcaae68ddfc9d09219c0cd59f411ea849de1fe8422c16"
+    },
+    {
+      "id": "ART-9F1E5BC52D93",
+      "path": "baseline/2026-07-19/screenshots/tokens-768x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 34813,
+      "sha256": "184beb1b0d8120bacd58c7954afa4a99e51d260c4bbddad7b4110b1c510c48ac"
+    },
+    {
+      "id": "ART-3CBE247A1178",
+      "path": "baseline/2026-07-19/screenshots/tokens-920x900.png",
+      "role": "evidence",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-baseline",
+      "mediaType": "png",
+      "bytes": 35521,
+      "sha256": "0d4d81b4735d8b0924ec1ed71bb9ad98e8f698e249031941586eca237e120d8b"
+    },
+    {
+      "id": "ART-82FE53EA7E49",
+      "path": "brand-system/00-brand-architecture.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 2205,
+      "sha256": "757db1777b23496ae7d3d282ae5e1171029f2cfb831c9256fd582ce7a97a60b9"
+    },
+    {
+      "id": "ART-4E899A435393",
+      "path": "brand-system/01-colour.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 2889,
+      "sha256": "1db8a78c0d508f1c16efea953927c0a94f503141b3283bc6c5e49556b0c76a80"
+    },
+    {
+      "id": "ART-8390612AEE63",
+      "path": "brand-system/02-gradients.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 4483,
+      "sha256": "8f142889b7352e2e1eec2bc15806ef2381d6d529c19ff386d9102328a4a255be"
+    },
+    {
+      "id": "ART-EB0116A2C994",
+      "path": "brand-system/03-typography.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 3014,
+      "sha256": "f98ce41a1db99f66543f0d8fac3757974c64601bc1cf827f3db6362e16c61df3"
+    },
+    {
+      "id": "ART-A9364EF6D146",
+      "path": "brand-system/04-the-mark.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 2866,
+      "sha256": "09d45758a8426b90836b4f0853a442b1cec8f3e1115a6c5de9bd44a29635069a"
+    },
+    {
+      "id": "ART-61EF7F74502E",
+      "path": "brand-system/05-product-system.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 3670,
+      "sha256": "892224723ca26c5f58874eef67b71ec2bdff5b351ac2ab3d278af1d3a1778f2b"
+    },
+    {
+      "id": "ART-A15130ADCBB9",
+      "path": "brand-system/06-trading-cards-and-stacks.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 3791,
+      "sha256": "127723c9353535ea2c0ba9e6da63aaa89caf2fe01353a588ff9d2b755a0c876d"
+    },
+    {
+      "id": "ART-0C7F8EE33A75",
+      "path": "brand-system/07-ui-components.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 4023,
+      "sha256": "0d18d37b5fad581c0b69d409f2424b9d0e6511faefc65b3db91ac3dcf5ed8b8a"
+    },
+    {
+      "id": "ART-7F250E4974C2",
+      "path": "brand-system/08-figma-map.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 4339,
+      "sha256": "aef3b42ba7b1ec8ec6d34eb0c08c93633b9ea0acb6f7b0484ce25becd0250ca1"
+    },
+    {
+      "id": "ART-3E1DE85D919A",
+      "path": "brand-system/09-governance.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 13159,
+      "sha256": "6c38f614a1ad1166c6df9dd7277c8109f92c17ab554fe643374f034952aa442a"
+    },
+    {
+      "id": "ART-F117857D3043",
+      "path": "brand-system/10-product-template.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 6978,
+      "sha256": "bd2c41f096ba7dc83c14c77e487d0f4cad3a348c93c89fd67b377ee964f4bd69"
+    },
+    {
+      "id": "ART-4D46B5533613",
+      "path": "brand-system/11-layout-and-grid.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 4594,
+      "sha256": "d10c4c5129209ba59d17c088b097ac5fd898a0009bc65a8a5d21b35511d9aeb3"
+    },
+    {
+      "id": "ART-D1611332A6CD",
+      "path": "brand-system/12-states-and-forms.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 8547,
+      "sha256": "4074dc7793fe102bbe3c3e4cfba51ca9d61cf9791ec259a28a20991af1066f5d"
+    },
+    {
+      "id": "ART-39B22140FAE2",
+      "path": "brand-system/13-sections.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 28989,
+      "sha256": "1353f37cb8bbf9363d69037fc622c1a035094f8780a3037bf06f30f6129179d1"
+    },
+    {
+      "id": "ART-2FBADA8551CD",
+      "path": "brand-system/14-page-archetypes.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 29178,
+      "sha256": "4f9506a619f42930daec201c159ce14d63751874f589427678c541ea863d63b8"
+    },
+    {
+      "id": "ART-FD23B2A554DB",
+      "path": "brand-system/15-commerce.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 20903,
+      "sha256": "a075c858c3e0198685462f799dc0befa512829e1418495e6b3df4635d56b0103"
+    },
+    {
+      "id": "ART-D3C0CC3935C9",
+      "path": "brand-system/16-motion.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 5562,
+      "sha256": "ef49b98d8aba6837cd022784ce45cbfca122f2ab363f86b1411af5b7ed78ab1b"
+    },
+    {
+      "id": "ART-0B81608500D4",
+      "path": "brand-system/17-voice-and-copy.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 14357,
+      "sha256": "4e8200b62ac0432079b3f46133ed042d89ac7c5a41f10d7839d5dcb44aa0efc0"
+    },
+    {
+      "id": "ART-CDF0BA9E9236",
+      "path": "brand-system/18-imagery-and-og.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 17727,
+      "sha256": "2dea4e6f731c0354d0c73751b4492246c3b4a48f92dba39ce5dd094035da6f3f"
+    },
+    {
+      "id": "ART-E15BAA25C80F",
+      "path": "brand-system/19-review-checklist.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 12105,
+      "sha256": "420949de1377cb0d6c35c3efc25d5e4836a8ae41b7e54f3e437b7ef1971a40b9"
+    },
+    {
+      "id": "ART-781715C47560",
+      "path": "brand-system/README.md",
+      "role": "unclassified",
+      "authoritative": false,
+      "migrationDisposition": "triage-required",
+      "mediaType": "md",
+      "bytes": 5471,
+      "sha256": "57268d3d878fec0522e3fdf6fd47a6ac40e300b46938f2d4b6cf0f7878054aa4"
+    },
+    {
+      "id": "ART-222EA5F660FA",
+      "path": "canvas/README.md",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "md",
+      "bytes": 868,
+      "sha256": "4116b82674148d81e878a2b9f48cb79cf877d34ce89a1e769aab62436587b88b"
+    },
+    {
+      "id": "ART-DB4B3E8CFBFE",
+      "path": "canvas/SNIPPETS.md",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "md",
+      "bytes": 10268,
+      "sha256": "fee78cf2058f73b32ab275bab0dd047012e4fa11cb58889fc59335355ae012b4"
+    },
+    {
+      "id": "ART-3CD7FB1B0E49",
+      "path": "canvas/assets/mz-g06.webp",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "webp",
+      "bytes": 111096,
+      "sha256": "0b09b50c9cbd81b8393fcab04fb4aaf4602abbcc7941803cac53886a3ed5447e"
+    },
+    {
+      "id": "ART-1B9FA8ADB680",
+      "path": "canvas/assets/mz-g13.webp",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "webp",
+      "bytes": 134616,
+      "sha256": "24e13be7339c3bf41f16466f368f99fb102507b6f6d2b6a13f7edad7668e23b0"
+    },
+    {
+      "id": "ART-0DCDF83AA914",
+      "path": "canvas/assets/mz-g15.webp",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "webp",
+      "bytes": 31186,
+      "sha256": "4e10e7dc5443307fee393f8e8ca64bd7ffe671fb5c71e5c4f6ff321eed6dbeda"
+    },
+    {
+      "id": "ART-C55D32F92509",
+      "path": "canvas/assets/mz-g20.webp",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "webp",
+      "bytes": 21620,
+      "sha256": "17f5eb43d4807cd8056c0485ded9cb6a60110993389e9e0b16abda13c6750aba"
+    },
+    {
+      "id": "ART-A5BD2D00E653",
+      "path": "canvas/assets/wings.svg",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "svg",
+      "bytes": 788,
+      "sha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33"
+    },
+    {
+      "id": "ART-17666544B099",
+      "path": "canvas/canvas.css",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "css",
+      "bytes": 34651,
+      "sha256": "57d77df960836d21de1e27a1bb9daae3213cca19fd52751876d4c73726b9f2b8"
+    },
+    {
+      "id": "ART-B6E704B1E3B4",
+      "path": "canvas/canvas.js",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "js",
+      "bytes": 2444,
+      "sha256": "464208e1571a5d13d7bbd3c583f133030cd87f8518f9c802d6747299d80903fe"
+    },
+    {
+      "id": "ART-E5CBB1FBA7F6",
+      "path": "canvas/components.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 48471,
+      "sha256": "611f79cdaafb35450db575c3f7d79adfcacf0a318055c9802c38eef06b4b2320"
+    },
+    {
+      "id": "ART-2A50D275E599",
+      "path": "canvas/index.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 7235,
+      "sha256": "695761f238bece3f40113933fada052d80b87436935f6bf604c683a5bc9e9a56"
+    },
+    {
+      "id": "ART-DB4985B6A668",
+      "path": "canvas/pages/checkout.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 11008,
+      "sha256": "2a52979de6bbc965ee2bfecafdebeff14a70243c37d578c4ce57573c76416507"
+    },
+    {
+      "id": "ART-A722FBC2A629",
+      "path": "canvas/pages/email.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 8115,
+      "sha256": "c6c90cf0113f4186bcd3d55d8616d9c198c01f78e76bf77c27706842630c4fc8"
+    },
+    {
+      "id": "ART-1A859715D1CB",
+      "path": "canvas/pages/home.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 28855,
+      "sha256": "d4acfbe031d298446db8fbcceeb693e29a18a9a9d92fe07eeb738dd612251701"
+    },
+    {
+      "id": "ART-44254D41CBBC",
+      "path": "canvas/pages/product-aurora.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 14399,
+      "sha256": "6212282566d404e6a7c5c0c39f71d1f26866ed424a591af38571b7333972fc10"
+    },
+    {
+      "id": "ART-0C8F57F8D984",
+      "path": "canvas/qa-large-text.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 2979,
+      "sha256": "07780b5ac18e8227060f6bc0be79601d4e28aca218fc36756bf16c6407896933"
+    },
+    {
+      "id": "ART-3F075FAD5343",
+      "path": "canvas/sections.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 36500,
+      "sha256": "537bca57ff638d8c0ebc67000a5e8e8fffc7df7a656b53b71069a7599f9a70ef"
+    },
+    {
+      "id": "ART-0A855699C2D3",
+      "path": "canvas/tokens.html",
+      "role": "reference-fixture",
+      "authoritative": false,
+      "migrationDisposition": "compare-then-rebuild-or-certify",
+      "mediaType": "html",
+      "bytes": 22671,
+      "sha256": "6d36222d40f87e9858e4191119ceace96ca446f574282c16afce16b7970e11f6"
+    },
+    {
+      "id": "ART-CF91DB2F8DC8",
+      "path": "colours.json",
+      "role": "canonical",
+      "authoritative": true,
+      "migrationDisposition": "retain-until-approved-successor",
+      "mediaType": "json",
+      "bytes": 1094,
+      "sha256": "bbfdceae7e5a059601ba4dfd828a210ce18f8dc0b201a166bc500d07db38f40f"
+    },
+    {
+      "id": "ART-224C4EA72E97",
+      "path": "design-system-export/AGENTS.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 4076,
+      "sha256": "07f3845c129590199187497c14d2269095fee0a1aba06c729ae64ee2887461f4"
+    },
+    {
+      "id": "ART-768E3E9DF4AB",
+      "path": "design-system-export/DESIGN_SYSTEM.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 18872,
+      "sha256": "0ae3f60725888ae9cb539ba08979296cc1de276b04e66e7135ff551953a08f4c"
+    },
+    {
+      "id": "ART-F2A431F45BBB",
+      "path": "design-system-export/README.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 3692,
+      "sha256": "917c097e11305e19677c232c4a5dfc5609d730b45379bf332ef4587797c57cb9"
+    },
+    {
+      "id": "ART-8977155B8F3B",
+      "path": "design-system-export/assets/email/mez-systems-lockup.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 1142,
+      "sha256": "9b5a5bfb5d4c5fd920400ed54b467a25970c143bb6089e486825416edfe5afbe"
+    },
+    {
+      "id": "ART-8EA62D9AE67F",
+      "path": "design-system-export/assets/email/mez-systems-lockup@2x.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 10685,
+      "sha256": "a9e37cf269e040c765c2eb2152d6259cc4eb186ff9d8b5d660eee9aed6d65eab"
+    },
+    {
+      "id": "ART-55DD63FC807E",
+      "path": "design-system-export/assets/fonts/ibm-plex-mono-regular.woff2",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "woff2",
+      "bytes": 35688,
+      "sha256": "4e40163cd05e33b0fb0b331e9a7003a4b2a6ca6f5e1de471e46a5d11281edead"
+    },
+    {
+      "id": "ART-F0C47BAB8F75",
+      "path": "design-system-export/assets/fonts/instrument-serif-italic.woff2",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "woff2",
+      "bytes": 26532,
+      "sha256": "a28103bc8cecf1e68e877d1ba37f8fffa070d108a3991ae96f8e892765a24ede"
+    },
+    {
+      "id": "ART-15BEEB296368",
+      "path": "design-system-export/assets/fonts/instrument-serif-regular.woff2",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "woff2",
+      "bytes": 25868,
+      "sha256": "508b8ed97c2a37fc3751b258eced1b216d7dc8097580fd83f6b379828e9e2a5e"
+    },
+    {
+      "id": "ART-E95496DB8638",
+      "path": "design-system-export/assets/fonts/inter-variable.woff2",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "woff2",
+      "bytes": 338604,
+      "sha256": "538dd434b95986af3e6b5e249c310c31d77a72b3c3a87e379dae659f654abb24"
+    },
+    {
+      "id": "ART-CDEF0E1FDB1C",
+      "path": "design-system-export/assets/gradients/mz-g06.webp",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "webp",
+      "bytes": 630184,
+      "sha256": "bb8bcfc87b68c7d179fd8fa5cf5281efb3e7c993e5e00e62e3c75a7d7a271578"
+    },
+    {
+      "id": "ART-DD4911D0300D",
+      "path": "design-system-export/assets/gradients/mz-g13.webp",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "webp",
+      "bytes": 653004,
+      "sha256": "7f0e273a4652a68172f6ae3fcf63dcec809216d3f9d89be45fd6e26a21074cdc"
+    },
+    {
+      "id": "ART-3A094A9D5C06",
+      "path": "design-system-export/assets/gradients/mz-g15.webp",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "webp",
+      "bytes": 203042,
+      "sha256": "8759bd7a1d31a1aabd3684ff69b64c15f1db91139236069b1de07117a0408e02"
+    },
+    {
+      "id": "ART-A8A13C177B0A",
+      "path": "design-system-export/assets/gradients/mz-g20.webp",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "webp",
+      "bytes": 144208,
+      "sha256": "b90e1e14ed5c0e81312fdcb5219e98e0698612f6264c608b03cbbe05c1272153"
+    },
+    {
+      "id": "ART-61CC5AA879B2",
+      "path": "design-system-export/assets/icons/brand/apple-touch-icon.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 2879,
+      "sha256": "ae7f066a297b116976cdf6928b00df88d0b015dca0ac40a5aaf0a32af32ad6f1"
+    },
+    {
+      "id": "ART-BE26FEFAA617",
+      "path": "design-system-export/assets/icons/brand/favicon-32.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 563,
+      "sha256": "454a735e462a907baf73dd19be117107113ac7ee7a33dd887b41e48ab7752761"
+    },
+    {
+      "id": "ART-BE196F72E79D",
+      "path": "design-system-export/assets/icons/brand/icon-512.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 9387,
+      "sha256": "e56549bc39374b94a8d999972baf58e66b621323816f48c95f6e35e5ff96cab1"
+    },
+    {
+      "id": "ART-C3DBF01FC0C3",
+      "path": "design-system-export/assets/icons/brand-icon.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 875,
+      "sha256": "97585269d6da5cc16f739b6dfb42577411bf1812d56ba5569971615b89c75096"
+    },
+    {
+      "id": "ART-E4D15F83EFEA",
+      "path": "design-system-export/assets/icons/product/app-icon-128.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 16192,
+      "sha256": "3b736b58b1ff2a26cd0bb04543a19011e86648b04e3647b47b31f4cfa003eef2"
+    },
+    {
+      "id": "ART-D59B6BC41B53",
+      "path": "design-system-export/assets/icons/product/app-icon-256.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 62267,
+      "sha256": "58762b4fc3f3347e35a6f6ea833474a1be50bee28d04101d91831a0bd05f8c08"
+    },
+    {
+      "id": "ART-5B84FCE4B12B",
+      "path": "design-system-export/assets/icons/product/app-icon-512.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 259455,
+      "sha256": "2166c2b552de6b8540c78ac67480472dd9e5d0592494d26f78073e6470ec5b29"
+    },
+    {
+      "id": "ART-8EFB23A0EA5E",
+      "path": "design-system-export/assets/icons/product/apple-touch-icon.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 30824,
+      "sha256": "6a6ebbc6bf6220d38cf37456e7894cf993c7f0ff38c3572fb7d58ae8f449364a"
+    },
+    {
+      "id": "ART-891DA53833F2",
+      "path": "design-system-export/assets/icons/product/favicon-32.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 2089,
+      "sha256": "d50fe41d77606618d83b1f66eb07a256879abb20e2ad57f188027830c2da52b5"
+    },
+    {
+      "id": "ART-E18BAE794BD1",
+      "path": "design-system-export/assets/icons/product/icon-512.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 259455,
+      "sha256": "2166c2b552de6b8540c78ac67480472dd9e5d0592494d26f78073e6470ec5b29"
+    },
+    {
+      "id": "ART-7769066D75C7",
+      "path": "design-system-export/assets/icons/product-icon.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 1049,
+      "sha256": "21cc539138028afde13682bc78335a5fc64926eb30dac1fe7c50d8b228a0065f"
+    },
+    {
+      "id": "ART-E06C17613FBE",
+      "path": "design-system-export/assets/og/og-aios.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 136409,
+      "sha256": "7963d2ce448b4bc6e7e8a1958b5142f4bef3b575335a10b89d2c8b5848163a6b"
+    },
+    {
+      "id": "ART-91AFB86494A8",
+      "path": "design-system-export/assets/og/og-aios.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 872631,
+      "sha256": "fd7df5f49251dbc973bcb379845b764484d785aefe19ea07a5c352230fd15428"
+    },
+    {
+      "id": "ART-ADDB3C9CA78F",
+      "path": "design-system-export/assets/og/og-aurora.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 104116,
+      "sha256": "a105b18019f3cd25f9028376634e60b4a3e4ae816cf442d690733afa9348b6bd"
+    },
+    {
+      "id": "ART-CE7856550DF9",
+      "path": "design-system-export/assets/og/og-aurora.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 194175,
+      "sha256": "b3f3d8b95eafa72ef87f3ae3b2c1784908681b04780b51adf51e550de3dcaaac"
+    },
+    {
+      "id": "ART-CD6923E2A9F8",
+      "path": "design-system-export/assets/og/og-default.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 17149,
+      "sha256": "6861cf9a8d31152572522a865b5055910df21e69857ed83d17972fe14c5978f0"
+    },
+    {
+      "id": "ART-420E68213EA1",
+      "path": "design-system-export/assets/og/og-default.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 1659,
+      "sha256": "8ef62a5000095615e4331cfeaed77acfea359edea1bb5dcfa5488ff22d9cd82d"
+    },
+    {
+      "id": "ART-B2A83AE3CDC4",
+      "path": "design-system-export/assets/og/og-forge.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 110721,
+      "sha256": "68156ca6ae63f4a3164be3b9a660906ef6f69356e79f678853a4a6a1ae3e2294"
+    },
+    {
+      "id": "ART-5D78958A6227",
+      "path": "design-system-export/assets/og/og-forge.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 272618,
+      "sha256": "af1d79592b035449da11a715aa1aea18edeb9993e6a850bfeef4bae08f1d7b20"
+    },
+    {
+      "id": "ART-C612AA44F9AF",
+      "path": "design-system-export/assets/og/og-home.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 110487,
+      "sha256": "1319d25c0f1f903e5dee6f5814e120be88d01e382aac116d13ef6b4171b50570"
+    },
+    {
+      "id": "ART-38B1B4012971",
+      "path": "design-system-export/assets/og/og-home.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 2177692,
+      "sha256": "3160a1edacd9af234aaf93dc4f78bf8661a9522f586626d72de171c27b8f3913"
+    },
+    {
+      "id": "ART-95F12C0B6B35",
+      "path": "design-system-export/assets/og/og-prism.png",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "png",
+      "bytes": 119055,
+      "sha256": "d4946f53e1a4283eb9881ee2732a43d127210aeb062c8443fd64d71921da9f1a"
+    },
+    {
+      "id": "ART-1ED0DA70A93E",
+      "path": "design-system-export/assets/og/og-prism.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 842142,
+      "sha256": "8d427d4abf2889eb8d9c124af9db7f82e6baa1723f5f10b86d4e50a06076dd49"
+    },
+    {
+      "id": "ART-83708B0BA9B3",
+      "path": "design-system-export/assets/wings.svg",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "svg",
+      "bytes": 788,
+      "sha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33"
+    },
+    {
+      "id": "ART-D34566F8C2AF",
+      "path": "design-system-export/colours.json",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "json",
+      "bytes": 1094,
+      "sha256": "bbfdceae7e5a059601ba4dfd828a210ce18f8dc0b201a166bc500d07db38f40f"
+    },
+    {
+      "id": "ART-5329AD256F61",
+      "path": "design-system-export/contracts/authority-model.json",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "json",
+      "bytes": 1120,
+      "sha256": "7d3b4722b9651d62281bda8a3dd480ad23f5b3c886fbd962b45b979c1992615a"
+    },
+    {
+      "id": "ART-5AD95B7C0337",
+      "path": "design-system-export/docs/00-brand-architecture.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 2205,
+      "sha256": "757db1777b23496ae7d3d282ae5e1171029f2cfb831c9256fd582ce7a97a60b9"
+    },
+    {
+      "id": "ART-0AE743D34C52",
+      "path": "design-system-export/docs/01-colour.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 2847,
+      "sha256": "f77fc94eb788c635424e56e1ac42a6517e8e0627333ec3e18ebeb53519c95291"
+    },
+    {
+      "id": "ART-B689F2E74F44",
+      "path": "design-system-export/docs/02-gradients.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 4483,
+      "sha256": "8f142889b7352e2e1eec2bc15806ef2381d6d529c19ff386d9102328a4a255be"
+    },
+    {
+      "id": "ART-D8CA101A26CA",
+      "path": "design-system-export/docs/03-typography.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 2930,
+      "sha256": "fad21716d99af786aff12aedd096ad15c60c71efbe8ac14a2ef867019ec8fab7"
+    },
+    {
+      "id": "ART-9A4226A6486D",
+      "path": "design-system-export/docs/04-the-mark.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 2866,
+      "sha256": "09d45758a8426b90836b4f0853a442b1cec8f3e1115a6c5de9bd44a29635069a"
+    },
+    {
+      "id": "ART-BCC79462A219",
+      "path": "design-system-export/docs/05-product-system.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 3670,
+      "sha256": "892224723ca26c5f58874eef67b71ec2bdff5b351ac2ab3d278af1d3a1778f2b"
+    },
+    {
+      "id": "ART-8B3D4F338CD7",
+      "path": "design-system-export/docs/06-trading-cards-and-stacks.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 3791,
+      "sha256": "127723c9353535ea2c0ba9e6da63aaa89caf2fe01353a588ff9d2b755a0c876d"
+    },
+    {
+      "id": "ART-468134C59541",
+      "path": "design-system-export/docs/07-ui-components.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 4023,
+      "sha256": "0d18d37b5fad581c0b69d409f2424b9d0e6511faefc65b3db91ac3dcf5ed8b8a"
+    },
+    {
+      "id": "ART-FEA6911B3967",
+      "path": "design-system-export/docs/08-figma-map.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 4318,
+      "sha256": "19265103a8cab14d3b993f3c6ed35bff5cb3a9c91071a1017713b0d4427b102d"
+    },
+    {
+      "id": "ART-2856D3942570",
+      "path": "design-system-export/docs/09-governance.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 12929,
+      "sha256": "6ea215e2843f099c999a523fd6d4463c0b87cf9d4e90c40be54b8c91846a3189"
+    },
+    {
+      "id": "ART-2B48F8D88562",
+      "path": "design-system-export/docs/10-product-template.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 6978,
+      "sha256": "bd2c41f096ba7dc83c14c77e487d0f4cad3a348c93c89fd67b377ee964f4bd69"
+    },
+    {
+      "id": "ART-4EE6614622A6",
+      "path": "design-system-export/docs/11-layout-and-grid.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 4573,
+      "sha256": "3e91ba4b33aaee03a7486ea6ef4331840eab796d63f8dde2ba513f3fceb1bc64"
+    },
+    {
+      "id": "ART-D525088E53AB",
+      "path": "design-system-export/docs/12-states-and-forms.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 8547,
+      "sha256": "4074dc7793fe102bbe3c3e4cfba51ca9d61cf9791ec259a28a20991af1066f5d"
+    },
+    {
+      "id": "ART-25216D6AD117",
+      "path": "design-system-export/docs/13-sections.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 28989,
+      "sha256": "1353f37cb8bbf9363d69037fc622c1a035094f8780a3037bf06f30f6129179d1"
+    },
+    {
+      "id": "ART-C76C03FB3397",
+      "path": "design-system-export/docs/14-page-archetypes.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 29178,
+      "sha256": "4f9506a619f42930daec201c159ce14d63751874f589427678c541ea863d63b8"
+    },
+    {
+      "id": "ART-72537F74EF17",
+      "path": "design-system-export/docs/15-commerce.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 20903,
+      "sha256": "a075c858c3e0198685462f799dc0befa512829e1418495e6b3df4635d56b0103"
+    },
+    {
+      "id": "ART-53274F15EA6F",
+      "path": "design-system-export/docs/16-motion.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 5562,
+      "sha256": "ef49b98d8aba6837cd022784ce45cbfca122f2ab363f86b1411af5b7ed78ab1b"
+    },
+    {
+      "id": "ART-EE9BBE81C92C",
+      "path": "design-system-export/docs/17-voice-and-copy.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 14357,
+      "sha256": "4e8200b62ac0432079b3f46133ed042d89ac7c5a41f10d7839d5dcb44aa0efc0"
+    },
+    {
+      "id": "ART-CA53BC1FCBEE",
+      "path": "design-system-export/docs/18-imagery-and-og.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 17727,
+      "sha256": "2dea4e6f731c0354d0c73751b4492246c3b4a48f92dba39ce5dd094035da6f3f"
+    },
+    {
+      "id": "ART-DBDFBECA75D0",
+      "path": "design-system-export/docs/19-review-checklist.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 12105,
+      "sha256": "420949de1377cb0d6c35c3efc25d5e4836a8ae41b7e54f3e437b7ef1971a40b9"
+    },
+    {
+      "id": "ART-BDED4FDC69DB",
+      "path": "design-system-export/docs/README.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 5485,
+      "sha256": "5617b95da915ffb8e6e420d40138e079af30ee7c2d286ee58c4c14702707925c"
+    },
+    {
+      "id": "ART-3F28BA7B8C1C",
+      "path": "design-system-export/export-manifest.json",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "json",
+      "bytes": 14201,
+      "sha256": "3c28c15dbfc4a37fb8e064e38b53aefd86f515d041e57f133ee193025ae683cd"
+    },
+    {
+      "id": "ART-2DD8DC029834",
+      "path": "design-system-export/fonts.json",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "json",
+      "bytes": 1294,
+      "sha256": "6e195409360fd270cb894964e4c0cb6db5ba0fb057c8e6f80d927c2c3e83ef26"
+    },
+    {
+      "id": "ART-41A15A39997C",
+      "path": "design-system-export/gradients.json",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "json",
+      "bytes": 2744,
+      "sha256": "57bd752ee8534f1bcafa0a588342779c1a2170c22b1069b43a42cc6fe48c283c"
+    },
+    {
+      "id": "ART-F58A05AAA269",
+      "path": "design-system-export/licences/FONTS.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 1507,
+      "sha256": "5653d52a06b40a48fb7a091d6b3e6e99a740e41a0068f54e4fdfac9774adaa22"
+    },
+    {
+      "id": "ART-605C33C37B19",
+      "path": "design-system-export/licences/IBM-Plex-Mono-OFL.txt",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "id": "ART-2EF0B6D5397C",
+      "path": "design-system-export/licences/Instrument-Serif-OFL.txt",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "txt",
+      "bytes": 4405,
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521"
+    },
+    {
+      "id": "ART-6EDC27BD90AB",
+      "path": "design-system-export/licences/Inter-OFL.txt",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    },
+    {
+      "id": "ART-187CC303DB75",
+      "path": "design-system-export/products.json",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "json",
+      "bytes": 1860,
+      "sha256": "4ebeafd03573849f16695368a7929f4702ba811b8fc8026c69af1409ec0e5b43"
+    },
+    {
+      "id": "ART-9086CF76EA29",
+      "path": "design-system-export/scripts/build_release.py",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "py",
+      "bytes": 10350,
+      "sha256": "25923d3e3bc8d3d739042c62d25ccb568a1cf0c9dc3dd040c774f96389055f09"
+    },
+    {
+      "id": "ART-BA16835CB5C6",
+      "path": "design-system-export/scripts/validate_release.py",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "py",
+      "bytes": 3277,
+      "sha256": "1bf52bb71c26093e8042aa4ab8db4b99466386757881da2512084c4757656931"
+    },
+    {
+      "id": "ART-CD9BEC0D3407",
+      "path": "design-system-export/tokens/tailwind.tokens.cjs",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "cjs",
+      "bytes": 4419,
+      "sha256": "dc5806fba663c1c508a482ba94367802bf2cd5a1b65b979b75620c5064af8e9a"
+    },
+    {
+      "id": "ART-5CE66E236448",
+      "path": "design-system-export/tokens/tokens.css",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "css",
+      "bytes": 9476,
+      "sha256": "ced899437b8f25f7c376751e6d58152f010296e6674e889633df58f32de7501f"
+    },
+    {
+      "id": "ART-EE68186A897A",
+      "path": "design-system-export/tokens/tokens.json",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "json",
+      "bytes": 7219,
+      "sha256": "7aa441447c4fd155f26944709008b7c23f80ba2fb3b2c07f9913227acd0a6757"
+    },
+    {
+      "id": "ART-E05FF7722E4B",
+      "path": "design-system-export/trading-cards-fut-study/fut-teardown.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 26295,
+      "sha256": "b44532d4e2e909a932a156138323602f9daac3faaeb881dedc424ba8ef4c5746"
+    },
+    {
+      "id": "ART-7AF674386ECD",
+      "path": "design-system-export/typography.md",
+      "role": "mirror",
+      "authoritative": false,
+      "migrationDisposition": "replace-with-generated-distribution",
+      "mediaType": "md",
+      "bytes": 2475,
+      "sha256": "9761403316e4e015a4f0468a667b1696052a6389cb44e997ad5921a6b19ec052"
+    },
+    {
+      "id": "ART-45B21BF59BA7",
+      "path": "fonts.json",
+      "role": "canonical",
+      "authoritative": true,
+      "migrationDisposition": "retain-until-approved-successor",
+      "mediaType": "json",
+      "bytes": 1294,
+      "sha256": "6e195409360fd270cb894964e4c0cb6db5ba0fb057c8e6f80d927c2c3e83ef26"
+    },
+    {
+      "id": "ART-20632946C229",
+      "path": "governance/H0-DECISION-PACKET.md",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "md",
+      "bytes": 4949,
+      "sha256": "0454654296dc411c5d8739bb6fef8a896eda59199e83d0279438fd2f5e60fb1f"
+    },
+    {
+      "id": "ART-639AF2CDF07E",
+      "path": "governance/PROGRAMME-CHARTER.md",
+      "role": "governance",
+      "authoritative": true,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "md",
+      "bytes": 7873,
+      "sha256": "1c9e5e44e399f112da91f02ea11144f56c409192d1eb84418fcbc2e1b8d4f540"
+    },
+    {
+      "id": "ART-2FD948C6610D",
+      "path": "governance/README.md",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "md",
+      "bytes": 2015,
+      "sha256": "f8e897ec4ed15f520976abdfa36a6c3a6d74e2e656c7875989e0615790f64d51"
+    },
+    {
+      "id": "ART-9A995DDF917E",
+      "path": "governance/authority-model.json",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "json",
+      "bytes": 3873,
+      "sha256": "0a639155609aee21f18393526dc3bc08d68cbba6a4be059a47c6c8147a1278d0"
+    },
+    {
+      "id": "ART-DBBC84505C54",
+      "path": "governance/consumer-register.json",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "json",
+      "bytes": 2619,
+      "sha256": "f34fd6cb30e6dced2ed6f643ed00d1a065c056b50049beb49cd752121a236ec4"
+    },
+    {
+      "id": "ART-BC97A86D7459",
+      "path": "governance/decision-register.json",
+      "role": "governance",
+      "authoritative": true,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "json",
+      "bytes": 17043,
+      "sha256": "f276b75340312ea64865a779ad85912adf4fdc767882ba3985999de1858dd432"
+    },
+    {
+      "id": "ART-7DC5849560A1",
+      "path": "governance/issue-register.json",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "json",
+      "bytes": 13985,
+      "sha256": "ec0393409e53a7fc12de415cad4a9d32d2fc2c8b41d7ac401533d4e56bad0ab6"
+    },
+    {
+      "id": "ART-FD8E72D75F43",
+      "path": "governance/reopened-decisions.md",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "md",
+      "bytes": 2021,
+      "sha256": "024af4ac41963f1b1e0131e278eb7e818250adec48ad263b77d18f8333d0116b"
+    },
+    {
+      "id": "ART-B1C5E90F6664",
+      "path": "governance/scripts/build_baseline.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 7847,
+      "sha256": "da1243e5afcaa32ea99560bed9deaafe2724968008e35f7e717aaf8cc1f73f7b"
+    },
+    {
+      "id": "ART-72BCF3DF4282",
+      "path": "governance/scripts/validate_authority.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 2019,
+      "sha256": "e7fd5108068a4e8c875a03b57ea71827ea6a6c9fe6ce8ee0ca99eacdff3e23ed"
+    },
+    {
+      "id": "ART-EDAC0F7A43BB",
+      "path": "governance/scripts/validate_phase_one.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 13220,
+      "sha256": "7e8ebfacb09ff748542f566cae226022b11b191094d9895118a3dd67d2b7c85d"
+    },
+    {
+      "id": "ART-993A503ABC62",
+      "path": "governance/scripts/validate_phase_two_h1.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 5503,
+      "sha256": "394fd8312b6261211abcd5c13810fe996369faa4e8bb669472072db79140ceed"
+    },
+    {
+      "id": "ART-EBF1BF6B4B70",
+      "path": "governance/scripts/validate_phase_two_research.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 2231,
+      "sha256": "6fa7dbd39fa76298d3d8a39b585914b76330b34607f76091f5151306ca3968de"
+    },
+    {
+      "id": "ART-E5CD7088ACDF",
+      "path": "governance/scripts/validate_phase_two_tr4.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 5866,
+      "sha256": "1cb22da5478fe8e5da41b0b236eeeee3aa537d333b690ce101818d3ead47c54f"
+    },
+    {
+      "id": "ART-7E581506A683",
+      "path": "governance/scripts/validate_phase_two_tr5.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 8502,
+      "sha256": "be6be07b59bd2519456bc018ee5d109b94a8d5c1efa8f9f1a61f31cb0930ecbe"
+    },
+    {
+      "id": "ART-2AC121093C97",
+      "path": "governance/scripts/validate_phase_two_tr6.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 11591,
+      "sha256": "6945d1ad622dc9d749b7a447df93d286f6ea95d2e61ddd1652dbaf5c187f37b0"
+    },
+    {
+      "id": "ART-942F70E35AA1",
+      "path": "governance/scripts/validate_phase_zero.py",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "py",
+      "bytes": 7813,
+      "sha256": "fcf4091a19809fd820345026a3339b736935ddbdc20757dd20094f01301cd6e0"
+    },
+    {
+      "id": "ART-6CCD7E2BE646",
+      "path": "governance/tasks/TASK-PHASE-2-TR5-CALIBRATION.json",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "json",
+      "bytes": 2201,
+      "sha256": "443047a0ae2cf3f30b3f9545b82dc4297661ea3c186a938f536c0e4f28c27522"
+    },
+    {
+      "id": "ART-12C5AB5AA7F0",
+      "path": "governance/tasks/TASK-PHASE-2-TR6-DIRECTIONS.json",
+      "role": "governance",
+      "authoritative": false,
+      "migrationDisposition": "retain-in-control-plane",
+      "mediaType": "json",
+      "bytes": 3666,
+      "sha256": "b99912a163d2a2f2324d6a2ab0a4399b2a52c67fc2430ef4910258e9257e9ae1"
+    },
+    {
+      "id": "ART-1A6555A74B50",
+      "path": "gradients.json",
+      "role": "canonical",
+      "authoritative": true,
+      "migrationDisposition": "retain-until-approved-successor",
+      "mediaType": "json",
+      "bytes": 4622,
+      "sha256": "e86fa7eb2549f0a36f7ebd9ac4b80c4bce78fb56eae643ffa173be12e4444840"
+    },
+    {
+      "id": "ART-555993A6804A",
+      "path": "llm/context-bundle.schema.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2581,
+      "sha256": "cf4b4e8e18fe76ed9e92f1aaf63669a1fe7925ed0981bfd5872da1b3f5454251"
+    },
+    {
+      "id": "ART-B13A28210A96",
+      "path": "llm/evaluation-result.schema.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 1647,
+      "sha256": "1bba0c1a26aeaa9868f688ff0d6f0d63d6d98806cc6ef136f6671d5966f64947"
+    },
+    {
+      "id": "ART-50A0769C04D6",
+      "path": "llm/examples/CTX-PHASE-0-BASELINE.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 4042,
+      "sha256": "df2bc1c4f5097c264ae1fd8481216dabc1e690b634914bc8c78fb5768e29a049"
+    },
+    {
+      "id": "ART-6E653FE35E79",
+      "path": "llm/examples/CTX-PHASE-1-REPAIR.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 3721,
+      "sha256": "9a478bb72042f83bf65fa69468af8778cf4cb79ba002d4b0b00c34b0d260c5ee"
+    },
+    {
+      "id": "ART-CB1DF4C17E4B",
+      "path": "llm/examples/CTX-PHASE-2-DEEP-RESEARCH.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 3095,
+      "sha256": "b1b470a7ccf7e3c4d0d1ebd14d55196428bb04385c04a77c5444e0d8b878dfdc"
+    },
+    {
+      "id": "ART-414652192A46",
+      "path": "llm/examples/CTX-PHASE-2-TR4-SYNTHESIS.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2998,
+      "sha256": "2ba9461836835818f430a90b3648102203a5b5281a81ac7ab6d16608e0cf7c0e"
+    },
+    {
+      "id": "ART-FB9A9D7136D0",
+      "path": "llm/examples/EVAL-PHASE-0-BASELINE.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2046,
+      "sha256": "968aed76672dc591345b3d0d52125b9416b35a1fb4bb7079d241b5301518ee3e"
+    },
+    {
+      "id": "ART-C93A2A1BE345",
+      "path": "llm/examples/EVAL-PHASE-1-REPAIR.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2580,
+      "sha256": "8f33f611e3b297644fc2709921fe1781b502a55c8a174986ab817e5186073b9c"
+    },
+    {
+      "id": "ART-BFB19A52E8F5",
+      "path": "llm/examples/EVAL-PHASE-2-DEEP-RESEARCH.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2503,
+      "sha256": "af82029c176f25883b8edb7e3c7198b15f234032c3260d08244a891b9aca76f4"
+    },
+    {
+      "id": "ART-4B4074C1E5D5",
+      "path": "llm/examples/EVAL-PHASE-2-TR4-SYNTHESIS.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2369,
+      "sha256": "3316fb84ce701fb2fd43a257413bd3682c90a0f012fc9591111e089f0bc81af9"
+    },
+    {
+      "id": "ART-D59EB7E52B3E",
+      "path": "llm/examples/RCP-PHASE-0-BASELINE.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 5306,
+      "sha256": "d192b1581ab1489e52fc25ac722745bb11240627a082c5057c56a981b743b7cb"
+    },
+    {
+      "id": "ART-8044017DF4AC",
+      "path": "llm/examples/RCP-PHASE-1-REPAIR.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 4838,
+      "sha256": "07ceed0bf2c63a6018b8ec1d29b7e3a30bf81fa4f49707547da696a3a20953db"
+    },
+    {
+      "id": "ART-63426BE8935B",
+      "path": "llm/examples/RCP-PHASE-2-DEEP-RESEARCH.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 5174,
+      "sha256": "985c75e3349816ea0ccd68677e113c055c0b16a784b2708a0404d29e6026269b"
+    },
+    {
+      "id": "ART-EC1B39D672E3",
+      "path": "llm/examples/RCP-PHASE-2-TR4-SYNTHESIS.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 4186,
+      "sha256": "deed9c7da5e55638b111b883d15310421655e152fd9b22cbbe33ab7ddd6dda10"
+    },
+    {
+      "id": "ART-10484793B395",
+      "path": "llm/output-receipt.schema.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2391,
+      "sha256": "81744e40d6318e5e37082127a34d5c76eebcc73a26da323a40e009eff797be70"
+    },
+    {
+      "id": "ART-F20EB795AE08",
+      "path": "llm/task.schema.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2756,
+      "sha256": "c3b9bbdd51691c57b5225bc8addbbf41eb1ea436ec88e22662bd6442581eac2d"
+    },
+    {
+      "id": "ART-86C3AC504939",
+      "path": "llm/tasks/TASK-PHASE-0-BASELINE.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 3647,
+      "sha256": "eaed3a18360f3f78b5650eefa172f024c5f61e79e7635f555c93ebdd3d57ac1e"
+    },
+    {
+      "id": "ART-75DC49C5B3D2",
+      "path": "llm/tasks/TASK-PHASE-1-REPAIR.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 4296,
+      "sha256": "99fa82491f788050c270d71d472cebd2432b2e6469f12c137e0cb2a1627b000c"
+    },
+    {
+      "id": "ART-48489F9994AB",
+      "path": "llm/tasks/TASK-PHASE-2-DEEP-RESEARCH.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 3147,
+      "sha256": "88f7ad3fc158fab0e6d30d4c6026c8b3d7d84d5f51ed542414c6ffd75e115d3d"
+    },
+    {
+      "id": "ART-72C15757B103",
+      "path": "llm/tasks/TASK-PHASE-2-H1-RESEARCH.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 2793,
+      "sha256": "30772ecb1ad6aa80f67acdc41212d428e386919e4898589a40ccae1071be3d2b"
+    },
+    {
+      "id": "ART-9EAF7460C1A1",
+      "path": "llm/tasks/TASK-PHASE-2-TR4-SYNTHESIS.json",
+      "role": "execution-contract",
+      "authoritative": true,
+      "migrationDisposition": "retain-and-version",
+      "mediaType": "json",
+      "bytes": 3328,
+      "sha256": "4a5d3facce16ec79182bc639e58e31cc8512d2b9b55b89404482fb7b30466b39"
+    },
+    {
+      "id": "ART-FFA5B716B5A5",
+      "path": "manifest.json",
+      "role": "canonical",
+      "authoritative": true,
+      "migrationDisposition": "retain-until-approved-successor",
+      "mediaType": "json",
+      "bytes": 3444,
+      "sha256": "733b930c1011bb229604dbae6cdec1818af8f6f1c56ae9bb99e3bb6caba21810"
+    },
+    {
+      "id": "ART-24E88ED9CCCB",
+      "path": "products.json",
+      "role": "canonical",
+      "authoritative": true,
+      "migrationDisposition": "retain-until-approved-successor",
+      "mediaType": "json",
+      "bytes": 1860,
+      "sha256": "4ebeafd03573849f16695368a7929f4702ba811b8fc8026c69af1409ec0e5b43"
+    },
+    {
+      "id": "ART-9D2DAE7586F8",
+      "path": "research/phase-2/ANTI-PATTERN-ATLAS.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 29156,
+      "sha256": "4e52effccca79f471200f37de076134ab554c0b3b613fbae4bed337969444a4d"
+    },
+    {
+      "id": "ART-DB3A7E29AB4C",
+      "path": "research/phase-2/CAPTURE-PLAN.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 2549,
+      "sha256": "da845566ee3836bced13f829dae650ecfe5c6341c19f59071fa9c91a39daa187"
+    },
+    {
+      "id": "ART-860053C0961E",
+      "path": "research/phase-2/CAPTURE-RESULTS.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 3785,
+      "sha256": "bed247b89a0c3889d6107ac4a9e69190bd07e2f6ad9b66e8c42fa9b039ea7f0c"
+    },
+    {
+      "id": "ART-426C3A49517F",
+      "path": "research/phase-2/COMPARATIVE-MATRIX.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 29237,
+      "sha256": "89a7c82dae06bea702be9315976e2633801562714b4c428c7b8aa2889faf3ad3"
+    },
+    {
+      "id": "ART-A7C6E870453D",
+      "path": "research/phase-2/COMPARATIVE-SYNTHESIS.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 16926,
+      "sha256": "b74521de2caa02ac4f321df44f401d4da613a3f8a85b6d72e8054b358ae53726"
+    },
+    {
+      "id": "ART-E13D66467EF8",
+      "path": "research/phase-2/H1-REFERENCE-PACKET.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 1540,
+      "sha256": "3f49cda584e95db397b5aaec9ff02e3c7c6d7f5d6616d11daa58315d133cdf43"
+    },
+    {
+      "id": "ART-73D22573E242",
+      "path": "research/phase-2/HOMEPAGE-DESIGN-EXPLORATION-PLAN.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 9616,
+      "sha256": "8570c499925fba25d30b4bb23dd40422e1b86b87a9407d3bf1395600c1da7e69"
+    },
+    {
+      "id": "ART-0653D2BE82C0",
+      "path": "research/phase-2/HOMEPAGE-FOUNDATION-SYNTHESIS.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 8284,
+      "sha256": "ada7d08c0bec167a4d814d28651c65149c248397d56b7c68e7ed82ea31106f84"
+    },
+    {
+      "id": "ART-E7B49A101CD9",
+      "path": "research/phase-2/INSPIRATION-BRIEF.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 4959,
+      "sha256": "812dce285838c826cd548265c4df63be4201d6fa42c1025788cc0001bd4affae"
+    },
+    {
+      "id": "ART-4F56BABB6643",
+      "path": "research/phase-2/PATTERN-ATLAS.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 43293,
+      "sha256": "a2f0faba1cb40f6a9c27761f01556bb0f429cf26d48749d995d0f46caf4aed6f"
+    },
+    {
+      "id": "ART-9EC77A857A71",
+      "path": "research/phase-2/README.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 4043,
+      "sha256": "fd0f5388ed0e3b80fadba6c5b7f81443246bcb727ae15341d4dc0f25a37db629"
+    },
+    {
+      "id": "ART-FE2D0C83A8F3",
+      "path": "research/phase-2/REFERENCE-TASTE-SYNTHESIS.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 7730,
+      "sha256": "9316df725e09929a75f8db07ed21aa584c7d433d550d43af9d9fa1535e98eeb7"
+    },
+    {
+      "id": "ART-3AEC65DCBF17",
+      "path": "research/phase-2/THREE-DIRECTION-BRIEF.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 7783,
+      "sha256": "382115ec1459eaed875312d00cce0bc36e0fc72930adc3e03b2c9c57f535a276"
+    },
+    {
+      "id": "ART-8FDCF2383B89",
+      "path": "research/phase-2/TR-0-STATUS.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 1376,
+      "sha256": "aeab88ff53486d8d377688e9ce523cb8e8ca07e07b82a9befa074e8acc8ca662"
+    },
+    {
+      "id": "ART-446BEF077816",
+      "path": "research/phase-2/calibration/HUMAN-REVIEW-PACKET.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 1476,
+      "sha256": "ae1ffd3d05346364ede4062a5d2c7bc0f8176a2d9392dc469b36d4de7c13527f"
+    },
+    {
+      "id": "ART-56C0D3F7824A",
+      "path": "research/phase-2/calibration/README.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 2521,
+      "sha256": "c4220825e39903726908d9353d432dcab6975ebfc2473859fbb0eef2032cad28"
+    },
+    {
+      "id": "ART-14768525F591",
+      "path": "research/phase-2/calibration/calibration.css",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "css",
+      "bytes": 18220,
+      "sha256": "bcd9ed2017a12fd5455ef77f79265a732210de9e3c000bc09b91a562668d72e7"
+    },
+    {
+      "id": "ART-E153DD785ABC",
+      "path": "research/phase-2/calibration/calibration.js",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "js",
+      "bytes": 13769,
+      "sha256": "89326ddec2af4a673cbe344d809cebef16db1f51fe6b5b5594a8ac02978f6bd0"
+    },
+    {
+      "id": "ART-2DF8527A3371",
+      "path": "research/phase-2/calibration/index.html",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "html",
+      "bytes": 6671,
+      "sha256": "cc3ae567db7ab3eff70b360b3c1bc9cd1a43855d4114278eb3a8b18b6916c5bb"
+    },
+    {
+      "id": "ART-040E22A79A70",
+      "path": "research/phase-2/calibration/invalid-pilot/INVALID-PILOT.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 2372,
+      "sha256": "7e1c93068ac00db40d30f19f3a5f8b99fba28c36c7c38360b746d093b23bfbbb"
+    },
+    {
+      "id": "ART-08DC0DAE00FA",
+      "path": "research/phase-2/calibration/invalid-pilot/round-01-preference-log.jsonl",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "jsonl",
+      "bytes": 5702,
+      "sha256": "623c3f81b084bbb9e64dac37d1a12af4b9a34b6f4bf0dc80b5fca90953a51786"
+    },
+    {
+      "id": "ART-74C1D3938EA6",
+      "path": "research/phase-2/calibration/preference-log.schema.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 2059,
+      "sha256": "23e6f241a09dddca536d027c41560adfe8b12f4135e47ced6ca1138a372797f2"
+    },
+    {
+      "id": "ART-53EA65C6C970",
+      "path": "research/phase-2/calibration/qa/tr5-desktop.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 133765,
+      "sha256": "0e1f4668bb78b21c0bc913683e3932ba7c457e32c93c552a4bfef9e5c38239ba"
+    },
+    {
+      "id": "ART-26CDE0F38B6E",
+      "path": "research/phase-2/calibration/qa/tr5-mobile.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 112905,
+      "sha256": "33c0a87aa9b5af545904a68b787034833b28af9398a5e8cd711fc3015cb689cd"
+    },
+    {
+      "id": "ART-5F82EF493B08",
+      "path": "research/phase-2/calibration/specs/pairs-01-04.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 27538,
+      "sha256": "478a96776ee0a80f14c63cb5b20b1ba7ba79ff131486385f10a983fcdb08bdac"
+    },
+    {
+      "id": "ART-86E8CF66CA74",
+      "path": "research/phase-2/calibration/specs/pairs-05-08.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 20179,
+      "sha256": "1ea7924b4fd208f56756412d597995975ac6aa098f2cb735224c2d96ae2e30d7"
+    },
+    {
+      "id": "ART-1A44D0AC1A3A",
+      "path": "research/phase-2/calibration/specs/pairs-09-12.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 18313,
+      "sha256": "af33896cd9fd79f4dbec4fd391bfc7612915934f660c1145b358db20a56e5291"
+    },
+    {
+      "id": "ART-8173E85391D1",
+      "path": "research/phase-2/comparative-matrix.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 29129,
+      "sha256": "2d49683f83ea6b4d6533e858bce16806a213799e2d8230bb32b1fa569b384489"
+    },
+    {
+      "id": "ART-CC1F155C2B0A",
+      "path": "research/phase-2/directions/README.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 1104,
+      "sha256": "2b495443ac0ce5a18d985932009788ad1323852c2ad61c11ef7481b7f205ed64"
+    },
+    {
+      "id": "ART-08CBEA1C7E38",
+      "path": "research/phase-2/directions/assets/human-systems-editorial-01.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 1887287,
+      "sha256": "700f8726c685fd86dde85908658799bd2412adf3670a7cf8e63dafdd26b23e3d"
+    },
+    {
+      "id": "ART-81F0A9EB9DD8",
+      "path": "research/phase-2/directions/direction-review.schema.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 1651,
+      "sha256": "825721cd910ff380760897e1dcf4d16f1fff5fe4ba98083dded7ebc3babbaa7e"
+    },
+    {
+      "id": "ART-E749C6B56899",
+      "path": "research/phase-2/directions/directions.css",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "css",
+      "bytes": 38147,
+      "sha256": "3fd433947d87a74f413101258e7d68e866a23af72dbc5eddea52934c2c6e3372"
+    },
+    {
+      "id": "ART-DEB271FBD49E",
+      "path": "research/phase-2/directions/directions.js",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "js",
+      "bytes": 7251,
+      "sha256": "c229a895adba29da233773bcd4f3c5082baa9354a2f96278db14e43220d5f229"
+    },
+    {
+      "id": "ART-0AA71A22CA3B",
+      "path": "research/phase-2/directions/index.html",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "html",
+      "bytes": 20182,
+      "sha256": "77648477d70d13bbb49c3be4fa6485d16cc76d15917f6629acdc075e9f141cd0"
+    },
+    {
+      "id": "ART-A67E0D15E9FC",
+      "path": "research/phase-2/directions/invalid-round/INVALID-ROUND.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 6163,
+      "sha256": "6e8bb2cadd88bf1d32db708cb8e39150ed00e9d166ba0fc5c284852f91d0a12d"
+    },
+    {
+      "id": "ART-F7AC08875E59",
+      "path": "research/phase-2/directions/invalid-round/olli-2026-07-20.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 1164,
+      "sha256": "ff88f0999e300919fc6428d14bc0fc3f0eca5cbd33cb03c7c6743c9be9ee0aba"
+    },
+    {
+      "id": "ART-09C4E0EC6003",
+      "path": "research/phase-2/directions/qa/direction-a-desktop.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 643152,
+      "sha256": "8c2d5dcf5381f08abd85b7f70244c3d6cb0325c9af66052af422c700b76272b3"
+    },
+    {
+      "id": "ART-9B50A1A9FD3E",
+      "path": "research/phase-2/directions/qa/direction-a-mobile.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 376005,
+      "sha256": "bfa99be24d784d381b6c3ad21934ce6c3675d00a1a44dc1c6cb465272a764c94"
+    },
+    {
+      "id": "ART-875207A5407C",
+      "path": "research/phase-2/directions/qa/direction-b-desktop.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 366864,
+      "sha256": "ff7eeb010ce2a72edd7c649a28a86b68ce61824a5364e72c412cccdbe4c46289"
+    },
+    {
+      "id": "ART-7FB688AA188D",
+      "path": "research/phase-2/directions/qa/direction-c-desktop.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 961938,
+      "sha256": "24ea7771867e61715222c523e6834cb95507556335dd748905d57d9a29558f68"
+    },
+    {
+      "id": "ART-EFD41ED0556E",
+      "path": "research/phase-2/evidence/README.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 802,
+      "sha256": "634204954a31df557aa6d52ce02be0ef58ea6306f84c8a6e53edbc8de140249f"
+    },
+    {
+      "id": "ART-B753A407EEC5",
+      "path": "research/phase-2/evidence/SRC-ELEVENLABS.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 20880,
+      "sha256": "9cd19d9d558f87aceca6ff43521a80098bc537ff7ecff14928157de769eb125e"
+    },
+    {
+      "id": "ART-E1BB4865522F",
+      "path": "research/phase-2/evidence/SRC-LINEAR.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 17380,
+      "sha256": "b1a35d24f8d36a8afd43355ca00824b4c52ac517b37a58b175875d56335e741b"
+    },
+    {
+      "id": "ART-90C1ED7437E0",
+      "path": "research/phase-2/evidence/SRC-NOTION.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 26705,
+      "sha256": "5f7f31fc378f419786d5d39493f00ae03e7dcd9b0230c552920560dde6087a65"
+    },
+    {
+      "id": "ART-BB8BBE3401C2",
+      "path": "research/phase-2/evidence/SRC-RAMP.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 18862,
+      "sha256": "50af15003cc01c60969e3936c57c261d01a603a78acbe37d31125cfcc80da6ec"
+    },
+    {
+      "id": "ART-AEDECF20CE8E",
+      "path": "research/phase-2/evidence/SRC-STRIPE.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 16987,
+      "sha256": "c97f2ac2723d1e76e4df0161d03fa475689b63a24c95eb739b4610d57eeed08f"
+    },
+    {
+      "id": "ART-499C760C2227",
+      "path": "research/phase-2/homepage-studio/README.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 4491,
+      "sha256": "c3790edc396653a154a618f2f847f10482adc4feb1a0c4a2f0e494066bc2fb6a"
+    },
+    {
+      "id": "ART-1B69A8727DAA",
+      "path": "research/phase-2/homepage-studio/assets/README.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 1018,
+      "sha256": "1f7da2c04485377a4582a9864893b2895846838aef1a5e1af928565646497d5e"
+    },
+    {
+      "id": "ART-2697A13F6865",
+      "path": "research/phase-2/homepage-studio/assets/logos/claude.svg",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "svg",
+      "bytes": 1696,
+      "sha256": "a3101f3047a119aa11825ad9369510f0c472428c8c52d420e31bc62db44a8364"
+    },
+    {
+      "id": "ART-054D3492AF38",
+      "path": "research/phase-2/homepage-studio/assets/logos/gemini.svg",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "svg",
+      "bytes": 2824,
+      "sha256": "91b9308bdb6b58cb272860b73fd55521427f5006bab0d348d52a902d2d03a2fb"
+    },
+    {
+      "id": "ART-1E312189E144",
+      "path": "research/phase-2/homepage-studio/assets/logos/notion.svg",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "svg",
+      "bytes": 1139,
+      "sha256": "8ada8628489d6e2900ebf21d3643fe5d4566d0e59aba95a3df15b710caa00743"
+    },
+    {
+      "id": "ART-4952E11B2733",
+      "path": "research/phase-2/homepage-studio/assets/logos/openai.svg",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "svg",
+      "bytes": 1687,
+      "sha256": "a595df6b423920c67a7f8f73c063e4bfb72d415948097b6cac063a2366bb5186"
+    },
+    {
+      "id": "ART-C6CAD8BC1F14",
+      "path": "research/phase-2/homepage-studio/assets/proof/operating-portal.jpg",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "jpg",
+      "bytes": 181256,
+      "sha256": "cb82af9987c68a63fe1acbe9ed7519df7ba0f488cd5940685486b5827e33374b"
+    },
+    {
+      "id": "ART-37995A45D5B1",
+      "path": "research/phase-2/homepage-studio/assets/proof/project-system.jpg",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "jpg",
+      "bytes": 133874,
+      "sha256": "adf5fb0df28f53ad0246160dca5a9168a6cd450e360f79d601b541a9a447c0a3"
+    },
+    {
+      "id": "ART-CC64D1A8BC14",
+      "path": "research/phase-2/homepage-studio/assets/proof/sop-library.jpg",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "jpg",
+      "bytes": 151112,
+      "sha256": "1d741e5d512f7e16849b0f16ba909be24fc005708ef369e0db5a59f5dad09871"
+    },
+    {
+      "id": "ART-E36525851CF4",
+      "path": "research/phase-2/homepage-studio/homepage-foundation-review.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 3151,
+      "sha256": "54723bc965fe7d99a52506db3b4dd8bc6ff573876265491b01bcee3967e1364a"
+    },
+    {
+      "id": "ART-634E2AB7F56D",
+      "path": "research/phase-2/homepage-studio/homepage-foundation-review.schema.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 2410,
+      "sha256": "4bf892d6b5e6ed9d91b8cfbaf0df1bba0528c277d8113bf48820ee5c1caa69fb"
+    },
+    {
+      "id": "ART-57D3A59A720E",
+      "path": "research/phase-2/homepage-studio/homepage-synthesis-review.schema.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 1969,
+      "sha256": "54f36bbd449a33126f882f8ce5e36bf569b0657dad346176a5fa035e5c98fa75"
+    },
+    {
+      "id": "ART-FCC2660E3E2B",
+      "path": "research/phase-2/homepage-studio/index.html",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "html",
+      "bytes": 15016,
+      "sha256": "b21bfd16414c41fed232644d21d97e1533914c77589e032d746020dd82e453c4"
+    },
+    {
+      "id": "ART-674DBE5C057E",
+      "path": "research/phase-2/homepage-studio/qa/kinetic-shelf-desktop.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 304184,
+      "sha256": "552364125cecc023c2792bb9ca49f76f50d7b548ae3a8eb5ff0222cebfed3097"
+    },
+    {
+      "id": "ART-0CC1CBEA683A",
+      "path": "research/phase-2/homepage-studio/qa/kinetic-shelf-mobile-final.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 108995,
+      "sha256": "ca74e637052f763df7dcd7fd36ddc14ce256421f3f59b6842d97f27c7d5e4e18"
+    },
+    {
+      "id": "ART-9B09D241D6EF",
+      "path": "research/phase-2/homepage-studio/qa/kinetic-shelf-products-final.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 359191,
+      "sha256": "9ae673adfead9214f51b6a92b06d621cd64066847436f9e2105746825446d4e9"
+    },
+    {
+      "id": "ART-728667FD03D0",
+      "path": "research/phase-2/homepage-studio/qa/kinetic-shelf-products.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 7767,
+      "sha256": "52d8c2933bd3d17b9b9dae23fd23f93d40f3da785da6cb0d3dde98f4d8e6e375"
+    },
+    {
+      "id": "ART-B97E59B1EAC2",
+      "path": "research/phase-2/homepage-studio/qa/layered-clarity-desktop.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 141513,
+      "sha256": "0bf4fa4f556b94ef2346786749602f62b615740fcad26e26cfd608569c2e8742"
+    },
+    {
+      "id": "ART-B32141CC19AB",
+      "path": "research/phase-2/homepage-studio/qa/layered-clarity-ethos-cdp.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 78347,
+      "sha256": "bcbe3cc610ae238cf71d14a4aa90411f47ffe8dfa0d10ca5edc03c05fd2a3be7"
+    },
+    {
+      "id": "ART-AFB8CBCFCCCE",
+      "path": "research/phase-2/homepage-studio/qa/layered-clarity-ethos.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 7767,
+      "sha256": "52d8c2933bd3d17b9b9dae23fd23f93d40f3da785da6cb0d3dde98f4d8e6e375"
+    },
+    {
+      "id": "ART-CD2D3506C489",
+      "path": "research/phase-2/homepage-studio/qa/soft-infrastructure-desktop.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 207948,
+      "sha256": "b9cbd5389ea2bdcaa74e4978d74b36b7f1bad218a41fd62b101a4753462f245d"
+    },
+    {
+      "id": "ART-FBF0632C0A0A",
+      "path": "research/phase-2/homepage-studio/qa/synthesis-ai-os.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 84012,
+      "sha256": "87ccc87f2b05e2f8b6828ff8b86ba2e62993c669752880aff7d9a91d9ebf7424"
+    },
+    {
+      "id": "ART-330DA50EB2BC",
+      "path": "research/phase-2/homepage-studio/qa/synthesis-desktop-top.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 68986,
+      "sha256": "841d95133b95785f346f08ebd4809c70558240acc483aca28d30fb63166483ea"
+    },
+    {
+      "id": "ART-5D7CDB65AD29",
+      "path": "research/phase-2/homepage-studio/qa/synthesis-mobile-top.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 32074,
+      "sha256": "7daf6394db3ab7735a4531ceb3aa3844ebad1aae209895463dfcd0e8753c64d7"
+    },
+    {
+      "id": "ART-BA1EB300EAC6",
+      "path": "research/phase-2/homepage-studio/qa/synthesis-proof.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 97224,
+      "sha256": "55435d5f17e6b574f9a705d29e5a33a2183d6c29f5f2bfcad0daeb2cb4cc2754"
+    },
+    {
+      "id": "ART-08D1E4E97390",
+      "path": "research/phase-2/homepage-studio/qa/synthesis-systems.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 86278,
+      "sha256": "b8f7c2ab8c9ddad5e18999e2a10420599a6fec21f1527214a18393831c0f1b99"
+    },
+    {
+      "id": "ART-B84A2542AC37",
+      "path": "research/phase-2/homepage-studio/qa/system-ledger-commerce-final.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 147974,
+      "sha256": "a476a2518f95d5cc2e944ab7d0e9570bad1ef92b974b7697e482784e0323da04"
+    },
+    {
+      "id": "ART-448E743FC7DA",
+      "path": "research/phase-2/homepage-studio/qa/system-ledger-commerce.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 7767,
+      "sha256": "52d8c2933bd3d17b9b9dae23fd23f93d40f3da785da6cb0d3dde98f4d8e6e375"
+    },
+    {
+      "id": "ART-8203530B05FB",
+      "path": "research/phase-2/homepage-studio/qa/system-ledger-desktop.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 135592,
+      "sha256": "b4815f290989c265a1e7d8dcb78d83766b4a6ba6bc56d3e6f0069d5f109a979c"
+    },
+    {
+      "id": "ART-BFD5711D255D",
+      "path": "research/phase-2/homepage-studio/qa/wings-asset-verification.png",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "png",
+      "bytes": 134520,
+      "sha256": "90a669dac48fa44bfb577385cffe0d1be55f176d48d0091d1a4e2d30b2d20268"
+    },
+    {
+      "id": "ART-A1E77C84CFD3",
+      "path": "research/phase-2/homepage-studio/round-01.html",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "html",
+      "bytes": 2572,
+      "sha256": "949450cd0914eb6763ad6a1a80048419d7af4f043fa0c25c97fc7fb418e3ab3b"
+    },
+    {
+      "id": "ART-6629516E4E06",
+      "path": "research/phase-2/homepage-studio/studio.css",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "css",
+      "bytes": 33208,
+      "sha256": "e62da37cb55e6d399982690e15c1d191391a24557cafd6497704edb46894d943"
+    },
+    {
+      "id": "ART-B2622D553849",
+      "path": "research/phase-2/homepage-studio/studio.js",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "js",
+      "bytes": 17864,
+      "sha256": "8e2357c29a89a989069784f74d104f75ce1c0867ad86d498bd5a763b4daaf154"
+    },
+    {
+      "id": "ART-A7F15B7B428C",
+      "path": "research/phase-2/homepage-studio/synthesis.css",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "css",
+      "bytes": 24966,
+      "sha256": "d04c09d941cd122a4ed4835ee93489d8ed39b0af785197e6937f230939cea4ff"
+    },
+    {
+      "id": "ART-E9F5E835F0AD",
+      "path": "research/phase-2/homepage-studio/synthesis.js",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "js",
+      "bytes": 5118,
+      "sha256": "e90abff123d39b90048fcfb97ab1718075c0230889e7e2cb1c06820f49acb62c"
+    },
+    {
+      "id": "ART-A02021D624CD",
+      "path": "research/phase-2/reference-taste-profile.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 2583,
+      "sha256": "c85c549c0e1d506120bfd807f7f48371deb43d511c53692597dc3620153cb2f4"
+    },
+    {
+      "id": "ART-06AF696DEE97",
+      "path": "research/phase-2/research-questions.yaml",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "yaml",
+      "bytes": 1828,
+      "sha256": "59f11e6cb1a296b25b917026bb452b76647755dc54a5bd069fb7e3927174c41b"
+    },
+    {
+      "id": "ART-84D4267547FE",
+      "path": "research/phase-2/source-register.yaml",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "yaml",
+      "bytes": 4253,
+      "sha256": "898402598b8112bfcee87fe2d40bd39022d7a91df2f7707f938a73432d9e1562"
+    },
+    {
+      "id": "ART-A47ED1883AF1",
+      "path": "research/phase-2/taste-dimensions.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 38872,
+      "sha256": "24536eb8f6fab2ab75b9dad8985ff808584d8866713efe521c3cc816d47ac297"
+    },
+    {
+      "id": "ART-CB00BF5B3C6F",
+      "path": "research/phase-2/taste-reverse-integration.json",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "json",
+      "bytes": 954,
+      "sha256": "7ec9536e6c71e8c2f37dd29898a74e26741ef69a46e208d405c9a3534709c9f6"
+    },
+    {
+      "id": "ART-6C7338CC3B75",
+      "path": "trading-cards-fut-study/fut-teardown.md",
+      "role": "research",
+      "authoritative": false,
+      "migrationDisposition": "preserve-as-research-input",
+      "mediaType": "md",
+      "bytes": 26295,
+      "sha256": "b44532d4e2e909a932a156138323602f9daac3faaeb881dedc424ba8ef4c5746"
+    }
+  ]
+}

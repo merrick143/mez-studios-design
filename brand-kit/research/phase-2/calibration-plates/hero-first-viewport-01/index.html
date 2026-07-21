@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review the Mez Systems hero and first viewport calibration">
+  <title>Mez Systems · First viewport review</title>
+  <link rel="stylesheet" href="plate.css">
+</head>
+<body class="review-page">
+  <header class="review-header">
+    <a class="review-brand" href="hero.html" target="_blank" rel="noreferrer">
+      <img src="../../../../design-system-export/assets/wings.svg" alt="">
+      <span>Mez Systems</span>
+    </a>
+    <p>Hero and first viewport · 01</p>
+    <button class="review-open" type="button" data-open-review>Review <span data-progress>0/5</span></button>
+  </header>
+
+  <main class="review-main">
+    <section class="review-intro">
+      <div>
+        <p class="review-kicker">Next system layer</p>
+        <h1>Calibrate the opening before we build the page.</h1>
+      </div>
+      <p>This is one high-fidelity champion, not another full homepage and not three weak routes. It tests a specific first-viewport grammar with the approved Mez copy and Living Core.</p>
+    </section>
+
+    <section class="viewport-study" aria-labelledby="desktop-title">
+      <div class="study-heading">
+        <div><p>Desktop</p><h2 id="desktop-title">One proposition. One product object.</h2></div>
+        <a href="hero.html" target="_blank" rel="noreferrer">Open full size ↗</a>
+      </div>
+      <div class="desktop-frame"><iframe src="hero.html" title="Desktop Mez hero calibration"></iframe></div>
+    </section>
+
+    <section class="mobile-study" aria-labelledby="mobile-title">
+      <div class="mobile-copy">
+        <p class="review-kicker">Authored mobile</p>
+        <h2 id="mobile-title">The product stays in the opening.</h2>
+        <p>Mobile is recomposed around a shorter navigation, full-width decisions and a deliberate core crop. It does not become a pile of cards.</p>
+        <ul>
+          <li>Headline and primary action remain first.</li>
+          <li>The Living Core is visible before the next chapter.</li>
+          <li>The product caption carries availability and meaning without a card.</li>
+        </ul>
+      </div>
+      <div class="phone-frame"><iframe src="hero.html" title="Mobile Mez hero calibration"></iframe></div>
+    </section>
+
+    <section class="candidate-contract" aria-labelledby="contract-title">
+      <p class="review-kicker">Candidate contract</p>
+      <h2 id="contract-title">What this expression is actually proposing.</h2>
+      <dl>
+        <div><dt>Composition</dt><dd>Open split. No hero container. Product object may crop at the viewport edge.</dd></div>
+        <div><dt>Typography</dt><dd>One sans family. Large, direct proposition. No compulsory serif moment.</dd></div>
+        <div><dt>Controls</dt><dd>Fourteen-pixel corners. Solid primary and quiet bordered secondary. Neither is a square or a capsule.</dd></div>
+        <div><dt>Colour</dt><dd>Warm neutral chassis. MZ-G13 carries the only expressive colour.</dd></div>
+        <div><dt>Motion</dt><dd>One slow Living Core. Navigation, type, buttons and Wings remain still.</dd></div>
+        <div><dt>Refusal</dt><dd>No logo wall, no micro-label clutter, no card grid, no gradient text and no decorative dark box.</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <aside class="review-drawer" aria-hidden="true" data-review-drawer>
+    <div class="drawer-head">
+      <div><p>Human gate</p><h2>Five decisions</h2></div>
+      <button type="button" aria-label="Close review" data-close-review>×</button>
+    </div>
+    <p class="drawer-help">Advance means the mechanism moves forward, not that these values become production law.</p>
+    <form data-review-form>
+      <div data-decisions></div>
+      <label class="overall-note">Anything the controls miss<textarea rows="4" name="overallNote" placeholder="Optional. Be concrete about the visual cause."></textarea></label>
+      <button class="export-button" type="submit">Copy review JSON</button>
+      <p class="copy-state" aria-live="polite" data-copy-state></p>
+    </form>
+  </aside>
+  <button class="drawer-backdrop" type="button" aria-label="Close review" data-backdrop></button>
+
+  <script src="review.js"></script>
+</body>
+</html>

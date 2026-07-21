@@ -1,0 +1,15 @@
+{
+  "brand": "mez-systems",
+  "note": "Light monochrome. Surface V1 locked 2026-07-12 (ONE surface system, not five). The product gradient is the only colour, on products only; everything else is greyscale.",
+  "palette": [
+    { "name": "Background", "hex": "#F8F8F8", "role": "surface", "usage": "Page background / brand white. Never pure #FFFFFF." },
+    { "name": "Surface", "hex": "#F6F5F4", "role": "surface", "usage": "Recessed grey panel, subtle fills." },
+    { "name": "Card", "hex": "#FFFFFF", "role": "surface", "usage": "Cards sitting on the background." },
+    { "name": "Text", "hex": "#0D0D0D", "role": "text", "usage": "Primary text, headings, the mark. Also dark UI / buttons / bundles (near-black)." },
+    { "name": "Text 2", "hex": "#2E2E2E", "role": "text", "usage": "Body / secondary text." }
+  ],
+  "text_muted": "rgba(46,46,46,0.70)",
+  "border": "rgba(13,13,13,0.08)",
+  "gradients_note": "Products only. See gradients.json.",
+  "superseded": "Earlier holdco palette (Paper #F2F0EA / Ink Blue #16233E / Charcoal #2A2724) is retired for the digital-products system."
+}

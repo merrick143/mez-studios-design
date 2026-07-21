@@ -17,10 +17,16 @@ It preserves the original Play Orb as a protected benchmark while imported syste
 remain pinned to a named canonical commit.
 
 - `/brand-kit/` the programme and live comparison workbench
+- `/brand-kit/START-HERE.md` the canonical entrypoint for humans and LLMs
+- `/brand-kit/docs/CURRENT-STATE.md` the exact completed-versus-open boundary
+- `/brand-kit/docs/ROADMAP.md` the active execution sequence
+- `/brand-kit/docs/END-TO-END-ROADMAP.md` the complete audit and big end-to-end plan
 - `/brand-kit/docs/MIGRATION-PLAN.md` the full authority-transfer plan
 - `/brand-kit/authority/authority.json` the two-phase canonical authority record
 - `/brand-kit/releases/0.1.0-alpha.1/` the self-contained migration snapshot
 - local candidate generation through `brand-kit/server.py`
+
+Repository skills are shared between tools from one source. Codex discovers `.agents/skills/`; Claude Code discovers `.claude/skills/`; both point to `brand-kit/skills/`.
 
 ### Play Orb · expression system (`/play-orb/`)
 

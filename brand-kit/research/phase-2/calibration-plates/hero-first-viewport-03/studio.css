@@ -1,0 +1,25 @@
+@import url("../hero-first-viewport-02/studio.css");
+
+.calibration-note {
+  width: min(1100px, 100%);
+  margin: 0 auto 120px;
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, .8fr);
+  gap: 64px;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+}
+.calibration-note > div > p { margin: 0 0 8px; color: var(--muted); font-size: 12px; }
+.calibration-note h2 { margin: 0; font-family: "Geist Display", "Mez Inter", sans-serif; font-size: clamp(28px, 3vw, 42px); font-weight: 650; letter-spacing: -.048em; line-height: 1.02; }
+.calibration-note > p { margin: 20px 0 0; color: var(--body); font-size: 15px; line-height: 1.5; }
+.desktop-study { margin-top: 0; }
+
+@media (max-width: 919px) {
+  .calibration-note { grid-template-columns: 1fr; gap: 16px; }
+  .calibration-note > p { margin-top: 0; }
+}
+
+@media (max-width: 599px) {
+  .calibration-note { margin-bottom: 80px; }
+}

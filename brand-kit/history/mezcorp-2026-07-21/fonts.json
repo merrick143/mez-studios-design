@@ -1,0 +1,18 @@
+{
+  "brand": "mez-systems",
+  "status": "locked 2026-07-10 (Notion-inspired)",
+  "default": { "family": "Inter", "source": "Google Fonts / open licence", "weights": ["Regular 400", "Medium 500", "Semi Bold 600", "Bold 700"] },
+  "serif": { "family": "Instrument Serif", "source": "Google Fonts", "use": "occasional editorial accent (italic), never body or UI" },
+  "mono": { "family": "IBM Plex Mono", "source": "Google Fonts", "use": "code, technical labels, gradient IDs" },
+  "principle": "The Notion feel is Inter run Bold for headings with negative tracking and tight leading, not the default look.",
+  "scale": [
+    { "role": "h1", "weight": 700, "size": 72, "tracking": "-3%", "leading": "100%" },
+    { "role": "h2", "weight": 700, "size": 40, "tracking": "-2.5%", "leading": "104%" },
+    { "role": "h3", "weight": 600, "size": 22, "tracking": "-1.5%", "leading": "125%" },
+    { "role": "body", "weight": 400, "size": 17, "tracking": "-1%", "leading": "150%" },
+    { "role": "button", "weight": 600, "size": 16, "tracking": "-1%" },
+    { "role": "caption", "weight": 400, "size": 13, "tracking": "-0.5%" },
+    { "role": "eyebrow", "weight": 500, "size": 12, "tracking": "+6%", "case": "uppercase" }
+  ],
+  "superseded": "SF Pro exploration retired; Inter is the locked family."
+}

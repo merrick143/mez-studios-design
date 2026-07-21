@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-IDENTITY-PRODUCT-OBJECT-02",
+  "title": "Mez product expression atlas 02",
+  "status": "motion-slice-approved-static-expressions-deferred",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "supersedes": "MEZ-IDENTITY-PRODUCT-OBJECT-01",
+  "purpose": "Resolve the static-versus-living allocation, contextual scale policy and wider AI OS expression family before hero calibration.",
+  "sourceReview": "identity-product-object-01-review.json",
+  "approvedInputs": {
+    "gradientId": "MZ-G13",
+    "gradientSource": "/Users/olivermerrick/Downloads/all-gradients/MZ-G13.png",
+    "gradientSourceSha256": "7932fb83949329ad562a13010221d2c0e6cad9f24312993acf781935547a946e",
+    "wingsAsset": "assets/wings.svg",
+    "wingsAssetSha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33",
+    "productName": "AI OS"
+  },
+  "revisionResponses": [
+    "static is the default for repeated, compact and exported uses",
+    "living is reserved for one earned focal object per viewport",
+    "hover growth and hover speed-up are removed",
+    "scale uses five contextual bands from 24 pixels through immersive crops above 1000 pixels",
+    "six individual expression modes are rendered from one variant record",
+    "stack, bundle and constellation are shown as morphology-only collection studies"
+  ],
+  "decisions": [
+    "motionAllocation",
+    "scaleBands",
+    "gradientWings",
+    "flatDisc",
+    "livingSphere",
+    "landingCard",
+    "tradingCard",
+    "productPill",
+    "collections"
+  ],
+  "decisionCount": 9,
+  "approvedSlice": {
+    "decisionId": "DEC-MOTION-002",
+    "scope": "Living Core motion, attention allocation and static fallback contract only"
+  },
+  "deferredToContext": [
+    "gradientWings",
+    "flatDisc",
+    "landingCard",
+    "tradingCard",
+    "productPill",
+    "collections"
+  ],
+  "nextGate": "hero-and-first-viewport-calibration",
+  "stopCondition": "Do not promote remaining expression morphology until it is reviewed in product-family and commerce context."
+}

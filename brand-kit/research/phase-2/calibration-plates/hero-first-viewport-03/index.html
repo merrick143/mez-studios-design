@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review Mez Systems animated card-stack hero calibration 03">
+  <title>Mez Systems · Hero review 03</title>
+  <link rel="stylesheet" href="studio.css">
+</head>
+<body>
+  <header class="review-header">
+    <a class="review-brand" href="hero.html" target="_blank" rel="noreferrer">
+      <img src="../../../../design-system-export/assets/wings.svg" alt="">
+      <span>Hero calibration 03</span>
+    </a>
+    <p>Living product-card opening</p>
+    <button class="review-trigger" type="button" data-open-review>Review <span data-progress>0/6</span></button>
+  </header>
+
+  <main>
+    <section class="review-intro">
+      <h1>Now the product family becomes the hero.</h1>
+      <p>This keeps the cleaner direction from Hero 02, then adds the expression it was missing: five equal-size product cards, one controlled stack and four real Living Core textures.</p>
+    </section>
+
+    <section class="calibration-note" aria-labelledby="rule-title">
+      <div>
+        <p>Calibration exception</p>
+        <h2 id="rule-title">Four living cards are on screen to test the family, not to set a production default.</h2>
+      </div>
+      <p>The current production rule still defaults to one animated core per viewport. Context Engine stays neutral because inventing a gradient would create false identity.</p>
+    </section>
+
+    <section class="desktop-study" aria-labelledby="desktop-title">
+      <div class="section-heading">
+        <div>
+          <p>Desktop viewport</p>
+          <h2 id="desktop-title">One proposition. One living family.</h2>
+        </div>
+        <a href="hero.html" target="_blank" rel="noreferrer">Open full size <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="desktop-frame">
+        <iframe src="hero.html" title="Desktop Mez Systems animated card-stack hero"></iframe>
+      </div>
+    </section>
+
+    <section class="mobile-study" aria-labelledby="mobile-title">
+      <div class="mobile-copy">
+        <p>Mobile viewport</p>
+        <h2 id="mobile-title">The full deck survives the small screen.</h2>
+        <div class="mobile-principles">
+          <span>All five products visible</span>
+          <span>Equal card dimensions</span>
+          <span>Centred AI OS anchor</span>
+          <span>Full-width primary action</span>
+        </div>
+      </div>
+      <div class="phone-frame">
+        <iframe src="hero.html" title="Mobile Mez Systems animated card-stack hero"></iframe>
+      </div>
+    </section>
+
+    <section class="review-callout">
+      <h2>Is this the expressive homepage opening Hero 02 was missing?</h2>
+      <p>Judge the card stack, living textures and mobile composition independently. Approval still grants no production authority.</p>
+      <button class="button-primary" type="button" data-open-review>Open the review</button>
+    </section>
+  </main>
+
+  <aside class="review-drawer" aria-hidden="true" data-review-drawer>
+    <div class="drawer-heading">
+      <div><p>Human gate</p><h2>Hero decisions</h2></div>
+      <button type="button" aria-label="Close review" data-close-review>×</button>
+    </div>
+    <p class="drawer-help">This is a focused expression revision. Judge what is actually visible rather than the future full homepage.</p>
+    <form data-review-form>
+      <div data-decisions></div>
+      <label class="overall-note">Anything the decisions miss<textarea rows="4" name="overallNote" placeholder="Optional. Point to the visual cause."></textarea></label>
+      <button class="export-button" type="submit">Copy review JSON</button>
+      <p class="copy-state" aria-live="polite" data-copy-state></p>
+    </form>
+  </aside>
+  <button class="drawer-backdrop" type="button" aria-label="Close review" data-backdrop></button>
+
+  <script src="review.js"></script>
+</body>
+</html>

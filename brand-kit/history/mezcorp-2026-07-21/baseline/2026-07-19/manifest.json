@@ -1,0 +1,995 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-20T05:32:49.339161+00:00",
+  "baselineDate": "2026-07-19",
+  "repositoryState": {
+    "path": "/Users/olivermerrick/mezcorp_claude_code",
+    "branch": "main",
+    "commit": "c3007c75a4a38182b7c9e53328003bdd9610d2f7",
+    "workingTree": "dirty"
+  },
+  "artifactRegister": {
+    "path": "governance/artifact-register.json",
+    "sha256": "264912ef69a80bb4623ebb80558f5cc214e86733bf47a45e2917368ba04e49a7",
+    "artifactCount": 330
+  },
+  "observations": {
+    "path": "baseline/2026-07-19/observations.json",
+    "sha256": "f9f677a0fbac4084018a2d9b7b98326eab603104314576726621dec26f988ea1",
+    "data": {
+      "schemaVersion": "1.0.0",
+      "capturedAt": "2026-07-19T15:55:00+10:00",
+      "packRepository": {
+        "path": "/Users/olivermerrick/mezcorp_claude_code",
+        "branch": "main",
+        "head": "c3007c75a4a38182b7c9e53328003bdd9610d2f7",
+        "workingTree": "dirty",
+        "scopeNote": "Unrelated user changes are preserved. The Phase 0 files are isolated under the Mez Systems pack."
+      },
+      "websiteConsumer": {
+        "path": "/Users/olivermerrick/Desktop/mez-studios/landing-pages/apps/ceos-notion-landingpage",
+        "branch": "codex/mez-systems-design-system",
+        "head": "cc4f3abc145fc7bdd96e67ab1eb06d038923a997",
+        "remote": "https://github.com/mezcorp-studio/ceos-notion-landingpage.git",
+        "workingTree": "dirty-untracked-existing",
+        "claimedCommitPresentOnBranch": false,
+        "checkedCommit": "5a3b702",
+        "expectedPaths": {
+          "docs/mez-design-system": false,
+          "src/styles/mez-tokens.css": false,
+          "src/components/home": false,
+          "components/home": false
+        },
+        "conclusion": "Treat as a migration candidate, not evidence of a completed integration."
+      },
+      "figma": {
+        "fileKey": "HU0GVaDhatjWrKCiSg3wlU",
+        "topLevelPages": [
+          {
+            "id": "0:1",
+            "name": "Playground for ideas - branding"
+          }
+        ],
+        "directNodeChecks": [
+          {
+            "id": "149:30",
+            "name": "Mez Systems \u2014 Brand System",
+            "result": "accessible",
+            "notes": "Contains the system reference and numbered channel sections through Commerce in the returned metadata."
+          },
+          {
+            "id": "149:31",
+            "name": "The system \u00b7 reference",
+            "result": "accessible",
+            "variableDefinitions": 0
+          },
+          {
+            "id": "312:57",
+            "name": "MZ Gradient Library \u00b7 raw",
+            "result": "present-under-playground"
+          }
+        ],
+        "librariesAdded": [
+          "Material 3 Design Kit",
+          "Simple Design System",
+          "iOS 18 and iPadOS 18"
+        ],
+        "mezLibrarySearchResult": "No published Mez Systems components or variables were returned. Search returned unrelated Detailed Frameworks assets.",
+        "publicationStatus": "unverified",
+        "expectedCanonicalPageVerifiedByDirectNode": true,
+        "conclusion": "The canonical page exists and is extensive, but it is omitted from the connector's top-level page listing. No variables were returned for its reference section and a published Mez library was not verified. Treat it as a visual reference, not a canonical token or component library."
+      },
+      "canvas": {
+        "server": "http://127.0.0.1:8905",
+        "pagesCaptured": 8,
+        "screenshotsCaptured": 64,
+        "viewports": [
+          "320x700",
+          "360x780",
+          "375x812",
+          "390x844",
+          "768x900",
+          "920x900",
+          "1280x900",
+          "1440x1000"
+        ],
+        "edgeCaseFindings": [
+          {
+            "page": "canvas/components.html",
+            "viewportWidth": 320,
+            "documentWidth": 334,
+            "clientWidth": 305,
+            "result": "horizontal-overflow"
+          },
+          {
+            "page": "canvas/sections.html",
+            "viewportWidth": 320,
+            "documentWidth": 347,
+            "clientWidth": 305,
+            "result": "horizontal-overflow"
+          },
+          {
+            "page": "canvas/pages/home.html",
+            "viewportWidth": 320,
+            "documentWidth": 347,
+            "clientWidth": 305,
+            "result": "horizontal-overflow"
+          },
+          {
+            "page": "canvas/pages/product-aurora.html",
+            "viewportWidth": 320,
+            "documentWidth": 347,
+            "clientWidth": 305,
+            "result": "horizontal-overflow"
+          },
+          {
+            "page": "canvas/sections.html",
+            "viewportWidth": 360,
+            "documentWidth": 347,
+            "clientWidth": 345,
+            "result": "horizontal-overflow"
+          },
+          {
+            "page": "canvas/pages/home.html",
+            "viewportWidth": 360,
+            "documentWidth": 347,
+            "clientWidth": 345,
+            "result": "horizontal-overflow"
+          },
+          {
+            "page": "canvas/pages/product-aurora.html",
+            "viewportWidth": 360,
+            "documentWidth": 347,
+            "clientWidth": 345,
+            "result": "horizontal-overflow"
+          }
+        ],
+        "captureRecords": "baseline/2026-07-19/screenshots/capture-records.json"
+      },
+      "limitations": [
+        "This baseline records structure, provenance, and representative visual evidence. It is not a full accessibility audit.",
+        "Figma metadata is a live connector observation, not an exported backup of the file.",
+        "Website evidence reflects the named checkout at capture time and does not inspect unreachable or deleted remote branches."
+      ]
+    }
+  },
+  "screenshots": [
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "documentSize": {
+        "width": 305,
+        "height": 2252
+      },
+      "path": "baseline/2026-07-19/screenshots/index-320x700.png",
+      "sha256": "9c8e7033d8709882f4ab88fef60e74e470e879e17cf5b574bb72541ee7109dfa"
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "documentSize": {
+        "width": 305,
+        "height": 9475
+      },
+      "path": "baseline/2026-07-19/screenshots/tokens-320x700.png",
+      "sha256": "4dd5fbddd5ce2cccc0828bb0cd8c7c17cf3c164b5656ca74acb79f8faeda4f9e"
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "documentSize": {
+        "width": 334,
+        "height": 14242
+      },
+      "path": "baseline/2026-07-19/screenshots/components-320x700.png",
+      "sha256": "08dc260aa3026029721d7cdfbde618f80f3a41b84ab6a3307a11b84111410d45"
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "documentSize": {
+        "width": 347,
+        "height": 10250
+      },
+      "path": "baseline/2026-07-19/screenshots/sections-320x700.png",
+      "sha256": "421bd1e5a22bb7534ca2329e222ccfd25059eedc09c2aaeba1e27f4d542a655b"
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "documentSize": {
+        "width": 347,
+        "height": 5769
+      },
+      "path": "baseline/2026-07-19/screenshots/home-320x700.png",
+      "sha256": "c6536668964fc818ee4a672646123c482e0d79b1bb08cb1f105f91332fb60d8d"
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "documentSize": {
+        "width": 347,
+        "height": 5577
+      },
+      "path": "baseline/2026-07-19/screenshots/product-aurora-320x700.png",
+      "sha256": "c4250bc43a0d6e601943aef5f9f2fe6efebba294e0e01848e9e898a85f5689d8"
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "documentSize": {
+        "width": 305,
+        "height": 2708
+      },
+      "path": "baseline/2026-07-19/screenshots/checkout-320x700.png",
+      "sha256": "8828afe6fb64f1edc80dda8bad553bb64eec0762ed7fed832be1e2d1ee3c93c5"
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "documentSize": {
+        "width": 305,
+        "height": 2653
+      },
+      "path": "baseline/2026-07-19/screenshots/email-320x700.png",
+      "sha256": "b3ba3e9f77dda74069ccdb9231a13e025db771aeefae15ba8f144a2eed768121"
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "documentSize": {
+        "width": 345,
+        "height": 2188
+      },
+      "path": "baseline/2026-07-19/screenshots/index-360x780.png",
+      "sha256": "4f7c9628bc79d5004d3a809b813217e173fa568ed75dc6f13e055745d741f6d4"
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "documentSize": {
+        "width": 345,
+        "height": 9187
+      },
+      "path": "baseline/2026-07-19/screenshots/tokens-360x780.png",
+      "sha256": "fa183b2b447942a3ad87d993fa00681a133b89f19514ff35a9e28d68c095f244"
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "documentSize": {
+        "width": 345,
+        "height": 13622
+      },
+      "path": "baseline/2026-07-19/screenshots/components-360x780.png",
+      "sha256": "27bbe07c96025453f3e5c72540a96a30e66aaee83bca390ec5b487080763d155"
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "documentSize": {
+        "width": 347,
+        "height": 10095
+      },
+      "path": "baseline/2026-07-19/screenshots/sections-360x780.png",
+      "sha256": "3eab5df5c8e3e2d29a4cd92e72c2ea84d75d58686649383ebacd8186e7608dc3"
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "documentSize": {
+        "width": 347,
+        "height": 5744
+      },
+      "path": "baseline/2026-07-19/screenshots/home-360x780.png",
+      "sha256": "51b32ac91e64e1b8edbc4f8d44af482257df5c6677d38e741e3abccdc459f10d"
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "documentSize": {
+        "width": 347,
+        "height": 5440
+      },
+      "path": "baseline/2026-07-19/screenshots/product-aurora-360x780.png",
+      "sha256": "6a957a3e1ed7af23068e4793c7d614b209c9feb1d3df6570cbc229221d953413"
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "documentSize": {
+        "width": 345,
+        "height": 2616
+      },
+      "path": "baseline/2026-07-19/screenshots/checkout-360x780.png",
+      "sha256": "cbab195dd590303520379b4c4ff952c78d5128eeb68c0a04cd77bf27dc6b4d41"
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "documentSize": {
+        "width": 345,
+        "height": 2377
+      },
+      "path": "baseline/2026-07-19/screenshots/email-360x780.png",
+      "sha256": "96ff7e5eb0e1b1d050a8c5d26016e7efa59fbc88b0e4001cb03f4bba320a148d"
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "documentSize": {
+        "width": 360,
+        "height": 2168
+      },
+      "path": "baseline/2026-07-19/screenshots/index-375x812.png",
+      "sha256": "1b74a6aac0dea6789ab7a18aae044e40decf72aa49e672e9c432ae65ed5ff36a"
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "documentSize": {
+        "width": 360,
+        "height": 9178
+      },
+      "path": "baseline/2026-07-19/screenshots/tokens-375x812.png",
+      "sha256": "872f9cf718f3f031a6d2df57cd9afdd39de9d7409f1f27967bfe1b2e4a0b355d"
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "documentSize": {
+        "width": 360,
+        "height": 13530
+      },
+      "path": "baseline/2026-07-19/screenshots/components-375x812.png",
+      "sha256": "5d03a6241f0657a3d69f2a9d34f593a64c495e3ede9f539261f03aacc4be2931"
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "documentSize": {
+        "width": 360,
+        "height": 9986
+      },
+      "path": "baseline/2026-07-19/screenshots/sections-375x812.png",
+      "sha256": "f60b0bea0c91afb5cb391a9c7bf60877fc44673e9c6df1b15e2c76a6b335c1a7"
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "documentSize": {
+        "width": 360,
+        "height": 5752
+      },
+      "path": "baseline/2026-07-19/screenshots/home-375x812.png",
+      "sha256": "dec976172c778f2dcbb7bb8d9e4ef982c43631877e563857edce041f99084711"
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "documentSize": {
+        "width": 360,
+        "height": 5356
+      },
+      "path": "baseline/2026-07-19/screenshots/product-aurora-375x812.png",
+      "sha256": "01b8ec486d9b826de19e347920c1c13e88c103c21d7d7c92bf5325495508c0ee"
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "documentSize": {
+        "width": 360,
+        "height": 2506
+      },
+      "path": "baseline/2026-07-19/screenshots/checkout-375x812.png",
+      "sha256": "406d431ee0128d0ba1b6e9dcffab05fc72c2f0ccbae510e1dc9f47d07bfe8a2d"
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "documentSize": {
+        "width": 360,
+        "height": 2273
+      },
+      "path": "baseline/2026-07-19/screenshots/email-375x812.png",
+      "sha256": "7e117291bdf2f5ef9d1fdda8b67d552b44359b4123797f8e37b266776baa287e"
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentSize": {
+        "width": 375,
+        "height": 2168
+      },
+      "path": "baseline/2026-07-19/screenshots/index-390x844.png",
+      "sha256": "9498b05d3f7259bc431ed3ae9fd4783a4b493433519edad0f5d9df277bd18732"
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentSize": {
+        "width": 375,
+        "height": 9189
+      },
+      "path": "baseline/2026-07-19/screenshots/tokens-390x844.png",
+      "sha256": "12ba38a31dce47ebd1cdcaae68ddfc9d09219c0cd59f411ea849de1fe8422c16"
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentSize": {
+        "width": 375,
+        "height": 13399
+      },
+      "path": "baseline/2026-07-19/screenshots/components-390x844.png",
+      "sha256": "6f914365e9df384cdf688c498ea5b576f43c8a23141d0847688cbc1ed511ba13"
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentSize": {
+        "width": 375,
+        "height": 9994
+      },
+      "path": "baseline/2026-07-19/screenshots/sections-390x844.png",
+      "sha256": "af8ea07a8a6f7f5c2fa64b44437505a2680880163477b048eeb3d76f6d1c530f"
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentSize": {
+        "width": 375,
+        "height": 5715
+      },
+      "path": "baseline/2026-07-19/screenshots/home-390x844.png",
+      "sha256": "f38a153ee475bf76a426a1c6c959c7d3854a90f2411823096524c1baaae9af33"
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentSize": {
+        "width": 375,
+        "height": 5314
+      },
+      "path": "baseline/2026-07-19/screenshots/product-aurora-390x844.png",
+      "sha256": "6740419bd617495091127fdda123786e5bf3cd258efa9f0227761c849dd38bfe"
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentSize": {
+        "width": 375,
+        "height": 2482
+      },
+      "path": "baseline/2026-07-19/screenshots/checkout-390x844.png",
+      "sha256": "1769837a51afe0b970c2a36512fd0ff1dde9075f5b1361e2510128f1ed2918b0"
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentSize": {
+        "width": 375,
+        "height": 2230
+      },
+      "path": "baseline/2026-07-19/screenshots/email-390x844.png",
+      "sha256": "7ff8821993e6e18d0c7fbc17ceaf12b677148528ace39c866030f01c9c12c769"
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 753,
+        "height": 1881
+      },
+      "path": "baseline/2026-07-19/screenshots/index-768x900.png",
+      "sha256": "cefdcd6ca8d86478f1495ff0da429bc9199ef31573e1c46b9a0d3d32af9f1c7b"
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 753,
+        "height": 7542
+      },
+      "path": "baseline/2026-07-19/screenshots/tokens-768x900.png",
+      "sha256": "184beb1b0d8120bacd58c7954afa4a99e51d260c4bbddad7b4110b1c510c48ac"
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 753,
+        "height": 11059
+      },
+      "path": "baseline/2026-07-19/screenshots/components-768x900.png",
+      "sha256": "a48ebab4fb1b50ba9c1049f4efcd17cd3948c54fb279cbc7e175a62cc91bbf06"
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 753,
+        "height": 10466
+      },
+      "path": "baseline/2026-07-19/screenshots/sections-768x900.png",
+      "sha256": "702948b4434cfdbb68452c413b7f3d2a7f19c7846ae853b1c901cabd4e981d25"
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 753,
+        "height": 6420
+      },
+      "path": "baseline/2026-07-19/screenshots/home-768x900.png",
+      "sha256": "3b223036a3c5f0049b4fcef13dba5bc8618036ba7921e9260057c29f4b994d5b"
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 753,
+        "height": 5138
+      },
+      "path": "baseline/2026-07-19/screenshots/product-aurora-768x900.png",
+      "sha256": "21b928f533bfeb1dafe52d223ff9fc5dec878e53ed407426d05bd0efc4c8e9dd"
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 753,
+        "height": 2262
+      },
+      "path": "baseline/2026-07-19/screenshots/checkout-768x900.png",
+      "sha256": "e521f69e9b689c65363ad5d79e7fd941380ddf5e47872fd291f157f7f968dfd8"
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 753,
+        "height": 1808
+      },
+      "path": "baseline/2026-07-19/screenshots/email-768x900.png",
+      "sha256": "b48004fd49c6b9492cc3be3aa8770f637b00900b981edbb0874a9ac74b489f40"
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 905,
+        "height": 1258
+      },
+      "path": "baseline/2026-07-19/screenshots/index-920x900.png",
+      "sha256": "d02408e95782ee1896f9f86ff9672f17259b5b6c1ea0717631a8b08638709814"
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 905,
+        "height": 5895
+      },
+      "path": "baseline/2026-07-19/screenshots/tokens-920x900.png",
+      "sha256": "0d4d81b4735d8b0924ec1ed71bb9ad98e8f698e249031941586eca237e120d8b"
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 905,
+        "height": 9215
+      },
+      "path": "baseline/2026-07-19/screenshots/components-920x900.png",
+      "sha256": "20ed18e981adb04968395987a39cad1a472b8426d35fffa3bd0faeec95386962"
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 905,
+        "height": 7721
+      },
+      "path": "baseline/2026-07-19/screenshots/sections-920x900.png",
+      "sha256": "0477a652e13de6c8bfcba5363605bb29bf0da0edcdd18db4a182f41abc240daf"
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 905,
+        "height": 4810
+      },
+      "path": "baseline/2026-07-19/screenshots/home-920x900.png",
+      "sha256": "42154839b63522af5203f142b92ba624d7fdeff532c77c3ef5f0c0fb6a0bd693"
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 905,
+        "height": 5162
+      },
+      "path": "baseline/2026-07-19/screenshots/product-aurora-920x900.png",
+      "sha256": "95b5f417654086fd3d6a0abb26541c9c8ce76886016e83910e92659a42cf4d15"
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 905,
+        "height": 2715
+      },
+      "path": "baseline/2026-07-19/screenshots/checkout-920x900.png",
+      "sha256": "edeea15afc015556c9ce2dd966cd4924fc988e6db9e517dd823a23b87b362904"
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 905,
+        "height": 2020
+      },
+      "path": "baseline/2026-07-19/screenshots/email-920x900.png",
+      "sha256": "0fe372fcdbfe2357c020f63d1b91e73c798d14a04819c7d9389fc4bcc4c7e1bd"
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 1265,
+        "height": 1275
+      },
+      "path": "baseline/2026-07-19/screenshots/index-1280x900.png",
+      "sha256": "2932c02eca8ba5c61352cbc6823b7a4883e3b632a79360b55813a2b9643ba11b"
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 1265,
+        "height": 5228
+      },
+      "path": "baseline/2026-07-19/screenshots/tokens-1280x900.png",
+      "sha256": "b13460ddf23fd606c27c48d49dea4707c4d7abacd80b8ae2ed9268d6fab86e18"
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 1265,
+        "height": 8426
+      },
+      "path": "baseline/2026-07-19/screenshots/components-1280x900.png",
+      "sha256": "8944d48df9232b4e456c9890eb61017b6d19871d1ca27d167f8b72e67bf15f16"
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 1265,
+        "height": 7129
+      },
+      "path": "baseline/2026-07-19/screenshots/sections-1280x900.png",
+      "sha256": "4e6a3717fc6a485c3d8618f05e6400b6e445663e2e790f999fd95245bf5b2128"
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 1265,
+        "height": 4293
+      },
+      "path": "baseline/2026-07-19/screenshots/home-1280x900.png",
+      "sha256": "f46e237c3a7db9f9a90d48cfd66e0ba54f3b0a15987ac30134249c953b9c23a8"
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 1265,
+        "height": 5154
+      },
+      "path": "baseline/2026-07-19/screenshots/product-aurora-1280x900.png",
+      "sha256": "d7260aaa6085291077256d91cc773946a2fa2d8d0b6501a78a5d7b0e8a4319c6"
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 1265,
+        "height": 2715
+      },
+      "path": "baseline/2026-07-19/screenshots/checkout-1280x900.png",
+      "sha256": "a3f9f9a18ea4339de288159fe0935edb131defd7eec8df62139289f20707edea"
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "documentSize": {
+        "width": 1265,
+        "height": 2020
+      },
+      "path": "baseline/2026-07-19/screenshots/email-1280x900.png",
+      "sha256": "a0cb3c759f066599997390e399c489e7849b380accbcca23d8bf9e18f1c6587a"
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentSize": {
+        "width": 1425,
+        "height": 1275
+      },
+      "path": "baseline/2026-07-19/screenshots/index-1440x1000.png",
+      "sha256": "c88248b730cd5ec2166dae80f93a0adf5af9656ee176f87534a072800955269b"
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentSize": {
+        "width": 1425,
+        "height": 5228
+      },
+      "path": "baseline/2026-07-19/screenshots/tokens-1440x1000.png",
+      "sha256": "9838f12d635702d1d8ef3a8f31693b6ee45304ecfd39e393d9d43d37a5511c84"
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentSize": {
+        "width": 1425,
+        "height": 8426
+      },
+      "path": "baseline/2026-07-19/screenshots/components-1440x1000.png",
+      "sha256": "d5d656d9112e1add6b26adeb8f13c1f72b55e670a1ad3515a4b6b7f7fced415c"
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentSize": {
+        "width": 1425,
+        "height": 7129
+      },
+      "path": "baseline/2026-07-19/screenshots/sections-1440x1000.png",
+      "sha256": "c4068b1ffba679bf304773b972f8e0f2b5683d3f4a50e1eb4e39626a9a2fc198"
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentSize": {
+        "width": 1425,
+        "height": 4293
+      },
+      "path": "baseline/2026-07-19/screenshots/home-1440x1000.png",
+      "sha256": "0072c10a722c87ba9c5a4f672b3b0c559cc76a022eac4b58ed2cdf9bb3d880fe"
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentSize": {
+        "width": 1425,
+        "height": 5154
+      },
+      "path": "baseline/2026-07-19/screenshots/product-aurora-1440x1000.png",
+      "sha256": "8bb41a2604bdb05eee26a56ae40c0ae93e8dea17a66be327e48393d5752f69d2"
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentSize": {
+        "width": 1425,
+        "height": 2715
+      },
+      "path": "baseline/2026-07-19/screenshots/checkout-1440x1000.png",
+      "sha256": "87e89649c1df9089a83995a6083df28799895c9be5ee0c257a5cfbd4c809b8f8"
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentSize": {
+        "width": 1425,
+        "height": 2020
+      },
+      "path": "baseline/2026-07-19/screenshots/email-1440x1000.png",
+      "sha256": "450209595826e470260a33a3868ebf348052b2df8e5f51b5ffdb9c15e8a9a672"
+    }
+  ],
+  "knownBaselineDefects": [
+    "DS-005",
+    "DS-006",
+    "DS-025"
+  ]
+}

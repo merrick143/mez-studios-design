@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/identity-product-object-02-review.schema.json",
+  "title": "Mez product expression atlas 02 review",
+  "type": "object",
+  "required": ["schemaVersion", "studyId", "exportedAt", "productionAuthority", "sourceExpressionApproved", "record"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "studyId": {"const": "MEZ-IDENTITY-PRODUCT-OBJECT-02"},
+    "exportedAt": {"type": "string", "format": "date-time"},
+    "productionAuthority": {"const": false},
+    "sourceExpressionApproved": {"const": false},
+    "sourceGradient": {"const": "MZ-G13"},
+    "supersedes": {"const": "MEZ-IDENTITY-PRODUCT-OBJECT-01"},
+    "record": {
+      "type": "object",
+      "required": ["decisions", "overallNote", "productionAuthority"],
+      "properties": {
+        "decisions": {
+          "type": "object",
+          "required": ["motionAllocation", "scaleBands", "gradientWings", "flatDisc", "livingSphere", "landingCard", "tradingCard", "productPill", "collections"],
+          "properties": {
+            "motionAllocation": {"$ref": "#/$defs/systemDecision"},
+            "scaleBands": {"$ref": "#/$defs/systemDecision"},
+            "gradientWings": {"$ref": "#/$defs/expressionDecision"},
+            "flatDisc": {"$ref": "#/$defs/expressionDecision"},
+            "livingSphere": {"$ref": "#/$defs/expressionDecision"},
+            "landingCard": {"$ref": "#/$defs/expressionDecision"},
+            "tradingCard": {"$ref": "#/$defs/expressionDecision"},
+            "productPill": {"$ref": "#/$defs/expressionDecision"},
+            "collections": {"$ref": "#/$defs/collectionDecision"}
+          },
+          "additionalProperties": false
+        },
+        "overallNote": {"type": "string"},
+        "productionAuthority": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "systemDecision": {"type":"object","required":["decision","note"],"properties":{"decision":{"enum":["lock","edit","reject"]},"note":{"type":"string"}},"additionalProperties":false},
+    "expressionDecision": {"type":"object","required":["decision","note"],"properties":{"decision":{"enum":["allow","edit","drop"]},"note":{"type":"string"}},"additionalProperties":false},
+    "collectionDecision": {"type":"object","required":["decision","note"],"properties":{"decision":{"enum":["advance","edit","drop"]},"note":{"type":"string"}},"additionalProperties":false}
+  }
+}

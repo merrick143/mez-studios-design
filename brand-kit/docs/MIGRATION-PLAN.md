@@ -1,6 +1,6 @@
 # Standalone brand-kit migration plan
 
-Status: Phase 2 canonical cutover complete; Phase 3 foundations next
+Status: canonical cutover complete; knowledge transfer and branch normalisation in progress; foundations next
 
 Target repository: `mez-studios-design`
 
@@ -147,12 +147,15 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Migration snapshot validates from a clean clone at `698152e`.
 - [x] Canonical authority cut over through `CUTOVER-2026-07-21-01`.
 - [x] Activated authority validates from a clean clone at `19f1570`.
-- [ ] Geist asset and updated typography release complete.
-- [ ] Foundation tokens and responsive tests pass.
-- [ ] Product-expression suite approved.
 - [x] Migration identity release validates in isolation.
-- [ ] One consumer ingests the release successfully.
 - [x] Migration-first authority sequence approved.
 - [x] Both recovery branches pushed and recoverable.
+- [x] Complete audit, roadmap, research, decision evidence and LLM contracts transferred.
+- [x] Claude Code and Codex discovery adapters resolve one canonical repository skill.
+- [x] Post-migration foundations, expressions and consumer proof removed from the migration-close gate.
+- [ ] Target migration branch merged to `mez-studios-design/main` and authority normalised to `main`.
 - [ ] Internal design branch merged through a clean worktree.
+- [ ] Everyday Mezcorp changes classified and protected before switching that checkout.
 - [ ] Old worktrees removed only after verification.
+
+Typography, foundation tokens, the product-expression suite and consumer proof remain required roadmap outcomes. They are deliberately not migration-branch blockers under `DEC-MIGRATION-SEQUENCE-001`.

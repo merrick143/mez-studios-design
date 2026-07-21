@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "cutoverId": "CUTOVER-2026-07-21-01",
+  "status": "activated-archive-confirmed",
+  "currentAuthority": {
+    "repository": "merrick143/mezcorp-claudecode",
+    "branch": "codex/mez-gradient-system",
+    "path": "departments/cmo/brand-library/brands/mez-systems",
+    "rollbackCommit": "822aa91",
+    "rank": null,
+    "effectiveUntil": "Completed when target commit 19f1570 activated the matching authority manifest."
+  },
+  "preparedTarget": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-workbench",
+    "path": "brand-kit",
+    "preparedCommit": "3f985dc",
+    "activationCommit": "19f1570fd8943c4aa7a031f3d5c65c203346366b",
+    "activationProofCommit": "6b1f0c4",
+    "validatedSnapshotCommit": "698152ede765958e0e35323652a0dccc0470afde",
+    "release": "0.1.0-alpha.1",
+    "cleanCloneProof": "brand-kit/authority/clean-clone-proof.json",
+    "authorityManifest": "brand-kit/authority/authority.json"
+  },
+  "activationEffect": {
+    "thisPackState": "pinned-archive-and-consumer-reference",
+    "thisPackRank": null,
+    "writesAllowed": ["rollback evidence", "consumer pin updates", "historical corrections that do not create brand rules"],
+    "newAuthority": "merrick143/mez-studios-design/codex/brand-kit-workbench:brand-kit"
+  },
+  "rollback": {
+    "commit": "822aa91",
+    "record": "merrick143/mez-studios-design:brand-kit/authority/rollback.json",
+    "requiresDecision": true
+  },
+  "productionAuthority": false,
+  "note": "The matching target activation exists and passed clean-clone validation. This pack is now a pinned archive, rollback source and consumer reference. It may not create new Mez Systems brand rules."
+}

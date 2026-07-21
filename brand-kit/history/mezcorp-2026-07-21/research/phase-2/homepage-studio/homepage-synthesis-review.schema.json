@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/homepage-synthesis-review.schema.json",
+  "title": "Mez Systems coherent homepage synthesis review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "studyId", "exportedAt", "productionAuthority", "sourceExpressionApproved", "sourceReview", "record"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "studyId": {"const": "MEZ-HOMEPAGE-SYNTHESIS-01"},
+    "exportedAt": {"type": "string", "format": "date-time"},
+    "productionAuthority": {"const": false},
+    "sourceExpressionApproved": {"const": false},
+    "sourceReview": {"const": "MEZ-HOMEPAGE-FOUNDATION-STUDIO-01"},
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overall", "note", "annotations", "productionAuthority"],
+      "properties": {
+        "overall": {"enum": ["", "refine this system", "useful details only", "rebuild"]},
+        "note": {"type": "string"},
+        "productionAuthority": {"const": false},
+        "annotations": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "hero": {"$ref": "#/$defs/annotation"},
+            "problem": {"$ref": "#/$defs/annotation"},
+            "principle": {"$ref": "#/$defs/annotation"},
+            "proof": {"$ref": "#/$defs/annotation"},
+            "ai-os": {"$ref": "#/$defs/annotation"},
+            "systems": {"$ref": "#/$defs/annotation"},
+            "bundle": {"$ref": "#/$defs/annotation"},
+            "final": {"$ref": "#/$defs/annotation"}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reaction", "note"],
+      "properties": {
+        "reaction": {"enum": ["keep", "change", "too much", "too plain", "not Mez"]},
+        "note": {"type": "string"}
+      }
+    }
+  }
+}

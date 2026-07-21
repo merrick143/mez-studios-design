@@ -41,18 +41,28 @@ The static interface works on Vercel. Candidate upload and decision persistence 
 
 ```text
 brand-kit/
+├── START-HERE.md                canonical human and LLM entrypoint
+├── AGENT-GUIDE.md               shared tool-neutral operating contract
 ├── index.html                    the workbench
 ├── styles.css                    workbench presentation
 ├── app.js                        live cores, navigation and candidate review
 ├── server.py                     local candidate API and static server
 ├── source-manifest.json          provenance and conflict record
 ├── authority/                    two-phase cutover, rollback and dated evidence
-├── governance/                   imported approved decision ledger
+├── governance/                   immutable decisions plus current evidence paths
 ├── registry/                     generated products, gradients and assets
 ├── schemas/                      stable machine-readable contracts
 ├── docs/
-│   ├── MIGRATION-PLAN.md         safest route to the standalone repository
+│   ├── CURRENT-STATE.md          exact completed-versus-open boundary
+│   ├── ROADMAP.md                active execution sequence
+│   ├── END-TO-END-ROADMAP.md     complete audit and detailed programme
+│   ├── HANDOFF.md                fresh-session handoff
+│   ├── MIGRATION-PLAN.md         migration history and close checklist
 │   └── SOURCE-MAP.md             canonical, benchmark, snapshot and generated boundaries
+├── research/                     transferred evidence and calibration records
+├── history/                      frozen previous-pack knowledge snapshot
+├── llm/                          task, context, receipt and evaluation contracts
+├── skills/                       canonical repository-owned agent skills
 ├── source-pack/                  imported snapshot, never hand-edited here
 │   ├── products.json
 │   ├── gradients-systemized.json
@@ -66,6 +76,9 @@ brand-kit/
 ├── scripts/
 │   ├── build_claude_catalogue.py reproducible benchmark adapter
 │   ├── build_migration_release.py deterministic snapshot and registry builder
+│   ├── build_knowledge_manifest.py frozen history manifest builder
+│   ├── verify_portability.py     docs, evidence and shared-skill validator
+│   ├── verify_llm_contracts.py   model-neutral contract validator
 │   ├── verify_authority.py       authority handshake and artifact validator
 │   ├── verify_release.py         self-contained release validator source
 │   └── verify_workbench.py       deterministic boundary validation
@@ -77,6 +90,6 @@ brand-kit/
 - Do not hand-edit imported snapshot files.
 - Do not change an approved product assignment without a new recorded governance decision.
 - Do not treat the product-architecture review board as the registry. Canonical products live in `registry/products.json` and the active release.
-- Do not overwrite the Claude Code play-orb while the palette conflict is unresolved.
+- Do not overwrite the protected Claude Code play-orb benchmark.
 - Do not publish a portable release with the old Inter-only typography claim after `DEC-TYPE-001`.
 - Do not edit the authority manifest without a new recorded cutover, suspension or rollback decision.

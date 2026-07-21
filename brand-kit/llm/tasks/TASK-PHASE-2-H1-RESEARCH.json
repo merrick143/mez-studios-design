@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PHASE-2-H1-RESEARCH",
+  "title": "Prepare the first bounded research brief and H1 source panel",
+  "phase": 2,
+  "status": "complete",
+  "owner": "programme",
+  "objective": "Create a traceable, anti-copy research plan and a balanced first source panel that Olli can approve in one short review.",
+  "scope": {
+    "included": [
+      "Taste Reverse operational stabilisation and sanitised export boundary",
+      "Eight ranked research questions",
+      "Five human-selected sources at deep depth",
+      "Capture scope, evidence limitations, originality boundaries, and H1 decision packet"
+    ],
+    "excluded": [
+      "Broad source capture before H1 approval",
+      "Promotion of external expressions into Mez rules",
+      "North-star visual direction generation",
+      "Canonical token, component, Figma, or production implementation"
+    ]
+  },
+  "dependencies": ["TASK-PHASE-1-REPAIR", "DEC-BRAND-AMBITION-001", "DS-026"],
+  "inputs": {
+    "requiredFiles": [
+      "AUDIT-AND-END-TO-END-ROADMAP.md",
+      "research/phase-2/INSPIRATION-BRIEF.md",
+      "research/phase-2/research-questions.yaml",
+      "research/phase-2/source-register.yaml"
+    ],
+    "decisionIds": ["DEC-BRAND-AMBITION-001"],
+    "artifactIds": [],
+    "consumerIds": ["CON-CONTROL-PLANE-001", "CON-LLM-001"]
+  },
+  "deliverables": [
+    {"path":"research/phase-2/","acceptance":["Eight ranked questions and five approved deep sources are recorded","Each source has a study purpose, anti-copy boundary, official URL, and limitation","The amendment and its coverage trade-offs are explicit"]},
+    {"path":"governance/scripts/validate_phase_two_h1.py","acceptance":["The packet structure, source balance, question mapping, and provisional Taste Reverse boundary pass deterministically"]}
+  ],
+  "verification": [
+    {"id":"V-P2-H1","method":"command","command":"python3 governance/scripts/validate_phase_two_h1.py","passCondition":"Eight questions, five deep sources, approval evidence, anti-copy boundaries, and the provisional export contract pass."},
+    {"id":"V-P2-HUMAN","method":"human","passCondition":"Olli approves or amends the reference panel at H1."}
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H1",
+    "approver": "Olli",
+    "approvalQuestion": "Approve the reference panel, or add, remove, or hold a source?"
+  },
+  "stopConditions": [
+    "Do not begin broad evidence capture without recorded H1 approval.",
+    "Do not treat any source as a Mez visual direction or copy its signatures.",
+    "Do not describe Taste Reverse as Git-pinned until its initial repository checkpoint is approved and created."
+  ],
+  "notes": ["H1 approves research priorities only. H2 later selects or rejects cross-channel north-star directions."]
+}

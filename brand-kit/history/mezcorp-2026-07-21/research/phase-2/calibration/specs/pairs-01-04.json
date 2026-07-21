@@ -1,0 +1,529 @@
+[
+  {
+    "id": "PAIR-01",
+    "dimensionId": "TD-001",
+    "title": "Recognition resilience",
+    "oneVariable": {
+      "name": "recognitionBehaviourDistribution",
+      "optionAValue": "single generic compositional cue",
+      "optionBValue": "four coordinated non-colour behaviours",
+      "lockedVariables": [
+        "copy",
+        "content order",
+        "viewport",
+        "monochrome palette",
+        "typeface",
+        "asset count",
+        "proof data",
+        "interaction state"
+      ]
+    },
+    "constantContent": {
+      "contentId": "CAL-CONTENT-OPERATING-BRIEF-01",
+      "surface": "logo-free operating brief",
+      "eyebrow": "OPERATING BRIEF 07:40",
+      "headline": "Three workstreams need a decision.",
+      "body": "The system has prepared the evidence, marked one exception, and kept every action reversible.",
+      "workstreams": [
+        {
+          "name": "Campaign review",
+          "state": "Ready",
+          "result": "12 variants checked",
+          "owner": "Growth lead"
+        },
+        {
+          "name": "Revenue signal",
+          "state": "Verified",
+          "result": "8.4% increase",
+          "owner": "Analytics lead"
+        },
+        {
+          "name": "Release candidate",
+          "state": "Needs input",
+          "result": "1 test blocked",
+          "owner": "Engineering lead"
+        }
+      ],
+      "sourceLabel": "Evidence snapshot · 20 Jul 2026 · 07:40 AEST",
+      "primaryAction": "Review the exception",
+      "secondaryAction": "Open the full brief"
+    },
+    "constantViewport": {
+      "width": 1440,
+      "height": 1000,
+      "deviceScaleFactor": 1,
+      "colourMode": "light",
+      "motionMode": "static"
+    },
+    "question": "When obvious identifiers are removed, does distributing recognition across original Mez behaviours make the surface feel more authored and coherent than one generic compositional cue?",
+    "optionA": {
+      "label": "Fragile single-cue recognition",
+      "intent": "Establish the control condition in which recognition depends on one conventional centre panel and otherwise generic software presentation.",
+      "visualRules": [
+        "Use one centred rectangular content panel with a conventional headline, three equal rows, and actions below.",
+        "Use one spacing rhythm for every relationship.",
+        "Render every state with the same neutral label treatment.",
+        "Do not use a recurring relationship line, evidence marker, state-edge rule, or authored annotation grammar.",
+        "Keep all content monochrome and preserve the exact locked typeface, sizes, order, and viewport.",
+        "Do not add wings, names, product names, gradients, illustrations, or source-brand motifs."
+      ],
+      "copy": {
+        "contentId": "CAL-CONTENT-OPERATING-BRIEF-01",
+        "surface": "logo-free operating brief",
+        "eyebrow": "OPERATING BRIEF 07:40",
+        "headline": "Three workstreams need a decision.",
+        "body": "The system has prepared the evidence, marked one exception, and kept every action reversible.",
+        "workstreams": [
+          {
+            "name": "Campaign review",
+            "state": "Ready",
+            "result": "12 variants checked",
+            "owner": "Growth lead"
+          },
+          {
+            "name": "Revenue signal",
+            "state": "Verified",
+            "result": "8.4% increase",
+            "owner": "Analytics lead"
+          },
+          {
+            "name": "Release candidate",
+            "state": "Needs input",
+            "result": "1 test blocked",
+            "owner": "Engineering lead"
+          }
+        ],
+        "sourceLabel": "Evidence snapshot · 20 Jul 2026 · 07:40 AEST",
+        "primaryAction": "Review the exception",
+        "secondaryAction": "Open the full brief"
+      },
+      "failureRisk": "The result may be clear but anonymous, with authorship collapsing as soon as familiar software conventions are compared side by side."
+    },
+    "optionB": {
+      "label": "Distributed behavioural recognition",
+      "intent": "Test whether four original, non-colour behaviours can imply one Mez authorship without using a mark, name, product colour, or gradient.",
+      "visualRules": [
+        "Keep the same centred content footprint, typeface, type sizes, content order, asset count, and monochrome palette as option A.",
+        "Use a repeated evidence sequence of premise, workstream state, result, accountable owner, and decision.",
+        "Connect each workstream to its result and owner with one original relationship geometry based on routing and decision paths.",
+        "Use one consistent evidence marker grammar to distinguish ready, verified, and needs-input states without relying on colour.",
+        "Use a controlled editorial-to-operational spacing transition while preserving every word and the same overall footprint.",
+        "Use a recurring verification edge and exception notch as Mez-native functional behaviours, not as decoration.",
+        "Do not add wings, names, product names, gradients, illustrations, or any selected source's signature combination."
+      ],
+      "copy": {
+        "contentId": "CAL-CONTENT-OPERATING-BRIEF-01",
+        "surface": "logo-free operating brief",
+        "eyebrow": "OPERATING BRIEF 07:40",
+        "headline": "Three workstreams need a decision.",
+        "body": "The system has prepared the evidence, marked one exception, and kept every action reversible.",
+        "workstreams": [
+          {
+            "name": "Campaign review",
+            "state": "Ready",
+            "result": "12 variants checked",
+            "owner": "Growth lead"
+          },
+          {
+            "name": "Revenue signal",
+            "state": "Verified",
+            "result": "8.4% increase",
+            "owner": "Analytics lead"
+          },
+          {
+            "name": "Release candidate",
+            "state": "Needs input",
+            "result": "1 test blocked",
+            "owner": "Engineering lead"
+          }
+        ],
+        "sourceLabel": "Evidence snapshot · 20 Jul 2026 · 07:40 AEST",
+        "primaryAction": "Review the exception",
+        "secondaryAction": "Open the full brief"
+      },
+      "failureRisk": "The added behaviours may feel over-authored, resemble a selected source, or compete with the decision instead of improving recognition."
+    },
+    "relatedPatternIds": ["PAT-REC-01", "PAT-REC-02", "PAT-DEN-01"],
+    "relatedAntiPatternIds": ["AP-001", "AP-002", "AP-012", "AP-015"],
+    "evaluationPrompt": "Compare the two options without being told which is the target. Which feels more likely to belong to a coherent original system, which remains clear without a logo or colour, and which specific behaviours drive that judgement? Name any source brand the option resembles. Reject option B if recognition depends on one behaviour, comprehension falls, or three or more reviewers attribute it to the same source brand.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-02",
+    "dimensionId": "TD-002",
+    "title": "Restraint to expressiveness",
+    "oneVariable": {
+      "name": "expressiveIntensity",
+      "optionAValue": "severely restrained",
+      "optionBValue": "controlled high expression",
+      "lockedVariables": [
+        "copy",
+        "content order",
+        "grid",
+        "viewport",
+        "typeface",
+        "type scale",
+        "proof object",
+        "component geometry",
+        "interaction state"
+      ]
+    },
+    "constantContent": {
+      "contentId": "CAL-CONTENT-CAMPAIGN-DECISION-01",
+      "surface": "campaign decision page",
+      "eyebrow": "CAMPAIGN DECISION",
+      "headline": "The stronger concept is ready to ship.",
+      "body": "Concept B earned more qualified attention while keeping the approved claim intact.",
+      "comparison": {
+        "conceptA": "Clear Signal",
+        "conceptAResult": "3.1% qualified response",
+        "conceptB": "Decisive Moment",
+        "conceptBResult": "4.6% qualified response",
+        "difference": "+1.5 percentage points",
+        "verification": "Verified across 42,800 impressions"
+      },
+      "recommendation": "Ship Concept B with the approved audience and spend limit.",
+      "primaryAction": "Approve Concept B",
+      "secondaryAction": "Review the evidence"
+    },
+    "constantViewport": {
+      "width": 1440,
+      "height": 1000,
+      "deviceScaleFactor": 1,
+      "colourMode": "light",
+      "motionMode": "static"
+    },
+    "question": "How much expressive energy can the same Mez decision surface carry before proof clarity, premium restraint, family coherence, or originality begins to decline?",
+    "optionA": {
+      "label": "Severely restrained",
+      "intent": "Test the low-expression pole with visual energy carried almost entirely by hierarchy, spacing, and the evidence comparison.",
+      "visualRules": [
+        "Use the locked grid, geometry, typeface, type scale, proof object, and content order.",
+        "Use a near-monochrome palette with one low-contrast functional emphasis reserved for the recommendation.",
+        "Use no illustration, texture, pattern, glow, gradient, ambient field, or decorative motion cue.",
+        "Keep borders quiet, surfaces flat, and spacing generous.",
+        "Preserve the exact comparison and recommendation hierarchy used in option B.",
+        "Do not default to a dark developer-tool appearance or anonymous rounded-card minimalism."
+      ],
+      "copy": {
+        "contentId": "CAL-CONTENT-CAMPAIGN-DECISION-01",
+        "surface": "campaign decision page",
+        "eyebrow": "CAMPAIGN DECISION",
+        "headline": "The stronger concept is ready to ship.",
+        "body": "Concept B earned more qualified attention while keeping the approved claim intact.",
+        "comparison": {
+          "conceptA": "Clear Signal",
+          "conceptAResult": "3.1% qualified response",
+          "conceptB": "Decisive Moment",
+          "conceptBResult": "4.6% qualified response",
+          "difference": "+1.5 percentage points",
+          "verification": "Verified across 42,800 impressions"
+        },
+        "recommendation": "Ship Concept B with the approved audience and spend limit.",
+        "primaryAction": "Approve Concept B",
+        "secondaryAction": "Review the evidence"
+      },
+      "failureRisk": "The surface may feel premium but anonymous, emotionally flat, or too cautious for campaign work."
+    },
+    "optionB": {
+      "label": "Controlled high expression",
+      "intent": "Test a higher-energy Mez treatment while holding proof, layout, geometry, and content completely constant.",
+      "visualRules": [
+        "Use the identical grid, geometry, typeface, type scale, proof object, spacing measurements, and content order as option A.",
+        "Increase expression only through stronger flat-colour contrast, one original decision-field motif, bolder focal cropping, and one controlled moment of typographic contrast.",
+        "Keep the comparison figures, verification, recommendation, and actions at the same size and location as option A.",
+        "Limit the decision-field motif to the background and prevent it from carrying meaning required to understand the result.",
+        "Use no gradient, glow, orb, waveform, particles, diagonal source motif, illustrated character, physical card, or selected-source palette.",
+        "Keep accessibility contrast and the exact reading order unchanged."
+      ],
+      "copy": {
+        "contentId": "CAL-CONTENT-CAMPAIGN-DECISION-01",
+        "surface": "campaign decision page",
+        "eyebrow": "CAMPAIGN DECISION",
+        "headline": "The stronger concept is ready to ship.",
+        "body": "Concept B earned more qualified attention while keeping the approved claim intact.",
+        "comparison": {
+          "conceptA": "Clear Signal",
+          "conceptAResult": "3.1% qualified response",
+          "conceptB": "Decisive Moment",
+          "conceptBResult": "4.6% qualified response",
+          "difference": "+1.5 percentage points",
+          "verification": "Verified across 42,800 impressions"
+        },
+        "recommendation": "Ship Concept B with the approved audience and spend limit.",
+        "primaryAction": "Approve Concept B",
+        "secondaryAction": "Review the evidence"
+      },
+      "failureRisk": "Expression may overpower the evidence, imply generic AI spectacle, or introduce a motif that looks attributable to a selected source."
+    },
+    "relatedPatternIds": ["PAT-REC-01", "PAT-REC-02", "PAT-DEN-01", "PAT-PRF-01"],
+    "relatedAntiPatternIds": ["AP-002", "AP-003", "AP-011", "AP-012", "AP-015", "AP-016"],
+    "evaluationPrompt": "Rate both options for claim comprehension, evidence recall, premium quality, emotional pull, Mez authorship, and source resemblance. Choose the strongest expression level that improves preference and recognition without reducing accurate recall of the result, verification, recommendation, or action. Reject any option that requires the expressive layer to understand the proof or resembles a named source signature.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-03",
+    "dimensionId": "TD-003",
+    "title": "Editorial to operational density",
+    "oneVariable": {
+      "name": "simultaneousInformationDensity",
+      "optionAValue": "editorial calm",
+      "optionBValue": "operational inspection",
+      "lockedVariables": [
+        "copy",
+        "data",
+        "content completeness",
+        "viewport",
+        "typeface",
+        "colour palette",
+        "component family",
+        "action count",
+        "interaction state"
+      ]
+    },
+    "constantContent": {
+      "contentId": "CAL-CONTENT-WORKFLOW-EXCEPTION-01",
+      "surface": "workflow exception review",
+      "eyebrow": "WORKFLOW EXCEPTION",
+      "headline": "One release check needs human input.",
+      "body": "The build completed, seven checks passed, and the claim-source check is waiting for a decision.",
+      "summary": {
+        "workflow": "Release candidate 24.7",
+        "owner": "Engineering lead",
+        "started": "07:12 AEST",
+        "currentState": "Needs input",
+        "checksPassed": "7 of 8",
+        "affectedArtefact": "Homepage proof module"
+      },
+      "checks": [
+        "Structure · Passed",
+        "Responsive layout · Passed",
+        "Accessibility · Passed",
+        "Content schema · Passed",
+        "Evidence links · Passed",
+        "Performance budget · Passed",
+        "Visual regression · Passed",
+        "Claim source · Needs input"
+      ],
+      "exception": "The result figure is valid, but the public source date is older than the approved freshness window.",
+      "recommendation": "Replace the figure or approve a dated qualification before release.",
+      "primaryAction": "Review the source",
+      "secondaryAction": "Return to owner"
+    },
+    "constantViewport": {
+      "width": 1440,
+      "height": 1000,
+      "deviceScaleFactor": 1,
+      "colourMode": "light",
+      "motionMode": "static"
+    },
+    "question": "How should the same complete exception record be composed for editorial orientation versus operational inspection without changing its truth, actions, or content?",
+    "optionA": {
+      "label": "Editorial calm",
+      "intent": "Test a low-density composition that gives the receiver a clear narrative path while still presenting the complete record.",
+      "visualRules": [
+        "Present every locked content field in one vertical editorial sequence: premise, summary, checks, exception, recommendation, actions.",
+        "Use generous separation between the six content groups and quiet dividers within the eight-check list.",
+        "Keep one dominant reading column with a narrow source and ownership rail.",
+        "Show all eight checks as text rows without hiding, truncating, collapsing, or moving content beyond the viewport.",
+        "Use the same component family, palette, typeface, actions, and interaction state as option B.",
+        "Do not reduce density by deleting qualifiers, provenance, ownership, or exception detail."
+      ],
+      "copy": {
+        "contentId": "CAL-CONTENT-WORKFLOW-EXCEPTION-01",
+        "surface": "workflow exception review",
+        "eyebrow": "WORKFLOW EXCEPTION",
+        "headline": "One release check needs human input.",
+        "body": "The build completed, seven checks passed, and the claim-source check is waiting for a decision.",
+        "summary": {
+          "workflow": "Release candidate 24.7",
+          "owner": "Engineering lead",
+          "started": "07:12 AEST",
+          "currentState": "Needs input",
+          "checksPassed": "7 of 8",
+          "affectedArtefact": "Homepage proof module"
+        },
+        "checks": [
+          "Structure · Passed",
+          "Responsive layout · Passed",
+          "Accessibility · Passed",
+          "Content schema · Passed",
+          "Evidence links · Passed",
+          "Performance budget · Passed",
+          "Visual regression · Passed",
+          "Claim source · Needs input"
+        ],
+        "exception": "The result figure is valid, but the public source date is older than the approved freshness window.",
+        "recommendation": "Replace the figure or approve a dated qualification before release.",
+        "primaryAction": "Review the source",
+        "secondaryAction": "Return to owner"
+      },
+      "failureRisk": "Generous spacing may slow scanning, weaken relationships between state and cause, or force operational users to travel too far for a decision."
+    },
+    "optionB": {
+      "label": "Operational inspection",
+      "intent": "Test a higher-density arrangement that exposes relationships and comparison without adding or removing any content.",
+      "visualRules": [
+        "Present every locked content field in a compact inspection grid: summary rail, check matrix, exception detail, recommendation, and actions.",
+        "Use proximity and alignment to bind workflow, owner, state, affected artefact, and the failing check.",
+        "Show the same eight checks simultaneously in a two-column matrix with identical wording and reading order.",
+        "Reduce inter-group spacing and increase within-group alignment without changing typeface, type sizes, palette, component family, actions, or interaction state.",
+        "Keep the exception and recommendation visually adjacent while preserving their separate semantic roles.",
+        "Do not add controls, filters, charts, icons, values, or evidence that are absent from option A."
+      ],
+      "copy": {
+        "contentId": "CAL-CONTENT-WORKFLOW-EXCEPTION-01",
+        "surface": "workflow exception review",
+        "eyebrow": "WORKFLOW EXCEPTION",
+        "headline": "One release check needs human input.",
+        "body": "The build completed, seven checks passed, and the claim-source check is waiting for a decision.",
+        "summary": {
+          "workflow": "Release candidate 24.7",
+          "owner": "Engineering lead",
+          "started": "07:12 AEST",
+          "currentState": "Needs input",
+          "checksPassed": "7 of 8",
+          "affectedArtefact": "Homepage proof module"
+        },
+        "checks": [
+          "Structure · Passed",
+          "Responsive layout · Passed",
+          "Accessibility · Passed",
+          "Content schema · Passed",
+          "Evidence links · Passed",
+          "Performance budget · Passed",
+          "Visual regression · Passed",
+          "Claim source · Needs input"
+        ],
+        "exception": "The result figure is valid, but the public source date is older than the approved freshness window.",
+        "recommendation": "Replace the figure or approve a dated qualification before release.",
+        "primaryAction": "Review the source",
+        "secondaryAction": "Return to owner"
+      },
+      "failureRisk": "Compression may create visual overload, flatten hierarchy, or make the page feel like a generic dashboard rather than an intentional decision surface."
+    },
+    "relatedPatternIds": ["PAT-DEN-01", "PAT-DEN-02", "PAT-PRF-01", "PAT-TRU-01"],
+    "relatedAntiPatternIds": ["AP-005", "AP-010", "AP-011", "AP-016"],
+    "evaluationPrompt": "Give each option to a reviewer for the same fixed inspection time. Ask them to identify the current state, failing check, reason, affected artefact, owner, recommendation, and next action. Compare accuracy, time to answer, confidence, visual load, and perceived authorship. Prefer the density that best fits the receiver's job, not a universal winner. Reject either option if it loses a field, changes reading order, invents content, or obscures the exception.",
+    "decisionStatus": "unapproved"
+  },
+  {
+    "id": "PAIR-04",
+    "dimensionId": "TD-004",
+    "title": "Proof literalness",
+    "oneVariable": {
+      "name": "proofRepresentationLiteralness",
+      "optionAValue": "atmospheric assertion",
+      "optionBValue": "inspectable evidence chain",
+      "lockedVariables": [
+        "copy",
+        "data",
+        "content order",
+        "viewport",
+        "typeface",
+        "type scale",
+        "colour palette",
+        "component count",
+        "interaction state"
+      ]
+    },
+    "constantContent": {
+      "contentId": "CAL-CONTENT-CLAIM-PROOF-01",
+      "surface": "claim proof module",
+      "eyebrow": "VERIFIED OUTCOME",
+      "headline": "The weekly review now takes 18 minutes.",
+      "body": "The system gathers the latest work, flags missing evidence, and prepares one reviewable brief.",
+      "proof": {
+        "input": "6 project updates, 4 campaign results, 3 release checks",
+        "action": "Collect, reconcile, and flag exceptions",
+        "changedState": "One reviewable brief with 2 exceptions",
+        "result": "18-minute median review time",
+        "baseline": "64-minute median before adoption",
+        "sample": "12 weekly reviews",
+        "source": "Internal workflow log",
+        "period": "1 May to 19 Jul 2026",
+        "control": "Human approval required before distribution"
+      },
+      "primaryAction": "Inspect the evidence",
+      "secondaryAction": "View the method"
+    },
+    "constantViewport": {
+      "width": 1440,
+      "height": 1000,
+      "deviceScaleFactor": 1,
+      "colourMode": "light",
+      "motionMode": "static"
+    },
+    "question": "Does mapping the exact same claim content into an inspectable evidence chain improve understanding and trust compared with an atmospheric assertion?",
+    "optionA": {
+      "label": "Atmospheric assertion",
+      "intent": "Establish the low-literalness control using the complete proof content as supporting copy without explicitly mapping its causal and evidentiary relationships.",
+      "visualRules": [
+        "Lead with the headline and large result figure, then place all proof fields as equal-weight supporting statements in one undifferentiated panel.",
+        "Do not label the fields as input, action, changed state, result, baseline, sample, source, period, or control.",
+        "Do not draw causal connectors, state transitions, provenance links, or a review boundary.",
+        "Preserve every word, number, component, action, type size, colour, and content order used in option B.",
+        "Use no decorative product screenshot, fabricated interface, testimonial, customer logo, glow, gradient, or live-looking counter.",
+        "Keep the proof content visible in the viewport rather than hiding it behind an action."
+      ],
+      "copy": {
+        "contentId": "CAL-CONTENT-CLAIM-PROOF-01",
+        "surface": "claim proof module",
+        "eyebrow": "VERIFIED OUTCOME",
+        "headline": "The weekly review now takes 18 minutes.",
+        "body": "The system gathers the latest work, flags missing evidence, and prepares one reviewable brief.",
+        "proof": {
+          "input": "6 project updates, 4 campaign results, 3 release checks",
+          "action": "Collect, reconcile, and flag exceptions",
+          "changedState": "One reviewable brief with 2 exceptions",
+          "result": "18-minute median review time",
+          "baseline": "64-minute median before adoption",
+          "sample": "12 weekly reviews",
+          "source": "Internal workflow log",
+          "period": "1 May to 19 Jul 2026",
+          "control": "Human approval required before distribution"
+        },
+        "primaryAction": "Inspect the evidence",
+        "secondaryAction": "View the method"
+      },
+      "failureRisk": "The receiver may remember the result but miss how it was produced, what changed, how strong the sample is, or where human control sits."
+    },
+    "optionB": {
+      "label": "Inspectable evidence chain",
+      "intent": "Test whether explicit mapping of the same content makes the claim more credible and correctly understood without adding proof or visual density.",
+      "visualRules": [
+        "Lead with the identical headline and result figure, then map the same proof fields into an input, action, changed-state, and result chain.",
+        "Attach baseline, sample, source, and period directly to the result as verification metadata.",
+        "Place the human-approval control at the distribution boundary rather than treating it as footer copy.",
+        "Use the same number of components, type sizes, palette, content order, wording, actions, and total footprint as option A.",
+        "Use one original Mez evidence-marker grammar and relationship geometry that do not imitate a selected source's interface or documentation layout.",
+        "Do not add a screenshot, chart, icon, metric, testimonial, logo, animation, or claim not present in option A."
+      ],
+      "copy": {
+        "contentId": "CAL-CONTENT-CLAIM-PROOF-01",
+        "surface": "claim proof module",
+        "eyebrow": "VERIFIED OUTCOME",
+        "headline": "The weekly review now takes 18 minutes.",
+        "body": "The system gathers the latest work, flags missing evidence, and prepares one reviewable brief.",
+        "proof": {
+          "input": "6 project updates, 4 campaign results, 3 release checks",
+          "action": "Collect, reconcile, and flag exceptions",
+          "changedState": "One reviewable brief with 2 exceptions",
+          "result": "18-minute median review time",
+          "baseline": "64-minute median before adoption",
+          "sample": "12 weekly reviews",
+          "source": "Internal workflow log",
+          "period": "1 May to 19 Jul 2026",
+          "control": "Human approval required before distribution"
+        },
+        "primaryAction": "Inspect the evidence",
+        "secondaryAction": "View the method"
+      },
+      "failureRisk": "The explicit chain may feel over-engineered, create false causal certainty, or overload a claim that does not have sufficiently strong evidence."
+    },
+    "relatedPatternIds": ["PAT-PRF-01", "PAT-PRF-02", "PAT-TRU-01", "PAT-TRU-02"],
+    "relatedAntiPatternIds": ["AP-006", "AP-007", "AP-008", "AP-014", "AP-016"],
+    "evaluationPrompt": "Ask reviewers to identify the input, system action, changed state, result, baseline, sample, source, period, and human control, then rate trust and visual load. Verify that both options contain byte-for-byte equivalent copy objects. Prefer option B only if it improves accurate understanding and trust without implying stronger causality than the evidence supports. Reject any option that hides the method, changes an evidence class, or invents a live product state.",
+    "decisionStatus": "unapproved"
+  }
+]

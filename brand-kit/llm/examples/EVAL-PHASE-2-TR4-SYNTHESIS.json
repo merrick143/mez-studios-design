@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-PHASE-2-TR4-SYNTHESIS",
+  "receiptId": "RCP-PHASE-2-TR4-SYNTHESIS",
+  "evaluatedAt": "2026-07-20T08:39:00+10:00",
+  "evaluator": {"kind":"hybrid","name":"TR-4 validator plus primary-agent synthesis review"},
+  "contractChecks": [
+    {"id":"MATRIX-COVERAGE","status":"pass","evidence":"M-01 through M-07 cover RQ-01 through RQ-08 with 111 source references and 76 unique evidence IDs."},
+    {"id":"PATTERN-COVERAGE","status":"pass","evidence":"Fifteen candidate patterns cover recognition, portfolio, proof, density, motion, portability, and provenance."},
+    {"id":"ANTI-PATTERN-COVERAGE","status":"pass","evidence":"Eighteen anti-patterns record failures, signals, exceptions, repair strategies, risks, and tests."},
+    {"id":"TASTE-CALIBRATION-READINESS","status":"pass","evidence":"Eight unique dimensions include channel modulation, product modulation, evidence, tensions, tests, and H2 approval gates."},
+    {"id":"DECISION-BOUNDARY","status":"pass","evidence":"Every mechanism, pattern, and taste dimension remains explicitly unapproved."},
+    {"id":"SOURCE-RANGE","status":"warning","evidence":"The material remains grounded in a deliberately narrow five-brand software panel."}
+  ],
+  "qualityDimensions": [
+    {"id":"human-usability","score":5,"maximum":5,"evidence":"The Markdown matrix and atlases allow review without reading every source dossier."},
+    {"id":"machine-usability","score":5,"maximum":5,"evidence":"Structured JSON exposes stable IDs, fields, evidence, risks, modulation, and gates."},
+    {"id":"traceability","score":5,"maximum":5,"evidence":"All matrix and taste references resolve to known mechanisms or source evidence IDs."},
+    {"id":"originality-safety","score":5,"maximum":5,"evidence":"Exact expressions to avoid and promotion gates are explicit throughout."},
+    {"id":"decision-discipline","score":5,"maximum":5,"evidence":"No research hypothesis is promoted into brand truth or production values."},
+    {"id":"research-range","score":3,"maximum":5,"evidence":"The approved source set favours direct software relevance over broad cultural range."}
+  ],
+  "blockers": [],
+  "verdict": "pass-with-warnings",
+  "humanReviewRequired": false,
+  "notes": ["TR-4 is complete. TR-5 should minimise Olli's burden through controlled pairs and terse preference responses."]
+}

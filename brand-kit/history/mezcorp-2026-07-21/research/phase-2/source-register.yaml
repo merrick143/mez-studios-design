@@ -1,0 +1,72 @@
+schemaVersion: 1.0.0
+preparedAt: 2026-07-20
+approvedAt: 2026-07-20
+approvedBy: Olli
+approvalEvidence: User selected Notion, Linear, Stripe, ElevenLabs, and Ramp in the active Codex task.
+status: approved
+panelSize: 5
+selectionRule: All five sources receive deep study. Exact source expressions remain research-only and no source can define a Mez direction alone.
+panelLimitations:
+  - The approved panel is deliberately software-centred.
+  - It does not include a standalone mature design system, cross-category craft source, or dedicated anti-reference.
+  - Governance, accessibility, and originality gaps must be called out rather than silently inferred from the five brands.
+sources:
+  - id: SRC-NOTION
+    name: Notion
+    cohorts: [direct-competitor, craft-exemplar]
+    priority: deep
+    questions: [RQ-01, RQ-02, RQ-03, RQ-04, RQ-07]
+    officialUrls:
+      - https://www.notion.com/
+      - https://www.notion.com/en-gb/blog/updating-the-design-of-notion-pages
+    study: Modular product-family storytelling, recombinable blocks, editorial rhythm, and the connection between marketing promise and flexible product behaviour.
+    avoid: Do not inherit Notion-tuned typography, illustration mannerisms, black-and-white editorial layouts, or block compositions.
+    limitations: Public marketing and editorial evidence only. Authenticated workspace behaviour requires separately approved access.
+  - id: SRC-LINEAR
+    name: Linear
+    cohorts: [craft-exemplar]
+    priority: deep
+    questions: [RQ-01, RQ-02, RQ-03, RQ-04, RQ-06, RQ-07]
+    officialUrls:
+      - https://linear.app/homepage
+      - https://linear.app/changelog
+    study: Product and marketing coherence, controlled density, interface evidence, technical figure language, product-family organisation, and motion used to explain mechanisms.
+    avoid: Do not copy dark gradients, metallic lighting, compact developer-tool typography, figure numbering, or signature transitions.
+    limitations: Public surfaces cannot prove private workflow depth or internal design rationale.
+  - id: SRC-STRIPE
+    name: Stripe
+    cohorts: [craft-exemplar, channel-specialist]
+    priority: deep
+    questions: [RQ-01, RQ-02, RQ-03, RQ-04, RQ-05, RQ-07]
+    officialUrls:
+      - https://stripe.com/
+      - https://stripe.com/newsroom
+      - https://docs.stripe.com/
+    study: Large portfolio architecture, quantified proof, technical explanation, editorial publishing, documentation, compact hierarchy, and cross-channel range.
+    avoid: Do not copy Stripe gradients, parallelogram framing, illustration systems, or layered diagram compositions.
+    limitations: Public marketing, newsroom, documentation, and editorial evidence only.
+  - id: SRC-ELEVENLABS
+    name: ElevenLabs
+    cohorts: [craft-exemplar, channel-specialist]
+    priority: deep
+    questions: [RQ-01, RQ-02, RQ-03, RQ-04, RQ-06, RQ-07]
+    officialUrls:
+      - https://elevenlabs.io/creative
+      - https://elevenlabs.io/docs/overview/intro
+      - https://elevenlabs.io/blog
+    study: Expressive product families, literal media demos, audio and motion cues, multi-format workflows, documentation, and enterprise proof.
+    avoid: Do not copy its waveform, black-and-white composition, typography, voice-card morphology, or motion fingerprints.
+    limitations: An existing rich Taste Reverse package contains manual additions and must not be mistaken for fully automated evidence.
+  - id: SRC-RAMP
+    name: Ramp
+    cohorts: [direct-competitor, craft-exemplar, channel-specialist]
+    priority: deep
+    questions: [RQ-01, RQ-02, RQ-03, RQ-04, RQ-05, RQ-07]
+    officialUrls:
+      - https://ramp.com/platform
+      - https://ramp.com/products
+      - https://ramp.com/product-releases
+      - https://support.ramp.com/ramp-overview/
+    study: Suite architecture, finance-product density, claim-to-quantified-proof, product release communication, workflow evidence, and the translation between marketing and operational interfaces.
+    avoid: Do not copy Ramp green, card imagery, financial-dashboard composition, savings language, icon treatment, or category-specific trust cues.
+    limitations: Public marketing, release, and help-centre evidence only. Financial claims require source and date qualification.

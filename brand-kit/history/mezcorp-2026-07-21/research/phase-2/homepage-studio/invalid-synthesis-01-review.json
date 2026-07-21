@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-HOMEPAGE-SYNTHESIS-01",
+  "exportedAt": "2026-07-20T06:23:38.791Z",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "sourceReview": "MEZ-HOMEPAGE-FOUNDATION-STUDIO-01",
+  "record": {
+    "overall": "",
+    "note": "",
+    "annotations": {
+      "hero": {
+        "reaction": "change",
+        "note": "Okay I don't get these boxes in this section. Where are these fucking boxes coming from? They drive me fucking nuts. You just box it all in.\n- You've duplicated ChatGPT and Codex. Just keep Codex.\n- Change Gemini to Gemini Spark.\n- Let's add Perplexity and Manus logo as well.\n- If we can find the Hermes and the OpenClaw logos as well, that would be good.\nI think we need to rebuild the logos section we plug into as its own section.\nThis hero as well. Oh can't, can't, can't, can't! Look at the fucking Figma for the wings! What have you done? Every time you've used the wings, you've used it completely wrong. I thought we already built this rule: just use the white wings and have them positioned inside as well. Oh my god man."
+      },
+      "problem": {
+        "reaction": "change",
+        "note": "I think the visual of this doesn't make sense again. You're just showing text. I hate how you have little text, like \"rent this layer on this layer, build this once.\" I hate when you do that. Same with the little numbers. This design ethos just feels so wrong for this section. I hate it so much."
+      },
+      "principle": {
+        "reaction": "change",
+        "note": "Again with the fucking boxes, I fucking hate it. It just doesn't feel like I want to look like Eleven Labs bro. That's all I want to look like, man: Eleven Labs and Notion and Ramp."
+      },
+      "proof": {
+        "reaction": "change",
+        "note": "This is okay I think. Again the design: I hate the overlays of like number 1, 2, 3, and the text size. It just feels so fucking vibe-coded constantly."
+      },
+      "ai-os": {
+        "reaction": "change",
+        "note": "Again with the boxes, I hate how you box everything up and the color choice and stuff like that. It just fucking sucks."
+      },
+      "systems": {
+        "reaction": "change",
+        "note": "Again you're not showing the mez wings on the products when they should be there. The way these cards are designed feels so vibe-coded, with the little text and the lines. Do we not fucking have skills for good frontend design? Are you not referencing what it means to make a good design? You just constantly default to shit and waste tokens."
+      },
+      "bundle": {
+        "reaction": "change",
+        "note": "This section could be better. It's probably the best section you've done and it's funny how it's the simplest and requires the least effort. I think it can be improved. The card design system needs to be rebuilt. Again I don't know if we're rushing too early but it's nice."
+      },
+      "final": {
+        "reaction": "change",
+        "note": "This just feels fucking retarded, this section."
+      }
+    },
+    "productionAuthority": false
+  }
+}

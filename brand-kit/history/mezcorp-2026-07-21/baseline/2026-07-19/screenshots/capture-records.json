@@ -1,0 +1,1255 @@
+{
+  "capturedAt": "2026-07-19T06:08:17.014Z",
+  "supportedViewports": [
+    {
+      "width": 320,
+      "height": 700
+    },
+    {
+      "width": 360,
+      "height": 780
+    },
+    {
+      "width": 375,
+      "height": 812
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 768,
+      "height": 900
+    },
+    {
+      "width": 920,
+      "height": 900
+    },
+    {
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "records": [
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/index-320x700.png",
+      "title": "Mez Systems · Canvas",
+      "h1": "Canvas",
+      "documentSize": {
+        "width": 305,
+        "height": 2252
+      },
+      "clientSize": {
+        "width": 305,
+        "height": 700
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/tokens-320x700.png",
+      "title": "Mez Systems · Tokens",
+      "h1": "Tokens",
+      "documentSize": {
+        "width": 305,
+        "height": 9475
+      },
+      "clientSize": {
+        "width": 305,
+        "height": 700
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/components-320x700.png",
+      "title": "Mez Systems · Components",
+      "h1": "Components",
+      "documentSize": {
+        "width": 334,
+        "height": 14242
+      },
+      "clientSize": {
+        "width": 305,
+        "height": 685
+      },
+      "overflowX": true
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/sections-320x700.png",
+      "title": "Mez Systems · Sections",
+      "h1": "Sections",
+      "documentSize": {
+        "width": 347,
+        "height": 10250
+      },
+      "clientSize": {
+        "width": 305,
+        "height": 685
+      },
+      "overflowX": true
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/home-320x700.png",
+      "title": "Mez Systems · One core, four products",
+      "h1": "One system your whole business runs on",
+      "documentSize": {
+        "width": 347,
+        "height": 5769
+      },
+      "clientSize": {
+        "width": 305,
+        "height": 685
+      },
+      "overflowX": true
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/product-aurora-320x700.png",
+      "title": "Aurora · Mez Systems",
+      "h1": "Ads that run themselves",
+      "documentSize": {
+        "width": 347,
+        "height": 5577
+      },
+      "clientSize": {
+        "width": 305,
+        "height": 685
+      },
+      "overflowX": true
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/checkout-320x700.png",
+      "title": "Mez Systems · Checkout",
+      "h1": "Checkout",
+      "documentSize": {
+        "width": 305,
+        "height": 2708
+      },
+      "clientSize": {
+        "width": 305,
+        "height": 700
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/email-320x700.png",
+      "title": "Mez Systems · Email",
+      "h1": "Email",
+      "documentSize": {
+        "width": 305,
+        "height": 2653
+      },
+      "clientSize": {
+        "width": 305,
+        "height": 700
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/index-360x780.png",
+      "title": "Mez Systems · Canvas",
+      "h1": "Canvas",
+      "documentSize": {
+        "width": 345,
+        "height": 2188
+      },
+      "clientSize": {
+        "width": 345,
+        "height": 780
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/tokens-360x780.png",
+      "title": "Mez Systems · Tokens",
+      "h1": "Tokens",
+      "documentSize": {
+        "width": 345,
+        "height": 9187
+      },
+      "clientSize": {
+        "width": 345,
+        "height": 780
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/components-360x780.png",
+      "title": "Mez Systems · Components",
+      "h1": "Components",
+      "documentSize": {
+        "width": 345,
+        "height": 13622
+      },
+      "clientSize": {
+        "width": 345,
+        "height": 780
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/sections-360x780.png",
+      "title": "Mez Systems · Sections",
+      "h1": "Sections",
+      "documentSize": {
+        "width": 347,
+        "height": 10095
+      },
+      "clientSize": {
+        "width": 345,
+        "height": 765
+      },
+      "overflowX": true
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/home-360x780.png",
+      "title": "Mez Systems · One core, four products",
+      "h1": "One system your whole business runs on",
+      "documentSize": {
+        "width": 347,
+        "height": 5744
+      },
+      "clientSize": {
+        "width": 345,
+        "height": 765
+      },
+      "overflowX": true
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/product-aurora-360x780.png",
+      "title": "Aurora · Mez Systems",
+      "h1": "Ads that run themselves",
+      "documentSize": {
+        "width": 347,
+        "height": 5440
+      },
+      "clientSize": {
+        "width": 345,
+        "height": 765
+      },
+      "overflowX": true
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/checkout-360x780.png",
+      "title": "Mez Systems · Checkout",
+      "h1": "Checkout",
+      "documentSize": {
+        "width": 345,
+        "height": 2616
+      },
+      "clientSize": {
+        "width": 345,
+        "height": 780
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 360,
+        "height": 780
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/email-360x780.png",
+      "title": "Mez Systems · Email",
+      "h1": "Email",
+      "documentSize": {
+        "width": 345,
+        "height": 2377
+      },
+      "clientSize": {
+        "width": 345,
+        "height": 780
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/index-375x812.png",
+      "title": "Mez Systems · Canvas",
+      "h1": "Canvas",
+      "documentSize": {
+        "width": 360,
+        "height": 2168
+      },
+      "clientSize": {
+        "width": 360,
+        "height": 812
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/tokens-375x812.png",
+      "title": "Mez Systems · Tokens",
+      "h1": "Tokens",
+      "documentSize": {
+        "width": 360,
+        "height": 9178
+      },
+      "clientSize": {
+        "width": 360,
+        "height": 812
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/components-375x812.png",
+      "title": "Mez Systems · Components",
+      "h1": "Components",
+      "documentSize": {
+        "width": 360,
+        "height": 13530
+      },
+      "clientSize": {
+        "width": 360,
+        "height": 812
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/sections-375x812.png",
+      "title": "Mez Systems · Sections",
+      "h1": "Sections",
+      "documentSize": {
+        "width": 360,
+        "height": 9986
+      },
+      "clientSize": {
+        "width": 360,
+        "height": 812
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/home-375x812.png",
+      "title": "Mez Systems · One core, four products",
+      "h1": "One system your whole business runs on",
+      "documentSize": {
+        "width": 360,
+        "height": 5752
+      },
+      "clientSize": {
+        "width": 360,
+        "height": 812
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/product-aurora-375x812.png",
+      "title": "Aurora · Mez Systems",
+      "h1": "Ads that run themselves",
+      "documentSize": {
+        "width": 360,
+        "height": 5356
+      },
+      "clientSize": {
+        "width": 360,
+        "height": 812
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/checkout-375x812.png",
+      "title": "Mez Systems · Checkout",
+      "h1": "Checkout",
+      "documentSize": {
+        "width": 360,
+        "height": 2506
+      },
+      "clientSize": {
+        "width": 360,
+        "height": 812
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/email-375x812.png",
+      "title": "Mez Systems · Email",
+      "h1": "Email",
+      "documentSize": {
+        "width": 360,
+        "height": 2273
+      },
+      "clientSize": {
+        "width": 360,
+        "height": 812
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/index-390x844.png",
+      "title": "Mez Systems · Canvas",
+      "h1": "Canvas",
+      "documentSize": {
+        "width": 375,
+        "height": 2168
+      },
+      "clientSize": {
+        "width": 375,
+        "height": 844
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/tokens-390x844.png",
+      "title": "Mez Systems · Tokens",
+      "h1": "Tokens",
+      "documentSize": {
+        "width": 375,
+        "height": 9189
+      },
+      "clientSize": {
+        "width": 375,
+        "height": 844
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/components-390x844.png",
+      "title": "Mez Systems · Components",
+      "h1": "Components",
+      "documentSize": {
+        "width": 375,
+        "height": 13399
+      },
+      "clientSize": {
+        "width": 375,
+        "height": 844
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/sections-390x844.png",
+      "title": "Mez Systems · Sections",
+      "h1": "Sections",
+      "documentSize": {
+        "width": 375,
+        "height": 9994
+      },
+      "clientSize": {
+        "width": 375,
+        "height": 844
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/home-390x844.png",
+      "title": "Mez Systems · One core, four products",
+      "h1": "One system your whole business runs on",
+      "documentSize": {
+        "width": 375,
+        "height": 5715
+      },
+      "clientSize": {
+        "width": 375,
+        "height": 844
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/product-aurora-390x844.png",
+      "title": "Aurora · Mez Systems",
+      "h1": "Ads that run themselves",
+      "documentSize": {
+        "width": 375,
+        "height": 5314
+      },
+      "clientSize": {
+        "width": 375,
+        "height": 844
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/checkout-390x844.png",
+      "title": "Mez Systems · Checkout",
+      "h1": "Checkout",
+      "documentSize": {
+        "width": 375,
+        "height": 2482
+      },
+      "clientSize": {
+        "width": 375,
+        "height": 844
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/email-390x844.png",
+      "title": "Mez Systems · Email",
+      "h1": "Email",
+      "documentSize": {
+        "width": 375,
+        "height": 2230
+      },
+      "clientSize": {
+        "width": 375,
+        "height": 844
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/index-768x900.png",
+      "title": "Mez Systems · Canvas",
+      "h1": "Canvas",
+      "documentSize": {
+        "width": 753,
+        "height": 1881
+      },
+      "clientSize": {
+        "width": 753,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/tokens-768x900.png",
+      "title": "Mez Systems · Tokens",
+      "h1": "Tokens",
+      "documentSize": {
+        "width": 753,
+        "height": 7542
+      },
+      "clientSize": {
+        "width": 753,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/components-768x900.png",
+      "title": "Mez Systems · Components",
+      "h1": "Components",
+      "documentSize": {
+        "width": 753,
+        "height": 11059
+      },
+      "clientSize": {
+        "width": 753,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/sections-768x900.png",
+      "title": "Mez Systems · Sections",
+      "h1": "Sections",
+      "documentSize": {
+        "width": 753,
+        "height": 10466
+      },
+      "clientSize": {
+        "width": 753,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/home-768x900.png",
+      "title": "Mez Systems · One core, four products",
+      "h1": "One system your whole business runs on",
+      "documentSize": {
+        "width": 753,
+        "height": 6420
+      },
+      "clientSize": {
+        "width": 753,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/product-aurora-768x900.png",
+      "title": "Aurora · Mez Systems",
+      "h1": "Ads that run themselves",
+      "documentSize": {
+        "width": 753,
+        "height": 5138
+      },
+      "clientSize": {
+        "width": 753,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/checkout-768x900.png",
+      "title": "Mez Systems · Checkout",
+      "h1": "Checkout",
+      "documentSize": {
+        "width": 753,
+        "height": 2262
+      },
+      "clientSize": {
+        "width": 753,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/email-768x900.png",
+      "title": "Mez Systems · Email",
+      "h1": "Email",
+      "documentSize": {
+        "width": 753,
+        "height": 1808
+      },
+      "clientSize": {
+        "width": 753,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/index-920x900.png",
+      "title": "Mez Systems · Canvas",
+      "h1": "Canvas",
+      "documentSize": {
+        "width": 905,
+        "height": 1258
+      },
+      "clientSize": {
+        "width": 905,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/tokens-920x900.png",
+      "title": "Mez Systems · Tokens",
+      "h1": "Tokens",
+      "documentSize": {
+        "width": 905,
+        "height": 5895
+      },
+      "clientSize": {
+        "width": 905,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/components-920x900.png",
+      "title": "Mez Systems · Components",
+      "h1": "Components",
+      "documentSize": {
+        "width": 905,
+        "height": 9215
+      },
+      "clientSize": {
+        "width": 905,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/sections-920x900.png",
+      "title": "Mez Systems · Sections",
+      "h1": "Sections",
+      "documentSize": {
+        "width": 905,
+        "height": 7721
+      },
+      "clientSize": {
+        "width": 905,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/home-920x900.png",
+      "title": "Mez Systems · One core, four products",
+      "h1": "One system your whole business runs on",
+      "documentSize": {
+        "width": 905,
+        "height": 4810
+      },
+      "clientSize": {
+        "width": 905,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/product-aurora-920x900.png",
+      "title": "Aurora · Mez Systems",
+      "h1": "Ads that run themselves",
+      "documentSize": {
+        "width": 905,
+        "height": 5162
+      },
+      "clientSize": {
+        "width": 905,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/checkout-920x900.png",
+      "title": "Mez Systems · Checkout",
+      "h1": "Checkout",
+      "documentSize": {
+        "width": 905,
+        "height": 2715
+      },
+      "clientSize": {
+        "width": 905,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 920,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/email-920x900.png",
+      "title": "Mez Systems · Email",
+      "h1": "Email",
+      "documentSize": {
+        "width": 905,
+        "height": 2020
+      },
+      "clientSize": {
+        "width": 905,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/index-1280x900.png",
+      "title": "Mez Systems · Canvas",
+      "h1": "Canvas",
+      "documentSize": {
+        "width": 1265,
+        "height": 1275
+      },
+      "clientSize": {
+        "width": 1265,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/tokens-1280x900.png",
+      "title": "Mez Systems · Tokens",
+      "h1": "Tokens",
+      "documentSize": {
+        "width": 1265,
+        "height": 5228
+      },
+      "clientSize": {
+        "width": 1265,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/components-1280x900.png",
+      "title": "Mez Systems · Components",
+      "h1": "Components",
+      "documentSize": {
+        "width": 1265,
+        "height": 8426
+      },
+      "clientSize": {
+        "width": 1265,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/sections-1280x900.png",
+      "title": "Mez Systems · Sections",
+      "h1": "Sections",
+      "documentSize": {
+        "width": 1265,
+        "height": 7129
+      },
+      "clientSize": {
+        "width": 1265,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/home-1280x900.png",
+      "title": "Mez Systems · One core, four products",
+      "h1": "One system your whole business runs on",
+      "documentSize": {
+        "width": 1265,
+        "height": 4293
+      },
+      "clientSize": {
+        "width": 1265,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/product-aurora-1280x900.png",
+      "title": "Aurora · Mez Systems",
+      "h1": "Ads that run themselves",
+      "documentSize": {
+        "width": 1265,
+        "height": 5154
+      },
+      "clientSize": {
+        "width": 1265,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/checkout-1280x900.png",
+      "title": "Mez Systems · Checkout",
+      "h1": "Checkout",
+      "documentSize": {
+        "width": 1265,
+        "height": 2715
+      },
+      "clientSize": {
+        "width": 1265,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/email-1280x900.png",
+      "title": "Mez Systems · Email",
+      "h1": "Email",
+      "documentSize": {
+        "width": 1265,
+        "height": 2020
+      },
+      "clientSize": {
+        "width": 1265,
+        "height": 900
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/index.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/index-1440x1000.png",
+      "title": "Mez Systems · Canvas",
+      "h1": "Canvas",
+      "documentSize": {
+        "width": 1425,
+        "height": 1275
+      },
+      "clientSize": {
+        "width": 1425,
+        "height": 1000
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/tokens.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/tokens-1440x1000.png",
+      "title": "Mez Systems · Tokens",
+      "h1": "Tokens",
+      "documentSize": {
+        "width": 1425,
+        "height": 5228
+      },
+      "clientSize": {
+        "width": 1425,
+        "height": 1000
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/components.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/components-1440x1000.png",
+      "title": "Mez Systems · Components",
+      "h1": "Components",
+      "documentSize": {
+        "width": 1425,
+        "height": 8426
+      },
+      "clientSize": {
+        "width": 1425,
+        "height": 1000
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/sections.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/sections-1440x1000.png",
+      "title": "Mez Systems · Sections",
+      "h1": "Sections",
+      "documentSize": {
+        "width": 1425,
+        "height": 7129
+      },
+      "clientSize": {
+        "width": 1425,
+        "height": 1000
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/home.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/home-1440x1000.png",
+      "title": "Mez Systems · One core, four products",
+      "h1": "One system your whole business runs on",
+      "documentSize": {
+        "width": 1425,
+        "height": 4293
+      },
+      "clientSize": {
+        "width": 1425,
+        "height": 1000
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/product-aurora.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/product-aurora-1440x1000.png",
+      "title": "Aurora · Mez Systems",
+      "h1": "Ads that run themselves",
+      "documentSize": {
+        "width": 1425,
+        "height": 5154
+      },
+      "clientSize": {
+        "width": 1425,
+        "height": 1000
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/checkout.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/checkout-1440x1000.png",
+      "title": "Mez Systems · Checkout",
+      "h1": "Checkout",
+      "documentSize": {
+        "width": 1425,
+        "height": 2715
+      },
+      "clientSize": {
+        "width": 1425,
+        "height": 1000
+      },
+      "overflowX": false
+    },
+    {
+      "page": "canvas/pages/email.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "path": "/Users/olivermerrick/mezcorp_claude_code/departments/cmo/brand-library/brands/mez-systems/baseline/2026-07-19/screenshots/email-1440x1000.png",
+      "title": "Mez Systems · Email",
+      "h1": "Email",
+      "documentSize": {
+        "width": 1425,
+        "height": 2020
+      },
+      "clientSize": {
+        "width": 1425,
+        "height": 1000
+      },
+      "overflowX": false
+    }
+  ]
+}

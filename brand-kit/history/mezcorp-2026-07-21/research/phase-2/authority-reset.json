@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1.0.0",
+  "decisionId": "MEZ-AUTHORITY-RESET-2026-07-20",
+  "status": "active",
+  "productionAuthority": false,
+  "lockedInputs": [
+    "approved-gradient-library-and-provenance",
+    "MZ-G13-for-AI-OS",
+    "canonical-two-path-wings-geometry",
+    "parent-mark-free-floating-ink-or-white",
+    "product-mark-white-wings-directly-inside-gradient-object",
+    "AI-OS-name",
+    "approved-homepage-positioning-and-source-rights",
+    "current-production-default-until-promotion"
+  ],
+  "reopened": [
+    "typography",
+    "neutral-colour-system",
+    "corner-radii",
+    "spacing-and-density",
+    "buttons-and-interactions",
+    "product-object-and-card-morphology",
+    "section-and-page-archetypes",
+    "responsive-composition",
+    "motion-and-media",
+    "product-roster-beyond-AI-OS",
+    "generated-Figma-and-brand-system-rules"
+  ],
+  "rejectedResearch": [
+    "MEZ-HOMEPAGE-FOUNDATION-STUDIO-01-as-directions",
+    "MEZ-HOMEPAGE-SYNTHESIS-01",
+    "precise-editorial-operating-shelf",
+    "generic-box-first-composition",
+    "numbered-overlays-and-micro-label-decoration",
+    "tool-logo-row-inside-hero",
+    "white-inset-tile-with-dark-wings-on-gradient",
+    "generic-testimonial-and-portfolio-grids",
+    "full-page-build-before-expression-calibration"
+  ],
+  "activeGate": {
+    "studyId": "MEZ-VISUAL-TRUTH-01",
+    "location": "/Users/olivermerrick/Documents/taste-reverse/reviews/mez-systems-visual-truth-01",
+    "status": "passed-unanimously",
+    "completedAt": "2026-07-20T07:20:18.596Z",
+    "reviewRecord": "visual-truth-review-approved.json",
+    "truthCount": 6,
+    "refusalCount": 6,
+    "truthsLocked": 6,
+    "refusalsApprovedForAvoidance": 6,
+    "productionAuthority": false,
+    "sourceImageDistributionApproved": false
+  },
+  "currentBuild": {
+    "id": "MEZ-LIVING-CORE-SYSTEM-01",
+    "name": "living-core-gradient-systemization",
+    "status": "candidate-workflow-ready",
+    "location": "living-core",
+    "assignedCoreCount": 4,
+    "contextEngineCandidateStatus": "blocked-on-source-gradient",
+    "productionAuthority": false,
+    "sourceExpressionApproved": false
+  },
+  "hero03Disposition": {
+    "id": "MEZ-HERO-FIRST-VIEWPORT-03",
+    "status": "human-review-complete-direction-approved-mobile-revision-required",
+    "reviewRecord": "research/phase-2/calibration-plates/hero-first-viewport-03/hero-first-viewport-03-review.json",
+    "approvedDecision": "DEC-HERO-001",
+    "approved": ["overallDirection", "messageHierarchy", "cardStackComposition", "animationUse", "productFamilyRead"],
+    "edit": ["mobileOpening"],
+    "nextPriority": "living-core-gradient-systemization",
+    "productionAuthority": false
+  },
+  "hero02Disposition": {
+    "id": "MEZ-HERO-FIRST-VIEWPORT-02",
+    "status": "direct-feedback-revision-requested",
+    "feedbackRecord": "research/phase-2/calibration-plates/hero-first-viewport-02/hero-first-viewport-02-direct-feedback.json",
+    "result": "promising-direction-underexpressed",
+    "supersededBy": "MEZ-HERO-FIRST-VIEWPORT-03",
+    "productionAuthority": false
+  },
+  "identityAtlasDisposition": {
+    "id": "MEZ-IDENTITY-PRODUCT-OBJECT-02",
+    "status": "motion-slice-approved-static-expressions-deferred",
+    "approvedDecision": "DEC-MOTION-002",
+    "deferredGate": "product-family-and-commerce-calibration",
+    "productionAuthority": false
+  },
+  "priorCalibration": {
+    "id": "MEZ-IDENTITY-PRODUCT-OBJECT-01",
+    "status": "revision-required",
+    "reviewRecord": "research/phase-2/calibration-plates/identity-product-object-01/identity-product-object-01-review.json",
+    "result": "three-edits",
+    "productionAuthority": false
+  },
+  "heroCalibrationDisposition": {
+    "id": "MEZ-HERO-FIRST-VIEWPORT-01",
+    "status": "composition-rejected-foundation-slices-deferred",
+    "reviewRecord": "research/phase-2/calibration-plates/hero-first-viewport-01/hero-first-viewport-01-review.json",
+    "composition": "reject",
+    "typography": "advance-to-dedicated-calibration",
+    "controls": "defer-to-dedicated-calibration",
+    "mobile": "rebuild-after-product-family-composition",
+    "productionAuthority": false
+  },
+  "typographyDisposition": {
+    "id": "MEZ-TYPOGRAPHY-SYSTEM-01",
+    "status": "human-review-complete-approved-direction",
+    "reviewRecord": "research/phase-2/calibration-plates/typography-system-01/typography-system-01-review.json",
+    "approvedDecision": "DEC-TYPE-001",
+    "primaryFamily": "inter-tuned",
+    "displayFamily": "geist",
+    "bodyFamily": "inter-tuned",
+    "serifPolicy": "contextual-only",
+    "monoPolicy": "keep-ibm-plex",
+    "mobileType": "edit",
+    "implementationState": "pending",
+    "productionAuthority": false
+  },
+  "controlDisposition": {
+    "id": "MEZ-BUTTON-CONTROL-SYSTEM-01",
+    "status": "human-review-complete-approved-direction",
+    "reviewRecord": "research/phase-2/calibration-plates/button-control-system-01/button-control-system-01-review.json",
+    "approvedDecision": "DEC-CONTROL-001",
+    "shape": "moderate-12",
+    "hierarchy": "solid-outline-text",
+    "depth": "micro-lift",
+    "defaultScale": "48-default",
+    "iconPolicy": "selective-directional",
+    "darkSurface": "white-primary-outline-secondary",
+    "mobileBehaviour": "primary-full-secondary-link",
+    "implementationState": "pending",
+    "productionAuthority": false
+  },
+  "familyCommerceDisposition": {
+    "id": "MEZ-PRODUCT-FAMILY-COMMERCE-01",
+    "status": "human-review-complete-behaviour-approved-visual-execution-not-approved",
+    "reviewRecord": "research/phase-2/calibration-plates/product-family-commerce-01/product-family-commerce-01-review.json",
+    "approvedDecision": "DEC-FAMILY-001",
+    "publicRoster": "homepage-five",
+    "familyChassis": "aligned-catalogue",
+    "territoryMethod": "gradient-and-copy",
+    "expressionMode": "static-core-only",
+    "availabilityHierarchy": "equal-family",
+    "commerceSequence": "live-first-bundle-later",
+    "mobileBehaviour": "vertical-catalogue-sticky-summary",
+    "visualExecutionApproved": false,
+    "implementationState": "pending",
+    "productionAuthority": false
+  },
+  "nextBuilds": [
+    "context-engine-gradient-candidate",
+    "product-expression-component-suite",
+    "mobile-hero-revision",
+    "golden-homepage"
+  ]
+}

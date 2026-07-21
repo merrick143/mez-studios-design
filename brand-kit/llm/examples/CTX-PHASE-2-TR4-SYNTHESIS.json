@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-PHASE-2-TR4-SYNTHESIS",
+  "taskId": "TASK-PHASE-2-TR4-SYNTHESIS",
+  "generatedAt": "2026-07-20T08:38:00+10:00",
+  "systemVersion": "2026.07.20-phase2-tr4",
+  "sourceState": {
+    "repository": "/Users/olivermerrick/mezcorp_claude_code",
+    "branch": "main",
+    "commit": "c3007c75a4a38182b7c9e53328003bdd9610d2f7",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {"path":"research/phase-2/COMPARATIVE-SYNTHESIS.md","sha256":"b74521de2caa02ac4f321df44f401d4da613a3f8a85b6d72e8054b358ae53726","role":"research","required":true,"reason":"Cross-source mechanisms, questions, tensions, and experiment sequence."},
+    {"path":"research/phase-2/CAPTURE-RESULTS.md","sha256":"bed247b89a0c3889d6107ac4a9e69190bd07e2f6ad9b66e8c42fa9b039ea7f0c","role":"evidence","required":true,"reason":"Qualified capture and export provenance."},
+    {"path":"research/phase-2/source-register.yaml","sha256":"898402598b8112bfcee87fe2d40bd39022d7a91df2f7707f938a73432d9e1562","role":"research","required":true,"reason":"Approved source boundary and panel limitations."},
+    {"path":"research/phase-2/research-questions.yaml","sha256":"59f11e6cb1a296b25b917026bb452b76647755dc54a5bd069fb7e3927174c41b","role":"research","required":true,"reason":"Stable RQ identifiers and priorities."},
+    {"path":"llm/tasks/TASK-PHASE-2-TR4-SYNTHESIS.json","sha256":"4a5d3facce16ec79182bc639e58e31cc8512d2b9b55b89404482fb7b30466b39","role":"governance","required":true,"reason":"TR-4 scope, deliverables, verification, and stop conditions."}
+  ],
+  "decisions": [
+    {"id":"DEC-H1-REFERENCE-PANEL-001","status":"approved","productionEffect":"synthesise only the approved five-source evidence"},
+    {"id":"DEC-BRAND-AMBITION-001","status":"approved","productionEffect":"test for high-authority, ownable operational software"}
+  ],
+  "artifacts": [],
+  "consumers": ["CON-CONTROL-PLANE-001", "CON-LLM-001"],
+  "knownConflicts": [
+    {"id":"CONFLICT-UNAPPROVED-TASTE-001","summary":"Taste dimensions and candidate patterns are research hypotheses, not Mez rules.","executionEffect":"stop"},
+    {"id":"CONFLICT-PANEL-RANGE-001","summary":"The source panel is software-centred and cannot replace dedicated anti-reference or cross-category study.","executionEffect":"constrain"}
+  ],
+  "stopConditions": [
+    "Do not promote a matrix row, pattern, anti-pattern exception, or taste range into production.",
+    "Do not add unapproved external sources inside TR-4.",
+    "Do not begin H2 visual directions before controlled calibration and original prototypes."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["research/phase-2/COMPARATIVE-SYNTHESIS.md", "research/phase-2/research-questions.yaml", "research/phase-2/source-register.yaml"],
+    "omitByDefault": ["baseline/", "canvas/", "design-system-export/", "_archive/", "aios-website/"]
+  },
+  "humanNotes": ["TR-4 requires no new human decision. Its outputs prepare the smaller TR-5 calibration gate."]
+}

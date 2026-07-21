@@ -5,6 +5,7 @@
   "canonicalRepositoryTransferred": true,
   "cutoverId": "CUTOVER-2026-07-21-01",
   "activeRelease": "0.1.0-alpha.1",
+  "nextTask": "TASK-FND-01-TYPOGRAPHY",
   "sections": [
     {"id": "gradient-library", "name": "Complete gradient library", "status": "canonical", "summary": "All source colours, animation and expressions are approved. 33 unique cores are active; ten duplicate IDs remain compatibility aliases."},
     {"id": "core", "name": "Living Core", "status": "canonical", "summary": "Deep Mineral is the selected finish. Exact PNG sources remain colour authority and source palettes are unchanged."},
@@ -13,6 +14,7 @@
     {"id": "expressions", "name": "Product expressions", "status": "planned", "summary": "Disc, sphere, card, Wings, collection and channel plates must be locked."},
     {"id": "context", "name": "Context Engine", "status": "source-selected", "summary": "MZ-G12 is the approved source-backed Context Engine gradient for the migration identity kernel."},
     {"id": "release", "name": "Portable release", "status": "migration-alpha-active", "summary": "0.1.0-alpha.1 is the self-contained canonical identity snapshot. Foundation-complete release and consumer proof remain."},
-    {"id": "migration", "name": "Repository migration", "status": "complete", "summary": "CUTOVER-2026-07-21-01 transferred rank-one authority here. The internal pack is a pinned archive and consumer reference."}
+    {"id": "knowledge", "name": "Knowledge and LLM portability", "status": "canonical", "summary": "The full roadmap, 104-file Markdown history, Phase 2 research, machine contracts and one shared Claude Code/Codex skill source are present and validated."},
+    {"id": "migration", "name": "Repository migration", "status": "branch-normalisation", "summary": "CUTOVER-2026-07-21-01 transferred rank-one authority here. Knowledge transfer is complete; merging the recovery branch to main and normalising the authority branch remain."}
   ]
 }

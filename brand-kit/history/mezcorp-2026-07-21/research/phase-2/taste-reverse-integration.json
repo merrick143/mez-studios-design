@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "provisional-pin",
+  "project": "Taste Reverse",
+  "projectVersion": "0.2.0",
+  "findingsExportSchema": "1.0.0",
+  "localResearchRepository": "/Users/olivermerrick/Documents/taste-reverse",
+  "consumer": "mez-systems",
+  "requiredCommand": "pnpm taste-reverse validate-export <export-directory>",
+  "validatedFixture": {
+    "date": "2026-07-20",
+    "exportId": "TR-EXPORT-9EFA20EDBB17",
+    "measurements": 77,
+    "findings": 0,
+    "result": "pass",
+    "sourceAccessRequiredAfterCopy": false
+  },
+  "allowedIngestion": [
+    "manifest.json",
+    "findings.json",
+    "README.md"
+  ],
+  "prohibitedIngestion": [
+    "raw runs",
+    "source screenshots",
+    "source assets or logos",
+    "source copy",
+    "raw DOM or element evidence",
+    "unreviewed source tokens"
+  ],
+  "checkpoint": {
+    "gitCommit": null,
+    "gitTag": null,
+    "status": "awaiting historical-artifact boundary confirmation"
+  }
+}

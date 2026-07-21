@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PHASE-2-TR5-CALIBRATION",
+  "title": "Invalidated controlled calibration pilot",
+  "phase": 2,
+  "block": "TR-5",
+  "owner": "design-lead",
+  "status": "invalidated-replaced",
+  "productionAuthority": false,
+  "inputs": [
+    "research/phase-2/taste-dimensions.json",
+    "research/phase-2/PATTERN-ATLAS.md",
+    "research/phase-2/ANTI-PATTERN-ATLAS.md"
+  ],
+  "outputsReady": [
+    "research/phase-2/calibration/specs/pairs-01-04.json",
+    "research/phase-2/calibration/specs/pairs-05-08.json",
+    "research/phase-2/calibration/specs/pairs-09-12.json",
+    "research/phase-2/calibration/index.html",
+    "research/phase-2/calibration/preference-log.schema.json",
+    "research/phase-2/calibration/HUMAN-REVIEW-PACKET.md",
+    "research/phase-2/calibration/invalid-pilot/INVALID-PILOT.md",
+    "research/phase-2/calibration/invalid-pilot/round-01-preference-log.jsonl"
+  ],
+  "outputsPending": [
+    "research/phase-2/calibration/preference-log.jsonl",
+    "research/phase-2/HUMAN-TASTE-PROFILE.md",
+    "research/phase-2/UNCERTAINTY-LIST.md"
+  ],
+  "invalidatedAt": "2026-07-20",
+  "invalidationReason": "Low-quality renderings contaminated the decisions, five pairs received neither, nine decisions omitted confidence, and the reviewer explicitly rejected the instrument as inadequate for reliable input.",
+  "replacement": {
+    "studyId": "MEZ-REFERENCE-TASTE-ROUND-01",
+    "path": "/Users/olivermerrick/Documents/taste-reverse/reviews/mez-systems-reference-taste-round-01/",
+    "method": "35 real reference plates, five reactions, causal reason tags, then three original Mez directions"
+  },
+  "humanGate": {
+    "reviewer": "Olli",
+    "request": "Do not reuse this pilot. Complete the replacement reference taste review.",
+    "estimatedMinutes": "20 to 30",
+    "escalateOnly": ["incomplete reference record", "not useful plate", "unclear causal signal"]
+  },
+  "stopConditions": [
+    "Do not promote any specimen value or behaviour to production authority.",
+    "Do not synthesise any result from the preserved invalid pilot record.",
+    "Do not begin three original directions until the replacement reference record is complete."
+  ]
+}

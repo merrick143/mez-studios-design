@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Archived Mez Systems homepage foundation studies">
+  <title>Mez Systems · Foundation round 01 archive</title>
+  <link rel="stylesheet" href="studio.css">
+</head>
+<body>
+  <a class="skip-link" href="#study-root">Skip to study</a>
+  <header class="studio-bar">
+    <a class="studio-brand" href="./" aria-label="Return to the coherent homepage synthesis">
+      <span class="mini-mark"><img src="../../../design-system-export/assets/wings.svg" alt=""></span>
+      <span><b>MEZ SYSTEMS</b><small>ROUND 01 ARCHIVE</small></span>
+    </a>
+    <nav id="study-tabs" aria-label="Foundation studies"></nav>
+    <button class="review-toggle" type="button" aria-expanded="false" aria-controls="review-panel">Feedback <span id="feedback-count">0</span></button>
+  </header>
+
+  <main id="study-root" tabindex="-1"></main>
+
+  <aside id="review-panel" class="review-panel" aria-hidden="true">
+    <header><div><p>ARCHIVED FEEDBACK</p><h2 id="review-study-name">Study</h2></div><button class="review-close" type="button" aria-label="Close feedback">Close</button></header>
+    <div class="review-scroll">
+      <section class="overall-review"><p class="review-kicker">OVERALL SIGNAL</p><div class="choice-row" data-overall-choices></div></section>
+      <section><p class="review-kicker">MODULE ANNOTATIONS</p><p class="review-help">This round is preserved for audit only.</p><div id="annotation-list" class="annotation-list"></div></section>
+      <section><label class="review-note">Anything the controls miss<textarea id="study-note" rows="4"></textarea></label></section>
+    </div>
+    <footer><button id="copy-review" type="button">Copy review JSON</button><button id="download-review" type="button">Download</button><small id="review-status" aria-live="polite">Archived research. No production authority.</small></footer>
+  </aside>
+
+  <dialog id="annotation-dialog">
+    <form method="dialog">
+      <header><div><p>SECTION FEEDBACK</p><h2 id="annotation-title">Hero</h2></div><button value="cancel" aria-label="Close">Close</button></header>
+      <div id="annotation-reactions" class="dialog-reactions"></div>
+      <label>Optional note<textarea id="annotation-note" rows="3"></textarea></label>
+      <footer><button value="cancel">Cancel</button><button id="save-annotation" value="default">Save feedback</button></footer>
+    </form>
+  </dialog>
+
+  <script src="studio.js"></script>
+</body>
+</html>

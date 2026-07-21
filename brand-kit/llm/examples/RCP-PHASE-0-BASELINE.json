@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-PHASE-0-BASELINE",
+  "taskId": "TASK-PHASE-0-BASELINE",
+  "contextBundleId": "CTX-PHASE-0-BASELINE",
+  "agent": {"kind":"llm","name":"Codex","model":"GPT-5"},
+  "startedAt": "2026-07-19T15:35:00+10:00",
+  "finishedAt": "2026-07-19T16:05:00+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path":"governance/README.md","action":"created","sha256":"1493121cb1325e584daecb0fde30a2a0f08d3b1da7cece03bf33cab2b9e29de2","reason":"Operating entrypoint."},
+    {"path":"governance/PROGRAMME-CHARTER.md","action":"created","sha256":"1c9e5e44e399f112da91f02ea11144f56c409192d1eb84418fcbc2e1b8d4f540","reason":"Programme authority, scope, roles, contribution, exception, and stop rules."},
+    {"path":"governance/H0-DECISION-PACKET.md","action":"created","sha256":"2420d4a2a2dc4d1de0225bd8f3a2dfb3cb8bf7933b79ef114c7b5ed96b370439","reason":"Low-burden human decision gate."},
+    {"path":"governance/reopened-decisions.md","action":"created","sha256":"024af4ac41963f1b1e0131e278eb7e818250adec48ad263b77d18f8333d0116b","reason":"Separates current production defaults from research candidates."},
+    {"path":"governance/issue-register.json","action":"created","sha256":"8c7552d898956e19aafab64738d5a3fc3bc6c9da6b3c6080138d9c4d04b1d6d8","reason":"Stable DS-001 through DS-028 defect register."},
+    {"path":"governance/decision-register.json","action":"created","sha256":"2c45af8bc0e1b028de5b79e1b61b35a0b67f55d6c444dea64e7328d8a2f2949d","reason":"Stable decision state and human-gate metadata."},
+    {"path":"governance/consumer-register.json","action":"created","sha256":"f34fd6cb30e6dced2ed6f643ed00d1a065c056b50049beb49cd752121a236ec4","reason":"Known human, machine, Figma, fixture, export, and repository consumers."},
+    {"path":"baseline/2026-07-19/observations.json","action":"created","sha256":"f9f677a0fbac4084018a2d9b7b98326eab603104314576726621dec26f988ea1","reason":"Live repository, Figma, and Canvas observations."},
+    {"path":"llm/task.schema.json","action":"created","sha256":"c3b9bbdd51691c57b5225bc8addbbf41eb1ea436ec88e22662bd6442581eac2d","reason":"Bounded task contract."},
+    {"path":"llm/context-bundle.schema.json","action":"created","sha256":"cf4b4e8e18fe76ed9e92f1aaf63669a1fe7925ed0981bfd5872da1b3f5454251","reason":"Bounded and traceable context contract."},
+    {"path":"llm/output-receipt.schema.json","action":"created","sha256":"81744e40d6318e5e37082127a34d5c76eebcc73a26da323a40e009eff797be70","reason":"Machine-readable execution receipt."},
+    {"path":"llm/evaluation-result.schema.json","action":"created","sha256":"1bba0c1a26aeaa9868f688ff0d6f0d63d6d98806cc6ef136f6671d5966f64947","reason":"Machine and human evaluation contract."},
+    {"path":"llm/tasks/TASK-PHASE-0-BASELINE.json","action":"created","sha256":"839ba9172bea8c8337abdd5c7b88e48a23a799b85ec248f27b7be14574da12e3","reason":"First dogfooded task."},
+    {"path":"llm/examples/CTX-PHASE-0-BASELINE.json","action":"created","sha256":"1855f88c251eab2d5e778ab711c07e694c7464e809ee7f807a1498659b15dcbd","reason":"First dogfooded bounded context bundle."},
+    {"path":"governance/scripts/build_baseline.py","action":"created","sha256":"625d90c319ef2f7bb2556d093180edd32f9e5e28bcabc47048825fa77f59816d","reason":"Reproducible artifact and screenshot manifests."},
+    {"path":"governance/scripts/validate_phase_zero.py","action":"created","sha256":"6d6b9685a47327f7f2774d2afe392d2c181c0c63d94d716d711bbc7035146ba2","reason":"Deterministic Phase 0 validation."}
+  ],
+  "decisionsApplied": ["DEC-AUTHORITY-001","DEC-SCOPE-001","DEC-OWNER-001","DEC-BRAND-AMBITION-001","DEC-FIGMA-001","DEC-CONSUMER-001"],
+  "tests": [
+    {"id":"V-P0-BUILD","status":"pass","evidence":"Baseline builder generated an artifact register and 64 screenshot records across eight pages and eight supported widths."},
+    {"id":"V-P0-CONTRACTS","status":"not-run","evidence":"Runs after the receipt and evaluation example exist."},
+    {"id":"V-P0-VISUAL","status":"pass","evidence":"Eight pages captured at desktop and mobile, with Home and Components also captured at 320 px."},
+    {"id":"V-P0-H0","status":"pass","evidence":"Olli approved all recommended H0 decisions with the response 'approved proceed'."}
+  ],
+  "artifactsProduced": [
+    "governance control plane",
+    "dated baseline manifest",
+    "64 Canvas screenshots",
+    "four JSON schemas",
+    "dogfooded task and context bundle",
+    "H0 decision packet"
+  ],
+  "assumptions": [
+    "The user's instruction to start Phase 0 authorises isolated governance, baseline, and contract files inside the existing brand pack.",
+    "Unconfirmed people are recommendations, not assigned owners.",
+    "Current production brand rules remain in force until later gates approve replacements."
+  ],
+  "exceptions": [
+    "The Brand Library instruction says writes normally occur through its dedicated skills. No available skill covers design-system governance, so the explicit user instruction is treated as the scoped authorisation for this Phase 0 control-plane work."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired":true,"gateId":"H0","status":"approved"},
+  "nextAction": "Begin Phase 1 authority, portability, accessibility, responsive, and export repair against the approved programme direction."
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-BUTTON-CONTROL-SYSTEM-01",
+  "title": "Mez button and control system calibration 01",
+  "status": "human-review-complete-approved-direction",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "purpose": "Select a semantic button and action-control system before product-family, commerce and hero composition work.",
+  "approvedInputs": {
+    "typographyDecision": "DEC-TYPE-001",
+    "displayFamily": "Geist",
+    "bodyAndControlFamily": "Inter",
+    "motionDecision": "DEC-MOTION-002",
+    "lightOnly": true
+  },
+  "candidateTerritory": {
+    "id": "quiet-pressure",
+    "controlRadius": "12px",
+    "defaultHeight": "48px",
+    "prominentHeight": "52px",
+    "compactHeight": "40px",
+    "primarySurface": "near-black-flat-rest",
+    "secondarySurface": "white-outline",
+    "tertiarySurface": "text-only",
+    "interaction": "one-pixel-lift-and-contact-shadow",
+    "glow": "forbidden",
+    "glass": "forbidden"
+  },
+  "contextsTested": [
+    "hero",
+    "product-card",
+    "bundle",
+    "checkout",
+    "dark-section",
+    "compact-navigation",
+    "mobile-sticky-action"
+  ],
+  "statesTested": [
+    "rest",
+    "hover",
+    "active",
+    "focus-visible",
+    "loading",
+    "disabled",
+    "destructive-confirmation"
+  ],
+  "decisions": [
+    "shape",
+    "hierarchy",
+    "depth",
+    "scale",
+    "iconPolicy",
+    "darkSurface",
+    "mobileBehaviour"
+  ],
+  "decisionCount": 7,
+  "reviewRecord": "button-control-system-01-review.json",
+  "approvedDecision": "DEC-CONTROL-001",
+  "reviewProgress": {
+    "completedDecisionCount": 7,
+    "remaining": [],
+    "result": "all-seven-recommended-behaviours-approved"
+  },
+  "implementationState": "pending",
+  "nextGate": "product-family-and-commerce-calibration",
+  "stopCondition": "Do not promote control tokens, build product-family commerce or revise the hero until this review is recorded."
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-PHASE-0-BASELINE",
+  "receiptId": "RCP-PHASE-0-BASELINE",
+  "evaluatedAt": "2026-07-19T16:06:00+10:00",
+  "evaluator": {"kind":"hybrid","name":"Phase 0 deterministic validator plus pending human gate"},
+  "contractChecks": [
+    {"id":"CONTRACT-TASK","status":"pass","evidence":"The Phase 0 task validates against task.schema.json."},
+    {"id":"CONTRACT-CONTEXT","status":"pass","evidence":"The context bundle validates and names hashes, decisions, conflicts, consumers, and stop conditions."},
+    {"id":"CONTRACT-RECEIPT","status":"pass","evidence":"The receipt validates and distinguishes completed implementation from pending human approval."},
+    {"id":"CONTRACT-EVALUATION","status":"pass","evidence":"This evaluation validates against evaluation-result.schema.json."},
+    {"id":"BASELINE-EVIDENCE","status":"pass","evidence":"All 64 registered screenshots and every artifact are present and checksum-verifiable."},
+    {"id":"HUMAN-H0","status":"pass","evidence":"Olli approved all seven recommended H0 programme decisions."}
+  ],
+  "qualityDimensions": [
+    {"id":"traceability","score":5,"maximum":5,"evidence":"Stable issue, decision, consumer, artifact, task, context, and receipt IDs are linked."},
+    {"id":"reproducibility","score":5,"maximum":5,"evidence":"The baseline and validation scripts regenerate manifests and verify hashes."},
+    {"id":"evidence-quality","score":5,"maximum":5,"evidence":"Live Figma and repository state plus dated responsive screenshots are recorded."},
+    {"id":"human-load","score":4,"maximum":5,"evidence":"The gate condenses work to seven material choices, though ownership names still require input."},
+    {"id":"authority-completeness","score":5,"maximum":5,"evidence":"H0 approved the authority model and all seven programme-direction decisions on 2026-07-19."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["Phase 0 is complete. Phase 1 may proceed under the approved H0 authority model."]
+}

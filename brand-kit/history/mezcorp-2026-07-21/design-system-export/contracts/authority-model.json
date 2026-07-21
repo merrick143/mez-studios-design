@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "decisionId": "DEC-AUTHORITY-001",
+  "status": "approved",
+  "releaseScope": "this self-contained portable distribution",
+  "precedence": [
+    {
+      "rank": 1,
+      "layer": "release-manifest",
+      "sources": [
+        "export-manifest.json"
+      ]
+    },
+    {
+      "rank": 2,
+      "layer": "canonical-data",
+      "sources": [
+        "products.json",
+        "colours.json",
+        "fonts.json",
+        "gradients.json"
+      ]
+    },
+    {
+      "rank": 3,
+      "layer": "canonical-guidance",
+      "sources": [
+        "DESIGN_SYSTEM.md",
+        "docs/00-brand-architecture.md through docs/20-living-core.md"
+      ]
+    },
+    {
+      "rank": 4,
+      "layer": "implementation-contract",
+      "sources": [
+        "tokens/",
+        "AGENTS.md",
+        "typography.md"
+      ]
+    },
+    {
+      "rank": 5,
+      "layer": "assets",
+      "sources": [
+        "assets/"
+      ]
+    }
+  ],
+  "conflictRule": "Stop and report both paths plus the release ID. Never invent a tie-break or consult an external mirror as authority.",
+  "externalAccessRequired": false
+}

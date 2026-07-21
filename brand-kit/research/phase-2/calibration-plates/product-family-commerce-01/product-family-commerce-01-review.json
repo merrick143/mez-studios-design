@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-PRODUCT-FAMILY-COMMERCE-01",
+  "exportedAt": "2026-07-20T12:23:29.975Z",
+  "complete": true,
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "decisions": {
+    "publicRoster": {
+      "decision": "homepage-five",
+      "note": ""
+    },
+    "familyChassis": {
+      "decision": "aligned-catalogue",
+      "note": ""
+    },
+    "territoryMethod": {
+      "decision": "gradient-and-copy",
+      "note": ""
+    },
+    "expressionMode": {
+      "decision": "static-core-only",
+      "note": ""
+    },
+    "availabilityHierarchy": {
+      "decision": "equal-family",
+      "note": ""
+    },
+    "commerceSequence": {
+      "decision": "live-first-bundle-later",
+      "note": ""
+    },
+    "mobileBehaviour": {
+      "decision": "vertical-catalogue-sticky-summary",
+      "note": ""
+    }
+  },
+  "overallNote": ""
+}

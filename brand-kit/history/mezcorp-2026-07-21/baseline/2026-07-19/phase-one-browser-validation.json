@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "validatedAt": "2026-07-19T18:42:00+10:00",
+  "baseUrl": "http://127.0.0.1:4173",
+  "pages": [
+    "index.html",
+    "tokens.html",
+    "components.html",
+    "sections.html",
+    "pages/home.html",
+    "pages/product-aurora.html",
+    "pages/checkout.html",
+    "pages/email.html"
+  ],
+  "widths": [320, 360, 375, 390, 768, 920, 1280, 1440],
+  "matrixChecks": 64,
+  "overflowFailures": 0,
+  "assetLoadFailures": 0,
+  "zoomProxy": {
+    "page": "pages/home.html",
+    "viewportWidth": 720,
+    "clientWidth": 705,
+    "scrollWidth": 705,
+    "result": "pass"
+  },
+  "largeText": {
+    "fixture": "qa-large-text.html",
+    "viewportWidth": 1280,
+    "rootFontPixels": 32,
+    "result": "pass"
+  },
+  "mobileNavKeyboard": "pass",
+  "accordionKeyboard": "pass",
+  "reducedMotion": "pass-static-contract",
+  "forcedColours": "pass-static-contract",
+  "notes": [
+    "Every page and width combination had document scrollWidth less than or equal to clientWidth.",
+    "The 320 px navigation opened from the keyboard, focused the first link, closed on Escape, and returned focus to the menu trigger.",
+    "FAQ Enter and Space activation was verified with one named-group item open at a time.",
+    "Large text uses a dedicated fixture with realistic long labels, copy, navigation, and form content."
+  ]
+}

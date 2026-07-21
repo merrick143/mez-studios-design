@@ -9,6 +9,9 @@
 | Claude visual benchmark | `/play-orb/` in this repository | Original animated implementation and palette extraction from source PNGs | No; protected comparison evidence |
 | Workbench snapshot | `/brand-kit/source-pack/` | Pinned files imported from the canonical branch | No |
 | Candidate workspace | `/brand-kit/workspace/` | Uploaded images, generated plates and select/edit/reject records | No |
+| Active programme docs | `/brand-kit/START-HERE.md`, `/brand-kit/docs/`, `/brand-kit/llm/` | Current plan, workflow and machine contracts | Yes by their named role; they cannot override registry or decision data |
+| Previous knowledge snapshot | `/brand-kit/history/mezcorp-2026-07-21/` | Frozen audit, governance and programme evidence | No |
+| Research evidence | `/brand-kit/research/phase-2/` | Reference captures, synthesis and calibration records | No; only recorded decisions may promote findings |
 | Migration release | `/brand-kit/releases/0.1.0-alpha.1/` | Self-contained identity snapshot for clean-clone and rollback proof | No independent decisions; mirrors approved registries and decisions |
 | Figma | recorded Mez Systems file and gradient library | Human authoring and exact source-gradient reference | No independent token authority |
 
@@ -32,6 +35,8 @@ The complete 43-ID research library now lives under `brand-kit/gradient-library/
 - All 43 exact source PNGs and static WebP twins.
 - The literal five-product roster, stable IDs and locked assignments.
 - Deterministic candidate generator and extraction constants.
+- Complete audit, end-to-end roadmap, Phase 2 research evidence and model-neutral LLM contracts.
+- One canonical `codex-made-it` skill exposed through both Claude Code and Codex repository discovery paths.
 
 ## Remaining unresolved imports
 

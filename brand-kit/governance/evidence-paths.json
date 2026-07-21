@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "Resolve immutable migration decision sources to their current repository evidence without changing the activated decision ledger.",
+  "decisions": {
+    "DEC-MOTION-002": "brand-kit/history/mezcorp-2026-07-21/governance/BRIEF-living-core.md",
+    "DEC-TYPE-001": "brand-kit/research/phase-2/calibration-plates/typography-system-01/typography-system-01-review.json",
+    "DEC-CONTROL-001": "brand-kit/research/phase-2/calibration-plates/button-control-system-01/button-control-system-01-review.json",
+    "DEC-FAMILY-001": "brand-kit/research/phase-2/calibration-plates/product-family-commerce-01/product-family-commerce-01-review.json",
+    "DEC-HERO-001": "brand-kit/research/phase-2/calibration-plates/hero-first-viewport-03/hero-first-viewport-03-review.json",
+    "DEC-GRADIENT-LIBRARY-001": "brand-kit/gradient-library/approval.json",
+    "DEC-LIVING-CORE-FINISH-001": "brand-kit/gradient-library/calibration/depth-light-01/decision.json",
+    "DEC-MIGRATION-SEQUENCE-001": "brand-kit/history/mezcorp-2026-07-21/governance/MIGRATION-FIRST-GATE.md",
+    "DEC-PRODUCT-ARCHITECTURE-001": "brand-kit/product-architecture/review.json"
+  },
+  "productionAuthority": false
+}

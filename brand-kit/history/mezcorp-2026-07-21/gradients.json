@@ -1,0 +1,336 @@
+{
+  "brand": "mez-systems",
+  "convention": "Every gradient has a code MZ-G##. The raw master library is the Figma frame 'MZ Gradient Library \u00b7 raw' (id 312:57) on the Playground page: 53 swatches, MZ-G01 through MZ-G53, laid out as an 8-wide grid. Files are named mz-g##.webp. A product owns exactly one gradient (its core); gradients are for products only, never the holdco or a page background.",
+  "figma": {
+    "file": "HU0GVaDhatjWrKCiSg3wlU",
+    "raw_library_frame": "312:57",
+    "raw_library_name": "MZ Gradient Library \u00b7 raw",
+    "raw_count": 53,
+    "curated_catalogue_board": "155:2"
+  },
+  "files": {
+    "naming": "mz-g##.webp (e.g. mz-g13.webp)",
+    "export": "Export each swatch at ~1200-1600px WebP, quality ~85. Do not ship the 4000px source PNGs.",
+    "hosting": "Upload the shared library once to a Supabase Storage bucket (e.g. mez-gradients/). The single gradient a product actually uses is also copied into that product's public/ for edge serving. AI OS uses mz-g13.webp, already placed in ceos-notion-landingpage/public/gradients/."
+  },
+  "apply_in_figma": "IMAGE fill, scaleMode FILL, imageHash on an ellipse (sphere/disc), flattened wings (Gradient-M), or a card rect (trading).",
+  "cores": {
+    "aios": {
+      "product": "AI OS",
+      "function": "AI Operating System",
+      "id": "MZ-G13",
+      "hash": "4ea105843cbc5fe3450b70aa0f3c3bcc9b487408",
+      "file": "mz-g13.webp",
+      "locked": true,
+      "state": "locked",
+      "anchors": [
+        {
+          "hex": "#2C498D",
+          "pos": [
+            0.1406,
+            -0.153
+          ],
+          "weight": 1.215,
+          "sourceShare": 0.2718
+        },
+        {
+          "hex": "#69DEF6",
+          "pos": [
+            -0.1506,
+            0.2746
+          ],
+          "weight": 1.075,
+          "sourceShare": 0.2215
+        },
+        {
+          "hex": "#5078C1",
+          "pos": [
+            -0.1172,
+            -0.1048
+          ],
+          "weight": 1.03,
+          "sourceShare": 0.2065
+        },
+        {
+          "hex": "#64B0D8",
+          "pos": [
+            0.004,
+            0.1956
+          ],
+          "weight": 0.61,
+          "sourceShare": 0.0862
+        }
+      ],
+      "shade": "#2D196F",
+      "bloom": "#CAF3FC",
+      "bloomAnchor": 1,
+      "staticTwin": "mz-g13.webp",
+      "approximation": true
+    },
+    "aurora": {
+      "product": "Aurora",
+      "function": "Auto Ads System",
+      "id": "MZ-G20",
+      "hash": "76df089a7f3d0fe9f9fc44349a71401ed214c4d9",
+      "file": "mz-g20.webp",
+      "locked": false,
+      "state": "candidate",
+      "anchors": [
+        {
+          "hex": "#F8CCAD",
+          "pos": [
+            0.2353,
+            -0.2333
+          ],
+          "weight": 1.018,
+          "sourceShare": 0.193
+        },
+        {
+          "hex": "#D78445",
+          "pos": [
+            0.1614,
+            0.2009
+          ],
+          "weight": 1.017,
+          "sourceShare": 0.1927
+        },
+        {
+          "hex": "#ECA57A",
+          "pos": [
+            0.103,
+            -0.0891
+          ],
+          "weight": 1.002,
+          "sourceShare": 0.188
+        },
+        {
+          "hex": "#DB5154",
+          "pos": [
+            -0.1914,
+            -0.0803
+          ],
+          "weight": 0.961,
+          "sourceShare": 0.1754
+        }
+      ],
+      "shade": "#EE1256",
+      "bloom": "#FDEDE2",
+      "bloomAnchor": 0,
+      "staticTwin": "mz-g20.webp",
+      "approximation": true
+    },
+    "prism": {
+      "product": "Prism",
+      "function": "Analytics Pack",
+      "id": "MZ-G06",
+      "hash": "34e197fd0fc94cdc231d66446fa6c3f2b1e48fad",
+      "file": "mz-g06.webp",
+      "locked": false,
+      "state": "candidate",
+      "anchors": [
+        {
+          "hex": "#84F0EB",
+          "pos": [
+            0.2795,
+            -0.0861
+          ],
+          "weight": 1.132,
+          "sourceShare": 0.2341
+        },
+        {
+          "hex": "#A160E0",
+          "pos": [
+            -0.1857,
+            0.0009
+          ],
+          "weight": 1.128,
+          "sourceShare": 0.2327
+        },
+        {
+          "hex": "#C09CE7",
+          "pos": [
+            0.056,
+            -0.1135
+          ],
+          "weight": 0.97,
+          "sourceShare": 0.1811
+        },
+        {
+          "hex": "#E7C0F3",
+          "pos": [
+            0.2329,
+            0.3038
+          ],
+          "weight": 0.734,
+          "sourceShare": 0.1137
+        }
+      ],
+      "shade": "#6E36C6",
+      "bloom": "#D4FAF8",
+      "bloomAnchor": 0,
+      "staticTwin": "mz-g06.webp",
+      "approximation": true
+    },
+    "forge": {
+      "product": "Forge",
+      "function": "Claude Code OS",
+      "id": "MZ-G15",
+      "hash": "876be3cf1c6da154d9a532d2b5a865199b29c939",
+      "file": "mz-g15.webp",
+      "locked": false,
+      "state": "candidate",
+      "anchors": [
+        {
+          "hex": "#75B99A",
+          "pos": [
+            0.1169,
+            0.0929
+          ],
+          "weight": 1.118,
+          "sourceShare": 0.2566
+        },
+        {
+          "hex": "#1FA695",
+          "pos": [
+            0.0543,
+            -0.1316
+          ],
+          "weight": 1.111,
+          "sourceShare": 0.2537
+        },
+        {
+          "hex": "#B6C673",
+          "pos": [
+            -0.0097,
+            -0.1645
+          ],
+          "weight": 1.051,
+          "sourceShare": 0.2314
+        },
+        {
+          "hex": "#5DE3D3",
+          "pos": [
+            -0.0068,
+            0.0988
+          ],
+          "weight": 0.673,
+          "sourceShare": 0.1102
+        }
+      ],
+      "shade": "#17877A",
+      "bloom": "#C6F5EF",
+      "bloomAnchor": 3,
+      "staticTwin": "mz-g15.webp",
+      "approximation": true
+    }
+  },
+  "livingCoreExtraction": {
+    "method": "k-means++",
+    "clusters": 5,
+    "sample": 160,
+    "seed": 7,
+    "colourSpace": "sRGB extraction, linear-space shader mixing",
+    "decision": "DEC-MOTION-002"
+  },
+  "treatments": [
+    "disc",
+    "gradient-m",
+    "trading",
+    "sphere",
+    "living-core"
+  ],
+  "retired_treatments": {
+    "glow": "Retired 2026-07-17. Never build. The flat disc replaced it."
+  },
+  "library": [
+    {
+      "id": "MZ-G01",
+      "hash": "1844468e23a3a7b6d4a73de83e46e8d893e40fa5"
+    },
+    {
+      "id": "MZ-G02",
+      "hash": "9326690c06692a31c0ba2882c5fa62b247527b55"
+    },
+    {
+      "id": "MZ-G03",
+      "hash": "eeffea4352c19e8de036f78bbd639f59af03c10f"
+    },
+    {
+      "id": "MZ-G04",
+      "hash": "3d490437a315f274c4a497ce1262e021572f7193"
+    },
+    {
+      "id": "MZ-G05",
+      "hash": "1d90b07e94d412ca0a2f1e24c95293b0bad5d86b"
+    },
+    {
+      "id": "MZ-G06",
+      "hash": "34e197fd0fc94cdc231d66446fa6c3f2b1e48fad",
+      "core": "Prism"
+    },
+    {
+      "id": "MZ-G07",
+      "hash": "73063ea6aa0b0961c59a3f621e28f0092be63fb7"
+    },
+    {
+      "id": "MZ-G08",
+      "hash": "441431b343fed8e5cda120025604375c2e1b8326"
+    },
+    {
+      "id": "MZ-G09",
+      "hash": "636d364c52854b8eb395f063c2bc043f5687f4e1"
+    },
+    {
+      "id": "MZ-G10",
+      "hash": "a0c2b5f5fbdbcb2d995491f345cddacf835fe7ed"
+    },
+    {
+      "id": "MZ-G11",
+      "hash": "26cae1755ca7f413a6b9ff0755163c0fa062f771"
+    },
+    {
+      "id": "MZ-G12",
+      "hash": "e0a2c42dcfc3f9a6d82b11123174699dac886c23"
+    },
+    {
+      "id": "MZ-G13",
+      "hash": "4ea105843cbc5fe3450b70aa0f3c3bcc9b487408",
+      "core": "AI OS"
+    },
+    {
+      "id": "MZ-G14",
+      "hash": "2ced4b6f181f5f15bb615ae5f21b89cd404b2f21"
+    },
+    {
+      "id": "MZ-G15",
+      "hash": "876be3cf1c6da154d9a532d2b5a865199b29c939",
+      "core": "Forge"
+    },
+    {
+      "id": "MZ-G16",
+      "hash": "0b9fac29925166f40e8fb35b0265b4d6606df583"
+    },
+    {
+      "id": "MZ-G17",
+      "hash": "95f307a89df5fceaa959cd62b279e54bedb0db0b"
+    },
+    {
+      "id": "MZ-G18",
+      "hash": "aa4e18ed06cf737df5d506d960cb53670d28f7f4"
+    },
+    {
+      "id": "MZ-G19",
+      "hash": "7568125fa03e1e3927ad578f9fc38ff3f2c4cd4b"
+    },
+    {
+      "id": "MZ-G20",
+      "hash": "76df089a7f3d0fe9f9fc44349a71401ed214c4d9",
+      "core": "Aurora"
+    }
+  ],
+  "raw_extras": {
+    "codes": "MZ-G21 through MZ-G53",
+    "note": "Added 2026-07-12 (former names: gradient-block-x01, gradient-swatch-01..12, gradient-101..117, noisy-gradients). Images live in Figma frame 312:57; export as mz-g21.webp..mz-g53.webp. Their imageHashes are not yet catalogued here (blocks G01-G20 above are the confirmed ones)."
+  },
+  "changelog": "2026-07-12: raw master library established (53 swatches, MZ-G01..G53) in Figma frame 312:57. Blocks G01-G20 keep their hashes (G13 = AIOS blue, confirmed). Product renamed Atlas -> AIOS (core still MZ-G13). File convention mz-g##.webp. Forge core to be re-picked from the raw grid. Old catalogue G21-G30 retired. | 2026-07-17: Forge core = MZ-G15 (candidate). Product name AI OS (with space). Glow retired; disc is the standard treatment. | 2026-07-20: DEC-MOTION-002 approved. Added four-anchor living-core data and static-twin contract for the assigned cores."
+}

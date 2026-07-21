@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-HOMEPAGE-FOUNDATION-STUDIO-01",
+  "exportedAt": "2026-07-20T04:47:46.425Z",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "contentSource": "Notion page 8bb570a0-f71a-4e42-9243-e9aa9e760733",
+  "records": [
+    {
+      "studyId": "layered-clarity",
+      "studyName": "Layered clarity",
+      "overall": "promising",
+      "note": "",
+      "annotations": {
+        "hero": {
+          "reaction": "too much",
+          "note": "i think the visual sucks. feels vibe coded like the whole we plug in and is not the vibe we are going for, we want more minimalist and more intentional not simpler but not so childishly overhwelming."
+        },
+        "problem": {
+          "reaction": "too plain",
+          "note": "bit basic"
+        },
+        "ethos": {
+          "reaction": "too much",
+          "note": "the gradient word fill doesnt look good on this dark background. and the mix of 3 types of colours of text for one titles is overhwleming. mix of too much for text then too basic and plain for visuals. Like when we mention other companies use their logos, when using rtheir logos we should have a consistent grey we use and simple not coloured or filled to make it feel simple."
+        },
+        "proof": {
+          "reaction": "change",
+          "note": "very vibe coded default feel. i like the idea of the bento then our system plugging in with a section in bento for the gradients of the product."
+        },
+        "aios": {
+          "reaction": "not Mez",
+          "note": "okay"
+        },
+        "commerce": {
+          "reaction": "change",
+          "note": "this product section doesnt really make me want to buy think of notion and ramps product sections"
+        }
+      },
+      "productionAuthority": false
+    },
+    {
+      "studyId": "kinetic-shelf",
+      "studyName": "Kinetic shelf",
+      "overall": "useful details",
+      "note": "",
+      "annotations": {
+        "hero": {
+          "reaction": "not Mez",
+          "note": "this hero sucks"
+        },
+        "shelf": {
+          "reaction": "change",
+          "note": "i dont like how the cards are diffeent sizes when showing all products in a single section should be consistent"
+        }
+      },
+      "productionAuthority": false
+    },
+    {
+      "studyId": "system-ledger",
+      "studyName": "System ledger",
+      "overall": "useful details",
+      "note": "",
+      "annotations": {},
+      "productionAuthority": false
+    },
+    {
+      "studyId": "soft-infrastructure",
+      "studyName": "Soft infrastructure",
+      "overall": "not Mez",
+      "note": "",
+      "annotations": {
+        "hero": {
+          "reaction": "change",
+          "note": "i dont think this way of using the gradient text is useful"
+        },
+        "shelf": {
+          "reaction": "not Mez",
+          "note": "i hate how the cards dont align i dont like the jaggered look"
+        },
+        "proof": {
+          "reaction": "not Mez",
+          "note": "i hate how the cards dont align i dont like the jaggered look"
+        }
+      },
+      "productionAuthority": false
+    }
+  ]
+}

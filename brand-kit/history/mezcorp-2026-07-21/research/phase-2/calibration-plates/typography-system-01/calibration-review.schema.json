@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/typography-system-01-review.schema.json",
+  "title": "Mez typography system calibration review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "studyId", "exportedAt", "complete", "productionAuthority", "sourceExpressionApproved", "decisions"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "studyId": {"const": "MEZ-TYPOGRAPHY-SYSTEM-01"},
+    "exportedAt": {"type": "string", "format": "date-time"},
+    "complete": {"type": "boolean"},
+    "productionAuthority": {"const": false},
+    "sourceExpressionApproved": {"const": false},
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primaryFamily", "displayFamily", "bodyFamily", "serifPolicy", "monoPolicy", "mobileType"],
+      "properties": {
+        "primaryFamily": {"$ref": "#/$defs/familyDecision"},
+        "displayFamily": {"$ref": "#/$defs/familyDecision"},
+        "bodyFamily": {"$ref": "#/$defs/familyDecision"},
+        "serifPolicy": {"$ref": "#/$defs/serifDecision"},
+        "monoPolicy": {"$ref": "#/$defs/monoDecision"},
+        "mobileType": {"$ref": "#/$defs/qualityDecision"}
+      }
+    },
+    "overallNote": {"type": "string"}
+  },
+  "$defs": {
+    "base": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "note"],
+      "properties": {
+        "decision": {"type": "string"},
+        "note": {"type": "string"}
+      }
+    },
+    "familyDecision": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"properties": {"decision": {"enum": ["inter-tuned", "instrument-sans", "geist", "none"]}, "note": {"type": "string"}}}
+      ]
+    },
+    "serifDecision": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"properties": {"decision": {"enum": ["remove-default", "contextual-only", "once-per-page"]}, "note": {"type": "string"}}}
+      ]
+    },
+    "monoDecision": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"properties": {"decision": {"enum": ["keep-ibm-plex", "primary-numerals", "study-separately"]}, "note": {"type": "string"}}}
+      ]
+    },
+    "qualityDecision": {
+      "allOf": [
+        {"$ref": "#/$defs/base"},
+        {"properties": {"decision": {"enum": ["advance", "edit", "reject"]}, "note": {"type": "string"}}}
+      ]
+    }
+  }
+}

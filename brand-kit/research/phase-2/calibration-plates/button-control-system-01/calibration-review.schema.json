@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/button-control-system-01-review.schema.json",
+  "title": "Mez button and control system calibration review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "studyId", "exportedAt", "complete", "productionAuthority", "sourceExpressionApproved", "decisions"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "studyId": {"const": "MEZ-BUTTON-CONTROL-SYSTEM-01"},
+    "exportedAt": {"type": "string", "format": "date-time"},
+    "complete": {"type": "boolean"},
+    "productionAuthority": {"const": false},
+    "sourceExpressionApproved": {"const": false},
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "hierarchy", "depth", "scale", "iconPolicy", "darkSurface", "mobileBehaviour"],
+      "properties": {
+        "shape": {"$ref": "#/$defs/shapeDecision"},
+        "hierarchy": {"$ref": "#/$defs/hierarchyDecision"},
+        "depth": {"$ref": "#/$defs/depthDecision"},
+        "scale": {"$ref": "#/$defs/scaleDecision"},
+        "iconPolicy": {"$ref": "#/$defs/iconDecision"},
+        "darkSurface": {"$ref": "#/$defs/darkDecision"},
+        "mobileBehaviour": {"$ref": "#/$defs/mobileDecision"}
+      }
+    },
+    "overallNote": {"type": "string"}
+  },
+  "$defs": {
+    "base": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "note"],
+      "properties": {"decision": {"type": "string"}, "note": {"type": "string"}}
+    },
+    "shapeDecision": {
+      "allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["moderate-12", "soft-14", "pill", "none"]}}}]
+    },
+    "hierarchyDecision": {
+      "allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["solid-outline-text", "solid-soft-text", "edit"]}}}]
+    },
+    "depthDecision": {
+      "allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["micro-lift", "press-only", "flat", "edit"]}}}]
+    },
+    "scaleDecision": {
+      "allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["48-default", "44-default", "edit"]}}}]
+    },
+    "iconDecision": {
+      "allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["selective-directional", "always", "none"]}}}]
+    },
+    "darkDecision": {
+      "allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["white-primary-outline-secondary", "ink-primary-white-secondary", "edit"]}}}]
+    },
+    "mobileDecision": {
+      "allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["primary-full-secondary-link", "paired-full-width", "edit"]}}}]
+    }
+  }
+}

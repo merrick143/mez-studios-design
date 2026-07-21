@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/product-family-commerce-01-review.schema.json",
+  "title": "Mez product family and commerce calibration review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "studyId", "exportedAt", "complete", "productionAuthority", "sourceExpressionApproved", "decisions"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "studyId": {"const": "MEZ-PRODUCT-FAMILY-COMMERCE-01"},
+    "exportedAt": {"type": "string", "format": "date-time"},
+    "complete": {"type": "boolean"},
+    "productionAuthority": {"const": false},
+    "sourceExpressionApproved": {"const": false},
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publicRoster", "familyChassis", "territoryMethod", "expressionMode", "availabilityHierarchy", "commerceSequence", "mobileBehaviour"],
+      "properties": {
+        "publicRoster": {"$ref": "#/$defs/publicRoster"},
+        "familyChassis": {"$ref": "#/$defs/familyChassis"},
+        "territoryMethod": {"$ref": "#/$defs/territoryMethod"},
+        "expressionMode": {"$ref": "#/$defs/expressionMode"},
+        "availabilityHierarchy": {"$ref": "#/$defs/availabilityHierarchy"},
+        "commerceSequence": {"$ref": "#/$defs/commerceSequence"},
+        "mobileBehaviour": {"$ref": "#/$defs/mobileBehaviour"}
+      }
+    },
+    "overallNote": {"type": "string"}
+  },
+  "$defs": {
+    "base": {"type": "object", "additionalProperties": false, "required": ["decision", "note"], "properties": {"decision": {"type": "string"}, "note": {"type": "string"}}},
+    "publicRoster": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["homepage-five", "legacy-four", "edit"]}}}]},
+    "familyChassis": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["aligned-catalogue", "bordered-cards", "edit"]}}}]},
+    "territoryMethod": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["job-native-proof", "gradient-and-copy", "edit"]}}}]},
+    "expressionMode": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["static-core-plus-proof", "static-core-only", "proof-only", "edit"]}}}]},
+    "availabilityHierarchy": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["one-live-future-quiet", "equal-family", "edit"]}}}]},
+    "commerceSequence": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["live-first-bundle-later", "bundle-first", "edit"]}}}]},
+    "mobileBehaviour": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"decision": {"enum": ["vertical-catalogue-sticky-summary", "swipe-carousel", "edit"]}}}]}
+  }
+}

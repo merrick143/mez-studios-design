@@ -1,0 +1,599 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-21T13:22:03+10:00",
+  "statusValues": [
+    "current",
+    "proposed",
+    "candidate",
+    "approved",
+    "rejected",
+    "superseded",
+    "deferred"
+  ],
+  "reversibilityValues": [
+    "easy",
+    "moderate",
+    "expensive"
+  ],
+  "decisions": [
+    {
+      "id": "DEC-AUTHORITY-001",
+      "title": "Staged source-of-truth architecture",
+      "status": "approved",
+      "reversibility": "expensive",
+      "gate": "H0",
+      "owner": "executive-brand-owner",
+      "recommendation": "Use this directory as the temporary control plane, then extract a dedicated versioned package in Phase 4 and generate all mirrors from it.",
+      "productionEffect": "approved-programme-direction",
+      "source": "governance/PROGRAMME-CHARTER.md",
+      "introducedAt": "2026-07-19",
+      "scope": "programme authority and distribution",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "governance/PROGRAMME-CHARTER.md",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-19",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User approved all recommended H0 decisions in the active Codex task."
+    },
+    {
+      "id": "DEC-REPOSITORY-001",
+      "title": "Dedicated canonical package timing",
+      "status": "approved",
+      "reversibility": "expensive",
+      "gate": "H0",
+      "owner": "executive-brand-owner",
+      "recommendation": "Create the dedicated package only after Phase 3 foundation approval, then migrate consumers in controlled releases.",
+      "productionEffect": "approved-programme-direction",
+      "source": "governance/PROGRAMME-CHARTER.md",
+      "introducedAt": "2026-07-19",
+      "scope": "canonical package and repository topology",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "governance/PROGRAMME-CHARTER.md",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-19",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User approved all recommended H0 decisions in the active Codex task."
+    },
+    {
+      "id": "DEC-SCOPE-001",
+      "title": "V1 channel scope",
+      "status": "approved",
+      "reversibility": "moderate",
+      "gate": "H0",
+      "owner": "executive-brand-owner",
+      "recommendation": "Prove marketing web, one product workflow, social and paid ads, email, and decks and reports. Include data and motion as foundations.",
+      "productionEffect": "approved-programme-direction",
+      "source": "governance/H0-DECISION-PACKET.md",
+      "introducedAt": "2026-07-19",
+      "scope": "v1 channel delivery",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "governance/H0-DECISION-PACKET.md",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-19",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User approved all recommended H0 decisions in the active Codex task."
+    },
+    {
+      "id": "DEC-OWNER-001",
+      "title": "Programme ownership model",
+      "status": "approved",
+      "reversibility": "moderate",
+      "gate": "H0",
+      "owner": "executive-brand-owner",
+      "recommendation": "Olli holds executive brand approval and interim design and verbal leadership. Confirm dedicated system and engineering owners before Phases 3 and 4.",
+      "productionEffect": "approved-programme-direction",
+      "source": "governance/PROGRAMME-CHARTER.md",
+      "introducedAt": "2026-07-19",
+      "scope": "programme decision rights and operations",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "governance/PROGRAMME-CHARTER.md",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-19",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User approved all recommended H0 decisions in the active Codex task."
+    },
+    {
+      "id": "DEC-BRAND-AMBITION-001",
+      "title": "Brand ambition and risk tolerance",
+      "status": "approved",
+      "reversibility": "expensive",
+      "gate": "H0",
+      "owner": "executive-brand-owner",
+      "recommendation": "High-authority, editorially intelligent operational software, more precise and ownable than generic AI aesthetics, with range from executive calm to dense operations.",
+      "productionEffect": "approved-programme-direction",
+      "source": "governance/H0-DECISION-PACKET.md",
+      "introducedAt": "2026-07-19",
+      "scope": "cross-channel identity and creative direction",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "governance/H0-DECISION-PACKET.md",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-19",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User approved all recommended H0 decisions in the active Codex task."
+    },
+    {
+      "id": "DEC-FIGMA-001",
+      "title": "Disposition of the current Figma file",
+      "status": "approved",
+      "reversibility": "moderate",
+      "gate": "H0",
+      "owner": "design-lead",
+      "recommendation": "Treat it as research evidence, then create a clean library or deliberately rebuild only after foundation approval.",
+      "productionEffect": "approved-programme-direction",
+      "source": "baseline/2026-07-19/observations.json",
+      "introducedAt": "2026-07-19",
+      "scope": "Figma file, library, variables, and components",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "baseline/2026-07-19/observations.json",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-19",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User approved all recommended H0 decisions in the active Codex task."
+    },
+    {
+      "id": "DEC-CONSUMER-001",
+      "title": "First live website consumer",
+      "status": "approved",
+      "reversibility": "moderate",
+      "gate": "H0",
+      "owner": "engineering-lead",
+      "recommendation": "Treat the CEO Notion landing-page repository as a migration candidate until its role is confirmed.",
+      "productionEffect": "approved-programme-direction",
+      "source": "governance/consumer-register.json",
+      "introducedAt": "2026-07-19",
+      "scope": "first production website migration",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "governance/consumer-register.json",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-19",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User approved all recommended H0 decisions in the active Codex task."
+    },
+    {
+      "id": "DEC-MARK-001",
+      "title": "Holdco and product mark system",
+      "status": "candidate",
+      "reversibility": "expensive",
+      "gate": "H2",
+      "owner": "design-lead",
+      "recommendation": "Research responsive mark forms and suite relationships before selecting a final construction.",
+      "productionEffect": "keep-current",
+      "source": "05-brand-architecture.md",
+      "introducedAt": "2026-07-19",
+      "scope": "holdco and product marks",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "05-brand-architecture.md",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-TYPE-001",
+      "title": "Primary cross-channel type system",
+      "status": "approved",
+      "reopened": false,
+      "reversibility": "expensive",
+      "gate": "H2",
+      "owner": "design-lead",
+      "recommendation": "Use tuned Inter as the primary UI, body and reading family. Use Geist for display titles. Use Instrument Serif only when an editorial context requires it. Restrict IBM Plex Mono to code, provenance and technical metadata. Revise mobile typography around the Geist and Inter split.",
+      "productionEffect": "approved-direction-pending-implementation",
+      "source": "research/phase-2/calibration-plates/typography-system-01/typography-system-01-review.json",
+      "introducedAt": "2026-07-19",
+      "scope": "typography across all channels",
+      "rationale": "A dedicated role-system calibration separated display, reading, serif, mono and mobile decisions. Olli selected Geist for titles, tuned Inter for body, and approved the recommended remaining policies.",
+      "affectedArtifacts": [
+        "06-typography.md",
+        "research/phase-2/calibration-plates/typography-system-01/calibration-manifest.json",
+        "research/phase-2/calibration-plates/typography-system-01/typography-system-01-review.json",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-20",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User selected Geist for titles and tuned Inter for body, then explicitly approved the recommended primary, serif, mono and mobile policies in the active Codex task."
+    },
+    {
+      "id": "DEC-DISC-001",
+      "title": "Gradient-disc role in the identity",
+      "status": "current",
+      "reopened": true,
+      "reversibility": "expensive",
+      "gate": "H2",
+      "owner": "design-lead",
+      "recommendation": "Keep the current disc where required, but test whether it becomes a supporting device within a broader identity grammar.",
+      "productionEffect": "keep-current",
+      "source": "07-gradients-and-discs.md",
+      "introducedAt": "2026-07-19",
+      "scope": "gradient-disc identity device",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "07-gradients-and-discs.md",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-CONTROL-001",
+      "title": "Button and action-control system",
+      "status": "approved",
+      "reopened": false,
+      "reversibility": "moderate",
+      "gate": "H2",
+      "owner": "design-lead",
+      "recommendation": "Use a 12px moderate radius, solid primary with outlined secondary and text tertiary, one-pixel hover lift, 48px default height, selective directional icons, white primary with light outlined secondary on dark sections, and a full-width primary with text secondary on mobile.",
+      "productionEffect": "approved-direction-pending-implementation",
+      "source": "research/phase-2/calibration-plates/button-control-system-01/button-control-system-01-review.json",
+      "introducedAt": "2026-07-20",
+      "scope": "buttons and action controls across marketing, commerce and responsive contexts",
+      "rationale": "A dedicated seven-decision calibration tested shape, hierarchy, depth, scale, icon policy, dark surfaces and mobile behaviour across real action contexts. Olli approved all seven recommended behaviours without edits.",
+      "affectedArtifacts": [
+        "08-components-and-layout.md",
+        "12-states-and-forms.md",
+        "research/phase-2/calibration-plates/button-control-system-01/calibration-manifest.json",
+        "research/phase-2/calibration-plates/button-control-system-01/button-control-system-01-review.json",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-20",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User supplied a complete review export approving all seven recommended control behaviours in the active Codex task."
+    },
+    {
+      "id": "DEC-FAMILY-001",
+      "title": "Product-family and commerce behaviour",
+      "status": "approved",
+      "reopened": false,
+      "reversibility": "moderate",
+      "gate": "H2",
+      "owner": "design-lead",
+      "recommendation": "Use the homepage five-product roster in research, an aligned catalogue chassis, gradient and copy for product territory, static cores only in repeated family contexts, equal catalogue weight, AI OS first with bundles later, and a vertical mobile catalogue with a persistent purchase summary.",
+      "productionEffect": "approved-behaviour-pending-visual-rebuild-and-implementation",
+      "source": "research/phase-2/calibration-plates/product-family-commerce-01/product-family-commerce-01-review.json",
+      "introducedAt": "2026-07-20",
+      "scope": "product-family presentation and commerce sequence across homepage, catalogue, bundle scenarios and mobile",
+      "rationale": "The contextual plate tested seven product-family and commerce behaviours. Olli approved the homepage five, aligned catalogue, gradient-and-copy territories, static cores only, equal family weight, live-first commerce and a vertical mobile catalogue with sticky purchase summary. Olli explicitly stated that the general design still needs a lot of work, so this decision approves behaviour only and withholds approval from the plate's visual execution.",
+      "affectedArtifacts": [
+        "08-components-and-layout.md",
+        "research/phase-2/calibration-plates/product-family-commerce-01/calibration-manifest.json",
+        "research/phase-2/calibration-plates/product-family-commerce-01/product-family-commerce-01-review.json",
+        "research/phase-2/authority-reset.json",
+        "governance/tasks/TASK-PHASE-2-TR6-DIRECTIONS.json",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-20",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User supplied a complete seven-decision export and explicitly withheld approval of the general visual design in the active Codex task."
+    },
+    {
+      "id": "DEC-HERO-001",
+      "title": "Centred living product-family homepage direction",
+      "status": "approved",
+      "reopened": false,
+      "reversibility": "moderate",
+      "gate": "H2",
+      "owner": "design-lead",
+      "recommendation": "Use the centred Hero 03 direction with approved message hierarchy, five equal-size stacked product cards, one coherent product-family read and the Living Core animation system. Preserve the desktop direction while revising the mobile card composition. Pause broader homepage construction until the Living Core gradient system and its cross-channel expression rules are locked.",
+      "productionEffect": "approved-direction-pending-gradient-systemization-mobile-revision-and-implementation",
+      "source": "research/phase-2/calibration-plates/hero-first-viewport-03/hero-first-viewport-03-review.json",
+      "introducedAt": "2026-07-21",
+      "scope": "homepage opening, message hierarchy, product-family hero composition and Living Core direction",
+      "rationale": "Olli approved five of six Hero 03 decisions and described the direction as materially better. Mobile remains an explicit edit. Card, disc, sphere, Wings and static-versus-animated rules require a dedicated component and Living Core system before the homepage continues.",
+      "affectedArtifacts": [
+        "research/phase-2/calibration-plates/hero-first-viewport-03/calibration-manifest.json",
+        "research/phase-2/calibration-plates/hero-first-viewport-03/hero-first-viewport-03-review.json",
+        "research/phase-2/authority-reset.json",
+        "governance/tasks/TASK-PHASE-2-TR6-DIRECTIONS.json",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-21",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User supplied a complete Hero 03 review approving overall direction, message hierarchy, card stack, animation and product-family read, with mobile marked edit, then explicitly paused the homepage to systemise gradients."
+    },
+    {
+      "id": "DEC-LIGHT-MODE-001",
+      "title": "Surface and mode strategy",
+      "status": "current",
+      "reopened": true,
+      "reversibility": "expensive",
+      "gate": "H2",
+      "owner": "design-lead",
+      "recommendation": "Keep light-first marketing outputs while designing semantic light, dark, elevated, and channel-specific modes.",
+      "productionEffect": "keep-current",
+      "source": "07-gradients-and-discs.md",
+      "introducedAt": "2026-07-19",
+      "scope": "surface and theme modes",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "07-gradients-and-discs.md",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-RADIUS-001",
+      "title": "Shape and radius grammar",
+      "status": "current",
+      "reopened": true,
+      "reversibility": "moderate",
+      "gate": "H3",
+      "owner": "design-system-owner",
+      "recommendation": "Tie a smaller semantic shape set to component anatomy and channel behaviour.",
+      "productionEffect": "keep-current",
+      "source": "08-components-and-layout.md",
+      "introducedAt": "2026-07-19",
+      "scope": "shape and radius semantics",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "08-components-and-layout.md",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-MOTION-001",
+      "title": "Motion grammar",
+      "status": "current",
+      "reopened": true,
+      "reversibility": "moderate",
+      "gate": "H3",
+      "owner": "design-lead",
+      "recommendation": "Replace the single-duration placeholder with semantic motion roles and reduced-motion rules.",
+      "productionEffect": "keep-current",
+      "source": "design-system-export/tokens/motion.json",
+      "introducedAt": "2026-07-19",
+      "scope": "motion and reduced-motion behaviour",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "design-system-export/tokens/motion.json",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-PAGE-ARCHETYPE-001",
+      "title": "Page and composition archetypes",
+      "status": "current",
+      "reopened": true,
+      "reversibility": "moderate",
+      "gate": "H4",
+      "owner": "design-system-owner",
+      "recommendation": "Expand from a marketing sequence into channel-specific composition systems with shared primitives.",
+      "productionEffect": "keep-current",
+      "source": "08-components-and-layout.md",
+      "introducedAt": "2026-07-19",
+      "scope": "page and composition systems",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "08-components-and-layout.md",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-CTA-001",
+      "title": "CTA language system",
+      "status": "current",
+      "reopened": true,
+      "reversibility": "easy",
+      "gate": "H2",
+      "owner": "content-lead",
+      "recommendation": "Define CTA patterns by user intent, journey stage, channel, risk, and accessibility.",
+      "productionEffect": "keep-current",
+      "source": "09-content-and-messaging.md",
+      "introducedAt": "2026-07-19",
+      "scope": "CTA language and interaction copy",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "09-content-and-messaging.md",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-PRODUCT-TEMPLATE-001",
+      "title": "Product and suite inheritance model",
+      "status": "current",
+      "reopened": true,
+      "reversibility": "expensive",
+      "gate": "H2",
+      "owner": "executive-brand-owner",
+      "recommendation": "Generalise the four-product model for new products, suites, partnerships, and retirement.",
+      "productionEffect": "keep-current",
+      "source": "products.json",
+      "introducedAt": "2026-07-19",
+      "scope": "product and suite architecture",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "products.json",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-FUNCTIONAL-COLOUR-001",
+      "title": "Functional colours remain semantically distinct from product accents",
+      "status": "proposed",
+      "reversibility": "easy",
+      "gate": "H3",
+      "owner": "design-system-owner",
+      "recommendation": "Reserve status colours for meaning and accessibility. Do not derive success, warning, error, or info from product gradients.",
+      "productionEffect": "safe-experiment",
+      "source": "governance/PROGRAMME-CHARTER.md",
+      "introducedAt": "2026-07-19",
+      "scope": "status and functional colour",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "governance/PROGRAMME-CHARTER.md",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-SECTION-RHYTHM-001",
+      "title": "Use content-led section rhythm rather than repeated cards",
+      "status": "proposed",
+      "reversibility": "easy",
+      "gate": "H2",
+      "owner": "design-lead",
+      "recommendation": "Vary scale, whitespace, editorial alignment, proof density, and media composition instead of defaulting every section to a rounded card grid.",
+      "productionEffect": "safe-experiment",
+      "source": "AUDIT-AND-END-TO-END-ROADMAP.md",
+      "introducedAt": "2026-07-19",
+      "scope": "marketing composition and section rhythm",
+      "rationale": "The Phase 0 audit found that leaving this choice implicit would create cross-source or cross-channel drift.",
+      "affectedArtifacts": [
+        "AUDIT-AND-END-TO-END-ROADMAP.md",
+        "governance/decision-register.json"
+      ]
+    },
+    {
+      "id": "DEC-H1-REFERENCE-PANEL-001",
+      "title": "First reference and anti-reference panel",
+      "status": "approved",
+      "reversibility": "easy",
+      "gate": "H1",
+      "owner": "executive-brand-owner",
+      "recommendation": "Study Notion, Linear, Stripe, ElevenLabs, and Ramp at deep depth before comparative synthesis.",
+      "productionEffect": "approved-research-only",
+      "source": "research/phase-2/H1-REFERENCE-PACKET.md",
+      "introducedAt": "2026-07-20",
+      "scope": "Phase 2 research priorities and source selection",
+      "rationale": "Olli selected a narrower software-centred panel to favour depth, speed, and direct relevance. Lost cross-category, mature-system, and anti-reference coverage is recorded as a limitation.",
+      "affectedArtifacts": [
+        "research/phase-2/INSPIRATION-BRIEF.md",
+        "research/phase-2/source-register.yaml",
+        "research/phase-2/H1-REFERENCE-PACKET.md"
+      ],
+      "approvedAt": "2026-07-20",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User selected Notion, Linear, Stripe, ElevenLabs, and Ramp for deep study in the active Codex task."
+    },
+    {
+      "id": "DEC-MOTION-002",
+      "title": "The living core: sanctioned continuous motion on product cores",
+      "status": "approved",
+      "reversibility": "moderate",
+      "gate": "H1",
+      "owner": "executive-brand-owner",
+      "recommendation": "Carve a single named exception into 16-motion.md: the product core may animate continuously when rendered as a living core. Everything else in the motion law is unchanged.",
+      "productionEffect": "amends-brand-law",
+      "source": "governance/BRIEF-living-core.md",
+      "introducedAt": "2026-07-20",
+      "scope": "motion law, gradient treatments, product cores",
+      "rationale": "The Living Core is product identity in motion and requires one tightly scoped exception to the otherwise static motion law. The exception preserves a static foreground, exact fallback and one focal animated core rather than granting general animation permission.",
+      "affectedArtifacts": [
+        "brand-system/16-motion.md",
+        "brand-system/20-living-core.md",
+        "governance/BRIEF-living-core.md",
+        "governance/decision-register.json"
+      ],
+      "supersedes": "The 'gradients never animate' and 'discs never move' clauses of 16-motion.md, for the living-core treatment only.",
+      "approvedAt": "2026-07-20",
+      "approvedBy": "Olli",
+      "approvalEvidence": "User explicitly stated 'DEC-MOTION-002 approved' in the active Codex task."
+    },
+    {
+      "id": "DEC-GRADIENT-LIBRARY-001",
+      "title": "Complete source-gradient library and Living Core expression family",
+      "status": "approved",
+      "reversibility": "moderate",
+      "gate": "H2",
+      "owner": "executive-brand-owner",
+      "recommendation": "Use the 43 supplied PNG IDs as source evidence, expose 33 unique active cores, preserve ten duplicate IDs as compatibility aliases, accept MZ-G01 as supplied, and use one shared Living Core renderer across disc, sphere, rounded card, pill and Wings expressions.",
+      "productionEffect": "approved-research-system-pending-canonical-cutover",
+      "source": "merrick143/mez-studios-design@8b5a262:brand-kit/gradient-library/approval.json",
+      "introducedAt": "2026-07-21",
+      "scope": "source-gradient library, aliases, animation and cross-shape expression family",
+      "rationale": "The complete source-PNG library was rebuilt deterministically and reviewed across representative static and animated expressions. The selection does not approve product assignments.",
+      "affectedArtifacts": [
+        "governance/MIGRATION-FIRST-GATE.md",
+        "governance/tasks/TASK-MIGRATION-CUTOVER-01.json",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-21",
+      "approvedBy": "Olli",
+      "approvalEvidence": "Olli explicitly approved all supplied colours, Living Core animation, current expression categories, MZ-G01 and the duplicate-removal policy in the active Codex task."
+    },
+    {
+      "id": "DEC-LIVING-CORE-FINISH-001",
+      "title": "Deep Mineral Living Core finish",
+      "status": "approved",
+      "reversibility": "easy",
+      "gate": "H2",
+      "owner": "executive-brand-owner",
+      "recommendation": "Use the Deep Mineral finish as the approved research-system default: full opacity, 0.97 exposure, 1.12 saturation, 1.13 contrast, -0.01 lift, 0.76 shade strength, 0.9 bloom strength and 1.1 grain strength.",
+      "productionEffect": "approved-research-default-pending-canonical-cutover",
+      "source": "merrick143/mez-studios-design@8b5a262:brand-kit/gradient-library/calibration/depth-light-01/decision.json",
+      "introducedAt": "2026-07-21",
+      "scope": "Living Core runtime finish only; source PNGs, static twins and product assignments remain unchanged",
+      "rationale": "Deep Mineral provides denser colour, firmer blacks, stronger sphere depth and the least-whitewashed finish while preserving exact static authority.",
+      "affectedArtifacts": [
+        "governance/MIGRATION-FIRST-GATE.md",
+        "governance/tasks/TASK-MIGRATION-CUTOVER-01.json",
+        "governance/decision-register.json"
+      ],
+      "approvedAt": "2026-07-21",
+      "approvedBy": "Olli",
+      "approvalEvidence": "Olli explicitly selected Deep Mineral No. 5 and described its dense colour, firmer blacks and stronger sphere depth as way better in the active Codex task."
+    },
+    {
+      "id": "DEC-MIGRATION-SEQUENCE-001",
+      "title": "Migrate the canonical control plane before completing the full system",
+      "status": "approved",
+      "reversibility": "expensive",
+      "gate": "migration-cutover",
+      "owner": "executive-brand-owner",
+      "recommendation": "Close only the product architecture, identity kernel and minimum canonical-engine requirements before cutover. Transfer remaining strategy, foundations, components, golden outputs, Figma and channels as governed backlog to the new canonical repository.",
+      "productionEffect": "approved-programme-sequence-pending-cutover-gate",
+      "source": "governance/MIGRATION-FIRST-GATE.md",
+      "introducedAt": "2026-07-21",
+      "scope": "repository sequencing, authority transfer and pre-cutover definition of done",
+      "rationale": "Continuing large foundation and experience builds inside Mezcorp would deepen the dual-authority problem. The target workbench is now recoverable and can become canonical once the identity kernel and cutover controls pass.",
+      "affectedArtifacts": [
+        "AUDIT-AND-END-TO-END-ROADMAP.md",
+        "governance/PROGRAMME-CHARTER.md",
+        "governance/MIGRATION-FIRST-GATE.md",
+        "governance/REPOSITORY-WORKFLOW.md",
+        "governance/tasks/TASK-MIGRATION-CUTOVER-01.json"
+      ],
+      "approvedAt": "2026-07-21",
+      "approvedBy": "Olli",
+      "approvalEvidence": "Olli made migration the primary goal, requested immediate recovery protection and ledger reconciliation, and asked that the programme decide what must close before transfer in the active Codex task."
+    },
+    {
+      "id": "DEC-PRODUCT-ARCHITECTURE-001",
+      "title": "Literal five-product architecture and Living Core assignments",
+      "status": "approved",
+      "reversibility": "moderate",
+      "gate": "migration-cutover",
+      "owner": "executive-brand-owner",
+      "recommendation": "Use literal public product names only and migrate the five stable product IDs with these assignments: AI OS to MZ-G13, Context Engine to MZ-G12, AI Ads System to MZ-G06, Claude Code OS to MZ-G15, and Organic Content OS to MZ-G20.",
+      "productionEffect": "approved-migration-identity-kernel-pending-cutover",
+      "source": "merrick143/mez-studios-design@3e5a276:brand-kit/product-architecture/review.json",
+      "introducedAt": "2026-07-21",
+      "scope": "public product architecture, stable product IDs and product-to-gradient assignments",
+      "rationale": "A literal naming system is clearer and more transferable than an alternate historical-name layer. Olli selected MZ-G12 for Context Engine, moved MZ-G06 to AI Ads System, moved MZ-G20 to Organic Content OS, retained AI OS on MZ-G13 and retained Claude Code OS on MZ-G15.",
+      "stableProducts": [
+        {"productId": "mz.systems.product.aios", "publicName": "AI OS", "gradientId": "MZ-G13"},
+        {"productId": "mz.systems.product.context-engine", "publicName": "Context Engine", "gradientId": "MZ-G12"},
+        {"productId": "mz.systems.product.ai-ads-system", "publicName": "AI Ads System", "gradientId": "MZ-G06"},
+        {"productId": "mz.systems.product.claude-code-os", "publicName": "Claude Code OS", "gradientId": "MZ-G15"},
+        {"productId": "mz.systems.product.organic-content-os", "publicName": "Organic Content OS", "gradientId": "MZ-G20"}
+      ],
+      "affectedArtifacts": [
+        "governance/MIGRATION-FIRST-GATE.md",
+        "governance/tasks/TASK-MIGRATION-CUTOVER-01.json",
+        "governance/decision-register.json",
+        "START-HERE.md",
+        "HANDOFF.md"
+      ],
+      "approvedAt": "2026-07-21",
+      "approvedBy": "Olli",
+      "approvalEvidence": "Olli explicitly removed the Aurora, Forge and Prism naming layer, selected MZ-G12 for Context Engine, assigned MZ-G06 to AI Ads System, assigned MZ-G20 to Organic Content OS, and retained AI OS and Claude Code OS assignments in the active Codex task."
+    }
+  ]
+}

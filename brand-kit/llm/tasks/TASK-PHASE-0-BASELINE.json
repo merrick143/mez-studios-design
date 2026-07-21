@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PHASE-0-BASELINE",
+  "title": "Establish the Mez Systems Phase 0 control plane",
+  "phase": 0,
+  "status": "complete",
+  "owner": "programme",
+  "objective": "Create a reproducible baseline, governance registers, programme charter, minimum LLM contracts, and an H0 decision packet without changing current production identity rules.",
+  "scope": {
+    "included": [
+      "Inventory and hash the current Mez Systems pack",
+      "Capture live Figma, consumer-repository, and Canvas evidence",
+      "Create issue, decision, artifact, and consumer registers",
+      "Create task, context, receipt, and evaluation schemas",
+      "Prepare a low-burden human approval packet"
+    ],
+    "excluded": [
+      "Changing production brand rules",
+      "Rebuilding the Figma library",
+      "Migrating a live website consumer",
+      "Selecting a new visual identity direction"
+    ]
+  },
+  "dependencies": ["DEC-AUTHORITY-001","DEC-SCOPE-001","DEC-OWNER-001","DS-001","DS-004"],
+  "inputs": {
+    "requiredFiles": [
+      "START-HERE.md",
+      "AUDIT-AND-END-TO-END-ROADMAP.md",
+      "governance/PROGRAMME-CHARTER.md",
+      "governance/decision-register.json",
+      "governance/issue-register.json",
+      "governance/consumer-register.json",
+      "baseline/2026-07-19/observations.json"
+    ],
+    "decisionIds": ["DEC-AUTHORITY-001","DEC-SCOPE-001","DEC-OWNER-001","DEC-BRAND-AMBITION-001","DEC-FIGMA-001","DEC-CONSUMER-001"],
+    "artifactIds": ["ART-08B88580828A","ART-4EC621A45E81","ART-639AF2CDF07E","ART-BC97A86D7459","ART-7DC5849560A1","ART-DBBC84505C54","ART-1992C9215D4D"],
+    "consumerIds": ["CON-CONTROL-PLANE-001","CON-CANVAS-001","CON-EXPORT-001","CON-FIGMA-001","CON-WEB-001","CON-LLM-001"]
+  },
+  "deliverables": [
+    {"path":"governance/","acceptance":["All four registers parse","The charter defines scope, authority, owners, exceptions, and stop rules","H0 asks only material human decisions"]},
+    {"path":"baseline/2026-07-19/","acceptance":["The manifest is reproducible","Every screenshot has a hash","Live mismatches are recorded without being treated as resolved"]},
+    {"path":"llm/","acceptance":["All four schemas are valid Draft 2020-12 JSON Schema","One Phase 0 task, context, receipt, and evaluation set validates"]}
+  ],
+  "verification": [
+    {"id":"V-P0-BUILD","method":"command","command":"python3 governance/scripts/build_baseline.py","passCondition":"Artifact and screenshot manifests regenerate without error."},
+    {"id":"V-P0-CONTRACTS","method":"command","command":"python3 governance/scripts/validate_phase_zero.py","passCondition":"The validator returns zero and reports all registers, screenshots, and LLM examples valid."},
+    {"id":"V-P0-VISUAL","method":"visual","passCondition":"Desktop, mobile, and narrow evidence exists for the Canvas and defects are recorded."},
+    {"id":"V-P0-H0","method":"human","passCondition":"The executive brand owner approves or amends the seven H0 choices."}
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H0",
+    "approver": "executive-brand-owner",
+    "approvalQuestion": "Approve or amend the seven programme-authority decisions in governance/H0-DECISION-PACKET.md."
+  },
+  "stopConditions": [
+    "Do not promote proposed decisions to approved without the H0 response.",
+    "Do not modify production identity rules during Phase 0.",
+    "Stop if live evidence contradicts the named source or consumer and record the conflict.",
+    "Do not assign unconfirmed owners as if they accepted responsibility."
+  ],
+  "notes": ["This is the first dogfooded task for the LLM-first execution contract."]
+}

@@ -1,0 +1,462 @@
+{
+  "schemaVersion": "1.0.0",
+  "preparedAt": "2026-07-20",
+  "status": "research-synthesis",
+  "decisionGate": "H2",
+  "decisionStatus": "unapproved",
+  "sourceIds": [
+    "SRC-NOTION",
+    "SRC-LINEAR",
+    "SRC-STRIPE",
+    "SRC-ELEVENLABS",
+    "SRC-RAMP"
+  ],
+  "researchQuestionCoverage": [
+    "RQ-01",
+    "RQ-02",
+    "RQ-03",
+    "RQ-04",
+    "RQ-05",
+    "RQ-06",
+    "RQ-07",
+    "RQ-08"
+  ],
+  "mechanisms": [
+    {
+      "id": "M-01",
+      "title": "Distributed recognition",
+      "researchQuestionIds": ["RQ-01", "RQ-04", "RQ-08"],
+      "problem": "Mez currently asks wings, gradients, discs, and repeated card arrangements to carry too much identity, so removing those devices risks leaving a generic software composition.",
+      "sourceObservations": [
+        {
+          "sourceId": "SRC-NOTION",
+          "evidenceIds": ["NTN-E01", "NTN-E02", "NTN-E03"],
+          "observation": "Editorial scale, neutral space, literal product framing, expressive punctuation, and relational spacing rules reinforce recognition together."
+        },
+        {
+          "sourceId": "SRC-LINEAR",
+          "evidenceIds": ["LIN-E01", "LIN-E02", "LIN-E03"],
+          "observation": "Monochrome discipline, clearance, restrained hierarchy, and indexed operating language recur without constant brand colour."
+        },
+        {
+          "sourceId": "SRC-STRIPE",
+          "evidenceIds": ["STRIPE-E-001", "STRIPE-E-002", "STRIPE-E-011"],
+          "observation": "Wordmark, ruled chassis, diagonal transitions, typographic scale, and interface or document proof form a layered recognition stack."
+        },
+        {
+          "sourceId": "SRC-ELEVENLABS",
+          "evidenceIds": ["ELV-E01", "ELV-E02", "ELV-E03"],
+          "observation": "A simple parent sign, adaptive holding devices, and product-native audio states connect identity across static and interactive contexts."
+        },
+        {
+          "sourceId": "SRC-RAMP",
+          "evidenceIds": ["RAMP-E-001", "RAMP-E-002", "RAMP-E-008"],
+          "observation": "Operational counters, activity evidence, transaction objects, and data cards repeat alongside the parent identity."
+        }
+      ],
+      "crossSourceMechanism": "Recognition is distributed across composition, type hierarchy, information geometry, proof framing, state language, density transition, motion purpose, and voice, so removing one device does not collapse the identity.",
+      "transferablePrinciple": "Define and test at least four Mez-specific non-colour recognition behaviours derived from the Mez operating model. Marks and gradients may reinforce the stack but cannot count as the stack.",
+      "exactExpressionsToAvoid": [
+        "Notion outlined characters, circular face row, inline software capsule, block metaphor, and exact editorial hero composition",
+        "Linear numbered figure notation, sparse dark shell, desaturated blue identity, and exact workflow sequence",
+        "Stripe iridescent ribbon, fine-rule proportions, diagonal cuts, and source colour combination",
+        "ElevenLabs two-bar pause sign, Chladni graphics, voice orbs, playback-symbol changes, and kinetic audio typography",
+        "Ramp fluorescent action colour, dotted field, agent ticker, counter categories, and physical card treatment"
+      ],
+      "scope": {
+        "channels": ["web", "product-ui", "paid-social", "organic-social", "email", "reports", "presentations", "documentation", "motion"],
+        "surfaces": ["hero", "workflow", "ad-tile", "email-module", "report-page", "launch-asset"]
+      },
+      "confidence": {
+        "level": "high",
+        "basis": "All five sources show recognition as a repeated combination, although blind testing is still required to establish Mez authorship."
+      },
+      "epistemicStatus": "strong_inference",
+      "originalityRisk": {
+        "level": "high",
+        "reasons": ["Each source combination is recognisable", "Surface imitation is easier than reproducing the underlying operating logic"],
+        "mitigations": ["Use Mez-native behaviours", "Prototype in monochrome", "Record multi-source derivation", "Run blind originality review"]
+      },
+      "tensionContradiction": [
+        "Quiet structural repetition can become ownable, but neutral typography and cards alone become generic.",
+        "A simple device improves small-size recognition but can quickly become source property.",
+        "Operational proof can carry identity while immediate recognition may still depend on a mark or action colour."
+      ],
+      "candidateExperimentIds": ["E-01", "E-03"],
+      "decisionStatus": "unapproved"
+    },
+    {
+      "id": "M-02",
+      "title": "Shared semantic chassis, distinct product territory",
+      "researchQuestionIds": ["RQ-02", "RQ-05", "RQ-08"],
+      "problem": "AI OS, Aurora, Prism, and Forge risk becoming one template with different names and colours, or four unrelated mini-brands that lose Mez Systems attribution.",
+      "sourceObservations": [
+        {
+          "sourceId": "SRC-NOTION",
+          "evidenceIds": ["NTN-E04", "NTN-E05", "NTN-E06", "NTN-E07", "NTN-E08"],
+          "observation": "Products share a presentation chassis while owning different verbs, information objects, proof states, and operating models."
+        },
+        {
+          "sourceId": "SRC-LINEAR",
+          "evidenceIds": ["LIN-E04", "LIN-E05"],
+          "observation": "One workflow chassis spans several jobs while stable objects recur across marketing, documentation, and integrations."
+        },
+        {
+          "sourceId": "SRC-STRIPE",
+          "evidenceIds": ["STRIPE-E-003", "STRIPE-E-005", "STRIPE-E-006"],
+          "observation": "A stable parent and local product layer survive narrow widths, while extension rules permit bounded local distinction."
+        },
+        {
+          "sourceId": "SRC-ELEVENLABS",
+          "evidenceIds": ["ELV-E04", "ELV-E05", "ELV-E06"],
+          "observation": "Parent naming and shared capability concepts create coherence while platforms own different users, jobs, workflows, proof forms, and delivery models."
+        },
+        {
+          "sourceId": "SRC-RAMP",
+          "evidenceIds": ["RAMP-E-004", "RAMP-E-005", "RAMP-E-006"],
+          "observation": "Operational objects differentiate stories on a shared chassis, while the uniform product grid demonstrates the risk of limited individuality."
+        }
+      ],
+      "crossSourceMechanism": "Family coherence comes from stable semantic primitives, naming, controls, accessibility, parent attribution, and state logic. Product distinction comes from user, job, information object, proof primitive, result type, density, transition, motion role, and campaign posture.",
+      "transferablePrinciple": "Give every Mez product a territory contract across shared and product-owned axes, then approve distinction in monochrome and without product names before assigning accent colour.",
+      "exactExpressionsToAvoid": [
+        "Notion product icons, block workspace model, Calendar mark, Mail language, and exact suite hierarchy",
+        "Linear intake-to-monitor workflow, product object names, numbered chapters, sidebar, diff, and status treatments",
+        "Stripe two-level navigation arrangement, app indicator, payment taxonomy, and extension styling",
+        "ElevenLabs fused platform naming, source palette allocation, audio motifs, and creator-agent-API structure",
+        "Ramp six-card product grid, finance names, parent-only mobile list, and job-copy-only differentiation"
+      ],
+      "scope": {
+        "channels": ["web", "product-ui", "social", "email", "reports", "documentation", "templates"],
+        "surfaces": ["master-navigation", "product-navigation", "endorsement", "app-icon", "portfolio-overview", "product-landing", "launch-campaign"]
+      },
+      "confidence": {
+        "level": "high",
+        "basis": "All five sources support semantic family architecture. Compact Mez hierarchy has less direct evidence and needs a dedicated prototype."
+      },
+      "epistemicStatus": "strong_inference",
+      "originalityRisk": {
+        "level": "high",
+        "reasons": ["Product territories can become source-inspired skins", "Overbuilt sub-brands can fragment the parent"],
+        "mitigations": ["Define parent invariants", "Use a source-signature exclusion checklist", "Test without colour and names"]
+      },
+      "tensionContradiction": [
+        "Shared primitives improve transfer, but excessive uniformity creates reskins.",
+        "Strong local identities improve recognition but increase governance burden and imitation risk.",
+        "Compact parent attribution protects trust, but too little product cue makes small outputs interchangeable."
+      ],
+      "candidateExperimentIds": ["E-02", "E-05"],
+      "decisionStatus": "unapproved"
+    },
+    {
+      "id": "M-03",
+      "title": "Claim-to-proof adjacency",
+      "researchQuestionIds": ["RQ-03", "RQ-04", "RQ-08"],
+      "problem": "Large Mez claims can drift into decorative mockups, uncited metrics, or vague AI language that does not reveal the mechanism, evidence class, or human control.",
+      "sourceObservations": [
+        {
+          "sourceId": "SRC-NOTION",
+          "evidenceIds": ["NTN-E09", "NTN-E10", "NTN-E11", "NTN-E12", "NTN-E13"],
+          "observation": "Claims are followed by populated product objects, and trust resolves into permissions, logs, reversibility, controls, and documented connections."
+        },
+        {
+          "sourceId": "SRC-LINEAR",
+          "evidenceIds": ["LIN-E06", "LIN-E07", "LIN-E08"],
+          "observation": "Realistic work states connect claims to objects, transitions, changed artefacts, provenance, and human review."
+        },
+        {
+          "sourceId": "SRC-STRIPE",
+          "evidenceIds": ["STRIPE-E-004", "STRIPE-E-010", "STRIPE-E-012"],
+          "observation": "A claim, attributed metric, and literal transaction states share one sequence, while reporting and company proof retain distinct output models."
+        },
+        {
+          "sourceId": "SRC-ELEVENLABS",
+          "evidenceIds": ["ELV-E07", "ELV-E08", "ELV-E09", "ELV-E10"],
+          "observation": "Product claims expose inputs, controls, transformation, preserved properties, output, guardrails, and handoff."
+        },
+        {
+          "sourceId": "SRC-RAMP",
+          "evidenceIds": ["RAMP-E-002", "RAMP-E-003", "RAMP-E-004", "RAMP-E-008", "RAMP-E-009", "RAMP-E-013"],
+          "observation": "Activity, mechanisms, customer outcomes, research, and data rules form distinct proof classes."
+        }
+      ],
+      "crossSourceMechanism": "Credible proof keeps the claim close to its input, mechanism, state change, output, result, verification, control, exception, or decision, while keeping evidence classes distinct.",
+      "transferablePrinciple": "Create one structured Mez proof record containing claim, evidence class, input, action, visible state, output, result, source, method or verification, exception, and human decision. Channels may reveal a bounded subset but cannot change the proof.",
+      "exactExpressionsToAvoid": [
+        "Notion sample workspaces, database objects, agent examples, and software-object headline treatment",
+        "Linear issue titles, repository contexts, diff states, agent-session layout, and exact workflow composition",
+        "Stripe checkout UI, payment states, transaction data, revenue metrics, and customer claims",
+        "ElevenLabs prompts, voices, players, waveform or timeline controls, latency claims, and media examples",
+        "Ramp ticker, finance notifications, invoices, savings examples, customer outcomes, charts, and research-card layout"
+      ],
+      "scope": {
+        "channels": ["web", "product-ui", "ads", "email", "sales", "reports", "research", "releases", "help", "documentation"],
+        "surfaces": ["proof-block", "product-demo", "case-study", "agent-receipt", "research-card", "report-module"]
+      },
+      "confidence": {
+        "level": "high",
+        "basis": "All five sources use literal or attributed proof near important claims."
+      },
+      "epistemicStatus": "strong_inference",
+      "originalityRisk": {
+        "level": "medium",
+        "reasons": ["The structure is broadly transferable", "Source-specific interface proof is highly attributable"],
+        "mitigations": ["Use real Mez content", "Label evidence class", "Require provenance", "Prevent staged UI from impersonating outcomes"]
+      },
+      "tensionContradiction": [
+        "Literal proof improves credibility but can overload small channels.",
+        "Static channels need transformations that retain evidence without pretending to be live.",
+        "First-party figures demonstrate attribution structure but do not prove methodology or causality."
+      ],
+      "candidateExperimentIds": ["E-03", "E-05"],
+      "decisionStatus": "unapproved"
+    },
+    {
+      "id": "M-04",
+      "title": "Semantic density",
+      "researchQuestionIds": ["RQ-01", "RQ-03", "RQ-04", "RQ-08"],
+      "problem": "One universal section rhythm cannot serve executive marketing, operational interfaces, compact promotion, lifecycle communication, and analytical reporting without losing truth or creating clutter.",
+      "sourceObservations": [
+        {
+          "sourceId": "SRC-NOTION",
+          "evidenceIds": ["NTN-E14", "NTN-E15", "NTN-E16", "NTN-E17"],
+          "observation": "Low-density orientation leads into denser evaluation, while adjacency rules compress lists and preserve paragraph breathing room."
+        },
+        {
+          "sourceId": "SRC-LINEAR",
+          "evidenceIds": ["LIN-E09", "LIN-E10"],
+          "observation": "Calm narrative leads into dense work states, with reduced shell competition making operational density usable."
+        },
+        {
+          "sourceId": "SRC-STRIPE",
+          "evidenceIds": ["STRIPE-E-009", "STRIPE-E-010", "STRIPE-E-011"],
+          "observation": "Documentation, reporting, marketing, and editorial pages use different information structures while retaining a parent chassis."
+        },
+        {
+          "sourceId": "SRC-ELEVENLABS",
+          "evidenceIds": ["ELV-E11", "ELV-E12"],
+          "observation": "Product pages concentrate controls where quality is evaluated, while documentation progresses from paths to shared concepts and implementation."
+        },
+        {
+          "sourceId": "SRC-RAMP",
+          "evidenceIds": ["RAMP-E-007", "RAMP-E-008", "RAMP-E-009", "RAMP-E-010"],
+          "observation": "Product marketing, research cards, analysis, and report libraries allocate density according to mechanism, metric, method, and archive needs."
+        }
+      ],
+      "crossSourceMechanism": "Density follows receiver intent, decision depth, information object, neighbour relationship, and inspection time, while the evidence order remains stable.",
+      "transferablePrinciple": "Define Mez density modes for executive calm, operational inspection, compact promotion, lifecycle communication, and analytical reporting, each with minimum retained truth and permitted compression.",
+      "exactExpressionsToAvoid": [
+        "Notion exact block spacing, property pills, list chunking, and editorial-to-database composition",
+        "Linear dimmed sidebars, dense inbox, changelog layout, directory cards, and thin-bordered dark shell",
+        "Stripe documentation rails, ruled article grid, annual-letter frame, and report navigation",
+        "ElevenLabs media-player stacks, voice selectors, prompt panels, language controls, and documentation layout",
+        "Ramp Economics Lab cards, trend charts, report archive, and finance-product matrix"
+      ],
+      "scope": {
+        "channels": ["web", "product-ui", "ads", "social", "email", "reports", "decks", "documentation", "releases", "mobile"],
+        "surfaces": ["executive-overview", "operational-console", "small-ad", "email-module", "analytical-report"]
+      },
+      "confidence": {
+        "level": "high",
+        "basis": "All five sources vary density by task. Exact channel limits still require Mez content testing."
+      },
+      "epistemicStatus": "strong_inference",
+      "originalityRisk": {
+        "level": "medium",
+        "reasons": ["Density rules are transferable", "Source-specific page rhythms and shells are not"],
+        "mitigations": ["Use identical Mez proof content across modes", "Evaluate information loss", "Avoid visual matching"]
+      },
+      "tensionContradiction": [
+        "Calm framing improves orientation but can hide literal proof.",
+        "Dense evidence improves inspection but shell competition can create noise.",
+        "Deterministic templates improve reliability but fixed compositions cannot fit every information object."
+      ],
+      "candidateExperimentIds": ["E-01", "E-03"],
+      "decisionStatus": "unapproved"
+    },
+    {
+      "id": "M-05",
+      "title": "Motion as state meaning",
+      "researchQuestionIds": ["RQ-01", "RQ-06", "RQ-08"],
+      "problem": "Ambient movement can signal fashionable AI styling without communicating state, intelligence, orchestration, or responsibility.",
+      "sourceObservations": [
+        {
+          "sourceId": "SRC-LINEAR",
+          "evidenceIds": ["LIN-E11"],
+          "observation": "Public proof is organised around routing, progress, status change, roadmap stages, diff comparison, project health, and live agent activity."
+        },
+        {
+          "sourceId": "SRC-ELEVENLABS",
+          "evidenceIds": ["ELV-E03", "ELV-E10", "ELV-E13", "ELV-E14"],
+          "observation": "Pause, play, speaking, waiting, timeline position, synchronisation, permission, interruption, handoff, and continuation are meaningful product states."
+        },
+        {
+          "sourceId": "SRC-NOTION",
+          "evidenceIds": ["NTN-E12", "NTN-E20"],
+          "observation": "Agent runs, reversibility, and changed workspace states support a broader state vocabulary, but animation behaviour was not measured."
+        },
+        {
+          "sourceId": "SRC-RAMP",
+          "evidenceIds": ["RAMP-E-002"],
+          "observation": "Live-looking activity suggests state display, but cadence and data freshness were not verified."
+        }
+      ],
+      "crossSourceMechanism": "Useful motion communicates a transition in progress, ownership, permission, transformation, synchronisation, exception, handoff, verification, completion, or reversal, with static and reduced-motion equivalents preserving meaning.",
+      "transferablePrinciple": "Define the shared Mez state vocabulary before visual motion. Products may express states through different objects, while ownership, status, accessibility, and reduced-motion meaning remain common.",
+      "exactExpressionsToAvoid": [
+        "Linear exact agent progress, issue routing, diff comparison, roadmap animation, and motion timing",
+        "ElevenLabs pause and play symbolism, waveforms, voice orbs, timeline motion, Chladni response, and kinetic type",
+        "Notion agent characters, workspace animation, and specific reversible-action presentations",
+        "Ramp ticker motion, counter cadence, dotted field, and unverified live-data representation",
+        "Generic AI particles, pulsing spheres, travelling gradients, light sweeps, and decorative waves"
+      ],
+      "scope": {
+        "channels": ["product-ui", "web", "launch-film", "social-video", "static", "reduced-motion"],
+        "surfaces": ["progress", "handoff", "verification", "error", "recovery", "completion", "storyboard"]
+      },
+      "confidence": {
+        "level": "medium",
+        "basis": "State semantics are well supported, but timing, easing, choreography, responsiveness, and reduced-motion implementations were not measured."
+      },
+      "epistemicStatus": "tentative_inference",
+      "originalityRisk": {
+        "level": "high",
+        "reasons": ["Audio and workflow motion signatures are highly attributable", "Generic AI motion is saturated"],
+        "mitigations": ["Start from Mez state semantics", "Prototype static frames first", "Prohibit direct source metaphors"]
+      },
+      "tensionContradiction": [
+        "Shared state semantics improve coherence, but identical motion erases product character.",
+        "Rich motion can clarify transformation, but static and reduced-motion outputs must remain comprehensible.",
+        "Live-looking activity increases immediacy but uncertain cadence damages trust."
+      ],
+      "candidateExperimentIds": ["E-04"],
+      "decisionStatus": "unapproved"
+    },
+    {
+      "id": "M-06",
+      "title": "Portable semantic objects",
+      "researchQuestionIds": ["RQ-02", "RQ-07", "RQ-08"],
+      "problem": "Figma-only truth, prose-only guidance, duplicated tokens, and hidden prompt context create drift between design, code, templates, humans, and LLM-generated outputs.",
+      "sourceObservations": [
+        {
+          "sourceId": "SRC-NOTION",
+          "evidenceIds": ["NTN-E18", "NTN-E19", "NTN-E20"],
+          "observation": "Typed blocks and relationships support systematic layout, while connections expose capabilities, access, authentication, and permissioned objects."
+        },
+        {
+          "sourceId": "SRC-LINEAR",
+          "evidenceIds": ["LIN-E12", "LIN-E13", "LIN-E14"],
+          "observation": "A public method, stable objects, explicit integration actions, and whole-system governance preserve language outside the interface."
+        },
+        {
+          "sourceId": "SRC-STRIPE",
+          "evidenceIds": ["STRIPE-E-006", "STRIPE-E-007", "STRIPE-E-008", "STRIPE-E-009"],
+          "observation": "Semantic components, Figma availability, controlled tokens, styling constraints, LLM copy, and Markdown expose one bounded system to several consumers."
+        },
+        {
+          "sourceId": "SRC-ELEVENLABS",
+          "evidenceIds": ["ELV-E15", "ELV-E16", "ELV-E17"],
+          "observation": "Naming rules, stable identifiers, shared models, APIs, SDKs, roles, approvals, and audit concepts transfer capability across no-code and code surfaces."
+        },
+        {
+          "sourceId": "SRC-RAMP",
+          "evidenceIds": ["RAMP-E-010", "RAMP-E-011", "RAMP-E-012", "RAMP-E-013"],
+          "observation": "Report series, release taxonomies, help definitions, and representation rules publish stable operational nouns and reuse constraints."
+        }
+      ],
+      "crossSourceMechanism": "Transfer succeeds when objects, actions, states, permissions, IDs, content requirements, constraints, transformations, and validation rules are explicit, with Figma, code, documentation, templates, and prompts consuming one registry.",
+      "transferablePrinciple": "Create one versioned Mez semantic registry in which each object declares purpose, claims, evidence, content, states, accessibility, permissions, channel adaptations, transformations, provenance, deprecation, code API, Figma mapping, LLM context, and validation.",
+      "exactExpressionsToAvoid": [
+        "Notion block taxonomy, slash command, API names, database model, and page composition",
+        "Linear Method language, issue and cycle taxonomy, integration categories, and numbered doctrine",
+        "Stripe component names, token names, documentation layout, app indicator, and LLM-copy interaction",
+        "ElevenLabs voice IDs, model names, credit model, platform naming, SDK examples, and approval terminology",
+        "Ramp finance object names, release categories, report taxonomy, definitions, and partner language"
+      ],
+      "scope": {
+        "channels": ["figma", "code", "documentation", "templates", "html", "llm-context", "validation"],
+        "surfaces": ["semantic-registry", "component-library", "token-package", "content-schema", "prompt-fragment", "migration-tool"]
+      },
+      "confidence": {
+        "level": "high",
+        "basis": "Stripe provides direct multi-format evidence, while the other four sources reinforce object stability without proving private design-to-code architecture."
+      },
+      "epistemicStatus": "strong_inference",
+      "originalityRisk": {
+        "level": "medium",
+        "reasons": ["Semantic architecture is transferable", "Source taxonomies would import source product logic"],
+        "mitigations": ["Use Mez-native nouns", "Review schemas independently", "Test across renderers", "Record provenance"]
+      },
+      "tensionContradiction": [
+        "Deterministic semantics improve reliability but unlimited rigidity prevents channel adaptation.",
+        "Human guidance permits judgement while machine validation needs explicit fields and stop conditions.",
+        "One registry reduces drift but creates versioning, deprecation, ownership, and migration obligations."
+      ],
+      "candidateExperimentIds": ["E-02", "E-05"],
+      "decisionStatus": "unapproved"
+    },
+    {
+      "id": "M-07",
+      "title": "Control and provenance are part of the design",
+      "researchQuestionIds": ["RQ-03", "RQ-06", "RQ-07", "RQ-08"],
+      "problem": "LLM-first outputs can appear polished while hiding their source, status, permissions, uncertainty, changes, review point, or recovery path.",
+      "sourceObservations": [
+        {
+          "sourceId": "SRC-NOTION",
+          "evidenceIds": ["NTN-E12", "NTN-E18", "NTN-E19", "NTN-E20"],
+          "observation": "Agent proof includes permissions, logged runs, audit trails, reversible changes, controls, and access boundaries."
+        },
+        {
+          "sourceId": "SRC-LINEAR",
+          "evidenceIds": ["LIN-E06", "LIN-E07"],
+          "observation": "Agent work shows assignment, repository context, changed artefacts, intermediate state, and human handoff."
+        },
+        {
+          "sourceId": "SRC-STRIPE",
+          "evidenceIds": ["STRIPE-E-006", "STRIPE-E-007", "STRIPE-E-008", "STRIPE-E-009"],
+          "observation": "Extensions are bounded by accessibility and styling constraints, while documentation exposes semantic contracts and LLM-readable forms."
+        },
+        {
+          "sourceId": "SRC-ELEVENLABS",
+          "evidenceIds": ["ELV-E09", "ELV-E10", "ELV-E14", "ELV-E17"],
+          "observation": "Agent and creative proof includes guardrails, testing, approvals, audit logs, permission modes, interruption, and continuation."
+        },
+        {
+          "sourceId": "SRC-RAMP",
+          "evidenceIds": ["RAMP-E-007", "RAMP-E-008", "RAMP-E-009", "RAMP-E-010", "RAMP-E-013"],
+          "observation": "Research and data distribution expose dates, authorship, definitions, methodology paths, citation, and representation constraints."
+        }
+      ],
+      "crossSourceMechanism": "Trust controls are visible parts of the experience. Source, evidence class, permission, owner, run history, affected artefact, uncertainty, audit state, review, reversal, and representation constraints shape what a receiver can believe and do.",
+      "transferablePrinciple": "Every Mez-generated output and system action should expose provenance, status, permission, verification, uncertainty, human decision, and recovery according to risk, using reusable primitives linked to governance records.",
+      "exactExpressionsToAvoid": [
+        "Notion exact agent-run UI, permission panels, admin controls, audit language, and workspace imagery",
+        "Linear session activity, repository and diff treatment, issue assignment, review states, and launch controls",
+        "Stripe extension permission, app indicator, documentation controls, and LLM-copy interface",
+        "ElevenLabs guardrail UI, simulation outputs, latency displays, permission modes, and timeline handoff",
+        "Ramp Economics Lab identity, methodology-card format, data-partner language, citations, charts, and metrics"
+      ],
+      "scope": {
+        "channels": ["product-ui", "web", "ads", "email", "reports", "design-output", "research", "exports"],
+        "surfaces": ["agent-run", "receipt", "review-panel", "change-log", "claim-module", "data-visualisation", "generated-artefact"]
+      },
+      "confidence": {
+        "level": "high",
+        "basis": "All five sources expose control, provenance, or representation boundaries for higher-risk outputs, although disclosure depth should vary by risk and channel."
+      },
+      "epistemicStatus": "strong_inference",
+      "originalityRisk": {
+        "level": "medium",
+        "reasons": ["Governance concepts are broadly transferable", "Source control surfaces remain attributable"],
+        "mitigations": ["Use a Mez risk model", "Design an original control grammar", "Define minimum disclosure", "Test with receivers"]
+      },
+      "tensionContradiction": [
+        "Visible controls improve trust but can overwhelm low-risk creative outputs.",
+        "Human review preserves accountability but excessive gating defeats the low-burden goal.",
+        "System actions need reversibility, while static exports need version and source recovery."
+      ],
+      "candidateExperimentIds": ["E-03", "E-04", "E-05"],
+      "decisionStatus": "unapproved"
+    }
+  ]
+}

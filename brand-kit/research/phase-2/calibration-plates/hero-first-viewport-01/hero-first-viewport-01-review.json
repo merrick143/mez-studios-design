@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-HERO-FIRST-VIEWPORT-01",
+  "exportedAt": "2026-07-20T10:16:43.238Z",
+  "complete": true,
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "decisions": {
+    "overallDirection": {
+      "decision": "edit",
+      "note": ""
+    },
+    "heroComposition": {
+      "decision": "reject",
+      "note": "I think a lot of the hero is kind of wrong. We need to rethink this completely. I think it's more like you have multiple cards, spheres, or discs to show the products again. Think of it like a home page, not just one product.\n\nI'd also like it to be center-aligned and the sizing of everything needs to be better, including the visuals and overlays of the spheres, the products, and all that."
+    },
+    "typography": {
+      "decision": "advance",
+      "note": "Yes I actually like this font a lot. I do know that Inter Bold and Inter Regular are fonts that a lot of people use. I'd love your discretion on what you think about the fonts and typography. Maybe we have a whole section for typography in terms of working with AI, instead of trying to bucket it in while we do everything at once. I think that's not an efficient way to do it because typography is such a big part of design that we should spend our own time doing that. You think of the best order for when we do that? Again maybe we research and come up with it. We think about it. We present a bunch of ideas to me and then I can get feedback with typography as its own section."
+    },
+    "controls": {
+      "decision": "edit",
+      "note": "Yeah I'd say the buttons. I think we can, again, make them similar to the typography because buttons are so important. I think we should rethink this as its own section on the Mezcorp end-to-end, working on what gives buttons a premium feel.\nIs it:\n- fully rounded buttons\n- really light rounded buttons\n- drop shadow\n- outline\n- stroke\n- glow\n- blur\n- backgrounds\n- colors\n- text\nThere's so much to buttons. And building a suite of buttons of how we use it and stuff like that, and when and where and why and how"
+    },
+    "mobileOpening": {
+      "decision": "edit",
+      "note": "I think the mobile completely needs reinvigorating, similar to how I said with the original hero. We need to think about it from a mobile-optimized point of view because a lot of our viewers are mobile."
+    }
+  },
+  "overallNote": ""
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-HERO-FIRST-VIEWPORT-01",
+  "title": "Mez hero and first viewport calibration 01",
+  "status": "composition-rejected-foundation-slices-deferred",
+  "productionAuthority": false,
+  "sourceExpressionApproved": false,
+  "purpose": "Calibrate the homepage opening before product-family, commerce and full-page composition work.",
+  "sourceCopy": "research/phase-2/HOMEPAGE-DESIGN-EXPLORATION-PLAN.md",
+  "approvedInputs": {
+    "visualTruthIds": ["VT-01", "VT-05", "VT-06"],
+    "motionDecision": "DEC-MOTION-002",
+    "gradientId": "MZ-G13",
+    "productName": "AI OS",
+    "wingsAsset": "design-system-export/assets/wings.svg"
+  },
+  "candidateVariables": {
+    "surface": "warm-neutral-open-field",
+    "typography": "single-sans-no-serif",
+    "controlRadius": "14px",
+    "composition": "open-split-with-cropped-product-object",
+    "mobileComposition": "copy-actions-then-visible-product-object"
+  },
+  "decisions": [
+    "overallDirection",
+    "heroComposition",
+    "typography",
+    "controls",
+    "mobileOpening"
+  ],
+  "decisionCount": 5,
+  "reviewRecord": "hero-first-viewport-01-review.json",
+  "reviewDisposition": {
+    "overallDirection": "edit",
+    "heroComposition": "reject",
+    "typography": "advance-to-dedicated-calibration",
+    "controls": "defer-to-dedicated-calibration",
+    "mobileOpening": "rebuild-after-product-family-composition"
+  },
+  "nextGate": "typography-system-calibration-01",
+  "stopCondition": "Do not revise the hero or promote candidate foundation values until typography, controls and product-family composition have been reviewed in dedicated plates."
+}

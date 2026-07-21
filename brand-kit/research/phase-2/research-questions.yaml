@@ -1,0 +1,56 @@
+schemaVersion: 1.0.0
+preparedAt: 2026-07-20
+status: approved
+questions:
+  - id: RQ-01
+    rank: 1
+    question: How can Mez remain recognisable without wings, names, or gradient cores?
+    type: identity
+    decisionGate: H2
+    successEvidence:
+      - Three or more cross-source mechanisms
+      - Monochrome and logo-free Mez prototypes
+      - Recognition and originality review
+  - id: RQ-02
+    rank: 2
+    question: How can four products feel related without becoming gradient reskins?
+    type: portfolio
+    decisionGate: H2
+    successEvidence:
+      - Shared chassis invariants
+      - Distinct proof, density, data, motion, and campaign behaviours
+      - Four-product family contact sheet
+  - id: RQ-03
+    rank: 3
+    question: How should claims connect to literal product mechanisms and credible proof?
+    type: product-proof
+    decisionGate: H2
+    successEvidence:
+      - Claim-to-proof pattern atlas
+      - Realistic interface and result evidence
+      - Cross-channel proof transformations
+  - id: RQ-04
+    rank: 4
+    question: How should composition density change across marketing, product UI, ads, email, and reports?
+    type: channel-grammar
+    decisionGate: H2
+  - id: RQ-05
+    rank: 5
+    question: How should parent, holdco, and product hierarchy survive at small sizes?
+    type: brand-architecture
+    decisionGate: H3
+  - id: RQ-06
+    rank: 6
+    question: Which motion behaviours communicate state, intelligence, and orchestration?
+    type: motion
+    decisionGate: H3
+  - id: RQ-07
+    rank: 7
+    question: How do mature systems transfer decisions across code, Figma, templates, humans, and LLMs?
+    type: operations
+    decisionGate: H4
+  - id: RQ-08
+    rank: 8
+    question: Which AI and SaaS expressions should Mez explicitly reject?
+    type: anti-reference
+    decisionGate: H2
