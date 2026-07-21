@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseId": "mz.systems.release.0-1-0-alpha-1",
+  "version": "0.1.0-alpha.1",
+  "stage": "migration-snapshot",
+  "cutoverId": "CUTOVER-2026-07-21-01",
+  "authorityState": "prepared",
+  "canonicalSnapshot": false,
+  "productionReady": false,
+  "decisions": [
+    "DEC-MOTION-002",
+    "DEC-TYPE-001",
+    "DEC-CONTROL-001",
+    "DEC-FAMILY-001",
+    "DEC-HERO-001",
+    "DEC-GRADIENT-LIBRARY-001",
+    "DEC-LIVING-CORE-FINISH-001",
+    "DEC-MIGRATION-SEQUENCE-001",
+    "DEC-PRODUCT-ARCHITECTURE-001"
+  ],
+  "contents": {
+    "products": "data/products.json",
+    "gradients": "data/gradients.json",
+    "assets": "data/assets.json",
+    "decisions": "data/decisions.json",
+    "renderer": "runtime/mz-core.js",
+    "palettes": "runtime/palettes.json",
+    "wings": "assets/wings.svg",
+    "artifactManifest": "artifact-manifest.json",
+    "verifier": "verify.py"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "manifestId": "MEZ-MIGRATION-ARTIFACTS-2026-07-21",
+  "cutoverId": "CUTOVER-2026-07-21-01",
+  "authorityState": "prepared",
+  "historicalManifestPolicy": "The 19 July Phase 0 artifact manifest remains untouched historical evidence.",
+  "artifactCount": 14,
+  "artifacts": [
+    {
+      "path": "authority/authority.json",
+      "sha256": "2b244005f1138c20286d2b639ad01cfe22f211866a3b4e2965b176de0fb0f948",
+      "bytes": 1101
+    },
+    {
+      "path": "authority/rollback.json",
+      "sha256": "05e4431e1bed01bd135016b71cb7af15a026c476e9b0fa60169c174692d6e144",
+      "bytes": 924
+    },
+    {
+      "path": "registry/products.json",
+      "sha256": "1a53f4e7cbe205278acb0814ced92da5ed6994c9942a54bcad31e18411eb12fe",
+      "bytes": 2045
+    },
+    {
+      "path": "registry/gradients.json",
+      "sha256": "751588369b9dc70894c7b993903e370cd9efc3d555d36defacb1d7485b13af3d",
+      "bytes": 66829
+    },
+    {
+      "path": "registry/assets.json",
+      "sha256": "0f4de04474ceb07405d48723f4ff31399bb341a0702d2873dbcd1fe3c759ea13",
+      "bytes": 25792
+    },
+    {
+      "path": "governance/decisions.json",
+      "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587",
+      "bytes": 4292
+    },
+    {
+      "path": "schemas/asset.schema.json",
+      "sha256": "22c841579c5caa4d5c055b1f45b2894fed0870bef93b59e1af05779d2ebca9eb",
+      "bytes": 697
+    },
+    {
+      "path": "schemas/authority.schema.json",
+      "sha256": "83b294f6adf013afbddfe6c36a73b81c53e2cc137f072236ad477eaceba53598",
+      "bytes": 1004
+    },
+    {
+      "path": "schemas/decision.schema.json",
+      "sha256": "f5e68f232bbb1824b938c6566620d95b8d6ccb58ce51396467879859200dd40f",
+      "bytes": 787
+    },
+    {
+      "path": "schemas/gradient.schema.json",
+      "sha256": "94d5a33efc93c4d4485392f910ce9e969a6f6fad0b831e77335fcf40106e3443",
+      "bytes": 1720
+    },
+    {
+      "path": "schemas/product.schema.json",
+      "sha256": "89b329a12d653072557b20646af8db05075658119597ee04eae7900f30f0e1d9",
+      "bytes": 870
+    },
+    {
+      "path": "schemas/release.schema.json",
+      "sha256": "b25497c700f225a8ba8c2c9eefb30f5d5de6c56fc2611106ea350f7edde09105",
+      "bytes": 1068
+    },
+    {
+      "path": "releases/0.1.0-alpha.1/release.json",
+      "sha256": "313f1e80480350a41830850aff387765e68b962ef51c1bb7223230d91fdb8221",
+      "bytes": 902
+    },
+    {
+      "path": "releases/0.1.0-alpha.1/artifact-manifest.json",
+      "sha256": "3db5512596298b60ac1f7cf3b89345e2e83e4167111b3bf9b2a8d65f004bdb32",
+      "bytes": 16581
+    }
+  ]
+}

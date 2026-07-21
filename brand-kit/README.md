@@ -1,6 +1,6 @@
 # Mez Systems Brand Kit Workbench
 
-This is the organised, non-canonical workspace for turning the current Mez Systems design programme into a stable standalone repository and portable release.
+This is the organised control-plane workspace for turning the current Mez Systems design programme into a stable standalone repository and portable release. It remains non-canonical while `authority/authority.json` is `prepared`.
 
 It has four jobs:
 
@@ -13,7 +13,7 @@ It has four jobs:
 
 This repository is a workbench and future distribution home. It is **not yet canonical**.
 
-The current canonical source remains the Mez Systems pack on `codex/mez-gradient-system`. The standalone `source-pack/` snapshot came from source-system checkpoint `84eb5a9`; the internal migration-first governance reconciliation is pushed through `50c3b90`. `source-manifest.json` records both roles. Candidate generation writes only to the gitignored `workspace/` directory.
+The current canonical source remains the Mez Systems pack on `codex/mez-gradient-system` until the two-phase authority handshake activates. The standalone `source-pack/` snapshot came from source-system checkpoint `84eb5a9`; newer governance evidence is imported separately. `source-manifest.json` records both roles. Candidate generation writes only to the gitignored `workspace/` directory.
 
 The existing Claude Code work at `/play-orb/` is preserved untouched as the protected visual benchmark.
 
@@ -21,7 +21,7 @@ The complete source-PNG library and every approved expression live at `/brand-ki
 
 `DEC-MIGRATION-SEQUENCE-001` makes canonical cutover the primary programme goal. Before cutover, the internal control plane must approve the five-product roster, stable product IDs, product-gradient assignments and a genuine Context Engine source, then validate a versioned migration snapshot and rollback path. Foundations, the product-expression suite, golden homepage, consumer proof and the production Figma library are post-cutover work in this repository.
 
-The pre-cutover human gate is complete at [`product-architecture/`](product-architecture/). It records the literal five-product family, durable product IDs and approved MZ-G13/G12/G06/G15/G20 assignments under the Deep Mineral finish. There are no historical public-name aliases in the active architecture. The tracked review is migration input only; it cannot transfer canonical authority by itself.
+The pre-cutover human gate is complete at [`product-architecture/`](product-architecture/). It records the literal five-product family, durable product IDs and approved MZ-G13/G12/G06/G15/G20 assignments under the Deep Mineral finish. There are no historical public-name aliases in the active architecture. `releases/0.1.0-alpha.1/` packages that identity kernel for clean-clone validation; it cannot transfer authority by itself.
 
 ## Run locally
 
@@ -46,6 +46,10 @@ brand-kit/
 ├── app.js                        live cores, navigation and candidate review
 ├── server.py                     local candidate API and static server
 ├── source-manifest.json          provenance and conflict record
+├── authority/                    two-phase cutover, rollback and dated evidence
+├── governance/                   imported approved decision ledger
+├── registry/                     generated products, gradients and assets
+├── schemas/                      stable machine-readable contracts
 ├── docs/
 │   ├── MIGRATION-PLAN.md         safest route to the standalone repository
 │   └── SOURCE-MAP.md             canonical, benchmark, snapshot and generated boundaries
@@ -58,9 +62,12 @@ brand-kit/
 │   └── living-core/
 ├── candidates/README.md          candidate contract
 ├── gradient-library/             43-ID source library, generator and expression board
-├── releases/README.md            portable release gates
+├── releases/0.1.0-alpha.1/       self-contained migration identity snapshot
 ├── scripts/
 │   ├── build_claude_catalogue.py reproducible benchmark adapter
+│   ├── build_migration_release.py deterministic snapshot and registry builder
+│   ├── verify_authority.py       authority handshake and artifact validator
+│   ├── verify_release.py         self-contained release validator source
 │   └── verify_workbench.py       deterministic boundary validation
 └── workspace/                    gitignored uploads, plates and decisions
 ```
@@ -72,4 +79,4 @@ brand-kit/
 - Do not treat the product-architecture board as a canonical registry. Its exported decision becomes input to the atomic internal migration update.
 - Do not overwrite the Claude Code play-orb while the palette conflict is unresolved.
 - Do not publish a portable release with the old Inter-only typography claim after `DEC-TYPE-001`.
-- Do not promote this repository to canonical before the migration exit gates pass.
+- Do not set the authority manifest to `canonical-active` before clean-clone proof and the matching internal transfer record exist.

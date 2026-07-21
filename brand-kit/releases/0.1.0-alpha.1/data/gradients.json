@@ -1,0 +1,2677 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryId": "mz.systems.registry.gradients",
+  "authorityState": "prepared",
+  "productionAuthority": false,
+  "decisions": [
+    "DEC-GRADIENT-LIBRARY-001",
+    "DEC-LIVING-CORE-FINISH-001"
+  ],
+  "sourceAuthority": "exact PNG masters",
+  "sourceCount": 43,
+  "uniqueVisualCount": 33,
+  "activeCount": 33,
+  "aliases": {
+    "MZ-G24": "MZ-G02",
+    "MZ-G25": "MZ-G03",
+    "MZ-G26": "MZ-G04",
+    "MZ-G27": "MZ-G05",
+    "MZ-G28": "MZ-G06",
+    "MZ-G29": "MZ-G07",
+    "MZ-G30": "MZ-G08",
+    "MZ-G31": "MZ-G09",
+    "MZ-G32": "MZ-G10",
+    "MZ-G23": "MZ-G21"
+  },
+  "qualityExceptions": [
+    "MZ-G01"
+  ],
+  "extraction": {
+    "method": "k-means++",
+    "clusters": 5,
+    "sample": 160,
+    "seed": 7,
+    "colourSpace": "sRGB extraction, linear-space shader mixing",
+    "numpy": "2.3.5",
+    "pillow": "12.2.0"
+  },
+  "finish": {
+    "id": "deep",
+    "name": "Deep mineral",
+    "values": {
+      "opacity": 1,
+      "exposure": 0.97,
+      "saturation": 1.12,
+      "contrast": 1.13,
+      "lift": -0.01,
+      "shadeStrength": 0.76,
+      "bloomStrength": 0.9,
+      "grainStrength": 1.1
+    }
+  },
+  "gradients": [
+    {
+      "id": "MZ-G01",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G01.png",
+        "sha256": "5adf5a0c0218e6bfc8569360bc941fac7076b7cd1ece73b03a545a563bb9a71a",
+        "width": 250,
+        "height": 250,
+        "quality": "approved-exception"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g01.webp",
+        "sha256": "475b0c9603eb82eaacc5ee3768d579b4222c54e1f01fde412412cc75141972d7",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#151C34",
+            "pos": [
+              -0.1445,
+              -0.0974
+            ],
+            "weight": 1.294,
+            "sourceShare": 0.2153
+          },
+          {
+            "hex": "#5A5D64",
+            "pos": [
+              -0.0082,
+              0.2255
+            ],
+            "weight": 1.004,
+            "sourceShare": 0.141
+          },
+          {
+            "hex": "#C8CDDD",
+            "pos": [
+              0.1603,
+              0.2701
+            ],
+            "weight": 0.859,
+            "sourceShare": 0.1087
+          },
+          {
+            "hex": "#8C909B",
+            "pos": [
+              0.0918,
+              0.253
+            ],
+            "weight": 0.794,
+            "sourceShare": 0.0955
+          }
+        ],
+        "shade": "#04060C",
+        "bloom": "#ECEDF3",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G02",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G02.png",
+        "sha256": "ab10b55ac6a284dc377b16fdda3f257ddb8168a1344a59071b12b6840b88a7cd",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g02.webp",
+        "sha256": "343019ce1f13baf8904159636ec7f082ad9a0e009f8e198cd9e407f814510118",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#CD69FC",
+            "pos": [
+              -0.0402,
+              0.1819
+            ],
+            "weight": 1.614,
+            "sourceShare": 0.4806
+          },
+          {
+            "hex": "#B57CD4",
+            "pos": [
+              0.2842,
+              -0.1317
+            ],
+            "weight": 0.969,
+            "sourceShare": 0.2054
+          },
+          {
+            "hex": "#9444BD",
+            "pos": [
+              -0.1088,
+              -0.166
+            ],
+            "weight": 0.72,
+            "sourceShare": 0.1251
+          },
+          {
+            "hex": "#DDACF4",
+            "pos": [
+              0.1765,
+              -0.0674
+            ],
+            "weight": 0.55,
+            "sourceShare": 0.0548
+          }
+        ],
+        "shade": "#5E0E86",
+        "bloom": "#F3E2FB",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G03",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G03.png",
+        "sha256": "0b80e59bb800305044a95ccffaf92bb3623191388134b6d7d8768db130cfd292",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g03.webp",
+        "sha256": "44e40f1cb49b431c8762d20894cf506f729295dcdfde71ef99b1e0b5521ac19e",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#44384C",
+            "pos": [
+              -0.0138,
+              0.0271
+            ],
+            "weight": 1.301,
+            "sourceShare": 0.2064
+          },
+          {
+            "hex": "#624D6D",
+            "pos": [
+              -0.0311,
+              -0.001
+            ],
+            "weight": 1.127,
+            "sourceShare": 0.1624
+          },
+          {
+            "hex": "#96758C",
+            "pos": [
+              -0.3074,
+              -0.2741
+            ],
+            "weight": 0.785,
+            "sourceShare": 0.0889
+          },
+          {
+            "hex": "#71569D",
+            "pos": [
+              0.2825,
+              0.3178
+            ],
+            "weight": 0.707,
+            "sourceShare": 0.0746
+          }
+        ],
+        "shade": "#2C272E",
+        "bloom": "#DACFD7",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G04",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G04.png",
+        "sha256": "c2e2d3ec1332f589cfce6d05237f63257812d22846c11dfc6657caacf1172ce6",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g04.webp",
+        "sha256": "3120e085f9f009ca5159f22c8a0c9dc34f7d87efba762b2ae89c80eae2b9478c",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#372512",
+            "pos": [
+              0.0747,
+              0.0101
+            ],
+            "weight": 1.455,
+            "sourceShare": 0.2001
+          },
+          {
+            "hex": "#654F3E",
+            "pos": [
+              -0.0135,
+              -0.0599
+            ],
+            "weight": 0.964,
+            "sourceShare": 0.1007
+          },
+          {
+            "hex": "#A08576",
+            "pos": [
+              -0.0375,
+              -0.0211
+            ],
+            "weight": 0.795,
+            "sourceShare": 0.073
+          },
+          {
+            "hex": "#EED0C9",
+            "pos": [
+              0.2784,
+              0.3471
+            ],
+            "weight": 0.667,
+            "sourceShare": 0.0545
+          }
+        ],
+        "shade": "#0A0806",
+        "bloom": "#F9EEEC",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G05",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G05.png",
+        "sha256": "d61acc91c4f7fb67151f3ecdb3e5a84568d10d9ab931259e892149e3f145a252",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g05.webp",
+        "sha256": "1b9c64250574d520fc746253adc901fb62a047e2153fe07ef25bae864249656c",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#9CF6E8",
+            "pos": [
+              -0.2272,
+              -0.0595
+            ],
+            "weight": 1.084,
+            "sourceShare": 0.2641
+          },
+          {
+            "hex": "#8DC9EA",
+            "pos": [
+              0.1946,
+              0.1687
+            ],
+            "weight": 1.03,
+            "sourceShare": 0.2424
+          },
+          {
+            "hex": "#CBC8FD",
+            "pos": [
+              0.1136,
+              -0.2765
+            ],
+            "weight": 0.984,
+            "sourceShare": 0.2245
+          },
+          {
+            "hex": "#A5E3EF",
+            "pos": [
+              -0.1924,
+              0.2053
+            ],
+            "weight": 0.896,
+            "sourceShare": 0.1921
+          }
+        ],
+        "shade": "#72AAD5",
+        "bloom": "#DCFCF7",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G06",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G06.png",
+        "sha256": "6ebddb23fd212685d3b93fbb37808a41bcc233d498dc170a294010f6f48aef22",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g06.webp",
+        "sha256": "eb791a1f5d6560bc957719713e044126c5dab2ed9a6667285654d222386a4ca2",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#83F1EB",
+            "pos": [
+              0.2824,
+              -0.0885
+            ],
+            "weight": 1.024,
+            "sourceShare": 0.2254
+          },
+          {
+            "hex": "#D3B8EF",
+            "pos": [
+              0.1701,
+              0.1002
+            ],
+            "weight": 1.022,
+            "sourceShare": 0.2246
+          },
+          {
+            "hex": "#B175E6",
+            "pos": [
+              -0.114,
+              -0.0148
+            ],
+            "weight": 1.001,
+            "sourceShare": 0.2169
+          },
+          {
+            "hex": "#8F46D0",
+            "pos": [
+              -0.2389,
+              -0.0826
+            ],
+            "weight": 0.951,
+            "sourceShare": 0.1993
+          }
+        ],
+        "shade": "#5C30C3",
+        "bloom": "#D4FAF8",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G07",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G07.png",
+        "sha256": "6a7e6410ce7e2112681f77092be669a49eec4cce7b1a5116260f8fc5c3b047cd",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g07.webp",
+        "sha256": "963861e83f7489af190efd8ee0731bfde119c594c88f2162f4dbb51ab1ccde9f",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#F4E8BF",
+            "pos": [
+              0.2882,
+              -0.0904
+            ],
+            "weight": 1.212,
+            "sourceShare": 0.1667
+          },
+          {
+            "hex": "#306A4D",
+            "pos": [
+              0.1443,
+              0.1676
+            ],
+            "weight": 1.088,
+            "sourceShare": 0.1392
+          },
+          {
+            "hex": "#B9BA97",
+            "pos": [
+              0.223,
+              -0.1276
+            ],
+            "weight": 0.857,
+            "sourceShare": 0.0935
+          },
+          {
+            "hex": "#758A6E",
+            "pos": [
+              0.1408,
+              -0.0567
+            ],
+            "weight": 0.805,
+            "sourceShare": 0.0843
+          }
+        ],
+        "shade": "#283B32",
+        "bloom": "#FBF7E8",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G08",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G08.png",
+        "sha256": "2cd2f2025d68f81cbacc92a0d05125304db491067e9dda4ee4b8b474bdebcbe5",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g08.webp",
+        "sha256": "dde768484f5b3893db6ccdb36a8d422ae588174c9c669dda979d880cc68ada67",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#5A593D",
+            "pos": [
+              -0.1009,
+              0.1267
+            ],
+            "weight": 1.271,
+            "sourceShare": 0.2208
+          },
+          {
+            "hex": "#958D59",
+            "pos": [
+              -0.0474,
+              0.189
+            ],
+            "weight": 0.98,
+            "sourceShare": 0.1432
+          },
+          {
+            "hex": "#EDDA7F",
+            "pos": [
+              0.2638,
+              0.0519
+            ],
+            "weight": 0.976,
+            "sourceShare": 0.1423
+          },
+          {
+            "hex": "#50796E",
+            "pos": [
+              0.2123,
+              0.3386
+            ],
+            "weight": 0.723,
+            "sourceShare": 0.0862
+          }
+        ],
+        "shade": "#191915",
+        "bloom": "#F9F2D2",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G09",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G09.png",
+        "sha256": "e0d97cf1672e2a75011780f42fd23bf4dd089f18c8f7b9a74c0a77abe1a2a200",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g09.webp",
+        "sha256": "f5068927a347695d36b1ead7a3a1f4d6e1b089c2a51286864e71a9606e387bfe",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#881655",
+            "pos": [
+              -0.1926,
+              0.1491
+            ],
+            "weight": 1.282,
+            "sourceShare": 0.3051
+          },
+          {
+            "hex": "#A64077",
+            "pos": [
+              0.0536,
+              -0.0637
+            ],
+            "weight": 1.022,
+            "sourceShare": 0.2093
+          },
+          {
+            "hex": "#682D7A",
+            "pos": [
+              -0.1348,
+              -0.1919
+            ],
+            "weight": 1.001,
+            "sourceShare": 0.2021
+          },
+          {
+            "hex": "#D46A8C",
+            "pos": [
+              0.2649,
+              0.1932
+            ],
+            "weight": 0.618,
+            "sourceShare": 0.0905
+          }
+        ],
+        "shade": "#460C74",
+        "bloom": "#F0CBD7",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G10",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G10.png",
+        "sha256": "7295d1b85d86e8ab81dc76cc0ab3b0a3404d8f27687f643741b636d8679d0178",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g10.webp",
+        "sha256": "d8f41ef764b91548b3449e0c3defbb6ec4f052b0b53bed21d822bb4d5ac74ab5",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#16392F",
+            "pos": [
+              -0.1327,
+              0.1712
+            ],
+            "weight": 1.279,
+            "sourceShare": 0.1849
+          },
+          {
+            "hex": "#156F4F",
+            "pos": [
+              0.1984,
+              0.2014
+            ],
+            "weight": 1.219,
+            "sourceShare": 0.1706
+          },
+          {
+            "hex": "#245445",
+            "pos": [
+              0.0632,
+              0.1771
+            ],
+            "weight": 0.864,
+            "sourceShare": 0.0962
+          },
+          {
+            "hex": "#4E8372",
+            "pos": [
+              0.2587,
+              0.3714
+            ],
+            "weight": 0.55,
+            "sourceShare": 0.0391
+          }
+        ],
+        "shade": "#131416",
+        "bloom": "#C1D4CD",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G11",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G11.png",
+        "sha256": "aae45aad3835fbe442a03b0103e63f9c846e3c794eda40df3b0a1bcb05c25d97",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g11.webp",
+        "sha256": "567b0f615798ac189658f59c5f8d2eb349db7ec77ab2cfe73967584769c44075",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#7F3B98",
+            "pos": [
+              -0.099,
+              0.056
+            ],
+            "weight": 1.26,
+            "sourceShare": 0.3063
+          },
+          {
+            "hex": "#FA9E8D",
+            "pos": [
+              0.2326,
+              0.0234
+            ],
+            "weight": 1.16,
+            "sourceShare": 0.267
+          },
+          {
+            "hex": "#8A56B8",
+            "pos": [
+              -0.1674,
+              -0.1857
+            ],
+            "weight": 0.896,
+            "sourceShare": 0.1736
+          },
+          {
+            "hex": "#C27EA6",
+            "pos": [
+              0.1298,
+              0.0291
+            ],
+            "weight": 0.591,
+            "sourceShare": 0.0867
+          }
+        ],
+        "shade": "#4328AA",
+        "bloom": "#FDDDD7",
+        "bloomAnchor": 1
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G12",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G12.png",
+        "sha256": "8f0b39f124c3679e32066e7356b5741abd3eb642811d595bb5ee73163a7584ab",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g12.webp",
+        "sha256": "6f1fff187e5af7350fe5c67d63f03d18b45e5a04c188bec65d5ba19e3cfcbe49",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#F99B8B",
+            "pos": [
+              -0.0251,
+              0.228
+            ],
+            "weight": 1.382,
+            "sourceShare": 0.3407
+          },
+          {
+            "hex": "#4C229F",
+            "pos": [
+              0.2126,
+              -0.1975
+            ],
+            "weight": 1.009,
+            "sourceShare": 0.2018
+          },
+          {
+            "hex": "#C97995",
+            "pos": [
+              -0.0449,
+              0.1161
+            ],
+            "weight": 0.788,
+            "sourceShare": 0.1337
+          },
+          {
+            "hex": "#8250A1",
+            "pos": [
+              0.0657,
+              0.0165
+            ],
+            "weight": 0.734,
+            "sourceShare": 0.1187
+          }
+        ],
+        "shade": "#2A28BB",
+        "bloom": "#FDDCD6",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G13",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G13.png",
+        "sha256": "7932fb83949329ad562a13010221d2c0e6cad9f24312993acf781935547a946e",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g13.webp",
+        "sha256": "1a6ce9c92252701d71ed27aca82414e84afe89dcfbcdaa8c8073b03cb4fb9538",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#69D9F4",
+            "pos": [
+              -0.1315,
+              0.2669
+            ],
+            "weight": 1.158,
+            "sourceShare": 0.2564
+          },
+          {
+            "hex": "#294288",
+            "pos": [
+              0.1618,
+              -0.1654
+            ],
+            "weight": 1.089,
+            "sourceShare": 0.2315
+          },
+          {
+            "hex": "#5C8CD0",
+            "pos": [
+              -0.1235,
+              -0.0459
+            ],
+            "weight": 0.873,
+            "sourceShare": 0.1602
+          },
+          {
+            "hex": "#4168AA",
+            "pos": [
+              -0.0084,
+              -0.0616
+            ],
+            "weight": 0.857,
+            "sourceShare": 0.1553
+          }
+        ],
+        "shade": "#2D176E",
+        "bloom": "#CAF2FB",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G14",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G14.png",
+        "sha256": "35c2186a1b4d1e5f31a0796fcc7f8c2116afb4c7f8b88385934a745f31d3abfc",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g14.webp",
+        "sha256": "6d5a48852c276ac25ef2fc986c6a608e84ae76581e9d6db8e22cb8430208b650",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#1F4257",
+            "pos": [
+              -0.2303,
+              0.2455
+            ],
+            "weight": 1.176,
+            "sourceShare": 0.1924
+          },
+          {
+            "hex": "#40515F",
+            "pos": [
+              0.0853,
+              -0.072
+            ],
+            "weight": 1.033,
+            "sourceShare": 0.155
+          },
+          {
+            "hex": "#4D6E80",
+            "pos": [
+              0.1701,
+              -0.1624
+            ],
+            "weight": 0.941,
+            "sourceShare": 0.1327
+          },
+          {
+            "hex": "#5D8CA6",
+            "pos": [
+              0.2782,
+              -0.2782
+            ],
+            "weight": 0.829,
+            "sourceShare": 0.1075
+          }
+        ],
+        "shade": "#323741",
+        "bloom": "#C6D7E0",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G15",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G15.png",
+        "sha256": "663fa616cf8869ae3f0ad3438c31a88eb16729b2db023569ce151a676d9e25a4",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g15.webp",
+        "sha256": "ed93c3994c31a1eb4937570a818ab68e6e3ea165b0997c75f58836ef82c2ea62",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#75B89A",
+            "pos": [
+              0.1166,
+              0.093
+            ],
+            "weight": 1.116,
+            "sourceShare": 0.2557
+          },
+          {
+            "hex": "#20A695",
+            "pos": [
+              0.0538,
+              -0.1312
+            ],
+            "weight": 1.111,
+            "sourceShare": 0.2538
+          },
+          {
+            "hex": "#B6C673",
+            "pos": [
+              -0.0095,
+              -0.1639
+            ],
+            "weight": 1.052,
+            "sourceShare": 0.2318
+          },
+          {
+            "hex": "#5DE2D3",
+            "pos": [
+              -0.0065,
+              0.0993
+            ],
+            "weight": 0.676,
+            "sourceShare": 0.1108
+          }
+        ],
+        "shade": "#178679",
+        "bloom": "#C6F5EF",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G16",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G16.png",
+        "sha256": "7feed76478de821e2648bc76e204c164bcfc97b7390beee575daf991c3f75be9",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g16.webp",
+        "sha256": "05a4935b3fd6e2dd9c632f604e3e7905ac59482e7a2629cb406d670f188c2bc1",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#45A79B",
+            "pos": [
+              0.1393,
+              -0.053
+            ],
+            "weight": 1.3,
+            "sourceShare": 0.2685
+          },
+          {
+            "hex": "#13A096",
+            "pos": [
+              0.1201,
+              -0.1492
+            ],
+            "weight": 1.143,
+            "sourceShare": 0.2166
+          },
+          {
+            "hex": "#75BBAF",
+            "pos": [
+              0.1196,
+              0.1444
+            ],
+            "weight": 0.853,
+            "sourceShare": 0.133
+          },
+          {
+            "hex": "#6CF5E6",
+            "pos": [
+              -0.2933,
+              -0.313
+            ],
+            "weight": 0.606,
+            "sourceShare": 0.0753
+          }
+        ],
+        "shade": "#1B8276",
+        "bloom": "#CBFBF6",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G17",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G17.png",
+        "sha256": "54287f55be02073bd3e32b717511c52f94672cb6e49879af85ef2acf58dcbfef",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g17.webp",
+        "sha256": "8b00f0d4fb97de108ee962fecbdacb9c413d20a6d714a1c98026c4fa17b23f60",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#475963",
+            "pos": [
+              -0.0267,
+              -0.0267
+            ],
+            "weight": 1.226,
+            "sourceShare": 0.2045
+          },
+          {
+            "hex": "#587B85",
+            "pos": [
+              0.0294,
+              -0.1418
+            ],
+            "weight": 1.169,
+            "sourceShare": 0.1889
+          },
+          {
+            "hex": "#609AA8",
+            "pos": [
+              0.1507,
+              -0.1875
+            ],
+            "weight": 1.039,
+            "sourceShare": 0.1552
+          },
+          {
+            "hex": "#74C5DB",
+            "pos": [
+              -0.3328,
+              0.3079
+            ],
+            "weight": 0.55,
+            "sourceShare": 0.0337
+          }
+        ],
+        "shade": "#353D46",
+        "bloom": "#CEEBF2",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G18",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G18.png",
+        "sha256": "9f325de802847d92ae18101dedb89fd7db8647b2d5a2c4bd7fc636693488ff3a",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g18.webp",
+        "sha256": "01a66a1a8100636b22d65d9cc9f903d42688f979675dac9e764b5e263434e7b2",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#6E7BAD",
+            "pos": [
+              0.2204,
+              -0.0232
+            ],
+            "weight": 1.182,
+            "sourceShare": 0.2537
+          },
+          {
+            "hex": "#4A5CB1",
+            "pos": [
+              -0.1079,
+              -0.153
+            ],
+            "weight": 1.109,
+            "sourceShare": 0.2282
+          },
+          {
+            "hex": "#3044A2",
+            "pos": [
+              -0.1178,
+              0.0282
+            ],
+            "weight": 0.883,
+            "sourceShare": 0.1561
+          },
+          {
+            "hex": "#8F99BC",
+            "pos": [
+              0.2975,
+              -0.0724
+            ],
+            "weight": 0.793,
+            "sourceShare": 0.1304
+          }
+        ],
+        "shade": "#142C9F",
+        "bloom": "#D8DBE8",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G19",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G19.png",
+        "sha256": "80f0af2ddd398983280e35f53c01a65548aa03970872b9d66303cccabc6e14a8",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g19.webp",
+        "sha256": "00f3924f6275332a099965be080db4f1ad06182c3b2468bcededb691fa072cf6",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#CA4F19",
+            "pos": [
+              0.1632,
+              -0.1371
+            ],
+            "weight": 1.356,
+            "sourceShare": 0.3243
+          },
+          {
+            "hex": "#CD7E6C",
+            "pos": [
+              0.2199,
+              0.2611
+            ],
+            "weight": 0.934,
+            "sourceShare": 0.1742
+          },
+          {
+            "hex": "#E0A64C",
+            "pos": [
+              -0.2015,
+              0.2066
+            ],
+            "weight": 0.855,
+            "sourceShare": 0.1504
+          },
+          {
+            "hex": "#F6E460",
+            "pos": [
+              -0.1753,
+              0.1711
+            ],
+            "weight": 0.79,
+            "sourceShare": 0.1319
+          }
+        ],
+        "shade": "#C8180F",
+        "bloom": "#FCF6C7",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G20",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G20.png",
+        "sha256": "c8d3837616d46e4b15d2655ee75907e0cd25b751b2bb8cc8c84acd54bc6facf6",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g20.webp",
+        "sha256": "36ec27dbe8950e2257a9ce404e877732a45630db5d45b7d1c5e3e5dc8c5683d7",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#D78446",
+            "pos": [
+              0.1572,
+              0.1954
+            ],
+            "weight": 1.025,
+            "sourceShare": 0.1954
+          },
+          {
+            "hex": "#F8CCAD",
+            "pos": [
+              0.2352,
+              -0.2345
+            ],
+            "weight": 1.011,
+            "sourceShare": 0.191
+          },
+          {
+            "hex": "#ECA57A",
+            "pos": [
+              0.1054,
+              -0.0887
+            ],
+            "weight": 1.005,
+            "sourceShare": 0.1891
+          },
+          {
+            "hex": "#DA5054",
+            "pos": [
+              -0.1919,
+              -0.079
+            ],
+            "weight": 0.958,
+            "sourceShare": 0.1747
+          }
+        ],
+        "shade": "#EE1256",
+        "bloom": "#FDEDE2",
+        "bloomAnchor": 1
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G21",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G21.png",
+        "sha256": "99d00fd1f04b02134d44b6ae1ab8dfa21c57c1269a8671645da4c82c6b3dc91d",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g21.webp",
+        "sha256": "b1f69b02b31716bca4a137fda57d4f52509500f9f488148ded66fa13cf2fff63",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#9487BD",
+            "pos": [
+              -0.0137,
+              -0.185
+            ],
+            "weight": 1.405,
+            "sourceShare": 0.4123
+          },
+          {
+            "hex": "#A9C1E9",
+            "pos": [
+              -0.0888,
+              0.098
+            ],
+            "weight": 1.033,
+            "sourceShare": 0.247
+          },
+          {
+            "hex": "#A882F8",
+            "pos": [
+              0.1956,
+              0.2577
+            ],
+            "weight": 0.881,
+            "sourceShare": 0.1895
+          },
+          {
+            "hex": "#574E9F",
+            "pos": [
+              -0.3477,
+              0.0428
+            ],
+            "weight": 0.552,
+            "sourceShare": 0.0868
+          }
+        ],
+        "shade": "#973290",
+        "bloom": "#E1E9F7",
+        "bloomAnchor": 1
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G22",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G22.png",
+        "sha256": "7d75dfb6bc66704420b22a22fe82881b8005869dedd70d92f8d4162bb95188a6",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g22.webp",
+        "sha256": "205f68a26dc251dc0855318c6121e0d3e916c62fd3439d47f40ba2201e234dfb",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#151C34",
+            "pos": [
+              -0.1436,
+              -0.0949
+            ],
+            "weight": 1.29,
+            "sourceShare": 0.2127
+          },
+          {
+            "hex": "#5B5D65",
+            "pos": [
+              -0.0083,
+              0.2273
+            ],
+            "weight": 1.013,
+            "sourceShare": 0.1421
+          },
+          {
+            "hex": "#C7CDDD",
+            "pos": [
+              0.1601,
+              0.2704
+            ],
+            "weight": 0.858,
+            "sourceShare": 0.1078
+          },
+          {
+            "hex": "#8D909C",
+            "pos": [
+              0.0957,
+              0.2524
+            ],
+            "weight": 0.789,
+            "sourceShare": 0.0937
+          }
+        ],
+        "shade": "#04060C",
+        "bloom": "#ECEDF3",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G23",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G21",
+      "source": {
+        "path": "assets/source/MZ-G23.png",
+        "sha256": "99d00fd1f04b02134d44b6ae1ab8dfa21c57c1269a8671645da4c82c6b3dc91d",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g23.webp",
+        "sha256": "b1f69b02b31716bca4a137fda57d4f52509500f9f488148ded66fa13cf2fff63",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#9487BD",
+            "pos": [
+              -0.0137,
+              -0.185
+            ],
+            "weight": 1.405,
+            "sourceShare": 0.4123
+          },
+          {
+            "hex": "#A9C1E9",
+            "pos": [
+              -0.0888,
+              0.098
+            ],
+            "weight": 1.033,
+            "sourceShare": 0.247
+          },
+          {
+            "hex": "#A882F8",
+            "pos": [
+              0.1956,
+              0.2577
+            ],
+            "weight": 0.881,
+            "sourceShare": 0.1895
+          },
+          {
+            "hex": "#574E9F",
+            "pos": [
+              -0.3477,
+              0.0428
+            ],
+            "weight": 0.552,
+            "sourceShare": 0.0868
+          }
+        ],
+        "shade": "#973290",
+        "bloom": "#E1E9F7",
+        "bloomAnchor": 1
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G24",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G02",
+      "source": {
+        "path": "assets/source/MZ-G24.png",
+        "sha256": "ab10b55ac6a284dc377b16fdda3f257ddb8168a1344a59071b12b6840b88a7cd",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g24.webp",
+        "sha256": "343019ce1f13baf8904159636ec7f082ad9a0e009f8e198cd9e407f814510118",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#CD69FC",
+            "pos": [
+              -0.0402,
+              0.1819
+            ],
+            "weight": 1.614,
+            "sourceShare": 0.4806
+          },
+          {
+            "hex": "#B57CD4",
+            "pos": [
+              0.2842,
+              -0.1317
+            ],
+            "weight": 0.969,
+            "sourceShare": 0.2054
+          },
+          {
+            "hex": "#9444BD",
+            "pos": [
+              -0.1088,
+              -0.166
+            ],
+            "weight": 0.72,
+            "sourceShare": 0.1251
+          },
+          {
+            "hex": "#DDACF4",
+            "pos": [
+              0.1765,
+              -0.0674
+            ],
+            "weight": 0.55,
+            "sourceShare": 0.0548
+          }
+        ],
+        "shade": "#5E0E86",
+        "bloom": "#F3E2FB",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G25",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G03",
+      "source": {
+        "path": "assets/source/MZ-G25.png",
+        "sha256": "0b80e59bb800305044a95ccffaf92bb3623191388134b6d7d8768db130cfd292",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g25.webp",
+        "sha256": "44e40f1cb49b431c8762d20894cf506f729295dcdfde71ef99b1e0b5521ac19e",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#44384C",
+            "pos": [
+              -0.0138,
+              0.0271
+            ],
+            "weight": 1.301,
+            "sourceShare": 0.2064
+          },
+          {
+            "hex": "#624D6D",
+            "pos": [
+              -0.0311,
+              -0.001
+            ],
+            "weight": 1.127,
+            "sourceShare": 0.1624
+          },
+          {
+            "hex": "#96758C",
+            "pos": [
+              -0.3074,
+              -0.2741
+            ],
+            "weight": 0.785,
+            "sourceShare": 0.0889
+          },
+          {
+            "hex": "#71569D",
+            "pos": [
+              0.2825,
+              0.3178
+            ],
+            "weight": 0.707,
+            "sourceShare": 0.0746
+          }
+        ],
+        "shade": "#2C272E",
+        "bloom": "#DACFD7",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G26",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G04",
+      "source": {
+        "path": "assets/source/MZ-G26.png",
+        "sha256": "c2e2d3ec1332f589cfce6d05237f63257812d22846c11dfc6657caacf1172ce6",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g26.webp",
+        "sha256": "3120e085f9f009ca5159f22c8a0c9dc34f7d87efba762b2ae89c80eae2b9478c",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#372512",
+            "pos": [
+              0.0747,
+              0.0101
+            ],
+            "weight": 1.455,
+            "sourceShare": 0.2001
+          },
+          {
+            "hex": "#654F3E",
+            "pos": [
+              -0.0135,
+              -0.0599
+            ],
+            "weight": 0.964,
+            "sourceShare": 0.1007
+          },
+          {
+            "hex": "#A08576",
+            "pos": [
+              -0.0375,
+              -0.0211
+            ],
+            "weight": 0.795,
+            "sourceShare": 0.073
+          },
+          {
+            "hex": "#EED0C9",
+            "pos": [
+              0.2784,
+              0.3471
+            ],
+            "weight": 0.667,
+            "sourceShare": 0.0545
+          }
+        ],
+        "shade": "#0A0806",
+        "bloom": "#F9EEEC",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G27",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G05",
+      "source": {
+        "path": "assets/source/MZ-G27.png",
+        "sha256": "d61acc91c4f7fb67151f3ecdb3e5a84568d10d9ab931259e892149e3f145a252",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g27.webp",
+        "sha256": "1b9c64250574d520fc746253adc901fb62a047e2153fe07ef25bae864249656c",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#9CF6E8",
+            "pos": [
+              -0.2272,
+              -0.0595
+            ],
+            "weight": 1.084,
+            "sourceShare": 0.2641
+          },
+          {
+            "hex": "#8DC9EA",
+            "pos": [
+              0.1946,
+              0.1687
+            ],
+            "weight": 1.03,
+            "sourceShare": 0.2424
+          },
+          {
+            "hex": "#CBC8FD",
+            "pos": [
+              0.1136,
+              -0.2765
+            ],
+            "weight": 0.984,
+            "sourceShare": 0.2245
+          },
+          {
+            "hex": "#A5E3EF",
+            "pos": [
+              -0.1924,
+              0.2053
+            ],
+            "weight": 0.896,
+            "sourceShare": 0.1921
+          }
+        ],
+        "shade": "#72AAD5",
+        "bloom": "#DCFCF7",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G28",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G06",
+      "source": {
+        "path": "assets/source/MZ-G28.png",
+        "sha256": "6ebddb23fd212685d3b93fbb37808a41bcc233d498dc170a294010f6f48aef22",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g28.webp",
+        "sha256": "eb791a1f5d6560bc957719713e044126c5dab2ed9a6667285654d222386a4ca2",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#83F1EB",
+            "pos": [
+              0.2824,
+              -0.0885
+            ],
+            "weight": 1.024,
+            "sourceShare": 0.2254
+          },
+          {
+            "hex": "#D3B8EF",
+            "pos": [
+              0.1701,
+              0.1002
+            ],
+            "weight": 1.022,
+            "sourceShare": 0.2246
+          },
+          {
+            "hex": "#B175E6",
+            "pos": [
+              -0.114,
+              -0.0148
+            ],
+            "weight": 1.001,
+            "sourceShare": 0.2169
+          },
+          {
+            "hex": "#8F46D0",
+            "pos": [
+              -0.2389,
+              -0.0826
+            ],
+            "weight": 0.951,
+            "sourceShare": 0.1993
+          }
+        ],
+        "shade": "#5C30C3",
+        "bloom": "#D4FAF8",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G29",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G07",
+      "source": {
+        "path": "assets/source/MZ-G29.png",
+        "sha256": "6a7e6410ce7e2112681f77092be669a49eec4cce7b1a5116260f8fc5c3b047cd",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g29.webp",
+        "sha256": "963861e83f7489af190efd8ee0731bfde119c594c88f2162f4dbb51ab1ccde9f",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#F4E8BF",
+            "pos": [
+              0.2882,
+              -0.0904
+            ],
+            "weight": 1.212,
+            "sourceShare": 0.1667
+          },
+          {
+            "hex": "#306A4D",
+            "pos": [
+              0.1443,
+              0.1676
+            ],
+            "weight": 1.088,
+            "sourceShare": 0.1392
+          },
+          {
+            "hex": "#B9BA97",
+            "pos": [
+              0.223,
+              -0.1276
+            ],
+            "weight": 0.857,
+            "sourceShare": 0.0935
+          },
+          {
+            "hex": "#758A6E",
+            "pos": [
+              0.1408,
+              -0.0567
+            ],
+            "weight": 0.805,
+            "sourceShare": 0.0843
+          }
+        ],
+        "shade": "#283B32",
+        "bloom": "#FBF7E8",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G30",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G08",
+      "source": {
+        "path": "assets/source/MZ-G30.png",
+        "sha256": "2cd2f2025d68f81cbacc92a0d05125304db491067e9dda4ee4b8b474bdebcbe5",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g30.webp",
+        "sha256": "dde768484f5b3893db6ccdb36a8d422ae588174c9c669dda979d880cc68ada67",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#5A593D",
+            "pos": [
+              -0.1009,
+              0.1267
+            ],
+            "weight": 1.271,
+            "sourceShare": 0.2208
+          },
+          {
+            "hex": "#958D59",
+            "pos": [
+              -0.0474,
+              0.189
+            ],
+            "weight": 0.98,
+            "sourceShare": 0.1432
+          },
+          {
+            "hex": "#EDDA7F",
+            "pos": [
+              0.2638,
+              0.0519
+            ],
+            "weight": 0.976,
+            "sourceShare": 0.1423
+          },
+          {
+            "hex": "#50796E",
+            "pos": [
+              0.2123,
+              0.3386
+            ],
+            "weight": 0.723,
+            "sourceShare": 0.0862
+          }
+        ],
+        "shade": "#191915",
+        "bloom": "#F9F2D2",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G31",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G09",
+      "source": {
+        "path": "assets/source/MZ-G31.png",
+        "sha256": "e0d97cf1672e2a75011780f42fd23bf4dd089f18c8f7b9a74c0a77abe1a2a200",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g31.webp",
+        "sha256": "f5068927a347695d36b1ead7a3a1f4d6e1b089c2a51286864e71a9606e387bfe",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#881655",
+            "pos": [
+              -0.1926,
+              0.1491
+            ],
+            "weight": 1.282,
+            "sourceShare": 0.3051
+          },
+          {
+            "hex": "#A64077",
+            "pos": [
+              0.0536,
+              -0.0637
+            ],
+            "weight": 1.022,
+            "sourceShare": 0.2093
+          },
+          {
+            "hex": "#682D7A",
+            "pos": [
+              -0.1348,
+              -0.1919
+            ],
+            "weight": 1.001,
+            "sourceShare": 0.2021
+          },
+          {
+            "hex": "#D46A8C",
+            "pos": [
+              0.2649,
+              0.1932
+            ],
+            "weight": 0.618,
+            "sourceShare": 0.0905
+          }
+        ],
+        "shade": "#460C74",
+        "bloom": "#F0CBD7",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G32",
+      "state": "compatibility-alias",
+      "aliasOf": "MZ-G10",
+      "source": {
+        "path": "assets/source/MZ-G32.png",
+        "sha256": "7295d1b85d86e8ab81dc76cc0ab3b0a3404d8f27687f643741b636d8679d0178",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g32.webp",
+        "sha256": "d8f41ef764b91548b3449e0c3defbb6ec4f052b0b53bed21d822bb4d5ac74ab5",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#16392F",
+            "pos": [
+              -0.1327,
+              0.1712
+            ],
+            "weight": 1.279,
+            "sourceShare": 0.1849
+          },
+          {
+            "hex": "#156F4F",
+            "pos": [
+              0.1984,
+              0.2014
+            ],
+            "weight": 1.219,
+            "sourceShare": 0.1706
+          },
+          {
+            "hex": "#245445",
+            "pos": [
+              0.0632,
+              0.1771
+            ],
+            "weight": 0.864,
+            "sourceShare": 0.0962
+          },
+          {
+            "hex": "#4E8372",
+            "pos": [
+              0.2587,
+              0.3714
+            ],
+            "weight": 0.55,
+            "sourceShare": 0.0391
+          }
+        ],
+        "shade": "#131416",
+        "bloom": "#C1D4CD",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G34",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G34.png",
+        "sha256": "cd2616313cea7389797c2944f1d8072a2c1a0928eb6267ed8e082ab6ae57caf8",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g34.webp",
+        "sha256": "7cee09e03e1c93b6bc114796440eb3208887f8fb465380fb4da4df0124d9fb44",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#F36246",
+            "pos": [
+              0.0547,
+              -0.0099
+            ],
+            "weight": 1.225,
+            "sourceShare": 0.2382
+          },
+          {
+            "hex": "#F2727C",
+            "pos": [
+              -0.0887,
+              -0.1329
+            ],
+            "weight": 1.036,
+            "sourceShare": 0.18
+          },
+          {
+            "hex": "#F598AE",
+            "pos": [
+              -0.1928,
+              0.0202
+            ],
+            "weight": 0.87,
+            "sourceShare": 0.1346
+          },
+          {
+            "hex": "#F99C69",
+            "pos": [
+              0.2307,
+              0.2577
+            ],
+            "weight": 0.837,
+            "sourceShare": 0.1263
+          }
+        ],
+        "shade": "#F03E26",
+        "bloom": "#FBDBE3",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G35",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G35.png",
+        "sha256": "2be6de240f55b5e12dc9bc289e7602ce325cb87221a7d1cbde1579a83a9227e5",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g35.webp",
+        "sha256": "8b3806a2285fc37d39f8fce3e4e5c6614ed31e49c68886ddf4481aa7b822d71a",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#E37154",
+            "pos": [
+              0.1075,
+              -0.0191
+            ],
+            "weight": 1.148,
+            "sourceShare": 0.2325
+          },
+          {
+            "hex": "#ED9885",
+            "pos": [
+              0.1799,
+              0.0635
+            ],
+            "weight": 1.051,
+            "sourceShare": 0.2006
+          },
+          {
+            "hex": "#BCB1D2",
+            "pos": [
+              -0.3136,
+              -0.0043
+            ],
+            "weight": 1.014,
+            "sourceShare": 0.1891
+          },
+          {
+            "hex": "#9B8A92",
+            "pos": [
+              -0.2206,
+              -0.0013
+            ],
+            "weight": 0.759,
+            "sourceShare": 0.1166
+          }
+        ],
+        "shade": "#EA4B2C",
+        "bloom": "#E8E4EF",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G39",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G39.png",
+        "sha256": "a69a2b9b065fba5029a780c2a10c42a6966eeb5eb1173d69beab2aadd95e4ba9",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g39.webp",
+        "sha256": "76bc7fee898555421463cb3949aef2bb304f75d550b676808bc19173270ddf94",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#EC6958",
+            "pos": [
+              0.0039,
+              -0.0992
+            ],
+            "weight": 1.237,
+            "sourceShare": 0.2513
+          },
+          {
+            "hex": "#F28986",
+            "pos": [
+              0.0386,
+              -0.1031
+            ],
+            "weight": 1.064,
+            "sourceShare": 0.1956
+          },
+          {
+            "hex": "#DAA3CE",
+            "pos": [
+              0.0157,
+              0.3128
+            ],
+            "weight": 0.98,
+            "sourceShare": 0.1704
+          },
+          {
+            "hex": "#B9819A",
+            "pos": [
+              -0.103,
+              0.2485
+            ],
+            "weight": 0.659,
+            "sourceShare": 0.0881
+          }
+        ],
+        "shade": "#EF472D",
+        "bloom": "#F2DFEE",
+        "bloomAnchor": 2
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G41",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G41.png",
+        "sha256": "dbc3ab010b43d3e6375b601b3a6a685de0507aba9feb09b4caacdc8d5e0d1100",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g41.webp",
+        "sha256": "a1f67ef45d1626a1af31b2f5fe61349cb6d5b41f17603515f7e374a361705d1a",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#367494",
+            "pos": [
+              -0.0232,
+              0.0824
+            ],
+            "weight": 1.389,
+            "sourceShare": 0.3496
+          },
+          {
+            "hex": "#656F7C",
+            "pos": [
+              0.0282,
+              -0.0591
+            ],
+            "weight": 0.894,
+            "sourceShare": 0.1675
+          },
+          {
+            "hex": "#905659",
+            "pos": [
+              0.0402,
+              -0.1736
+            ],
+            "weight": 0.84,
+            "sourceShare": 0.1512
+          },
+          {
+            "hex": "#C2463B",
+            "pos": [
+              0.0305,
+              -0.167
+            ],
+            "weight": 0.802,
+            "sourceShare": 0.14
+          }
+        ],
+        "shade": "#30527C",
+        "bloom": "#C9CDD1",
+        "bloomAnchor": 1
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G42",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G42.png",
+        "sha256": "39a0ee19748f2b707b88c1845744ac466af748967767fd0bace09f319c5ddefc",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g42.webp",
+        "sha256": "17d839136c797a3d399179fe05f415155ab5e722030177a3cb8b1767768c5efb",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#D948CB",
+            "pos": [
+              0.0373,
+              0.0287
+            ],
+            "weight": 1.301,
+            "sourceShare": 0.3427
+          },
+          {
+            "hex": "#6E5188",
+            "pos": [
+              0.003,
+              -0.0189
+            ],
+            "weight": 1.054,
+            "sourceShare": 0.2414
+          },
+          {
+            "hex": "#A746A1",
+            "pos": [
+              0.0492,
+              0.1532
+            ],
+            "weight": 0.876,
+            "sourceShare": 0.1773
+          },
+          {
+            "hex": "#945FC2",
+            "pos": [
+              0.0278,
+              -0.254
+            ],
+            "weight": 0.703,
+            "sourceShare": 0.1228
+          }
+        ],
+        "shade": "#3E5460",
+        "bloom": "#DAC7EA",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G43",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G43.png",
+        "sha256": "b672c3fccc2e88b9dc581da9379e3ed50d96b8b47e68766b3d214f92d3779231",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g43.webp",
+        "sha256": "b815ac7e7bcd7758b7a651d9dd4272501ce653080b12ca5462ea68b9f2a5af0f",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#09ADCA",
+            "pos": [
+              0.097,
+              -0.0929
+            ],
+            "weight": 1.065,
+            "sourceShare": 0.2097
+          },
+          {
+            "hex": "#1B7276",
+            "pos": [
+              0.072,
+              -0.069
+            ],
+            "weight": 1.01,
+            "sourceShare": 0.192
+          },
+          {
+            "hex": "#128FA1",
+            "pos": [
+              0.0918,
+              -0.0895
+            ],
+            "weight": 0.983,
+            "sourceShare": 0.1836
+          },
+          {
+            "hex": "#265248",
+            "pos": [
+              -0.0693,
+              0.0604
+            ],
+            "weight": 0.94,
+            "sourceShare": 0.1705
+          }
+        ],
+        "shade": "#2E371B",
+        "bloom": "#A9E2ED",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G45",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G45.png",
+        "sha256": "bbe71d541f4136f30ce0c0ab8bddd7130716dfd381af86b0893f465fac2cbd7b",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g45.webp",
+        "sha256": "2255abb697ff7c133b6b726bbdce2b9aa1cdba3e533d9c3b9118e95c49b6f9c8",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#0CACE1",
+            "pos": [
+              0.0783,
+              -0.0447
+            ],
+            "weight": 1.105,
+            "sourceShare": 0.2489
+          },
+          {
+            "hex": "#1E7AB3",
+            "pos": [
+              0.0743,
+              -0.0265
+            ],
+            "weight": 0.998,
+            "sourceShare": 0.2098
+          },
+          {
+            "hex": "#1693CD",
+            "pos": [
+              0.0695,
+              -0.0146
+            ],
+            "weight": 0.978,
+            "sourceShare": 0.203
+          },
+          {
+            "hex": "#29619C",
+            "pos": [
+              -0.0361,
+              0.0636
+            ],
+            "weight": 0.913,
+            "sourceShare": 0.1809
+          }
+        ],
+        "shade": "#33457E",
+        "bloom": "#AAE2F4",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G46",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G46.png",
+        "sha256": "87048d4df7d6e5788e34b07bf3efa0bf01d9577fd04d992bd0ce5de75c9036ee",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g46.webp",
+        "sha256": "a7f01ac819093264eb064ff94beb8f22d60a7b1e2507d3b3cbd60e574e1971c6",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#253B69",
+            "pos": [
+              0.0068,
+              0.0119
+            ],
+            "weight": 1.064,
+            "sourceShare": 0.1562
+          },
+          {
+            "hex": "#22528D",
+            "pos": [
+              0.1203,
+              0.1308
+            ],
+            "weight": 1.05,
+            "sourceShare": 0.1528
+          },
+          {
+            "hex": "#1E6AB1",
+            "pos": [
+              0.1647,
+              0.1385
+            ],
+            "weight": 0.98,
+            "sourceShare": 0.1362
+          },
+          {
+            "hex": "#1B83D6",
+            "pos": [
+              0.1647,
+              0.1391
+            ],
+            "weight": 0.9,
+            "sourceShare": 0.1181
+          }
+        ],
+        "shade": "#28264C",
+        "bloom": "#AFD4F1",
+        "bloomAnchor": 3
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G48",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G48.png",
+        "sha256": "5343cc761dc41c3d01cec36d0aa7325993308135ef16ddbdf7bf8432304857c6",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g48.webp",
+        "sha256": "1a762cd50198a4cb722fc1d3478526a2d468150c270c0495d53600b20293cf94",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#27A976",
+            "pos": [
+              -0.0072,
+              -0.0459
+            ],
+            "weight": 1.232,
+            "sourceShare": 0.2745
+          },
+          {
+            "hex": "#217959",
+            "pos": [
+              -0.061,
+              -0.0804
+            ],
+            "weight": 0.98,
+            "sourceShare": 0.1873
+          },
+          {
+            "hex": "#4E5667",
+            "pos": [
+              0.1653,
+              0.1592
+            ],
+            "weight": 0.906,
+            "sourceShare": 0.1645
+          },
+          {
+            "hex": "#4D7F7D",
+            "pos": [
+              0.0979,
+              0.045
+            ],
+            "weight": 0.853,
+            "sourceShare": 0.1488
+          }
+        ],
+        "shade": "#15513B",
+        "bloom": "#B3E1CF",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G51",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G51.png",
+        "sha256": "e091860a74d6387cd8c7c6050394f5bc200c85ba1ff48bfddca7906caa099c72",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g51.webp",
+        "sha256": "aeae42d54f92a561a5fcb934a0028551b31b5ce1c31be805889f7139a1baf582",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#18B17A",
+            "pos": [
+              0.069,
+              -0.0174
+            ],
+            "weight": 1.243,
+            "sourceShare": 0.29
+          },
+          {
+            "hex": "#106F6A",
+            "pos": [
+              -0.0303,
+              0.0846
+            ],
+            "weight": 1.051,
+            "sourceShare": 0.2195
+          },
+          {
+            "hex": "#149170",
+            "pos": [
+              0.0437,
+              0.0825
+            ],
+            "weight": 0.976,
+            "sourceShare": 0.1939
+          },
+          {
+            "hex": "#13868C",
+            "pos": [
+              0.1423,
+              -0.3241
+            ],
+            "weight": 0.673,
+            "sourceShare": 0.1043
+          }
+        ],
+        "shade": "#0C5060",
+        "bloom": "#AEE4D1",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    },
+    {
+      "id": "MZ-G52",
+      "state": "active",
+      "aliasOf": null,
+      "source": {
+        "path": "assets/source/MZ-G52.png",
+        "sha256": "e647c3b998569906a6cb3242aaa93b8196dc93e6c11223b39a31e5e4ce22b4f4",
+        "width": 1000,
+        "height": 1000,
+        "quality": "pass"
+      },
+      "staticTwin": {
+        "path": "assets/static/mz-g52.webp",
+        "sha256": "86695d10a9c70d05b285f79ff43764758ad5e119aab42115093198065c596f6a",
+        "role": "exact-source-derived-static-fallback"
+      },
+      "runtime": {
+        "anchors": [
+          {
+            "hex": "#F4C4D3",
+            "pos": [
+              -0.1846,
+              0.1704
+            ],
+            "weight": 1.132,
+            "sourceShare": 0.2375
+          },
+          {
+            "hex": "#F2B396",
+            "pos": [
+              -0.0366,
+              -0.0656
+            ],
+            "weight": 1.1,
+            "sourceShare": 0.2266
+          },
+          {
+            "hex": "#F2A64A",
+            "pos": [
+              -0.0762,
+              -0.1994
+            ],
+            "weight": 0.883,
+            "sourceShare": 0.1571
+          },
+          {
+            "hex": "#F27B71",
+            "pos": [
+              0.2202,
+              0.0839
+            ],
+            "weight": 0.865,
+            "sourceShare": 0.1519
+          }
+        ],
+        "shade": "#F05C34",
+        "bloom": "#FBEAEF",
+        "bloomAnchor": 0
+      },
+      "approximation": true
+    }
+  ]
+}

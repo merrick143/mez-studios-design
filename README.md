@@ -10,13 +10,16 @@ runtime.
 
 ### Mez Systems Brand Kit Workbench (`/brand-kit/`)
 
-The organised non-canonical migration surface for the Living Core, foundations,
-product-expression suite, Context Engine candidates and the first portable release.
+The organised migration control plane for the Living Core, foundations,
+product-expression suite and portable releases. Its authority state is explicit and
+the prepared `0.1.0-alpha.1` identity snapshot validates independently.
 It preserves the original Play Orb as a protected benchmark while imported system files
 remain pinned to a named canonical commit.
 
 - `/brand-kit/` the programme and live comparison workbench
 - `/brand-kit/docs/MIGRATION-PLAN.md` the full authority-transfer plan
+- `/brand-kit/authority/authority.json` the two-phase canonical authority record
+- `/brand-kit/releases/0.1.0-alpha.1/` the self-contained migration snapshot
 - local candidate generation through `brand-kit/server.py`
 
 ### Play Orb · expression system (`/play-orb/`)

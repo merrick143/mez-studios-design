@@ -1,14 +1,15 @@
 # Source map
 
-## Current ownership
+## Prepared cutover ownership
 
 | Layer | Location | Role | May own decisions? |
 | --- | --- | --- | --- |
-| Canonical working pack | `mez-design-system-worktree/departments/cmo/brand-library/brands/mez-systems` | Current decisions, product data, rules, generator and release source | Yes, until migration closes |
+| Canonical working pack | `mez-design-system-worktree/departments/cmo/brand-library/brands/mez-systems` | Current rank-one authority | Yes, until the matching cutover activation record exists |
+| Prepared target control plane | `/brand-kit/authority/`, `/brand-kit/registry/`, `/brand-kit/governance/` | Versioned identity kernel and two-phase authority handshake | Only after `CUTOVER-2026-07-21-01` becomes `canonical-active` |
 | Claude visual benchmark | `/play-orb/` in this repository | Original animated implementation and palette extraction from source PNGs | No; protected comparison evidence |
 | Workbench snapshot | `/brand-kit/source-pack/` | Pinned files imported from the canonical branch | No |
 | Candidate workspace | `/brand-kit/workspace/` | Uploaded images, generated plates and select/edit/reject records | No |
-| Portable releases | `/brand-kit/releases/` | Future immutable distributions after all release gates pass | Only as a named release mirror |
+| Migration release | `/brand-kit/releases/0.1.0-alpha.1/` | Self-contained identity snapshot for clean-clone and rollback proof | No independent decisions; mirrors approved registries and decisions |
 | Figma | recorded Mez Systems file and gradient library | Human authoring and exact source-gradient reference | No independent token authority |
 
 ## Resolved extraction authority
@@ -28,8 +29,8 @@ The complete 43-ID research library now lives under `brand-kit/gradient-library/
 
 - Canonical Wings SVG.
 - Current dependency-free shared WebGL renderer.
-- Four exact WebP static twins.
-- Current product roster and assignment states.
+- All 43 exact source PNGs and static WebP twins.
+- The literal five-product roster, stable IDs and locked assignments.
 - Deterministic candidate generator and extraction constants.
 
 ## Remaining unresolved imports
@@ -42,3 +43,7 @@ The complete 43-ID research library now lives under `brand-kit/gradient-library/
 - The historical four-product snapshot remains preserved under `source-pack/`; it is no longer the active migration roster.
 - Context Engine is approved for MZ-G12 in the migration identity kernel.
 - The literal five-product roster and MZ-G13/G12/G06/G15/G20 assignments are recorded in `product-architecture/` and `gradient-library/assignments.json`.
+
+## Cutover handshake
+
+`authority/authority.json` owns the target state. In `prepared`, the internal pack remains rank one. After the internal transfer-prepared record is pushed, the same file may become `canonical-active`; at that moment the internal record automatically resolves to pinned archive and consumer reference under the shared cutover ID.

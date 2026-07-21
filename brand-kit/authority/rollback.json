@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "cutoverId": "CUTOVER-2026-07-21-01",
+  "status": "ready",
+  "trigger": "Target corruption, unrecoverable validator failure or explicit executive rollback decision.",
+  "restore": {
+    "repository": "merrick143/mezcorp-claudecode",
+    "branch": "codex/mez-gradient-system",
+    "commit": "822aa91",
+    "path": "departments/cmo/brand-library/brands/mez-systems"
+  },
+  "steps": [
+    "Suspend writes to the standalone brand kit.",
+    "Record the rollback decision and reason in both repositories.",
+    "Restore the internal pack from commit 822aa91 without using the dirty everyday checkout.",
+    "Run the internal authority, Phase 1 and migration validators.",
+    "Point consumers back to the restored internal authority until a new cutover passes."
+  ],
+  "dataLossBoundary": "Work created only after cutover must be exported before rollback or it will remain target-only backlog."
+}
