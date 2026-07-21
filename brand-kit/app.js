@@ -56,7 +56,9 @@ async function mountCores() {
 function setActiveNavigation() {
   const links = Array.from(document.querySelectorAll(".rail nav a"));
   const sections = links
-    .map((link) => document.querySelector(link.getAttribute("href")))
+    .map((link) => link.getAttribute("href"))
+    .filter((href) => href?.startsWith("#"))
+    .map((href) => document.querySelector(href))
     .filter(Boolean);
   const observer = new IntersectionObserver(
     (entries) => {
