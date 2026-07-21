@@ -153,6 +153,7 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Complete audit, roadmap, research, decision evidence and LLM contracts transferred.
 - [x] Claude Code and Codex discovery adapters resolve one canonical repository skill.
 - [x] Post-migration foundations, expressions and consumer proof removed from the migration-close gate.
+- [x] Knowledge-portability commit `131435e` validates from a clean remote clone with zero drift.
 - [ ] Target migration branch merged to `mez-studios-design/main` and authority normalised to `main`.
 - [ ] Internal design branch merged through a clean worktree.
 - [ ] Everyday Mezcorp changes classified and protected before switching that checkout.

@@ -41,6 +41,7 @@ def main() -> int:
         BRAND_KIT / "llm/README.md",
         BRAND_KIT / "llm/tasks/TASK-FND-01-TYPOGRAPHY.json",
         BRAND_KIT / "governance/evidence-paths.json",
+        BRAND_KIT / "authority/knowledge-portability-proof.json",
         BRAND_KIT / "skills/codex-made-it/SKILL.md",
         BRAND_KIT / "skills/codex-made-it/references/product-disc-contract.md",
         HISTORY_MANIFEST,

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "proofId": "MEZ-KNOWLEDGE-PORTABILITY-PROOF-2026-07-21-01",
+  "status": "passed",
+  "validatedRepository": "merrick143/mez-studios-design",
+  "validatedBranch": "codex/brand-kit-workbench",
+  "validatedCommit": "131435e88bec2af09805d4b21388b99e52587a2d",
+  "checks": [
+    "knowledge portability validator passed",
+    "104 historical Markdown files matched the frozen manifest",
+    "all approved decision evidence resolved inside the repository",
+    "Claude Code and Codex adapters resolved one canonical skill source",
+    "canonical skill passed skill-creator validation",
+    "bounded task, context, receipt and evaluation fixtures validated",
+    "workbench, complete gradient library and product architecture validated",
+    "deterministic source-gradient rebuild produced zero drift",
+    "authority and migration release validators passed",
+    "clean clone remained clean after every check"
+  ],
+  "nextTask": "TASK-FND-01-TYPOGRAPHY",
+  "productionAuthority": true
+}
