@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "decisionId": "DEC-GRADIENT-LIBRARY-001",
+  "status": "approved-research-system",
+  "approvedAt": "2026-07-21",
+  "approvedBy": "Olli",
+  "productionAuthority": false,
+  "scope": {
+    "sourceColours": "all supplied source gradients approved",
+    "livingCoreAnimation": "approved across the complete library",
+    "expressionFamily": ["disc", "sphere", "rounded-card", "pill", "wings"],
+    "sourceException": { "id": "MZ-G01", "decision": "accepted as supplied" },
+    "duplicatePolicy": "remove duplicate IDs from active selection while preserving compatibility aliases and provenance",
+    "productAssignments": "excluded; remain separately governed",
+    "finishCalibration": "open; depth and lightness profile selection pending"
+  },
+  "approvalEvidence": "User explicitly approved all colours, animations, current expressions, MZ-G01, and prior gradient-system work in the active Codex task."
+}

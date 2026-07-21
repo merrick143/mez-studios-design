@@ -1259,7 +1259,8 @@
       "bloom": "#E1E9F7",
       "bloomAnchor": 1,
       "staticTwin": "mz-g23.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G21"
     },
     "mz-g24": {
       "id": "MZ-G24",
@@ -1313,7 +1314,8 @@
       "bloom": "#F3E2FB",
       "bloomAnchor": 3,
       "staticTwin": "mz-g24.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G02"
     },
     "mz-g25": {
       "id": "MZ-G25",
@@ -1367,7 +1369,8 @@
       "bloom": "#DACFD7",
       "bloomAnchor": 2,
       "staticTwin": "mz-g25.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G03"
     },
     "mz-g26": {
       "id": "MZ-G26",
@@ -1421,7 +1424,8 @@
       "bloom": "#F9EEEC",
       "bloomAnchor": 3,
       "staticTwin": "mz-g26.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G04"
     },
     "mz-g27": {
       "id": "MZ-G27",
@@ -1475,7 +1479,8 @@
       "bloom": "#DCFCF7",
       "bloomAnchor": 0,
       "staticTwin": "mz-g27.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G05"
     },
     "mz-g28": {
       "id": "MZ-G28",
@@ -1529,7 +1534,8 @@
       "bloom": "#D4FAF8",
       "bloomAnchor": 0,
       "staticTwin": "mz-g28.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G06"
     },
     "mz-g29": {
       "id": "MZ-G29",
@@ -1583,7 +1589,8 @@
       "bloom": "#FBF7E8",
       "bloomAnchor": 0,
       "staticTwin": "mz-g29.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G07"
     },
     "mz-g30": {
       "id": "MZ-G30",
@@ -1637,7 +1644,8 @@
       "bloom": "#F9F2D2",
       "bloomAnchor": 2,
       "staticTwin": "mz-g30.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G08"
     },
     "mz-g31": {
       "id": "MZ-G31",
@@ -1691,7 +1699,8 @@
       "bloom": "#F0CBD7",
       "bloomAnchor": 3,
       "staticTwin": "mz-g31.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G09"
     },
     "mz-g32": {
       "id": "MZ-G32",
@@ -1745,7 +1754,8 @@
       "bloom": "#C1D4CD",
       "bloomAnchor": 3,
       "staticTwin": "mz-g32.webp",
-      "approximation": true
+      "approximation": true,
+      "aliasOf": "MZ-G10"
     },
     "mz-g34": {
       "id": "MZ-G34",

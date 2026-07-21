@@ -16,6 +16,14 @@ uniform vec3 uBloom;
 uniform int uShape;
 uniform float uRadius;
 uniform float uOct;
+uniform float uExposure;
+uniform float uSaturation;
+uniform float uContrast;
+uniform float uLift;
+uniform float uShadeStrength;
+uniform float uBloomStrength;
+uniform float uGrainStrength;
+uniform float uOpacity;
 uniform sampler2D uMask;
 
 vec3 mod289(vec3 x){ return x-floor(x*(1.0/289.0))*289.0; }
@@ -112,13 +120,17 @@ void main(){
   }
   if(alpha<=0.001){ gl_FragColor=vec4(0.0); return; }
 
-  vec3 p=vec3(uv*0.95,uTime*0.075);
+  // Keep the mask geometry in aspect-aware space, but sample the colour field
+  // in a normalised square. Without this separation, wide pills and cards
+  // push their end caps beyond every anchor and collapse toward black.
+  vec2 fieldUv=uv/(uRes/mn);
+  vec3 p=vec3(fieldUv*0.95,uTime*0.075);
   vec2 q=vec2(fbm(p),fbm(p+vec3(3.71,1.33,0.0)));
   vec2 r=vec2(
     fbm(p+1.15*vec3(q,0.0)+vec3(1.7,9.2,uTime*0.055)),
     fbm(p+1.15*vec3(q,0.0)+vec3(8.3,2.8,uTime*0.066))
   );
-  vec2 warped=uv+0.42*r+0.16*q;
+  vec2 warped=fieldUv+0.42*r+0.16*q;
 
   float weights[4];
   float weightSum=1e-5;
@@ -141,26 +153,31 @@ void main(){
   colour*=1.0+detail*0.17;
   float bloomWeight=dot(vec4(weights[0],weights[1],weights[2],weights[3]),uBloomSel);
   float hot=smoothstep(0.15,0.85,detail*0.5+0.5)*(bloomWeight/weightSum)*2.6;
-  colour+=toLinear(uBloom)*clamp(hot,0.0,1.0)*0.20;
+  colour+=toLinear(uBloom)*clamp(hot,0.0,1.0)*0.20*uBloomStrength;
 
   if(uShape==1){
     float rim=smoothstep(0.50,1.08,rad+detail*0.18);
-    colour=mix(colour,toLinear(uShade),rim*0.62);
+    colour=mix(colour,toLinear(uShade),rim*uShadeStrength);
     colour*=1.0+0.10*smoothstep(1.0,-0.5,uv.x*1.7+uv.y*2.0);
     float sphereLum=dot(colour,vec3(0.2126,0.7152,0.0722));
     colour=mix(vec3(sphereLum),colour,1.16);
   }
 
   colour=toSRGB(colour);
+  float toneLum=dot(colour,vec3(0.2126,0.7152,0.0722));
+  colour=mix(vec3(toneLum),colour,uSaturation);
+  colour=(colour-0.5)*uContrast+0.5;
+  colour=colour*uExposure+vec3(uLift);
   vec2 grainPoint=gl_FragCoord.xy/max(uDpr,1.0);
   float fine=hash21(grainPoint)-0.5;
   float mottle=(hash21(floor(grainPoint/2.5))-0.5)*0.75;
   float luminosity=dot(colour,vec3(0.2126,0.7152,0.0722));
   float grainMask=1.0-0.70*smoothstep(0.42,0.98,luminosity);
-  colour+=(fine*0.085+mottle*0.036)*grainMask;
-  colour=min(colour,vec3(0.97));
+  colour+=(fine*0.085+mottle*0.036)*grainMask*uGrainStrength;
+  colour=clamp(colour,vec3(0.0),vec3(0.97));
 
-  gl_FragColor=vec4(colour*alpha,alpha);
+  float finalAlpha=alpha*uOpacity;
+  gl_FragColor=vec4(colour*finalAlpha,finalAlpha);
 }
 `;
 
@@ -214,6 +231,21 @@ function normaliseCatalogue(source) {
   return result;
 }
 
+const DEFAULT_FINISH = Object.freeze({
+  exposure: 1,
+  saturation: 1,
+  contrast: 1,
+  lift: 0,
+  shadeStrength: 0.62,
+  bloomStrength: 1,
+  grainStrength: 1,
+  opacity: 1
+});
+
+function normaliseFinish(value) {
+  return Object.assign({}, DEFAULT_FINISH, value || {});
+}
+
 async function readCatalogue(value) {
   if (value) return value;
   const response = await fetch(DEFAULT_CATALOGUE);
@@ -260,6 +292,7 @@ class LivingCoreRenderer {
     this.staticBase = new URL(String(options.staticBaseUrl || DEFAULT_STATIC_BASE), import.meta.url);
     this.wingsUrl = new URL(String(options.wingsUrl || DEFAULT_WINGS), import.meta.url);
     this.canvas = document.createElement("canvas");
+    this.profiles = options.profiles || {};
     this.disableWebGL = Boolean(options.disableWebGL);
     this.forceShaderFailure = Boolean(options.forceShaderFailure);
     this.gl = this.disableWebGL ? null : this.canvas.getContext("webgl", {
@@ -319,6 +352,14 @@ class LivingCoreRenderer {
         shape: uniform("uShape"),
         radius: uniform("uRadius"),
         octaves: uniform("uOct"),
+        exposure: uniform("uExposure"),
+        saturation: uniform("uSaturation"),
+        contrast: uniform("uContrast"),
+        lift: uniform("uLift"),
+        shadeStrength: uniform("uShadeStrength"),
+        bloomStrength: uniform("uBloomStrength"),
+        grainStrength: uniform("uGrainStrength"),
+        opacity: uniform("uOpacity"),
         mask: uniform("uMask"),
         colours: [0, 1, 2, 3].map(function (index) { return uniform("uC[" + index + "]"); }),
         anchors: [0, 1, 2, 3].map(function (index) { return uniform("uA[" + index + "]"); }),
@@ -407,6 +448,8 @@ class LivingCoreRenderer {
       core: core,
       shape: shape,
       radius: radius,
+      profileName: options.profile || "current",
+      finish: normaliseFinish(this.profiles[options.profile || "current"] || options.finish),
       speed: 1,
       speedTarget: 1,
       time: 3.2 + Math.random() * 40,
@@ -435,6 +478,28 @@ class LivingCoreRenderer {
     if (!core) throw new Error("Unknown living core: " + reference);
     state.core = core;
     state.time = 3.2;
+    this.applySurfaceMode(state);
+    return state;
+  }
+
+  setProfile(element, profileName) {
+    const state = this.surfaces.get(element);
+    if (!state) throw new Error("Living-core surface is not mounted");
+    state.profileName = profileName;
+    state.finish = normaliseFinish(this.profiles[profileName]);
+    this.applySurfaceMode(state);
+    return state;
+  }
+
+  setShape(element, shape, radius) {
+    const state = this.surfaces.get(element);
+    if (!state) throw new Error("Living-core surface is not mounted");
+    const value = typeof shape === "string" && shape in SHAPES ? SHAPES[shape] : Number(shape);
+    if (!Number.isInteger(value) || value < SHAPES.disc || value > SHAPES.wings) {
+      throw new Error("Unknown living-core shape: " + shape);
+    }
+    state.shape = value;
+    state.radius = Number(radius || 0);
     this.applySurfaceMode(state);
     return state;
   }
@@ -512,6 +577,14 @@ class LivingCoreRenderer {
       gl.uniform1i(uniforms.shape, state.shape);
       gl.uniform1f(uniforms.radius, state.radius);
       gl.uniform1f(uniforms.octaves, Math.min(rect.width, rect.height) < 90 ? 2 : 3);
+      gl.uniform1f(uniforms.exposure, state.finish.exposure);
+      gl.uniform1f(uniforms.saturation, state.finish.saturation);
+      gl.uniform1f(uniforms.contrast, state.finish.contrast);
+      gl.uniform1f(uniforms.lift, state.finish.lift);
+      gl.uniform1f(uniforms.shadeStrength, state.finish.shadeStrength);
+      gl.uniform1f(uniforms.bloomStrength, state.finish.bloomStrength);
+      gl.uniform1f(uniforms.grainStrength, state.finish.grainStrength);
+      gl.uniform1f(uniforms.opacity, state.finish.opacity);
       state.core.anchors.forEach(function (anchor, index) {
         gl.uniform3fv(uniforms.colours[index], anchor.colour);
         gl.uniform2fv(uniforms.anchors[index], anchor.pos);
@@ -551,7 +624,8 @@ export async function mountLivingCores(root, options) {
     const reference = element.dataset.mzCore || element.dataset.p;
     renderer.mount(element, reference, {
       shape: element.dataset.shape == null ? "disc" : element.dataset.shape,
-      radius: element.dataset.radius || 0
+      radius: element.dataset.radius || 0,
+      profile: element.dataset.profile || "current"
     });
   });
   return {
@@ -569,7 +643,9 @@ export async function mountLivingCore(element, coreId, options) {
   await renderer.initialise();
   renderer.mount(element, coreId, {
     shape: settings.shape || "disc",
-    radius: settings.radius || 0
+    radius: settings.radius || 0,
+    profile: settings.profile || "current",
+    finish: settings.finish
   });
   return renderer;
 }

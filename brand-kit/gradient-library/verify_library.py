@@ -33,6 +33,7 @@ def main() -> int:
     catalogue = read_json(HERE / "catalogue.json")
     palettes = read_json(HERE / "palettes.json")
     assignments = read_json(HERE / "assignments.json")
+    approval = read_json(HERE / "approval.json")
 
     if manifest["sourceCount"] != 43:
         failures.append(f"expected 43 source IDs, found {manifest['sourceCount']}")
@@ -40,6 +41,8 @@ def main() -> int:
         failures.append(f"expected 33 unique source images, found {manifest['uniqueVisualCount']}")
     if len(manifest["duplicateIdGroups"]) != 10:
         failures.append("expected ten duplicate-ID groups")
+    if manifest.get("activeCount") != 33 or len(manifest.get("aliases", {})) != 10:
+        failures.append("duplicate policy must expose 33 active cores and ten archived aliases")
     if manifest["qualityExceptions"] != ["MZ-G01"]:
         failures.append("MZ-G01 must remain the explicit 250px quality exception")
     if len(palettes) != 43 or len(catalogue["cores"]) != 43:
@@ -62,6 +65,12 @@ def main() -> int:
         failures.append("Context Engine must remain explicitly unassigned")
     if assignments.get("productionAuthority") is not False:
         failures.append("assignment plan must deny production authority")
+    if approval.get("status") != "approved-research-system":
+        failures.append("library and animation approval record is missing")
+    if approval.get("scope", {}).get("sourceException", {}).get("id") != "MZ-G01":
+        failures.append("MZ-G01 accepted source exception is not recorded")
+    if approval.get("scope", {}).get("duplicatePolicy") != "remove duplicate IDs from active selection while preserving compatibility aliases and provenance":
+        failures.append("approved duplicate-alias policy is not recorded")
 
     renderer = (BRAND_KIT / "source-pack" / "design-system-export" / "mz-core.js").read_text(encoding="utf-8")
     if renderer.count('getContext("webgl"') != 1:

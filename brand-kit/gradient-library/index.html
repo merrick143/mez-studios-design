@@ -18,13 +18,14 @@
     <section class="intro">
       <a class="back" href="../#core">← Brand Kit Workbench</a>
       <p class="eyebrow">Living Core · complete source catalogue</p>
-      <h1>One engine.<br><span id="source-count">43</span> source IDs.</h1>
+      <h1>One engine.<br><span id="active-count">33</span> active cores.</h1>
       <p class="lede">Every supplied PNG is ingested by the same deterministic extraction pipeline, rendered through the same motion chassis, and available in every approved expression. Product assignment remains a separate human decision.</p>
+      <a class="calibration-link" href="./calibration/depth-light-01/">Open depth &amp; light calibration →</a>
       <dl class="metrics">
+        <div><dt>Active cores</dt><dd id="metric-active">—</dd></div>
         <div><dt>Source IDs</dt><dd id="metric-sources">—</dd></div>
         <div><dt>Unique visuals</dt><dd id="metric-unique">—</dd></div>
-        <div><dt>Duplicate groups</dt><dd id="metric-duplicates">—</dd></div>
-        <div><dt>Quality exceptions</dt><dd id="metric-quality">—</dd></div>
+        <div><dt>Archived aliases</dt><dd id="metric-duplicates">—</dd></div>
       </dl>
     </section>
 
@@ -37,11 +38,10 @@
       <div class="controls" aria-label="Gradient library filters">
         <label class="search"><span>Find</span><input id="search" type="search" placeholder="MZ-G13" autocomplete="off"></label>
         <div class="filter-set" id="filters">
-          <button type="button" class="is-active" data-filter="all">All <span>43</span></button>
-          <button type="button" data-filter="unique">Unique</button>
-          <button type="button" data-filter="duplicate">Aliases</button>
+          <button type="button" class="is-active" data-filter="all">Active <span>33</span></button>
+          <button type="button" data-filter="duplicate">Archived aliases</button>
           <button type="button" data-filter="assigned">Assigned</button>
-          <button type="button" data-filter="quality">Needs source</button>
+          <button type="button" data-filter="quality">Accepted exception</button>
         </div>
       </div>
 
@@ -68,7 +68,7 @@
             <figure><div class="expression expression--disc" data-inspector-core data-mz-core="MZ-G01" data-shape="disc"><img class="wings" src="../source-pack/design-system-export/assets/wings.svg" alt=""></div><figcaption>Disc · default</figcaption></figure>
             <figure><div class="expression expression--sphere" data-inspector-core data-mz-core="MZ-G01" data-shape="sphere"><img class="wings" src="../source-pack/design-system-export/assets/wings.svg" alt=""></div><figcaption>Sphere · focal</figcaption></figure>
             <figure class="expression-card"><div class="expression expression--card" data-inspector-core data-mz-core="MZ-G01" data-shape="rect" data-radius="0.08"><img class="wings wings--card" src="../source-pack/design-system-export/assets/wings.svg" alt=""></div><figcaption>Card field · structural copy stays static</figcaption></figure>
-            <figure class="expression-pill"><div class="expression expression--pill" data-inspector-core data-mz-core="MZ-G01" data-shape="rect" data-radius="0.24"><img class="wings wings--pill" src="../source-pack/design-system-export/assets/wings.svg" alt=""></div><figcaption>Pill · compact expression</figcaption></figure>
+            <figure class="expression-pill"><div class="expression expression--pill" data-inspector-core data-mz-core="MZ-G01" data-shape="rect" data-radius="1"><img class="wings wings--pill" src="../source-pack/design-system-export/assets/wings.svg" alt=""></div><figcaption>Pill · full-bleed compact expression</figcaption></figure>
             <figure class="expression-wings"><div class="expression expression--wings" data-inspector-core data-mz-core="MZ-G01" data-shape="wings"></div><figcaption>Gradient Wings · identity study only</figcaption></figure>
           </div>
 
@@ -101,6 +101,6 @@
     </section>
   </main>
 
-  <script type="module" src="./app.js"></script>
+  <script type="module" src="./app.js?v=2"></script>
 </body>
 </html>

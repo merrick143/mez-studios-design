@@ -4,8 +4,8 @@
   "workbenchStatus": "active",
   "canonicalRepositoryTransferred": false,
   "sections": [
-    {"id": "gradient-library", "name": "Complete gradient library", "status": "systemized", "summary": "43 source-PNG IDs, 33 unique visuals, ten alias groups, deterministic extraction, five expressions and isolated decisions are working."},
-    {"id": "core", "name": "Living Core", "status": "assignment-review", "summary": "Source-PNG authority is resolved; current product assignments and the MZ-G01 source-quality exception require human review."},
+    {"id": "gradient-library", "name": "Complete gradient library", "status": "approved-system", "summary": "All source colours, animation and expressions are approved. 33 unique cores are active; ten duplicate IDs remain compatibility aliases."},
+    {"id": "core", "name": "Living Core", "status": "finish-calibration", "summary": "MZ-G01 is accepted. Depth and lightness finish calibration is open across six renderer profiles."},
     {"id": "foundations", "name": "Foundations", "status": "partial", "summary": "Typography and controls have approved direction; implementation and broader surface tokens remain."},
     {"id": "expressions", "name": "Product expressions", "status": "planned", "summary": "Disc, sphere, card, Wings, collection and channel plates must be locked."},
     {"id": "context", "name": "Context Engine", "status": "awaiting-source", "summary": "Candidate workflow ready; genuine source gradient required."},

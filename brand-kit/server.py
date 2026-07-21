@@ -22,6 +22,7 @@ REPO_ROOT = HERE.parent
 WORKSPACE = HERE / "workspace"
 CANDIDATES = WORKSPACE / "candidates"
 LIBRARY_DECISIONS = WORKSPACE / "library-decisions"
+FINISH_DECISION = WORKSPACE / "finish-decisions" / "depth-light-01.json"
 GENERATOR = HERE / "source-pack" / "living-core" / "candidate.py"
 ID_PATTERN = re.compile(r"^MZ-G\d{2,3}$")
 SLUG_PATTERN = re.compile(r"^[a-z0-9-]+$")
@@ -88,6 +89,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
         if self.path == "/api/library-decisions":
             self.json_response({"localApi": True, "decisions": list_library_decisions()})
             return
+        if self.path == "/api/finish-decisions":
+            self.json_response({"localApi": True, "decision": read_json(FINISH_DECISION) if FINISH_DECISION.is_file() else None})
+            return
         super().do_GET()
 
     def do_POST(self) -> None:
@@ -100,6 +104,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
                 return
             if self.path == "/api/library-decisions":
                 self.record_library_decision()
+                return
+            if self.path == "/api/finish-decisions":
+                self.record_finish_decision()
                 return
             self.json_response({"error": "Unknown endpoint"}, HTTPStatus.NOT_FOUND)
         except (ValueError, json.JSONDecodeError) as error:
@@ -227,6 +234,41 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
         }
         LIBRARY_DECISIONS.mkdir(parents=True, exist_ok=True)
         write_json(LIBRARY_DECISIONS / f"{product_context}--{gradient_id.lower()}.json", decision)
+        self.json_response({"ok": True, "decision": decision})
+
+    def record_finish_decision(self) -> None:
+        payload = self.read_request_json()
+        study_id = str(payload.get("studyId", "")).strip()
+        profile_id = str(payload.get("profileId", "")).strip().lower()
+        verdict = str(payload.get("verdict", "")).strip().lower()
+        note = str(payload.get("note", "")).strip()
+        values = payload.get("values")
+        profile_path = HERE / "gradient-library" / "calibration" / "depth-light-01" / "profiles.json"
+        profile_document = read_json(profile_path)
+        profiles = {row["id"]: row for row in profile_document["profiles"]}
+        if study_id != profile_document["studyId"]:
+            raise ValueError("Finish study ID is invalid")
+        if profile_id not in profiles:
+            raise ValueError("Finish profile does not exist")
+        if verdict not in {"select", "edit", "reject"}:
+            raise ValueError("Verdict must be select, edit or reject")
+        if values != profiles[profile_id]["values"]:
+            raise ValueError("Finish values do not match the reviewed profile")
+        decision = {
+            "schemaVersion": "1.0.0",
+            "studyId": study_id,
+            "profileId": profile_id,
+            "profileName": profiles[profile_id]["name"],
+            "verdict": verdict,
+            "note": note,
+            "values": values,
+            "decidedAt": datetime.now(timezone.utc).isoformat(),
+            "productionAuthority": False,
+            "sourcePaletteChanged": False,
+            "mutatesCanonicalAuthority": False,
+        }
+        FINISH_DECISION.parent.mkdir(parents=True, exist_ok=True)
+        write_json(FINISH_DECISION, decision)
         self.json_response({"ok": True, "decision": decision})
 
 

@@ -152,6 +152,14 @@ def main() -> int:
         )
 
     duplicate_groups = [group for group in hashes.values() if len(group) > 1]
+    aliases = {}
+    for group in duplicate_groups:
+        ordered = sorted(group, key=lambda value: int(value.split("G")[1]))
+        canonical = ordered[0]
+        for alias in ordered[1:]:
+            aliases[alias] = canonical
+            cores[alias.lower()]["aliasOf"] = canonical
+    active_ids = [core_id for core_id in ids if core_id not in aliases]
     unique_count = len(hashes)
     source_set_payload = "\n".join(f"{row['file']}:{row['sha256']}" for row in sources).encode()
     source_set_hash = hashlib.sha256(source_set_payload).hexdigest()
@@ -185,7 +193,10 @@ def main() -> int:
         "sourceSetSha256": source_set_hash,
         "sourceCount": len(sources),
         "uniqueVisualCount": unique_count,
+        "activeCount": len(active_ids),
         "ids": ids,
+        "activeIds": active_ids,
+        "aliases": aliases,
         "missingIdsWithinRange": missing_ids,
         "duplicateIdGroups": duplicate_groups,
         "qualityExceptions": [row["id"] for row in sources if row["quality"] != "pass"],

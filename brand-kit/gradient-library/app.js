@@ -3,6 +3,7 @@ import { mountLivingCores } from "../source-pack/design-system-export/mz-core.js
 const CATALOGUE_URL = "./catalogue.json";
 const MANIFEST_URL = "./library-manifest.json";
 const ASSIGNMENTS_URL = "./assignments.json";
+const APPROVAL_URL = "./approval.json";
 // Renderer URLs resolve against mz-core.js, while markup URLs resolve against this page.
 const STATIC_BASE = "../../gradient-library/assets/static/";
 const RENDERER_WINGS_URL = "./assets/wings.svg";
@@ -19,6 +20,7 @@ const exportNode = document.querySelector("#export-decision");
 let catalogue;
 let manifest;
 let assignments;
+let approval;
 let renderer;
 let selectedId = "MZ-G01";
 let activeFilter = "all";
@@ -45,12 +47,12 @@ function assignmentMap() {
 }
 
 function renderMetrics() {
-  document.querySelector("#source-count").textContent = manifest.sourceCount;
+  document.querySelector("#active-count").textContent = manifest.activeCount;
+  document.querySelector("#metric-active").textContent = manifest.activeCount;
   document.querySelector("#metric-sources").textContent = manifest.sourceCount;
   document.querySelector("#metric-unique").textContent = manifest.uniqueVisualCount;
-  document.querySelector("#metric-duplicates").textContent = manifest.duplicateIdGroups.length;
-  document.querySelector("#metric-quality").textContent = manifest.qualityExceptions.length;
-  filtersNode.querySelector('[data-filter="all"] span').textContent = manifest.sourceCount;
+  document.querySelector("#metric-duplicates").textContent = Object.keys(manifest.aliases).length;
+  filtersNode.querySelector('[data-filter="all"] span').textContent = manifest.activeCount;
 }
 
 function renderCatalogue() {
@@ -59,13 +61,14 @@ function renderCatalogue() {
   catalogueNode.innerHTML = manifest.ids.map((id) => {
     const source = manifest.sources.find((row) => row.id === id);
     const alias = duplicates.get(id);
+    const aliasOf = manifest.aliases[id];
     const product = assigned.get(id);
     const flags = [
-      alias ? `<span class="flag">Alias ×${alias.length}</span>` : "",
+      aliasOf ? `<span class="flag">Alias of ${aliasOf}</span>` : (alias ? `<span class="flag">Canonical ×${alias.length}</span>` : ""),
       product ? `<span class="flag flag--assigned">${escapeHtml(product.name)}</span>` : "",
-      source.quality !== "pass" ? '<span class="flag flag--warning">Low source</span>' : "",
+      source.quality !== "pass" ? '<span class="flag flag--warning">Accepted source</span>' : "",
     ].join("");
-    return `<button class="core-card" type="button" data-id="${id}" data-duplicate="${Boolean(alias)}" data-assigned="${Boolean(product)}" data-quality="${source.quality}">
+    return `<button class="core-card" type="button" data-id="${id}" data-active="${!aliasOf}" data-duplicate="${Boolean(aliasOf)}" data-assigned="${Boolean(product)}" data-quality="${source.quality}">
       <span class="core-card__visual"><span class="core-card__disc" data-mz-core="${id}" data-shape="disc"><img class="wings" src="${MARK_WINGS_URL}" alt=""></span></span>
       <span class="core-card__meta"><strong>${id}</strong><span>${product ? escapeHtml(product.name) : "Unassigned"}</span></span>
       <span class="core-card__flags">${flags}</span>
@@ -111,7 +114,8 @@ function selectGradient(id, shouldScroll = false) {
   const image = document.querySelector("#source-master");
   image.src = `./source-masters/${id}.png`;
   image.alt = `${id} source gradient`;
-  document.querySelector("#source-dimensions").textContent = `${source.width} × ${source.height} PNG · ${source.quality === "pass" ? "source passes" : "below 512px minimum"}`;
+  const acceptedException = approval.scope.sourceException?.id === id;
+  document.querySelector("#source-dimensions").textContent = `${source.width} × ${source.height} PNG · ${source.quality === "pass" ? "source passes" : (acceptedException ? "accepted source exception" : "below 512px minimum")}`;
   document.querySelector("#source-hash").textContent = `SHA ${source.sha256.slice(0, 16)}…`;
   document.querySelector("#source-alias").textContent = aliases ? `Identical source: ${aliases.join(" · ")}` : "Unique source image";
   document.querySelector("#swatches").innerHTML = [...core.anchors.map((anchor) => anchor.hex), core.shade]
@@ -128,8 +132,7 @@ function applyFilters() {
   const query = searchNode.value.trim().toUpperCase();
   document.querySelectorAll(".core-card").forEach((card) => {
     const matchesQuery = !query || card.dataset.id.includes(query);
-    const matchesFilter = activeFilter === "all"
-      || (activeFilter === "unique" && card.dataset.duplicate === "false")
+    const matchesFilter = (activeFilter === "all" && card.dataset.active === "true")
       || (activeFilter === "duplicate" && card.dataset.duplicate === "true")
       || (activeFilter === "assigned" && card.dataset.assigned === "true")
       || (activeFilter === "quality" && card.dataset.quality !== "pass");
@@ -174,11 +177,12 @@ async function saveDecision(verdict) {
 }
 
 async function initialise() {
-  const responses = await Promise.all([fetch(CATALOGUE_URL), fetch(MANIFEST_URL), fetch(ASSIGNMENTS_URL)]);
+  const responses = await Promise.all([fetch(CATALOGUE_URL), fetch(MANIFEST_URL), fetch(ASSIGNMENTS_URL), fetch(APPROVAL_URL)]);
   if (responses.some((response) => !response.ok)) throw new Error("Gradient library data failed to load");
-  [catalogue, manifest, assignments] = await Promise.all(responses.map((response) => response.json()));
+  [catalogue, manifest, assignments, approval] = await Promise.all(responses.map((response) => response.json()));
   renderMetrics();
   renderCatalogue();
+  applyFilters();
   renderProductOptions();
   await loadDecisions();
   const query = new URLSearchParams(location.search);

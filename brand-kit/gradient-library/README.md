@@ -2,6 +2,8 @@
 
 This directory turns the Mez source-gradient folder into a deterministic Living Core catalogue.
 
+The research system is approved at 33 active visual cores. The ten higher duplicate IDs are removed from active selection and retained as compatibility aliases with full provenance. `MZ-G01` is an accepted source exception.
+
 ## Authority chain
 
 1. `source-masters/*.png` — source colour and extraction authority.
@@ -32,5 +34,7 @@ python brand-kit/gradient-library/build_library.py \
 ```
 
 The generator does not change product assignments, canonical registries or review decisions.
+
+Depth and lightness finish profiles are reviewed separately at `calibration/depth-light-01/`; they cannot change palette data.
 
 For fallback QA, append `?static=1` to force static twins or `?no-webgl=1` to simulate WebGL unavailability.

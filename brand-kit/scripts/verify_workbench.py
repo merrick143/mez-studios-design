@@ -57,6 +57,12 @@ def main() -> int:
         BRAND_KIT / "gradient-library/catalogue.json",
         BRAND_KIT / "gradient-library/palettes.json",
         BRAND_KIT / "gradient-library/assignments.json",
+        BRAND_KIT / "gradient-library/approval.json",
+        BRAND_KIT / "gradient-library/calibration/depth-light-01/index.html",
+        BRAND_KIT / "gradient-library/calibration/depth-light-01/app.js",
+        BRAND_KIT / "gradient-library/calibration/depth-light-01/styles.css",
+        BRAND_KIT / "gradient-library/calibration/depth-light-01/profiles.json",
+        BRAND_KIT / "gradient-library/calibration/depth-light-01/verify_calibration.py",
     ]
     for path in required:
         if not path.is_file() or path.stat().st_size == 0:

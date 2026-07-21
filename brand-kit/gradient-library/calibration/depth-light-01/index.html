@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mez Living Core · Depth & Light</title>
+  <meta name="description" content="Living Core finish calibration across opacity, lift, exposure, contrast, saturation, bloom, shade and grain.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../"><img src="../../../source-pack/design-system-export/assets/wings.svg" alt=""><span>Mez Systems</span></a>
+    <div><i></i><span>Finish calibration · research only</span></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <a class="back" href="../../#mz-g13">← Complete gradient library</a>
+      <p class="eyebrow">Living Core · depth and light · round 01</p>
+      <h1>How much air<br>should the core hold?</h1>
+      <p class="lede">The source colours and animation are approved. This plate changes only the finish around them: transparency, light, colour density, depth and texture.</p>
+      <div class="law"><span>Fixed</span><p>PNG authority · palette anchors · motion path · Wings geometry · shape masks</p></div>
+    </section>
+
+    <section class="comparison-section" id="compare">
+      <header class="section-head">
+        <div><p class="eyebrow">Compare one expression</p><h2>Six finishes. Three palettes.</h2></div>
+        <p>The split neutral stage reveals real transparency: paper on the left, charcoal on the right. Choose an expression, then compare every finish without changing the palette.</p>
+      </header>
+
+      <div class="expression-switch" id="expression-switch" aria-label="Expression to compare">
+        <button type="button" class="is-active" data-shape="disc" data-radius="0">Disc</button>
+        <button type="button" data-shape="sphere" data-radius="0">Sphere</button>
+        <button type="button" data-shape="rect" data-radius="0.08" data-layout="card">Card</button>
+        <button type="button" data-shape="rect" data-radius="1" data-layout="pill">Pill</button>
+        <button type="button" data-shape="wings" data-radius="0">Wings</button>
+      </div>
+
+      <div class="matrix-wrap">
+        <div class="matrix" id="matrix"></div>
+      </div>
+    </section>
+
+    <section class="profile-section" id="detail">
+      <header class="section-head">
+        <div><p class="eyebrow">Inspect one finish</p><h2 id="profile-title">01 · Current veil</h2></div>
+        <p id="profile-description">The approved rendering as it exists now.</p>
+      </header>
+
+      <div class="profile-picker" id="profile-picker"></div>
+      <div class="profile-values" id="profile-values"></div>
+      <div class="detail-grid" id="detail-grid"></div>
+
+      <div class="decision-panel">
+        <div><p class="eyebrow">Finish decision</p><h2>Choose the chassis finish.</h2><p>This selects renderer tone only. It never changes a source PNG, palette or product assignment.</p></div>
+        <div class="decision-controls">
+          <label>Note<input id="decision-note" type="text" placeholder="Why this feels right, or what needs editing"></label>
+          <div id="decision-actions">
+            <button type="button" data-verdict="select">Select finish</button>
+            <button type="button" data-verdict="edit">Needs edit</button>
+            <button type="button" data-verdict="reject">Reject</button>
+          </div>
+          <button type="button" id="export-decision" disabled>Export decision JSON</button>
+          <p id="decision-status">Local decision API not checked yet.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js?v=2"></script>
+</body>
+</html>

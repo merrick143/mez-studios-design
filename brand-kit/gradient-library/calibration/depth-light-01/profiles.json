@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "studyId": "MEZ-LIVING-CORE-DEPTH-LIGHT-01",
+  "productionAuthority": false,
+  "sourcePaletteChanged": false,
+  "profiles": [
+    {
+      "id": "current",
+      "number": "01",
+      "name": "Current veil",
+      "description": "The approved rendering as it exists now. Mineral, soft and slightly whitewashed.",
+      "values": { "opacity": 1, "exposure": 1, "saturation": 1, "contrast": 1, "lift": 0, "shadeStrength": 0.62, "bloomStrength": 1, "grainStrength": 1 }
+    },
+    {
+      "id": "air",
+      "number": "02",
+      "name": "Air",
+      "description": "A little surface shows through. Softer contrast and slightly less colour density.",
+      "values": { "opacity": 0.92, "exposure": 1.04, "saturation": 0.94, "contrast": 0.92, "lift": 0.025, "shadeStrength": 0.56, "bloomStrength": 1.1, "grainStrength": 0.85 }
+    },
+    {
+      "id": "glass",
+      "number": "03",
+      "name": "Clear glass",
+      "description": "Cleaner separation and slightly stronger colour. More pop without becoming glossy.",
+      "values": { "opacity": 0.97, "exposure": 1.04, "saturation": 1.1, "contrast": 1.04, "lift": 0, "shadeStrength": 0.62, "bloomStrength": 1.05, "grainStrength": 0.9 }
+    },
+    {
+      "id": "luminous",
+      "number": "04",
+      "name": "Luminous",
+      "description": "More emitted light and bloom, with the colour balance held close to the control.",
+      "values": { "opacity": 1, "exposure": 1.12, "saturation": 1.02, "contrast": 0.95, "lift": 0.02, "shadeStrength": 0.55, "bloomStrength": 1.4, "grainStrength": 0.75 }
+    },
+    {
+      "id": "deep",
+      "number": "05",
+      "name": "Deep mineral",
+      "description": "Denser colour, firmer blacks and stronger sphere depth. The least whitewashed option.",
+      "values": { "opacity": 1, "exposure": 0.97, "saturation": 1.12, "contrast": 1.13, "lift": -0.01, "shadeStrength": 0.76, "bloomStrength": 0.9, "grainStrength": 1.1 }
+    },
+    {
+      "id": "wash",
+      "number": "06",
+      "name": "Soft wash",
+      "description": "The lightest, most translucent and most whitewashed edge of the useful range.",
+      "values": { "opacity": 0.88, "exposure": 1.02, "saturation": 0.9, "contrast": 0.86, "lift": 0.055, "shadeStrength": 0.48, "bloomStrength": 1.15, "grainStrength": 0.7 }
+    }
+  ]
+}

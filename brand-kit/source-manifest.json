@@ -20,7 +20,7 @@
   },
   "systemizedSnapshot": {
     "paletteSha256": "30afa92f4c8e79b7b9a17d9ddf349c2d05b327e0e6a8cd939ee4beea9226fe7b",
-    "rendererSha256": "b8843cc741363e41eccb900eceb41e1e02aef68bd9f1d372bdac73594e754b34",
+    "rendererSha256": "de6f4358825ac7aa71e1d02a032cea247843f365fae3ab4172f4c82b6470eb12",
     "mutatesCanonicalAuthority": false
   },
   "knownConflicts": [

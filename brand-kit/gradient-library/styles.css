@@ -40,7 +40,8 @@ h1, h2, p { text-wrap: pretty; }
 h1 { margin: 0; max-width: 1000px; font-size: clamp(64px, 8vw, 118px); line-height: .9; letter-spacing: -.075em; }
 h1 span { color: var(--muted); }
 .lede { max-width: 770px; margin: 38px 0 0; color: var(--body); font-size: clamp(18px, 2vw, 23px); line-height: 1.45; letter-spacing: -.018em; }
-.metrics { display: grid; grid-template-columns: repeat(4,1fr); margin: auto 0 0; padding-top: 70px; }
+.calibration-link { align-self:flex-start; margin-top:28px; color:var(--ink); font-weight:650; text-decoration:none; border-bottom:1px solid var(--line-strong); }
+.metrics { display: grid; grid-template-columns: repeat(5,1fr); margin: auto 0 0; padding-top: 70px; }
 .metrics div { border-top: 1px solid var(--line); padding-top: 15px; }
 .metrics dt { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .metrics dd { margin: 6px 0 0; font-size: 20px; font-weight: 680; letter-spacing: -.03em; }

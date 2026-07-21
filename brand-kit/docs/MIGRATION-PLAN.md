@@ -21,15 +21,16 @@ Exit gate: a human can identify where every file came from and which source curr
 ## Phase 1: lock the Living Core
 
 - Treat the 43 original PNG masters as the only extraction authority.
-- Preserve all supplied IDs, while recording the ten exact duplicate-ID groups and the MZ-G01 source-quality exception.
+- Preserve all supplied IDs for provenance, while exposing only 33 unique active cores; retain the ten removed duplicate IDs as compatibility aliases. Treat MZ-G01 as an approved source exception.
 - Generate the full palette cache, runtime catalogue and static fallback library from those PNGs.
 - Judge source, idle animation, motion character and cross-shape coherence across the full board.
 - Select or edit product assignments separately; never fork palette data to create a product-specific variant.
 - Rebuild the complete source library without drift.
+- Select one depth-and-light finish profile without changing source palettes.
 - Verify one shared WebGL context, reduced motion, offscreen pause, fallback and white Wings.
 - Lock the candidate ingestion contract and its pinned Python environment.
 
-Human decision: select, edit or reject product-to-gradient assignments. The source and extraction law no longer require a dataset choice.
+Human decision: select, edit or reject the renderer finish, then product-to-gradient assignments. The source colours, animation and expression family are approved.
 
 Exit gate: one renderer, a deterministic complete source catalogue, one frozen core dataset per ID, one static twin per ID, approved product assignments, and no contradictory skill instructions.
 
