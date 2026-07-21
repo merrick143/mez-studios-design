@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-02-SPHERE-PROOF",
+  "taskId": "TASK-EXP-02-SPHERE-CONTRACT",
+  "expressionId": "mz.systems.expression.sphere",
+  "candidateStatus": "review-candidate",
+  "candidateRevision": "sphere-contract-01",
+  "verdict": "approve",
+  "note": "Perfect. I approve. Let's proceed.",
+  "reviewedAt": "2026-07-21T13:49:34.000Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-SPHERE-EXPRESSION-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true
+}

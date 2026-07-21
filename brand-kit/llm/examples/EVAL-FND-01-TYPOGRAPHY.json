@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-FND-01-TYPOGRAPHY",
+  "receiptId": "RCP-FND-01-TYPOGRAPHY",
+  "evaluatedAt": "2026-07-21T16:32:28+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators"},
+  "contractChecks": [
+    {"id": "SOURCE-AND-GENERATION", "status": "pass", "evidence": "One schema-validated source deterministically generates CSS, JSON and the artifact manifest."},
+    {"id": "FONT-PROVENANCE", "status": "pass", "evidence": "All packaged families have stable upstream refs, licensed web/authoring assets and matching OFL notices."},
+    {"id": "ROLE-COVERAGE", "status": "pass", "evidence": "Display, body, UI, label, caption, technical, numeric and contextual editorial roles are present in source, tokens and proof."},
+    {"id": "RESPONSIVE-AND-FALLBACK", "status": "pass", "evidence": "Viewport matrix and combined expansion/fallback stress produce no document overflow."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "Olli approved the exact type metrics and cross-channel character through H-FND-01-TYPE-PROOF."}
+  ],
+  "qualityDimensions": [
+    {"id": "hierarchy", "score": 5, "maximum": 5, "evidence": "Geist owns a restrained three-level display register while Inter handles sustained content and interface hierarchy."},
+    {"id": "cross-channel-proof", "score": 5, "maximum": 5, "evidence": "Marketing, commerce, email, report and dense application fixtures expose materially different demands."},
+    {"id": "responsive-craft", "score": 5, "maximum": 5, "evidence": "Fluid roles recompose from 320px and remain stable under copy expansion and font failure."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "Candidate status, human gate and migration-release boundary are explicit in source, docs and receipt."},
+    {"id": "human-taste", "score": 5, "maximum": 5, "evidence": "Olli's approve verdict closes the bounded taste gate with no requested changes."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["No product-expression, homepage, Figma, consumer or active whole-system release content was changed."]
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.space-layout",
+  "status": "canonical",
+  "decisionIds": ["DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "candidateGateId": "H-FND-03-SPATIAL-PROOF",
+  "candidateRevision": "spatial-lock-01",
+  "baseUnit": 4,
+  "space": {
+    "0": 0,
+    "1": 4,
+    "2": 8,
+    "3": 12,
+    "4": 16,
+    "5": 20,
+    "6": 24,
+    "8": 32,
+    "10": 40,
+    "12": 48,
+    "16": 64,
+    "20": 80,
+    "24": 96,
+    "30": 120,
+    "36": 144,
+    "40": 160
+  },
+  "contentWidths": {
+    "reading": 720,
+    "standard": 1160,
+    "wide": 1380
+  },
+  "breakpoints": {
+    "compact": 0,
+    "medium": 600,
+    "expanded": 920,
+    "wide": 1280
+  },
+  "responsiveProfiles": {
+    "compact": {"minWidth": 0, "gridColumns": 4, "pageGutter": 16, "gridGap": 16, "sectionCompact": 56, "sectionDefault": 80, "sectionSpacious": 112, "heroTop": 72},
+    "medium": {"minWidth": 600, "gridColumns": 8, "pageGutter": 24, "gridGap": 20, "sectionCompact": 64, "sectionDefault": 96, "sectionSpacious": 128, "heroTop": 88},
+    "expanded": {"minWidth": 920, "gridColumns": 12, "pageGutter": 32, "gridGap": 24, "sectionCompact": 72, "sectionDefault": 120, "sectionSpacious": 144, "heroTop": 112},
+    "wide": {"minWidth": 1280, "gridColumns": 12, "pageGutter": 40, "gridGap": 24, "sectionCompact": 80, "sectionDefault": 128, "sectionSpacious": 160, "heroTop": 128}
+  },
+  "densityModes": {
+    "calm": {"purpose": "Orientation, editorial framing and single-claim communication", "componentGap": 24, "componentPadding": 32, "rowMinHeight": 72, "evidenceColumns": 1},
+    "standard": {"purpose": "Default marketing, commerce, email and document work", "componentGap": 16, "componentPadding": 24, "rowMinHeight": 56, "evidenceColumns": 2},
+    "operational": {"purpose": "Inspection, product UI, reports and dense evidence", "componentGap": 12, "componentPadding": 16, "rowMinHeight": 44, "evidenceColumns": 3}
+  },
+  "contentRoles": {
+    "reading": {"width": "reading", "purpose": "Long-form prose, decision copy and focused explanation"},
+    "standard": {"width": "standard", "purpose": "Default page sections, comparisons and two-column work"},
+    "wide": {"width": "wide", "purpose": "Dense ledgers, product families and spatial proofs that earn more columns"}
+  },
+  "relationships": {
+    "split": {"compact": [1], "medium": [1], "expanded": [7, 5], "wide": [7, 5]},
+    "readingAside": {"compact": [1], "medium": [1], "expanded": [8, 4], "wide": [8, 4]},
+    "equalFamily": {"compact": [1], "medium": [2], "expanded": [3], "wide": [5]},
+    "evidenceLedger": {"compact": [1], "medium": [2], "expanded": [3], "wide": [3]}
+  },
+  "policies": {
+    "baseRhythm": "All governed spacing values are integer multiples of the four-pixel base unit; optical exceptions belong to a named future component contract.",
+    "contentWidth": "Choose reading, standard or wide from the information relationship. A page may move between named widths; it must not invent a fourth container.",
+    "responsive": "Recompose relationships at named profiles in source order. Viewport width triggers a profile, but content type determines the resulting layout.",
+    "density": "Calm, standard and operational modes retain the same facts while changing adjacency, padding and evidence concentration for receiver intent.",
+    "equalGeometry": "Use equal geometry for comparable siblings such as a product family or plan set; do not equalise unlike content merely to make a grid look tidy.",
+    "alignmentBreak": "A deliberate break may emphasise one dominant object or transition, but reading order, container return and the reason for the break must remain explicit.",
+    "contentSafety": "Copy expands before type shrinks. No supported viewport may require page-level horizontal scrolling, clipping, content reordering or hidden essential evidence.",
+    "channels": "Marketing, email, documents and dense interfaces share the spacing source while choosing different content widths and density modes. Cross-channel consistency does not mean identical composition."
+  },
+  "testViewports": [320, 375, 430, 768, 1024, 1280, 1440]
+}

@@ -1,0 +1,44 @@
+/* Generated from geometry-controls.source.json. Do not hand-edit. */
+:root {
+  --mz-radius-none: 0px;
+  --mz-radius-fine: 4px;
+  --mz-radius-compact: 8px;
+  --mz-radius-control: 12px;
+  --mz-radius-container: 16px;
+  --mz-radius-panel: 24px;
+  --mz-radius-frame: 32px;
+  --mz-radius-full: 9999px;
+  --mz-border-width-hairline: 1px;
+  --mz-border-width-emphasis: 2px;
+  --mz-border-width-focus: 3px;
+  --mz-depth-flat: none;
+  --mz-depth-contact: 0 7px 16px -10px rgb(13 13 13 / 0.52);
+  --mz-depth-raised: 0 18px 40px -28px rgb(13 13 13 / 0.32);
+  --mz-depth-overlay: 0 28px 80px -32px rgb(13 13 13 / 0.48);
+  --mz-depth-inset-highlight: inset 0 1px 0 rgb(255 255 255 / 0.12);
+  --mz-motion-fast: 120ms;
+  --mz-motion-default: 180ms;
+  --mz-motion-control-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --mz-control-hover-lift: -1px;
+  --mz-control-icon-travel: 2px;
+  --mz-focus-width: 3px;
+  --mz-focus-offset: 3px;
+  --mz-control-compact-height: 40px;
+  --mz-control-compact-padding-inline: 14px;
+  --mz-control-default-height: 48px;
+  --mz-control-default-padding-inline: 18px;
+  --mz-control-prominent-height: 52px;
+  --mz-control-prominent-padding-inline: 20px;
+  --mz-icon-control-size: 48px;
+  --mz-icon-control-compact-size: 40px;
+  --mz-control-icon-size: 20px;
+  --mz-control-icon-gap: 8px;
+  --mz-field-height: 48px;
+  --mz-field-textarea-min-height: 120px;
+  --mz-field-padding-inline: 16px;
+  --mz-field-choice-size: 20px;
+  --mz-field-switch-width: 44px;
+  --mz-field-switch-height: 24px;
+  --mz-field-label-gap: 8px;
+  --mz-field-message-gap: 8px;
+}

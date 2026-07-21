@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-FND-03-SPACE-LAYOUT",
+  "taskId": "TASK-FND-03-SPACE-LAYOUT",
+  "contextBundleId": "CTX-FND-03-SPACE-LAYOUT",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-21T18:25:00+10:00",
+  "finishedAt": "2026-07-21T19:25:15+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/foundations/space-layout/", "action": "created", "sha256": null, "reason": "One source, schema, generator, validator, package and guidance for the spatial foundation."},
+    {"path": "brand-kit/foundations/space-layout/space-layout.source.json", "action": "created", "sha256": "31713581e7b2568cb785b51ab39e9cebcf800e88151a3641e23c35ab2cc95851", "reason": "Canonical sixteen-step four-pixel rhythm, three widths, four responsive profiles, three density modes and explicit relationship policies."},
+    {"path": "brand-kit/foundations/space-layout/review.json", "action": "created", "sha256": "de97c4ef20cb9cc078363ca6ab25b03c44d5d5803e3c7e6af21dd162875aea03", "reason": "Immutable H-FND-03-SPATIAL-PROOF approval record for spatial-lock-01."},
+    {"path": "brand-kit/foundations/space-layout/dist/manifest.json", "action": "generated", "sha256": "8914ee15f3639a8d73e9ba658b5cb1f6aa09efd05e8baeec862625788bab86d2", "reason": "Portable canonical integrity record."},
+    {"path": "brand-kit/foundations/space-layout/dist/responsive-contracts.json", "action": "generated", "sha256": "43b4e9bb11191618b6bee9e0e2dda8d53a68f745293a82050c1e94b99d6cc6ae", "reason": "Machine-readable widths, profiles, densities, source order, alignment and viewport matrix."},
+    {"path": "brand-kit/foundations/space-layout/dist/package.json", "action": "generated", "sha256": "d25d584b61d73685d6c186744bf4a7b175a20ddd1e986de1c1138da9cc68d2fb", "reason": "Bounded canonical package metadata and production authority."},
+    {"path": "brand-kit/workbench/foundations/space-layout/index.html", "action": "created", "sha256": "6759c785d1f1fc9ae8e3abfe6c6056cb698790f3f3f1e60a95a0ef598e371d4c", "reason": "Spatial audit, rhythm, widths, profiles, source order, density, alignment, channel, failure and approval fixtures."},
+    {"path": "brand-kit/workbench/foundations/space-layout/styles.css", "action": "created", "sha256": "f1d1faadaf94afffdb00e7f89aa3eb3bb0287bd857be48c9135dd772185f1081", "reason": "Mobile-first canonical proof implementing the four declared profiles from 320px through wide desktop."},
+    {"path": "brand-kit/workbench/foundations/space-layout/review.js", "action": "created", "sha256": "b940a8f0837c909f243964045a704fda38ed72ff0bbcf6b3d4099167fd06dbbf", "reason": "Grid, copy-stress and accessible approval-record controls."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-03-SPACE-LAYOUT.json", "action": "modified", "sha256": "9b346375fb55c4c7a1630e4c387c97d10e722e135347f76943ae8167e0020739", "reason": "Task completed after the human gate passed."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-04-GEOMETRY-CONTROLS.json", "action": "created", "sha256": "3a62aba928cfddc5c24cd0c7689cde519fec9ef70fd49ecc896c5bd80ef7f28a", "reason": "Next bounded foundation task is ready with canonical FND-01 through FND-03 dependencies."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "action": "modified", "sha256": "ecd4d0cb1cba7795d1a5c4f3f61bb8ca9f79eebc48ea0adc1297037800de8047", "reason": "Live state advances to FND-04."},
+    {"path": "brand-kit/docs/ROADMAP.md", "action": "modified", "sha256": "1bf3389a5d35731a4e54ec22b6fcdcbc100da53fafb048122ab8ed0c1f6effaa", "reason": "FND-03 is complete and FND-04 is next."}
+  ],
+  "decisionsApplied": ["DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "tests": [
+    {"id": "FND-03-SCHEMA", "status": "pass", "evidence": "Draft 2020-12 source validation, four-pixel rhythm, ordered widths and deterministic generation pass."},
+    {"id": "FND-03-RESPONSIVE", "status": "pass", "evidence": "Full-page browser proofs at 320, 375, 430, 768, 1024, 1280 and 1440 preserve the authored reading order with no visible horizontal page overflow."},
+    {"id": "FND-03-STRESS", "status": "pass", "evidence": "Long-copy interaction, compact through operational density, equal-comparison and intentional-break fixtures preserve facts, adjacency and hierarchy."},
+    {"id": "FND-03-INTERACTION", "status": "pass", "evidence": "Grid overlay, stress-copy toggle, Escape/backdrop/close behaviour and review-record copy flow operate correctly."},
+    {"id": "FND-03-PORTABILITY", "status": "pass", "evidence": "The candidate rebuilds without drift and the generated manifest, token and responsive entrypoints agree."},
+    {"id": "FND-03-PROTECTED-AUTHORITY", "status": "pass", "evidence": "Canonical typography, canonical colour, gradient registry and gradient approval hashes remain unchanged during generation."},
+    {"id": "FND-03-HUMAN", "status": "pass", "evidence": "Olli approved H-FND-03-SPATIAL-PROOF at 2026-07-21T09:25:15.000Z and directed that spatial-lock-01 be locked in."}
+  ],
+  "artifactsProduced": [
+    "Candidate spacing, width, grid, gutter, section-rhythm and density tokens",
+    "Machine-readable responsive, source-order, alignment and channel composition contracts",
+    "Responsive spatial-character proof with grid and copy-stress controls",
+    "Deterministic validator, approval record and portable canonical manifest"
+  ],
+  "assumptions": ["The historical 1160px container is useful evidence rather than continuing authority; the approved proof divergence is resolved through three named content roles and four coordinated responsive profiles, while final geometry remains FND-04 work."],
+  "exceptions": [],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-FND-03-SPATIAL-PROOF", "status": "approved"},
+  "nextAction": "Begin TASK-FND-04-GEOMETRY-CONTROLS with a read-only audit of approved control direction and current geometry, border, depth, focus and interaction-state conflicts."
+}

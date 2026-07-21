@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-EXP-02-SPHERE-CONTRACT",
+  "taskId": "TASK-EXP-02-SPHERE-CONTRACT",
+  "contextBundleId": "CTX-EXP-02-SPHERE-CONTRACT",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-21T23:32:29+10:00",
+  "finishedAt": "2026-07-21T23:49:34+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/expressions/sphere/", "action": "created", "sha256": null, "reason": "Schema, candidate source, deterministic builder, verifier, guidance, pending review and generated metadata package."},
+    {"path": "brand-kit/expressions/sphere/sphere.source.json", "action": "created", "sha256": "361deae5bf2c31b8d66fa3420d9a4e3544094a295465617b7310bb3f39dd8ffe", "reason": "Bounded relationship to disc, approved depth, scale/crop, Wings, allocation, surfaces, fallback and accessibility contract."},
+    {"path": "brand-kit/expressions/sphere/dist/manifest.json", "action": "generated", "sha256": "3c0cc8e76a3af4b1a4ada30bebea5bfb45da665946086fb97c116aaeef9eaec4", "reason": "Deterministic non-authoritative candidate integrity."},
+    {"path": "brand-kit/workbench/expressions/sphere/index.html", "action": "created", "sha256": "a1c0a6fb6041e022863642baf93c745652521dd7e1a432a76a7cf996e96f8d5e", "reason": "Focused decision plate separates sphere rules from typography, copy, colour, disc and homepage composition."},
+    {"path": "brand-kit/workbench/expressions/sphere/styles.css", "action": "created", "sha256": "97b85ebeea2e09f54ea7224959bd504febc14200e366a56aa6b507adb61392e9", "reason": "Geist/Inter responsive proof for depth, scale, surfaces and exact-colour fallback."},
+    {"path": "brand-kit/workbench/expressions/sphere/sphere.js", "action": "created", "sha256": "2d192a87da5330be7fe2c674bc24619464d7b83dc33689f3316b16e3780d4619", "reason": "Exactly one runtime mount, compact canonical-disc substitution, static/WebGL controls and review payload."},
+    {"path": "brand-kit/START-HERE.md", "action": "modified", "sha256": "bd15a85dcb06acf83a70dff84e448326646f232824e6d27b76eceb9070bfdc50", "reason": "Sphere candidate and pending human gate are now the current boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "action": "modified", "sha256": "ca1c82c006188a29d95a4a7642411dd52ab7dfa7a1e9db8fa1852b5bc69ce451", "reason": "Exact candidate state, scope and pending gate."},
+    {"path": "brand-kit/docs/ROADMAP.md", "action": "modified", "sha256": "1d69926e8e0b55c2e1e33d84a08d9410431bd2b5ce3d753c95e0abce1f68fa10", "reason": "EXP-02 advanced from implementation to review candidate."}
+  ],
+  "decisionsApplied": ["DEC-MOTION-002", "DEC-GRADIENT-LIBRARY-001", "DEC-LIVING-CORE-FINISH-001", "DEC-PRODUCT-ARCHITECTURE-001", "DEC-FOUNDATION-RELEASE-001", "DEC-DISC-EXPRESSION-001"],
+  "tests": [
+    {"id": "EXP-02-DEPTH", "status": "pass", "evidence": "Schema and verifier match every Deep Mineral value and permit depth only through the unchanged renderer sphere branch."},
+    {"id": "EXP-02-AUTHORITY", "status": "pass", "evidence": "Canonical disc, renderer, finish decision, Wings, foundation, registries, source PNG and exact static twin hashes remain unchanged after deterministic rebuild."},
+    {"id": "EXP-02-ALLOCATION", "status": "pass", "evidence": "Browser proof mounts exactly one live sphere and uses static schematics for all comparisons."},
+    {"id": "EXP-02-RESPONSIVE", "status": "pass", "evidence": "320, 375, 430, 768, 1024, 1280 and 1440 checks retain 1:1 objects and zero horizontal overflow; 320/375 explicitly substitute the canonical static disc and 430 renders a 366px live sphere."},
+    {"id": "EXP-02-FALLBACK", "status": "pass", "evidence": "?static=1 and ?no-webgl=1 hide the runtime canvas, retain dimensions and label the state Exact colour fallback."},
+    {"id": "EXP-02-HUMAN", "status": "pass", "evidence": "Olli approved sphere-contract-01 through H-EXP-02-SPHERE-PROOF; DEC-SPHERE-EXPRESSION-001 records canonical 1.0.0."}
+  ],
+  "artifactsProduced": ["Schema-backed sphere review candidate", "Deterministic non-authoritative metadata package", "Focused one-variable human decision plate", "Responsive compact-disc substitution and failure fixtures"],
+  "assumptions": ["The focal sphere starts at a rendered diameter of 360px; compact layouts that cannot fit that object receive the canonical disc."],
+  "exceptions": ["The exact static twin preserves exact approved colour but deliberately removes renderer-owned depth, so it is labelled an exact-colour fallback rather than an exact static sphere."],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-EXP-02-SPHERE-PROOF", "status": "approved"},
+  "nextAction": "Review TASK-EXP-03-WINGS-MARK without changing canonical disc or sphere inputs."
+}

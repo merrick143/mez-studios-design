@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-FND-05-FOUNDATION-RELEASE",
+  "receiptId": "RCP-FND-05-FOUNDATION-RELEASE",
+  "evaluatedAt": "2026-07-21T21:33:08+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators"},
+  "contractChecks": [
+    {"id": "SOURCE-INTEGRITY", "status": "pass", "evidence": "All four canonical package and manifest hashes match their declarations, approval records and byte-for-byte nested copies."},
+    {"id": "ORDER-AND-ENTRYPOINTS", "status": "pass", "evidence": "index.css preserves typography, colour, space-layout, geometry-token and control order; every import and nested entrypoint resolves."},
+    {"id": "PORTABILITY", "status": "pass", "evidence": "Fonts, four licence texts, contracts, records, manifests and runtime CSS resolve from an isolated temporary copy."},
+    {"id": "ACCESSIBILITY-AND-RESPONSIVE", "status": "pass", "evidence": "Seven target widths, light/dark, density, focus, reduced motion and forced colour are covered without horizontal overflow."},
+    {"id": "MIGRATION-BOUNDARY", "status": "pass", "evidence": "Guidance keeps 0.1.0-alpha.1, production consumers, expressions, homepage, gradients and Figma outside this release gate."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "Olli approved foundation-release-01 and DEC-FOUNDATION-RELEASE-001 records the canonical bounded result."}
+  ],
+  "qualityDimensions": [
+    {"id": "release-integrity", "score": 5, "maximum": 5, "evidence": "Declared hashes, deterministic rebuild and byte-for-byte comparison protect each canonical input."},
+    {"id": "portability", "score": 5, "maximum": 5, "evidence": "One complete copy boundary retains every font, licence, entrypoint and record."},
+    {"id": "integration-clarity", "score": 5, "maximum": 5, "evidence": "One import and a five-step dependency sequence make consumer use explicit."},
+    {"id": "accessibility", "score": 5, "maximum": 5, "evidence": "The integrated proof retains modes, focus, fields, motion and forced-colour boundaries across required widths."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "Candidate authority remains false and later consumer migration requires a separate named receipt."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["Machine verification and the human gate are complete. Foundation release 1.0.0 is canonical for its declared scope and Phase 1 is closed."]
+}

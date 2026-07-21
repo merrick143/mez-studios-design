@@ -5,15 +5,15 @@
   "canonicalRepositoryTransferred": true,
   "cutoverId": "CUTOVER-2026-07-21-01",
   "activeRelease": "0.1.0-alpha.1",
-  "nextTask": "TASK-FND-01-TYPOGRAPHY",
+  "nextTask": "TASK-EXP-04-PRODUCT-CARD",
   "sections": [
     {"id": "gradient-library", "name": "Complete gradient library", "status": "canonical", "summary": "All source colours, animation and expressions are approved. 33 unique cores are active; ten duplicate IDs remain compatibility aliases."},
     {"id": "core", "name": "Living Core", "status": "canonical", "summary": "Deep Mineral is the selected finish. Exact PNG sources remain colour authority and source palettes are unchanged."},
     {"id": "product-architecture", "name": "Product architecture and gradient assignment", "status": "canonical", "summary": "The literal five-product roster, stable IDs and MZ-G13/G12/G06/G15/G20 assignments are locked. No historical product aliases remain."},
-    {"id": "foundations", "name": "Foundations", "status": "partial", "summary": "Typography and controls have approved direction; implementation and broader surface tokens remain."},
-    {"id": "expressions", "name": "Product expressions", "status": "planned", "summary": "Disc, sphere, card, Wings, collection and channel plates must be locked."},
+    {"id": "foundations", "name": "Foundations", "status": "canonical", "summary": "FND-01 through FND-04 and unified foundation release 1.0.0 are canonical. DEC-FOUNDATION-RELEASE-001 records the portable, deterministic package authority."},
+    {"id": "expressions", "name": "Product expressions", "status": "visual-research-candidate", "summary": "Disc, sphere and Wings/mark expressions 1.0.0 are canonical. Product Card 02 Phase A round 02 compares four website-native treatments of one portrait card architecture, proves surface contrast plus family shelf versus bundle offer, and keeps Phase B website components held at H-EXP-04A-CARD-VISUAL-DIRECTION. Production authority is false."},
     {"id": "context", "name": "Context Engine", "status": "source-selected", "summary": "MZ-G12 is the approved source-backed Context Engine gradient for the migration identity kernel."},
-    {"id": "release", "name": "Portable release", "status": "migration-alpha-active", "summary": "0.1.0-alpha.1 is the self-contained canonical identity snapshot. Foundation-complete release and consumer proof remain."},
+    {"id": "release", "name": "Portable release", "status": "foundation-canonical", "summary": "0.1.0-alpha.1 remains the immutable identity snapshot. Foundation release 1.0.0 is canonical for typography, colour, space-layout and geometry-controls; production consumer proof remains later work."},
     {"id": "knowledge", "name": "Knowledge and LLM portability", "status": "canonical", "summary": "The full roadmap, 104-file Markdown history, Phase 2 research, machine contracts and one shared Claude Code/Codex skill source are present and validated."},
     {"id": "migration", "name": "Repository migration", "status": "complete", "summary": "CUTOVER-2026-07-21-01 transferred rank-one authority here. Knowledge transfer is complete and main:brand-kit is the ordinary working authority."}
   ]

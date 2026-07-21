@@ -1,6 +1,6 @@
 # Start here: Mez Systems design system
 
-Status: canonical control plane active on `main`; foundations next
+Status: canonical control plane active on `main`; foundation, disc, sphere and Wings/mark 1.0.0 canonical; `product-card-02` Phase A round 02 visual architecture ready for critique
 
 ## What this repository is
 
@@ -14,8 +14,12 @@ It is intentionally broader than a visual brand guide. The finished system must 
 - The complete source-gradient library, source authority, shared Living Core renderer, static twins, and Deep Mineral finish are approved.
 - The migration identity release is `0.1.0-alpha.1`.
 - The recovery branch has been integrated into `main`; new work starts from normal feature branches based on `main`.
-- Typography and controls have approved directions but incomplete implementations.
-- Foundations, product expressions, the golden homepage, consumer proof, Figma, channels, and broad LLM certification remain roadmap work.
+- Typography, colour, space-layout, and geometry-controls are canonical portable foundations. `control-lock-01` is approved through `DEC-GEOMETRY-CONTROLS-FOUNDATION-001`, including eight named radii, three border widths, bounded depth, seven variants, eight complete state contracts, fields, choice controls, dark inversion and mobile hierarchy.
+- The four canonical packages are assembled byte-for-byte as foundation release `1.0.0`, with one ordered CSS entrypoint, local fonts and licences, deterministic integrity, isolated proof and explicit migration boundaries. `DEC-FOUNDATION-RELEASE-001` records its bounded authority.
+- Canonical disc expression `1.0.0` is approved through `H-EXP-01-DISC-PROOF` and `DEC-DISC-EXPRESSION-001`. The informed approval record states the circle, Wings, 48px marked minimum, static/live allocation and fallbacks that were accepted.
+- Canonical sphere expression `1.0.0` is approved through `H-EXP-02-SPHERE-PROOF` and `DEC-SPHERE-EXPRESSION-001`. It adds only approved renderer depth plus focal scale/crop rules to the canonical disc.
+- Canonical Wings and mark expression `1.0.0` is approved through `H-EXP-03-WINGS-MARK-PROOF` and `DEC-WINGS-MARK-EXPRESSION-001`.
+- `product-card-01` was rejected as a generic under-designed chassis. The first `product-card-02` pass went prematurely into discovery, pricing and checkout functions. Phase A round 01 then overcorrected into ten isolated art-card treatments and was rejected on 22 July 2026. Round 02 holds one narrow portrait website-card architecture steady and compares four credible contextual treatments: Editorial Portrait, Full Field Portrait, System Index and Product Pack. It also makes the family-shelf versus bundle-offer distinction, surface contrast and the complete Phase B website-component scope explicit. Phase A remains non-authoritative at `H-EXP-04A-CARD-VISUAL-DIRECTION`; Phase B is held until the visual lock.
 
 See [Current state](docs/CURRENT-STATE.md) for the exact programme boundary.
 
@@ -50,4 +54,4 @@ Open `http://127.0.0.1:8914/brand-kit/`.
 
 Do not restart the original audit or rebuild the gradient engine. Continue from the first incomplete task in [ROADMAP.md](docs/ROADMAP.md), unless Olli explicitly changes priority.
 
-The next programme phase is foundation implementation: typography packaging, neutral and surface semantics, spacing and layout, geometry, controls, and accessibility fixtures.
+The active programme task is `TASK-EXP-04-PRODUCT-CARD`. Review the `product-card-02` round 02 Visual Architecture proof at `brand-kit/workbench/expressions/product-card/`; decide the base treatment and bounded special modes at `H-EXP-04A-CARD-VISUAL-DIRECTION`. Do not start Phase B website components or proceed to trading cards, channels or homepage work until the visual gate is decided.

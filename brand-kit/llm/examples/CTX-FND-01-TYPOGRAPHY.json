@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-FND-01-TYPOGRAPHY",
+  "taskId": "TASK-FND-01-TYPOGRAPHY",
+  "generatedAt": "2026-07-21T16:32:28+10:00",
+  "systemVersion": "0.1.0-alpha.1+fnd01-canonical",
+  "sourceState": {
+    "repository": "/Users/olivermerrick/mez-studios-design",
+    "branch": "codex/fnd-01-typography",
+    "commit": "5d6d4bd152db299678b7c1dfa8de50c07deedbeb",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "a9c01526ea74c27c19f8e90f1d94b71ad973afc689a9b4ae5f3a59392500d747", "role": "canonical", "required": true, "reason": "Active authority and programme boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "c3644f52a92cea2f410db4786c4938cec7963bdb05fd9dff29e7770512c324b3", "role": "canonical", "required": true, "reason": "Canonical FND-01 status and FND-02 next task."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "78e2ff8ce40a401fbe2fe7974967c3cc3a45ff6beed23f0bfb63be5f96bef941", "role": "canonical", "required": true, "reason": "FND-01 completion and programme sequence."},
+    {"path": "brand-kit/governance/decisions.json", "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587", "role": "governance", "required": true, "reason": "Hash-locked migration decisions including the approved type direction."},
+    {"path": "brand-kit/research/phase-2/calibration-plates/typography-system-01/typography-system-01-review.json", "sha256": "866c62610665b8fcb702fa8742e9126bc33b3a11a93d18a9cf327ae926c0940e", "role": "research", "required": true, "reason": "Human-approved family and role policy evidence."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-01-TYPOGRAPHY.json", "sha256": "3a960bba54fc5590025a29c391d3b081968a1258a98ff07ce85f4b1a5dd6bb5f", "role": "governance", "required": true, "reason": "Completed bounded task and gate contract."},
+    {"path": "brand-kit/foundations/typography/typography.source.json", "sha256": "5bf905645d94084a9caa51a02e4f9e5173ecdd38e7ea414b509591a86cc98285", "role": "canonical", "required": true, "reason": "Canonical role source and font provenance."},
+    {"path": "brand-kit/foundations/typography/review.json", "sha256": "78cf1de497f47e59739f5aab67d1ac04ef6752a8adfcb5a0f46e2ae33bf2d7ee", "role": "governance", "required": true, "reason": "Immutable H-FND-01 approval record."},
+    {"path": "brand-kit/foundations/typography/dist/manifest.json", "sha256": "b96dab0d582580fe0753438c3889f7c37a5ed5ca7ab4509b1a067eae144bd513", "role": "mirror", "required": true, "reason": "Self-contained package integrity record."},
+    {"path": "brand-kit/workbench/foundations/typography/index.html", "sha256": "b484c5f6d7e93a5636107f16e9671f3b9c1f0035f44d9a42cbcde8af44c0e7ec", "role": "fixture", "required": true, "reason": "Canonical regression proof and approval surface."}
+  ],
+  "decisions": [
+    {"id": "DEC-TYPE-001", "status": "approved", "productionEffect": "Geist owns display, Inter owns body and UI, Instrument Serif is contextual and IBM Plex Mono is technical-only."},
+    {"id": "DEC-TYPE-FOUNDATION-001", "status": "approved", "productionEffect": "The fifteen-role implementation, responsive metrics, fallbacks and cross-channel behaviour are canonical."},
+    {"id": "DEC-MIGRATION-SEQUENCE-001", "status": "approved", "productionEffect": "Foundation implementation occurs in the standalone canonical repository after cutover."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id": "CONFLICT-FND-01-RELEASE", "summary": "The active 0.1.0-alpha.1 release is a migration snapshot and must not be rewritten to imply foundation approval.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": [
+    "Do not reopen the approved Geist plus Inter family direction without new evidence.",
+    "Do not change product expressions, the golden homepage, Figma or a consumer repository in this task."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/llm/tasks/TASK-FND-01-TYPOGRAPHY.json"],
+    "omitByDefault": ["brand-kit/history/", "brand-kit/source-pack/", "brand-kit/releases/0.1.0-alpha.1/assets/", "play-orb/"]
+  },
+  "humanNotes": ["Olli approved H-FND-01-TYPE-PROOF at 2026-07-21T06:25:17.661Z with no note."]
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/expression-disc",
+  "version": "1.0.0",
+  "status": "canonical",
+  "candidateRevision": "disc-contract-01",
+  "reviewGateId": "H-EXP-01-DISC-PROOF",
+  "productionReadyForScope": true,
+  "productionAuthority": true,
+  "entrypoints": {
+    "contract": "disc.source.json",
+    "schema": "disc.schema.json",
+    "review": "review.json",
+    "guidance": "README.md"
+  },
+  "runtimeDependencies": {
+    "foundationManifest": {
+      "path": "brand-kit/releases/foundations/dist/manifest.json",
+      "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"
+    },
+    "renderer": {
+      "path": "brand-kit/source-pack/design-system-export/mz-core.js",
+      "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d",
+      "role": "approved parametric runtime; unchanged by this contract"
+    },
+    "productRegistry": {
+      "path": "brand-kit/registry/products.json"
+    },
+    "gradientRegistry": {
+      "path": "brand-kit/registry/gradients.json"
+    }
+  },
+  "note": "Metadata contract only. Canonical gradients, static twins, Wings, renderer and foundations remain external immutable dependencies."
+}

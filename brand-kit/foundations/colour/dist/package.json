@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageId": "mz.systems.package.colour",
+  "version": "1.0.0",
+  "scope": "colour-and-surfaces-foundation",
+  "foundationId": "mz.systems.foundation.colour",
+  "status": "canonical",
+  "decisionIds": [
+    "DEC-CONTROL-001",
+    "DEC-COLOUR-FOUNDATION-001",
+    "DEC-GRADIENT-LIBRARY-001",
+    "DEC-MIGRATION-SEQUENCE-001"
+  ],
+  "reviewGateId": "H-FND-02-SURFACE-PROOF",
+  "candidateRevision": "final-lock-02",
+  "productionReadyForScope": true,
+  "entrypoints": {
+    "css": "tokens.css",
+    "tokens": "tokens.json",
+    "channels": "channels.json",
+    "contrast": "contrast-report.json",
+    "source": "colour.source.json",
+    "review": "review.json"
+  },
+  "notes": [
+    "Canonical for the colour-and-surfaces foundation scope through DEC-COLOUR-FOUNDATION-001.",
+    "No gradient or Living Core data is included."
+  ]
+}

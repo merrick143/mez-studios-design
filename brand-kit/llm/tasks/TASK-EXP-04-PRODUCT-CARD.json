@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "title": "Define Product Card 02 visual architecture then website components",
+  "phase": 2,
+  "status": "in-progress",
+  "owner": "design-system-agent",
+  "objective": "Develop Product Card 02 as a two-phase programme: first lock one narrow portrait website-card architecture and the bounded visual treatments it may use; then derive the complete responsive website component family for discovery, feature, pricing, checkout, bundle, upsell and post-purchase contexts.",
+  "scope": {
+    "included": ["Phase A round 02: one 320–360px portrait website-card architecture", "four contextual treatments: Editorial Portrait, Full Field Portrait, System Index and Product Pack", "desktop shelf, feature and mobile placement proof", "role-based light and charcoal surface allocation", "family shelf versus bundle offer semantics", "single Living Core allocation with exact fallback", "explicit Phase B website component and flow map", "bounded human proof"],
+    "excluded": ["Phase B implementation before Phase A approval", "new pricing or commercial authority", "production Stripe fields or revenue code", "golden homepage", "email and success page implementation", "Figma and consumer migration"]
+  },
+  "dependencies": ["TASK-EXP-03-WINGS-MARK", "DEC-WINGS-MARK-EXPRESSION-001", "DEC-DISC-EXPRESSION-001", "DEC-MOTION-002", "DEC-FAMILY-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-TYPE-FOUNDATION-001"],
+  "inputs": {
+    "requiredFiles": ["brand-kit/expressions/disc/dist/", "brand-kit/expressions/wings-mark/dist/", "brand-kit/releases/foundations/dist/", "brand-kit/registry/products.json", "brand-kit/research/phase-2/calibration-plates/product-family-commerce-01/", "brand-kit/research/phase-2/HOMEPAGE-FOUNDATION-SYNTHESIS.md", "brand-kit/skills/codex-made-it/references/product-disc-contract.md"],
+    "decisionIds": ["DEC-WINGS-MARK-EXPRESSION-001", "DEC-DISC-EXPRESSION-001", "DEC-MOTION-002", "DEC-FAMILY-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-TYPE-FOUNDATION-001"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/expressions/product-card/", "acceptance": ["schema-backed two-phase programme", "one portrait architecture and four treatments are machine-checkable", "Phase B website components are explicit and held until visual lock", "candidate has no production authority"]},
+    {"path": "brand-kit/workbench/expressions/product-card/", "acceptance": ["four visibly credible AI OS card treatments inside real website contexts", "desktop shelf, focal feature and mobile proof", "canonical light and charcoal surface matrix", "family shelf and bundle offer examples", "preference receipt for the Phase A gate"]}
+  ],
+  "verification": [
+    {"id": "EXP-04A-ARCHITECTURE", "method": "visual", "passCondition": "the portrait card is clearly the website component being reviewed and remains recognisable across four treatments"},
+    {"id": "EXP-04A-CONTEXT", "method": "visual", "passCondition": "candidates are shown in website shelves, focal features, catalogues, commerce and mobile placements rather than as isolated art cards"},
+    {"id": "EXP-04A-SURFACES", "method": "visual", "passCondition": "calm same-polarity and focal cross-contrast allocations use canonical F8, #171715, #1B1B19 and #252523 surfaces"},
+    {"id": "EXP-04A-GROUPING", "method": "visual", "passCondition": "family shelf means comparing equal products and bundle offer means buying one package with supporting included-product rows"},
+    {"id": "EXP-04A-MOTION", "method": "command", "passCondition": "exactly one Full Field Portrait may mount the Living Core and every repeated, bundle, pricing and checkout context remains static"},
+    {"id": "EXP-04A-RESPONSIVE", "method": "visual", "passCondition": "320 through 1440 preserve readable website contexts, usable review controls and no horizontal overflow"},
+    {"id": "EXP-04A-HUMAN", "method": "human", "passCondition": "Olli approves, combines or requests changes to the portrait architecture and treatment allocation"}
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
+    "approver": "Olli",
+    "approvalQuestion": "Is the portrait website-card architecture correct, which treatment becomes the everyday base, and which special treatments should survive before Phase B begins?"
+  },
+  "stopConditions": ["Phase B website components begin before the Phase A gate", "more than one Living Core animates in a viewport", "the proof returns to unexplained decorative directions", "the task changes live Stripe code or pricing authority", "the task enters homepage, Figma or consumer migration"],
+  "notes": ["product-card-01 was rejected as generic.", "The first product-card-02 rebuild went prematurely into functional discovery, pricing and checkout.", "Phase A round 01 was rejected because ten art-card treatments obscured the website component and included weak concepts.", "Round 02 recommendation: C01 Editorial Portrait base; C02 focal, C03 dense and C04 commerce-only special treatments."]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-FND-02-COLOUR-SURFACES",
+  "taskId": "TASK-FND-02-COLOUR-SURFACES",
+  "generatedAt": "2026-07-21T18:24:36+10:00",
+  "systemVersion": "0.1.0-alpha.1+fnd02-canonical",
+  "sourceState": {"repository": "merrick143/mez-studios-design", "branch": "codex/fnd-01-typography", "commit": "5d6d4bd152db299678b7c1dfa8de50c07deedbeb", "workingTree": "dirty"},
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "867dd6b142e943bc3139a66338d219fa1cdabd411881cc8412f340c6014d14bc", "role": "canonical", "required": true, "reason": "Active programme and gate boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "bd9497268b6a1894f1ecd95667b478873d7d4441d213772dc6454ffbd7777337", "role": "canonical", "required": true, "reason": "Live foundation status and next action."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "a4ad267a8ebd510d51884151a8775b529374e0ae1ee36987ef41254e82d982f3", "role": "canonical", "required": true, "reason": "FND-02 completion and FND-03 programme sequence."},
+    {"path": "brand-kit/governance/decisions.json", "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587", "role": "governance", "required": true, "reason": "Immutable migration decisions including control and gradient boundaries; post-cutover foundation approval is recorded separately."},
+    {"path": "brand-kit/foundations/typography/dist/package.json", "sha256": "c5c741bd0b6194610b350e9e4734aa2d591606c5657bb5601cbe603a627f6ecc", "role": "canonical", "required": true, "reason": "Approved typography dependency used by the proof."},
+    {"path": "brand-kit/gradient-library/approval.json", "sha256": "18598eb18a880e58df4f39a17849013726e05353e238c4989d2bb3613be36fc4", "role": "governance", "required": true, "reason": "Protected gradient authority and separation rule."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-02-COLOUR-SURFACES.json", "sha256": "6613d98eeca78e9b3796181e6bc1e42860b2cedcb6f18bf56ba7f26efc48dae8", "role": "governance", "required": true, "reason": "Completed bounded task, verification and human gate contract."},
+    {"path": "brand-kit/foundations/colour/colour.source.json", "sha256": "ba16cbba5e25341c22ae1d94fe12ef10c9a406ebff5d8f3493b4cb56343b914c", "role": "canonical", "required": true, "reason": "Single canonical source for primitives, semantic roles, modes, pairings and policies."},
+    {"path": "brand-kit/foundations/colour/review.json", "sha256": "6a1a0d449b31de79df96b6d27b71615a71c75c6f7ad213408306e81d98ba3dcf", "role": "governance", "required": true, "reason": "Immutable approval record for final-lock-02."},
+    {"path": "brand-kit/foundations/colour/dist/manifest.json", "sha256": "c1c8283bee32e8526c026c135ca81d0102d11e7a4227714d98bcd4e9279f2c25", "role": "mirror", "required": true, "reason": "Generated portable canonical integrity record."},
+    {"path": "brand-kit/foundations/colour/dist/contrast-report.json", "sha256": "240fa8bea7ed60c945ef5870ba5ffec82cce1b02876149a722d10acb781d2abf", "role": "evidence", "required": true, "reason": "Eighty-five resolved WCAG contrast checks across five modes."},
+    {"path": "brand-kit/workbench/foundations/colour/index.html", "sha256": "8666249c6c7b445e162d7ae43fd037dce5076ca2da87ce688ab6831a7149b6a7", "role": "fixture", "required": true, "reason": "Canonical canvas, identity-inheritance, restrained-feedback, channel and approval-record proof."}
+  ],
+  "decisions": [
+    {"id": "DEC-TYPE-FOUNDATION-001", "status": "approved", "productionEffect": "The proof uses the canonical typography package without changing it."},
+    {"id": "DEC-CONTROL-001", "status": "approved", "productionEffect": "Contained dark surfaces use the approved white-primary and outline-secondary hierarchy."},
+    {"id": "DEC-GRADIENT-LIBRARY-001", "status": "approved", "productionEffect": "Product gradients remain protected identity objects and are excluded from semantic colour."},
+    {"id": "DEC-MIGRATION-SEQUENCE-001", "status": "approved", "productionEffect": "Foundation implementation occurs after canonical cutover in the standalone repository."},
+    {"id": "DEC-COLOUR-FOUNDATION-001", "status": "approved", "productionEffect": "Final-lock-02 colour roles, policies, inheritance and channel mappings are canonical."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id": "CONFLICT-FND-02-LEGACY-GREYS", "summary": "Existing workbench, research and consumer CSS may contain ad hoc near-white and grey values; canonical FND-02 values supersede them only through explicit future migrations.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-FND-02-RELEASE", "summary": "The active 0.1.0-alpha.1 release is an immutable migration snapshot and must not be rewritten for this bounded foundation package.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": [
+    "Do not change canonical FND-02 values without a new bounded human decision.",
+    "Do not change source gradients, Living Core palettes, product assignments or expression rules.",
+    "Do not use functional hues as decorative brand colour or make dark a default whole-site theme.",
+    "Do not change spacing, geometry, control implementation, product expressions, homepage, Figma or consumers in this task."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/llm/tasks/TASK-FND-02-COLOUR-SURFACES.json"],
+    "omitByDefault": ["brand-kit/history/", "brand-kit/source-pack/", "brand-kit/releases/0.1.0-alpha.1/assets/", "play-orb/"]
+  },
+  "humanNotes": ["Olli approved final-lock-02 through H-FND-02-SURFACE-PROOF at 2026-07-21T08:19:31.000Z with the instruction to lock it in and proceed."]
+}

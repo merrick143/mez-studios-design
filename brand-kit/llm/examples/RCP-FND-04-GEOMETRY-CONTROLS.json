@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-FND-04-GEOMETRY-CONTROLS",
+  "taskId": "TASK-FND-04-GEOMETRY-CONTROLS",
+  "contextBundleId": "CTX-FND-04-GEOMETRY-CONTROLS",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-21T19:26:00+10:00",
+  "finishedAt": "2026-07-21T19:49:34+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/foundations/geometry-controls/", "action": "created", "sha256": null, "reason": "One source, schema, generator, validator, component primitives, package and guidance."},
+    {"path": "brand-kit/foundations/geometry-controls/geometry-controls.source.json", "action": "created", "sha256": "701397c2c5ca1ece9642d5cd66f647e646469dc55f8e5b01fcd491598a876dde", "reason": "Canonical eight radii, three borders, bounded depth, seven variants and eight state contracts."},
+    {"path": "brand-kit/foundations/geometry-controls/review.json", "action": "created", "sha256": "e1d09d46ad028fa60166bcb07ee05206a392a9faab06fd18dcd00e709bf9802a", "reason": "Immutable H-FND-04-CONTROL-PROOF approval record."},
+    {"path": "brand-kit/foundations/geometry-controls/dist/manifest.json", "action": "generated", "sha256": "efb2342e7bab143913c84f509348b07a8ecc8cd01cef5e4fdf8aae17693272d8", "reason": "Portable canonical integrity record."},
+    {"path": "brand-kit/foundations/geometry-controls/dist/control-contracts.json", "action": "generated", "sha256": "c8efed8897c430f9a651dbb5dd45130e910aa7ab0f3e495a95d5d415924d1cf8", "reason": "Machine-readable variants, states, policies and viewport matrix."},
+    {"path": "brand-kit/foundations/geometry-controls/dist/package.json", "action": "generated", "sha256": "204bcddc03a7b9694d62025a503c12342f23fe27841675fa45da4d6767073ce9", "reason": "Bounded canonical package metadata and production authority."},
+    {"path": "brand-kit/workbench/foundations/geometry-controls/index.html", "action": "created", "sha256": "2df33bc577f2d0863698e47490633b1fd0b913892ec759237f68dbc1f4757e26", "reason": "Realistic canonical geometry, state, field, dark, mobile, accessibility and approval proof."},
+    {"path": "brand-kit/workbench/foundations/geometry-controls/styles.css", "action": "created", "sha256": "c154efd1a8ebe92be2428b282129dcf55528dec11bfdb50cb376406b43a9573c", "reason": "Responsive canonical quiet-pressure proof."},
+    {"path": "brand-kit/workbench/foundations/geometry-controls/review.js", "action": "created", "sha256": "d141911480da67563facc117af817a7423c72284f8d9a6b8d508e156a7d69195", "reason": "State, field-validation and accessible approval-record interactions."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-04-GEOMETRY-CONTROLS.json", "action": "modified", "sha256": "66bb3bd28bc66cc8d99d72b488e4008b81fedc03d7cc07a595d9dbfa64d3bec3", "reason": "Task completed after the human gate passed."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-05-FOUNDATION-RELEASE.json", "action": "created", "sha256": "d12458f4e0664f1c5184cf0fda2c50931962eeb870886a4171109ef42fccd306", "reason": "Next bounded foundation integration task is ready."}
+  ],
+  "decisionsApplied": ["DEC-CONTROL-001", "DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "tests": [
+    {"id": "FND-04-SCHEMA", "status": "pass", "evidence": "Draft 2020-12 source validation, geometry ordering, approved control values and deterministic generation pass."},
+    {"id": "FND-04-STATES", "status": "pass", "evidence": "Rest, hover, focus, active, loading, disabled, error and destructive-confirmation contracts are complete."},
+    {"id": "FND-04-ACCESSIBILITY", "status": "pass", "evidence": "Field errors, accessible names, focus, touch targets, forced-colour and reduced-motion boundaries are explicit; browser interaction passes."},
+    {"id": "FND-04-RESPONSIVE", "status": "pass", "evidence": "Full-page proofs at 320, 375, 430, 768, 1024, 1280 and 1440 preserve labels and hierarchy without visible horizontal overflow."},
+    {"id": "FND-04-PORTABILITY", "status": "pass", "evidence": "Candidate rebuilds without drift and every declared entrypoint is present in isolation."},
+    {"id": "FND-04-PROTECTED-AUTHORITY", "status": "pass", "evidence": "Canonical FND-01 through FND-03 packages and protected gradient authority remain unchanged."},
+    {"id": "FND-04-HUMAN", "status": "pass", "evidence": "Olli approved H-FND-04-CONTROL-PROOF at 2026-07-21T09:49:34.352Z."}
+  ],
+  "artifactsProduced": ["Canonical geometry, border, depth, focus and motion tokens", "Generated control primitives and machine-readable state contracts", "Responsive adversarial control workbench and approval record", "Deterministic validator and portable canonical manifest"],
+  "assumptions": ["The approved quiet-pressure direction remains binding; ordinary hierarchy should be carried by flat surfaces and borders, with shadow limited to contact and detached temporary surfaces."],
+  "exceptions": [],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-FND-04-CONTROL-PROOF", "status": "approved"},
+  "nextAction": "Begin TASK-FND-05-FOUNDATION-RELEASE with a read-only inventory of all four canonical package manifests and entrypoints."
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FND-04-GEOMETRY-CONTROLS",
+  "title": "Define and prove geometry, borders, depth, and controls",
+  "phase": 1,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Turn the approved control direction and canonical typography, colour, and spatial foundations into a coherent Mez geometry, border, depth, and interaction system with accessible production-ready control states.",
+  "scope": {
+    "included": [
+      "semantic radius and shape roles for controls, cards, panels, fields, tags, and contained objects",
+      "hairline, border, divider, shadow, elevation, focus, and contained-dark contracts",
+      "button, link, icon-only, input, select, textarea, checkbox, radio, switch, and destructive-control states",
+      "default, hover, focus, active, loading, disabled, error, destructive, and mobile control behaviour",
+      "adversarial fixtures for long labels, icons, localisation, keyboard navigation, forced colours, reduced motion, and touch targets",
+      "generated tokens, schema, guidance, and a bounded primary-control and surface-grammar proof"
+    ],
+    "excluded": [
+      "changing canonical typography, colour, spacing, widths, breakpoints, density, or responsive rules",
+      "product-expression objects and Living Core treatment",
+      "golden homepage composition",
+      "consumer migration and production Figma library"
+    ]
+  },
+  "dependencies": ["TASK-FND-03-SPACE-LAYOUT", "DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-CONTROL-001"],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/governance/decisions.json",
+      "brand-kit/foundations/typography/dist/package.json",
+      "brand-kit/foundations/colour/dist/package.json",
+      "brand-kit/foundations/space-layout/dist/package.json",
+      "brand-kit/research/phase-2/calibration-plates/button-control-system-01/"
+    ],
+    "decisionIds": ["DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-CONTROL-001"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/foundations/geometry-controls/", "acceptance": ["one semantic source generates geometry, border, depth, focus, and control-state contracts", "canonical FND-01, FND-02, and FND-03 values remain unchanged", "bounded package authority and approval state are mechanically verifiable"]},
+    {"path": "brand-kit/workbench/foundations/geometry-controls/", "acceptance": ["primary, secondary, text, icon-only, form, destructive, loading, disabled, dark-surface, mobile, and accessibility fixtures are realistic", "micro-lift and restrained alternative finishes are compared without gradients becoming generic decoration", "human verdict can be recorded without changing unrelated foundations"]}
+  ],
+  "verification": [
+    {"id": "FND-04-SCHEMA", "method": "schema", "passCondition": "source, generated tokens, control contracts, and task records validate"},
+    {"id": "FND-04-STATES", "method": "command", "passCondition": "every control exposes the required interaction, disabled, loading, destructive, error, focus, and contained-dark states"},
+    {"id": "FND-04-ACCESSIBILITY", "method": "visual", "passCondition": "keyboard, focus, forced-colour, reduced-motion, touch-target, long-label, localisation, and 320px fixtures remain usable"},
+    {"id": "FND-04-HUMAN", "method": "human", "passCondition": "Olli approves the primary-button finish and complete surface grammar"}
+  ],
+  "humanGate": {"required": true, "gateId": "H-FND-04-CONTROL-PROOF", "approver": "Olli", "approvalQuestion": "Does this geometry, border, depth, and control system feel premium, restrained, recognisably Mez, and production-useful across interaction states and surfaces?"},
+  "stopConditions": [
+    "a geometry or control rule requires changing canonical typography, colour, or spatial values",
+    "focus, disabled, loading, destructive, error, mobile, keyboard, or forced-colour behaviour is missing",
+    "a gradient or glow becomes generic control decoration instead of protected product identity",
+    "the proof combines product-expression or homepage decisions with the control-finish gate"
+  ],
+  "notes": [
+    "Begin with a read-only audit of the approved control calibration and current geometry, border, shadow, focus, and state conflicts.",
+    "The approved direction is 12px control radius, 48px default height, solid/outline/text hierarchy, restrained micro-lift, contained-dark behaviour, and mobile hierarchy; implementation and adversarial validation remain open.",
+    "FND-01 typography, FND-02 colour, and FND-03 space-layout are canonical inputs, not design variables for this task."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-EXP-04-PRODUCT-CARD",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "contextBundleId": "CTX-EXP-04-PRODUCT-CARD",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-22T08:20:00+10:00",
+  "finishedAt": "2026-07-22T09:00:00+10:00",
+  "outcome": "partial",
+  "filesChanged": [
+    {"path": "brand-kit/expressions/product-card/", "action": "modified", "sha256": null, "reason": "Replaced rejected round 01 with one portrait website-card architecture, four treatments, surface allocation and explicit Phase B components."},
+    {"path": "brand-kit/workbench/expressions/product-card/index.html", "action": "modified", "sha256": "fdc4b670809ab211a12d1f3ef60c9abe9c0d1a19daf50eb2fa7a6244447388f5", "reason": "Built four website-context candidates, surface matrix, family shelf, bundle offer and Phase B component map."},
+    {"path": "brand-kit/workbench/expressions/product-card/styles.css", "action": "modified", "sha256": "0b2b49b98b4ce1100836cc9445a531c08987cf563bb0d81f9f6a63c4e38f03a3", "reason": "Implemented portrait cards, canonical charcoal, contextual groupings and responsive behavior."},
+    {"path": "brand-kit/workbench/expressions/product-card/product-card.js", "action": "modified", "sha256": "ffd907c607803b5857a8ee4fab58e774a9591788f167eef4a7ffff71b0c87a42", "reason": "Fixed canonical Living Core paths and added round 02 preference receipt."},
+    {"path": "brand-kit/llm/tasks/TASK-EXP-04-PRODUCT-CARD.json", "action": "modified", "sha256": "d6b94fac76a822ebe442ce48b12f9d1697afbf36f1364d5aa82788d0ee6369d9", "reason": "Defined Phase B as the real website component and flow family."}
+  ],
+  "decisionsApplied": ["DEC-WINGS-MARK-EXPRESSION-001", "DEC-DISC-EXPRESSION-001", "DEC-MOTION-002", "DEC-FAMILY-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-TYPE-FOUNDATION-001"],
+  "tests": [
+    {"id": "EXP-04A-ARCHITECTURE", "status": "pass", "evidence": "Four treatments visibly retain the same narrow portrait website-card spine."},
+    {"id": "EXP-04A-CONTEXT", "status": "pass", "evidence": "Candidates appear inside product shelves, feature sections, a catalogue, a commerce offer and mobile composition."},
+    {"id": "EXP-04A-SURFACES", "status": "pass", "evidence": "Surface matrix distinguishes calm white-on-F8, focal charcoal-on-light, focal white-on-charcoal and raised-charcoal integration."},
+    {"id": "EXP-04A-GROUPING", "status": "pass", "evidence": "Family shelf compares equal products; bundle offer presents one package with included-product rows."},
+    {"id": "EXP-04A-MOTION", "status": "pass", "evidence": "Exactly one rounded-rectangle Living Core mount exists and now resolves canonical absolute static and Wings paths."},
+    {"id": "EXP-04A-RESPONSIVE", "status": "pass", "evidence": "Seven breakpoint checks retain source order; compact System Index, product pack and review tags no longer create visible local clipping."},
+    {"id": "EXP-04A-HUMAN", "status": "not-run", "evidence": "H-EXP-04A-CARD-VISUAL-DIRECTION remains pending Olli's round 02 critique."}
+  ],
+  "artifactsProduced": ["Product Card 02 Phase A contract 0.4.0", "Deterministic round 02 visual-research package", "Website-context visual architecture workbench", "Round 02 review receipt"],
+  "assumptions": ["One stable portrait architecture with contextual treatment allocation is more useful than unrelated visual-direction specimens."],
+  "exceptions": ["C02 may request one Living Core in an earned focal feature; C04 may use a pack as commerce media without making the pack the universal card shell."],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION", "status": "pending"},
+  "nextAction": "Olli critiques the portrait architecture, selects or combines the base and special treatments, and either requests another Phase A iteration or locks the visual system before Phase B."
+}

@@ -3,7 +3,7 @@
   "taskId": "TASK-FND-01-TYPOGRAPHY",
   "title": "Implement and prove the approved typography foundation",
   "phase": 1,
-  "status": "ready",
+  "status": "complete",
   "owner": "design-system-agent",
   "objective": "Turn DEC-TYPE-001 into a licensed, packaged, responsive, cross-channel typography system without reopening the approved Geist display and tuned Inter body/UI direction.",
   "scope": {
@@ -22,7 +22,7 @@
       "production Figma library"
     ]
   },
-  "dependencies": ["DEC-TYPE-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "dependencies": ["DEC-TYPE-001", "DEC-TYPE-FOUNDATION-001", "DEC-MIGRATION-SEQUENCE-001"],
   "inputs": {
     "requiredFiles": [
       "brand-kit/START-HERE.md",
@@ -31,7 +31,7 @@
       "brand-kit/governance/decisions.json",
       "brand-kit/research/phase-2/calibration-plates/typography-system-01/typography-system-01-review.json"
     ],
-    "decisionIds": ["DEC-TYPE-001"],
+    "decisionIds": ["DEC-TYPE-001", "DEC-TYPE-FOUNDATION-001"],
     "artifactIds": [],
     "consumerIds": []
   },
@@ -88,6 +88,8 @@
     "implementation would require silently replacing the approved type direction"
   ],
   "notes": [
-    "Instrument Serif remains contextual only and IBM Plex Mono remains restricted to technical content unless a new decision changes that scope."
+    "Instrument Serif remains contextual only and IBM Plex Mono remains restricted to technical content unless a new decision changes that scope.",
+    "Olli approved H-FND-01-TYPE-PROOF at 2026-07-21T06:25:17.661Z; the canonical record is brand-kit/foundations/typography/review.json.",
+    "The generated typography package is a production-ready portable slice; the active whole-system migration release remains 0.1.0-alpha.1."
   ]
 }

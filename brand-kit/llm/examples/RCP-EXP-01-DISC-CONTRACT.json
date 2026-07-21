@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-EXP-01-DISC-CONTRACT",
+  "taskId": "TASK-EXP-01-DISC-CONTRACT",
+  "contextBundleId": "CTX-EXP-01-DISC-CONTRACT",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-21T21:14:07+10:00",
+  "finishedAt": "2026-07-21T23:32:29+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/expressions/disc/", "action": "created", "sha256": null, "reason": "Canonical source, schema, deterministic builder, verifier, guidance, approved review and generated metadata package."},
+    {"path": "brand-kit/expressions/disc/disc.source.json", "action": "created", "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a", "reason": "Canonical hard-circle chassis, marked-size threshold, scale, allocation, surfaces, channels, accessibility and five core references."},
+    {"path": "brand-kit/expressions/disc/review.json", "action": "modified", "sha256": "45c0e7c586b10f68ed0dcf610503431b445006266496d2020517bafb3249770d", "reason": "Replaced ambiguous initial approval evidence with Olli's informed approval of the stated disc rules."},
+    {"path": "brand-kit/expressions/disc/dist/manifest.json", "action": "generated", "sha256": "003264f6910cb92f31b75a8e0f050d73720c1ed2235fb4dea2854103d7bccf1c", "reason": "Integrity record refreshed after the informed approval."},
+    {"path": "brand-kit/workbench/expressions/disc/index.html", "action": "created", "sha256": "6e8d3fddf02a6b6137b5394ec6b96f38eb8378f2f3632ced0184edd08a4fa29e", "reason": "Source/static/runtime truth, geometry, scale, family, motion allocation, surfaces, failures, channels and permanent approval record."},
+    {"path": "brand-kit/workbench/expressions/disc/styles.css", "action": "modified", "sha256": "180907a472be5f8c45b9dde7232c125ed390ff399e2d6ff3afa118d9c5994c26", "reason": "Corrected the proof to use canonical Inter body and Geist display mappings instead of browser-default serif text."},
+    {"path": "brand-kit/workbench/expressions/disc/disc.js", "action": "modified", "sha256": "208252a2d6fb7d8a51f11fc19d8d6cac8a5047a95334c35d8f6a9d54a8032efc", "reason": "Permanent approval payload now contains the informed approval note and timestamp."},
+    {"path": "brand-kit/llm/tasks/TASK-EXP-01-DISC-CONTRACT.json", "action": "created", "sha256": "4e87362d3cda50de41c0fe09737eb3b2e99141155af03f56341240c57455ba67", "reason": "Bounded Phase 2 task is complete after its human gate."},
+    {"path": "brand-kit/START-HERE.md", "action": "modified", "sha256": "bd15a85dcb06acf83a70dff84e448326646f232824e6d27b76eceb9070bfdc50", "reason": "Canonical disc status and sphere review boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "action": "modified", "sha256": "ca1c82c006188a29d95a4a7642411dd52ab7dfa7a1e9db8fa1852b5bc69ce451", "reason": "Live programme status and sphere review candidate."},
+    {"path": "brand-kit/docs/ROADMAP.md", "action": "modified", "sha256": "1d69926e8e0b55c2e1e33d84a08d9410431bd2b5ce3d753c95e0abce1f68fa10", "reason": "EXP-01 exit passed and EXP-02 reached human review."}
+  ],
+  "decisionsApplied": ["DEC-MOTION-002", "DEC-GRADIENT-LIBRARY-001", "DEC-LIVING-CORE-FINISH-001", "DEC-PRODUCT-ARCHITECTURE-001", "DEC-FAMILY-001", "DEC-FOUNDATION-RELEASE-001", "DEC-DISC-EXPRESSION-001"],
+  "tests": [
+    {"id": "EXP-01-GEOMETRY", "status": "pass", "evidence": "Schema and verifier enforce a hard 1:1 circle, no border/shadow/tile/halo/glow/sphere shading, 0.39 white Wings and five non-overlapping bands."},
+    {"id": "EXP-01-AUTHORITY", "status": "pass", "evidence": "Five source, static-twin and assignment records plus renderer, Wings and foundation hashes remain unchanged after deterministic rebuild."},
+    {"id": "EXP-01-ALLOCATION", "status": "pass", "evidence": "Browser proof mounts exactly one live MZ-G13 core and all repeated family, scale, surface and failure instances are exact static twins."},
+    {"id": "EXP-01-RESPONSIVE", "status": "pass", "evidence": "320, 375, 768 and 1440 browser checks preserve 1:1 hero geometry with no horizontal overflow."},
+    {"id": "EXP-01-FALLBACK", "status": "pass", "evidence": "?static=1 and ?no-webgl=1 both produce a hidden runtime canvas, exact static surface and unchanged layout."},
+    {"id": "EXP-01-HUMAN", "status": "pass", "evidence": "After clarification, Olli explicitly approved all stated disc rules through H-EXP-01-DISC-PROOF; DEC-DISC-EXPRESSION-001 records canonical 1.0.0."}
+  ],
+  "artifactsProduced": ["Canonical schema-backed product-disc contract", "Deterministic canonical metadata package", "One-live and repeated-static human proof", "Responsive, reduced-motion and WebGL-failure fixtures", "Permanent bounded approval record"],
+  "assumptions": ["The active repository-owned product-disc skill and renderer contract supersede the historical research note that removed all hover speed changes; only internal field speed is permitted, never geometry movement."],
+  "exceptions": ["The 24–47px utility core omits Wings and is explicitly not a complete identity lockup; a visible product name is required.", "The original proof omitted explicit CSS font-family mappings and rendered in browser-default serif; this was corrected to the approved Geist and Inter tokens before final handoff."],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-EXP-01-DISC-PROOF", "status": "approved"},
+  "nextAction": "Execute TASK-EXP-02-SPHERE-CONTRACT without changing canonical disc 1.0.0 or its protected inputs."
+}

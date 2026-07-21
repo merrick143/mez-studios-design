@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.sphere",
+  "status": "canonical",
+  "productionAuthority": true,
+  "artifactCount": 5,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 654,
+      "sha256": "06d336ad6bb87c42eb61b3c9d5fbb82ea250d17f14ef241408a2dbf00c299c75"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1691,
+      "sha256": "56c3b77122ef47473d7e8921736a4123047e3d1241945ed08cc937f149aec6c0"
+    },
+    {
+      "path": "review.json",
+      "bytes": 536,
+      "sha256": "1d97cdd1485fe4e6fc1444430f10b79b9c1d07177884d8011d73ff906d4b235e"
+    },
+    {
+      "path": "sphere.schema.json",
+      "bytes": 2513,
+      "sha256": "7f16c746ac044f4ae4dfdb44d76dc90eb69c88fe57222d7b432730c3ed3bd17c"
+    },
+    {
+      "path": "sphere.source.json",
+      "bytes": 6389,
+      "sha256": "a59d663a5cae4cb54b596f6e8b34835e0f3a376e999f9fb83e26bebeab264dca"
+    }
+  ]
+}

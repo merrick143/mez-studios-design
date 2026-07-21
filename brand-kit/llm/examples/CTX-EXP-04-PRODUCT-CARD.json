@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-EXP-04-PRODUCT-CARD",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "generatedAt": "2026-07-22T09:00:00+10:00",
+  "systemVersion": "1.0.0+product-card-02-phase-a-r02",
+  "sourceState": {"repository": "merrick143/mez-studios-design", "branch": "codex/fnd-01-typography", "commit": "5d6d4bd152db299678b7c1dfa8de50c07deedbeb", "workingTree": "dirty"},
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "5cd532a7fd82ecfa0ce59c4b24f968e21352a3c6a0a569e65ae7fd15300932d5", "role": "canonical", "required": true, "reason": "Canonical programme boundary and active round 02 visual gate."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "81441d6ec190c434c66c8cdffad0bb4548deaa42db95d8dda7fb3050a732a037", "role": "canonical", "required": true, "reason": "Live round 02 scope and Phase B hold boundary."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "c350b44b836d6593e1d67595e20be19cb9ef11ddd81b298fc4ec9c683243d08d", "role": "canonical", "required": true, "reason": "Product Card 02 sequence and downstream website-component ownership."},
+    {"path": "brand-kit/llm/tasks/TASK-EXP-04-PRODUCT-CARD.json", "sha256": "d6b94fac76a822ebe442ce48b12f9d1697afbf36f1364d5aa82788d0ee6369d9", "role": "governance", "required": true, "reason": "Bounded visual-architecture task and human gate."},
+    {"path": "brand-kit/expressions/product-card/product-card.source.json", "sha256": "d3966e13b544bee665149a863f06f7fc4cdf98a013bddc08665f58e6dddb6450", "role": "fixture", "required": true, "reason": "Schema-backed portrait architecture, treatments, surfaces, groupings and Phase B map."},
+    {"path": "brand-kit/expressions/product-card/dist/manifest.json", "sha256": "2bb874aae466e3f9bcd677f5775b889f0fb22f8404119b45a1139d13ec9d1bba", "role": "mirror", "required": true, "reason": "Deterministic round 02 package integrity."},
+    {"path": "brand-kit/workbench/expressions/product-card/index.html", "sha256": "fdc4b670809ab211a12d1f3ef60c9abe9c0d1a19daf50eb2fa7a6244447388f5", "role": "fixture", "required": true, "reason": "Four website-native treatments, surface allocation, grouping proof and Phase B component map."},
+    {"path": "brand-kit/workbench/expressions/product-card/styles.css", "sha256": "0b2b49b98b4ce1100836cc9445a531c08987cf563bb0d81f9f6a63c4e38f03a3", "role": "fixture", "required": true, "reason": "Portrait cards, real contexts, canonical charcoal and responsive execution."},
+    {"path": "brand-kit/workbench/expressions/product-card/product-card.js", "sha256": "ffd907c607803b5857a8ee4fab58e774a9591788f167eef4a7ffff71b0c87a42", "role": "fixture", "required": true, "reason": "Single-core runtime, exact fallback and round 02 review receipt."},
+    {"path": "brand-kit/expressions/disc/disc.source.json", "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a", "role": "canonical", "required": true, "reason": "Canonical disc behavior inherited unchanged."},
+    {"path": "brand-kit/expressions/wings-mark/wings-mark.source.json", "sha256": "4e7b0660e50516428594813b5419328cdaf5368a66ee4793c9492a593eeea8a1", "role": "canonical", "required": true, "reason": "Canonical Wings inherited unchanged."},
+    {"path": "brand-kit/releases/foundations/dist/manifest.json", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639", "role": "canonical", "required": true, "reason": "Canonical type, colour, space and geometry foundation."},
+    {"path": "brand-kit/source-pack/design-system-export/mz-core.js", "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d", "role": "canonical", "required": true, "reason": "Approved Living Core runtime and exact fallback."},
+    {"path": "brand-kit/registry/products.json", "sha256": "665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b", "role": "canonical", "required": true, "reason": "Literal product names and gradient assignments."}
+  ],
+  "decisions": [
+    {"id": "DEC-WINGS-MARK-EXPRESSION-001", "status": "approved", "productionEffect": "Exact ordinary Wings role is inherited."},
+    {"id": "DEC-DISC-EXPRESSION-001", "status": "approved", "productionEffect": "Canonical static product identity and focal motion allocation are inherited."},
+    {"id": "DEC-MOTION-002", "status": "approved", "productionEffect": "Continuous motion remains restricted to one earned focal expression."},
+    {"id": "DEC-FAMILY-001", "status": "approved", "productionEffect": "Comparable products retain equal geometry and static repeated cores."},
+    {"id": "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "status": "approved", "productionEffect": "Canonical frame, control, border and focus roles govern the proof."},
+    {"id": "DEC-COLOUR-FOUNDATION-001", "status": "approved", "productionEffect": "F8, white and contained charcoal surfaces are inherited."},
+    {"id": "DEC-TYPE-FOUNDATION-001", "status": "approved", "productionEffect": "Geist display and Inter UI roles govern the compositions."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id": "CONFLICT-EXP-04-01-REJECTED", "summary": "product-card-01 proved a generic chassis rather than authored website design.", "executionEffect": "stop"},
+    {"id": "CONFLICT-EXP-04-SEQUENCE", "summary": "The first Product Card 02 pass attempted function before visual architecture was locked.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-EXP-04-R01", "summary": "Phase A round 01 used ten isolated art-card treatments, weak concepts and an unclear grouping presentation.", "executionEffect": "stop"}
+  ],
+  "stopConditions": ["Do not reuse rejected round 01 concepts as unexplained decoration.", "Do not begin Phase B before the Phase A gate.", "Do not animate more than one Living Core.", "Do not change pricing authority, live Stripe code, homepage, Figma or consumers."],
+  "contextBudget": {"strategy": "bounded", "requiredFirst": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/llm/tasks/TASK-EXP-04-PRODUCT-CARD.json"], "omitByDefault": ["consumer repositories", "Figma", "functional implementation before visual lock"]},
+  "humanNotes": ["Olli rejected Phase A round 01 and asked for actual website cards, narrower portrait proportions, charcoal rather than black, clearer opposite-surface logic, stronger bundle presentation and a Phase B scope that explicitly includes website components, comparison, pricing, checkout and responsive behavior."]
+}

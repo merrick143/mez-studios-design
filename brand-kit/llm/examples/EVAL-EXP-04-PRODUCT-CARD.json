@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-EXP-04-PRODUCT-CARD",
+  "receiptId": "RCP-EXP-04-PRODUCT-CARD",
+  "evaluatedAt": "2026-07-22T09:00:00+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators and in-app browser proof"},
+  "contractChecks": [
+    {"id": "TWO-PHASE-SEQUENCE", "status": "pass", "evidence": "Phase A round 02 is active at its own human gate and Phase B is held until the visual lock."},
+    {"id": "WEBSITE-ARCHITECTURE", "status": "pass", "evidence": "One portrait component anatomy remains recognisable across four role-based treatments and real website placements."},
+    {"id": "SURFACE-ALLOCATION", "status": "pass", "evidence": "Light and charcoal are allocated by component role rather than by a superficial global theme toggle."},
+    {"id": "GROUPING-SEMANTICS", "status": "pass", "evidence": "The shelf compares products and the bundle sells one package with subordinate inclusions."},
+    {"id": "PHASE-B-SCOPE", "status": "pass", "evidence": "Discovery, feature, pricing, checkout, bundle, upsell, mobile summary, states and responsive behavior are explicit website deliverables."},
+    {"id": "LIVE-RUNTIME", "status": "pass", "evidence": "The focal treatment mounted the shared Living Core after canonical paths were corrected; exact static fallback remains configured."},
+    {"id": "AUTHORITY", "status": "pass", "evidence": "Contract, package and review payload retain productionAuthority false and keep functional implementation held."},
+    {"id": "HUMAN-GATE", "status": "warning", "evidence": "H-EXP-04A-CARD-VISUAL-DIRECTION has not yet been decided for round 02."}
+  ],
+  "qualityDimensions": [
+    {"id": "component-clarity", "score": 4.6, "maximum": 5, "evidence": "The proof directly states and demonstrates that the reviewed object is a real website product card."},
+    {"id": "comparison-clarity", "score": 4.5, "maximum": 5, "evidence": "Four treatments retain a stable anatomy and have explicit contextual jobs."},
+    {"id": "system-range", "score": 4.5, "maximum": 5, "evidence": "Base, focal, dense and commerce treatments plus shelf and bundle semantics cover the useful visual range without dead concepts."},
+    {"id": "responsive-depth", "score": 4.4, "maximum": 5, "evidence": "Compact and tablet layouts recompose in source order with narrower cards and no intentional horizontal component scrolling."},
+    {"id": "governance", "score": 4.9, "maximum": 5, "evidence": "Round 01 rejection is recorded, Phase B scope is explicit, and the human gate remains non-authoritative."}
+  ],
+  "blockers": [],
+  "verdict": "pass-with-warnings",
+  "humanReviewRequired": true,
+  "notes": ["Machine and browser proof pass. Human critique of round 02 is required before another Phase A iteration or any Phase B component implementation."]
+}

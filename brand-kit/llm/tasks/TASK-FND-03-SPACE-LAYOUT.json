@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FND-03-SPACE-LAYOUT",
+  "title": "Define and prove space, layout, and responsive behaviour",
+  "phase": 1,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Create a canonical spatial system for Mez that turns approved typography and colour into repeatable content widths, grids, gutters, section rhythm, density modes, and responsive behaviour from 320px through wide desktop.",
+  "scope": {
+    "included": [
+      "spacing primitives and semantic spacing roles",
+      "content widths, grid, gutter, section rhythm, and density contracts",
+      "breakpoints and responsive recomposition rules from 320px through wide desktop",
+      "realistic marketing, commerce, document, email, and dense-interface layout fixtures",
+      "overflow, copy expansion, alignment, equal-geometry, and intentional-break fixtures",
+      "generated tokens, schema, guidance, and a bounded human spatial-character proof"
+    ],
+    "excluded": [
+      "changing canonical typography or colour values",
+      "final radius, border, shadow, elevation, or control implementation",
+      "product-expression compositions",
+      "golden homepage composition",
+      "production Figma library"
+    ]
+  },
+  "dependencies": ["TASK-FND-02-COLOUR-SURFACES", "DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001"],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/governance/decisions.json",
+      "brand-kit/foundations/typography/dist/package.json",
+      "brand-kit/foundations/colour/dist/package.json"
+    ],
+    "decisionIds": ["DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/foundations/space-layout/", "acceptance": ["one semantic source generates spatial tokens and responsive contracts", "content-width, grid, gutter, rhythm, and density rules are mechanically verifiable", "canonical typography and colour remain unchanged"]},
+    {"path": "brand-kit/workbench/foundations/space-layout/", "acceptance": ["realistic fixtures recompose from 320px through wide desktop", "equal geometry and intentional alignment breaks are explicit", "human verdict can be recorded without changing unrelated foundations"]}
+  ],
+  "verification": [
+    {"id": "FND-03-SCHEMA", "method": "schema", "passCondition": "source, generated tokens, responsive contracts, and task records validate"},
+    {"id": "FND-03-RESPONSIVE", "method": "visual", "passCondition": "320, 375, 430, 768, 1024, 1280, and 1440 fixtures preserve reading order and avoid two-dimensional overflow"},
+    {"id": "FND-03-STRESS", "method": "command", "passCondition": "copy expansion, dense content, sparse content, zoom, and alignment stress fixtures satisfy the declared contract"},
+    {"id": "FND-03-HUMAN", "method": "human", "passCondition": "Olli approves the spatial rhythm and responsive character"}
+  ],
+  "humanGate": {"required": true, "gateId": "H-FND-03-SPATIAL-PROOF", "approver": "Olli", "approvalQuestion": "Does this spacing, grid, rhythm, density, and responsive system feel recognisably Mez while remaining useful from 320px through wide desktop?"},
+  "stopConditions": [
+    "a spatial rule requires changing canonical typography or colour values",
+    "a required viewport needs horizontal page scrolling or loses content order",
+    "equal geometry and intentional alignment breaks cannot be expressed as explicit rules",
+    "the proof combines control-finish, product-expression, or homepage decisions with the spatial gate"
+  ],
+  "notes": [
+    "Begin with a read-only audit of existing spatial evidence and token conflicts before implementation.",
+    "FND-01 typography and FND-02 colour are canonical inputs, not design variables for this task.",
+    "FND-04 retains authority over final geometry, border, depth, and controls."
+  ]
+}

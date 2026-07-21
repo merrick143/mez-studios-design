@@ -20,7 +20,7 @@ Do not continue authoring the system inside Mezcorp or a landing-page repository
 
 ## Continue here
 
-The next task is `FND-01`: package and prove the approved Geist plus tuned Inter typography system. After foundations, continue through the product-expression suite, golden homepage, portable consumer proof, Figma, channels, and LLM certification.
+Typography, colour, space-layout, geometry-controls, unified foundation release `1.0.0`, disc, sphere and Wings/mark expressions `1.0.0` are canonical. Olli approved `wings-mark-01` through `H-EXP-03-WINGS-MARK-PROOF`; `DEC-WINGS-MARK-EXPRESSION-001` records the bounded result in `brand-kit/expressions/wings-mark/review.json`. Product Card 02 is one sequenced programme. Phase A round 01 was rejected; round 02 now proves one narrow portrait website-card architecture through four contextual treatments, role-based light/dark contrast, a family shelf and a true bundle offer. Phase B will derive discovery, feature, pricing, checkout, bundle, upsell and responsive website components only after the visual lock. Review the non-authoritative candidate at `brand-kit/workbench/expressions/product-card/` and stop at `H-EXP-04A-CARD-VISUAL-DIRECTION`. Canonical Wings, disc, sphere, sources, renderer, products and foundations remain unchanged.
 
 ## Portable skill use
 

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseId": "mz.systems.release.foundations",
+  "version": "1.0.0",
+  "status": "canonical",
+  "candidateRevision": "foundation-release-01",
+  "candidateGateId": "H-FND-05-FOUNDATION-RELEASE",
+  "taskId": "TASK-FND-05-FOUNDATION-RELEASE",
+  "productionAuthority": true,
+  "decisionIds": [
+    "DEC-TYPE-FOUNDATION-001",
+    "DEC-COLOUR-FOUNDATION-001",
+    "DEC-SPACE-LAYOUT-FOUNDATION-001",
+    "DEC-GEOMETRY-CONTROLS-FOUNDATION-001",
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-MIGRATION-SEQUENCE-001"
+  ],
+  "packages": [
+    {
+      "key": "typography",
+      "packageId": "mz.systems.package.typography",
+      "foundationId": "mz.systems.foundation.typography",
+      "version": "1.0.0",
+      "reviewGateId": "H-FND-01-TYPE-PROOF",
+      "packageSha256": "c5c741bd0b6194610b350e9e4734aa2d591606c5657bb5601cbe603a627f6ecc",
+      "manifestSha256": "b96dab0d582580fe0753438c3889f7c37a5ed5ca7ab4509b1a067eae144bd513"
+    },
+    {
+      "key": "colour",
+      "packageId": "mz.systems.package.colour",
+      "foundationId": "mz.systems.foundation.colour",
+      "version": "1.0.0",
+      "reviewGateId": "H-FND-02-SURFACE-PROOF",
+      "packageSha256": "183c2acccaeb95737f77b9a5cc77644be03b95054fe6260ee339d68b4afa420b",
+      "manifestSha256": "c1c8283bee32e8526c026c135ca81d0102d11e7a4227714d98bcd4e9279f2c25"
+    },
+    {
+      "key": "space-layout",
+      "packageId": "mz.systems.package.space-layout",
+      "foundationId": "mz.systems.foundation.space-layout",
+      "version": "1.0.0",
+      "reviewGateId": "H-FND-03-SPATIAL-PROOF",
+      "packageSha256": "d25d584b61d73685d6c186744bf4a7b175a20ddd1e986de1c1138da9cc68d2fb",
+      "manifestSha256": "8914ee15f3639a8d73e9ba658b5cb1f6aa09efd05e8baeec862625788bab86d2"
+    },
+    {
+      "key": "geometry-controls",
+      "packageId": "mz.systems.package.geometry-controls",
+      "foundationId": "mz.systems.foundation.geometry-controls",
+      "version": "1.0.0",
+      "reviewGateId": "H-FND-04-CONTROL-PROOF",
+      "packageSha256": "204bcddc03a7b9694d62025a503c12342f23fe27841675fa45da4d6767073ce9",
+      "manifestSha256": "efb2342e7bab143913c84f509348b07a8ecc8cd01cef5e4fdf8aae17693272d8"
+    }
+  ],
+  "loadOrder": [
+    "packages/typography/tokens.css",
+    "packages/colour/tokens.css",
+    "packages/space-layout/tokens.css",
+    "packages/geometry-controls/tokens.css",
+    "packages/geometry-controls/controls.css"
+  ],
+  "testViewports": [320, 375, 430, 768, 1024, 1280, 1440],
+  "policies": {
+    "immutability": "The release copies approved package outputs byte-for-byte and never rewrites a source package or its human approval record.",
+    "loading": "Use index.css as the single entrypoint. Its declared order is typography, colour, space and layout, geometry tokens, then controls.",
+    "portability": "Copy the complete release directory. Fonts, licences, source records, approval records, manifests and every referenced entrypoint remain adjacent.",
+    "authority": "The four component packages retain their bounded production authority. The assembled release is canonical through H-FND-05-FOUNDATION-RELEASE and DEC-FOUNDATION-RELEASE-001.",
+    "accessibility": "Consumers retain visible focus, forced-colour support, reduced-motion behaviour, semantic feedback and responsive coverage from 320 pixels through wide desktop.",
+    "boundary": "This release contains foundations only. It does not add product expression, homepage composition, gradients, consumer migration or Figma authority."
+  }
+}

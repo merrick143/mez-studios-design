@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/product-card-contract-0.4.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "expressionId", "version", "status", "productionAuthority", "candidateGateId", "candidateRevision", "programme", "supersedes", "designThesis", "cardArchitecture", "agentRecommendation", "visualTreatments", "surfaceStrategy", "groupingComponents", "coreAllocation", "phaseBScope", "accessibility", "dependencies", "testViewports"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "expressionId": {"const": "mz.systems.expression.product-card"},
+    "version": {"const": "0.4.0"},
+    "status": {"const": "visual-research-candidate"},
+    "productionAuthority": {"const": false},
+    "candidateGateId": {"const": "H-EXP-04A-CARD-VISUAL-DIRECTION"},
+    "candidateRevision": {"const": "product-card-02-phase-a-r02"},
+    "programme": {"type": "object", "required": ["name", "sequenceRule", "phaseA", "phaseB"]},
+    "supersedes": {"type": "array", "minItems": 3},
+    "designThesis": {"type": "string", "minLength": 180},
+    "cardArchitecture": {"type": "object", "required": ["name", "widthRange", "ratio", "fixedSlots", "variableMedia", "familyRule"]},
+    "agentRecommendation": {"type": "object", "required": ["base", "reason", "specialModes"]},
+    "visualTreatments": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "required": ["id", "name", "role", "thesis", "contexts", "motion"]}},
+    "surfaceStrategy": {"type": "object", "required": ["calmShelf", "focalContrast", "darkIntegration", "rule"]},
+    "groupingComponents": {"type": "array", "minItems": 2, "maxItems": 2},
+    "coreAllocation": {"type": "object", "required": ["maximumLivePerViewport", "liveAllowed", "staticRequired", "fallback"]},
+    "phaseBScope": {"type": "object", "required": ["status", "startsAfter", "websiteComponents", "websiteFlows", "states", "contracts"]},
+    "accessibility": {"type": "object"},
+    "dependencies": {"type": "object"},
+    "testViewports": {"const": [320, 375, 430, 768, 1024, 1280, 1440]}
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-EXP-02-SPHERE-CONTRACT",
+  "taskId": "TASK-EXP-02-SPHERE-CONTRACT",
+  "generatedAt": "2026-07-21T23:49:34+10:00",
+  "systemVersion": "1.0.0+sphere-canonical",
+  "sourceState": {"repository": "merrick143/mez-studios-design", "branch": "codex/fnd-01-typography", "commit": "5d6d4bd152db299678b7c1dfa8de50c07deedbeb", "workingTree": "dirty"},
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "4b101d5e096670f6bcad5d8edb59c3d9df94dfdf290ab8d38bd8fd84977a98f6", "role": "canonical", "required": true, "reason": "Canonical sphere authority and active EXP-03 boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "97d505e0c089b080f596da471338ceed313a8445d1060e4019f183a201cf8a86", "role": "canonical", "required": true, "reason": "Live programme state after sphere promotion."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "374e941d214fa79ba3164611a1caec678ef26c4c8ed3d165fccbf1eac3bb2eba", "role": "canonical", "required": true, "reason": "EXP-02 exit and EXP-03 activation."},
+    {"path": "brand-kit/llm/tasks/TASK-EXP-02-SPHERE-CONTRACT.json", "sha256": "8b4f9fafe5082c36567f743703af9979f4a90878b86497e94e56173b16353867", "role": "governance", "required": true, "reason": "Completed bounded sphere scope, verification and human gate."},
+    {"path": "brand-kit/expressions/disc/disc.source.json", "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a", "role": "canonical", "required": true, "reason": "Canonical flat product object inherited without mutation."},
+    {"path": "brand-kit/expressions/sphere/sphere.source.json", "sha256": "a59d663a5cae4cb54b596f6e8b34835e0f3a376e999f9fb83e26bebeab264dca", "role": "canonical", "required": true, "reason": "Schema-backed canonical depth, scale, crop, allocation, surface and fallback contract."},
+    {"path": "brand-kit/expressions/sphere/review.json", "sha256": "1d97cdd1485fe4e6fc1444430f10b79b9c1d07177884d8011d73ff906d4b235e", "role": "governance", "required": true, "reason": "Approved H-EXP-02 record and DEC-SPHERE-EXPRESSION-001."},
+    {"path": "brand-kit/expressions/sphere/dist/manifest.json", "sha256": "c11a59b369ad5e754c4c6c5797b5eee5b8e2e2c4b0ec27c96027868f9de3bb9d", "role": "mirror", "required": true, "reason": "Deterministic canonical metadata integrity."},
+    {"path": "brand-kit/workbench/expressions/sphere/index.html", "sha256": "63c191727d6f39b911374894be542e7b854bf6f7b13d7bd7ebadfc6ff3f18b74", "role": "fixture", "required": true, "reason": "Canonical proof and permanent approval record."},
+    {"path": "brand-kit/source-pack/design-system-export/mz-core.js", "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d", "role": "canonical", "required": true, "reason": "Approved parametric sphere depth; preserved unchanged."},
+    {"path": "brand-kit/gradient-library/calibration/depth-light-01/decision.json", "sha256": "d5c28cc593d853331b136db5897ee7dc84b7889072030a9145c46b0ae5159106", "role": "evidence", "required": true, "reason": "Approved Deep Mineral finish and exact values."},
+    {"path": "brand-kit/source-pack/design-system-export/assets/wings.svg", "sha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33", "role": "canonical", "required": true, "reason": "Canonical Wings preserved at the disc-approved 39% ratio."},
+    {"path": "brand-kit/releases/foundations/dist/manifest.json", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639", "role": "canonical", "required": true, "reason": "Canonical Geist and Inter foundation styling for the isolated proof."}
+  ],
+  "decisions": [
+    {"id": "DEC-MOTION-002", "status": "approved", "productionEffect": "Static remains default and no more than one living focal object is used per viewport."},
+    {"id": "DEC-GRADIENT-LIBRARY-001", "status": "approved", "productionEffect": "Approved source gradient and exact colour twin remain immutable."},
+    {"id": "DEC-LIVING-CORE-FINISH-001", "status": "approved-research-system", "productionEffect": "Deep Mineral values provide the only allowed sphere depth finish."},
+    {"id": "DEC-PRODUCT-ARCHITECTURE-001", "status": "approved", "productionEffect": "AI OS and MZ-G13 proof assignment is fixed."},
+    {"id": "DEC-FOUNDATION-RELEASE-001", "status": "approved", "productionEffect": "Canonical typography and surfaces style the proof."},
+    {"id": "DEC-DISC-EXPRESSION-001", "status": "approved", "productionEffect": "Circle, Wings and hard-edge geometry are inherited unchanged."},
+    {"id": "DEC-SPHERE-EXPRESSION-001", "status": "approved", "productionEffect": "sphere-contract-01 is canonical 1.0.0 for its bounded focal-sphere scope."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id": "CONFLICT-EXP-02-STATIC-DEPTH", "summary": "The exact static twin preserves source colour but contains no renderer-owned spherical depth.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-EXP-02-COMPACT", "summary": "A sphere smaller than 360px cannot earn focal depth; compact viewports use the canonical disc.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-EXP-02-HISTORICAL-GLOW", "summary": "Historical sphere shadows and glow are research-only and conflict with the active hard-edge contract.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": ["Do not change the canonical disc, source PNG, exact static twin, renderer, Deep Mineral values, Wings, product assignment or foundations.", "Do not add CSS shadow, halo, external glow, floating motion, pulse, bounce, scroll reveal or ellipse distortion.", "Do not animate more than one sphere in a viewport or use a sphere below 360px.", "Do not infer homepage, card, Figma or production-consumer authority from this candidate."],
+  "contextBudget": {"strategy": "bounded", "requiredFirst": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/llm/tasks/TASK-EXP-02-SPHERE-CONTRACT.json", "brand-kit/skills/codex-made-it/references/product-disc-contract.md"], "omitByDefault": ["brand-kit/history/", "play-orb/", "consumer repositories", "Figma"]},
+  "humanNotes": ["Olli approved sphere-contract-01 through H-EXP-02-SPHERE-PROOF on 21 July 2026 and asked to proceed. DEC-SPHERE-EXPRESSION-001 records canonical 1.0.0."]
+}

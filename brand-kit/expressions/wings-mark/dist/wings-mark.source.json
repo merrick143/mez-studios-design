@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.wings-mark",
+  "version": "1.0.0",
+  "status": "canonical",
+  "productionAuthority": true,
+  "candidateGateId": "H-EXP-03-WINGS-MARK-PROOF",
+  "candidateRevision": "wings-mark-01",
+  "recommendation": "Mez Systems inherits the canonical Wings from Mez Studios and adds no second symbol or corporate hue. Use one restrained holdco lockup, the Wings alone when space is compact, white Wings inside product cores, and gradient Wings only as a rare focal identity expression.",
+  "geometry": {
+    "assetPath": "brand-kit/source-pack/design-system-export/assets/wings.svg",
+    "sha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33",
+    "viewBox": "9 16 340 241",
+    "pathCount": 2,
+    "redraw": "forbidden",
+    "distortion": "forbidden"
+  },
+  "roles": [
+    {"id": "holdco-lockup", "mark": "canonical Wings", "label": "MEZ SYSTEMS", "labelFamily": "Inter", "labelWeight": 720, "labelCase": "uppercase-stacked", "colourLight": "#2E2E2E", "colourDark": "#FFFFFF", "motion": "static", "use": "default Mez Systems signature when space permits"},
+    {"id": "standalone", "mark": "canonical Wings", "label": null, "colourLight": "#2E2E2E", "colourDark": "#FFFFFF", "motion": "static", "use": "compact navigation, small brand sign-off and places where Mez Systems is already named"},
+    {"id": "product-core", "mark": "canonical Wings", "label": null, "colourLight": "#FFFFFF", "colourDark": "#FFFFFF", "motion": "static", "use": "inside canonical disc or sphere at the approved 39% width ratio"},
+    {"id": "gradient-mask", "mark": "canonical Wings mask", "label": null, "colourLight": "approved product gradient", "colourDark": "approved product gradient", "motion": "one focal live state allowed", "use": "rare identity or motion study only; never the ordinary holdco or product mark"}
+  ],
+  "lockup": {
+    "orientation": "horizontal mark plus two-line wordmark",
+    "markToLabelGapRatio": 0.28,
+    "labelLineHeight": 0.86,
+    "labelTrackingEm": -0.03,
+    "policy": "Use live text in interfaces and a generated outlined export in fixed assets. Do not invent a separate Mez Systems symbol or custom-script wordmark."
+  },
+  "spaceAndScale": {
+    "clearSpace": "At least one half of the Wings height on every outer side.",
+    "minimumStandaloneHeightPx": 24,
+    "minimumLockupMarkHeightPx": 28,
+    "compactSubstitution": "At 430px viewport width and below, the holdco lockup may reduce to standalone Wings when Mez Systems remains in the accessible name.",
+    "productCore": "Use the canonical disc and sphere size rules; Wings remain 39% of the core width and are not independently resized."
+  },
+  "colour": {
+    "lightSurface": "#2E2E2E",
+    "darkSurface": "#FFFFFF",
+    "productCore": "#FFFFFF",
+    "newCorporateHue": false,
+    "policy": "The canonical colour foundation supersedes archive near-black recommendations. No grey tint, functional colour or arbitrary product gradient may recolour an ordinary holdco mark."
+  },
+  "gradientMask": {
+    "maximumLivePerViewport": 1,
+    "allowed": ["one focal identity study", "launch frame", "bounded motion calibration"],
+    "forbidden": ["ordinary navigation", "footer lockup", "product-core mark", "repeated family", "dense UI", "email", "print"],
+    "fallback": "Use the approved exact static product gradient through the unchanged Wings mask; surrounding label and layout stay static.",
+    "interaction": "No float, growth, spin, pulse, bounce or scroll reveal. Internal field speed may change on pointer hover only."
+  },
+  "responsiveAndExport": {
+    "screen": "Prefer the full holdco lockup, substitute standalone Wings only when space is genuinely compact.",
+    "email": "Use a rasterised 2x PNG export with meaningful alt text; do not depend on SVG or runtime motion.",
+    "print": "Use vector charcoal on light stock or white knockout on a dark field; no gradient unless a channel-specific proof is approved.",
+    "forcedColours": "Expose the literal Mez Systems accessible name and preserve a single-colour silhouette.",
+    "failure": "Static mark geometry and label remain before any optional gradient-mask renderer mounts."
+  },
+  "parked": ["app icon", "favicon", "roundel", "monoline Wings", "keyline stamp", "emboss", "co-branding", "Mez Studios endorsement line"],
+  "dependencies": {
+    "foundationManifest": {"path": "brand-kit/releases/foundations/dist/manifest.json", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"},
+    "canonicalDisc": {"path": "brand-kit/expressions/disc/disc.source.json", "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a"},
+    "canonicalSphere": {"path": "brand-kit/expressions/sphere/sphere.source.json", "sha256": "a59d663a5cae4cb54b596f6e8b34835e0f3a376e999f9fb83e26bebeab264dca"},
+    "renderer": {"path": "brand-kit/source-pack/design-system-export/mz-core.js", "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d"},
+    "staticTwin": {"path": "brand-kit/gradient-library/assets/static/mz-g13.webp", "sha256": "1a6ce9c92252701d71ed27aca82414e84afe89dcfbcdaa8c8073b03cb4fb9538"}
+  },
+  "testViewports": [320, 375, 430, 768, 1024, 1280, 1440]
+}

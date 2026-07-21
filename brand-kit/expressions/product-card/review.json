@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "expressionId": "mz.systems.expression.product-card",
+  "programmeItem": "Product Card 02",
+  "phase": "A-visual-architecture",
+  "round": "visual-architecture-round-02",
+  "candidateStatus": "visual-research-candidate",
+  "candidateRevision": "product-card-02-phase-a-r02",
+  "selectedBaseTreatment": null,
+  "verdict": "pending",
+  "note": "",
+  "reviewedAt": null,
+  "approver": "Olli",
+  "phaseBStatus": "held-until-visual-lock",
+  "productionAuthority": false
+}

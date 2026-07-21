@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/expression-wings-mark",
+  "version": "1.0.0",
+  "status": "canonical",
+  "candidateRevision": "wings-mark-01",
+  "reviewGateId": "H-EXP-03-WINGS-MARK-PROOF",
+  "productionReadyForScope": true,
+  "productionAuthority": true,
+  "entrypoints": {
+    "contract": "wings-mark.source.json",
+    "schema": "wings-mark.schema.json",
+    "review": "review.json",
+    "guidance": "README.md"
+  },
+  "runtimeDependencies": {
+    "foundationManifest": {
+      "path": "brand-kit/releases/foundations/dist/manifest.json",
+      "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"
+    },
+    "canonicalDisc": {
+      "path": "brand-kit/expressions/disc/disc.source.json",
+      "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a"
+    },
+    "canonicalSphere": {
+      "path": "brand-kit/expressions/sphere/sphere.source.json",
+      "sha256": "a59d663a5cae4cb54b596f6e8b34835e0f3a376e999f9fb83e26bebeab264dca"
+    },
+    "renderer": {
+      "path": "brand-kit/source-pack/design-system-export/mz-core.js",
+      "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d"
+    },
+    "staticTwin": {
+      "path": "brand-kit/gradient-library/assets/static/mz-g13.webp",
+      "sha256": "1a6ce9c92252701d71ed27aca82414e84afe89dcfbcdaa8c8073b03cb4fb9538"
+    }
+  }
+}

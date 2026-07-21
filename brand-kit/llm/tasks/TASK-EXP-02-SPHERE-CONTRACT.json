@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-EXP-02-SPHERE-CONTRACT",
+  "title": "Define and prove the focal Living Core sphere contract",
+  "phase": 2,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Turn the approved Living Core sphere capability into a bounded focal-product contract covering spherical depth, scale, crop, single-object motion, Wings, surfaces, responsive behaviour and exact static fallback without changing the canonical disc or renderer.",
+  "scope": {
+    "included": ["approved spherical shading over the existing Living Core palette and Deep Mineral finish", "canonical white Wings placement and fixed geometry", "feature, hero and immersive sphere scale and crop rules", "one focal animated sphere per viewport", "light, off-white, dark and contained hero surfaces", "responsive, reduced-motion, WebGL-failure, overflow and crop proof", "source, exact static twin and runtime approximation comparison", "bounded sphere review gate"],
+    "excluded": ["disc-contract-01 changes", "new gradient palettes, product names or assignments", "Living Core renderer or Deep Mineral finish changes", "multiple simultaneous production spheres", "product cards, pills, trading cards, stacks or collections", "homepage composition", "production consumer migration", "Figma authority"]
+  },
+  "dependencies": ["TASK-EXP-01-DISC-CONTRACT", "DEC-DISC-EXPRESSION-001", "DEC-MOTION-002", "DEC-GRADIENT-LIBRARY-001", "DEC-LIVING-CORE-FINISH-001", "DEC-PRODUCT-ARCHITECTURE-001", "DEC-FOUNDATION-RELEASE-001"],
+  "inputs": {
+    "requiredFiles": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/skills/codex-made-it/references/product-disc-contract.md", "brand-kit/expressions/disc/dist/", "brand-kit/registry/products.json", "brand-kit/registry/gradients.json", "brand-kit/source-pack/design-system-export/mz-core.js", "brand-kit/gradient-library/calibration/depth-light-01/decision.json", "brand-kit/gradient-library/assets/static/", "brand-kit/source-pack/design-system-export/assets/wings.svg", "brand-kit/releases/foundations/dist/"],
+    "decisionIds": ["DEC-DISC-EXPRESSION-001", "DEC-MOTION-002", "DEC-GRADIENT-LIBRARY-001", "DEC-LIVING-CORE-FINISH-001", "DEC-PRODUCT-ARCHITECTURE-001", "DEC-FOUNDATION-RELEASE-001"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/expressions/sphere/", "acceptance": ["one schema-validated source defines depth, scale, crop, Wings, allocation, surface and accessibility rules", "the generated contract is deterministic and preserves the canonical disc, gradients, renderer and foundations", "candidate status and promotion authority are explicit"]},
+    {"path": "brand-kit/workbench/expressions/sphere/", "acceptance": ["source, exact static twin, flat disc and focal sphere are compared honestly", "one approved product proves feature, hero and immersive crops without implying homepage approval", "light, dark, reduced-motion, WebGL-failure and 320-to-1440 responsive states are visible", "human verdict can be recorded without changing canonical inputs"]}
+  ],
+  "verification": [
+    {"id": "EXP-02-DEPTH", "method": "command", "passCondition": "sphere shading uses the approved renderer shape and Deep Mineral finish without a new palette or CSS glow"},
+    {"id": "EXP-02-AUTHORITY", "method": "command", "passCondition": "canonical disc, source PNG, exact static twin, renderer, Wings, product assignment and foundation hashes remain unchanged"},
+    {"id": "EXP-02-ALLOCATION", "method": "visual", "passCondition": "one focal animated sphere remains distinct from static disc and repeated-product roles"},
+    {"id": "EXP-02-RESPONSIVE", "method": "visual", "passCondition": "feature, hero and immersive crops remain intentional without ellipse distortion or horizontal overflow from 320 to 1440"},
+    {"id": "EXP-02-FALLBACK", "method": "visual", "passCondition": "reduced motion and WebGL failure retain exact colour, fixed Wings, dimensions and accessible product naming"},
+    {"id": "EXP-02-HUMAN", "method": "human", "passCondition": "Olli approves the focal sphere contract for promotion"}
+  ],
+  "humanGate": {"required": true, "gateId": "H-EXP-02-SPHERE-PROOF", "approver": "Olli", "approvalQuestion": "Does this sphere feel like a rare, premium focal state of the same Mez product core—dimensional enough to earn a hero moment without becoming a generic glowing orb?"},
+  "stopConditions": ["a build changes canonical disc-contract-01, source PNG, extracted palette, exact static twin, renderer, Wings, product assignment or foundation", "the sphere gains a halo, external glow cloud, floating decoration, pulse, bounce, scroll reveal or non-spherical geometry", "more than one production sphere animates in a viewport", "the task introduces cards, stacks, homepage composition, Figma or consumer-specific work", "runtime approximation is presented as exact source colour"],
+  "notes": ["Begin with a read-only comparison of the canonical flat disc, renderer sphere mask and historical sphere evidence.", "Use the same approved product core and Wings geometry; depth is the only new expression variable under review.", "This task locks the sphere contract only; the expression-family gate remains later programme work."]
+}

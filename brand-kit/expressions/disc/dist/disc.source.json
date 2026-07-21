@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.disc",
+  "version": "1.0.0",
+  "status": "canonical",
+  "productionAuthority": true,
+  "candidateGateId": "H-EXP-01-DISC-PROOF",
+  "candidateRevision": "disc-contract-01",
+  "decisionIds": ["DEC-MOTION-002", "DEC-GRADIENT-LIBRARY-001", "DEC-LIVING-CORE-FINISH-001", "DEC-PRODUCT-ARCHITECTURE-001", "DEC-FAMILY-001", "DEC-FOUNDATION-RELEASE-001", "DEC-DISC-EXPRESSION-001"],
+  "geometry": {
+    "shape": "circle",
+    "aspectRatio": 1,
+    "edge": "hard",
+    "overflow": "hidden",
+    "border": "none",
+    "shadow": "none",
+    "insetTile": false,
+    "halo": false,
+    "glow": false,
+    "sphereShading": false
+  },
+  "wings": {
+    "assetPath": "brand-kit/source-pack/design-system-export/assets/wings.svg",
+    "sha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33",
+    "colour": "#FFFFFF",
+    "widthRatio": 0.39,
+    "alignment": "optically-centred",
+    "minimumMarkedDiscPx": 48,
+    "policy": "Use the canonical white Wings directly inside every branded disc. Never place the disc inside another tile, redraw the mark, add a glow, or treat an unmarked utility core as the complete product lockup."
+  },
+  "scaleBands": [
+    {"id": "utility", "minimumPx": 24, "maximumPx": 47, "state": "static", "wings": "omit", "role": "colour indicator only", "policy": "Not a standalone identity lockup; pair with a visible product name."},
+    {"id": "compact", "minimumPx": 48, "maximumPx": 127, "state": "static", "wings": "required", "role": "navigation, selectors and dense product references", "policy": "Keep the full circle visible and pair with text when product choice matters."},
+    {"id": "default", "minimumPx": 128, "maximumPx": 359, "state": "static", "wings": "required", "role": "default product recognition and cards", "policy": "This is the default branded disc; do not animate repeated instances."},
+    {"id": "feature", "minimumPx": 360, "maximumPx": 639, "state": "static-or-live-if-focal", "wings": "required", "role": "single feature or reveal", "policy": "Animation is permitted only when this is the one earned focal core in the viewport."},
+    {"id": "immersive", "minimumPx": 640, "maximumPx": null, "state": "static-or-live-if-focal", "wings": "required", "role": "single immersive focal object", "policy": "Cropping by the composition is allowed; the underlying object remains a perfect circle."}
+  ],
+  "allocation": {
+    "staticDefault": true,
+    "maximumLivePerViewport": 1,
+    "liveRequirements": ["one focal product only", "visible motion has a real attention job", "runtime is described as a parametric approximation", "exact static twin remains available"],
+    "staticRequired": ["repeated product families", "navigation and dense UI", "compact and default bands", "email and social exports", "open-graph and documentation", "slides and print", "reduced motion", "WebGL failure or unavailable runtime"],
+    "interaction": "The object never grows, floats, spins, pulses, breathes or reveals on scroll. The approved runtime may change internal field speed on pointer hover only; geometry and Wings stay fixed.",
+    "fallback": "Use the exact source-derived static twin for reduced motion, WebGL failure, disabled runtime and all export channels."
+  },
+  "surfaces": {
+    "light": {"roles": ["surface.canvas", "surface.base", "surface.subtle"], "requirements": ["hard edge remains visible through colour contrast", "no outline is added"]},
+    "dark": {"roles": ["surface.dark"], "requirements": ["white Wings remain readable", "no glow or halo separates the core"]},
+    "card": {"requirements": ["card owns its own geometry", "disc is not placed inside an inset icon tile", "disc stays static when cards repeat"]},
+    "family": {"requirements": ["equal products use equal disc geometry", "approved gradient and copy are the only product differentiators", "all repeated cores are static"]},
+    "failure": {"requirements": ["retain dimensions before runtime mounts", "swap to exact static twin without layout shift", "preserve visible product name outside the disc"]}
+  },
+  "channels": {
+    "websiteFocal": "one-live-allowed-after-consumer-approval",
+    "websiteRepeated": "static",
+    "productUI": "static-by-default",
+    "email": "static",
+    "social": "static",
+    "openGraph": "static",
+    "documentation": "static",
+    "slides": "static",
+    "print": "static"
+  },
+  "accessibility": {
+    "semanticRole": "decorative when an adjacent product name exists; otherwise the accessible name must identify the product",
+    "reducedMotion": "force exact static twins and do not initialise the animated renderer",
+    "forcedColours": "preserve the circle boundary and product name; the gradient is not semantic state",
+    "contrast": "The product name carries identity when the image, gradient or Wings cannot be perceived.",
+    "responsive": "Preserve the perfect circle through a 1:1 box and overflow clipping from 320 through 1440 pixels; never stretch the core into an ellipse."
+  },
+  "dependencies": {
+    "foundationManifest": {"path": "brand-kit/releases/foundations/dist/manifest.json", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"},
+    "renderer": {"path": "brand-kit/source-pack/design-system-export/mz-core.js", "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d", "role": "approved parametric runtime; unchanged by this contract"},
+    "productRegistry": {"path": "brand-kit/registry/products.json"},
+    "gradientRegistry": {"path": "brand-kit/registry/gradients.json"}
+  },
+  "products": [
+    {"productId": "mz.systems.product.aios", "publicName": "AI OS", "gradientId": "MZ-G13", "sourceSha256": "7932fb83949329ad562a13010221d2c0e6cad9f24312993acf781935547a946e", "staticTwinPath": "brand-kit/gradient-library/assets/static/mz-g13.webp", "staticTwinSha256": "1a6ce9c92252701d71ed27aca82414e84afe89dcfbcdaa8c8073b03cb4fb9538"},
+    {"productId": "mz.systems.product.context-engine", "publicName": "Context Engine", "gradientId": "MZ-G12", "sourceSha256": "8f0b39f124c3679e32066e7356b5741abd3eb642811d595bb5ee73163a7584ab", "staticTwinPath": "brand-kit/gradient-library/assets/static/mz-g12.webp", "staticTwinSha256": "6f1fff187e5af7350fe5c67d63f03d18b45e5a04c188bec65d5ba19e3cfcbe49"},
+    {"productId": "mz.systems.product.ai-ads-system", "publicName": "AI Ads System", "gradientId": "MZ-G06", "sourceSha256": "6ebddb23fd212685d3b93fbb37808a41bcc233d498dc170a294010f6f48aef22", "staticTwinPath": "brand-kit/gradient-library/assets/static/mz-g06.webp", "staticTwinSha256": "eb791a1f5d6560bc957719713e044126c5dab2ed9a6667285654d222386a4ca2"},
+    {"productId": "mz.systems.product.claude-code-os", "publicName": "Claude Code OS", "gradientId": "MZ-G15", "sourceSha256": "663fa616cf8869ae3f0ad3438c31a88eb16729b2db023569ce151a676d9e25a4", "staticTwinPath": "brand-kit/gradient-library/assets/static/mz-g15.webp", "staticTwinSha256": "ed93c3994c31a1eb4937570a818ab68e6e3ea165b0997c75f58836ef82c2ea62"},
+    {"productId": "mz.systems.product.organic-content-os", "publicName": "Organic Content OS", "gradientId": "MZ-G20", "sourceSha256": "c8d3837616d46e4b15d2655ee75907e0cd25b751b2bb8cc8c84acd54bc6facf6", "staticTwinPath": "brand-kit/gradient-library/assets/static/mz-g20.webp", "staticTwinSha256": "36ec27dbe8950e2257a9ce404e877732a45630db5d45b7d1c5e3e5dc8c5683d7"}
+  ],
+  "testViewports": [320, 375, 430, 768, 1024, 1280, 1440]
+}

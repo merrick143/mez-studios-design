@@ -17,6 +17,8 @@ This is the operational roadmap. [END-TO-END-ROADMAP.md](END-TO-END-ROADMAP.md) 
 
 ### FND-01 Typography implementation
 
+Status: complete and canonical. `H-FND-01-TYPE-PROOF` approved by Olli on 21 July 2026; `DEC-TYPE-FOUNDATION-001` recorded.
+
 - Acquire and record licensing for Geist and Inter assets.
 - Package canonical web and design-authoring formats.
 - Implement display, body, UI, label, caption, technical, and numeric roles.
@@ -28,6 +30,8 @@ Human gate: approve the complete type proof, not the already-approved font pairi
 
 ### FND-02 Colour and surfaces
 
+Status: complete and canonical. `H-FND-02-SURFACE-PROOF` approved by Olli on 21 July 2026; `DEC-COLOUR-FOUNDATION-001` recorded.
+
 - Define semantic neutrals, surfaces, text, borders, feedback, focus, and disabled roles.
 - Prove light, dark, email-safe, document-safe, and print-safe behavior.
 - Keep product gradients as identity objects rather than page decoration.
@@ -37,37 +41,46 @@ Human gate: approve the monochrome and surface character.
 
 ### FND-03 Space, layout, and responsive behaviour
 
-- Define spacing, content widths, grids, breakpoints, gutters, section rhythm, and density modes.
-- Prove 320px through wide desktop layouts with realistic content.
-- Define when alignment may break and when equal geometry is mandatory.
+Status: complete and canonical. `H-FND-03-SPATIAL-PROOF` approved by Olli on 21 July 2026; `DEC-SPACE-LAYOUT-FOUNDATION-001` recorded.
+
+- Defined one four-pixel spacing rhythm, three named content widths, four responsive profiles and three receiver-led density modes.
+- Proved realistic layouts at 320, 375, 430, 768, 1024, 1280 and 1440 without hidden content order or visible horizontal page overflow.
+- Declared source-order, equal-comparison geometry and the bounded conditions for an intentional alignment break.
 
 Human gate: approve the spatial rhythm and responsive character.
 
 ### FND-04 Geometry, border, depth, and controls
 
-- Extend the approved 12px control radius into a coherent shape scale.
-- Define hairlines, borders, shadows, elevation, focus, and dark-surface rules.
-- Complete hover, focus, active, loading, disabled, destructive, icon-only, and mobile controls.
-- Compare micro-lift with the restrained stroke, tonal-gradient, and glow proposal.
+Status: complete and canonical. `H-FND-04-CONTROL-PROOF` approved by Olli on 21 July 2026; `DEC-GEOMETRY-CONTROLS-FOUNDATION-001` recorded.
 
-Human gate: approve the primary-button finish and surface grammar.
+- Extended the approved 12px control role into an eight-role shape scale with a bounded full-round exception.
+- Defined structural hairlines, semantic emphasis, focus, contact, raised, overlay and contained-dark rules.
+- Completed rest, hover, focus, active, loading, disabled, error, destructive, form, choice, icon-only and mobile contracts.
+- Preserved micro-lift and explicitly refused generic glow, glass and ambient card shadow.
 
 ### FND-05 Foundation release
 
-- Generate canonical tokens and documentation from one source.
-- Add accessibility, responsive, contrast, and adversarial validation.
-- Publish a versioned foundation release with migration notes.
+Status: complete and canonical. `H-FND-05-FOUNDATION-RELEASE` approved by Olli on 21 July 2026; `DEC-FOUNDATION-RELEASE-001` recorded.
 
-Exit: code, documentation, fixtures, and release outputs agree.
+- Copied the four canonical 1.0.0 packages without mutation and preserved their approval records, source hashes, licences and entrypoints.
+- Added one ordered CSS entrypoint, unified version and integrity metadata, deterministic rebuilding, isolated clean-copy verification and explicit accessibility boundaries.
+- Added migration guidance that keeps `0.1.0-alpha.1`, product expressions and production consumer rollout outside this gate.
+- Built a responsive release proof at 320, 375, 430, 768, 1024, 1280 and 1440 with light/dark, density, controls, portability and review fixtures.
+
+Exit: passed. Code, documentation, fixtures and release outputs agree; canonical 1.0.0 preserves the four source packages and their approval records byte-for-byte.
+
+Phase 1 exit: complete. Typography, colour, space-layout, geometry-controls and their unified portable release are canonical.
 
 ## Phase 2: product-expression suite
 
-- `EXP-01` Disc contract.
-- `EXP-02` Sphere contract.
-- `EXP-03` Wings and mark contract.
-- `EXP-04` Product and commerce card chassis.
+Status: in progress. `TASK-EXP-04-PRODUCT-CARD` is the active task.
+
+- `EXP-01` Disc contract — complete and canonical. `disc-contract-01` defines the perfect circular mask, hard edge, canonical white Wings at 0.39 width from 48px, five scale bands, exact-static/runtime allocation, five-product family, surface rules and failure boundaries. Olli approved `H-EXP-01-DISC-PROOF`; `DEC-DISC-EXPRESSION-001` records canonical 1.0.0.
+- `EXP-02` Sphere contract — complete and canonical. `sphere-contract-01` adds only approved Deep Mineral renderer depth to the canonical disc, defines 360–639 feature, 640–959 hero and 960+ immersive bands, keeps Wings visible, limits animation to one focal object and labels the static state honestly as exact colour with depth removed. Olli approved `H-EXP-02-SPHERE-PROOF`; `DEC-SPHERE-EXPRESSION-001` records canonical 1.0.0.
+- `EXP-03` Wings and mark contract — complete and canonical. `wings-mark-01` preserves the exact two-path asset and defines four roles: charcoal/white holdco lockup, standalone compact Wings, white product-core Wings and rare gradient Wings. It defines clear space, 24/28px minimums and compact substitution while parking icon and channel variants. Olli approved `H-EXP-03-WINGS-MARK-PROOF`; `DEC-WINGS-MARK-EXPRESSION-001` records canonical 1.0.0.
+- `EXP-04` Product Card 02 — active as one two-phase programme. `product-card-01` was rejected as a generic chassis, the next pass entered function too early, and Phase A round 01 was rejected because ten isolated art-card treatments obscured the actual website component. **Phase A · Visual Architecture round 02** holds one 320–360px portrait frame steady and compares four contextual treatments: C01 Editorial Portrait as the recommended base, C02 Full Field Portrait for one focal feature, C03 System Index for dense product surfaces and C04 Product Pack for commerce or launch media. It explicitly proves family shelf versus bundle offer and role-based light/dark contrast using canonical charcoal surfaces. `H-EXP-04A-CARD-VISUAL-DIRECTION` is pending. **Phase B · Website Component System** is held until the visual lock, then covers discovery, feature, pricing, checkout, bundle, upsell, mobile sticky summaries, complete states and responsive behavior under `H-EXP-04B-CARD-FUNCTIONAL-PROOF`. Production authority is false.
 - `EXP-05` Trading card and full-field expression.
-- `EXP-06` Stack, collection, bundle, and upsell compositions.
+- `EXP-06` Reserved. Stack and bundle composition moved inside Product Card 02 so visual and functional card systems remain one governed programme.
 - `EXP-07` Static-versus-animated decision matrix across web, email, ads, social, video, documents, icons, and OG.
 - `EXP-08` Responsive, reduced-motion, fallback, accessibility, and content stress tests.
 

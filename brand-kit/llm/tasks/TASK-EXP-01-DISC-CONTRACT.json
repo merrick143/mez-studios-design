@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-EXP-01-DISC-CONTRACT",
+  "title": "Define and prove the canonical product-disc contract",
+  "phase": 2,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Turn the approved Living Core disc expression into a complete, portable product-object contract covering geometry, mark placement, scale, static and animated allocation, surfaces, responsive behaviour, accessibility and channel boundaries.",
+  "scope": {
+    "included": ["perfect circular mask and hard-edge geometry", "canonical white Wings placement and clearspace", "compact, default, card and focal scale bands", "exact static twin versus approved animated runtime allocation", "light, dark, card, family, small-size and failure fixtures", "responsive, reduced-motion, WebGL-failure, overflow and contrast proof", "bounded disc review gate"],
+    "excluded": ["sphere shading or hero sphere contract", "rounded card, pill, stack, bundle or trading-card contract", "new gradient palettes or product assignments", "Living Core renderer changes", "homepage composition", "production consumer migration", "Figma authority"]
+  },
+  "dependencies": ["TASK-FND-05-FOUNDATION-RELEASE", "DEC-MOTION-002", "DEC-GRADIENT-LIBRARY-001", "DEC-LIVING-CORE-FINISH-001", "DEC-PRODUCT-ARCHITECTURE-001", "DEC-FAMILY-001", "DEC-FOUNDATION-RELEASE-001"],
+  "inputs": {
+    "requiredFiles": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/skills/codex-made-it/references/product-disc-contract.md", "brand-kit/registry/products.json", "brand-kit/registry/gradients.json", "brand-kit/source-pack/design-system-export/mz-core.js", "brand-kit/gradient-library/assets/static/", "brand-kit/source-pack/design-system-export/assets/wings.svg", "brand-kit/releases/foundations/dist/"],
+    "decisionIds": ["DEC-MOTION-002", "DEC-GRADIENT-LIBRARY-001", "DEC-LIVING-CORE-FINISH-001", "DEC-PRODUCT-ARCHITECTURE-001", "DEC-FAMILY-001", "DEC-FOUNDATION-RELEASE-001"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/expressions/disc/", "acceptance": ["one schema-validated source defines geometry, scale, Wings, allocation, surface, channel and accessibility rules", "generated contract is deterministic and never mutates gradient or foundation authority", "candidate status and promotion authority are explicit"]},
+    {"path": "brand-kit/workbench/expressions/disc/", "acceptance": ["five approved product cores prove the same disc chassis", "source, exact static twin and runtime approximation are compared honestly", "small, responsive, dark, reduced-motion, failure and collection contexts are visible", "human verdict can be recorded without changing canonical assignments"]}
+  ],
+  "verification": [
+    {"id": "EXP-01-GEOMETRY", "method": "command", "passCondition": "circle, hard edge, scale bands, Wings ratio and clearspace match the declared contract"},
+    {"id": "EXP-01-AUTHORITY", "method": "command", "passCondition": "source PNG, exact static twin, renderer, product assignment and foundation hashes remain unchanged"},
+    {"id": "EXP-01-ALLOCATION", "method": "visual", "passCondition": "one focal animated disc and repeated static discs remain coherent without glow, tiles or arbitrary chassis changes"},
+    {"id": "EXP-01-ACCESSIBILITY", "method": "visual", "passCondition": "reduced-motion, WebGL failure, small-size, light/dark and 320-to-1440 responsive proofs remain legible and stable"},
+    {"id": "EXP-01-HUMAN", "method": "human", "passCondition": "Olli approves the disc contract for promotion"}
+  ],
+  "humanGate": {"required": true, "gateId": "H-EXP-01-DISC-PROOF", "approver": "Olli", "approvalQuestion": "Does this disc contract make the Living Core feel like one precise, ownable product object across focal, card, collection and small-size contexts without turning it into generic gradient decoration?"},
+  "stopConditions": ["a build changes a source PNG, extracted palette, exact static twin, renderer, product assignment or canonical foundation", "the disc gains sphere shading, an inset tile, halo, glow cloud, floating motion or non-circular geometry", "repeated family or dense contexts animate by default", "the task introduces sphere, card, stack, homepage, Figma or consumer-specific work", "runtime approximation is presented as exact source colour"],
+  "notes": ["Begin with a read-only comparison of the approved five product sources, static twins and current disc runtime.", "Use one chassis, many cores: only approved gradient and copy may distinguish equal products.", "This task locks the disc contract only; the expression-family gate remains later programme work."]
+}

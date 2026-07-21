@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-EXP-03-WINGS-MARK",
+  "title": "Define the Mez Systems Wings and mark contract",
+  "phase": 2,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Turn the canonical two-path Wings into a bounded Mez Systems mark system covering holdco lockup, standalone mark, product-core mark, rare gradient-mask expression, colour, clear space, minimum size, responsive substitution and export boundaries without redrawing the asset or inventing a separate corporate identity.",
+  "scope": {
+    "included": ["canonical two-path Wings asset and checksum", "Mez Systems holdco lockup and standalone mark roles", "charcoal light-surface and white inverse states", "white product-core mark inherited from disc and sphere", "rare gradient Wings mask", "clear space, minimum size and compact responsive substitution", "light, off-white, dark, print/export and failure behaviour", "bounded mark review gate"],
+    "excluded": ["new Wings geometry", "Mez Studios parent redesign", "new Mez Systems corporate colour", "app icon, favicon, roundel, monoline or keyline families", "product cards, trading cards, stacks or homepage composition", "production consumer migration", "Figma authority"]
+  },
+  "dependencies": ["TASK-EXP-02-SPHERE-CONTRACT", "DEC-SPHERE-EXPRESSION-001", "DEC-DISC-EXPRESSION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-TYPE-FOUNDATION-001", "DEC-GRADIENT-LIBRARY-001", "DEC-MOTION-002"],
+  "inputs": {
+    "requiredFiles": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/source-pack/design-system-export/assets/wings.svg", "brand-kit/releases/foundations/dist/", "brand-kit/expressions/disc/dist/", "brand-kit/expressions/sphere/dist/", "brand-kit/source-pack/design-system-export/mz-core.js", "brand-kit/skills/codex-made-it/references/product-disc-contract.md"],
+    "decisionIds": ["DEC-SPHERE-EXPRESSION-001", "DEC-DISC-EXPRESSION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-TYPE-FOUNDATION-001", "DEC-GRADIENT-LIBRARY-001", "DEC-MOTION-002"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/expressions/wings-mark/", "acceptance": ["one schema-validated source defines geometry, roles, lockup, colour, clear space, minimum size, gradient-mask and export rules", "canonical Wings, disc, sphere, renderer and foundations remain unchanged", "candidate status and promotion authority are explicit"]},
+    {"path": "brand-kit/workbench/expressions/wings-mark/", "acceptance": ["the page states exactly which mark decisions are under review", "holdco, standalone, product-core and gradient-mask roles are visibly distinct", "light, off-white, dark, compact, minimum-size and failure states are visible", "human verdict can be recorded without changing canonical inputs"]}
+  ],
+  "verification": [
+    {"id": "EXP-03-GEOMETRY", "method": "command", "passCondition": "all mark states use the unchanged canonical two-path Wings asset"},
+    {"id": "EXP-03-ROLES", "method": "visual", "passCondition": "holdco, standalone, product-core and exceptional gradient-mask roles cannot be confused"},
+    {"id": "EXP-03-SCALE", "method": "visual", "passCondition": "clear space, 24px minimum Wings height and compact substitution remain legible"},
+    {"id": "EXP-03-COLOUR", "method": "command", "passCondition": "ordinary marks use only #2E2E2E or white and no separate corporate hue is introduced"},
+    {"id": "EXP-03-FALLBACK", "method": "visual", "passCondition": "gradient Wings reduce to an exact static mask for reduced motion and runtime failure"},
+    {"id": "EXP-03-HUMAN", "method": "human", "passCondition": "Olli approves the Wings and mark contract for promotion"}
+  ],
+  "humanGate": {"required": true, "gateId": "H-EXP-03-WINGS-MARK-PROOF", "approver": "Olli", "approvalQuestion": "Does this give Mez Systems one restrained, usable mark hierarchy—shared Wings, a clear holdco lockup, white product marks and one rare gradient expression—without inventing another brand?"},
+  "stopConditions": ["a build redraws or mutates the canonical Wings SVG", "the candidate introduces a separate Mez Systems corporate hue", "ordinary holdco or product marks become animated gradient Wings", "archive-only app icon, roundel, monoline or keyline variants are promoted", "the task expands into cards, stacks, homepage, Figma or consumer work"],
+  "notes": ["The canonical colour foundation supersedes the archive's #0D0D0D mark recommendation with #2E2E2E.", "Treat the shared Wings as inherited Mez identity; Mez Systems does not need a second symbol or corporate colour.", "The gradient Wings mask is an exceptional identity or motion state, never the ordinary product mark."]
+}

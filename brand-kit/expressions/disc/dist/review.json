@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-01-DISC-PROOF",
+  "taskId": "TASK-EXP-01-DISC-CONTRACT",
+  "expressionId": "mz.systems.expression.disc",
+  "candidateStatus": "review-candidate",
+  "candidateRevision": "disc-contract-01",
+  "verdict": "approve",
+  "note": "Okay yeah so I approve all that. If you can lock it in then let's proceed.",
+  "reviewedAt": "2026-07-21T13:32:29.000Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-DISC-EXPRESSION-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true
+}

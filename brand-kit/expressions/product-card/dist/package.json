@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/expression-product-card",
+  "version": "0.4.0",
+  "status": "visual-research-candidate",
+  "candidateRevision": "product-card-02-phase-a-r02",
+  "reviewGateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
+  "programmePhase": "A-visual-architecture",
+  "phaseBStatus": "held-until-visual-lock",
+  "productionReadyForScope": false,
+  "productionAuthority": false,
+  "entrypoints": {
+    "contract": "product-card.source.json",
+    "schema": "product-card.schema.json",
+    "review": "review.json",
+    "guidance": "README.md"
+  },
+  "runtimeDependencies": {
+    "foundationManifest": {
+      "path": "brand-kit/releases/foundations/dist/manifest.json",
+      "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"
+    },
+    "canonicalDisc": {
+      "path": "brand-kit/expressions/disc/disc.source.json",
+      "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a"
+    },
+    "canonicalWingsMark": {
+      "path": "brand-kit/expressions/wings-mark/wings-mark.source.json",
+      "sha256": "4e7b0660e50516428594813b5419328cdaf5368a66ee4793c9492a593eeea8a1"
+    },
+    "renderer": {
+      "path": "brand-kit/source-pack/design-system-export/mz-core.js",
+      "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d"
+    },
+    "productRegistry": {
+      "path": "brand-kit/registry/products.json",
+      "sha256": "665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b"
+    }
+  }
+}

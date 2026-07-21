@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.product-card",
+  "status": "visual-research-candidate",
+  "productionAuthority": false,
+  "artifactCount": 5,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 1603,
+      "sha256": "09186700b8bba9453f46389bc7d7f9e1c9c66c087bd36d6839b56ef468ade39f"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1500,
+      "sha256": "fc4144131b3cfc060a7633cbc691a2351d47598de4d9f7c1e98f3f589cc6cf64"
+    },
+    {
+      "path": "product-card.schema.json",
+      "bytes": 2173,
+      "sha256": "9281a51c43453ce6b650070d4ed84e0b64fac0cd95beb2973adb05cbcfeec7b4"
+    },
+    {
+      "path": "product-card.source.json",
+      "bytes": 6890,
+      "sha256": "d3966e13b544bee665149a863f06f7fc4cdf98a013bddc08665f58e6dddb6450"
+    },
+    {
+      "path": "review.json",
+      "bytes": 586,
+      "sha256": "68285322f2d348d78794b174165c3f4a4089efa9056990bcbce9e530ade6b29c"
+    }
+  ]
+}
