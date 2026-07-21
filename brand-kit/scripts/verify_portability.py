@@ -41,6 +41,7 @@ def main() -> int:
         BRAND_KIT / "llm/README.md",
         BRAND_KIT / "llm/tasks/TASK-FND-01-TYPOGRAPHY.json",
         BRAND_KIT / "governance/evidence-paths.json",
+        BRAND_KIT / "authority/current.json",
         BRAND_KIT / "authority/knowledge-portability-proof.json",
         BRAND_KIT / "skills/codex-made-it/SKILL.md",
         BRAND_KIT / "skills/codex-made-it/references/product-disc-contract.md",
@@ -98,6 +99,14 @@ def main() -> int:
         for decision_id, source in evidence.items():
             if not (REPO / source).is_file():
                 failures.append(f"decision evidence does not resolve: {decision_id} -> {source}")
+
+    current_authority = BRAND_KIT / "authority/current.json"
+    if current_authority.is_file():
+        current = json.loads(current_authority.read_text(encoding="utf-8"))
+        if current.get("repository") != "merrick143/mez-studios-design" or current.get("branch") != "main" or current.get("path") != "brand-kit":
+            failures.append("current authority must resolve to merrick143/mez-studios-design main:brand-kit")
+        if current.get("basisCutoverId") != "CUTOVER-2026-07-21-01" or current.get("productionAuthority") is not True:
+            failures.append("current authority must preserve the activated cutover and production authority")
 
     active_docs = [
         BRAND_KIT / "START-HERE.md",

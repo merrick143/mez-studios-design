@@ -43,6 +43,8 @@ The canonical engine can identify products, reproduce the approved Living Core f
 
 New design-system decisions are made only under `brand-kit/`. The previous Mezcorp pack is preserved under `brand-kit/history/mezcorp-2026-07-21/` and in its original Git history as archive evidence. It cannot create new rules.
 
+The ordinary working authority is `merrick143/mez-studios-design` on `main`, path `brand-kit/`, as recorded in `brand-kit/authority/current.json`. The cutover branch and activation records remain provenance, not continuing branch requirements.
+
 The website repository is a future consumer. It is not part of the design-system authoring environment and must not be changed until the consumer-proof phase names it explicitly.
 
 ## Next task

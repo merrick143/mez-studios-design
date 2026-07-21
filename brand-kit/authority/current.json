@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "canonical-active",
+  "rank": 1,
+  "repository": "merrick143/mez-studios-design",
+  "branch": "main",
+  "path": "brand-kit",
+  "basisCutoverId": "CUTOVER-2026-07-21-01",
+  "basisAuthorityRecord": "authority/authority.json",
+  "basisActivationCommit": "19f1570fd8943c4aa7a031f3d5c65c203346366b",
+  "migrationBranchIntegratedThrough": "f97bf84ad43a7aeab219af4bcfd5a0b1bcc4a11f",
+  "activeRelease": "0.1.0-alpha.1",
+  "nextTask": "TASK-FND-01-TYPOGRAPHY",
+  "productionAuthority": true
+}

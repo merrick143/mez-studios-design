@@ -15,6 +15,6 @@
     {"id": "context", "name": "Context Engine", "status": "source-selected", "summary": "MZ-G12 is the approved source-backed Context Engine gradient for the migration identity kernel."},
     {"id": "release", "name": "Portable release", "status": "migration-alpha-active", "summary": "0.1.0-alpha.1 is the self-contained canonical identity snapshot. Foundation-complete release and consumer proof remain."},
     {"id": "knowledge", "name": "Knowledge and LLM portability", "status": "canonical", "summary": "The full roadmap, 104-file Markdown history, Phase 2 research, machine contracts and one shared Claude Code/Codex skill source are present and validated."},
-    {"id": "migration", "name": "Repository migration", "status": "branch-normalisation", "summary": "CUTOVER-2026-07-21-01 transferred rank-one authority here. Knowledge transfer is complete; merging the recovery branch to main and normalising the authority branch remain."}
+    {"id": "migration", "name": "Repository migration", "status": "complete", "summary": "CUTOVER-2026-07-21-01 transferred rank-one authority here. Knowledge transfer is complete and main:brand-kit is the ordinary working authority."}
   ]
 }

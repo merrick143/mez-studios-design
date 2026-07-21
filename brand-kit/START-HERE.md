@@ -1,6 +1,6 @@
 # Start here: Mez Systems design system
 
-Status: canonical control plane active; knowledge transfer in finalisation
+Status: canonical control plane active on `main`; foundations next
 
 ## What this repository is
 
@@ -13,6 +13,7 @@ It is intentionally broader than a visual brand guide. The finished system must 
 - The canonical five-product roster and MZ-G13/G12/G06/G15/G20 assignments are approved.
 - The complete source-gradient library, source authority, shared Living Core renderer, static twins, and Deep Mineral finish are approved.
 - The migration identity release is `0.1.0-alpha.1`.
+- The recovery branch has been integrated into `main`; new work starts from normal feature branches based on `main`.
 - Typography and controls have approved directions but incomplete implementations.
 - Foundations, product expressions, the golden homepage, consumer proof, Figma, channels, and broad LLM certification remain roadmap work.
 

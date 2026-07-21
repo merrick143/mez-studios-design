@@ -1,10 +1,12 @@
 # Standalone brand-kit migration plan
 
-Status: canonical cutover complete; knowledge transfer and branch normalisation in progress; foundations next
+Status: canonical cutover, knowledge transfer and target-main normalisation complete; internal cleanup remains; foundations next
 
 Target repository: `mez-studios-design`
 
-Target branch: `codex/brand-kit-workbench`
+Migration branch: `codex/brand-kit-workbench` (integrated into `main`)
+
+Current working branch: `main`
 
 The authority migration is complete through `CUTOVER-2026-07-21-01`. The active `0.1.0-alpha.1` snapshot is the stable identity kernel, not the later foundation-complete production release.
 
@@ -154,7 +156,7 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Claude Code and Codex discovery adapters resolve one canonical repository skill.
 - [x] Post-migration foundations, expressions and consumer proof removed from the migration-close gate.
 - [x] Knowledge-portability commit `131435e` validates from a clean remote clone with zero drift.
-- [ ] Target migration branch merged to `mez-studios-design/main` and authority normalised to `main`.
+- [x] Target migration branch merged to `mez-studios-design/main` and current authority normalised to `main`.
 - [ ] Internal design branch merged through a clean worktree.
 - [ ] Everyday Mezcorp changes classified and protected before switching that checkout.
 - [ ] Old worktrees removed only after verification.

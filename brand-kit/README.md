@@ -1,6 +1,6 @@
 # Mez Systems Brand Kit Workbench
 
-This is the canonical Mez Systems design-system control plane. `authority/authority.json` is `canonical-active` under `CUTOVER-2026-07-21-01`.
+This is the canonical Mez Systems design-system control plane. `authority/current.json` names `main:brand-kit/` as the ordinary working authority. `authority/authority.json` preserves the original `CUTOVER-2026-07-21-01` activation record.
 
 It has four jobs:
 
@@ -13,7 +13,7 @@ It has four jobs:
 
 This repository is the rank-one canonical authority and distribution home.
 
-The previous Mez Systems pack on `codex/mez-gradient-system` is now a pinned archive and consumer reference through transition commit `6ac911e`, with rollback checkpoint `822aa91`. The immutable `source-pack/` snapshot remains imported evidence rather than active data. `source-manifest.json` records both roles. Candidate generation writes only to the gitignored `workspace/` directory.
+The previous Mez Systems pack on `codex/mez-gradient-system` is now a pinned archive and consumer reference through transition commit `6ac911e`, with rollback checkpoint `822aa91`. The migration recovery branch has been integrated into `main`. The immutable `source-pack/` snapshot remains imported evidence rather than active data. `source-manifest.json` records its activation provenance. Candidate generation writes only to the gitignored `workspace/` directory.
 
 The existing Claude Code work at `/play-orb/` is preserved untouched as the protected visual benchmark.
 

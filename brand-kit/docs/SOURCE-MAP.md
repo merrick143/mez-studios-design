@@ -5,7 +5,7 @@
 | Layer | Location | Role | May own decisions? |
 | --- | --- | --- | --- |
 | Previous internal pack | `mez-design-system-worktree/departments/cmo/brand-library/brands/mez-systems` | Pinned archive, rollback source and consumer reference | No after `CUTOVER-2026-07-21-01` activation |
-| Canonical control plane | `/brand-kit/authority/`, `/brand-kit/registry/`, `/brand-kit/governance/` | Rank-one decisions, identity data, authority and releases | Yes |
+| Canonical control plane | `main:/brand-kit/authority/`, `/brand-kit/registry/`, `/brand-kit/governance/` | Rank-one decisions, identity data, authority and releases | Yes |
 | Claude visual benchmark | `/play-orb/` in this repository | Original animated implementation and palette extraction from source PNGs | No; protected comparison evidence |
 | Workbench snapshot | `/brand-kit/source-pack/` | Pinned files imported from the canonical branch | No |
 | Candidate workspace | `/brand-kit/workspace/` | Uploaded images, generated plates and select/edit/reject records | No |
@@ -51,4 +51,4 @@ The complete 43-ID research library now lives under `brand-kit/gradient-library/
 
 ## Cutover handshake
 
-`authority/authority.json` is `canonical-active` under `CUTOVER-2026-07-21-01`. The matching internal transfer record at `6ac911e` therefore resolves the old pack to pinned archive and consumer reference. Rollback remains explicit and requires a new recorded decision.
+`authority/authority.json` preserves the canonical activation under `CUTOVER-2026-07-21-01`; `authority/current.json` normalises continuing work to `main:brand-kit/`. The matching internal transfer record at `6ac911e` therefore resolves the old pack to pinned archive and consumer reference. Rollback remains explicit and requires a new recorded decision.

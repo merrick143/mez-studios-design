@@ -7,12 +7,13 @@ Snapshot date: 2026-07-21
 ## Canonical working state
 
 - Canonical repository: `merrick143/mez-studios-design`
-- Migration branch: `codex/brand-kit-workbench`
+- Ordinary working branch: `main`
+- Integrated migration branch: `codex/brand-kit-workbench`
 - Canonical path: `brand-kit/`
 - Active identity release: `mez-systems-v0.1.0-alpha.1`
 - Internal rollback checkpoint: `822aa91`
 
-After the migration branch is merged, `main:brand-kit/` becomes the ordinary working authority. Feature work should use bounded branches and merge back through normal review.
+`main:brand-kit/` is the ordinary working authority. Feature work should use bounded branches and merge back through normal review.
 
 ## What a worktree solves
 

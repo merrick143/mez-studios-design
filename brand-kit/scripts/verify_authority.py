@@ -31,6 +31,7 @@ def sha256(path: Path) -> str:
 def main() -> int:
     failures: list[str] = []
     authority = read_json(BRAND_KIT / "authority/authority.json")
+    current = read_json(BRAND_KIT / "authority/current.json")
     rollback = read_json(BRAND_KIT / "authority/rollback.json")
     proof_path = BRAND_KIT / "authority/clean-clone-proof.json"
     proof = read_json(proof_path) if proof_path.is_file() else None
@@ -46,6 +47,12 @@ def main() -> int:
 
     if authority.get("cutoverId") != CUTOVER_ID or authority.get("activeRelease") != VERSION:
         failures.append("authority cutover or release identity drift")
+    if current.get("basisCutoverId") != CUTOVER_ID or current.get("basisAuthorityRecord") != "authority/authority.json":
+        failures.append("current authority does not preserve the activated cutover basis")
+    if current.get("repository") != "merrick143/mez-studios-design" or current.get("branch") != "main" or current.get("path") != "brand-kit":
+        failures.append("current authority must resolve to main:brand-kit")
+    if current.get("status") != "canonical-active" or current.get("rank") != 1 or current.get("productionAuthority") is not True:
+        failures.append("current authority state or rank is invalid")
     state = authority.get("status")
     if state not in {"prepared", "canonical-active"}:
         failures.append(f"invalid authority state: {state}")
@@ -111,6 +118,7 @@ def main() -> int:
         return 1
     print("MEZ AUTHORITY GATE: PASS")
     print(f"- cutover {CUTOVER_ID} is {state}")
+    print("- continuing authority resolves to main:brand-kit")
     print(f"- release {VERSION}, registries and dated artifacts agree")
     print("- prepared commit 698152e passed clean-clone and deterministic rebuild proof")
     if expected_production:

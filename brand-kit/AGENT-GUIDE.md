@@ -6,7 +6,8 @@ This is the tool-neutral operating contract for humans, Claude Code, Codex, and 
 
 - Canonical repository: `merrick143/mez-studios-design`.
 - Canonical path: `brand-kit/`.
-- Machine authority: `brand-kit/authority/authority.json`.
+- Current machine authority: `brand-kit/authority/current.json`.
+- Immutable migration activation record: `brand-kit/authority/authority.json`.
 - Approved decisions: `brand-kit/governance/decisions.json`.
 - Canonical identity data: `brand-kit/registry/`.
 - Generated releases: `brand-kit/releases/`.
