@@ -50,6 +50,7 @@ This phase now precedes the broader foundation and experience build under `DEC-M
 
 - Define stable schemas for products, gradients, assets, decisions and releases.
 - Generate one authority manifest with old and new locations and commits.
+- Generate a new dated migration artifact manifest; preserve the 19 July Phase 0 baseline instead of rewriting its historical hashes and local-only archive evidence.
 - Import the required programme history and decision evidence.
 - Generate `0.1.0-alpha.1` as the migration snapshot.
 - Validate the snapshot from a clean clone.
