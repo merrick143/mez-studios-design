@@ -369,6 +369,9 @@ def build_dated_manifest(authority_state: str) -> None:
         RELEASE / "release.json",
         RELEASE / "artifact-manifest.json",
     ]
+    clean_clone_proof = AUTHORITY / "clean-clone-proof.json"
+    if clean_clone_proof.is_file():
+        paths.append(clean_clone_proof)
     rows = [
         {"path": str(path.relative_to(BRAND_KIT)), "sha256": sha256(path), "bytes": path.stat().st_size}
         for path in paths

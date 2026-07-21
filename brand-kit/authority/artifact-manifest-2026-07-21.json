@@ -4,7 +4,7 @@
   "cutoverId": "CUTOVER-2026-07-21-01",
   "authorityState": "prepared",
   "historicalManifestPolicy": "The 19 July Phase 0 artifact manifest remains untouched historical evidence.",
-  "artifactCount": 14,
+  "artifactCount": 15,
   "artifacts": [
     {
       "path": "authority/authority.json",
@@ -75,6 +75,11 @@
       "path": "releases/0.1.0-alpha.1/artifact-manifest.json",
       "sha256": "3db5512596298b60ac1f7cf3b89345e2e83e4167111b3bf9b2a8d65f004bdb32",
       "bytes": 16581
+    },
+    {
+      "path": "authority/clean-clone-proof.json",
+      "sha256": "0b5788a99a1725244dc039e29cb6cff482c32a27a0dc9304337e901738d08fd0",
+      "bytes": 1530
     }
   ]
 }

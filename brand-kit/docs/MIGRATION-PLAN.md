@@ -144,7 +144,7 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Complete 43-ID board reviewed and product assignments decided.
 - [x] Context Engine source and candidate decision complete.
 - [x] Canonical roster, stable product IDs and lifecycle states approved.
-- [ ] Migration snapshot validates from a clean clone.
+- [x] Migration snapshot validates from a clean clone at `698152e`.
 - [ ] Canonical authority cut over atomically.
 - [ ] Geist asset and updated typography release complete.
 - [ ] Foundation tokens and responsive tests pass.

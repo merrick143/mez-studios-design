@@ -32,6 +32,8 @@ def main() -> int:
     failures: list[str] = []
     authority = read_json(BRAND_KIT / "authority/authority.json")
     rollback = read_json(BRAND_KIT / "authority/rollback.json")
+    proof_path = BRAND_KIT / "authority/clean-clone-proof.json"
+    proof = read_json(proof_path) if proof_path.is_file() else None
     dated = read_json(BRAND_KIT / "authority/artifact-manifest-2026-07-21.json")
     source = read_json(BRAND_KIT / "source-manifest.json")
     status = read_json(BRAND_KIT / "data/status.json")
@@ -52,6 +54,8 @@ def main() -> int:
         failures.append("authority rank disagrees with state")
     if rollback.get("cutoverId") != CUTOVER_ID or rollback.get("restore", {}).get("commit") != "822aa91":
         failures.append("rollback record does not preserve the frozen internal checkpoint")
+    if proof is None or proof.get("status") != "passed" or proof.get("validatedCommit") != "698152ede765958e0e35323652a0dccc0470afde":
+        failures.append("prepared clean-clone proof is missing or does not pin commit 698152e")
     if expected_production and not authority.get("previousAuthority", {}).get("transitionCommit"):
         failures.append("active authority must name the internal transfer commit")
 
@@ -101,6 +105,7 @@ def main() -> int:
     print("MEZ AUTHORITY GATE: PASS")
     print(f"- cutover {CUTOVER_ID} is {state}")
     print(f"- release {VERSION}, registries and dated artifacts agree")
+    print("- prepared commit 698152e passed clean-clone and deterministic rebuild proof")
     print("- rollback to internal commit 822aa91 remains explicit")
     print("- migration alpha remains distinct from production readiness")
     return 0
