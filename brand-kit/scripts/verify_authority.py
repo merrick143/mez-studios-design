@@ -34,6 +34,8 @@ def main() -> int:
     rollback = read_json(BRAND_KIT / "authority/rollback.json")
     proof_path = BRAND_KIT / "authority/clean-clone-proof.json"
     proof = read_json(proof_path) if proof_path.is_file() else None
+    activation_proof_path = BRAND_KIT / "authority/activation-proof.json"
+    activation_proof = read_json(activation_proof_path) if activation_proof_path.is_file() else None
     dated = read_json(BRAND_KIT / "authority/artifact-manifest-2026-07-21.json")
     source = read_json(BRAND_KIT / "source-manifest.json")
     status = read_json(BRAND_KIT / "data/status.json")
@@ -58,6 +60,11 @@ def main() -> int:
         failures.append("prepared clean-clone proof is missing or does not pin commit 698152e")
     if expected_production and not authority.get("previousAuthority", {}).get("transitionCommit"):
         failures.append("active authority must name the internal transfer commit")
+    if expected_production:
+        if activation_proof is None or activation_proof.get("status") != "passed":
+            failures.append("active authority must preserve the clean-clone activation proof")
+        elif activation_proof.get("validatedCommit") != "19f1570fd8943c4aa7a031f3d5c65c203346366b":
+            failures.append("activation proof must pin canonical activation commit 19f1570")
 
     for registry in (products, gradients, assets):
         if registry.get("authorityState") != state or registry.get("productionAuthority") is not expected_production:
@@ -106,6 +113,8 @@ def main() -> int:
     print(f"- cutover {CUTOVER_ID} is {state}")
     print(f"- release {VERSION}, registries and dated artifacts agree")
     print("- prepared commit 698152e passed clean-clone and deterministic rebuild proof")
+    if expected_production:
+        print("- activation commit 19f1570 passed canonical clean-clone proof")
     print("- rollback to internal commit 822aa91 remains explicit")
     print("- migration alpha remains distinct from production readiness")
     return 0

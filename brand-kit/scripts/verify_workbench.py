@@ -81,6 +81,8 @@ def main() -> int:
         failures.append("canonical control plane must claim rank-one production authority")
     if manifest.get("canonicalSource", {}).get("cutoverId") != "CUTOVER-2026-07-21-01":
         failures.append("canonical source must name the completed cutover")
+    if manifest.get("canonicalSource", {}).get("activationCommit") != "19f1570fd8943c4aa7a031f3d5c65c203346366b":
+        failures.append("canonical source must pin the clean-clone validated activation commit")
     if manifest.get("previousAuthority", {}).get("transitionCommit") != "6ac911e":
         failures.append("previous authority transition commit is missing")
     if len(manifest.get("knownConflicts", [])) != 4:

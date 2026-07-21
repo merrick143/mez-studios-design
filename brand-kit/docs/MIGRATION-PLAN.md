@@ -146,6 +146,7 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Canonical roster, stable product IDs and lifecycle states approved.
 - [x] Migration snapshot validates from a clean clone at `698152e`.
 - [x] Canonical authority cut over through `CUTOVER-2026-07-21-01`.
+- [x] Activated authority validates from a clean clone at `19f1570`.
 - [ ] Geist asset and updated typography release complete.
 - [ ] Foundation tokens and responsive tests pass.
 - [ ] Product-expression suite approved.

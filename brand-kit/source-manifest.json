@@ -8,6 +8,7 @@
     "branch": "codex/brand-kit-workbench",
     "path": "brand-kit",
     "cutoverId": "CUTOVER-2026-07-21-01",
+    "activationCommit": "19f1570fd8943c4aa7a031f3d5c65c203346366b",
     "activeRelease": "0.1.0-alpha.1",
     "authorityManifest": "authority/authority.json"
   },
