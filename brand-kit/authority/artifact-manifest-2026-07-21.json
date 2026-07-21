@@ -2,14 +2,14 @@
   "schemaVersion": "1.0.0",
   "manifestId": "MEZ-MIGRATION-ARTIFACTS-2026-07-21",
   "cutoverId": "CUTOVER-2026-07-21-01",
-  "authorityState": "prepared",
+  "authorityState": "canonical-active",
   "historicalManifestPolicy": "The 19 July Phase 0 artifact manifest remains untouched historical evidence.",
   "artifactCount": 15,
   "artifacts": [
     {
       "path": "authority/authority.json",
-      "sha256": "2b244005f1138c20286d2b639ad01cfe22f211866a3b4e2965b176de0fb0f948",
-      "bytes": 1101
+      "sha256": "0c8a906d8541791cb906fa7e6977f1553e208950a34afbb90e385a6c5abcab8e",
+      "bytes": 1110
     },
     {
       "path": "authority/rollback.json",
@@ -18,18 +18,18 @@
     },
     {
       "path": "registry/products.json",
-      "sha256": "1a53f4e7cbe205278acb0814ced92da5ed6994c9942a54bcad31e18411eb12fe",
-      "bytes": 2045
+      "sha256": "665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b",
+      "bytes": 2052
     },
     {
       "path": "registry/gradients.json",
-      "sha256": "751588369b9dc70894c7b993903e370cd9efc3d555d36defacb1d7485b13af3d",
-      "bytes": 66829
+      "sha256": "ab23ae9b4e88da48dac5d240a840c8bf77e99707bc6ae09ce2a2d6f5168cbfe7",
+      "bytes": 66836
     },
     {
       "path": "registry/assets.json",
-      "sha256": "0f4de04474ceb07405d48723f4ff31399bb341a0702d2873dbcd1fe3c759ea13",
-      "bytes": 25792
+      "sha256": "463658d4be112e2ec44a04d0574694b0767f178a8ac458570f9c20cbf99ddd17",
+      "bytes": 25799
     },
     {
       "path": "governance/decisions.json",
@@ -68,13 +68,13 @@
     },
     {
       "path": "releases/0.1.0-alpha.1/release.json",
-      "sha256": "313f1e80480350a41830850aff387765e68b962ef51c1bb7223230d91fdb8221",
-      "bytes": 902
+      "sha256": "bb106e40fc55a58a8c3cf3dd91f14e39c6ad403216fd948af3203a586cf1a59d",
+      "bytes": 909
     },
     {
       "path": "releases/0.1.0-alpha.1/artifact-manifest.json",
-      "sha256": "3db5512596298b60ac1f7cf3b89345e2e83e4167111b3bf9b2a8d65f004bdb32",
-      "bytes": 16581
+      "sha256": "f5b0b63eccb897f6871285687df48c7626ebcb09f51456322f014dfa91a3de1a",
+      "bytes": 16589
     },
     {
       "path": "authority/clean-clone-proof.json",

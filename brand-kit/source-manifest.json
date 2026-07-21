@@ -1,15 +1,24 @@
 {
   "schemaVersion": "1.0.0",
-  "workbenchStatus": "non-canonical-migration-proof",
-  "productionAuthority": false,
+  "workbenchStatus": "canonical-control-plane",
+  "productionAuthority": true,
   "canonicalSource": {
-    "repository": "/Users/olivermerrick/mezcorp_claude_code",
+    "repository": "merrick143/mez-studios-design",
+    "localRepository": "/Users/olivermerrick/mez-studios-design-brand-kit",
+    "branch": "codex/brand-kit-workbench",
+    "path": "brand-kit",
+    "cutoverId": "CUTOVER-2026-07-21-01",
+    "activeRelease": "0.1.0-alpha.1",
+    "authorityManifest": "authority/authority.json"
+  },
+  "previousAuthority": {
+    "repository": "merrick143/mezcorp-claudecode",
     "worktree": "/Users/olivermerrick/mez-design-system-worktree",
     "branch": "codex/mez-gradient-system",
-    "commit": "84eb5a9",
-    "commitRole": "source-system snapshot imported by this workbench",
-    "governanceRecoveryCommit": "50c3b90",
-    "pack": "departments/cmo/brand-library/brands/mez-systems"
+    "transitionCommit": "6ac911e",
+    "rollbackCommit": "822aa91",
+    "path": "departments/cmo/brand-library/brands/mez-systems",
+    "state": "pinned-archive-and-consumer-reference"
   },
   "claudeBenchmark": {
     "repository": "https://github.com/merrick143/mez-studios-design",
@@ -23,7 +32,8 @@
   "systemizedSnapshot": {
     "paletteSha256": "30afa92f4c8e79b7b9a17d9ddf349c2d05b327e0e6a8cd939ee4beea9226fe7b",
     "rendererSha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d",
-    "mutatesCanonicalAuthority": false
+    "mutatesCanonicalAuthority": false,
+    "role": "preserved imported evidence; canonical data now lives in registry/ and the active release"
   },
   "knownConflicts": [
     {

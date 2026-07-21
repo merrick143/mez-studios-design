@@ -1,19 +1,19 @@
 {
   "schemaVersion": "1.0.0",
   "cutoverId": "CUTOVER-2026-07-21-01",
-  "status": "prepared",
-  "rank": null,
+  "status": "canonical-active",
+  "rank": 1,
   "repository": "merrick143/mez-studios-design",
   "branch": "codex/brand-kit-workbench",
   "path": "brand-kit",
-  "productionAuthority": false,
+  "productionAuthority": true,
   "activeRelease": "0.1.0-alpha.1",
   "previousAuthority": {
     "repository": "merrick143/mezcorp-claudecode",
     "branch": "codex/mez-gradient-system",
     "path": "departments/cmo/brand-library/brands/mez-systems",
     "rollbackCommit": "822aa91",
-    "transitionCommit": null,
+    "transitionCommit": "6ac911e",
     "stateAfterActivation": "pinned-archive-and-consumer-reference"
   },
   "activationConditions": [

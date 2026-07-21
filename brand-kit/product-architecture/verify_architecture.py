@@ -81,7 +81,7 @@ def main() -> int:
     print("- literal five-product family with zero historical aliases")
     print("- MZ-G13 / G12 / G06 / G15 / G20 assignments approved")
     print("- exact sources, Deep Mineral motion and tracked review agree")
-    print("- production authority remains unchanged until cutover")
+    print("- the immutable review record agrees with the active canonical registries")
     return 0
 
 

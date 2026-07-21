@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0.0",
   "registryId": "mz.systems.registry.gradients",
-  "authorityState": "prepared",
-  "productionAuthority": false,
+  "authorityState": "canonical-active",
+  "productionAuthority": true,
   "decisions": [
     "DEC-GRADIENT-LIBRARY-001",
     "DEC-LIVING-CORE-FINISH-001"

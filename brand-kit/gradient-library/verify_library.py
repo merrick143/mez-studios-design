@@ -99,7 +99,7 @@ def main() -> int:
     print("- 43 IDs / 33 unique source PNGs / 10 alias groups")
     print("- every source hash, palette, runtime core and static twin is present")
     print("- five approved expressions use one switchable shared renderer")
-    print("- approved product assignments remain non-canonical migration input")
+    print("- immutable review assignments agree with the active canonical registries")
     return 0
 
 

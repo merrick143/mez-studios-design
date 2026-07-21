@@ -75,10 +75,14 @@ def main() -> int:
             failures.append(f"missing or empty workbench file: {path.relative_to(REPO)}")
 
     manifest = json.loads((BRAND_KIT / "source-manifest.json").read_text(encoding="utf-8"))
-    if manifest.get("workbenchStatus") != "non-canonical-migration-proof":
-        failures.append("workbench must remain explicitly non-canonical")
-    if manifest.get("productionAuthority") is not False:
-        failures.append("workbench must deny production authority")
+    if manifest.get("workbenchStatus") != "canonical-control-plane":
+        failures.append("workbench must identify the canonical control plane after cutover")
+    if manifest.get("productionAuthority") is not True:
+        failures.append("canonical control plane must claim rank-one production authority")
+    if manifest.get("canonicalSource", {}).get("cutoverId") != "CUTOVER-2026-07-21-01":
+        failures.append("canonical source must name the completed cutover")
+    if manifest.get("previousAuthority", {}).get("transitionCommit") != "6ac911e":
+        failures.append("previous authority transition commit is missing")
     if len(manifest.get("knownConflicts", [])) != 4:
         failures.append("source manifest must expose all four known conflicts")
 
@@ -117,7 +121,7 @@ def main() -> int:
     for phrase in ("AI OS", "Context Engine", "AI Ads System", "Claude Code OS", "Organic Content OS", "MZ-G12"):
         if phrase not in html:
             failures.append(f"approved family missing: {phrase}")
-    for phrase in ("Claude original", "Historical systemisation error", "Exact authority", "Non-canonical workbench"):
+    for phrase in ("Claude original", "Historical systemisation error", "Exact authority", "Canonical control plane"):
         if phrase not in html:
             failures.append(f"workbench missing clarity label: {phrase}")
 

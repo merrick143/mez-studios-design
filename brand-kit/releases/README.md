@@ -1,6 +1,6 @@
 # Releases
 
-`0.1.0-alpha.1` is the prepared canonical-migration identity snapshot. It is self-contained and hash-verified, but it is deliberately not the foundation-complete production release.
+`0.1.0-alpha.1` is the active canonical identity snapshot. It is self-contained and hash-verified, but it is deliberately not the foundation-complete production release.
 
 It contains:
 

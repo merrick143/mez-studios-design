@@ -1,12 +1,12 @@
 # Standalone brand-kit migration plan
 
-Status: active planning and proof branch
+Status: Phase 2 canonical cutover complete; Phase 3 foundations next
 
 Target repository: `mez-studios-design`
 
 Target branch: `codex/brand-kit-workbench`
 
-The goal is not to copy the unfinished internal pack and call the move complete. The goal is to close each authority gap, produce one stable portable release, then deliberately transfer canonical ownership.
+The authority migration is complete through `CUTOVER-2026-07-21-01`. The active `0.1.0-alpha.1` snapshot is the stable identity kernel, not the later foundation-complete production release.
 
 ## Phase 0: make the truth visible
 
@@ -14,7 +14,7 @@ The goal is not to copy the unfinished internal pack and call the move complete.
 - Import the current systemised pack as a pinned snapshot with source commit and hashes.
 - Show animated output, exact static twins and authority state together.
 - Record the Claude-versus-WebP palette drift as an explicit decision gate.
-- Keep the workbench labelled non-canonical.
+- Keep the workbench labelled non-canonical until the activation handshake. **Complete; it is now canonical-active.**
 
 Exit gate: a human can identify where every file came from and which source currently wins.
 
@@ -36,7 +36,7 @@ Exit gate: one renderer, a deterministic complete source catalogue, one frozen c
 
 ## Phase 2: prepare and execute canonical cutover
 
-This phase now precedes the broader foundation and experience build under `DEC-MIGRATION-SEQUENCE-001`.
+**Complete through `CUTOVER-2026-07-21-01`.** This phase preceded the broader foundation and experience build under `DEC-MIGRATION-SEQUENCE-001`.
 
 ### Close the identity kernel
 
@@ -145,11 +145,11 @@ Exit gate: Figma mirrors one named release and cannot silently become an indepen
 - [x] Context Engine source and candidate decision complete.
 - [x] Canonical roster, stable product IDs and lifecycle states approved.
 - [x] Migration snapshot validates from a clean clone at `698152e`.
-- [ ] Canonical authority cut over atomically.
+- [x] Canonical authority cut over through `CUTOVER-2026-07-21-01`.
 - [ ] Geist asset and updated typography release complete.
 - [ ] Foundation tokens and responsive tests pass.
 - [ ] Product-expression suite approved.
-- [ ] Portable release validates in isolation.
+- [x] Migration identity release validates in isolation.
 - [ ] One consumer ingests the release successfully.
 - [x] Migration-first authority sequence approved.
 - [x] Both recovery branches pushed and recoverable.

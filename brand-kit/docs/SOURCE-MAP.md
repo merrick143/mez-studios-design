@@ -1,11 +1,11 @@
 # Source map
 
-## Prepared cutover ownership
+## Active canonical ownership
 
 | Layer | Location | Role | May own decisions? |
 | --- | --- | --- | --- |
-| Canonical working pack | `mez-design-system-worktree/departments/cmo/brand-library/brands/mez-systems` | Current rank-one authority | Yes, until the matching cutover activation record exists |
-| Prepared target control plane | `/brand-kit/authority/`, `/brand-kit/registry/`, `/brand-kit/governance/` | Versioned identity kernel and two-phase authority handshake | Only after `CUTOVER-2026-07-21-01` becomes `canonical-active` |
+| Previous internal pack | `mez-design-system-worktree/departments/cmo/brand-library/brands/mez-systems` | Pinned archive, rollback source and consumer reference | No after `CUTOVER-2026-07-21-01` activation |
+| Canonical control plane | `/brand-kit/authority/`, `/brand-kit/registry/`, `/brand-kit/governance/` | Rank-one decisions, identity data, authority and releases | Yes |
 | Claude visual benchmark | `/play-orb/` in this repository | Original animated implementation and palette extraction from source PNGs | No; protected comparison evidence |
 | Workbench snapshot | `/brand-kit/source-pack/` | Pinned files imported from the canonical branch | No |
 | Candidate workspace | `/brand-kit/workspace/` | Uploaded images, generated plates and select/edit/reject records | No |
@@ -46,4 +46,4 @@ The complete 43-ID research library now lives under `brand-kit/gradient-library/
 
 ## Cutover handshake
 
-`authority/authority.json` owns the target state. In `prepared`, the internal pack remains rank one. After the internal transfer-prepared record is pushed, the same file may become `canonical-active`; at that moment the internal record automatically resolves to pinned archive and consumer reference under the shared cutover ID.
+`authority/authority.json` is `canonical-active` under `CUTOVER-2026-07-21-01`. The matching internal transfer record at `6ac911e` therefore resolves the old pack to pinned archive and consumer reference. Rollback remains explicit and requires a new recorded decision.

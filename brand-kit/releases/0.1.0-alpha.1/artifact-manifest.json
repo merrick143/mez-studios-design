@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "release": "0.1.0-alpha.1",
   "cutoverId": "CUTOVER-2026-07-21-01",
-  "authorityState": "prepared",
+  "authorityState": "canonical-active",
   "artifactCount": 102,
   "artifacts": [
     {
@@ -447,8 +447,8 @@
     },
     {
       "path": "data/assets.json",
-      "sha256": "bf0e8016b142752f23ef6723efcd89334b509073276205ce8047cf7d20fec8f9",
-      "bytes": 24229
+      "sha256": "509eebbfceabb931b5a64c9040837d838500d489879534dd66625188708386ac",
+      "bytes": 24236
     },
     {
       "path": "data/decisions.json",
@@ -457,18 +457,18 @@
     },
     {
       "path": "data/gradients.json",
-      "sha256": "7e202edc6c085cb3aec94907ae0ae01e6e98e8faf00a4a828c6801b868f7e5be",
-      "bytes": 65324
+      "sha256": "3aade0d18dfff1577bb2f35fc4864b9101902ef70eddc2b76bfafb088e1ca954",
+      "bytes": 65331
     },
     {
       "path": "data/products.json",
-      "sha256": "1a53f4e7cbe205278acb0814ced92da5ed6994c9942a54bcad31e18411eb12fe",
-      "bytes": 2045
+      "sha256": "665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b",
+      "bytes": 2052
     },
     {
       "path": "release.json",
-      "sha256": "313f1e80480350a41830850aff387765e68b962ef51c1bb7223230d91fdb8221",
-      "bytes": 902
+      "sha256": "bb106e40fc55a58a8c3cf3dd91f14e39c6ad403216fd948af3203a586cf1a59d",
+      "bytes": 909
     },
     {
       "path": "runtime/mz-core.js",

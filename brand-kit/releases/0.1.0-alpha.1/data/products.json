@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0.0",
   "registryId": "mz.systems.registry.products",
-  "authorityState": "prepared",
-  "productionAuthority": false,
+  "authorityState": "canonical-active",
+  "productionAuthority": true,
   "decision": "DEC-PRODUCT-ARCHITECTURE-001",
   "namingPolicy": "literal-product-names-only",
   "products": [

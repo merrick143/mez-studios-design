@@ -11,8 +11,8 @@ runtime.
 ### Mez Systems Brand Kit Workbench (`/brand-kit/`)
 
 The organised migration control plane for the Living Core, foundations,
-product-expression suite and portable releases. Its authority state is explicit and
-the prepared `0.1.0-alpha.1` identity snapshot validates independently.
+product-expression suite and portable releases. `brand-kit/` is the canonical control plane and
+its active `0.1.0-alpha.1` identity snapshot validates independently.
 It preserves the original Play Orb as a protected benchmark while imported system files
 remain pinned to a named canonical commit.
 

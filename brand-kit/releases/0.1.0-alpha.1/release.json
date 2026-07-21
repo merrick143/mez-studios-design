@@ -4,8 +4,8 @@
   "version": "0.1.0-alpha.1",
   "stage": "migration-snapshot",
   "cutoverId": "CUTOVER-2026-07-21-01",
-  "authorityState": "prepared",
-  "canonicalSnapshot": false,
+  "authorityState": "canonical-active",
+  "canonicalSnapshot": true,
   "productionReady": false,
   "decisions": [
     "DEC-MOTION-002",
