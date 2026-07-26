@@ -11,7 +11,7 @@ stepped stack selected by Olli across problem-lab-5 through problem-lab-8:
   * the business tread on an ink hairline instead of the mid-grey one;
   * the grey-prefix heading removed from S02, so both sentences sit in the ink.
 
-S03 and S04 keep the R17 split-card family untouched, so the shared family count
+S03 and S04 kept the R17 split-card family at the time of this round. That guard is
 drops from three to two. Everything R17 proved outside S02 is carried forward by
 verify_homepage_round17.py, which stays as that round's record.
 """
@@ -47,7 +47,6 @@ def report(failures: list[str]) -> int:
     print("GOLDEN HOMEPAGE ROUND 19: PASS")
     print("- GH-S02 rebuilt as the stepped stack (lab 8 variant A)")
     print("- equal-width treads, weight ramp, ink business tread, no grey prefix")
-    print("- S03/S04 split-card family carried forward untouched")
     return 0
 
 
@@ -111,16 +110,13 @@ def main() -> int:
         if dead in html or dead in css:
             failures.append(f"retired R17 S02 token still present: {dead}")
 
-    # --- the split-card family survives this round ---
-    # Round 19 only changed S02. It asserted two split cards because S03 and S04
-    # both used the family at the time. Round 20 rebuilt S03 as the concentric
-    # orbit, so the count is now one. What this round actually cares about is
-    # that S02's rebuild did not damage the shared family, which is still true.
-    if html.count('class="split-card"') < 1:
-        failures.append("the shared split-card family lost every consumer")
-    for family_part in (".split-card__editorial", ".split-card__viz", ".split-chips", ".split-badge"):
-        if family_part not in css:
-            failures.append(f"split-card family part missing: {family_part}")
+    # --- RETIRED at R21 -------------------------------------------------
+    # This round guarded the shared split-card family because replacing the
+    # neighbouring section had already deleted it once while GH-S04 still
+    # consumed it. At R21 GH-S04 was rebuilt as the horizontal sequence and the
+    # family lost its last consumer, so those rules were removed deliberately
+    # rather than by accident. The guard's premise is gone; every other check in
+    # this round still holds and still runs.
 
     # --- canon guards ---
     if "http://" in html or "http://" in css:

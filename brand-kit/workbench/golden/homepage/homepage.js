@@ -118,6 +118,7 @@ const anchors = [...document.querySelectorAll("[data-live-anchor]")];
 const motionSections = new Map([
   [document.querySelector("#top"), { region: "hero", anchor: null }],
   [document.querySelector("#principle"), { region: "single", anchor: anchors.find(anchor => anchor.dataset.liveAnchor === "principle") }],
+  [document.querySelector("#why-mez"), { region: "sequence", anchor: null }],
   [document.querySelector("#ai-os"), { region: "single", anchor: anchors.find(anchor => anchor.dataset.liveAnchor === "ai-os") }],
   [document.querySelector("#start"), { region: "single", anchor: anchors.find(anchor => anchor.dataset.liveAnchor === "final") }]
 ]);
@@ -176,20 +177,98 @@ function mountHeroCores() {
   }
 }
 
+/* GH-S04 · the sequence terminus blends between two live cores rather than
+   fading through a still. Two surfaces on the one context, which the renderer
+   supports because surfaces is a Map. Riding a static twin across a setCore call
+   is correct when a swap must be hidden, but here it would put a frozen frame in
+   the middle of every transition. */
+/* Read from the canonical registry, so adding or removing a product changes what
+   the terminus blends through without touching this file (LAY-09). */
+const productGradients = products.map(product => product.gradientId);
+const sequenceHost = document.querySelector("[data-sequence-core]");
+const sequenceCores = sequenceHost ? [...sequenceHost.querySelectorAll(".mseq__core")] : [];
+const SEQUENCE_FADE = 1600;
+const SEQUENCE_HOLD = 3600;
+let sequenceFront = sequenceCores[0] || null;
+let sequenceBack = sequenceCores[1] || null;
+let sequenceIndex = 0;
+let sequenceTimer = null;
+let sequenceLive = false;
+let sequenceBusy = false;
+
+if (sequenceFront) {
+  sequenceFront.style.background = `#101010 center / cover no-repeat url("${staticTwin(productGradients[0])}")`;
+  sequenceFront.style.opacity = "1";
+  if (sequenceBack) sequenceBack.style.opacity = "0";
+}
+
+async function advanceSequence() {
+  if (!renderer || !sequenceLive || sequenceBusy) return;
+  sequenceBusy = true;
+  const next = (sequenceIndex + 1) % productGradients.length;
+  try {
+    renderer.mount(sequenceBack, productGradients[next], { shape: "disc", radius: 0, profile: "deep" });
+    sequenceBack.dataset.mzCore = productGradients[next];
+    /* Two frames, so the incoming core has drawn before it is revealed. */
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    sequenceBack.style.opacity = "1";
+    sequenceFront.style.opacity = "0";
+    await new Promise(resolve => setTimeout(resolve, SEQUENCE_FADE));
+    unmountCore(sequenceFront);
+    [sequenceFront, sequenceBack] = [sequenceBack, sequenceFront];
+    sequenceIndex = next;
+  } catch (error) {
+    document.documentElement.dataset.coreFailure = error?.message || "unknown";
+  }
+  sequenceBusy = false;
+}
+
+function mountSequence() {
+  if (!renderer || sequenceLive || navigationOpen || forceStatic || !sequenceHost) return;
+  try {
+    renderer.mount(sequenceFront, productGradients[sequenceIndex], { shape: "disc", radius: 0, profile: "deep" });
+    sequenceFront.dataset.mzCore = productGradients[sequenceIndex];
+    sequenceLive = true;
+    sequenceTimer = setInterval(advanceSequence, SEQUENCE_HOLD + SEQUENCE_FADE);
+  } catch (error) {
+    document.documentElement.dataset.coreFailure = error?.message || "unknown";
+  }
+}
+
+function unmountSequence() {
+  if (!sequenceLive) return;
+  clearInterval(sequenceTimer);
+  sequenceTimer = null;
+  sequenceCores.forEach(core => unmountCore(core));
+  sequenceFront = sequenceCores[0];
+  sequenceBack = sequenceCores[1];
+  sequenceFront.style.opacity = "1";
+  sequenceBack.style.opacity = "0";
+  sequenceLive = false;
+}
+
 function activateRegion(region, anchor = null) {
   currentRegion = region;
   if (anchor) currentAnchor = anchor;
   if (navigationOpen || forceStatic || !renderer) return;
   if (region === "hero") {
     unmountSingleCore();
+    unmountSequence();
     mountHeroCores();
     return;
   }
   unmountHeroCores();
   if (region === "idle") {
     unmountSingleCore();
+    unmountSequence();
     return;
   }
+  if (region === "sequence") {
+    unmountSingleCore();
+    mountSequence();
+    return;
+  }
+  unmountSequence();
   mountSingleCore();
 }
 
@@ -268,36 +347,6 @@ navigation.addEventListener("mez-navigation-open", event => {
    authored diagram now (abstract swap-slots over an owned base — no rented
    brand logos, real or invented, and no live core). No JS wiring required. */
 
-/* GH-S04 · Build → Run → Break → Refine → Package as one charcoal console
-   with a single expanded active stage. */
-const methodSequence = document.querySelector("[data-method-sequence]");
-const methodItems = [...methodSequence.querySelectorAll("[data-method-step]")];
-
-function selectMethod(index) {
-  methodItems.forEach((item, itemIndex) => {
-    const active = itemIndex === index;
-    item.classList.toggle("is-active", active);
-    item.setAttribute("aria-selected", String(active));
-  });
-}
-
-selectMethod(0);
-methodItems.forEach((item, index) => item.addEventListener("click", () => selectMethod(index)));
-
-if (!reducedMotion) {
-  const methodObserver = new IntersectionObserver(entries => {
-    if (!entries.some(entry => entry.isIntersecting)) return;
-    methodObserver.disconnect();
-    let index = 0;
-    const advance = () => {
-      selectMethod(index);
-      index += 1;
-      if (index < methodItems.length) setTimeout(advance, 680);
-    };
-    advance();
-  }, { threshold: .45 });
-  methodObserver.observe(methodSequence);
-}
 
 /* One restrained section-entry treatment, armed only when motion is allowed
    so the page stays complete without JavaScript or with reduced motion. */

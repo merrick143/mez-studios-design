@@ -12,7 +12,7 @@ composition Olli selected from principle-lab-8 variant A:
     static twins so only one WebGL context ever exists;
   * the grey-prefix heading gone, matching the correction already made in S02.
 
-S04 keeps the shared split-card family. Those rules were rebuilt in this round
+S04 kept the shared split-card family at the time of this round. Those rules were rebuilt
 because the previous S03 block owned them and this workbench is untracked, so
 this file guards them against a second loss.
 """
@@ -41,7 +41,6 @@ def report(failures: list[str]) -> int:
     print("GOLDEN HOMEPAGE ROUND 20: PASS")
     print("- GH-S03 rebuilt as the concentric orbit (principle-lab-8 variant A)")
     print("- two mark registers, disc core, product cycle across the static twins")
-    print("- shared split-card family intact for S04")
     return 0
 
 
@@ -115,13 +114,13 @@ def main() -> int:
         if dead in html or dead in css:
             failures.append(f"retired R17 S03 token still present: {dead}")
 
-    # --- the shared family S04 still depends on ---
-    if 'class="split-card"' not in html:
-        failures.append("S04 lost the shared split-card family")
-    for part in (".split-card__editorial", ".split-card__viz", ".split-chips", ".split-badge",
-                 ".split-kicker", ".split-lead", ".split-note", ".split-foot"):
-        if part not in css:
-            failures.append(f"split-card family part missing from CSS: {part}")
+    # --- RETIRED at R21 -------------------------------------------------
+    # This round guarded the shared split-card family because replacing the
+    # neighbouring section had already deleted it once while GH-S04 still
+    # consumed it. At R21 GH-S04 was rebuilt as the horizontal sequence and the
+    # family lost its last consumer, so those rules were removed deliberately
+    # rather than by accident. The guard's premise is gone; every other check in
+    # this round still holds and still runs.
 
     # --- the thesis block S03 closes on ---
     for part in (".principle-thesis", ".thesis-serif", ".thesis-close"):
