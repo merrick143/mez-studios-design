@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-EXP-04B-PRODUCT-COMPONENTS",
+  "receiptId": "RCP-EXP-04B-PRODUCT-COMPONENTS",
+  "evaluatedAt": "2026-07-22T23:05:12+10:00",
+  "evaluator": {
+    "kind": "hybrid",
+    "name": "Olli approval plus Codex deterministic and live browser checks"
+  },
+  "contractChecks": [
+    {
+      "id": "PHASE-B-CANONICAL-ARCHITECTURE",
+      "status": "pass",
+      "evidence": "Canonical Phase B 1.0.0 contains 46 approved functional specimens across six families with counts 8/8/10/8/8/4."
+    },
+    {
+      "id": "PHASE-A-AUTHORITY",
+      "status": "pass",
+      "evidence": "All 32 canonical Phase A keeps remain approved visual inputs and lineage references with a Round 04 candidate count of zero; their separate gallery is absent."
+    },
+    {
+      "id": "ROUND03-FEEDBACK-INTEGRITY",
+      "status": "pass",
+      "evidence": "The exact Round 03 receipt hash is 0ebc1bc12d4a41d0ec66aed163f130aa625db9615e09e24479f52fed1c7d566c and records 11 keeps, 35 revisions and 1 kill across 47 functional candidates."
+    },
+    {
+      "id": "KILLED-DISPOSITIONS",
+      "status": "pass",
+      "evidence": "B-FT04 and B-FT06 are absent from the 46-item Round 04 mount and export while their historical evidence remains preserved."
+    },
+    {
+      "id": "PHASE-A-LINEAGE",
+      "status": "pass",
+      "evidence": "Every surviving functional candidate retains explicit phaseARefs and live inspection reports no missing lineage."
+    },
+    {
+      "id": "CHAMPION-PRESERVATION",
+      "status": "pass",
+      "evidence": "The 11 Round 03 keeps carry forward as champions while the 35 revise records are rebuilt without introducing replacement specimens or a new visual world."
+    },
+    {
+      "id": "R04-LIVE-SCOPE",
+      "status": "pass",
+      "evidence": "Live DOM inspection mounts exactly 46 candidates, reports no killed ID, failure, overflow or console log, and preserves the six expected family counts."
+    },
+    {
+      "id": "R04-NAMED-CONVERGENCE",
+      "status": "pass",
+      "evidence": "DS05 and PR10 have exact equal geometry; FT03 is four complete cards with one live field; FT08 visibly uses a Phase A card; and PR09 is live by default."
+    },
+    {
+      "id": "R04-INTEGRATION-ASSETS",
+      "status": "pass",
+      "evidence": "FT07 loads six locally sourced image assets after lazy viewport entry with no broken image; provenance declares them non-authoritative review fixtures."
+    },
+    {
+      "id": "R04-INTERACTION-PROOF",
+      "status": "pass",
+      "evidence": "Pricing cadence, accordion, bundle builder and checkout fields work; the export reports 32/46/46 scope, six sections, 46 functional records, complete lineage and productionAuthority false."
+    },
+    {
+      "id": "R04-MOTION-PROOF",
+      "status": "pass",
+      "evidence": "Exactly one canvas hands off among DS02, FT03, PR09 and BU03 in normal motion. The static route renders 46 candidates with zero canvas, zero live surface, zero failure and no overflow."
+    },
+    {
+      "id": "ROUND04-STORAGE-BOUNDARY",
+      "status": "pass",
+      "evidence": "Round 04 uses an isolated persistence key and exports only the 46 active functional IDs, so prior verdicts and killed IDs cannot migrate into this review."
+    },
+    {
+      "id": "COMMERCE-BOUNDARY",
+      "status": "pass",
+      "evidence": "Product identity remains registry-driven and all offer, price, bundle, checkout and confirmation values remain illustrative fixture data."
+    },
+    {
+      "id": "CONSUMER-PROOF-BOUNDARY",
+      "status": "warning",
+      "evidence": "Representative live and exact-static checks pass. Exhaustive consumer-specific container, viewport, zoom, keyboard, content-stress, missing-media and recovery proof remains an explicit downstream validation boundary."
+    },
+    {
+      "id": "HUMAN-REVIEW",
+      "status": "pass",
+      "evidence": "Olli explicitly approved every surviving specimen as keep. The exact 46-keep Round 04 receipt closes H-EXP-04B-CARD-FUNCTIONAL-PROOF through DEC-PRODUCT-COMPONENT-SYSTEM-001."
+    },
+    {
+      "id": "PRODUCTION-AUTHORITY",
+      "status": "pass",
+      "evidence": "The submitted human receipt remains productionAuthority false as review input; the resulting approval record grants bounded canonical component design and interaction authority while excluding commercial data and provider plumbing."
+    }
+  ],
+  "qualityDimensions": [
+    {
+      "id": "scope-integrity",
+      "score": 5.0,
+      "maximum": 5,
+      "evidence": "Round 04 cleanly separates 32 approved visual inputs from 46 functional candidates and excludes both killed workflows."
+    },
+    {
+      "id": "feedback-convergence",
+      "score": 4.9,
+      "maximum": 5,
+      "evidence": "The exact 11/35/1 Round 03 disposition is preserved; champions carry forward and all named revisions are visibly addressed."
+    },
+    {
+      "id": "phase-a-inheritance",
+      "score": 4.9,
+      "maximum": 5,
+      "evidence": "Every survivor retains explicit Phase A lineage, including direct Phase A card use where requested, without reopening the canonical visual grammar."
+    },
+    {
+      "id": "functional-breadth",
+      "score": 4.8,
+      "maximum": 5,
+      "evidence": "Forty-six candidates preserve discovery, feature, pricing, checkout, bundle, growth, mobile and confirmation coverage across six review families."
+    },
+    {
+      "id": "reviewability",
+      "score": 4.9,
+      "maximum": 5,
+      "evidence": "All 46 candidates and six families remain independently addressable in one stable Round 04 export with complete lineage."
+    },
+    {
+      "id": "live-proof-confidence",
+      "score": 4.6,
+      "maximum": 5,
+      "evidence": "Mounted scope, key geometry, local assets, interactions, one-live handoff and exact-static fallback pass; exhaustive consumer-specific stress proof remains an explicit downstream boundary."
+    },
+    {
+      "id": "governance",
+      "score": 4.9,
+      "maximum": 5,
+      "evidence": "Historical receipts, unanimous Round 04 approval, Phase A authority, killed work, local-asset provenance and downstream proof exclusions are explicitly separated."
+    }
+  ],
+  "blockers": [],
+  "verdict": "pass-with-warnings",
+  "humanReviewRequired": false,
+  "notes": [
+    "Product Card 02 Phase B is canonical 1.0.0: 32 approved Phase A visual inputs and 46 approved functional specimens across six families.",
+    "The exact Round 03 receipt records 11 keeps, 35 revisions and the B-FT06 kill; B-FT04 remains absent from Round 02.",
+    "Live scope, named convergence, representative interactions, bounded motion and exact-static proof pass.",
+    "Exhaustive consumer-specific responsive, keyboard, zoom, content-stress and recovery proof remains explicit downstream work.",
+    "H-EXP-04B-CARD-FUNCTIONAL-PROOF is approved through DEC-PRODUCT-COMPONENT-SYSTEM-001 with bounded production authority."
+  ]
+}

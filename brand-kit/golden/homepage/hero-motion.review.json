@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "decisionId": "DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r03",
+  "status": "approved-bounded",
+  "requestedBy": "Olli",
+  "requestedAt": "2026-07-23",
+  "scope": "GH-S01 hero viewport only",
+  "summary": "All five vertically oriented QC04-derived product cards animate automatically while the golden-homepage hero is the active motion region. Outside the hero, the page returns to one live core. Opening Global Navigation unmounts every page core before its separate five-sphere allocation. Reduced motion, forced static mode and runtime failure use all five exact static twins.",
+  "homepageGateRemainsOpen": true,
+  "productionAuthority": false
+}

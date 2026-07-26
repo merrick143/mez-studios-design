@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-05-TRADING-CARD-PROOF",
+  "taskId": "TASK-EXP-05-TRADING-CARD",
+  "candidateRevision": "trading-card-01-r02",
+  "verdict": "round-feedback",
+  "leadingFamily": "undecided",
+  "note": "",
+  "sections": [
+    {"id":"faces","title":"Card Faces","feedback":""},
+    {"id":"backs","title":"Information Backs","feedback":""},
+    {"id":"decks","title":"Decks and Packs","feedback":""},
+    {"id":"placements","title":"Website Placements","feedback":""}
+  ],
+  "specimens": [
+    {"id":"TC-F01","title":"Anchored identity","family":"faces","verdict":"keep","feedback":""},
+    {"id":"TC-F02","title":"Centred identity refined","family":"faces","verdict":"keep","feedback":""},
+    {"id":"TC-F03","title":"Measured name","family":"faces","verdict":"keep","feedback":""},
+    {"id":"TC-F05","title":"Corner identity","family":"faces","verdict":"keep","feedback":""},
+    {"id":"TC-F06","title":"Protected edge","family":"faces","verdict":"kill","feedback":""},
+    {"id":"TC-B01","title":"Product orientation refined","family":"backs","verdict":"keep","feedback":""},
+    {"id":"TC-B02","title":"Operating sequence — static and alive","family":"backs","verdict":"keep","feedback":""},
+    {"id":"TC-B05","title":"Waitlist opening","family":"backs","verdict":"keep","feedback":""},
+    {"id":"TC-B06","title":"Quiet reverse refined","family":"backs","verdict":"keep","feedback":""},
+    {"id":"TC-D01","title":"Single object","family":"decks","verdict":"keep","feedback":""},
+    {"id":"TC-D02","title":"Connected pair","family":"decks","verdict":"keep","feedback":""},
+    {"id":"TC-D03","title":"Consistent operating handoff","family":"decks","verdict":"keep","feedback":""},
+    {"id":"TC-D04","title":"Measured three-stack","family":"decks","verdict":"keep","feedback":""},
+    {"id":"TC-D05","title":"Five-system deck","family":"decks","verdict":"keep","feedback":""},
+    {"id":"TC-D06","title":"Contained light pack","family":"decks","verdict":"keep","feedback":""},
+    {"id":"TC-D07","title":"Contained charcoal pack","family":"decks","verdict":"keep","feedback":""},
+    {"id":"TC-D08","title":"Compact mobile deck","family":"decks","verdict":"keep","feedback":""},
+    {"id":"TC-P01","title":"Single-product hero","family":"placements","verdict":"keep","feedback":""},
+    {"id":"TC-P02","title":"Full-field launch","family":"placements","verdict":"keep","feedback":""},
+    {"id":"TC-P03","title":"Product explainer recomposed","family":"placements","verdict":"keep","feedback":""},
+    {"id":"TC-P04","title":"Measured family rail","family":"placements","verdict":"kill","feedback":""},
+    {"id":"TC-P05","title":"Operating-layer sequence","family":"placements","verdict":"keep","feedback":""},
+    {"id":"TC-P06","title":"Suite feature recomposed","family":"placements","verdict":"revise","feedback":"positioning of the cards need to be better"},
+    {"id":"TC-P07","title":"Mobile product opening","family":"placements","verdict":"keep","feedback":""},
+    {"id":"TC-P08","title":"Mobile family pack","family":"placements","verdict":"keep","feedback":""}
+  ],
+  "productionAuthority": false,
+  "agentInterpretation": {
+    "verdictCounts": {"keep":22,"revise":1,"kill":2,"unreviewed":0},
+    "roundSignal": "The expression is converged. Only the suite-feature card positioning remains unresolved.",
+    "round03Scope": {"champions":22,"rebuilds":1,"removed":2,"total":23},
+    "removedIds": ["TC-F06","TC-P04"]
+  }
+}

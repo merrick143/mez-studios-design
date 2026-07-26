@@ -1,0 +1,36 @@
+{
+  "schemaVersion":"1.0.0",
+  "taskId":"TASK-EXP-08-EXPRESSION-STRESS-PROOF",
+  "title":"Certify the approved expression suite under adversarial conditions",
+  "phase":2,
+  "status":"complete",
+  "owner":"design-system-agent",
+  "objective":"Prove that the canonical Mez expression, component and website-motion grammar remains complete, legible and operable across hostile receiver, content, preference, input and runtime conditions without reopening approved design decisions.",
+  "scope":{
+    "included":["240px containers and 320px through 1440px viewports","200 and 400 percent text scaling","long copy, translation expansion and RTL","reduced motion and no-WebGL static equivalence","missing media, missing optional data and unpriced offers","keyboard, focus, touch and semantic status","loading, failure and recovery","one-live-core and static-sibling invariants","bounded human certification gate"],
+    "excluded":["new visual directions","changing canonical product or gradient assignments","changing Wings geometry","changing approved component anatomy or motion grammar","global-navigation anatomy","golden homepage","real provider or payment logic","production consumer integration"]
+  },
+  "dependencies":["TASK-EXP-07-CHANNEL-MOTION","DEC-DISC-EXPRESSION-001","DEC-SPHERE-EXPRESSION-001","DEC-WINGS-MARK-EXPRESSION-001","DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-TRADING-CARD-EXPRESSION-001","DEC-WEBSITE-MOTION-SYSTEM-001"],
+  "inputs":{
+    "requiredFiles":["brand-kit/START-HERE.md","brand-kit/docs/CURRENT-STATE.md","brand-kit/docs/ROADMAP.md","brand-kit/docs/END-TO-END-ROADMAP.md","brand-kit/expressions/disc/disc.source.json","brand-kit/expressions/sphere/sphere.source.json","brand-kit/expressions/wings-mark/wings-mark.source.json","brand-kit/expressions/product-card/product-card.source.json","brand-kit/expressions/product-card/phase-b/product-component-pantry.source.json","brand-kit/expressions/trading-card/trading-card.source.json","brand-kit/expressions/channel-motion/channel-motion.source.json"],
+    "decisionIds":["DEC-DISC-EXPRESSION-001","DEC-SPHERE-EXPRESSION-001","DEC-WINGS-MARK-EXPRESSION-001","DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-TRADING-CARD-EXPRESSION-001","DEC-WEBSITE-MOTION-SYSTEM-001"],
+    "artifactIds":[],
+    "consumerIds":[]
+  },
+  "deliverables":[
+    {"path":"brand-kit/expressions/stress-proof/","acceptance":["one schema-validated canonical contract defines six suites and fourteen unique representative scenarios","all seven canonical expression/component dependencies are hash pinned and unchanged","canonical build is deterministic and carries bounded productionAuthority true","H-EXP-08-EXPRESSION-STRESS-PROOF is closed by DEC-EXPRESSION-STRESS-CERTIFICATION-001"]},
+    {"path":"brand-kit/workbench/expressions/stress-proof/","acceptance":["one interactive receiver exposes width, text scale, content and runtime controls","fixtures include reflow, zoom, localization, RTL, reduced motion, no-WebGL, missing media, keyboard, touch, recovery, unpriced and one-live-core proof","review UI exports the bounded human-gate payload","mobile, desktop, static and no-WebGL modes retain complete states with zero page overflow"]}
+  ],
+  "verification":[
+    {"id":"EXP-08-SCHEMA","method":"schema","passCondition":"canonical source validates with exactly 6 suites and 14 unique scenarios"},
+    {"id":"EXP-08-INHERITANCE","method":"command","command":"python3 brand-kit/expressions/stress-proof/verify_expression_stress_candidate.py","passCondition":"all approved expression hashes remain immutable and the canonical package rebuilds deterministically"},
+    {"id":"EXP-08-REFLOW","method":"visual","passCondition":"240px receivers and 320px through 1440px viewports have no page overflow, clipped controls or broken reading order"},
+    {"id":"EXP-08-CONTENT","method":"visual","passCondition":"200/400 percent text, long content, localization and RTL retain complete hierarchy and actions"},
+    {"id":"EXP-08-FALLBACK","method":"visual","passCondition":"reduced-motion, static, no-WebGL and missing-media modes retain product identity, meaning and actions"},
+    {"id":"EXP-08-ACCESSIBILITY","method":"manual-inspection","passCondition":"keyboard, visible focus, escape/focus restoration, touch targets and non-colour meaning are intact"},
+    {"id":"EXP-08-HUMAN","method":"human","passCondition":"Olli accepts the certification boundary and documented residual consumer risks"}
+  ],
+  "humanGate":{"required":true,"gateId":"H-EXP-08-EXPRESSION-STRESS-PROOF","approver":"Olli","approvalQuestion":"Does this proof certify the approved Mez expression system under realistic stress without reopening its locked visual, component or motion decisions?"},
+  "stopConditions":["an inherited canonical expression hash changes","a defect repair changes approved visual direction or component anatomy","more than one live product material mounts in one viewport","reduced motion or no-WebGL removes meaning or an action","a fixture invents production pricing or provider behaviour","the work expands into CMP-01 navigation, the golden homepage or a consumer repository","the candidate is described as canonical before the human gate"],
+  "notes":["EXP-08 is a certification phase, not a design round.","Representative fixtures concentrate on the highest-risk seams rather than reproducing every approved specimen.","Olli approved the bounded certification on 23 July 2026 through DEC-EXPRESSION-STRESS-CERTIFICATION-001.","Passing this repository proof does not replace later consumer-framework and provider integration proof."]
+}

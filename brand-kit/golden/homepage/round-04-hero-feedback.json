@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r04",
+  "verdict": "round-feedback",
+  "note": "The five Living Core cards technically rendered live, but their movement was too subtle to register as animation. Make all five fields visibly alive by default while keeping the fan, card geometry, outline, Wings and typography static.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "The cards do not read as animated. Increase the default material flow so the animation is unmistakable without moving the card chassis or identity overlays."
+    }
+  ],
+  "productionAuthority": false
+}

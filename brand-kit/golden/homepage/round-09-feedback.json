@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r09",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-23",
+  "note": "Olli reviewed the Round 09 hero (visually identical to Round 08's compaction, since Round 09 only removed the caption and supporting line) and said the Round 08 compaction had not gone far enough: the four side cards still read too low, and asked for tighter tucking in on both sides. This is a repeat of the Round 07 compaction request, now more pointed.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "The two left and two right cards are still too low. Do better with the positioning and tuck them in a little more as well."
+    }
+  ],
+  "implementationNote": {
+    "summary": "Pushed the hero-scoped identity mark smaller again (Wings icon, name size, gaps, bottom inset all reduced further) and cut the per-depth vertical step and reserved bottom padding by roughly another 25 percent versus Round 08, with the horizontal overlap tightened correspondingly.",
+    "rejectedAttempt": "An even tighter pass (per-depth step ~28-48px, overlap ~-64/-44px) was tested and rejected before shipping: it visibly clipped the leading edge of Organic Content OS's public name behind AI Ads System, which the elementFromPoint hard requirement (product name must stay fully legible) does not permit. The shipped values sit one step back from that failure point.",
+    "outcome": "Per-card vertical offset cut from 80/160px (Round 08) to roughly 60/120px at desktop width, with the horizontal overlap and reserved bottom padding tightened to match. Every card's public name remains fully legible under strict hit-testing; Organic Content OS's Wings icon retains the same minor tip-tuck noted since Round 08."
+  },
+  "productionAuthority": false
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · PC2-B-C04 Product Feature Bento · fixtures</title>
+<link rel="stylesheet" href="../../../releases/foundations/dist/index.css" />
+<link rel="stylesheet" href="../mez-product-feature-bento.css" />
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--mz-colour-neutral-25, #f8f8f8); color: var(--mz-colour-neutral-950, #0d0d0d); font-family: var(--mz-font-body); }
+  header.page { padding: 14px clamp(16px,4vw,40px); background: var(--mz-colour-neutral-900, #171715); color: var(--mz-colour-neutral-25, #f8f8f8); font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; position: sticky; top: 0; z-index: 10; }
+  section { max-width: 1180px; margin-inline: auto; padding: clamp(48px,6vw,80px) clamp(20px,5vw,64px); }
+  h2 { margin: 0; font-family: var(--mz-font-display); font-weight: 640; font-size: clamp(20px,2.2vw,28px); letter-spacing: -.03em; }
+  p.rule { margin: 8px 0 0; font-size: 14px; line-height: 1.55; color: var(--mz-colour-neutral-550, #666662); max-width: 62ch; }
+  p.meta { margin: 6px 0 0; font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--mz-colour-neutral-400, #8a8a84); }
+  mez-product-feature-bento { margin-top: clamp(26px,3vw,40px); }
+  .divider { height: 1px; background: var(--mz-colour-neutral-200, #dadad6); max-width: 1180px; margin-inline: auto; }
+</style>
+</head>
+<body>
+
+<header class="page">PC2-B-C04 · Product Feature Bento · candidate 0.1.0 · not production authority</header>
+
+<section>
+  <h2>mechanism-map</h2>
+  <p class="rule">These are the building blocks of a business. Four of them already have a Mez System, and every block runs on the same layer. A block that has a system takes the name of that system and a small identity disc; a block that does not takes neither, and makes no claim.</p>
+  <p class="meta">9 cells · 1 material · 4 identity discs · every mapping read off the registry</p>
+  <mez-product-feature-bento fixture="./mechanism-map.json"></mez-product-feature-bento>
+</section>
+<div class="divider"></div>
+
+<section>
+  <h2>workflow</h2>
+  <p class="rule">Four working stages turn a corner around the one that ships, which sits at the centre carrying the material. Explicit placement, so the sequence reads as a rotation rather than a list.</p>
+  <p class="meta">5 cells · 1 material · every line is existing GH-S04 copy</p>
+  <mez-product-feature-bento fixture="./workflow.json"></mez-product-feature-bento>
+</section>
+<div class="divider"></div>
+
+<section>
+  <h2>evidence-mosaic</h2>
+  <p class="rule">Paper proves, material ships. Surface carries meaning rather than variety, and every figure is derivable from the product registry.</p>
+  <p class="meta">4 cells · 1 material · caption copy awaiting sign-off</p>
+  <mez-product-feature-bento fixture="./evidence-mosaic.json"></mez-product-feature-bento>
+</section>
+<div class="divider"></div>
+
+<section>
+  <h2>product-comparison</h2>
+  <p class="rule">One ships and carries the material; each coming product is a paper cell with an identity disc. Built from the registry at runtime, so adding or removing a product reflows it with no change to the fixture.</p>
+  <p class="meta">registry-driven · 1 material · count-independent</p>
+  <mez-product-feature-bento fixture="./product-comparison.json"></mez-product-feature-bento>
+</section>
+<div class="divider"></div>
+
+<section>
+  <h2>contract failure</h2>
+  <p class="rule">A fixture asking for two material cells does not render a slightly worse bento. It renders the reason it was rejected. This case exists so the rule is proven rather than asserted.</p>
+  <p class="meta">expected: rejected at render</p>
+  <mez-product-feature-bento fixture="./invalid-two-material.json"></mez-product-feature-bento>
+</section>
+
+<script type="module" src="../mez-product-feature-bento.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-07-CHANNEL-MOTION-PROOF",
+  "taskId": "TASK-EXP-07-CHANNEL-MOTION",
+  "candidateRevision": "channel-motion-matrix-01-r03",
+  "verdict": "approve-with-deferral",
+  "leadingFamily": "website-motion",
+  "note": "Close EXP-07 as the restrained website-motion grammar. The real animated global navigation is a separate component task and should build from the existing mez-explore-menu research component rather than being resolved inside this phase.",
+  "sections": [
+    {"id": "laws", "title": "Motion Laws", "feedback": ""},
+    {"id": "components", "title": "Website Components", "feedback": ""}
+  ],
+  "specimens": [
+    {"id": "MOT-L01", "title": "Focal material", "family": "laws", "verdict": "keep", "feedback": ""},
+    {"id": "MOT-L02", "title": "Functional response", "family": "laws", "verdict": "keep", "feedback": ""},
+    {"id": "MOT-L03", "title": "Simple demonstration", "family": "laws", "verdict": "keep", "feedback": ""},
+    {"id": "MOT-W01", "title": "Section entry", "family": "components", "verdict": "keep", "feedback": ""},
+    {"id": "MOT-W02", "title": "Menu and disclosure", "family": "components", "verdict": "defer", "feedback": "Build and review the real global-navigation component separately from EXP-07. Use explore-menu/explore-menu.js and explore-menu/explore-menu.css as research evidence and starting implementation."},
+    {"id": "MOT-W03", "title": "Accordion and tabs", "family": "components", "verdict": "keep", "feedback": ""},
+    {"id": "MOT-W04", "title": "Product carousel", "family": "components", "verdict": "keep", "feedback": ""},
+    {"id": "MOT-W05", "title": "Processor and progress", "family": "components", "verdict": "keep", "feedback": ""}
+  ],
+  "resultingApprovedSpecimens": 7,
+  "deferredSpecimens": ["MOT-W02"],
+  "deferredTaskId": "TASK-CMP-01-GLOBAL-NAVIGATION",
+  "reviewedAt": "2026-07-23T00:49:47Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "productionAuthority": false
+}

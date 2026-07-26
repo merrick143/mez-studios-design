@@ -2,27 +2,28 @@
   "schemaVersion": "1.0.0",
   "evaluationId": "EVAL-EXP-04-PRODUCT-CARD",
   "receiptId": "RCP-EXP-04-PRODUCT-CARD",
-  "evaluatedAt": "2026-07-22T09:00:00+10:00",
-  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators and in-app browser proof"},
+  "evaluatedAt": "2026-07-22T17:51:56+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators and live browser proof"},
   "contractChecks": [
-    {"id": "TWO-PHASE-SEQUENCE", "status": "pass", "evidence": "Phase A round 02 is active at its own human gate and Phase B is held until the visual lock."},
-    {"id": "WEBSITE-ARCHITECTURE", "status": "pass", "evidence": "One portrait component anatomy remains recognisable across four role-based treatments and real website placements."},
-    {"id": "SURFACE-ALLOCATION", "status": "pass", "evidence": "Light and charcoal are allocated by component role rather than by a superficial global theme toggle."},
-    {"id": "GROUPING-SEMANTICS", "status": "pass", "evidence": "The shelf compares products and the bundle sells one package with subordinate inclusions."},
-    {"id": "PHASE-B-SCOPE", "status": "pass", "evidence": "Discovery, feature, pricing, checkout, bundle, upsell, mobile summary, states and responsive behavior are explicit website deliverables."},
-    {"id": "LIVE-RUNTIME", "status": "pass", "evidence": "The focal treatment mounted the shared Living Core after canonical paths were corrected; exact static fallback remains configured."},
-    {"id": "AUTHORITY", "status": "pass", "evidence": "Contract, package and review payload retain productionAuthority false and keep functional implementation held."},
-    {"id": "HUMAN-GATE", "status": "warning", "evidence": "H-EXP-04A-CARD-VISUAL-DIRECTION has not yet been decided for round 02."}
+    {"id": "TWO-PHASE-SEQUENCE", "status": "pass", "evidence": "Phase A is approved and canonical; Phase B is now the active subphase under its separate functional proof gate."},
+    {"id": "CARD-GRAMMAR", "status": "pass", "evidence": "Thirty-two hierarchy-locked candidates span landing plates, two reusable card anatomies, bounded bundle relationships and realistic website sections."},
+    {"id": "SHARED-CONTENT", "status": "pass", "evidence": "All 32 studies render the canonical registry at runtime; public product name precedes the canonical extended system name and product count is not hardcoded."},
+    {"id": "TERRITORIES", "status": "pass", "evidence": "Each product owns a proof primitive — run, graph, campaign, session, cadence — with a declared default for future products; the verifier cross-checks assignments against registry slugs."},
+    {"id": "EDITIONS", "status": "pass", "evidence": "MN01, MN02, HS01 and HS02 are absent from the component registry, workbench navigation, review UI and active expression contract."},
+    {"id": "LIVE-RUNTIME", "status": "pass", "evidence": "IntersectionObserver moves the single Deep Mineral No. 5 allocation automatically to the dominant visible animated pane; no animation button exists and static fallbacks remain exact material twins."},
+    {"id": "SURFACE-ALLOCATION", "status": "pass", "evidence": "Charcoal rooms are token remaps of #171715/#1B1B19/#252523; charcoal objects use #2E2E2E; no pure black."},
+    {"id": "AUTHORITY", "status": "pass", "evidence": "Contract, package and review record confer production authority only on the approved Phase A visual grammar; canonical dependency hashes remain pinned and Phase B components remain non-authoritative."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "H-EXP-04A-CARD-VISUAL-DIRECTION closed with 32 keeps and explicit instruction to proceed."}
   ],
   "qualityDimensions": [
-    {"id": "component-clarity", "score": 4.6, "maximum": 5, "evidence": "The proof directly states and demonstrates that the reviewed object is a real website product card."},
-    {"id": "comparison-clarity", "score": 4.5, "maximum": 5, "evidence": "Four treatments retain a stable anatomy and have explicit contextual jobs."},
-    {"id": "system-range", "score": 4.5, "maximum": 5, "evidence": "Base, focal, dense and commerce treatments plus shelf and bundle semantics cover the useful visual range without dead concepts."},
-    {"id": "responsive-depth", "score": 4.4, "maximum": 5, "evidence": "Compact and tablet layouts recompose in source order with narrower cards and no intentional horizontal component scrolling."},
-    {"id": "governance", "score": 4.9, "maximum": 5, "evidence": "Round 01 rejection is recorded, Phase B scope is explicit, and the human gate remains non-authoritative."}
+    {"id": "expression-range", "score": 4.8, "maximum": 5, "evidence": "Four active jobs expose 32 hierarchy-locked candidates after removing all four killed Round 09 editions."},
+    {"id": "product-protagonism", "score": 4.7, "maximum": 5, "evidence": "Living Core material leads every composition while typography, Wings and rounded chassis preserve a shared Mez identity."},
+    {"id": "motion-honesty", "score": 4.8, "maximum": 5, "evidence": "Animated versions run by default when focal, the one allocation moves rather than multiplies, and repeated family objects stay intentionally static."},
+    {"id": "extensibility", "score": 4.6, "maximum": 5, "evidence": "Registry-driven rendering, default territory primitive and count-independent collections demonstrate growth beyond five products."},
+    {"id": "governance", "score": 5.0, "maximum": 5, "evidence": "Ten rounds of receipts, unanimous approval, explicit negative boundaries, a decision record and a permanent regression proof make the visual authority and Phase B boundary auditable."}
   ],
   "blockers": [],
-  "verdict": "pass-with-warnings",
-  "humanReviewRequired": true,
-  "notes": ["Machine and browser proof pass. Human critique of round 02 is required before another Phase A iteration or any Phase B component implementation."]
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["Phase A is complete: machine validation, live browser proof and human approval all pass.", "The approved visual grammar is documented in PRODUCT-CARD-DESIGN-ETHOS.md and must be inherited by Phase B.", "Phase B requires its own future human review before any functional component receives production authority."]
 }

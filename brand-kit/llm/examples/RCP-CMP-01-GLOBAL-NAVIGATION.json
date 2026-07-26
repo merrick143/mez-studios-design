@@ -1,0 +1,32 @@
+{
+  "schemaVersion":"1.0.0",
+  "receiptId":"RCP-CMP-01-GLOBAL-NAVIGATION",
+  "taskId":"TASK-CMP-01-GLOBAL-NAVIGATION",
+  "contextBundleId":"CTX-CMP-01-GLOBAL-NAVIGATION",
+  "agent":{"kind":"llm","name":"Codex","model":"GPT-5"},
+  "startedAt":"2026-07-23T01:32:08Z",
+  "finishedAt":"2026-07-23T03:18:05Z",
+  "outcome":"complete",
+  "filesChanged":[
+    {"path":"brand-kit/components/global-navigation/","action":"created","sha256":null,"reason":"Canonical contract, Web Component, fixtures, deterministic package builder and verifier."},
+    {"path":"brand-kit/releases/components/global-navigation/1.0.0/","action":"generated","sha256":null,"reason":"Portable canonical 1.0.0 release mirror."},
+    {"path":"brand-kit/workbench/components/global-navigation/","action":"created","sha256":null,"reason":"Canonical proof surface and bounded 320px receiver proof."},
+    {"path":"brand-kit/llm/tasks/TASK-CMP-01-GLOBAL-NAVIGATION.json","action":"modified","sha256":"721111ff4a50f55976d1884a00c31344603f29a1252d48de2bd3556419751e58","reason":"Task completed after Round 04 approval."},
+    {"path":"brand-kit/docs/ROADMAP.md","action":"modified","sha256":"4179a00e7981158fb234cb40bd50dc370d3f9851eab17556d993a4389cc03b38","reason":"Recorded canonical CMP-01 and GOLD-01 as the next Phase 3 task."}
+  ],
+  "decisionsApplied":["DEC-FOUNDATION-RELEASE-001","DEC-PRODUCT-ARCHITECTURE-001","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-WEBSITE-MOTION-SYSTEM-001","DEC-GLOBAL-NAVIGATION-COMPONENT-001"],
+  "tests":[
+    {"id":"CMP-01-INHERITANCE","status":"pass","evidence":"Pinned canonical product, foundation, renderer, Wings, component and motion dependencies remain byte-identical."},
+    {"id":"CMP-01-A11Y","status":"pass","evidence":"Escape, outside close, focus restoration, Tab containment, arrow/Home/End movement, visible focus and semantic states are implemented; browser Escape proof restored focus to the trigger."},
+    {"id":"CMP-01-MOTION","status":"pass","evidence":"Round 04 uses a 520ms eased shell expansion with a restrained 100-220ms five-item entrance; all five spherical canvases mount immediately, hover changes field speed only, and closed/reduced/static/no-WebGL states mount zero canvases."},
+    {"id":"CMP-01-RESPONSIVE","status":"pass","evidence":"Desktop and bounded 320px proofs retain the compact five-circle family stack, five expanded products and zero horizontal page overflow."},
+    {"id":"CMP-01-CONSUMER","status":"pass","evidence":"Deterministic 1.0.0 package includes canonical inputs, Web Component, CSS, static HTML fixture and React adapter without copied product values."},
+    {"id":"CMP-01-HUMAN","status":"pass","evidence":"Olli approved Round 04; H-CMP-01-GLOBAL-NAVIGATION-PROOF is closed by DEC-GLOBAL-NAVIGATION-COMPONENT-001."}
+  ],
+  "artifactsProduced":["Canonical Global Navigation 1.0.0 contract","Portable deterministic release package","Footer-free smoother Living Registry","Compact layered five-circle family cue","Interactive five-sphere workbench","Static HTML and React consumer fixtures","320px compact and expanded receiver proofs"],
+  "assumptions":["Smoother means a calmer eased disclosure with a subtle item sequence, not slower gradient motion or additional decorative animation; the requested bottom copy can be removed without weakening keyboard semantics."],
+  "exceptions":["Five simultaneous cores are a canonical bounded exception only while the expanded Global Navigation registry is visible; they do not rewrite the general Website Motion law.","Real routes, analytics and consumer-framework integration remain consumer-owned."],
+  "hiddenContextFailures":[],
+  "humanStatus":{"gateRequired":true,"gateId":"H-CMP-01-GLOBAL-NAVIGATION-PROOF","status":"approved"},
+  "nextAction":"Execute TASK-GOLD-01-GOLDEN-HOMEPAGE using Global Navigation 1.0.0 unchanged as the canonical page frame."
+}

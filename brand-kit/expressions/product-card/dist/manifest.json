@@ -1,34 +1,64 @@
 {
   "schemaVersion": "1.0.0",
   "expressionId": "mz.systems.expression.product-card",
-  "status": "visual-research-candidate",
-  "productionAuthority": false,
-  "artifactCount": 5,
+  "status": "canonical-visual-grammar",
+  "productionAuthority": true,
+  "artifactCount": 11,
   "artifacts": [
     {
       "path": "README.md",
-      "bytes": 1603,
-      "sha256": "09186700b8bba9453f46389bc7d7f9e1c9c66c087bd36d6839b56ef468ade39f"
+      "bytes": 3198,
+      "sha256": "f5c32fea420acabd791f8e9b56570cb6b521ea89db5f040dba78a62ee84f6836"
     },
     {
       "path": "package.json",
-      "bytes": 1500,
-      "sha256": "fc4144131b3cfc060a7633cbc691a2351d47598de4d9f7c1e98f3f589cc6cf64"
+      "bytes": 1489,
+      "sha256": "df74b465ccb2b98311adf4acbe63616b6e8cf4c11452cbc294c12d99a9ca53ed"
     },
     {
       "path": "product-card.schema.json",
-      "bytes": 2173,
-      "sha256": "9281a51c43453ce6b650070d4ed84e0b64fac0cd95beb2973adb05cbcfeec7b4"
+      "bytes": 2844,
+      "sha256": "6c14a65b58979578d3c1ef15c2147a9443829bc84d10448e95660f619cf54a4b"
     },
     {
       "path": "product-card.source.json",
-      "bytes": 6890,
-      "sha256": "d3966e13b544bee665149a863f06f7fc4cdf98a013bddc08665f58e6dddb6450"
+      "bytes": 16922,
+      "sha256": "fa2e27bb4bffae992e4d8cde807a5c29c62d973cc1b652a22af7227fca0c39ba"
     },
     {
       "path": "review.json",
-      "bytes": 586,
-      "sha256": "68285322f2d348d78794b174165c3f4a4089efa9056990bcbce9e530ade6b29c"
+      "bytes": 1096,
+      "sha256": "54b52c31e505c28bfd796e98306f32eae72fad97ac9a12f551f72aed8a34153b"
+    },
+    {
+      "path": "round-05-feedback.json",
+      "bytes": 1254,
+      "sha256": "3c57f87a5ff316c9731843f684a3370464a40c1785ca6c12c4b5a726e6aa141e"
+    },
+    {
+      "path": "round-06-feedback.json",
+      "bytes": 2954,
+      "sha256": "b09bfe06aa5db47e3496715bf04a5262df592ccbcf46dd54d5e14536e35d7af7"
+    },
+    {
+      "path": "round-07-feedback.json",
+      "bytes": 6718,
+      "sha256": "596a5ce5e32326e0b9e85a3ca771d635a7bb6a870f6d15554f77bb3b2f9dfc66"
+    },
+    {
+      "path": "round-08-feedback.json",
+      "bytes": 8273,
+      "sha256": "809ad68045a807a8c7e11044618affcaf2939b448e6653587145541988e54577"
+    },
+    {
+      "path": "round-09-feedback.json",
+      "bytes": 9348,
+      "sha256": "cd597c77638e68613a3c9eea4d70e5233f15d61eb7b0e1aff9362b1dfd24def2"
+    },
+    {
+      "path": "round-10-feedback.json",
+      "bytes": 4754,
+      "sha256": "f1ed134bb0562a9bc258430cfe16f469ea5b3d64c1f55d35f64dfc275cd2f966"
     }
   ]
 }

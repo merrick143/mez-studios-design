@@ -1,0 +1,502 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-GOLD-01-GOLDEN-HOMEPAGE",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "generatedAt": "2026-07-24T11:00:00Z",
+  "systemVersion": "1.0.0+golden-homepage-round-17",
+  "sourceState": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-foundations-expressions",
+    "commit": "7c2141cc0e8effd4578a29ea4ceeb79136b2c740",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {
+      "path": "brand-kit/START-HERE.md",
+      "sha256": "904cc913cf2bf80246e24a117efa6c3ca860f66d776392690de4a29865e38885",
+      "role": "canonical",
+      "required": true,
+      "reason": "Current control plane, active task, Round 14 review entrypoint and the provisional hero (GH-S01) lock at V01."
+    },
+    {
+      "path": "brand-kit/docs/CURRENT-STATE.md",
+      "sha256": "5abbe5cb9c88ac0fdbbc0e059998c917e9b22303d532dbf4fc39fb513490689b",
+      "role": "canonical",
+      "required": true,
+      "reason": "Exact Round 14 candidate state, the hero-lift summary and the provisional hero lock at V01 after the hero-lab exploration."
+    },
+    {
+      "path": "brand-kit/docs/ROADMAP.md",
+      "sha256": "3675a6cc8a5922f9099e6f859bda618aefce9e92cacfb5449e7e07874ed8e1d4",
+      "role": "canonical",
+      "required": true,
+      "reason": "GOLD-01 Round 14 candidate, the provisional hero lock and the remaining-section review handoff."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-GOLD-01-GOLDEN-HOMEPAGE.json",
+      "sha256": "aa83397946c83161167d2e4850312571bc4ab2cb6ef9e26cd6e6ccfebbe23527",
+      "role": "governance",
+      "required": true,
+      "reason": "Active bounded homepage task including the Round 14 verification and the provisional hero-lock outcome."
+    },
+    {
+      "path": "brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md",
+      "sha256": "d936b4373716f73f1ea63108c00f58a31ecba42bdc4aa0393c3e95457a89be86",
+      "role": "canonical",
+      "required": true,
+      "reason": "Approved visual character, invariants and rejection evidence."
+    },
+    {
+      "path": "brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md",
+      "sha256": "30c5a777bed2339e19b199170f8d62bff69a1ce00e18e8835e6459136847d975",
+      "role": "canonical",
+      "required": true,
+      "reason": "Approved functional components, patterns, journeys and consumer API boundary."
+    },
+    {
+      "path": "brand-kit/components/global-navigation/global-navigation.source.json",
+      "sha256": "4b6cf96dcf7beb08863aa97069af00fdedde34b2efad2a94ad4e813104df475a",
+      "role": "canonical",
+      "required": true,
+      "reason": "Canonical page-frame navigation and bounded five-live exception."
+    },
+    {
+      "path": "brand-kit/expressions/product-card/product-card.source.json",
+      "sha256": "fa2e27bb4bffae992e4d8cde807a5c29c62d973cc1b652a22af7227fca0c39ba",
+      "role": "canonical",
+      "required": true,
+      "reason": "Approved landing, card, bundle and website-section visual grammar."
+    },
+    {
+      "path": "brand-kit/expressions/product-card/phase-b/product-component-pantry.source.json",
+      "sha256": "cf5fc2478e59cc98a0ce206de0055fae66478dd2ad64f45255ca7a1a054aa250",
+      "role": "canonical",
+      "required": true,
+      "reason": "Approved semantic components and website patterns."
+    },
+    {
+      "path": "brand-kit/expressions/channel-motion/channel-motion.source.json",
+      "sha256": "f04a82f58f4283862014844dcd3911e6986d035076d784ab83638d9ed842d17d",
+      "role": "canonical",
+      "required": true,
+      "reason": "One-event motion allocation, static equivalence and restrained website behaviour."
+    },
+    {
+      "path": "brand-kit/expressions/trading-card/trading-card.source.json",
+      "sha256": "28750981346dd128ec0c0e64cd879345631e0867f2247ae20f224958f54b882f",
+      "role": "canonical",
+      "required": true,
+      "reason": "Five-system desktop deck and compact mobile family-pack expressions."
+    },
+    {
+      "path": "brand-kit/registry/products.json",
+      "sha256": "665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b",
+      "role": "canonical",
+      "required": true,
+      "reason": "Literal five-product order, availability and assignments."
+    },
+    {
+      "path": "brand-kit/golden/homepage/homepage-copy.source.json",
+      "sha256": "451206fbfd7ec527a3919371e2d611793955de81eeda2c9d82f170f019186c12",
+      "role": "governance",
+      "required": true,
+      "reason": "Canonical eight-section content lock through DEC-GOLDEN-HOMEPAGE-COPY-001."
+    },
+    {
+      "path": "brand-kit/golden/homepage/HOMEPAGE-COMPOSITION-PLAN.md",
+      "sha256": "d7eeb99ca07de3441697d4f143b213859f6418083a603580af502f03b815a637",
+      "role": "governance",
+      "required": true,
+      "reason": "Detailed human plan including the Round 14 hero-fan-lift record."
+    },
+    {
+      "path": "brand-kit/golden/homepage/homepage-plan.source.json",
+      "sha256": "6e8e33c4427cbf497b33e41832c58f221176c4f039a969fb9ccb80a9d89573ae",
+      "role": "governance",
+      "required": true,
+      "reason": "Machine-readable ten-region plan with simplified card content and motion allocations."
+    },
+    {
+      "path": "brand-kit/golden/homepage/homepage.source.json",
+      "sha256": "81e3a7fa9a0f8d25c4184ebb49d2255045c77b65ef850d9ad4fded07972ef04c",
+      "role": "governance",
+      "required": true,
+      "reason": "Round 14 candidate identifiers and open human gate."
+    },
+    {
+      "path": "brand-kit/golden/homepage/review.json",
+      "sha256": "6ada026b1402f870e216d8fb35fd0b55164887b6634e8a3c7bee354eb67766e0",
+      "role": "governance",
+      "required": true,
+      "reason": "Pending non-production whole-page human review for the Round 14 candidate, now carrying the provisional GH-S01 hero lock at V01."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-01-feedback.json",
+      "sha256": "92ce9c76209e3cc1dd1d261c910d9c62fde85a7ce2d0ec6742d4a72a954eefc8",
+      "role": "evidence",
+      "required": true,
+      "reason": "Exact human section feedback that drove Round 02."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-02-hero-feedback.json",
+      "sha256": "07a43e16821b262323b3c9b7722505bcfce4572a6006cded42d8aa97efa5cea1",
+      "role": "evidence",
+      "required": true,
+      "reason": "Exact QC04 portrait-card and five-animation redirect from Olli."
+    },
+    {
+      "path": "brand-kit/golden/homepage/hero-motion.review.json",
+      "sha256": "f8df3d4bceea665bf51311cf346bc6b89fc6a3f592a45882f28d8069e47d5c32",
+      "role": "governance",
+      "required": true,
+      "reason": "Named hero-only five-live-core decision and fallback boundary."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-03-hero-feedback.json",
+      "sha256": "db3af955174b252355a8d3ec39726f7ba47628e5f03b0f65d5d77b4deea3055f",
+      "role": "evidence",
+      "required": true,
+      "reason": "Exact simplified identity, no-button and live-static-equivalence feedback from Olli."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-04-hero-feedback.json",
+      "sha256": "0757d180b732935a9e8d326e5fbf3bfd789fb54fd37188e34eaaa80c0f7aab1d",
+      "role": "evidence",
+      "required": true,
+      "reason": "Exact feedback that the live fields did not read as animated."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-05-feedback.json",
+      "sha256": "fec29eb266479007f38fa6743ed1ff502178fe4253470064322a3903684862ac",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's full-page rebuild directive and the root-caused Round 03-05 core-layer render defect."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-06-feedback.json",
+      "sha256": "5b9b3d357db2af07aa96f861d1bb6715c38645a6f4d3b0a9410489104dfa12fd",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's complete Round 06 section review: spread-deck hero, single amended action, real tool names and component rebuild directives."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-07-feedback.json",
+      "sha256": "0e8c47a9b7bfb9a3324b962afb8bfb57e204194a6e9c4a29bd42b9b21d8d1a99",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's hero-only compaction feedback plus the discovered bottom-left-identity/symmetric-fan clearance constraint and its resolution."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-08-feedback.json",
+      "sha256": "92764847f9e41132df328dfc59590c63600523d7ff92ea32ae0b7858d50465dd",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's hero-copy-trim feedback: remove the family-caption divider and the hero supporting line."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-09-feedback.json",
+      "sha256": "3248447a498f9ecf7ea6a0a42a7fe429d0f7bf86e5bb7078eae63b090c26b159",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's second, more pointed hero-compaction feedback, the shipped resolution, and the record of an over-tight attempt tested and explicitly rejected."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-10-feedback.json",
+      "sha256": "f9ced66a75195cf535ed520fb2cac5d8874bccf271822c5cc84caf1a4e0951f4",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's redirect to centred in-card content plus his explicit, scoped authorisation of partial occlusion on fan-overlapped cards."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-11-feedback.json",
+      "sha256": "3292cdaaf4a005d181d94d6d368fb7f7c182bd303af52b877c0d12e4fd64b83f",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's card-outline feedback plus the consistency finding that the outline was a homepage-local bespoke value heavier than the canonical treatment."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-12-feedback.json",
+      "sha256": "35e2636ce7032499895001cc08e5df90a35f9a0dea3b662a65705449d3b89772",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's further-compaction feedback (side cards up more, tucked in more), now permitted tighter by Round 11's occlusion authorisation."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-13-feedback.json",
+      "sha256": "eb2c223f5c42633b873f7fd67dab1a080d192cc3075923511cd20b1942152742",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's hero-lift feedback (side cards even higher, only a little tighter)."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-14-feedback.json",
+      "sha256": "a2def57984103e29faf7d32595332e24875223f37dc1fb39a6e99d7332024a8e",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's provisional hero lock at V01 (five-card arc) after the hero-lab exploration (V01-V19)."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-14-section-review-feedback.json",
+      "sha256": "9e9ec50639dec797a0ee5394bdc5a14209b285f465af31feb6b16b33ebf3b616",
+      "role": "evidence",
+      "required": true,
+      "reason": "Olli's full section-by-section review of r14 (hero + footer keep; GH-S02-GH-S08 revise) driving the section rounds."
+    },
+    {
+      "path": "brand-kit/golden/homepage/SECTION-REVISION-PLAN.md",
+      "sha256": "ba6b76602b33f01876bff072329609f853698514655a3eb51506c71f62154243",
+      "role": "governance",
+      "required": true,
+      "reason": "The agreed plan for the post-r14 section revisions (S02-S08), the cross-cutting hover-animation decision and the round order."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round05.py",
+      "sha256": "e259dc0d9ae8638ca389ff3e0ddbd6bc68b2857f64898208e530061b94be3556",
+      "role": "governance",
+      "required": true,
+      "reason": "Historical Round 05 mechanical proof retained as lineage evidence."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round06.py",
+      "sha256": "48a81b3ac836c559189ce2d6dac0b9595aafd1f2732a62201e5c42e5b6aaaa37",
+      "role": "governance",
+      "required": true,
+      "reason": "Mechanical Round 06 sized-mount, canonical-automatic-motion, responsive and claim-state proof."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round07.py",
+      "sha256": "d1cad56cbd69a655b00d0ebc171492bd042022615db01999873ea55af2f2ae00",
+      "role": "governance",
+      "required": true,
+      "reason": "Mechanical Round 07 applied-feedback, deck-geometry, sized-mount and claim-state proof."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round08.py",
+      "sha256": "121d7fc7eb97aae5d5c361f1272f9388b6ff901842c81234a089a08a463448da",
+      "role": "governance",
+      "required": true,
+      "reason": "Mechanical Round 08 hero-only scope, compacted-geometry and hero-scoped-identity-mark proof."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round09.py",
+      "sha256": "d56015b687aa8d177d76f95ef401b3fd655f5d50568bfe5958bac3acbd27712e",
+      "role": "governance",
+      "required": true,
+      "reason": "Mechanical Round 09 removal-completeness and unchanged-Round-08-contract proof."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round10.py",
+      "sha256": "e02a860c4602b50268421f930c741e5d63432db818308b175ff54a06a70b2bfe",
+      "role": "governance",
+      "required": true,
+      "reason": "Mechanical Round 10 tightened-geometry and strict-legibility proof."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round11.py",
+      "sha256": "e972a0be86cd5aabbebb18a84001b6f3be1f7d8820bf3512c3adc43526ea3c48",
+      "role": "governance",
+      "required": true,
+      "reason": "Mechanical Round 11 centred-identity, scope-isolation and unchanged-geometry proof."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round12.py",
+      "sha256": "262b10c30bfb6c994eb4f18241f34bbfa2bad94de59b88aabc0e6e216c90970e",
+      "role": "governance",
+      "required": true,
+      "reason": "Mechanical Round 12 canonical-outline-token binding and carried-forward-guards proof."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round13.py",
+      "sha256": "724dde9381f5a5723a0a5e4886c67a1ab779ba10a3e42c5ade751683b1c93795",
+      "role": "governance",
+      "required": true,
+      "reason": "Mechanical Round 13 tightened-fan-geometry and carried-forward-guards proof."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round14.py",
+      "sha256": "4c6596c8496aaddc15d50591e206664c76449642185ef6f0c5778c75a1fa372b",
+      "role": "governance",
+      "required": true,
+      "reason": "Historical Round 14 lifted-fan-geometry proof, retained as lineage evidence."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round15.py",
+      "sha256": "a8ada2eb86dabd830a2c2145ddf6adfa23802b1170028eaf6e3330ab6e553a73",
+      "role": "governance",
+      "required": true,
+      "reason": "Active Round 15 proof: the S04 split into two sections, the header-alignment fix, the renumber to ten regions and the unchanged locked hero."
+    },
+    {
+      "path": "brand-kit/workbench/golden/homepage/index.html",
+      "sha256": "a973291bb33fc8c8f0331214f0e1c19c589ea437fef2e25c2c4f9a3ce1b5fabe",
+      "role": "fixture",
+      "required": true,
+      "reason": "Round 14 review framing over the Round 13 markup."
+    },
+    {
+      "path": "brand-kit/workbench/golden/homepage/styles.css",
+      "sha256": "f593aa2d80d376bc2efb56c8bfac8373350085a11802ad2f32137ffa64593f9e",
+      "role": "fixture",
+      "required": true,
+      "reason": "Hero fan lifted (side cards higher, small overlap increase); everything else unchanged."
+    },
+    {
+      "path": "brand-kit/workbench/golden/homepage/homepage.js",
+      "sha256": "24ef0b8ff70ab6e03d499b5b60190d3cefa8f4274dd0a782e5f64caf2b7f7455",
+      "role": "fixture",
+      "required": true,
+      "reason": "Round 14 candidate identifiers in the feedback export."
+    },
+    {
+      "path": "brand-kit/workbench/golden/homepage/mobile-proof.html",
+      "sha256": "2cf7ccfc53829a23e864c31bac1be170f0e74acd0efc7f511c99acad95607986",
+      "role": "evidence",
+      "required": true,
+      "reason": "390px exact-static Round 06 receiver proof with no swipe-only product discovery."
+    },
+    {
+      "path": "brand-kit/research/phase-2/PATTERN-ATLAS.md",
+      "sha256": "b3cbe3c6d464e54276f5ab83c86652f2a9c9daffb54d1930836c1c6eacdc65d3",
+      "role": "research",
+      "required": true,
+      "reason": "Mechanism-level reference evidence; not visual authority."
+    },
+    {
+      "path": "brand-kit/research/phase-2/ANTI-PATTERN-ATLAS.md",
+      "sha256": "f76b35d6a2731827c8433d52c45b6aa2c27cae36ae5b19c02516c7a166d053df",
+      "role": "research",
+      "required": true,
+      "reason": "Originality and failure boundaries for the composed page."
+    },
+    {
+      "path": "brand-kit/research/phase-2/homepage-studio/README.md",
+      "sha256": "5c51d44e58055c91433b76cd1cf00b809b9feca9d498d373c94940087bd7ed44",
+      "role": "research",
+      "required": true,
+      "reason": "Invalid homepage history and why generic box composition failed."
+    },
+    {
+      "path": "brand-kit/research/phase-2/homepage-studio/homepage-foundation-review.json",
+      "sha256": "54723bc965fe7d99a52506db3b4dd8bc6ff573876265491b01bcee3967e1364a",
+      "role": "evidence",
+      "required": true,
+      "reason": "Exact negative evidence for jagged cards, gradient text, generic bento and weak product sections."
+    },
+    {
+      "path": "brand-kit/research/phase-2/calibration-plates/hero-first-viewport-03/hero-first-viewport-03-review.json",
+      "sha256": "c403d8e57d25abdf2f40ca59afdf9f20dc63d529c28fb2a4ecc9843bacda4b82",
+      "role": "evidence",
+      "required": true,
+      "reason": "Approved centred five-card family direction and unresolved mobile history."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-HERO-001",
+      "status": "approved",
+      "productionEffect": "Use the centred five-product direction while solving mobile without hiding products."
+    },
+    {
+      "id": "DEC-FOUNDATION-RELEASE-001",
+      "status": "approved",
+      "productionEffect": "Canonical typography, colour, space, geometry and controls remain inherited."
+    },
+    {
+      "id": "DEC-PRODUCT-ARCHITECTURE-001",
+      "status": "approved",
+      "productionEffect": "Literal names, five-product order and gradient assignments remain immutable."
+    },
+    {
+      "id": "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+      "status": "approved",
+      "productionEffect": "Public-name-first hierarchy, rounded geometry, filled actions and deliberate Wings placement remain inherited."
+    },
+    {
+      "id": "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+      "status": "approved",
+      "productionEffect": "Homepage sections compose the fifteen components and thirteen patterns without creating a second component system."
+    },
+    {
+      "id": "DEC-TRADING-CARD-EXPRESSION-001",
+      "status": "approved",
+      "productionEffect": "The hero may use the five-system deck and compact mobile family pack as meaningful product-family objects."
+    },
+    {
+      "id": "DEC-WEBSITE-MOTION-SYSTEM-001",
+      "status": "approved",
+      "productionEffect": "One page Living Core may run at a time and every motion state has a complete static equivalent."
+    },
+    {
+      "id": "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "status": "approved",
+      "productionEffect": "Canonical navigation is consumed unchanged; its five-live-sphere exception remains inside its expanded registry."
+    },
+    {
+      "id": "DEC-GOLDEN-HOMEPAGE-COPY-001",
+      "status": "approved",
+      "productionEffect": "The supplied eight-section homepage copy, hierarchy and actions are the exact GOLD-01 content input."
+    },
+    {
+      "id": "DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001",
+      "status": "approved-bounded",
+      "productionEffect": "All five QC04 portrait cards may run only while GH-S01 is active; ordinary page regions remain capped at one live core and navigation suppresses all page cores."
+    }
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {
+      "id": "CONFLICT-GOLD-01-FIVE-LIVE-HERO",
+      "summary": "Resolved by DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001 as a named hero-only five-live allocation with exact-static and navigation-suppression boundaries.",
+      "executionEffect": "inform"
+    },
+    {
+      "id": "CONFLICT-GOLD-01-PROOF-STATUS",
+      "summary": "The supplied screenshots and testimonials are locked content briefs but do not yet carry verified public provenance and consent.",
+      "executionEffect": "constrain"
+    },
+    {
+      "id": "CONFLICT-GOLD-01-CONSUMER-UNKNOWN",
+      "summary": "The technical Mez Systems repository is deliberately separate and has not been named as an integration consumer in this task.",
+      "executionEffect": "constrain"
+    }
+  ],
+  "stopConditions": [
+    "Do not rewrite the locked homepage copy without a new human decision.",
+    "Do not hide two hero products on mobile or require swipe-only family discovery.",
+    "Do not run more than one homepage Living Core outside GH-S01 or the expanded Global Navigation.",
+    "Do not publish unverified operating screens or testimonials as production proof.",
+    "Do not read from, write to or infer implementation details from the separate technical Mez Systems repository.",
+    "Do not turn the page into a component gallery, rounded-card monoculture or source-signature collage.",
+    "Do not deploy, add real routes, analytics, commerce or authenticated application logic."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/llm/tasks/TASK-GOLD-01-GOLDEN-HOMEPAGE.json",
+      "brand-kit/golden/homepage/homepage-copy.source.json",
+      "brand-kit/golden/homepage/HOMEPAGE-COMPOSITION-PLAN.md",
+      "brand-kit/golden/homepage/homepage-plan.source.json",
+      "brand-kit/golden/homepage/homepage.source.json",
+      "brand-kit/workbench/golden/homepage/index.html"
+    ],
+    "omitByDefault": [
+      "brand-kit/history/",
+      "consumer repositories",
+      "Figma",
+      "authenticated application internals",
+      "payment-provider implementation",
+      "raw Taste Reverse source packages"
+    ]
+  },
+  "humanNotes": [
+    "Olli explicitly locked the attached homepage copy and requested a deep implementation plan.",
+    "Olli explicitly stated that the design-system repository and actual technical Mez Systems repository are separate projects and that transferability must remain a primary design concern.",
+    "Round 01 feedback is preserved as exact evidence and has been applied to the Round 02 visual candidate.",
+    "Before giving a Round 05 verdict Olli redirected the task to a complete from-scratch rebuild with delegated creative direction; the hero stays a centred vertical five-card family and the kept footer design is preserved.",
+    "Round 14 lifts the hero fan higher: the per-card vertical step drops to clamp(12px,1.6vw,24px) (side-card drop 23/46px at 1440) so the cards sit flatter and closer to level with AI OS, with the overlap increased only slightly to clamp(-80px,-5.6vw,-58px). Round 13's compaction, Round 12's canonical outline token, Round 11's centred identity and the no-overlay-fork guard carry forward unchanged. The next bounded work is Olli's review of the lifted fan and the still-outstanding section verdicts. This candidate is not a golden approval.",
+    "After reviewing a hero exploration lab (workbench/golden/homepage/hero-lab/, variations V01-V19: clean even spreads and auto-advancing single-card carousels, all non-canonical), Olli provisionally locked the hero (GH-S01) at V01 -- the five-card arc that is the current r14 hero -- for now. No hero code changed; the lock is recorded in golden/homepage/round-14-feedback.json and as a heroSectionLock in review.json, the candidate revision stays golden-homepage-01-r14, and sections GH-S02-GH-S09 plus the whole-page gate remain open.",
+    "Round 15 begins the section revisions planned in golden/homepage/SECTION-REVISION-PLAN.md. It splits 'Why Mez Systems' (GH-S04) into 'Built on ourselves first' (GH-S04) and 'Operating proof' (GH-S05), renumbers AI OS, ecosystem, proof, final route and footer to GH-S06-GH-S10, and left-aligns the previously indented 'Built on ourselves first' header. The locked V01 hero is byte-unchanged and motion eligibility tracks the renumber (GH-S01, GH-S06, GH-S09). Candidate golden-homepage-01-r15; verify_homepage_round15.py is the active proof; this is not a golden approval and the whole-page gate stays open."
+  ]
+}

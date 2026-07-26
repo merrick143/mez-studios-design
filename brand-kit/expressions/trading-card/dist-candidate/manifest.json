@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.trading-card",
+  "status": "review-candidate",
+  "productionAuthority": false,
+  "artifactCount": 6,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 1976,
+      "sha256": "fbba3f882db8913155bc33ced923482b3c90c1c28c0bcb571dd72a812987c922"
+    },
+    {
+      "path": "package.json",
+      "bytes": 691,
+      "sha256": "7da404560249eab56f058a2fb72471d726eaf1f0190fba4a97062acf93fd681e"
+    },
+    {
+      "path": "round-01-feedback.json",
+      "bytes": 4747,
+      "sha256": "661cb1a6521c1605b8b3599f82bc4dd5149492700232a327e7c9aa17b6804a41"
+    },
+    {
+      "path": "round-02-feedback.json",
+      "bytes": 3474,
+      "sha256": "41d03daa9dac20a2fd3439154f92a1376e3b23b791603157211bd8c445fb4e34"
+    },
+    {
+      "path": "trading-card.schema.json",
+      "bytes": 2433,
+      "sha256": "afbc3db24a19889143d5a2ed7d0f2bb8fd89f94fcd11d02e3674ffd9d244b6d3"
+    },
+    {
+      "path": "trading-card.source.json",
+      "bytes": 8663,
+      "sha256": "07eb0313ffd34405e4401a0abcf2f39e096cbb2d6f2e8af364786a89306c88cf"
+    }
+  ]
+}

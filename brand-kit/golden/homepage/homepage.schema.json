@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/golden/homepage.schema.json",
+  "title": "Mez Systems golden homepage candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "homepageId",
+    "version",
+    "status",
+    "productionAuthority",
+    "taskId",
+    "gateId",
+    "candidateRevision",
+    "copyDecisionId",
+    "workbench",
+    "sections",
+    "products",
+    "motion",
+    "proof",
+    "responsive",
+    "consumerBoundary",
+    "humanGate"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "homepageId": {"const": "mz.systems.golden.homepage"},
+    "version": {"type": "string", "minLength": 1},
+    "status": {"enum": ["review-candidate", "canonical", "released"]},
+    "productionAuthority": {"type": "boolean"},
+    "taskId": {"const": "TASK-GOLD-01-GOLDEN-HOMEPAGE"},
+    "gateId": {"const": "H-GOLD-01-HOMEPAGE-PROOF"},
+    "candidateRevision": {"type": "string", "minLength": 1},
+    "copyDecisionId": {"const": "DEC-GOLDEN-HOMEPAGE-COPY-001"},
+    "workbench": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["html", "css", "javascript", "compactProof"],
+      "properties": {
+        "html": {"type": "string"},
+        "css": {"type": "string"},
+        "javascript": {"type": "string"},
+        "compactProof": {"type": "string"}
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "reviewable"],
+        "properties": {
+          "id": {"pattern": "^GH-S(0[1-9]|10)$"},
+          "title": {"type": "string", "minLength": 1},
+          "reviewable": {"const": true}
+        }
+      }
+    },
+    "products": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry", "heroCount", "ecosystemCount", "publicNameFirst", "heroArrangement", "heroActionCount", "heroActionLabel", "heroIdentityMarkScope", "heroIdentityMarkAlignment", "heroOcclusionAuthorised", "cardOutlineToken", "heroSupportingLine", "heroFamilyCaption", "heroCardContent", "heroCardActions", "heroCardDescription", "heroWingsPlacement", "liveStaticCompositionEquivalent", "staticTwinBase"],
+      "properties": {
+        "registry": {"type": "string"},
+        "heroCount": {"const": 5},
+        "ecosystemCount": {"const": 4},
+        "publicNameFirst": {"const": true},
+        "heroArrangement": {"const": "centred-spread-deck-2-1-2-compact"},
+        "heroActionCount": {"const": 1},
+        "heroActionLabel": {"const": "Explore the Systems"},
+        "heroIdentityMarkScope": {"const": "hero-local"},
+        "heroIdentityMarkAlignment": {"const": "centred"},
+        "heroOcclusionAuthorised": {"const": true},
+        "cardOutlineToken": {"const": "--mz-border-default"},
+        "heroSupportingLine": {"const": false},
+        "heroFamilyCaption": {"const": false},
+        "heroCardContent": {"const": ["wings", "publicName", "extendedName"]},
+        "heroCardActions": {"const": false},
+        "heroCardDescription": {"const": false},
+        "heroWingsPlacement": {"const": "bottom-left"},
+        "liveStaticCompositionEquivalent": {"const": true},
+        "staticTwinBase": {"type": "string"}
+      }
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maximumLivePageCores",
+        "ordinaryMaximumLivePageCores",
+        "heroLivePageCores",
+        "heroFiveLiveException",
+        "heroMotionDecisionId",
+        "heroMotionLegibleAtRest",
+        "heroMotionTreatment",
+        "heroRestSpeed",
+        "heroHoverSpeed",
+        "coreMountHostsIntrinsicallySized",
+        "eligibleSections",
+        "expandedNavigationLiveCores",
+        "expandedNavigationSuppressesPageMotion",
+        "staticFallback"
+      ],
+      "properties": {
+        "maximumLivePageCores": {"const": 5},
+        "ordinaryMaximumLivePageCores": {"const": 1},
+        "heroLivePageCores": {"const": 5},
+        "heroFiveLiveException": {"const": true},
+        "heroMotionDecisionId": {"const": "DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001"},
+        "heroMotionLegibleAtRest": {"const": true},
+        "heroMotionTreatment": {"const": "phase-a-canonical-automatic"},
+        "heroRestSpeed": {"const": 1},
+        "heroHoverSpeed": {"const": 1.85},
+        "coreMountHostsIntrinsicallySized": {"const": true},
+        "eligibleSections": {
+          "type": "array",
+          "items": {"enum": ["GH-S01", "GH-S06", "GH-S09"]},
+          "uniqueItems": true
+        },
+        "expandedNavigationLiveCores": {"const": 5},
+        "expandedNavigationSuppressesPageMotion": {"const": true},
+        "staticFallback": {"const": true}
+      }
+    },
+    "proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operatingRecords", "testimonials", "operatingStatus", "testimonialStatus"],
+      "properties": {
+        "operatingRecords": {"const": 3},
+        "testimonials": {"const": 3},
+        "operatingStatus": {"const": "evidence-intake-pending"},
+        "testimonialStatus": {"const": "consent-verification-pending"}
+      }
+    },
+    "responsive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["compactProof", "allFiveHeroProductsVisible", "swipeOnlyDiscovery", "horizontalOverflowObserved"],
+      "properties": {
+        "compactProof": {"const": 390},
+        "allFiveHeroProductsVisible": {"const": true},
+        "swipeOnlyDiscovery": {"const": false},
+        "horizontalOverflowObserved": {"const": false}
+      }
+    },
+    "consumerBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["consumerRepository", "runtimeCrossRepositoryImport", "consumerRoutesAreInert"],
+      "properties": {
+        "consumerRepository": {"type": "null"},
+        "runtimeCrossRepositoryImport": {"const": false},
+        "consumerRoutesAreInert": {"const": true}
+      }
+    },
+    "humanGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "approver", "status"],
+      "properties": {
+        "required": {"const": true},
+        "approver": {"const": "Olli"},
+        "status": {"enum": ["pending", "approved", "changes-requested"]}
+      }
+    }
+  }
+}

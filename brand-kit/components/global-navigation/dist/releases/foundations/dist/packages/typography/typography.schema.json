@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/typography-foundation.schema.json",
+  "title": "Mez Systems typography foundation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "foundationId",
+    "status",
+    "decisionIds",
+    "families",
+    "roles",
+    "behaviour",
+    "testViewports"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "foundationId": {"const": "mz.systems.foundation.typography"},
+    "status": {"enum": ["review-candidate", "approved", "canonical", "deprecated"]},
+    "decisionIds": {
+      "type": "array",
+      "contains": {"const": "DEC-TYPE-001"},
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^DEC-[A-Z0-9-]+$"}
+    },
+    "families": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/family"},
+      "required": ["display", "body", "editorial", "technical"]
+    },
+    "roles": {
+      "type": "object",
+      "minProperties": 12,
+      "additionalProperties": {"$ref": "#/$defs/role"}
+    },
+    "behaviour": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineLengths", "truncation", "fallbacks", "localisation"],
+      "properties": {
+        "lineLengths": {"type": "object", "additionalProperties": {"type": "string"}},
+        "truncation": {"type": "object", "additionalProperties": {"type": "string"}},
+        "fallbacks": {"type": "object", "additionalProperties": {"type": "string"}},
+        "localisation": {"type": "object", "additionalProperties": {"type": "string"}}
+      }
+    },
+    "testViewports": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 320}
+    }
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "format"],
+      "properties": {
+        "path": {"type": "string"},
+        "format": {"enum": ["woff2", "ttf", "otf", "text"]},
+        "style": {"enum": ["normal", "italic"]},
+        "weight": {"type": ["integer", "string"]}
+      }
+    },
+    "family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "cssFamily",
+        "role",
+        "fallback",
+        "version",
+        "sourceUrl",
+        "sourceRef",
+        "licence",
+        "licencePath",
+        "web",
+        "authoring"
+      ],
+      "properties": {
+        "name": {"type": "string"},
+        "cssFamily": {"type": "string"},
+        "role": {"type": "string"},
+        "fallback": {"type": "string"},
+        "version": {"type": "string"},
+        "sourceUrl": {"type": "string", "format": "uri"},
+        "sourceRef": {"type": "string"},
+        "archiveSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "licence": {"const": "SIL-OFL-1.1"},
+        "licencePath": {"type": "string"},
+        "web": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/file"}},
+        "authoring": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/file"}}
+      }
+    },
+    "fluidSize": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minPx", "preferredVw", "maxPx"],
+      "properties": {
+        "minPx": {"type": "number", "exclusiveMinimum": 0},
+        "preferredVw": {"type": "number", "exclusiveMinimum": 0},
+        "maxPx": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "weight", "size", "lineHeight", "trackingEm", "case", "features"],
+      "properties": {
+        "family": {"enum": ["display", "body", "editorial", "technical"]},
+        "weight": {"type": "integer", "minimum": 100, "maximum": 900},
+        "style": {"enum": ["normal", "italic"]},
+        "size": {"oneOf": [{"type": "number", "exclusiveMinimum": 0}, {"$ref": "#/$defs/fluidSize"}]},
+        "lineHeight": {"type": "number", "minimum": 0.8, "maximum": 2},
+        "trackingEm": {"type": "number", "minimum": -0.1, "maximum": 0.2},
+        "case": {"enum": ["none", "uppercase"]},
+        "features": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "maxWidth": {"type": "string"},
+        "usage": {"type": "string"}
+      }
+    }
+  }
+}

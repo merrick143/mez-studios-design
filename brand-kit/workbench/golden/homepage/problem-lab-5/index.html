@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Problem Section Lab 5 (six structural rules)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e; --page-charcoal: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1;
+  --page-muted: #666662; --page-dark-muted: #b8b8b1; --page-dark-body: #cfcfc9;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* ---------------------------------------------------------------- lab shell */
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 10px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-top nav a:hover { background: rgba(248,248,248,.1); }
+.lab-note {
+  padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: var(--page-dark-body);
+  font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3;
+}
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; color: var(--page-ink);
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--page-muted);
+}
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 62ch; line-height: 1.5; }
+.lab-render { position: relative; }
+
+/* ------------------------------------------------------- shared section chassis */
+.pf { background: var(--page-paper); color: var(--page-ink); }
+.pf-inner {
+  max-width: 1180px; margin-inline: auto;
+  padding-inline: clamp(20px,5vw,64px);
+  padding-block: clamp(72px,9vw,128px);
+}
+.pf-eyebrow {
+  margin: 0; font-family: var(--mz-font-technical); font-size: 12px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted);
+}
+.pf-title {
+  margin: 18px 0 0; font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(34px,4.6vw,62px); line-height: .99; letter-spacing: -.042em; max-width: 15ch;
+}
+/* Each sentence owns its own line. Left to wrap naturally the second sentence
+   starts on line one and the two-tone split stops reading as two statements. */
+.pf-title .quiet { color: var(--page-line-strong); display: block; }
+.pf-lead {
+  margin: 24px 0 0; font-size: clamp(17px,1.7vw,20px); line-height: 1.5;
+  color: var(--page-muted); max-width: 46ch;
+}
+.pf-turn {
+  font-family: var(--mz-font-display); font-weight: 650;
+  font-size: clamp(19px,2.2vw,27px); line-height: 1.18; letter-spacing: -.024em;
+  max-width: 30ch; color: var(--page-ink);
+}
+/* Two-column chassis: editorial left, device right. */
+.pf-split {
+  display: grid; grid-template-columns: minmax(0,.86fr) minmax(0,1.14fr);
+  gap: clamp(36px,5.5vw,84px); align-items: center;
+}
+@media (max-width: 900px) { .pf-split { grid-template-columns: 1fr; gap: 44px; } }
+
+/* =========================================================== V1 · THE STACK */
+.s1-stack { display: grid; gap: 8px; position: relative; }
+.s1-row {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 18px 22px; border-radius: var(--mz-radius-container);
+  border: 1px solid var(--page-line);
+}
+.s1-role {
+  font-family: var(--mz-font-display); font-weight: 640; font-size: 16px; letter-spacing: -.018em;
+}
+.s1-note { font-size: 13.5px; color: var(--page-muted); margin-left: auto; text-align: right; }
+.s1-row--source { background: var(--page-white); border-color: var(--page-line-strong); }
+.s1-row--source .s1-role { color: var(--page-ink); }
+.s1-layers { display: grid; gap: 8px; position: relative; padding-left: 46px; }
+.s1-row--layer { background: var(--page-dark); border-color: var(--page-dark); color: var(--page-paper); }
+.s1-row--layer .s1-role { color: var(--page-paper); font-weight: 600; }
+.s1-row--layer .s1-note { color: var(--page-dark-muted); }
+.s1-row--you { background: var(--page-white); border-color: var(--page-line-strong); }
+/* The bracket is the second read: it counts the layers you do not own. */
+.s1-measure {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 26px;
+  border-left: 1px solid var(--page-line-strong);
+  border-top: 1px solid var(--page-line-strong);
+  border-bottom: 1px solid var(--page-line-strong);
+  border-radius: var(--mz-radius-compact) 0 0 var(--mz-radius-compact);
+}
+.s1-measure span {
+  position: absolute; left: -4px; top: 50%; transform: translate(-100%, -50%);
+  writing-mode: vertical-rl; rotate: 180deg;
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted); white-space: nowrap;
+}
+.s1-gap {
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-line-strong); padding: 2px 0 2px 46px;
+}
+.s1-foot { margin: 40px 0 0; }
+@media (max-width: 620px) {
+  .s1-layers, .s1-gap { padding-left: 30px; }
+  .s1-measure { width: 16px; }
+  .s1-measure span { font-size: 9.5px; }
+  .s1-note { margin-left: 0; text-align: left; width: 100%; }
+}
+
+/* ========================================================= V2 · THE NESTING */
+.s2-object { display: grid; gap: 20px; }
+/* Radii are exactly concentric on the token scale at an 8px step: 32, 24, 16, 8,
+   then 4 at a 4px step. A hairline alone is invisible at that gap, so each ring
+   also steps its fill: the wrappers get heavier as they close on the model. */
+.s2-ring {
+  border-radius: var(--mz-radius-frame); border: 1px solid var(--page-line-soft);
+  padding: 8px; background: var(--page-white);
+}
+.s2-ring-2 { border-radius: var(--mz-radius-panel); border-color: var(--page-line); background: var(--page-recessed); }
+.s2-ring-3 { border-radius: var(--mz-radius-container); border-color: var(--page-line-mid); background: #eeeeeb; }
+.s2-ring-4 { border-radius: var(--mz-radius-compact); border-color: var(--page-line-strong); background: #e4e4e0; padding: 4px; }
+.s2-core {
+  border-radius: var(--mz-radius-fine); background: var(--page-dark);
+  color: var(--page-paper); display: grid; place-items: center;
+  padding: clamp(30px,5.5vw,56px) 20px; text-align: center;
+}
+.s2-core b {
+  display: block; font-family: var(--mz-font-display); font-weight: 650;
+  font-size: clamp(19px,2.2vw,26px); letter-spacing: -.026em;
+}
+.s2-core span {
+  display: block; margin-top: 10px; font-size: 13.5px; color: var(--page-dark-muted);
+  max-width: 34ch;
+}
+.s2-legend { display: grid; gap: 9px; }
+.s2-legend li { display: flex; align-items: center; gap: 12px; list-style: none; }
+/* Swatches carry each ring's own fill and border so the key is readable
+   without labels crowding an 8px gap. */
+.s2-legend i {
+  width: 26px; height: 16px; flex: none; border-radius: var(--mz-radius-fine);
+  border: 1px solid var(--page-line-soft); background: var(--page-white);
+}
+.s2-legend li:nth-child(2) i { border-color: var(--page-line); background: var(--page-recessed); }
+.s2-legend li:nth-child(3) i { border-color: var(--page-line-mid); background: #eeeeeb; }
+.s2-legend li:nth-child(4) i { border-color: var(--page-line-strong); background: #e4e4e0; }
+.s2-legend b {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; font-weight: 500; color: var(--page-muted);
+}
+.s2-legend ul { margin: 0; padding: 0; display: grid; gap: 9px; }
+.s2-outside {
+  margin: 0; padding-top: 4px; font-size: 13.5px; color: var(--page-muted);
+}
+.s2-foot { margin: 38px 0 0; }
+
+/* ========================================================== V3 · THE LEDGER */
+.s3-head { display: grid; gap: 24px; max-width: 62ch; }
+.s3-ledger { margin: clamp(48px,6vw,76px) 0 0; border-top: 1px solid var(--page-ink); }
+.s3-cols {
+  display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: clamp(20px,4vw,56px);
+  padding: 14px 0 12px; border-bottom: 1px solid var(--page-line);
+}
+.s3-cols span {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted);
+}
+.s3-row {
+  display: grid; grid-template-columns: minmax(0,.72fr) minmax(0,1.28fr); gap: clamp(20px,4vw,56px);
+  padding: 15px 0; border-bottom: 1px solid var(--page-line-soft); align-items: baseline;
+}
+.s3-sold {
+  font-family: var(--mz-font-display); font-weight: 640; font-size: clamp(17px,1.7vw,21px);
+  letter-spacing: -.022em;
+}
+.s3-own { font-size: 15px; line-height: 1.5; color: var(--page-muted); }
+/* The repetition of the first word is the argument. It is set in the ink so the
+   column reads as a single repeated verdict before any of it is read as prose. */
+.s3-own b { color: var(--page-ink); font-weight: 620; }
+/* The closing row is the verdict, so it carries the weight the rows above it
+   deliberately withhold. */
+.s3-total {
+  display: grid; grid-template-columns: minmax(0,.72fr) minmax(0,1.28fr); gap: clamp(20px,4vw,56px);
+  padding: 26px 0 0; align-items: baseline;
+}
+.s3-total .s3-sold { font-size: clamp(19px,2vw,25px); }
+.s3-total .s3-own {
+  color: var(--page-ink); font-family: var(--mz-font-display); font-weight: 650;
+  font-size: clamp(19px,2vw,25px); letter-spacing: -.026em;
+}
+@media (max-width: 720px) {
+  .s3-cols, .s3-row, .s3-total { grid-template-columns: 1fr; gap: 6px; }
+  .s3-cols span:last-child { display: none; }
+}
+
+/* ============================================================= V4 · THE GAP */
+.s4-field {
+  margin: clamp(52px,7vw,92px) 0 0; display: grid;
+  grid-template-columns: minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.9fr);
+  align-items: stretch; gap: 0;
+}
+.s4-plate {
+  border: 1px solid var(--page-line-strong); border-radius: var(--mz-radius-panel);
+  padding: 26px 24px; background: var(--page-white); display: grid; align-content: center; gap: 8px;
+}
+.s4-plate b {
+  font-family: var(--mz-font-display); font-weight: 650; font-size: clamp(18px,1.9vw,23px);
+  letter-spacing: -.026em;
+}
+.s4-plate span { font-size: 13.5px; color: var(--page-muted); line-height: 1.45; }
+.s4-plate--far { background: var(--page-dark); border-color: var(--page-dark); color: var(--page-paper); }
+.s4-plate--far span { color: var(--page-dark-muted); }
+/* The span between the plates is the section's whole argument, so it is given
+   more width than either plate and carries only hairline and small type. */
+/* The rule runs plate to plate with no padding, so the distance is actually
+   drawn rather than implied by two floating chips. */
+.s4-span { position: relative; display: grid; align-items: center; padding: 0; }
+.s4-rule { position: relative; height: 1px; background: var(--page-line-mid); }
+.s4-chips {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  justify-content: space-evenly; gap: 6px; padding: 0 clamp(8px,1.4vw,18px);
+}
+.s4-chip {
+  transform: translateY(-50%); background: var(--page-paper); padding: 6px 12px;
+  border: 1px solid var(--page-line); border-radius: 9999px;
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--page-muted); white-space: nowrap;
+}
+.s4-count {
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: -34px;
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-line-strong); white-space: nowrap;
+}
+.s4-foot { margin: clamp(64px,7vw,96px) 0 0; }
+/* On mobile the span turns vertical. The chips return to normal flow and the
+   hairline is drawn behind them, because absolutely positioning a nowrap chip
+   row inside a 1px-wide rule pushes the page into horizontal scroll. */
+@media (max-width: 900px) {
+  .s4-field { grid-template-columns: 1fr; gap: 12px; }
+  .s4-span { padding: 26px 0; position: relative; }
+  .s4-span::before {
+    content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px;
+    background: var(--page-line-mid);
+  }
+  .s4-rule { height: auto; background: transparent; }
+  .s4-chips {
+    position: static; display: grid; justify-items: center; justify-content: center;
+    gap: 10px; padding: 0;
+  }
+  .s4-chip { transform: none; max-width: 100%; }
+  .s4-count {
+    position: static; transform: none; display: block; text-align: center;
+    margin-top: 14px; background: var(--page-paper); padding: 4px 8px;
+  }
+}
+
+/* ========================================================== V5 · THE PLATES */
+.s5-grid {
+  margin: clamp(52px,6.5vw,88px) 0 0; display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(16px,2vw,24px);
+}
+.s5-card {
+  border: 1px solid var(--page-line); border-radius: var(--mz-radius-panel);
+  background: var(--page-white); padding: 24px; display: grid;
+  grid-template-rows: auto 1fr; gap: 22px;
+}
+.s5-card h3 {
+  margin: 0; font-family: var(--mz-font-display); font-weight: 650;
+  font-size: clamp(17px,1.7vw,21px); line-height: 1.16; letter-spacing: -.026em; max-width: 18ch;
+}
+.s5-card p { margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: var(--page-muted); }
+/* Equal outer geometry, different apparatus. Each interior argues its own point. */
+.s5-well {
+  border-radius: var(--mz-radius-container); background: var(--page-recessed);
+  border: 1px solid var(--page-line-soft); padding: 16px; display: grid; align-content: center;
+  min-height: 172px;
+}
+/* Every interior is set in words. Abstract bars in a proof slot read as a
+   skeleton loading state, which is the grey-placeholder defect. */
+.s5-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 0; }
+.s5-list li {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+  padding: 11px 0; border-bottom: 1px solid var(--page-line-soft);
+}
+.s5-list li:last-child { border-bottom: 0; }
+.s5-list span { font-size: 14px; color: var(--page-body); }
+.s5-list b {
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .1em;
+  text-transform: uppercase; font-weight: 600; color: var(--page-ink); white-space: nowrap;
+}
+/* The identical right-hand value, three times, is the argument. */
+.s5-list--same li:nth-child(2) { opacity: .66; }
+.s5-list--same li:nth-child(3) { opacity: .38; }
+.s5-caption {
+  font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted); padding-top: 12px;
+}
+/* The cut: everything below the line is still listed and no longer available. */
+.s5-limit {
+  margin: 10px 0 2px; border-top: 1px dashed var(--page-line-strong);
+  display: flex; justify-content: flex-end;
+}
+.s5-limit b {
+  font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--page-muted); font-weight: 500;
+  background: var(--page-recessed); padding: 4px 0 0 8px; margin-top: -1px;
+}
+.s5-list li.is-out span, .s5-list li.is-out b { color: var(--page-line-mid); }
+/* The sealed plate IS the well, rather than a box inside a box: nesting them
+   would need R_inner = 16 - 16 = 0 to stay concentric. */
+.s5-well--sealed { padding: 0; border: 0; background: transparent; }
+.s5-sealed {
+  border-radius: var(--mz-radius-container); background: var(--page-dark);
+  padding: 22px 20px; display: grid; gap: 14px; align-content: center; min-height: 172px;
+}
+.s5-sealed ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+.s5-sealed li { font-size: 14px; color: var(--page-paper); }
+.s5-sealed .s5-tag {
+  justify-self: start; font-family: var(--mz-font-technical); font-size: 10px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--page-dark-muted);
+  padding: 5px 11px; border: 1px solid rgba(248,248,248,.2); border-radius: 9999px;
+}
+@media (max-width: 900px) { .s5-grid { grid-template-columns: 1fr; } }
+
+/* ====================================================== V6 · THE REPETITION */
+.s6-strip { margin: clamp(52px,6.5vw,88px) 0 0; position: relative; }
+/* The row is cropped by the container so the fourth card runs off the edge:
+   the repetition does not stop, it just stops being shown. */
+.s6-clip { overflow: hidden; border-radius: var(--mz-radius-panel); }
+.s6-row { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; width: 116%; }
+.s6-card {
+  border: 1px solid var(--page-line); border-radius: var(--mz-radius-panel);
+  background: var(--page-white); padding: 22px; display: grid; gap: 16px; align-content: start;
+}
+.s6-name {
+  font-family: var(--mz-font-display); font-weight: 650; font-size: 17px; letter-spacing: -.024em;
+}
+.s6-body { font-size: 13.5px; line-height: 1.5; color: var(--page-muted); margin: 0; }
+.s6-meta { display: grid; gap: 7px; border-top: 1px solid var(--page-line-soft); padding-top: 14px; }
+.s6-meta span {
+  display: flex; justify-content: space-between; gap: 12px;
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--page-muted);
+}
+.s6-meta span b { color: var(--page-ink); font-weight: 600; }
+/* Narrow enough that the third card stays fully legible and only the fourth is
+   cut: the row does not stop, it just stops being shown. */
+.s6-fade {
+  position: absolute; top: 0; bottom: 0; right: 0; width: clamp(40px,5vw,72px);
+  background: linear-gradient(90deg, rgba(248,248,248,0), var(--page-paper) 90%);
+  pointer-events: none;
+}
+.s6-foot { margin: clamp(40px,5vw,64px) 0 0; }
+@media (max-width: 900px) {
+  .s6-row { grid-template-columns: repeat(2, minmax(0,1fr)); width: 132%; }
+}
+@media (max-width: 560px) {
+  .s6-row { grid-template-columns: 1fr; width: 100%; }
+  .s6-fade { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Problem Section · Lab 5 · six structural rules</strong>
+  <nav>
+    <a href="#v1">V1 stack</a><a href="#v2">V2 nesting</a><a href="#v3">V3 ledger</a>
+    <a href="#v4">V4 gap</a><a href="#v5">V5 plates</a><a href="#v6">V6 repetition</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>Six structural rules, not six pictures.</b> Each one is words, boxes, hairlines and alignment.
+  Nothing is illustrated and nothing moves. All six are monochrome on purpose: using the AI OS
+  material to stand for the generic model layer would say the wrong thing, and holding colour back
+  until Mez appears is a stronger read of the page. Every one is a still, so the champion is where
+  the single live core gets allocated, if it wants one at all.
+</div>
+
+<!-- ============================================================ V1 · STACK -->
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">V1</span>
+    <span class="lab-name">The stack</span>
+    <span class="lab-rule">Rule · distance</span>
+    <span class="lab-rat">Every bar between you and the intelligence is a layer you do not own. The argument is carried by the count and the vertical distance, and the bracket in the margin does nothing but count.</span>
+  </header>
+  <div class="lab-render">
+    <section class="pf" aria-label="The problem, as a stack">
+      <div class="pf-inner pf-split">
+        <div>
+          <p class="pf-eyebrow">The problem</p>
+          <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+          <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+          <p class="pf-turn s1-foot">You are not buying intelligence. You are renting the distance to it.</p>
+        </div>
+
+        <div class="s1-stack">
+          <div class="s1-row s1-row--source">
+            <span class="s1-role">The intelligence</span>
+            <span class="s1-note">The models you can already access directly</span>
+          </div>
+
+          <p class="s1-gap">Four layers of someone else's product</p>
+
+          <div class="s1-layers">
+            <div class="s1-measure"><span>Not yours</span></div>
+            <div class="s1-row s1-row--layer">
+              <span class="s1-role">Another interface</span>
+              <span class="s1-note">Their window, their layout</span>
+            </div>
+            <div class="s1-row s1-row--layer">
+              <span class="s1-role">Another subscription</span>
+              <span class="s1-note">Their price, their renewal</span>
+            </div>
+            <div class="s1-row s1-row--layer">
+              <span class="s1-role">Another credit system</span>
+              <span class="s1-note">Their limits, their rate</span>
+            </div>
+            <div class="s1-row s1-row--layer">
+              <span class="s1-role">Another isolated window</span>
+              <span class="s1-note">Knows nothing about the rest</span>
+            </div>
+          </div>
+
+          <div class="s1-row s1-row--you">
+            <span class="s1-role">Your business</span>
+            <span class="s1-note">Starting the explanation again, every time</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</article>
+
+<!-- ========================================================== V2 · NESTING -->
+<article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">V2</span>
+    <span class="lab-name">The nesting</span>
+    <span class="lab-rule">Rule · containment</span>
+    <span class="lab-rat">The same model sits at the centre and every product is one more wrapper around it. Rings run outermost-lightest to innermost-strongest and the radii are exactly concentric on the token scale, 32 to 24 to 16 to 8 to 4 at 8px steps.</span>
+  </header>
+  <div class="lab-render">
+    <section class="pf" aria-label="The problem, as containment">
+      <div class="pf-inner pf-split">
+        <div>
+          <p class="pf-eyebrow">The problem</p>
+          <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+          <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+          <p class="pf-turn s2-foot">Nobody is selling you new intelligence. They are selling you another wrapper around the same one.</p>
+        </div>
+
+        <div class="s2-object">
+          <div class="s2-ring" aria-hidden="true">
+            <div class="s2-ring s2-ring-2">
+              <div class="s2-ring s2-ring-3">
+                <div class="s2-ring s2-ring-4">
+                  <div class="s2-core">
+                    <div>
+                      <b>The same model</b>
+                      <span>The one you could already reach directly</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="s2-legend">
+            <ul aria-label="What each layer adds">
+              <li><i></i><b>Another interface</b></li>
+              <li><i></i><b>Another subscription</b></li>
+              <li><i></i><b>Another credit system</b></li>
+              <li><i></i><b>Another isolated window</b></li>
+            </ul>
+            <p class="s2-outside">Your business sits outside all four, paying for the distance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</article>
+
+<!-- =========================================================== V3 · LEDGER -->
+<article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">V3</span>
+    <span class="lab-name">The ledger</span>
+    <span class="lab-rule">Rule · audit</span>
+    <span class="lab-rat">No graphic at all. Two columns and a hairline rhythm, and the argument is pure adjacency. The right column opens with the same word five times, so it reads as one repeated verdict before it reads as prose.</span>
+  </header>
+  <div class="lab-render">
+    <section class="pf" aria-label="The problem, as a ledger">
+      <div class="pf-inner">
+        <div class="s3-head">
+          <div>
+            <p class="pf-eyebrow">The problem</p>
+            <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+          </div>
+          <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+        </div>
+
+        <div class="s3-ledger">
+          <div class="s3-cols">
+            <span>What you are sold</span>
+            <span>What you own when it ends</span>
+          </div>
+
+          <div class="s3-row">
+            <p class="s3-sold">The model</p>
+            <p class="s3-own"><b>Nothing.</b> It is the same intelligence you can already access directly.</p>
+          </div>
+          <div class="s3-row">
+            <p class="s3-sold">The interface</p>
+            <p class="s3-own"><b>Nothing.</b> Access stops the day the subscription does.</p>
+          </div>
+          <div class="s3-row">
+            <p class="s3-sold">Your context</p>
+            <p class="s3-own"><b>Nothing.</b> Your prompts and business memory live in their database.</p>
+          </div>
+          <div class="s3-row">
+            <p class="s3-sold">The workflow</p>
+            <p class="s3-own"><b>Nothing.</b> The logic you built cannot leave the tool it was built in.</p>
+          </div>
+          <div class="s3-row">
+            <p class="s3-sold">The upgrade path</p>
+            <p class="s3-own"><b>Nothing.</b> They choose the models, the credits and the limits.</p>
+          </div>
+
+          <div class="s3-total">
+            <p class="s3-sold">The layer it all runs on</p>
+            <p class="s3-own">Someone else's.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</article>
+
+<!-- ============================================================== V4 · GAP -->
+<article class="lab-item" id="v4">
+  <header class="lab-label">
+    <span class="lab-num">V4</span>
+    <span class="lab-name">The gap</span>
+    <span class="lab-rule">Rule · space is the problem</span>
+    <span class="lab-rat">Two plates pushed apart, and the span between them is given more width than either. The middlemen are small chips sitting on the hairline that crosses the distance. The emptiest part of the composition is the part carrying the argument.</span>
+  </header>
+  <div class="lab-render">
+    <section class="pf" aria-label="The problem, as distance">
+      <div class="pf-inner">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+
+        <div class="s4-field">
+          <div class="s4-plate">
+            <b>Your business</b>
+            <span>Everything you know, re-explained from scratch in every tool.</span>
+          </div>
+
+          <div class="s4-span" aria-hidden="true">
+            <div class="s4-rule">
+              <div class="s4-chips">
+                <span class="s4-chip">Interface</span>
+                <span class="s4-chip">Subscription</span>
+                <span class="s4-chip">Credits</span>
+                <span class="s4-chip">Window</span>
+              </div>
+              <span class="s4-count">Four layers, none of them yours</span>
+            </div>
+          </div>
+
+          <div class="s4-plate s4-plate--far">
+            <b>The intelligence</b>
+            <span>Already reachable directly. You are paying to stand further from it.</span>
+          </div>
+        </div>
+
+        <p class="pf-turn s4-foot">The distance is the product. That is what you are actually buying.</p>
+      </div>
+    </section>
+  </div>
+</article>
+
+<!-- =========================================================== V5 · PLATES -->
+<article class="lab-item" id="v5">
+  <header class="lab-label">
+    <span class="lab-num">V5</span>
+    <span class="lab-name">The three plates</span>
+    <span class="lab-rule">Rule · form follows the consequence</span>
+    <span class="lab-rat">Equal outer geometry so the three read as siblings, different interiors so each one argues its own point. One repeats, one is cut off by a limit, one is sealed shut. Words in boxes, where the box is doing the talking.</span>
+  </header>
+  <div class="lab-render">
+    <section class="pf" aria-label="The problem, in three consequences">
+      <div class="pf-inner">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+
+        <div class="s5-grid">
+          <article class="s5-card">
+            <div>
+              <h3>The same intelligence, repackaged</h3>
+              <p>Many AI products put a new interface around intelligence you can already access directly.</p>
+            </div>
+            <div class="s5-well">
+              <ul class="s5-list s5-list--same">
+                <li><span>The chat tool</span><b>The same model</b></li>
+                <li><span>The writing tool</span><b>The same model</b></li>
+                <li><span>The research tool</span><b>The same model</b></li>
+              </ul>
+              <p class="s5-caption">One engine underneath</p>
+            </div>
+          </article>
+
+          <article class="s5-card">
+            <div>
+              <h3>More limits, less control</h3>
+              <p>The intermediary chooses the available models, features, credits, rate limits and upgrade schedule.</p>
+            </div>
+            <div class="s5-well">
+              <ul class="s5-list">
+                <li><span>Which models you get</span><b>Their call</b></li>
+                <li><span>Which features are on</span><b>Their call</b></li>
+              </ul>
+              <div class="s5-limit"><b>Your plan stops here</b></div>
+              <ul class="s5-list">
+                <li class="is-out"><span>More requests</span><b>Locked</b></li>
+                <li class="is-out"><span>The newer model</span><b>Locked</b></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s5-card">
+            <div>
+              <h3>Context trapped in the tool</h3>
+              <p>Your prompts, workflow logic and business memory become dependent on an interface you do not control.</p>
+            </div>
+            <div class="s5-well s5-well--sealed">
+              <div class="s5-sealed">
+                <ul>
+                  <li>Your prompts</li>
+                  <li>Your workflow logic</li>
+                  <li>Your business memory</li>
+                </ul>
+                <span class="s5-tag">Stays in their database</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+</article>
+
+<!-- ======================================================= V6 · REPETITION -->
+<article class="lab-item" id="v6">
+  <header class="lab-label">
+    <span class="lab-num">V6</span>
+    <span class="lab-name">The repetition</span>
+    <span class="lab-rule">Rule · sameness</span>
+    <span class="lab-rat">Four products whose cards are identical in every respect except the name, cropped by the container so the row runs off the edge. Flagged honestly: a row of near-identical cards is also the most common AI tell, so this one is the highest-risk of the six.</span>
+  </header>
+  <div class="lab-render">
+    <section class="pf" aria-label="The problem, as repetition">
+      <div class="pf-inner">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+
+        <div class="s6-strip">
+          <div class="s6-clip">
+            <div class="s6-row">
+              <article class="s6-card">
+                <p class="s6-name">Another interface</p>
+                <p class="s6-body">A new window around intelligence you can already access directly.</p>
+                <div class="s6-meta">
+                  <span>Model underneath <b>The same one</b></span>
+                  <span>You own <b>Nothing</b></span>
+                </div>
+              </article>
+              <article class="s6-card">
+                <p class="s6-name">Another subscription</p>
+                <p class="s6-body">A new window around intelligence you can already access directly.</p>
+                <div class="s6-meta">
+                  <span>Model underneath <b>The same one</b></span>
+                  <span>You own <b>Nothing</b></span>
+                </div>
+              </article>
+              <article class="s6-card">
+                <p class="s6-name">Another credit system</p>
+                <p class="s6-body">A new window around intelligence you can already access directly.</p>
+                <div class="s6-meta">
+                  <span>Model underneath <b>The same one</b></span>
+                  <span>You own <b>Nothing</b></span>
+                </div>
+              </article>
+              <article class="s6-card">
+                <p class="s6-name">Another isolated window</p>
+                <p class="s6-body">A new window around intelligence you can already access directly.</p>
+                <div class="s6-meta">
+                  <span>Model underneath <b>The same one</b></span>
+                  <span>You own <b>Nothing</b></span>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="s6-fade" aria-hidden="true"></div>
+        </div>
+
+        <p class="pf-turn s6-foot">Four products. One model underneath. None of it yours.</p>
+      </div>
+    </section>
+  </div>
+</article>
+
+</body>
+</html>

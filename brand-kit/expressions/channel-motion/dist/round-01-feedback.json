@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-07-CHANNEL-MOTION-PROOF",
+  "taskId": "TASK-EXP-07-CHANNEL-MOTION",
+  "candidateRevision": "channel-motion-matrix-01-r01",
+  "verdict": "round-feedback",
+  "leadingFamily": "undecided",
+  "note": "",
+  "sections": [
+    {"id":"roles","title":"Motion Roles","feedback":""},
+    {"id":"channels","title":"Channel Allocations","feedback":""}
+  ],
+  "specimens": [
+    {"id":"MOT-L01","title":"Focal material","family":"roles","verdict":"keep","feedback":""},
+    {"id":"MOT-L02","title":"Functional UI","family":"roles","verdict":"keep","feedback":""},
+    {"id":"MOT-L03","title":"Product demonstration","family":"roles","verdict":"revise","feedback":""},
+    {"id":"MOT-L04","title":"Film and social story","family":"roles","verdict":"revise","feedback":""},
+    {"id":"MOT-C01","title":"Marketing web","family":"channels","verdict":"keep","feedback":""},
+    {"id":"MOT-C02","title":"Email","family":"channels","verdict":"revise","feedback":""},
+    {"id":"MOT-C03","title":"Paid advertising","family":"channels","verdict":"revise","feedback":""},
+    {"id":"MOT-C04","title":"Organic social","family":"channels","verdict":"revise","feedback":""},
+    {"id":"MOT-C05","title":"Video and film","family":"channels","verdict":"revise","feedback":""},
+    {"id":"MOT-C06","title":"Documents and presentations","family":"channels","verdict":"revise","feedback":""},
+    {"id":"MOT-C07","title":"Icons and compact identity","family":"channels","verdict":"revise","feedback":""},
+    {"id":"MOT-C08","title":"Open graph and link previews","family":"channels","verdict":"revise","feedback":""}
+  ],
+  "productionAuthority": false
+}

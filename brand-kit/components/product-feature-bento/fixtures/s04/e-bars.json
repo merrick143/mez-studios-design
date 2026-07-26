@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "The gradient as a bar, not a badge",
+  "columns": 12,
+  "frame": "none",
+  "generativeRule": "The same identity token drawn as a bar across the head of each card. Still a token, so the bento still spends one colour event.",
+  "copyProvenance": "Block names and the four system mappings are read from registry/products.json. The four uncovered blocks carry library gradients from gradient-library/catalogue.json, which name no product. The eight sublines are derived from the departments Mez Studios actually runs and are the only authored copy here; they are listed in review.json as awaiting sign-off.",
+  "cells": [
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "detail": "Campaigns, creative and spend",
+      "scale": "m",
+      "align": "top",
+      "productSlug": "ai-ads-system",
+      "span": 2,
+      "tokenShape": "bar"
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "detail": "Ideas, production and publishing",
+      "scale": "m",
+      "align": "top",
+      "productSlug": "organic-content-os",
+      "span": 4,
+      "tokenShape": "bar"
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "detail": "Context, skills and execution",
+      "scale": "m",
+      "align": "top",
+      "productSlug": "claude-code-os",
+      "span": 3,
+      "tokenShape": "bar"
+    },
+    {
+      "job": "workflow",
+      "label": "Sales",
+      "detail": "Leads, pipeline and calls",
+      "scale": "m",
+      "align": "top",
+      "gradientId": "MZ-G24",
+      "span": 3,
+      "tokenShape": "bar"
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "detail": "How the company actually works",
+      "scale": "m",
+      "align": "top",
+      "productSlug": "context-engine",
+      "span": 3,
+      "tokenShape": "bar"
+    },
+    {
+      "job": "workflow",
+      "label": "Finance",
+      "detail": "Invoicing, runway and reporting",
+      "scale": "m",
+      "align": "top",
+      "gradientId": "MZ-G16",
+      "span": 3,
+      "tokenShape": "bar"
+    },
+    {
+      "job": "workflow",
+      "label": "Client delivery",
+      "detail": "Onboarding, projects and handoff",
+      "scale": "m",
+      "align": "top",
+      "gradientId": "MZ-G27",
+      "span": 4,
+      "tokenShape": "bar"
+    },
+    {
+      "job": "workflow",
+      "label": "Design",
+      "detail": "Brand, product and craft",
+      "scale": "m",
+      "align": "top",
+      "gradientId": "MZ-G19",
+      "span": 2,
+      "tokenShape": "bar"
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "scale": "xl",
+      "span": 12,
+      "materialPosition": "center 32%"
+    }
+  ]
+}

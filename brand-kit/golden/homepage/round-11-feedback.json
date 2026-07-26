@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r11",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-23",
+  "note": "Olli asked what the card stroke outline was and said that while he likes having an outline, the current one feels a bit harsh on the cards against the white background. Investigation confirmed his instinct was more than aesthetic: the outline used a homepage-local bespoke value, rgba(25, 25, 25, .42) -- a ~42 percent charcoal rendering as a hard mid-grey line against F8 -- that appears nowhere else in the repository. The canonical Product Card 02 that the hero cards descend from contains its material with a soft shadow and only 12 percent-opacity internal lines, never a hard outer stroke, and the foundation's own border tokens are far softer (--mz-border-default #DADAD6, --mz-border-strong #8A8A84). So the gradient cards were wearing a heavier, non-canonical edge than every other card in the system, including the white cards on the same page.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Keep an outline on the cards but soften it -- the current dark stroke feels harsh on white. Bind it to the canonical border token rather than a bespoke charcoal value."
+    }
+  ],
+  "consistencyFinding": {
+    "priorValue": "rgba(25, 25, 25, .42)",
+    "priorValueScope": "homepage-local; appears in no other repository file",
+    "canonicalReference": "The QC04 landing card uses a soft containment shadow plus 12%-opacity internal lines, not a hard outer stroke; the foundation border tokens are --mz-border-default #DADAD6 and --mz-border-strong #8A8A84.",
+    "resolution": "The --card-outline variable now binds to the canonical foundation token var(--mz-border-default) (#DADAD6) rather than a bespoke literal. This softens the edge and, more importantly, makes the gradient cards use the same border every other card on the page already uses (--page-line is the same value). A visible hairline is retained deliberately -- the hero cards overlap in the fan and the ethos bans ambient card shadows, so a line is the correct containment device; it was only too heavy.",
+    "appliesTo": ["hero cards", "AI OS product field", "ecosystem coming-system cards"]
+  },
+  "productionAuthority": false
+}

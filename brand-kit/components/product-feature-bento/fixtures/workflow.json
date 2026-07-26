@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "workflow",
+  "label": "How a Mez System is made",
+  "columns": 12,
+  "copyProvenance": "Every stage name and detail is existing GH-S04 copy, unchanged.",
+  "cells": [
+    { "job": "workflow", "label": "Build", "detail": "Solve a real operating problem inside Mez Studios.", "col": 1, "row": 1, "span": 4, "rows": 2 },
+    { "job": "workflow", "label": "Run", "detail": "Use the system across active work, decisions and workflows.", "col": 5, "row": 1, "span": 8 },
+    { "job": "workflow", "label": "Break", "detail": "Find the missing context, fragile handoffs and assumptions that fail in practice.", "col": 9, "row": 2, "span": 4, "rows": 2 },
+    { "job": "workflow", "label": "Refine", "detail": "Remove the friction and strengthen the operating layer.", "col": 1, "row": 3, "span": 8 },
+    { "job": "product", "productSlug": "aios", "label": "Package", "detail": "Turn the proven system into something another operator can install.", "surface": "material", "focal": true, "col": 5, "row": 2, "span": 4 }
+  ]
+}

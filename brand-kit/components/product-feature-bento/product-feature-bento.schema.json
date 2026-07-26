@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/product-feature-bento-0.1.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "componentId", "pantryId", "version", "status", "productionAuthority",
+    "gateId", "candidateRevision", "taskId", "decisionIds", "title", "selectedFamily", "thesis",
+    "anatomy", "cellJobs", "surfaces", "rules", "states", "behaviour", "motion", "variants",
+    "prohibited", "events", "testViewports", "approval", "dependencies", "openQuestions"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "componentId": { "const": "mz.systems.component.product-feature-bento" },
+    "pantryId": { "const": "PC2-B-C04" },
+    "version": { "const": "0.1.0" },
+    "status": { "const": "candidate" },
+    "productionAuthority": { "const": false },
+    "gateId": { "const": "H-CMP-04-PRODUCT-FEATURE-BENTO-PROOF" },
+    "candidateRevision": { "type": "string", "minLength": 8 },
+    "taskId": { "const": "TASK-CMP-04-PRODUCT-FEATURE-BENTO" },
+    "decisionIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "title": { "type": "string", "minLength": 4 },
+    "selectedFamily": { "const": "product-mosaic" },
+    "thesis": { "type": "string", "minLength": 200 },
+    "anatomy": { "type": "array", "minItems": 8, "items": { "type": "string" } },
+    "cellJobs": {
+      "const": ["product", "proof", "workflow", "metric", "media", "integration", "quote", "action"]
+    },
+    "surfaces": { "const": ["paper", "muted", "tint", "outline", "recessed", "raised", "dark", "material"] },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["materialCells", "fillerCells", "cellCount", "readingOrder", "focal", "spans", "nesting"],
+      "properties": {
+        "materialCells": { "type": "string", "minLength": 20 },
+        "fillerCells": { "type": "string", "minLength": 20 },
+        "cellCount": { "type": "string", "minLength": 20 },
+        "readingOrder": { "type": "string", "minLength": 20 },
+        "focal": { "type": "string", "minLength": 20 },
+        "spans": { "type": "string", "minLength": 20 },
+        "nesting": { "type": "string", "minLength": 20 }
+      }
+    },
+    "states": { "type": "array", "minItems": 7, "items": { "type": "string" }, "uniqueItems": true },
+    "behaviour": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content", "products", "placement", "linearization", "validation"],
+      "properties": {
+        "content": { "type": "string" },
+        "products": { "type": "string" },
+        "placement": { "type": "string" },
+        "linearization": { "type": "string" },
+        "validation": { "type": "string" }
+      }
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximumLiveCores", "default", "repeated", "reduced", "failure"],
+      "properties": {
+        "maximumLiveCores": { "const": 1 },
+        "default": { "type": "string" },
+        "repeated": { "type": "string" },
+        "reduced": { "type": "string" },
+        "failure": { "type": "string" }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "fixture", "argument", "cells"],
+        "properties": {
+          "id": { "enum": ["mechanism-map", "workflow", "evidence-mosaic", "product-comparison"] },
+          "fixture": { "type": "string", "pattern": "^fixtures/[a-z-]+\\.json$" },
+          "argument": { "type": "string", "minLength": 20 },
+          "cells": { "type": "string", "minLength": 20 }
+        }
+      }
+    },
+    "prohibited": { "type": "array", "minItems": 14, "items": { "type": "string" }, "uniqueItems": true },
+    "events": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" } },
+    "testViewports": { "const": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440] },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["review", "decisionId", "approvedAt", "approvedFamily", "approvedVariants", "state"],
+      "properties": {
+        "review": { "const": "brand-kit/components/product-feature-bento/review.json" },
+        "decisionId": { "type": ["string", "null"] },
+        "approvedAt": { "type": ["string", "null"] },
+        "approvedFamily": { "type": ["string", "null"] },
+        "approvedVariants": { "type": ["array", "null"] },
+        "state": { "enum": ["awaiting-human-review", "approved"] }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "required": ["foundations", "products", "gradients", "renderer", "wings", "reference", "pantry"]
+    },
+    "openQuestions": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  }
+}

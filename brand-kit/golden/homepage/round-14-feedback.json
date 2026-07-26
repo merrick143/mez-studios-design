@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r14",
+  "verdict": "hero-locked",
+  "recordedAt": "2026-07-24",
+  "note": "After reviewing a hero exploration lab (variations V01-V19), Olli chose to lock the hero at V01 -- the five-card arc that is the current r14 hero -- 'for now'. This is a provisional lock of the hero direction (GH-S01), not the final production sign-off: sections GH-S02 through GH-S09 remain in review and H-GOLD-01-HOMEPAGE-PROOF stays open. No hero code changed; V01 in the lab is the mirror of the live r14 arc.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "locked",
+      "feedback": "lets just lock v01 hero for now"
+    }
+  ],
+  "explorationLineage": {
+    "surface": "brand-kit/workbench/golden/homepage/hero-lab/",
+    "scope": "exploration only; non-canonical; the r14 candidate was untouched throughout",
+    "variationsConsidered": [
+      "V01 five-card arc (baseline = current r14 hero)",
+      "V02 four-card fan",
+      "V03 peeled vertical stack",
+      "V04 aligned family shelf",
+      "V05 contained dark hero",
+      "V06 single focal sphere",
+      "V07 split single-card hero",
+      "V08 bento",
+      "V09 motion study (flagged motion-rule test)",
+      "V10 shifting-gradient field (flagged ethos test)",
+      "V11-V14 clean even spread, four and five cards, light and dark, with smooth straighten-and-lift hover",
+      "V15-V19 auto-advancing single-card carousels (flagged no-autoplay-carousel motion-rule tests): dissolve, deck-deal, editorial tour, vertical reel, sphere spotlight"
+    ],
+    "chosen": "V01 five-card arc",
+    "note": "The spreads and carousels were built at Olli's direction to compare directions; he elected to keep the existing five-card arc as the hero for now."
+  },
+  "implementationNote": {
+    "summary": "No workbench hero geometry changed. V01 in the lab mirrors the live r14 hero (five-card arc: rotate(arc-slot*5.5deg), per-card vertical step clamp(12px,1.6vw,24px), overlap clamp(-80px,-5.6vw,-58px), centred identity, canonical outline token). The lock is recorded here and as a provisional GH-S01 section lock in review.json while the whole-page gate stays pending; the source contract, candidate revision (golden-homepage-01-r14) and the round-14 proof are unchanged.",
+    "unchanged": "homepage.source.json, the r14 workbench candidate, verify_homepage_round14.py, and every other section. The hero-lab remains additive exploration evidence and is not part of the candidate."
+  },
+  "productionAuthority": false
+}

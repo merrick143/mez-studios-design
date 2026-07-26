@@ -1,0 +1,445 @@
+/* PC2-B-C04 · Product Feature Bento
+ *
+ * Geometry and surface allocation only. Content arrives from a fixture, product
+ * identity from the canonical registry. Every colour below is a foundations
+ * token or an alpha of ink, so there are no bespoke greyscale literals (COL-07).
+ *
+ * The radii are concentric by construction and not by eye:
+ *   frame 32  -  padding 8  =  panel 24
+ * Change the padding and the cell radius must move with it. That pair is the one
+ * thing in this file that is not free to be adjusted independently.
+ */
+
+mez-product-feature-bento {
+  --bento-ink: var(--mz-colour-neutral-950, #0d0d0d);
+  --bento-dark: var(--mz-colour-neutral-900, #171715);
+  --bento-recessed: var(--mz-colour-neutral-850, #1b1b19);
+  --bento-raised: var(--mz-colour-neutral-800, #252523);
+  --bento-frame: var(--mz-colour-neutral-100, #eeeeeb);
+  --bento-cell: var(--mz-colour-neutral-0, #ffffff);
+  --bento-line: var(--mz-colour-neutral-200, #dadad6);
+  --bento-line-strong: var(--mz-colour-neutral-400, #8a8a84);
+  --bento-muted: var(--mz-colour-neutral-550, #666662);
+  --bento-muted-inverse: var(--mz-colour-neutral-300, #b8b8b1);
+  --bento-columns: 12;
+  --bento-pad: 8px;
+  --bento-row: clamp(76px, 8.8vw, 116px);
+
+  display: block;
+  container-type: inline-size;
+}
+
+/* -------------------------------------------------------------- the frame */
+
+.mz-bento {
+  background: var(--bento-frame);
+  border-radius: var(--mz-radius-frame, 32px);
+  padding: var(--bento-pad);
+}
+
+/* Without a frame the cells sit straight on the page. Worth having, because a
+   frame one step darker than the page reads as a halo behind every white cell,
+   which looks like the ambient shadow this system does not use. */
+.mz-bento[data-frame="none"] { background: transparent; padding: 0; }
+
+.mz-bento__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--bento-columns), minmax(0, 1fr));
+  grid-auto-rows: minmax(var(--bento-row), auto);
+  gap: var(--bento-pad);
+}
+
+/* --------------------------------------------------------------- the cell */
+
+.mz-bento__cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 0;
+  padding: clamp(16px, 2.1vw, 26px);
+  border-radius: var(--mz-radius-panel, 24px);
+  overflow: hidden;
+  grid-column: span var(--span, 3);
+  grid-row: span var(--rows, 1);
+}
+
+/* Cells bottom-align by default. In a row where some cells carry a detail line
+   and some do not, that pushes their titles to different heights, so a cell may
+   ask to align from the top instead and let the titles line up. */
+.mz-bento__cell[data-align="top"] { justify-content: flex-start; }
+
+/* Explicit placement, for compositions a span cannot express. It moves a cell
+   visually and never changes document order, so the linearization is unaffected.
+   The property names are -start suffixed and matched with a trailing colon
+   because [style*="--row"] also matches "--rows" and silently steals the row
+   span from every auto-flow cell that declares one. */
+.mz-bento__cell[style*="--col-start:"] { grid-column: var(--col-start) / span var(--span, 3); }
+.mz-bento__cell[style*="--row-start:"] { grid-row: var(--row-start) / span var(--rows, 1); }
+
+/* One depth cue per cell (MAT-04). Paper cells are separated from the frame by
+   tone alone, so they carry no border and no shadow. */
+.mz-bento__cell[data-surface="paper"] { background: var(--bento-cell); color: var(--bento-ink); }
+/* Two more light surfaces, so a bento can carry meaning in its card backgrounds
+   without reaching for the charcoal ramp. */
+.mz-bento__cell[data-surface="muted"] { background: var(--mz-colour-neutral-50, #f6f5f4); color: var(--bento-ink); }
+.mz-bento__cell[data-surface="tint"] { background: var(--bento-frame); color: var(--bento-ink); }
+
+.mz-bento__cell[data-surface="dark"] { background: var(--bento-dark); color: var(--mz-colour-neutral-25, #f8f8f8); }
+.mz-bento__cell[data-surface="recessed"] { background: var(--bento-recessed); color: var(--mz-colour-neutral-25, #f8f8f8); }
+.mz-bento__cell[data-surface="raised"] { background: var(--bento-raised); color: var(--mz-colour-neutral-25, #f8f8f8); }
+
+/* Material is the bento's one colour event. The contract permits exactly one. */
+.mz-bento__cell[data-surface="material"] {
+  color: var(--mz-colour-neutral-0, #fff);
+  border: 1px solid rgb(255 255 255 / .14);
+  background: #101010 var(--material-position, center) / cover no-repeat var(--material);
+  isolation: isolate;
+}
+
+/* The only depth cue allowed on material, and its job is legibility. */
+.mz-bento__cell[data-surface="material"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(7 7 7 / 0) 36%, rgb(7 7 7 / .66) 100%);
+}
+
+.mz-bento__cell[data-surface="material"] canvas { z-index: 0; }
+
+/* An outline cell is a block the business has but no system covers yet. It is
+   deliberately not a surface: it is the absence of one, drawn only far enough to
+   be countable. Hairline only, so it still carries a single depth cue. */
+.mz-bento__cell[data-surface="outline"] {
+  background: transparent;
+  color: var(--bento-ink);
+  border: 1px solid var(--bento-line);
+}
+
+
+/* ------------------------------------------------------------------ the layer
+   One material object behind every cell rather than one material cell among
+   them. Each cell is opaque except for an aperture along its base, and because
+   every cell shares the grid's single background image the strips line up into
+   one continuous band. That is why this spends one colour event and not eight. */
+
+.mz-bento__grid[data-layer] {
+  position: relative;
+  isolation: isolate;
+  border-radius: calc(var(--mz-radius-panel, 24px) - 2px);
+  overflow: hidden;
+  background: #101010 center / cover no-repeat var(--material);
+}
+
+.mz-bento__grid[data-layer] canvas { z-index: 0; }
+
+/* The aperture has to be wide enough to read as a deliberate reveal. At a
+   hairline it reads as a drop shadow under each cell, which is the opposite of
+   the point and also a depth cue this system does not use. */
+.mz-bento__grid[data-layer] > .mz-bento__cell {
+  z-index: 1;
+  padding-bottom: calc(clamp(16px, 2.1vw, 26px) + var(--bento-aperture, 26px));
+  background:
+    linear-gradient(var(--bento-cell) 0 calc(100% - var(--bento-aperture, 26px)), transparent 0);
+}
+
+.mz-bento__grid[data-layer] > .mz-bento__cell[data-surface="outline"] { background: none; }
+
+/* ---------------------------------------------------------------- entries
+   A cell may hold a list of parts rather than being one part. Rows and chips are
+   the same data at two densities. Neither is a bordered card, so a cell holding
+   them still satisfies LAY-12. */
+
+.mz-bento__entries { list-style: none; margin: 14px 0 0; padding: 0; }
+
+.mz-bento__entries[data-display="rows"] .mz-bento__entry {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 0;
+  border-top: 1px solid rgb(255 255 255 / .16);
+  font-size: clamp(13px, 1.35vw, 15px);
+}
+
+.mz-bento__entries[data-display="rows"] .mz-bento__entry:not([data-covered]) { color: rgb(255 255 255 / .5); }
+.mz-bento__entry-system { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; opacity: .78; }
+
+.mz-bento__entries[data-display="chips"] { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.mz-bento__entries[data-display="chips"] .mz-bento__entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  border: 1px solid var(--bento-line);
+  border-radius: var(--mz-radius-full, 9999px);
+  font-size: 13px;
+  color: var(--bento-muted);
+}
+
+.mz-bento__entries[data-display="chips"] .mz-bento__entry[data-covered] {
+  border-color: var(--bento-ink);
+  color: var(--bento-ink);
+}
+
+/* --------------------------------------------------------------- contents */
+
+.mz-bento__body { position: relative; z-index: 2; }
+
+.mz-bento__kicker {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 auto;
+  font-family: var(--mz-font-technical);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--bento-muted);
+}
+
+/* Disc and label share one line: the disc identifies the material, so it belongs
+   to the act of naming the thing rather than floating above it. */
+.mz-bento__title {
+  display: flex;
+  align-items: center;
+  gap: clamp(9px, 1vw, 13px);
+  margin: 0;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -.025em;
+  font-size: clamp(16.5px, 1.7vw, 21px);
+}
+
+.mz-bento__title .mz-bento__disc { margin: 0; flex: none; }
+
+/* The same identity token as a bar across the top of the cell. Still a token and
+   not a material field, so it does not spend the bento's one colour event. */
+.mz-bento__bar {
+  display: block;
+  height: var(--bento-bar, 6px);
+  margin: 0 0 auto;
+  width: 100%;
+  border-radius: var(--mz-radius-full, 9999px);
+  background: #101010 center / cover no-repeat var(--material);
+  position: relative;
+  z-index: 2;
+}
+
+/* The system that serves a block. A tag, not the subline, so a card can say both
+   what the block is and what runs it. */
+.mz-bento__tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  font-family: var(--mz-font-technical);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bento-muted);
+}
+
+/* In a top-aligned cell the bar must not push the text to the floor, or every
+   card in the row starts its title at a different height. */
+.mz-bento__cell[data-align="top"] .mz-bento__bar { margin: 0 0 clamp(14px, 1.6vw, 20px); }
+
+/* ------------------------------------------------- artefact and caption
+   A cell whose content is a title plus a sentence is a paragraph in a box, and
+   paragraphs cannot be packed densely or sized freely. Put an object in the cell
+   and let the words caption it: the token moves to artefact scale, the label
+   drops to a caption, and the cell becomes free to be any size. */
+
+.mz-bento__cell[data-presentation="caption"] {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mz-bento__cell[data-presentation="caption"]:not([data-scale="hero"]) .mz-bento__title,
+.mz-bento__cell[data-presentation="caption"]:not([data-scale="hero"]) .mz-bento__label {
+  font-size: clamp(13px, 1.35vw, 15.5px);
+}
+
+.mz-bento__cell[data-presentation="caption"] .mz-bento__title {
+  flex-direction: column;
+  gap: clamp(12px, 1.5vw, 18px);
+  font-size: clamp(13px, 1.35vw, 15.5px);
+  letter-spacing: -.012em;
+}
+
+.mz-bento__cell[data-presentation="caption"] .mz-bento__detail {
+  margin-top: 5px;
+  font-size: clamp(11.5px, 1.15vw, 12.5px);
+  line-height: 1.4;
+}
+
+.mz-bento__cell[data-presentation="caption"] .mz-bento__tag { justify-content: center; margin-top: 9px; }
+.mz-bento__cell[data-presentation="caption"] .mz-bento__figure { margin-bottom: 12px; }
+
+/* Token at artefact scale rather than badge scale. */
+.mz-bento__cell[data-token="l"] .mz-bento__disc { width: clamp(40px, 4.4vw, 58px); }
+.mz-bento__cell[data-token="xl"] .mz-bento__disc { width: clamp(56px, 6.4vw, 84px); }
+
+/* The wordmark cell: the product name at display scale, so the hero reads as the
+   anchor of the mosaic rather than as one more captioned cell. */
+.mz-bento__cell[data-scale="hero"] .mz-bento__label,
+.mz-bento__cell[data-scale="hero"] .mz-bento__title { font-size: clamp(38px, 6vw, 84px); letter-spacing: -.05em; }
+
+/* The token grown past artefact scale and clipped by the cell edge, the way a
+   device render breaks its frame in the Apple bentos. */
+.mz-bento__cell[data-token-bleed] { overflow: hidden; }
+.mz-bento__cell[data-token-bleed] .mz-bento__disc {
+  width: clamp(96px, 12vw, 152px);
+  margin-top: calc(clamp(96px, 12vw, 152px) * -0.44);
+}
+
+.mz-bento__tag i {
+  width: 5px; height: 5px; flex: none;
+  border-radius: 50%;
+  background: var(--bento-ink);
+}
+
+/* An ink dot is invisible on a charcoal cell. */
+.mz-bento__cell:not([data-surface="paper"]) /* The token grown past artefact scale and clipped by the cell edge, the way a
+   device render breaks its frame in the Apple bentos. */
+.mz-bento__cell[data-token-bleed] { overflow: hidden; }
+.mz-bento__cell[data-token-bleed] .mz-bento__disc {
+  width: clamp(96px, 12vw, 152px);
+  margin-top: calc(clamp(96px, 12vw, 152px) * -0.44);
+}
+
+.mz-bento__tag i { background: currentColor; }
+
+.mz-bento__label {
+  margin: 0;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -.025em;
+  font-size: clamp(16.5px, 1.7vw, 21px);
+}
+
+.mz-bento__detail {
+  margin: 8px 0 0;
+  font-size: clamp(12.5px, 1.25vw, 14px);
+  line-height: 1.5;
+  color: var(--bento-muted);
+}
+
+.mz-bento__figure {
+  display: block;
+  font-family: var(--mz-font-display);
+  font-weight: 660;
+  line-height: .84;
+  letter-spacing: -.05em;
+  font-size: clamp(48px, 6.2vw, 96px);
+}
+
+/* Scale follows span, so a wide cell does not carry small-cell typography. */
+.mz-bento__cell[data-scale="xl"] .mz-bento__label,
+.mz-bento__cell[data-scale="xl"] .mz-bento__title { font-size: clamp(24px, 3.1vw, 40px); }
+.mz-bento__cell[data-scale="l"] .mz-bento__label,
+.mz-bento__cell[data-scale="l"] .mz-bento__title { font-size: clamp(19px, 2.1vw, 28px); }
+.mz-bento__cell[data-scale="s"] .mz-bento__label,
+.mz-bento__cell[data-scale="s"] .mz-bento__title { font-size: clamp(14.5px, 1.4vw, 17px); }
+.mz-bento__cell[data-scale="xl"] .mz-bento__disc { width: clamp(30px, 3vw, 40px); }
+
+.mz-bento__cell:not([data-surface="paper"]) .mz-bento__kicker,
+.mz-bento__cell:not([data-surface="paper"]) .mz-bento__detail { color: var(--bento-muted-inverse); }
+.mz-bento__cell[data-surface="material"] .mz-bento__detail { color: rgb(255 255 255 / .8); }
+
+/* Wings appear where identity is the focal event and are omitted where material
+   already fills the field on a small cell (ICO-05). */
+.mz-bento__wings {
+  width: clamp(21px, 1.9vw, 27px);
+  height: auto;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1);
+}
+
+/* An identity token, not a material field: it names which product a paper cell
+   belongs to without spending the bento's one colour event. */
+.mz-bento__disc {
+  display: block;
+  width: clamp(22px, 2.2vw, 30px);
+  aspect-ratio: 1;
+  margin: 0 0 auto;
+  border-radius: 50%;
+  background: #101010 center / cover no-repeat var(--material);
+  position: relative;
+  z-index: 2;
+}
+
+.mz-bento__availability {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  margin-top: 14px;
+  padding: 5px 11px;
+  border: 1px solid var(--bento-line);
+  border-radius: var(--mz-radius-full, 9999px);
+  font-family: var(--mz-font-technical);
+  font-size: 9.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bento-muted);
+}
+
+/* ------------------------------------------------------------ interaction */
+
+.mz-bento__cell[data-interactive="true"] {
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  border: 0;
+  transition: transform 260ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.mz-bento__cell[data-interactive="true"][data-surface="material"] { border: 1px solid rgb(255 255 255 / .14); }
+.mz-bento__cell[data-interactive="true"]:hover { transform: translateY(-2px); }
+.mz-bento__cell[data-interactive="true"]:focus-visible {
+  outline: 3px solid var(--mz-focus-ring, #1a56db);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------------- failure */
+
+.mz-bento__failure {
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: var(--mz-radius-panel, 24px);
+  background: var(--bento-cell);
+  color: var(--bento-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.mz-bento__failure strong { display: block; color: var(--bento-ink); font-weight: 600; }
+
+/* ------------------------------------------------------- compact linearization
+   One column, document order preserved, nothing hidden and nothing reordered.
+   Explicit placement is dropped here on purpose: below this width the reading
+   order is the only order. */
+
+@container (max-width: 760px) {
+  .mz-bento__grid { grid-template-columns: minmax(0, 1fr); grid-auto-rows: minmax(96px, auto); }
+  /* The explicitly placed selectors must be reset by name. A bare .mz-bento__cell
+     rule loses to them on specificity, which leaves an explicitly placed bento
+     still gridded at 390 and reading out of document order. */
+  .mz-bento__cell,
+  .mz-bento__cell[style*="--col-start:"],
+  .mz-bento__cell[style*="--row-start:"] { grid-column: 1 / -1; grid-row: auto; }
+  .mz-bento__cell[data-scale="xl"] .mz-bento__label { font-size: clamp(23px, 6.6cqw, 31px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mz-bento__cell[data-interactive="true"] { transition-duration: .001ms; }
+  mez-product-feature-bento canvas { display: none !important; }
+}
+
+@media (forced-colors: active) {
+  .mz-bento__cell { border: 1px solid CanvasText; }
+}

@@ -45,7 +45,7 @@ def main() -> int:
 
     print("LLM CONTRACTS: PASS")
     print("- bounded tasks, context bundles, receipts and evaluations validate")
-    print("- FND-01 through FND-05 and EXP-01/02/03 are complete; Product Card 02 Phase A is pending H-EXP-04A-CARD-VISUAL-DIRECTION")
+    print("- FND-01 through FND-05, EXP-01/02/03/04/05/07/08 and CMP-01 are complete; TASK-GOLD-01-GOLDEN-HOMEPAGE is active")
     return 0
 
 

@@ -1,0 +1,614 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-04B-CARD-FUNCTIONAL-PROOF",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "candidateRevision": "product-card-02-phase-b-pb2-r03",
+  "reviewScope": {
+    "phaseAVisualInputs": 32,
+    "functionalCandidates": 47,
+    "totalReviewCandidates": 47
+  },
+  "verdict": "round-feedback",
+  "leadingFamily": "undecided",
+  "note": "",
+  "sections": [
+    {
+      "id": "discovery",
+      "title": "Find the right system.",
+      "feedback": ""
+    },
+    {
+      "id": "features",
+      "title": "Show how it works.",
+      "feedback": ""
+    },
+    {
+      "id": "pricing",
+      "title": "Make the offer clear.",
+      "feedback": ""
+    },
+    {
+      "id": "checkout",
+      "title": "Carry the decision through.",
+      "feedback": ""
+    },
+    {
+      "id": "bundles",
+      "title": "Compose more value.",
+      "feedback": ""
+    },
+    {
+      "id": "mobile",
+      "title": "The whole decision, in one hand.",
+      "feedback": ""
+    }
+  ],
+  "specimens": [
+    {
+      "id": "B-DS01",
+      "title": "Product mega-menu",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC01",
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-DS02",
+      "title": "Single product hero",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "SH01",
+        "SH02",
+        "SH03",
+        "QC01",
+        "QC02",
+        "QC03"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-DS03",
+      "title": "Product family hero",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS02",
+        "HL01",
+        "HL02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-DS04",
+      "title": "Featured product split",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "ES02",
+        "IC01",
+        "IC02",
+        "IC03"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-DS05",
+      "title": "Product family shelf",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS01",
+        "FC01",
+        "FC02",
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": "i dont like how they are not all same size"
+    },
+    {
+      "id": "B-DS06",
+      "title": "Editorial starting points",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-DS07",
+      "title": "Related systems rail",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "PO01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-DS08",
+      "title": "Product-aware footer",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01",
+        "BO02",
+        "QF01"
+      ],
+      "verdict": "revise",
+      "feedback": "close"
+    },
+    {
+      "id": "B-FT01",
+      "title": "Context operating story",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "ES02",
+        "EX02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT02",
+      "title": "Operating-run story",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "HL01",
+        "HL02",
+        "EX02"
+      ],
+      "verdict": "revise",
+      "feedback": "close really close "
+    },
+    {
+      "id": "B-FT03",
+      "title": "Full-bleed product bento",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF01",
+        "SG01"
+      ],
+      "verdict": "revise",
+      "feedback": "revise make it a normal bento with actual cards"
+    },
+    {
+      "id": "B-FT05",
+      "title": "Proof record section",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT06",
+      "title": "System architecture map",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "IC01"
+      ],
+      "verdict": "kill",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT07",
+      "title": "Integration wordmark field",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC01",
+        "PO01"
+      ],
+      "verdict": "revise",
+      "feedback": "go and find actual logos we have folder somewhere on computer with real ones"
+    },
+    {
+      "id": "B-FT08",
+      "title": "Before and after shift",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "ES02",
+        "ES04"
+      ],
+      "verdict": "revise",
+      "feedback": "use one of the card designs form phase a for this"
+    },
+    {
+      "id": "B-FT09",
+      "title": "Feature accordion",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF03"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT10",
+      "title": "Dark product explainer",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "EX02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR01",
+      "title": "One-time digital offer",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "SG01",
+        "FC01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR02",
+      "title": "Multi-product digital pricing",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR03",
+      "title": "Single SaaS plan",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR04",
+      "title": "Three SaaS tiers",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR05",
+      "title": "Billing cadence selector",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR06",
+      "title": "Usage-based calculator",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR07",
+      "title": "Plan comparison table",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR08",
+      "title": "Enterprise offer",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01",
+        "BO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR09",
+      "title": "Coming-soon waitlist",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC02"
+      ],
+      "verdict": "revise",
+      "feedback": "needs to be animated"
+    },
+    {
+      "id": "B-PR10",
+      "title": "Mixed commercial models",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS02",
+        "FC01",
+        "FC02"
+      ],
+      "verdict": "revise",
+      "feedback": "i dont like how not all the same size"
+    },
+    {
+      "id": "B-CK01",
+      "title": "Digital product checkout",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "SG01",
+        "QF01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK02",
+      "title": "SaaS workspace checkout",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK03",
+      "title": "Express checkout",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF03"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK04",
+      "title": "Expanded order summary",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "SG01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK05",
+      "title": "Processing state",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC03"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK06",
+      "title": "Recoverable payment error",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK07",
+      "title": "Digital access confirmation",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK08",
+      "title": "SaaS workspace confirmation",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU01",
+      "title": "Fixed complete suite",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "ST01",
+        "ST02",
+        "BX01",
+        "BX02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU02",
+      "title": "Configurable bundle builder",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "BX01",
+        "SG01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU03",
+      "title": "Focused product stack",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "ST01",
+        "ST02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU04",
+      "title": "Bundle comparison",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "FN01",
+        "BX01",
+        "BX02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU05",
+      "title": "Checkout order bump",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "SG01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU06",
+      "title": "Cart cross-sell",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU07",
+      "title": "Order upgrade",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "ST01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU08",
+      "title": "Post-purchase addition",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01",
+        "BO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-MB01",
+      "title": "Mobile product discovery",
+      "family": "mobile",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC04",
+        "ES04",
+        "HL04",
+        "QF03",
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-MB02",
+      "title": "Mobile plan selection",
+      "family": "mobile",
+      "scope": "functional",
+      "phaseARefs": [
+        "HL04",
+        "FC01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-MB03",
+      "title": "Mobile checkout summary",
+      "family": "mobile",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF03",
+        "SG01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-MB04",
+      "title": "Mobile confirmation and upsell",
+      "family": "mobile",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    }
+  ],
+  "productionAuthority": false
+}

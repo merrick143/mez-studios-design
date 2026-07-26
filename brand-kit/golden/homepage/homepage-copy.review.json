@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "reviewId": "H-GOLD-01-HOMEPAGE-COPY",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "contentId": "mz.systems.copy.homepage",
+  "version": "1.0.0",
+  "verdict": "approve",
+  "decisionId": "DEC-GOLDEN-HOMEPAGE-COPY-001",
+  "approver": "Olli",
+  "approvedAt": "2026-07-23T03:44:00Z",
+  "productionAuthority": true,
+  "scope": {
+    "locked": [
+      "section order",
+      "headlines",
+      "body copy",
+      "calls to action",
+      "supporting lines",
+      "named product descriptions",
+      "testimonial wording and attribution as supplied"
+    ],
+    "notApprovedByThisDecision": [
+      "a visual composition",
+      "a five-live-core motion exception",
+      "public testimonial consent or claim substantiation",
+      "consumer routes",
+      "analytics",
+      "deployment"
+    ]
+  },
+  "note": "The attached homepage copy is the canonical content input for GOLD-01. Visual-direction notes remain briefs interpreted through the canonical design system. Testimonials stay blocked from public production until attribution and publication consent are verified."
+}

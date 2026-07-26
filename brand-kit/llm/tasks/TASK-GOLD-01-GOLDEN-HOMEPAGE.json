@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "title": "Compose the first Mez Systems golden homepage",
+  "phase": 3,
+  "status": "in-progress",
+  "owner": "design-system-agent",
+  "objective": "Compose one complete, reviewable Mez Systems homepage from the canonical foundations, expression suite, functional components, Website Motion and Global Navigation 1.0.0, using real hierarchy and copy rather than another isolated style study.",
+  "scope": {
+    "included": [
+      "homepage information architecture",
+      "canonical copy lock",
+      "portable design-repository to technical-consumer boundary",
+      "governed proof and testimonial intake",
+      "canonical Global Navigation integration",
+      "centred five-product opening",
+      "mobile five-product opening resolution",
+      "problem and ethos sections",
+      "product-family discovery",
+      "bundle and operating-layer story",
+      "product proof and mechanism sections",
+      "final conversion section",
+      "realistic homepage copy",
+      "responsive behaviour from 320 through 1440 pixels",
+      "keyboard and screen-reader structure",
+      "reduced-motion and no-WebGL equivalence",
+      "one complete review workbench",
+      "deterministic golden-output contract"
+    ],
+    "excluded": [
+      "consumer website deployment",
+      "direct modification or runtime import from the separate technical Mez Systems repository",
+      "fabricated customer logos or metrics",
+      "live payment or account logic",
+      "authenticated application shell",
+      "new product names or gradient assignments",
+      "new foundation or expression families",
+      "Figma production authority",
+      "copying reference websites"
+    ]
+  },
+  "dependencies": [
+    "TASK-CMP-01-GLOBAL-NAVIGATION",
+    "TASK-EXP-08-EXPRESSION-STRESS-PROOF",
+    "DEC-HERO-001",
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-PRODUCT-ARCHITECTURE-001",
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+    "DEC-TRADING-CARD-EXPRESSION-001",
+    "DEC-WEBSITE-MOTION-SYSTEM-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-COPY-001",
+    "DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md",
+      "brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md",
+      "brand-kit/components/global-navigation/global-navigation.source.json",
+      "brand-kit/expressions/product-card/product-card.source.json",
+      "brand-kit/expressions/product-card/phase-b/product-component-pantry.source.json",
+      "brand-kit/expressions/channel-motion/channel-motion.source.json",
+      "brand-kit/expressions/trading-card/trading-card.source.json",
+      "brand-kit/registry/products.json",
+      "brand-kit/golden/homepage/homepage-copy.source.json",
+      "brand-kit/golden/homepage/HOMEPAGE-COMPOSITION-PLAN.md",
+      "brand-kit/golden/homepage/homepage-plan.source.json",
+      "brand-kit/golden/homepage/homepage.source.json",
+      "brand-kit/golden/homepage/review.json",
+      "brand-kit/golden/homepage/round-02-hero-feedback.json",
+      "brand-kit/golden/homepage/round-03-hero-feedback.json",
+      "brand-kit/golden/homepage/round-04-hero-feedback.json",
+      "brand-kit/golden/homepage/round-05-feedback.json",
+      "brand-kit/golden/homepage/round-06-feedback.json",
+      "brand-kit/golden/homepage/round-07-feedback.json",
+      "brand-kit/golden/homepage/round-08-feedback.json",
+      "brand-kit/golden/homepage/round-09-feedback.json",
+      "brand-kit/golden/homepage/round-10-feedback.json",
+      "brand-kit/golden/homepage/round-11-feedback.json",
+      "brand-kit/golden/homepage/round-12-feedback.json",
+      "brand-kit/golden/homepage/round-13-feedback.json",
+      "brand-kit/golden/homepage/round-14-feedback.json",
+      "brand-kit/golden/homepage/round-14-section-review-feedback.json",
+      "brand-kit/golden/homepage/round-16-section-review-feedback.json",
+      "brand-kit/golden/homepage/SECTION-REVISION-PLAN.md",
+      "brand-kit/golden/homepage/hero-motion.review.json",
+      "brand-kit/research/phase-2/PATTERN-ATLAS.md",
+      "brand-kit/research/phase-2/ANTI-PATTERN-ATLAS.md",
+      "brand-kit/research/phase-2/homepage-studio/README.md",
+      "brand-kit/research/phase-2/homepage-studio/homepage-foundation-review.json",
+      "brand-kit/research/phase-2/calibration-plates/hero-first-viewport-03/hero-first-viewport-03-review.json"
+    ],
+    "decisionIds": [
+      "DEC-HERO-001",
+      "DEC-FOUNDATION-RELEASE-001",
+      "DEC-PRODUCT-ARCHITECTURE-001",
+      "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+      "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+      "DEC-TRADING-CARD-EXPRESSION-001",
+      "DEC-WEBSITE-MOTION-SYSTEM-001",
+      "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "DEC-GOLDEN-HOMEPAGE-COPY-001",
+      "DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001"
+    ],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/golden/homepage/",
+      "acceptance": [
+        "one governed homepage contract owns the approved section sequence, content jobs, component lineage, responsive behaviour, motion allocation and prohibited uses",
+        "the exact homepage copy is locked by DEC-GOLDEN-HOMEPAGE-COPY-001 while visual notes remain subordinate to canonical design contracts",
+        "the design repository and separate technical consumer have explicit ownership, data, event, packaging and integration boundaries",
+        "the output composes canonical components rather than restyling or duplicating them",
+        "real copy and proof placeholders are explicitly distinguished from canonical identity data"
+      ]
+    },
+    {
+      "path": "brand-kit/workbench/golden/homepage/",
+      "acceptance": [
+        "the complete homepage is reviewable as one desktop and mobile journey",
+        "every section exposes its canonical component or expression lineage",
+        "320, 375, 430, 768, 1024, 1280 and 1440 pixel proofs have zero horizontal page overflow"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "GOLD-01-PLAN",
+      "method": "command",
+      "command": ".venv/bin/python brand-kit/golden/homepage/verify_homepage_plan.py",
+      "passCondition": "copy, section lineage, five-product mobile resolution, bounded hero allocation, ordinary one-live-core allocation and technical-consumer boundary validate"
+    },
+    {
+      "id": "GOLD-01-ROUND-15",
+      "method": "command",
+      "command": ".venv/bin/python brand-kit/golden/homepage/verify_homepage_round15.py",
+      "passCondition": "The S04 split is applied: 'Why Mez Systems' becomes 'Built on ourselves first' (GH-S04) and 'Operating proof' (GH-S05); the page carries exactly ten ordered reviewable regions (AI OS, ecosystem, proof, final route and footer renumbered to GH-S06-GH-S10); the .why-head indent centring is removed and the header left-aligns to its body; motion eligibility tracks the renumber (GH-S01, GH-S06, GH-S09); and the locked V01 hero geometry, centred identity, outline token, no-overlay-fork guard, canonical-automatic motion, compact no-swipe proof and honest evidence/consent state all carry forward"
+    },
+    {
+      "id": "GOLD-01-INHERITANCE",
+      "method": "command",
+      "passCondition": "foundations, products, assignments, expressions, Global Navigation and Website Motion remain immutable"
+    },
+    {
+      "id": "GOLD-01-COMPOSITION",
+      "method": "visual",
+      "passCondition": "the homepage reads as one coherent Mez Systems story rather than a component catalogue"
+    },
+    {
+      "id": "GOLD-01-MOBILE",
+      "method": "visual",
+      "passCondition": "the five-product opening and every downstream section remain clear and ordered from 320 pixels upward"
+    },
+    {
+      "id": "GOLD-01-ACCESSIBILITY",
+      "method": "visual",
+      "passCondition": "landmarks, heading order, focus, keyboard use, contrast, reduced motion and static fallbacks remain complete"
+    },
+    {
+      "id": "GOLD-01-HUMAN",
+      "method": "human",
+      "passCondition": "Olli approves one complete homepage as the first golden output"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+    "approver": "Olli",
+    "approvalQuestion": "Does this complete homepage express the Mez Systems identity, explain the five-product operating layer clearly and feel strong enough to become the first golden reference output?"
+  },
+  "stopConditions": [
+    "the task reopens canonical foundations, product assignments or approved expression families",
+    "the page becomes a specimen gallery instead of a coherent homepage",
+    "reference-company composition or copy is reproduced",
+    "fabricated proof is presented as real evidence",
+    "mobile hides products or changes source order",
+    "the Global Navigation five-live-core exception leaks into other page sections",
+    "the implementation directly reads from or writes to the separate technical Mez Systems repository before a named consumer-proof task",
+    "the task expands into deployment, authenticated application UI, Figma or payment integration"
+  ],
+  "notes": [
+    "The homepage-studio files are research evidence and may not override canonical component contracts.",
+    "The first round should establish one complete page architecture with real section jobs before polishing isolated hero variations.",
+    "Global Navigation 1.0.0 is canonical and should be consumed unchanged."
+    ,"Round 00 locked the supplied eight-section copy and planned ten composed page regions, including navigation and footer."
+    ,"Cumulative feedback through Round 04 is preserved. Round 05 keeps the simplified hero anatomy and makes all five Living Core fields visibly animated at rest without moving the card chassis or identity overlays; it is awaiting human feedback and is not a golden approval."
+    ,"DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001 permits five live hero cards only while GH-S01 is active. Elsewhere the page returns to one live core, navigation suppresses all page cores, and every card retains an exact static twin."
+    ,"Round 06 is a directed from-scratch rebuild recorded in round-05-feedback.json. That receipt also preserves the diagnosed Round 03-05 render defect: dedicated core layers collapsed to 0x0 under the renderer's inline positioning, so hero animation never actually displayed. Round 06 mounts every Living Core on an intrinsically sized material element and uses canonical Phase A automatic motion (rest 1, hover 1.85, no drift, no overrides)."
+    ,"Round 07 applies Olli's complete Round 06 section review recorded in round-06-feedback.json: a centred spreading-deck hero with AI OS front-and-centre and one amended 'Explore the Systems' action (copy amendment pending formal re-lock), a calmer window-pile problem section, real interchangeable tool wordmarks pending governed logo intake, a charcoal method console, rebuilt proof cards, an AI OS identity-event card, full-field coming-system cards and rebuilt testimonials."
+    ,"Round 08 is a hero-only follow-up recorded in round-07-feedback.json: Olli asked the deck to compact substantially (cards up and pulled in on both sides). Tuning surfaced a real constraint -- every card's bottom-left identity anchor is asymmetric under a symmetric fan, bounding how tight the spread can get while every card stays legible -- resolved with a hero-scoped identity mark distinct from the ecosystem/final-route cards."
+    ,"Round 09 is a further hero-only follow-up recorded in round-08-feedback.json: Olli asked for the family-caption divider ('One operating layer' / 'Five focused systems' plus its rule line) and the supporting-line 'AI OS is available now. Specialised systems are coming next.' to be removed. Both are gone from markup and CSS; nothing else changed."
+    ,"Round 10 is a second, more pointed hero-compaction pass recorded in round-09-feedback.json: Olli said the Round 08 tightening was still insufficient. Round 10 shrinks the hero-scoped identity mark further and tightens the per-card step and overlap by roughly another quarter; an even tighter pass that clipped a card's public name was tested and explicitly rejected in the same round, since full name legibility is a hard requirement that does not flex for compaction."
+    ,"Round 11 is a hero content-style change recorded in round-10-feedback.json: rather than tightening further, Olli asked for centre-aligned in-card content -- a bigger centred Wings mark with the titles stacked beneath -- and explicitly authorised partial occlusion on cards tucked behind their neighbours. That is a deliberate, scoped supersession of the prior full-legibility requirement (fan-overlap occlusion only, not accessibility or fallback states), recorded rather than silently applied. The hero identity mark is fully centred with a larger icon and titles; Round 10's fan geometry itself is unchanged. During Round 11 an unrequested hero-only material-overlay darkening was added and then reverted at the reviewer's direction, and the round validator now guards against forking the shared overlay."
+    ,"Round 12 is a card-outline softening recorded in round-11-feedback.json: Olli found the card stroke harsh on white. The outline had used a homepage-local rgba(25,25,25,.42) charcoal found nowhere else in the repo, heavier than the canonical Product Card treatment and the foundation border tokens. Round 12 rebinds the --card-outline variable to the canonical var(--mz-border-default) (#DADAD6) -- the same border every other page card uses -- keeping a deliberate hairline."
+    ,"Round 13 is a further hero-fan compaction recorded in round-12-feedback.json: Olli asked to move the side cards up more and tuck them in more. Round 11's authorised occlusion lets this compact tighter than Rounds 08 and 10 could; the two inner side cards' centred marks became substantially covered by the central AI OS card."
+    ,"Round 14 is a further hero-fan lift recorded in round-13-feedback.json: Olli asked to move the side cards even higher and only a little tighter. The per-card vertical step went to clamp(12px,1.6vw,24px) (side-card drop 23/46px at 1440) so the fan is flatter and closer to level with AI OS, and the overlap increased only slightly to clamp(-80px,-5.6vw,-58px). It awaits Olli's next review and is not a golden approval."
+    ,"Round 14 review outcome (hero lock): after a hero exploration lab (brand-kit/workbench/golden/homepage/hero-lab/, variations V01-V19 including clean even spreads V11-V14 and auto-advancing single-card carousels V15-V19, all non-canonical exploration), Olli provisionally locked the hero (GH-S01) at V01 -- the five-card arc that is the r14 hero -- 'for now', recorded in round-14-feedback.json and as a heroSectionLock in review.json. No hero code changed; the candidate revision stays golden-homepage-01-r14, sections GH-S02-GH-S09 remain in review and H-GOLD-01-HOMEPAGE-PROOF stays open. The hero-lab is additive exploration evidence, not part of the candidate."
+    ,"Round 15 begins the section revisions from Olli's full review (round-14-section-review-feedback.json), planned in SECTION-REVISION-PLAN.md. It is the structural round: 'Why Mez Systems' (GH-S04) splits into 'Built on ourselves first' (GH-S04) and 'Operating proof' (GH-S05), taking the page to ten reviewable regions -- AI OS, ecosystem, proof, final route and footer renumber to GH-S06-GH-S10 -- and the previously indented 'Built on ourselves first' header (a centred max-width:860px block) is left-aligned to its body. The locked V01 hero and every other section are byte-unchanged; motion eligibility tracks the renumber (GH-S01, GH-S06, GH-S09). Candidate golden-homepage-01-r15; verify_homepage_round15.py is the active proof; it is not a golden approval and the whole-page gate stays open."
+    ,"Rounds 16-17 reinvented the section designs from Olli's next full section review (round-16-section-review-feedback.json). Given full latitude ('rebuild each section however you think in the mez systems style but use those attached as inspo'), the editorial sections S02/S03/S04 were rebuilt on one shared authored split-card family -- a light editorial half beside a charcoal generative half with a bespoke per-section visual: S02 problem a charcoal fragmentation field, S03 principle abstract interchangeable-intelligence swap-slots over an owned base (the rented-brand logos, real and invented, removed for good), S04 a Build-Run-Break-Refine-Package operating-loop timeline. S05 Operating proof, which had shipped unstyled (raw stacked text, no CSS), was rebuilt into honest charcoal 'Evidence pending' redacted-screen placeholders. The S06 AI OS Wings were centred and enlarged and its two bottom cards ('How it works' / 'Features') rebuilt from Olli's reference screenshots into a monochrome orbital diagram + a divided 2x2 index (reference polish translated to Mez mono: charcoal not black, hairlines, no glow, no non-canonical green). The S07 ecosystem cards were simplified to Wings + name + Coming soon (waitlist removed). The reintroduced family header indent was fixed across S02-S05. Candidate golden-homepage-01-r17; verify_homepage_round17.py is the active proof; the locked V01 hero, canonical motion and honest evidence/consent states carry forward and the whole-page gate stays open."
+    ,"The separate technical Mez Systems repository is a future registered consumer, not a second source of design truth."
+  ]
+}

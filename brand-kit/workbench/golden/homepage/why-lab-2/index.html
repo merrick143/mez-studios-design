@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Bento Lab (GH-S04, ten mosaics)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1; --page-muted: #666662; --page-dark-muted: #b8b8b1;
+  --card-outline: rgba(255,255,255,.14);
+  --wide: 1010px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+img { max-width: 100%; }
+
+/* ------------------------------------------------------------- lab chassis */
+.lab-top { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px; padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper); font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap; }
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a { padding: 4px 9px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px; color: var(--page-paper); text-decoration: none; }
+.lab-note { padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: #cfcfc9; font-size: 13.5px; line-height: 1.6; border-bottom: 8px solid #d7d6d3; }
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-note p { margin: 0 0 9px; max-width: 108ch; }
+.lab-note p:last-child { margin-bottom: 0; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding: 14px clamp(16px,4vw,40px); background: var(--page-white); border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50; }
+.lab-num { font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em; padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; }
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule { font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-muted); }
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 64ch; line-height: 1.5; }
+.lab-live { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 9px; border-radius: 9999px; border: 1px solid var(--page-line-strong); color: var(--page-muted); }
+.lab-live[data-live="on"] { border-color: var(--page-ink); color: var(--page-ink); }
+
+/* ----------------------------------------------------------- shared section */
+.wy { background: var(--page-paper); color: var(--page-ink); }
+.wy-inner { max-width: 1180px; margin-inline: auto; padding-inline: clamp(20px,5vw,64px); padding-block: clamp(68px,8.4vw,104px); }
+.wy-head { max-width: 66ch; }
+.wy-eyebrow { margin: 0; font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted); }
+.wy-title { margin: 18px 0 0; font-family: var(--mz-font-display); font-weight: 660; font-size: clamp(30px,3.5vw,48px); line-height: 1.03; letter-spacing: -.04em; max-inline-size: 18ch; }
+.wy-lead { margin: 20px 0 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5; color: var(--page-muted); max-inline-size: 52ch; }
+.wy-body { margin: clamp(40px,4.8vw,64px) 0 0; }
+.wy-close { margin: clamp(34px,4vw,52px) 0 0; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(17px,1.7vw,21px); line-height: 1.35; letter-spacing: -.02em; max-inline-size: 40ch; }
+
+/* ------------------------------------------------------------- bento chassis
+   One depth cue per cell (MAT-04): paper cells carry a hairline and nothing
+   else, charcoal cells carry their surface and nothing else, material cells
+   carry the card outline plus a scrim whose only job is legibility. No cell
+   ever contains another bordered cell (LAY-12): every cell is a full
+   composition filling its own box. */
+.bx { display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: clamp(9px,1.2vw,16px); grid-auto-rows: minmax(clamp(80px,9.4vw,122px), auto); max-width: var(--wide); }
+.c { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; padding: clamp(17px,2.2vw,28px); border-radius: var(--mz-radius-panel); overflow: hidden; }
+.c__body { position: relative; z-index: 2; }
+.c__t { margin: 0; font-family: var(--mz-font-display); font-weight: 600; line-height: 1.12; letter-spacing: -.025em; }
+.c__s { margin: 9px 0 0; font-size: clamp(12.5px,1.25vw,14px); line-height: 1.5; opacity: .72; }
+.c__k { margin: 0 0 auto; font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; opacity: .62; position: relative; z-index: 2; }
+.c__n { display: block; font-family: var(--mz-font-display); font-weight: 660; line-height: .84; letter-spacing: -.05em; font-size: clamp(52px,6.6vw,104px); }
+.c__wings { width: clamp(22px,2vw,28px); height: auto; margin-bottom: 11px; filter: brightness(0) invert(1); }
+
+.c--dark { background: var(--page-dark); color: var(--page-paper); }
+.c--recessed { background: var(--page-dark-recessed); color: var(--page-paper); }
+.c--raised { background: var(--page-dark-raised); color: var(--page-paper); }
+.c--paper { background: var(--page-white); color: var(--page-ink); border: 1px solid var(--page-line); }
+.c--mat { color: var(--page-white); border: 1px solid var(--card-outline); background: #101010 center / cover no-repeat var(--material); isolation: isolate; }
+.c--mat::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(7,7,7,0) 38%, rgba(7,7,7,.62) 100%); }
+.c--mat canvas { z-index: 0; }
+
+.c--xl .c__t { font-size: clamp(25px,3.2vw,42px); }
+.c--l  .c__t { font-size: clamp(19px,2.2vw,29px); }
+.c--m  .c__t { font-size: clamp(16.5px,1.75vw,22px); }
+.c--s  .c__t { font-size: clamp(14.5px,1.45vw,17.5px); }
+
+/* ============================================ 1 · SCARS · area follows damage */
+.bx1 .c:nth-child(1) { grid-column: span 7; grid-row: span 3; }
+.bx1 .c:nth-child(2) { grid-column: span 5; grid-row: span 2; }
+.bx1 .c:nth-child(3) { grid-column: span 5; grid-row: span 1; }
+.bx1 .c:nth-child(4) { grid-column: span 12; grid-row: span 1; }
+
+/* ========================================== 2 · PINWHEEL · four wrap the one */
+.bx2 .c:nth-child(1) { grid-column: 1 / 5;  grid-row: 1 / 3; }
+.bx2 .c:nth-child(2) { grid-column: 5 / 13; grid-row: 1 / 2; }
+.bx2 .c:nth-child(3) { grid-column: 9 / 13; grid-row: 2 / 4; }
+.bx2 .c:nth-child(4) { grid-column: 1 / 9;  grid-row: 3 / 4; }
+.bx2 .c:nth-child(5) { grid-column: 5 / 9;  grid-row: 2 / 3; }
+
+/* ================================= 3 · HERO AND REASONS · one thing, four whys */
+.bx3 .c:nth-child(1) { grid-column: 1 / 8;  grid-row: 1 / 5; }
+.bx3 .c:nth-child(2) { grid-column: 8 / 13; grid-row: 1 / 2; }
+.bx3 .c:nth-child(3) { grid-column: 8 / 13; grid-row: 2 / 3; }
+.bx3 .c:nth-child(4) { grid-column: 8 / 13; grid-row: 3 / 4; }
+.bx3 .c:nth-child(5) { grid-column: 8 / 13; grid-row: 4 / 5; }
+
+/* =========================== 4 · REGISTRY · weight follows availability, not count */
+.bx4 { grid-auto-flow: dense; }
+.bx4 .is-live { grid-column: span 6; grid-row: span 2; }
+.bx4 .c:not(.is-live) { grid-column: span 3; grid-row: span 1; }
+
+/* ================================= 5 · BEFORE AND AFTER · the axis is time */
+.bx5 .c:nth-child(1) { grid-column: 1 / 6;  grid-row: 1 / 2; }
+.bx5 .c:nth-child(2) { grid-column: 1 / 6;  grid-row: 2 / 3; }
+.bx5 .c:nth-child(3) { grid-column: 1 / 6;  grid-row: 3 / 4; }
+.bx5 .c:nth-child(4) { grid-column: 1 / 6;  grid-row: 4 / 5; }
+.bx5 .c:nth-child(5) { grid-column: 6 / 13; grid-row: 1 / 4; }
+.bx5 .c:nth-child(6) { grid-column: 6 / 13; grid-row: 4 / 5; }
+
+/* ============================ 6 · NUMBER WALL · paper proves, material ships */
+.bx6 .c:nth-child(1) { grid-column: 1 / 6;  grid-row: 1 / 3; }
+.bx6 .c:nth-child(2) { grid-column: 6 / 9;  grid-row: 1 / 2; }
+.bx6 .c:nth-child(3) { grid-column: 6 / 9;  grid-row: 2 / 3; }
+.bx6 .c:nth-child(4) { grid-column: 9 / 13; grid-row: 1 / 3; }
+/* The lead figure has to be visibly the lead, or a cell twice the size of its
+   neighbours carries a numeral the same size and the hierarchy is only spatial. */
+.bx6 .c:nth-child(1) .c__n { font-size: clamp(78px,9.6vw,152px); }
+
+/* ================================== 7 · QUILT · the grid is the product family */
+.bx7 { grid-auto-flow: dense; }
+.bx7 .c:nth-child(1) { grid-column: span 7; grid-row: span 2; }
+.bx7 .c:nth-child(2), .bx7 .c:nth-child(3) { grid-column: span 5; grid-row: span 1; }
+.bx7 .c:nth-child(n+4) { grid-column: span 6; grid-row: span 1; }
+
+/* ===================== 8 · BRICK BOND · the offset is constant, so it reads authored */
+.bx8 { grid-template-columns: repeat(2, minmax(0,1fr)); grid-auto-rows: minmax(clamp(44px,5vw,64px), auto); }
+.bx8 .c:nth-child(1) { grid-column: 1; grid-row: 1 / 4; }
+.bx8 .c:nth-child(2) { grid-column: 2; grid-row: 2 / 5; }
+.bx8 .c:nth-child(3) { grid-column: 1; grid-row: 4 / 7; }
+.bx8 .c:nth-child(4) { grid-column: 2; grid-row: 5 / 8; }
+.bx8 .c:nth-child(5) { grid-column: 1; grid-row: 7 / 11; }
+
+/* ===================== 9 · MEASURED BY THE WORDS · width follows sentence length
+   The track widths are the character counts, used literally as fr units, rather
+   than rounded onto a twelve column grid. Rounded, 21:32:25:38 became 2:3:3:4
+   and the four cells read as near-equal, which is the rule failing to survive
+   its own render. The cells sit on one row so width is the only variable. */
+.bx9 { grid-template-columns: 21fr 32fr 25fr 38fr; }
+.bx9 .c:nth-child(1) { grid-column: 1 / -1; grid-row: 1; }
+.bx9 .c:nth-child(n+2) { grid-row: 2; }
+
+/* ============================ 10 · ESCALATION · height climbs toward what ships */
+.bx10 { grid-template-columns: 2fr 2fr 2fr 3fr 3fr; grid-auto-rows: auto; align-items: end; }
+.bx10 .c { grid-row: 1; }
+.bx10 .c:nth-child(1) { min-height: clamp(104px,13vw,140px); }
+.bx10 .c:nth-child(2) { min-height: clamp(126px,16vw,174px); }
+.bx10 .c:nth-child(3) { min-height: clamp(150px,19vw,210px); }
+.bx10 .c:nth-child(4) { min-height: clamp(178px,23vw,252px); }
+.bx10 .c:nth-child(5) { min-height: clamp(208px,27vw,300px); }
+
+/* ----------------------------------------------------------------- narrow
+   Every bento wants to become one column, which is the known weakness of the
+   family: on a phone all ten converge on the same shape. Two cells stay paired
+   so at least the unevenness survives. */
+@media (max-width: 760px) {
+  .bx { grid-template-columns: repeat(4, minmax(0,1fr)); grid-auto-rows: minmax(96px, auto); }
+  .bx > .c:nth-child(n) { grid-area: auto; grid-column: span 4; min-height: 0; }
+  .bx > .c--s:nth-child(n) { grid-column: span 2; }
+  .bx10 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .c--xl .c__t { font-size: clamp(24px,7vw,32px); }
+}
+</style>
+</head>
+<body>
+
+<header class="lab-top">
+  <strong>GH-S04 · Bento Lab</strong>
+  <span>Ten mosaics, ten generative rules</span>
+  <nav>
+    <a href="#b1">1</a><a href="#b2">2</a><a href="#b3">3</a><a href="#b4">4</a><a href="#b5">5</a>
+    <a href="#b6">6</a><a href="#b7">7</a><a href="#b8">8</a><a href="#b9">9</a><a href="#b10">10</a>
+  </nav>
+</header>
+
+<div class="lab-note">
+  <p><b>A bento is only authored if a rule produced it.</b> Cells at assorted sizes is the default mosaic and reads as decoration. Each of these ten has one stated generative rule, and the rule should be legible from the render without reading the label. If it is not, that variant has failed on its own terms.</p>
+  <p><b>Cell counts are bound to content</b>, never to what fits: four operating failures, five stages, or whatever the product registry returns. Two variants are built from <code>registry/products.json</code> at runtime so they survive the registry returning a different number of products.</p>
+  <p><b>Canon held.</b> No three equal cards, no card nested inside a card, no shadows, one depth cue per cell, charcoal ramp rather than black, and gradient material only ever on a product object with a registry ID. Copy is byte-identical across all ten.</p>
+  <p><b>One live core across the whole lab</b>, on the dominant material cell of whichever variant you are looking at. Other material cells carry their exact static twin, so the focal cell is the only thing moving.</p>
+</div>
+
+<!-- ================================================================ 1 · SCARS -->
+<article class="lab-item" id="b1">
+  <header class="lab-label">
+    <span class="lab-num">1</span><span class="lab-name">Scars</span>
+    <span class="lab-rule">Area follows damage</span>
+    <span class="lab-live">No core</span>
+    <span class="lab-rat">Four cells, one per real operating failure, sized by how much each one hurt. The rule is legible because the largest is unmistakably dominant rather than merely bigger. Charcoal throughout: these are problems, not products, so none of them may carry material.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx1">
+        <article class="c c--dark c--xl"><p class="c__k">Where it started</p><div class="c__body"><p class="c__t">A decision disappears</p></div></article>
+        <article class="c c--recessed c--l"><div class="c__body"><p class="c__t">A workflow depends on one person</p></div></article>
+        <article class="c c--raised c--m"><div class="c__body"><p class="c__t">An AI agent lacks context</p></div></article>
+        <article class="c c--dark c--m"><div class="c__body"><p class="c__t">A process breaks when the tool changes</p></div></article>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================= 2 · PINWHEEL -->
+<article class="lab-item" id="b2">
+  <header class="lab-label">
+    <span class="lab-num">2</span><span class="lab-name">Pinwheel</span>
+    <span class="lab-rule">Four wrap the one</span>
+    <span class="lab-live" data-live-badge="b2">Core idle</span>
+    <span class="lab-rat">The four working stages turn a corner around the one that ships, which sits at the centre carrying the product material. The sequence is readable as a rotation rather than a list, so it makes the loop argument without drawing a loop.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx2">
+        <article class="c c--dark c--m"><div class="c__body"><p class="c__t">Build</p><p class="c__s">Solve a real operating problem inside Mez Studios.</p></div></article>
+        <article class="c c--recessed c--m"><div class="c__body"><p class="c__t">Run</p><p class="c__s">Use the system across active work, decisions and workflows.</p></div></article>
+        <article class="c c--raised c--m"><div class="c__body"><p class="c__t">Break</p><p class="c__s">Find the missing context, fragile handoffs and assumptions that fail in practice.</p></div></article>
+        <article class="c c--dark c--m"><div class="c__body"><p class="c__t">Refine</p><p class="c__s">Remove the friction and strengthen the operating layer.</p></div></article>
+        <article class="c c--mat c--m" data-material="MZ-G13" data-live-anchor="b2" data-core-shape="rect" data-core-radius="0.075">
+          <div class="c__body"><img class="c__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" /><p class="c__t">Package</p><p class="c__s">Turn the proven system into something another operator can install.</p></div>
+        </article>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ====================================================== 3 · HERO AND REASONS -->
+<article class="lab-item" id="b3">
+  <header class="lab-label">
+    <span class="lab-num">3</span><span class="lab-name">Hero and reasons</span>
+    <span class="lab-rule">One thing, four whys</span>
+    <span class="lab-live" data-live-badge="b3">Core idle</span>
+    <span class="lab-rat">A single dominant product cell against a stack of four failure cells that share one width. The rule is a ratio: the product occupies more of the section than every reason for it put together, which is the claim this section is making.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx3">
+        <article class="c c--mat c--xl" data-material="MZ-G13" data-live-anchor="b3" data-core-shape="rect" data-core-radius="0.045">
+          <div class="c__body"><img class="c__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" /><p class="c__t">AI OS</p><p class="c__s">AI Operating System</p></div>
+        </article>
+        <article class="c c--dark c--s"><div class="c__body"><p class="c__t">A decision disappears</p></div></article>
+        <article class="c c--recessed c--s"><div class="c__body"><p class="c__t">A workflow depends on one person</p></div></article>
+        <article class="c c--raised c--s"><div class="c__body"><p class="c__t">An AI agent lacks context</p></div></article>
+        <article class="c c--dark c--s"><div class="c__body"><p class="c__t">A process breaks when the tool changes</p></div></article>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================= 4 · REGISTRY -->
+<article class="lab-item" id="b4">
+  <header class="lab-label">
+    <span class="lab-num">4</span><span class="lab-name">Registry</span>
+    <span class="lab-rule">Weight follows availability</span>
+    <span class="lab-live" data-live-badge="b4">Core idle</span>
+    <span class="lab-rat">Built from the product registry at runtime, not authored cell by cell. What ships today is large and alive; what is coming is small and still. Nothing here counts to five, so the layout survives the registry gaining or losing a product.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx4" data-registry-bento="b4" data-live-first></div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ===================================================== 5 · BEFORE AND AFTER -->
+<article class="lab-item" id="b5">
+  <header class="lab-label">
+    <span class="lab-num">5</span><span class="lab-name">Before and after</span>
+    <span class="lab-rule">The axis is time</span>
+    <span class="lab-live" data-live-badge="b5">Core idle</span>
+    <span class="lab-rat">Four charcoal problem cells down the left, one tall material cell down the right. Reading left to right is reading the chronology. The four collapse into one, which is the mechanism the section is describing.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx5">
+        <article class="c c--dark c--s"><div class="c__body"><p class="c__t">A decision disappears</p></div></article>
+        <article class="c c--recessed c--s"><div class="c__body"><p class="c__t">A workflow depends on one person</p></div></article>
+        <article class="c c--raised c--s"><div class="c__body"><p class="c__t">An AI agent lacks context</p></div></article>
+        <article class="c c--dark c--s"><div class="c__body"><p class="c__t">A process breaks when the tool changes</p></div></article>
+        <article class="c c--mat c--l" data-material="MZ-G13" data-live-anchor="b5" data-core-shape="rect" data-core-radius="0.05">
+          <div class="c__body"><img class="c__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" /><p class="c__t">AI OS</p><p class="c__s">AI Operating System</p></div>
+        </article>
+        <article class="c c--paper c--s"><div class="c__body"><p class="c__t">Only the proven version becomes a Mez System.</p></div></article>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ========================================================== 6 · NUMBER WALL -->
+<article class="lab-item" id="b6">
+  <header class="lab-label">
+    <span class="lab-num">6</span><span class="lab-name">Number wall</span>
+    <span class="lab-rule">Paper proves, material ships</span>
+    <span class="lab-live" data-live-badge="b6">Core idle</span>
+    <span class="lab-rat">Surface carries meaning rather than variety: every proof cell is paper, the one product cell is material. Each figure is verifiable from the product registry, so nothing here is a plausible-looking invented number.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx6">
+        <article class="c c--paper"><div class="c__body"><span class="c__n">5</span><p class="c__s">Systems built inside Mez Studios to solve our own operating problems.</p></div></article>
+        <article class="c c--paper"><div class="c__body"><span class="c__n">1</span><p class="c__s">Proven enough to package and install today.</p></div></article>
+        <article class="c c--paper"><div class="c__body"><span class="c__n">5</span><p class="c__s">Stages every system passes before it becomes a Mez System.</p></div></article>
+        <article class="c c--mat c--l" data-material="MZ-G13" data-live-anchor="b6" data-core-shape="rect" data-core-radius="0.06">
+          <div class="c__body"><img class="c__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" /><p class="c__t">AI OS</p><p class="c__s">AI Operating System</p></div>
+        </article>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================================ 7 · QUILT -->
+<article class="lab-item" id="b7">
+  <header class="lab-label">
+    <span class="lab-num">7</span><span class="lab-name">Quilt</span>
+    <span class="lab-rule">The grid is the product family</span>
+    <span class="lab-live" data-live-badge="b7">Core idle</span>
+    <span class="lab-rat">Every cell is full-bleed material, one per product, copy sitting on the material as an overlay rather than beneath it. Also the riskiest: with no paper cell to rest on, it is the variant most likely to read as swatches instead of systems.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx7" data-registry-bento="b7"></div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== 8 · BRICK BOND -->
+<article class="lab-item" id="b8">
+  <header class="lab-label">
+    <span class="lab-num">8</span><span class="lab-name">Brick bond</span>
+    <span class="lab-rule">The offset is constant</span>
+    <span class="lab-live">No core</span>
+    <span class="lab-rat">Two columns where nothing aligns across, because the right column is offset by exactly one row unit every time. A constant offset reads as a decision; a varying one reads as an accident. The five stages descend in a bond rather than a stack.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx8">
+        <article class="c c--dark c--m"><div class="c__body"><p class="c__t">Build</p><p class="c__s">Solve a real operating problem inside Mez Studios.</p></div></article>
+        <article class="c c--recessed c--m"><div class="c__body"><p class="c__t">Run</p><p class="c__s">Use the system across active work, decisions and workflows.</p></div></article>
+        <article class="c c--raised c--m"><div class="c__body"><p class="c__t">Break</p><p class="c__s">Find the missing context, fragile handoffs and assumptions that fail in practice.</p></div></article>
+        <article class="c c--dark c--m"><div class="c__body"><p class="c__t">Refine</p><p class="c__s">Remove the friction and strengthen the operating layer.</p></div></article>
+        <article class="c c--recessed c--l"><div class="c__body"><p class="c__t">Package</p><p class="c__s">Turn the proven system into something another operator can install.</p></div></article>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================ 9 · MEASURED BY THE WORDS -->
+<article class="lab-item" id="b9">
+  <header class="lab-label">
+    <span class="lab-num">9</span><span class="lab-name">Measured by the words</span>
+    <span class="lab-rule">Width follows sentence length</span>
+    <span class="lab-live" data-live-badge="b9">Core idle</span>
+    <span class="lab-rat">The four failure cells are 2, 3, 3 and 4 columns wide because their sentences are 21, 32, 25 and 38 characters long. The grid is counted off the copy rather than chosen, so no cell has slack in it and no sentence is squeezed.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx9">
+        <article class="c c--mat c--l" data-material="MZ-G13" data-live-anchor="b9" data-core-shape="rect" data-core-radius="0.09">
+          <div class="c__body"><img class="c__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" /><p class="c__t">AI OS</p><p class="c__s">AI Operating System</p></div>
+        </article>
+        <article class="c c--dark c--s"><div class="c__body"><p class="c__t">A decision disappears</p></div></article>
+        <article class="c c--recessed c--s"><div class="c__body"><p class="c__t">A workflow depends on one person</p></div></article>
+        <article class="c c--raised c--s"><div class="c__body"><p class="c__t">An AI agent lacks context</p></div></article>
+        <article class="c c--dark c--s"><div class="c__body"><p class="c__t">A process breaks when the tool changes</p></div></article>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== 10 · ESCALATION -->
+<article class="lab-item" id="b10">
+  <header class="lab-label">
+    <span class="lab-num">10</span><span class="lab-name">Escalation</span>
+    <span class="lab-rule">Height climbs toward what ships</span>
+    <span class="lab-live" data-live-badge="b10">Core idle</span>
+    <span class="lab-rat">Five cells on one baseline, each taller and the last two wider than the ones before. The silhouette rises across the sequence and lands on the only cell carrying material. Horizontal, so it does not repeat GH-S02's vertical staircase.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bx bx10">
+        <article class="c c--dark c--s"><div class="c__body"><p class="c__t">Build</p></div></article>
+        <article class="c c--recessed c--s"><div class="c__body"><p class="c__t">Run</p></div></article>
+        <article class="c c--raised c--s"><div class="c__body"><p class="c__t">Break</p></div></article>
+        <article class="c c--dark c--m"><div class="c__body"><p class="c__t">Refine</p><p class="c__s">Remove the friction and strengthen the operating layer.</p></div></article>
+        <article class="c c--mat c--l" data-material="MZ-G13" data-live-anchor="b10" data-core-shape="rect" data-core-radius="0.06">
+          <div class="c__body"><img class="c__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" /><p class="c__t">Package</p><p class="c__s">Turn the proven system into something another operator can install.</p></div>
+        </article>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<script type="module" src="./core.js"></script>
+</body>
+</html>

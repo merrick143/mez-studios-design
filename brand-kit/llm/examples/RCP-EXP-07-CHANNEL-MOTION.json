@@ -1,0 +1,29 @@
+{
+  "schemaVersion":"1.0.0",
+  "receiptId":"RCP-EXP-07-CHANNEL-MOTION",
+  "taskId":"TASK-EXP-07-CHANNEL-MOTION",
+  "contextBundleId":"CTX-EXP-07-CHANNEL-MOTION",
+  "agent":{"kind":"llm","name":"Codex","model":"GPT-5"},
+  "startedAt":"2026-07-23T00:49:47Z",
+  "finishedAt":"2026-07-23T00:55:00Z",
+  "outcome":"complete",
+  "filesChanged":[
+    {"path":"brand-kit/expressions/channel-motion/","action":"created","sha256":null,"reason":"Canonical source, schema, three feedback rounds, approval, deterministic package, builder and verifier."},
+    {"path":"brand-kit/workbench/expressions/channel-motion/","action":"modified","sha256":null,"reason":"Locked seven-specimen approval proof with the menu removed and deferred."},
+    {"path":"brand-kit/llm/tasks/TASK-CMP-01-GLOBAL-NAVIGATION.json","action":"created","sha256":"6f1dd2a13b5da4d40bf01888ba35f2887a4fbe98e4681dfc55f8edae68fb541e","reason":"Future owner for production global navigation from existing research evidence."},
+    {"path":"brand-kit/docs/ROADMAP.md","action":"modified","sha256":"a7ecb78d78a017e91340fa9e181f4c245263cd27a4e8012f4c9311c431611655","reason":"EXP-07 closure, EXP-08 next and CMP-01 before the golden homepage."}
+  ],
+  "decisionsApplied":["DEC-MOTION-002","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-WEBSITE-MOTION-SYSTEM-001"],
+  "tests":[
+    {"id":"EXP-07-CONTRACT","status":"pass","evidence":"Schema, exact Round 03 hash, seven approved IDs, one deferral, dependencies and deterministic package validate."},
+    {"id":"EXP-07-MOTION","status":"pass","evidence":"Static equivalence, one-event allocation, no-autoplay and reduced-motion rules remain explicit."},
+    {"id":"EXP-07-SCOPE","status":"pass","evidence":"Email, advertising, social, film, Figma and motion-graphics production remain excluded."},
+    {"id":"EXP-07-HUMAN","status":"pass","evidence":"Olli approved seven specimens, closed EXP-07 and deferred MOT-W02 to a separate global-navigation task."}
+  ],
+  "artifactsProduced":["Canonical Website Motion 1.0.0 contract","Deterministic canonical package","Locked seven-specimen approval proof","Planned CMP-01 global-navigation task"],
+  "assumptions":["The user's instruction to close EXP-07 plus seven keeps is the expression-family approval signal; the explicit menu feedback is a deferral, not approval or rejection."],
+  "exceptions":["The decision does not authorise a global-navigation component, golden homepage, channel-production motion, Figma or consumer integration."],
+  "hiddenContextFailures":[],
+  "humanStatus":{"gateRequired":true,"gateId":"H-EXP-07-CHANNEL-MOTION-PROOF","status":"approved"},
+  "nextAction":"Run EXP-08 stress proof, then execute TASK-CMP-01-GLOBAL-NAVIGATION before composing the golden homepage."
+}

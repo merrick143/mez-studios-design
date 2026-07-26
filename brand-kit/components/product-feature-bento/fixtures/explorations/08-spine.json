@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "Built on the left, waiting on the right, one layer through both",
+  "columns": 12,
+  "generativeRule": "The spine is the shared layer and it touches both columns. Left is what exists, right is what does not.",
+  "copyProvenance": "Block names, the four system mappings and the product cell all resolve from registry/products.json. Blocks with no system carry no claim. Nothing is authored.",
+  "cells": [
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "productSlug": "ai-ads-system",
+      "col": 1,
+      "row": 1,
+      "span": 5
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "productSlug": "organic-content-os",
+      "col": 1,
+      "row": 2,
+      "span": 5
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "productSlug": "claude-code-os",
+      "col": 1,
+      "row": 3,
+      "span": 5
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "productSlug": "context-engine",
+      "col": 1,
+      "row": 4,
+      "span": 5
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "col": 6,
+      "row": 1,
+      "span": 2,
+      "rows": 4
+    },
+    {
+      "job": "workflow",
+      "label": "Sales",
+      "col": 8,
+      "row": 1,
+      "span": 5,
+      "surface": "outline"
+    },
+    {
+      "job": "workflow",
+      "label": "Finance",
+      "col": 8,
+      "row": 2,
+      "span": 5,
+      "surface": "outline"
+    },
+    {
+      "job": "workflow",
+      "label": "Client delivery",
+      "col": 8,
+      "row": 3,
+      "span": 5,
+      "surface": "outline"
+    },
+    {
+      "job": "workflow",
+      "label": "Design",
+      "col": 8,
+      "row": 4,
+      "span": 5,
+      "surface": "outline"
+    }
+  ]
+}

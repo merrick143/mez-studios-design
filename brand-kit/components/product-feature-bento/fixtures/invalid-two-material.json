@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "Deliberately invalid: two colour events",
+  "columns": 12,
+  "copyProvenance": "A negative fixture. It exists so the contract rule is proven at render rather than asserted in a document.",
+  "cells": [
+    { "job": "product", "productSlug": "aios", "surface": "material", "focal": true, "span": 6, "rows": 2 },
+    { "job": "product", "productSlug": "context-engine", "surface": "material", "span": 6, "rows": 2 },
+    { "job": "workflow", "label": "Tasks", "span": 4 },
+    { "job": "workflow", "label": "Projects", "span": 8 }
+  ]
+}

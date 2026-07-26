@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.product-feature-bento",
+  "pantryId": "PC2-B-C04",
+  "gateId": "H-CMP-04-PRODUCT-FEATURE-BENTO-PROOF",
+  "candidateRevision": "product-feature-bento-01-r01",
+  "verdict": "awaiting-human-review",
+  "productionAuthority": false,
+  "decisionId": null,
+  "recordedAt": "2026-07-26",
+  "requestedBy": "Olli",
+  "summary": "First candidate of the Product Feature Bento. Built after the GH-S04 bento labs and the reference study of the screenshots and recordings Olli supplied on 2026-07-26. The layout contract, the surface allocation and the one-colour-event rule are enforced at render rather than documented.",
+  "provenance": {
+    "specification": "brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md, PC2-B-C04 and the section titled Bento is a layout contract, not a style",
+    "reference": "brand-kit/references/premium-neutral-with-one-colour-event/design-language.md",
+    "exploration": [
+      "brand-kit/workbench/golden/homepage/why-lab-2 (ten mosaics, ten generative rules)",
+      "brand-kit/workbench/golden/homepage/why-lab-3 (framed, one colour event each)"
+    ],
+    "convergence": "The pantry rule that multiple live gradient cells fail validation and the allocation rule the reference study produced are the same rule, arrived at independently. That is why it is the one rule the component refuses to render around."
+  },
+  "whatWasProven": [
+    {
+      "claim": "Exactly one material cell per bento",
+      "method": "Rendered all four variants and counted [data-surface=material] at runtime",
+      "result": "1, 1, 1, 1"
+    },
+    {
+      "claim": "A fixture asking for two material cells is rejected, not degraded",
+      "method": "fixtures/invalid-two-material.json rendered in the fixture page",
+      "result": "data-contract-failure set, reason rendered, mez-bento-contract-failure dispatched, zero cells drawn"
+    },
+    {
+      "claim": "Count independence (LAY-09)",
+      "method": "product-comparison re-rendered against registries of 4, 5 and 6 products",
+      "result": "4, 5 and 6 cells, one material cell each, no cell escaping the grid box"
+    },
+    {
+      "claim": "Compact linearization preserves order and drops nothing",
+      "method": "All four variants measured at 390px for equal cell widths, display:none and monotonic top offsets",
+      "result": "single column true, hidden 0, document order preserved, all four"
+    },
+    {
+      "claim": "Concentric radii",
+      "method": "frame 32 minus padding 8 equals panel 24, asserted by the verifier against the foundations tokens",
+      "result": "pass"
+    }
+  ],
+  "defectsFoundAndFixed": [
+    {
+      "defect": "Attribute selector [style*=\"--row\"] also matched --rows, so every auto-flow cell declaring a row span was treated as explicitly placed and silently lost its span.",
+      "howFound": "The mechanism-map product cell rendered one row tall instead of two.",
+      "fix": "Explicit placement renamed to --col-start and --row-start, matched with a trailing colon."
+    },
+    {
+      "defect": "Explicitly placed cells kept their placement in the compact linearization, because the attribute selectors outrank the single-column reset on specificity. The workflow variant reordered itself at 390px.",
+      "howFound": "The linearization measurement returned domOrderPreserved false for that variant only.",
+      "fix": "The container query resets the placed selectors by name, so specificity ties and source order wins."
+    }
+  ],
+  "notYetProven": [
+    "Gate B design review has not been run on the rendered variants.",
+    "Interaction states beyond focus-visible and hover are unexercised because no current fixture declares an interactive cell.",
+    "The component has never been mounted inside the Golden Homepage, so its behaviour beside GH-S03's live core is untested in situ."
+  ],
+  "humanDecisionsRequired": [
+    "Whether GH-S04 adopts this component, and which variant.",
+    "The eight building blocks in mechanism-map need promoting into brand-kit/registry/ with a decision behind them if this becomes the canonical statement of what a business is made of. Four of the eight are named exactly as the registry names the function each system serves, so those are read rather than invented; the remaining four are inferred from the six departments Mez Studios actually runs in mezcorp_claude_code, which is evidence and not authority.",
+    "The three caption lines in fixtures/evidence-mosaic.json are authored for this fixture and are the only new sentences anywhere in the component. Every other string is existing GH-S04 copy or resolved from the canonical registry.",
+    "Promotion from candidate to canonical, which requires a decision ID in governance/decisions.json before the build script will produce a release."
+  ],
+  "outputStatus": "candidate"
+}

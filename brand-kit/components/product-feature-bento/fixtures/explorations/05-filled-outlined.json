@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "Filled means built",
+  "columns": 12,
+  "generativeRule": "Fill means a system exists. The blocks without one are drawn only far enough to be countable, so you can count what exists without reading a word.",
+  "copyProvenance": "Block names, the four system mappings and the product cell all resolve from registry/products.json. Blocks with no system carry no claim. Nothing is authored.",
+  "cells": [
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "span": 5,
+      "rows": 2
+    },
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "productSlug": "ai-ads-system",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "productSlug": "organic-content-os",
+      "span": 4
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "productSlug": "claude-code-os",
+      "span": 4
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "productSlug": "context-engine",
+      "span": 3
+    },
+    {
+      "job": "workflow",
+      "label": "Sales",
+      "span": 3,
+      "surface": "outline"
+    },
+    {
+      "job": "workflow",
+      "label": "Finance",
+      "span": 2,
+      "surface": "outline"
+    },
+    {
+      "job": "workflow",
+      "label": "Client delivery",
+      "span": 4,
+      "surface": "outline"
+    },
+    {
+      "job": "workflow",
+      "label": "Design",
+      "span": 3,
+      "surface": "outline"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "What the business does, what runs it, what it all sits on",
+  "columns": 12,
+  "generativeRule": "One axis, three altitudes, heights decreasing. Closest to the operating-layer language the rest of the page already uses.",
+  "copyProvenance": "Block names, the four system mappings and the product cell all resolve from registry/products.json. Blocks with no system carry no claim. Nothing is authored.",
+  "cells": [
+    {
+      "job": "workflow",
+      "label": "What the business does",
+      "span": 12,
+      "rows": 2,
+      "entriesDisplay": "chips",
+      "entries": [
+        {
+          "label": "Advertising",
+          "productSlug": "ai-ads-system"
+        },
+        {
+          "label": "Organic content",
+          "productSlug": "organic-content-os"
+        },
+        {
+          "label": "Software work",
+          "productSlug": "claude-code-os"
+        },
+        {
+          "label": "Business context",
+          "productSlug": "context-engine"
+        },
+        {
+          "label": "Sales"
+        },
+        {
+          "label": "Finance"
+        },
+        {
+          "label": "Client delivery"
+        },
+        {
+          "label": "Design"
+        }
+      ]
+    },
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "productSlug": "ai-ads-system",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "productSlug": "organic-content-os",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "productSlug": "claude-code-os",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "productSlug": "context-engine",
+      "span": 3
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "span": 12
+    }
+  ]
+}

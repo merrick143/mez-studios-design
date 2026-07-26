@@ -1,0 +1,44 @@
+{
+  "slug": "elevenlabs",
+  "name": "ElevenLabs",
+  "domain": "elevenlabs.io",
+  "website": "https://elevenlabs.io",
+  "colours": {
+    "primary": "#000000",
+    "all": [
+      {
+        "hex": "#000000",
+        "role": "brand",
+        "source": "curated"
+      }
+    ]
+  },
+  "fonts": [],
+  "logos": {
+    "mark": {
+      "svg": "logos/mark.svg",
+      "png": null,
+      "light": "logos/mark-light.svg",
+      "dark": "logos/mark-dark.svg",
+      "raster": [
+        "logos/raster/mark-256.png",
+        "logos/raster/mark-512.png",
+        "logos/raster/mark-1024.png"
+      ]
+    },
+    "app_icon": {
+      "png": "logos/app-icon.png",
+      "source": "s2-favicon",
+      "raster": [
+        "logos/raster/app-icon-256.png",
+        "logos/raster/app-icon-512.png",
+        "logos/raster/app-icon-1024.png"
+      ]
+    },
+    "primary": "logos/mark.svg"
+  },
+  "socials": {},
+  "tier_fetched": "A",
+  "fetched_at": "2026-07-24T07:11:04Z",
+  "last_refreshed": "2026-07-24T07:11:04Z"
+}

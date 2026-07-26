@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "proofId": "mz.systems.expression.stress-proof",
+  "version": "0.1.0-candidate",
+  "status": "review-candidate",
+  "productionAuthority": false,
+  "gateId": "H-EXP-08-EXPRESSION-STRESS-PROOF",
+  "candidateRevision": "expression-stress-01-r01",
+  "taskId": "TASK-EXP-08-EXPRESSION-STRESS-PROOF",
+  "title": "Expression system stress proof",
+  "thesis": "EXP-08 certifies that the approved Mez expression grammar remains complete, legible and operable under hostile receiver, content, preference, input and runtime conditions. It may expose implementation defects, but it cannot silently redesign or reopen approved expression decisions.",
+  "authorityBoundary": {
+    "mayCertify": ["responsive reflow", "text growth and localization", "reduced-motion and static equivalence", "keyboard, focus and semantic operation", "missing media, unavailable data and recoverable errors", "one-live-core allocation and source-order invariants"],
+    "mayRepair": ["overflow", "truncation", "focus loss", "missing labels", "fallback failure", "motion-preference failure", "recovery failure"],
+    "mayNotChange": ["approved visual direction", "canonical product or gradient assignment", "Wings geometry", "component anatomy", "motion grammar", "golden-homepage composition", "global-navigation anatomy"]
+  },
+  "coverage": {
+    "viewports": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+    "containers": [240, 320, 480, 640, 960, 1160],
+    "textZoom": [100, 200, 400],
+    "contentModes": ["short", "long", "localized", "rtl", "missing-optional", "unpriced"],
+    "runtimeModes": ["default", "reduced-motion", "no-webgl", "missing-media", "forced-colours"],
+    "inputModes": ["keyboard", "pointer", "touch", "screen-reader-spot-check"]
+  },
+  "suites": [
+    {"id":"reflow","title":"Receiver and reflow","count":3,"passRule":"No page or component overflow, clipping, overlap or unusable control at the named viewport and receiver widths."},
+    {"id":"content","title":"Content and zoom","count":3,"passRule":"Reading order, hierarchy and actions remain complete at 200/400 percent text scale, long copy, translation expansion and RTL."},
+    {"id":"fallback","title":"Motion and fallback","count":3,"passRule":"Static is complete; reduced motion avoids renderer initialization; no-WebGL and missing-media states preserve identity and meaning."},
+    {"id":"accessibility","title":"Accessibility and input","count":2,"passRule":"Semantic controls, visible focus, keyboard order, target size and non-colour state meaning remain intact."},
+    {"id":"recovery","title":"Async and recovery","count":2,"passRule":"Loading, failure, retry, missing optional data and unpriced offers remain truthful and recoverable."},
+    {"id":"invariants","title":"System invariants","count":1,"passRule":"One live product material maximum; repeated siblings are static; canonical identity, geometry and source order do not drift."}
+  ],
+  "scenarios": [
+    {"id":"ST-R01","suite":"reflow","title":"240px compact receiver","fixture":"compact-pricing","automatedChecks":["component-overflow","control-fit","content-order"]},
+    {"id":"ST-R02","suite":"reflow","title":"320px mobile decision","fixture":"mobile-product","automatedChecks":["page-overflow","sticky-action-fit","touch-targets"]},
+    {"id":"ST-R03","suite":"reflow","title":"1440px family shelf","fixture":"family-shelf","automatedChecks":["equal-sibling-geometry","maximum-line-length","single-live-allocation"]},
+    {"id":"ST-T01","suite":"content","title":"200% text zoom","fixture":"zoomed-checkout","automatedChecks":["text-reflow","action-visibility","summary-order"]},
+    {"id":"ST-T02","suite":"content","title":"400% text zoom","fixture":"zoomed-discovery","automatedChecks":["single-column-reflow","no-truncation","focus-order"]},
+    {"id":"ST-T03","suite":"content","title":"Long, localized and RTL copy","fixture":"localized-card","automatedChecks":["translation-expansion","rtl-order","logical-spacing"]},
+    {"id":"ST-F01","suite":"fallback","title":"Reduced motion","fixture":"reduced-motion","automatedChecks":["static-completeness","no-auto-renderer","equivalent-meaning"]},
+    {"id":"ST-F02","suite":"fallback","title":"WebGL unavailable","fixture":"no-webgl","automatedChecks":["exact-static-twin","identity-retained","action-retained"]},
+    {"id":"ST-F03","suite":"fallback","title":"Missing media","fixture":"missing-media","automatedChecks":["meaningful-placeholder","alt-contract","layout-retained"]},
+    {"id":"ST-A01","suite":"accessibility","title":"Keyboard and focus","fixture":"keyboard-controls","automatedChecks":["semantic-buttons","visible-focus","escape-and-restore"]},
+    {"id":"ST-A02","suite":"accessibility","title":"Touch and non-colour meaning","fixture":"touch-status","automatedChecks":["minimum-target","text-status","field-association"]},
+    {"id":"ST-S01","suite":"recovery","title":"Loading, failure and retry","fixture":"recoverable-process","automatedChecks":["announced-status","retry-control","retained-context"]},
+    {"id":"ST-S02","suite":"recovery","title":"Missing optional data and unpriced offer","fixture":"unpriced-offer","automatedChecks":["truthful-availability","no-invented-price","alternate-action"]},
+    {"id":"ST-I01","suite":"invariants","title":"One live core across repetition","fixture":"motion-allocation","automatedChecks":["maximum-one-live","static-repeated-siblings","canonical-wings","canonical-gradient"]}
+  ],
+  "acceptance": {
+    "automatic": "All schema, dependency, package, DOM-contract and deterministic-build checks pass.",
+    "visual": "Desktop, mobile, forced-static and no-WebGL proof views preserve the approved grammar with no page overflow or unusable states.",
+    "human": "Olli accepts the certification boundary and any documented residual risks; approval does not create a new visual direction.",
+    "consumerBoundary": "Provider logic, real payment processing, production data, consumer-framework integration and the golden homepage still require later consumer proof."
+  },
+  "dependencies": {
+    "disc":{"path":"brand-kit/expressions/disc/disc.source.json","sha256":"ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a"},
+    "sphere":{"path":"brand-kit/expressions/sphere/sphere.source.json","sha256":"a59d663a5cae4cb54b596f6e8b34835e0f3a376e999f9fb83e26bebeab264dca"},
+    "wingsMark":{"path":"brand-kit/expressions/wings-mark/wings-mark.source.json","sha256":"4e7b0660e50516428594813b5419328cdaf5368a66ee4793c9492a593eeea8a1"},
+    "productCard":{"path":"brand-kit/expressions/product-card/product-card.source.json","sha256":"fa2e27bb4bffae992e4d8cde807a5c29c62d973cc1b652a22af7227fca0c39ba"},
+    "productComponents":{"path":"brand-kit/expressions/product-card/phase-b/product-component-pantry.source.json","sha256":"cf5fc2478e59cc98a0ce206de0055fae66478dd2ad64f45255ca7a1a054aa250"},
+    "tradingCard":{"path":"brand-kit/expressions/trading-card/trading-card.source.json","sha256":"28750981346dd128ec0c0e64cd879345631e0867f2247ae20f224958f54b882f"},
+    "websiteMotion":{"path":"brand-kit/expressions/channel-motion/channel-motion.source.json","sha256":"f04a82f58f4283862014844dcd3911e6986d035076d784ab83638d9ed842d17d"},
+    "foundationManifest":{"path":"brand-kit/releases/foundations/dist/manifest.json","sha256":"2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"},
+    "productRegistry":{"path":"brand-kit/registry/products.json","sha256":"665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b"},
+    "gradientRegistry":{"path":"brand-kit/registry/gradients.json","sha256":"ab23ae9b4e88da48dac5d240a840c8bf77e99707bc6ae09ce2a2d6f5168cbfe7"},
+    "wings":{"path":"brand-kit/source-pack/design-system-export/assets/wings.svg","sha256":"e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33"}
+  }
+}

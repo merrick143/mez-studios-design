@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.channel-motion-matrix",
+  "version": "1.0.0",
+  "status": "canonical",
+  "productionAuthority": true,
+  "candidateGateId": "H-EXP-07-CHANNEL-MOTION-PROOF",
+  "candidateRevision": "channel-motion-matrix-01-r03",
+  "decisionIds": ["DEC-MOTION-002", "DEC-WEBSITE-MOTION-SYSTEM-001"],
+  "title": "Website motion system",
+  "thesis": "Mez website motion is restrained component behaviour, not a channel spectacle. Static is complete. Motion may make one product material feel alive, clarify a direct interface change, reveal nearby content, or explain a short process. It stays brief, local, interruptible and subordinate to the page hierarchy.",
+  "scope": {
+    "primary": "marketing-web",
+    "included": ["Living Core allocation", "functional state response", "simple product demonstration", "section entry", "accordion and tabs", "product carousel", "processor and progress"],
+    "excludedMotionProduction": ["email", "paid advertising", "organic social", "video and film", "motion graphics", "Figma animation", "consumer-specific campaign editing"],
+    "staticOnlyOutputs": ["documents and presentations", "icons and compact identity", "open graph and link previews"]
+  },
+  "decisionModel": {
+    "staticBaseline": true,
+    "maximumActiveMotionEventsPerViewport": 1,
+    "selectionRule": "Prefer the nearest user-caused component response. Otherwise allocate motion only to the single most visible eligible product material or demonstration. Repeated and secondary content remains still.",
+    "roles": [
+      {"id":"focal-material","title":"Focal material","job":"Make one approved product field feel alive while its chassis, Wings and content stay fixed.","duration":"continuous only while selected and visible","fallback":"exact source-derived static twin"},
+      {"id":"functional-ui","title":"Functional response","job":"Confirm a direct action or spatial change without calling attention to animation itself.","duration":"120–240ms","fallback":"immediate final state with equivalent hierarchy"},
+      {"id":"simple-demonstration","title":"Simple demonstration","job":"Show one short input-to-result sequence when a single still cannot explain the mechanism.","duration":"one 1200–1800ms pass","fallback":"complete before-and-after state with visible reading order"}
+    ],
+    "durations": {"feedbackMs":120,"stateMs":180,"spatialMs":240,"revealMs":360,"demonstrationMaxMs":1800},
+    "easing": {"enter":"cubic-bezier(0.16, 1, 0.3, 1)","state":"cubic-bezier(0.2, 0, 0, 1)","exit":"cubic-bezier(0.4, 0, 1, 1)","progress":"linear"}
+  },
+  "families": [
+    {"id":"laws","title":"Motion Laws","count":3,"job":"Approve the three reasons website motion may exist."},
+    {"id":"components","title":"Website Components","count":4,"job":"Define the smallest approved component behaviours needed before individual production components are built."}
+  ],
+  "specimens": [
+    {"id":"MOT-L01","family":"laws","title":"Focal material","pattern":"focal-material"},
+    {"id":"MOT-L02","family":"laws","title":"Functional response","pattern":"functional-ui"},
+    {"id":"MOT-L03","family":"laws","title":"Simple demonstration","pattern":"simple-demonstration"},
+    {"id":"MOT-W01","family":"components","title":"Section entry","pattern":"section-entry"},
+    {"id":"MOT-W03","family":"components","title":"Accordion and tabs","pattern":"accordion-tabs"},
+    {"id":"MOT-W04","family":"components","title":"Product carousel","pattern":"product-carousel"},
+    {"id":"MOT-W05","family":"components","title":"Processor and progress","pattern":"processor-progress"}
+  ],
+  "reducedMotion": {
+    "runtime": "Do not initialise the Living Core renderer; use the exact static product material.",
+    "functional": "Apply the resulting state immediately while preserving focus and content order.",
+    "demonstration": "Show the complete before-and-after state without automatic playback.",
+    "components": "Remove travel and stagger; retain visibility, selection, focus and progress meaning."
+  },
+  "exportContract": {
+    "staticTwinRequired": true,
+    "motionMayNotCarrySoleMeaning": true,
+    "equivalence": "Every animated component is a progressive enhancement over a complete static or immediate-state interface.",
+    "sourcePaletteAuthority": "Exact source-derived product colour remains authoritative and Wings geometry never animates.",
+    "requiredMetadata": ["pattern", "trigger", "duration", "easing", "staticTwin", "reducedMotionBehaviour"]
+  },
+  "prohibited": [
+    "motion production for email, ads, organic social or film inside this repository task",
+    "multiple simultaneous expressive motion events",
+    "animated Wings geometry or logo morphing",
+    "scroll hijacking, pinned storytelling or forced scrub sequences",
+    "parallax used as decoration",
+    "pulsing, breathing, spinning, bouncing or floating product objects",
+    "generic kinetic typography",
+    "staggered animation on every page section",
+    "motion-dependent content, navigation or conversion actions",
+    "automatic carousels that move before user intent",
+    "manual animate buttons on product material",
+    "automatic motion that ignores reduced-motion preference"
+  ],
+  "deferral": {
+    "specimenId": "MOT-W02",
+    "reason": "A real global navigation needs its own visual, semantic, responsive, accessibility and packaging contract; the Round 03 illustrative menu is not promoted as a component.",
+    "taskId": "TASK-CMP-01-GLOBAL-NAVIGATION",
+    "evidence": ["explore-menu/explore-menu.js", "explore-menu/explore-menu.css", "explore-menu/index.html", "explore-menu/showcase.js"],
+    "boundary": "The website-motion system constrains the future component, but does not approve its anatomy or visual direction."
+  },
+  "approval": {
+    "review": "brand-kit/expressions/channel-motion/review.json",
+    "round03Feedback": "brand-kit/expressions/channel-motion/round-03-feedback.json",
+    "round03FeedbackSha256": "c9cc026ab200f52c69393d6c48111b61f5b5393efc33127a17e088df68a13cce",
+    "decisionId": "DEC-WEBSITE-MOTION-SYSTEM-001",
+    "approvedSpecimens": 7,
+    "deferredSpecimens": ["MOT-W02"]
+  },
+  "testViewports": [320,360,375,390,430,768,1024,1280,1440],
+  "dependencies": {
+    "disc":{"path":"brand-kit/expressions/disc/disc.source.json","sha256":"ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a"},
+    "sphere":{"path":"brand-kit/expressions/sphere/sphere.source.json","sha256":"a59d663a5cae4cb54b596f6e8b34835e0f3a376e999f9fb83e26bebeab264dca"},
+    "productCard":{"path":"brand-kit/expressions/product-card/product-card.source.json","sha256":"fa2e27bb4bffae992e4d8cde807a5c29c62d973cc1b652a22af7227fca0c39ba"},
+    "tradingCard":{"path":"brand-kit/expressions/trading-card/trading-card.source.json","sha256":"28750981346dd128ec0c0e64cd879345631e0867f2247ae20f224958f54b882f"},
+    "productEthos":{"path":"brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md","sha256":"d936b4373716f73f1ea63108c00f58a31ecba42bdc4aa0393c3e95457a89be86"},
+    "foundationManifest":{"path":"brand-kit/releases/foundations/dist/manifest.json","sha256":"2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"},
+    "productRegistry":{"path":"brand-kit/registry/products.json","sha256":"665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b"},
+    "gradientRegistry":{"path":"brand-kit/registry/gradients.json","sha256":"ab23ae9b4e88da48dac5d240a840c8bf77e99707bc6ae09ce2a2d6f5168cbfe7"},
+    "renderer":{"path":"brand-kit/source-pack/design-system-export/mz-core.js","sha256":"7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d"},
+    "wings":{"path":"brand-kit/source-pack/design-system-export/assets/wings.svg","sha256":"e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33"},
+    "motionResearch":{"path":"brand-kit/research/phase-2/PATTERN-ATLAS.md","sha256":"b3cbe3c6d464e54276f5ab83c86652f2a9c9daffb54d1930836c1c6eacdc65d3"},
+    "programmeAudit":{"path":"brand-kit/docs/END-TO-END-ROADMAP.md","sha256":"0e558750038d422129e00df2970fe77daaa83308f59247f0ae0dc11d2ccb51d1"}
+  }
+}

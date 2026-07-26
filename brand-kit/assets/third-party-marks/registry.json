@@ -1,0 +1,1366 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedBy": "brand-kit/assets/third-party-marks/build_mark_registry.py",
+  "status": "reference",
+  "productionAuthority": false,
+  "note": "Third-party marks are other companies' property, held here as reference assets so Mez surfaces never invent or fake a logo. They are not Mez brand data and they never enter brand-kit/registry/.",
+  "count": 58,
+  "brands": [
+    {
+      "slug": "antigravity",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/antigravity/logos/raster/app-icon-1024.png",
+          "256": "marks/antigravity/logos/raster/app-icon-256.png",
+          "512": "marks/antigravity/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/antigravity/logos/raster/mark-1024.png",
+          "256": "marks/antigravity/logos/raster/mark-256.png",
+          "512": "marks/antigravity/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/antigravity/logos/app-icon.png",
+      "name": "Google Antigravity",
+      "domain": "antigravity.google",
+      "brandColour": "#4285F4"
+    },
+    {
+      "slug": "apify",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/apify/logos/raster/app-icon-1024.png",
+          "256": "marks/apify/logos/raster/app-icon-256.png",
+          "512": "marks/apify/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/apify/logos/raster/mark-1024.png",
+          "256": "marks/apify/logos/raster/mark-256.png",
+          "512": "marks/apify/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/apify/logos/app-icon.png",
+      "name": "Apify",
+      "domain": "apify.com",
+      "brandColour": "#97D700"
+    },
+    {
+      "slug": "apple-intelligence",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/apple-intelligence/logos/raster/app-icon-1024.png",
+          "256": "marks/apple-intelligence/logos/raster/app-icon-256.png",
+          "512": "marks/apple-intelligence/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/apple-intelligence/logos/raster/mark-1024.png",
+          "256": "marks/apple-intelligence/logos/raster/mark-256.png",
+          "512": "marks/apple-intelligence/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/apple-intelligence/logos/app-icon.png",
+      "name": "Apple Intelligence",
+      "domain": "apple.com",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "base44",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/base44/logos/raster/app-icon-1024.png",
+          "256": "marks/base44/logos/raster/app-icon-256.png",
+          "512": "marks/base44/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/base44/logos/raster/mark-1024.png",
+          "256": "marks/base44/logos/raster/mark-256.png",
+          "512": "marks/base44/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/base44/logos/app-icon.png",
+      "name": "Base44",
+      "domain": "base44.com",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "beehiiv",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/beehiiv/logos/raster/app-icon-1024.png",
+          "256": "marks/beehiiv/logos/raster/app-icon-256.png",
+          "512": "marks/beehiiv/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/beehiiv/logos/raster/mark-1024.png",
+          "256": "marks/beehiiv/logos/raster/mark-256.png",
+          "512": "marks/beehiiv/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/beehiiv/logos/app-icon.png",
+      "name": "beehiiv",
+      "domain": "beehiiv.com",
+      "brandColour": "#FFC700"
+    },
+    {
+      "slug": "canva",
+      "svg": {
+        "mark": "marks/canva/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/canva/logos/raster/app-icon-1024.png",
+          "256": "marks/canva/logos/raster/app-icon-256.png",
+          "512": "marks/canva/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/canva/logos/raster/mark-1024.png",
+          "256": "marks/canva/logos/raster/mark-256.png",
+          "512": "marks/canva/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/canva/logos/app-icon.png",
+      "name": "Canva",
+      "domain": "canva.com",
+      "brandColour": "#00C4CC",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "capcut",
+      "svg": {
+        "mark": "marks/capcut/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/capcut/logos/raster/app-icon-1024.png",
+          "256": "marks/capcut/logos/raster/app-icon-256.png",
+          "512": "marks/capcut/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/capcut/logos/raster/mark-1024.png",
+          "256": "marks/capcut/logos/raster/mark-256.png",
+          "512": "marks/capcut/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/capcut/logos/app-icon.png",
+      "name": "CapCut",
+      "domain": "capcut.com",
+      "brandColour": "#000000",
+      "aspect": 1.27,
+      "form": "symbol"
+    },
+    {
+      "slug": "character-ai",
+      "svg": {
+        "mark": "marks/character-ai/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/character-ai/logos/raster/app-icon-1024.png",
+          "256": "marks/character-ai/logos/raster/app-icon-256.png",
+          "512": "marks/character-ai/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/character-ai/logos/raster/mark-1024.png",
+          "256": "marks/character-ai/logos/raster/mark-256.png",
+          "512": "marks/character-ai/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/character-ai/logos/app-icon.png",
+      "name": "Character.AI",
+      "domain": "character.ai",
+      "brandColour": "#0D0D0D",
+      "aspect": 3.81,
+      "form": "wordmark"
+    },
+    {
+      "slug": "chatgpt",
+      "svg": {
+        "mark": "marks/chatgpt/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/chatgpt/logos/raster/app-icon-1024.png",
+          "256": "marks/chatgpt/logos/raster/app-icon-256.png",
+          "512": "marks/chatgpt/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/chatgpt/logos/raster/mark-1024.png",
+          "256": "marks/chatgpt/logos/raster/mark-256.png",
+          "512": "marks/chatgpt/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/chatgpt/logos/app-icon.png",
+      "name": "ChatGPT",
+      "domain": "chatgpt.com",
+      "brandColour": "#000000",
+      "aspect": 0.98,
+      "form": "symbol"
+    },
+    {
+      "slug": "claude",
+      "svg": {
+        "mark-dark": "marks/claude/logos/mark-dark.svg",
+        "mark-light": "marks/claude/logos/mark-light.svg",
+        "mark": "marks/claude/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/claude/logos/raster/app-icon-1024.png",
+          "256": "marks/claude/logos/raster/app-icon-256.png",
+          "512": "marks/claude/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/claude/logos/raster/mark-1024.png",
+          "256": "marks/claude/logos/raster/mark-256.png",
+          "512": "marks/claude/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/claude/logos/app-icon.png",
+      "name": "Claude",
+      "domain": "claude.ai",
+      "brandColour": "#D97757",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "clickup",
+      "svg": {
+        "mark-dark": "marks/clickup/logos/mark-dark.svg",
+        "mark-light": "marks/clickup/logos/mark-light.svg",
+        "mark": "marks/clickup/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/clickup/logos/raster/app-icon-1024.png",
+          "256": "marks/clickup/logos/raster/app-icon-256.png",
+          "512": "marks/clickup/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/clickup/logos/raster/mark-1024.png",
+          "256": "marks/clickup/logos/raster/mark-256.png",
+          "512": "marks/clickup/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/clickup/logos/app-icon.png",
+      "name": "ClickUp",
+      "domain": "clickup.com",
+      "brandColour": "#7B68EE",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "codex",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/codex/logos/raster/app-icon-1024.png",
+          "256": "marks/codex/logos/raster/app-icon-256.png",
+          "512": "marks/codex/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/codex/logos/raster/mark-1024.png",
+          "256": "marks/codex/logos/raster/mark-256.png",
+          "512": "marks/codex/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/codex/logos/app-icon.png",
+      "name": "OpenAI Codex",
+      "domain": "openai.com",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "cohere",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/cohere/logos/raster/app-icon-1024.png",
+          "256": "marks/cohere/logos/raster/app-icon-256.png",
+          "512": "marks/cohere/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/cohere/logos/raster/mark-1024.png",
+          "256": "marks/cohere/logos/raster/mark-256.png",
+          "512": "marks/cohere/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/cohere/logos/app-icon.png",
+      "name": "Cohere",
+      "domain": "cohere.com",
+      "brandColour": "#39594D"
+    },
+    {
+      "slug": "cursor",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/cursor/logos/raster/app-icon-1024.png",
+          "256": "marks/cursor/logos/raster/app-icon-256.png",
+          "512": "marks/cursor/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/cursor/logos/raster/mark-1024.png",
+          "256": "marks/cursor/logos/raster/mark-256.png",
+          "512": "marks/cursor/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/cursor/logos/app-icon.png",
+      "name": "Cursor",
+      "domain": "cursor.com",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "deepseek",
+      "svg": {
+        "mark-dark": "marks/deepseek/logos/mark-dark.svg",
+        "mark-light": "marks/deepseek/logos/mark-light.svg",
+        "mark": "marks/deepseek/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/deepseek/logos/raster/app-icon-1024.png",
+          "256": "marks/deepseek/logos/raster/app-icon-256.png",
+          "512": "marks/deepseek/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/deepseek/logos/raster/mark-1024.png",
+          "256": "marks/deepseek/logos/raster/mark-256.png",
+          "512": "marks/deepseek/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/deepseek/logos/app-icon.png",
+      "name": "DeepSeek",
+      "domain": "deepseek.com",
+      "brandColour": "#4D6BFE",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "elevenlabs",
+      "svg": {
+        "mark-dark": "marks/elevenlabs/logos/mark-dark.svg",
+        "mark-light": "marks/elevenlabs/logos/mark-light.svg",
+        "mark": "marks/elevenlabs/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/elevenlabs/logos/raster/app-icon-1024.png",
+          "256": "marks/elevenlabs/logos/raster/app-icon-256.png",
+          "512": "marks/elevenlabs/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/elevenlabs/logos/raster/mark-1024.png",
+          "256": "marks/elevenlabs/logos/raster/mark-256.png",
+          "512": "marks/elevenlabs/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/elevenlabs/logos/app-icon.png",
+      "name": "ElevenLabs",
+      "domain": "elevenlabs.io",
+      "brandColour": "#000000",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "emergent",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/emergent/logos/raster/app-icon-1024.png",
+          "256": "marks/emergent/logos/raster/app-icon-256.png",
+          "512": "marks/emergent/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/emergent/logos/raster/mark-1024.png",
+          "256": "marks/emergent/logos/raster/mark-256.png",
+          "512": "marks/emergent/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/emergent/logos/app-icon.png",
+      "name": "Emergent",
+      "domain": "emergent.sh",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "figma",
+      "svg": {
+        "mark-dark": "marks/figma/logos/mark-dark.svg",
+        "mark-light": "marks/figma/logos/mark-light.svg",
+        "mark": "marks/figma/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/figma/logos/raster/app-icon-1024.png",
+          "256": "marks/figma/logos/raster/app-icon-256.png",
+          "512": "marks/figma/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/figma/logos/raster/mark-1024.png",
+          "256": "marks/figma/logos/raster/mark-256.png",
+          "512": "marks/figma/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/figma/logos/app-icon.png",
+      "name": "Figma",
+      "domain": "figma.com",
+      "brandColour": "#F24E1E",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "freepik",
+      "svg": {
+        "mark-dark": "marks/freepik/logos/mark-dark.svg",
+        "mark-light": "marks/freepik/logos/mark-light.svg",
+        "mark": "marks/freepik/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/freepik/logos/raster/app-icon-1024.png",
+          "256": "marks/freepik/logos/raster/app-icon-256.png",
+          "512": "marks/freepik/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/freepik/logos/raster/mark-1024.png",
+          "256": "marks/freepik/logos/raster/mark-256.png",
+          "512": "marks/freepik/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/freepik/logos/app-icon.png",
+      "name": "Freepik",
+      "domain": "freepik.com",
+      "brandColour": "#1273EB",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "gemini",
+      "svg": {
+        "mark-dark": "marks/gemini/logos/mark-dark.svg",
+        "mark-light": "marks/gemini/logos/mark-light.svg",
+        "mark": "marks/gemini/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/gemini/logos/raster/app-icon-1024.png",
+          "256": "marks/gemini/logos/raster/app-icon-256.png",
+          "512": "marks/gemini/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/gemini/logos/raster/mark-1024.png",
+          "256": "marks/gemini/logos/raster/mark-256.png",
+          "512": "marks/gemini/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/gemini/logos/app-icon.png",
+      "name": "Google Gemini",
+      "domain": "gemini.google.com",
+      "brandColour": "#8E75B2",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "github",
+      "svg": {
+        "mark-dark": "marks/github/logos/mark-dark.svg",
+        "mark-light": "marks/github/logos/mark-light.svg",
+        "mark": "marks/github/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/github/logos/raster/app-icon-1024.png",
+          "256": "marks/github/logos/raster/app-icon-256.png",
+          "512": "marks/github/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/github/logos/raster/mark-1024.png",
+          "256": "marks/github/logos/raster/mark-256.png",
+          "512": "marks/github/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/github/logos/app-icon.png",
+      "name": "GitHub",
+      "domain": "github.com",
+      "brandColour": "#181717",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "gmail",
+      "svg": {
+        "mark-dark": "marks/gmail/logos/mark-dark.svg",
+        "mark-light": "marks/gmail/logos/mark-light.svg",
+        "mark": "marks/gmail/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/gmail/logos/raster/app-icon-1024.png",
+          "256": "marks/gmail/logos/raster/app-icon-256.png",
+          "512": "marks/gmail/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/gmail/logos/raster/mark-1024.png",
+          "256": "marks/gmail/logos/raster/mark-256.png",
+          "512": "marks/gmail/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/gmail/logos/app-icon.png",
+      "name": "Gmail",
+      "domain": "mail.google.com",
+      "brandColour": "#EA4335",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "google-ai-studio",
+      "svg": {
+        "mark": "marks/google-ai-studio/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/google-ai-studio/logos/raster/app-icon-1024.png",
+          "256": "marks/google-ai-studio/logos/raster/app-icon-256.png",
+          "512": "marks/google-ai-studio/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/google-ai-studio/logos/raster/mark-1024.png",
+          "256": "marks/google-ai-studio/logos/raster/mark-256.png",
+          "512": "marks/google-ai-studio/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/google-ai-studio/logos/app-icon.png",
+      "name": "Google AI Studio",
+      "domain": "aistudio.google.com",
+      "brandColour": "#1A73E8",
+      "aspect": 0.96,
+      "form": "symbol"
+    },
+    {
+      "slug": "grammarly",
+      "svg": {
+        "mark-dark": "marks/grammarly/logos/mark-dark.svg",
+        "mark-light": "marks/grammarly/logos/mark-light.svg",
+        "mark": "marks/grammarly/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/grammarly/logos/raster/app-icon-1024.png",
+          "256": "marks/grammarly/logos/raster/app-icon-256.png",
+          "512": "marks/grammarly/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/grammarly/logos/raster/mark-1024.png",
+          "256": "marks/grammarly/logos/raster/mark-256.png",
+          "512": "marks/grammarly/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/grammarly/logos/app-icon.png",
+      "name": "Grammarly",
+      "domain": "grammarly.com",
+      "brandColour": "#15C39A",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "grok",
+      "svg": {
+        "mark": "marks/grok/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/grok/logos/raster/app-icon-1024.png",
+          "256": "marks/grok/logos/raster/app-icon-256.png",
+          "512": "marks/grok/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/grok/logos/raster/mark-1024.png",
+          "256": "marks/grok/logos/raster/mark-256.png",
+          "512": "marks/grok/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/grok/logos/app-icon.png",
+      "name": "Grok",
+      "domain": "grok.com",
+      "brandColour": "#000000",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "higgsfield",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/higgsfield/logos/raster/app-icon-1024.png",
+          "256": "marks/higgsfield/logos/raster/app-icon-256.png",
+          "512": "marks/higgsfield/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/higgsfield/logos/raster/mark-1024.png",
+          "256": "marks/higgsfield/logos/raster/mark-256.png",
+          "512": "marks/higgsfield/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/higgsfield/logos/app-icon.png",
+      "name": "Higgsfield",
+      "domain": "higgsfield.ai",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "instagram",
+      "svg": {
+        "mark-dark": "marks/instagram/logos/mark-dark.svg",
+        "mark-light": "marks/instagram/logos/mark-light.svg",
+        "mark": "marks/instagram/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/instagram/logos/raster/app-icon-1024.png",
+          "256": "marks/instagram/logos/raster/app-icon-256.png",
+          "512": "marks/instagram/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/instagram/logos/raster/mark-1024.png",
+          "256": "marks/instagram/logos/raster/mark-256.png",
+          "512": "marks/instagram/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/instagram/logos/app-icon.png",
+      "name": "Instagram",
+      "domain": "instagram.com",
+      "brandColour": "#FF0069",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "loom",
+      "svg": {
+        "mark-dark": "marks/loom/logos/mark-dark.svg",
+        "mark-light": "marks/loom/logos/mark-light.svg",
+        "mark": "marks/loom/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/loom/logos/raster/app-icon-1024.png",
+          "256": "marks/loom/logos/raster/app-icon-256.png",
+          "512": "marks/loom/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/loom/logos/raster/mark-1024.png",
+          "256": "marks/loom/logos/raster/mark-256.png",
+          "512": "marks/loom/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/loom/logos/app-icon.png",
+      "name": "Loom",
+      "domain": "loom.com",
+      "brandColour": "#625DF5",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "lovable",
+      "svg": {
+        "mark": "marks/lovable/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/lovable/logos/raster/app-icon-1024.png",
+          "256": "marks/lovable/logos/raster/app-icon-256.png",
+          "512": "marks/lovable/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/lovable/logos/raster/mark-1024.png",
+          "256": "marks/lovable/logos/raster/mark-256.png",
+          "512": "marks/lovable/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/lovable/logos/app-icon.png",
+      "name": "Lovable",
+      "domain": "lovable.dev",
+      "brandColour": "#FF4D6D",
+      "aspect": 0.99,
+      "form": "symbol"
+    },
+    {
+      "slug": "manus",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/manus/logos/raster/app-icon-1024.png",
+          "256": "marks/manus/logos/raster/app-icon-256.png",
+          "512": "marks/manus/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/manus/logos/raster/mark-1024.png",
+          "256": "marks/manus/logos/raster/mark-256.png",
+          "512": "marks/manus/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/manus/logos/app-icon.png",
+      "name": "Manus",
+      "domain": "manus.im",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "manychat",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/manychat/logos/raster/app-icon-1024.png",
+          "256": "marks/manychat/logos/raster/app-icon-256.png",
+          "512": "marks/manychat/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/manychat/logos/raster/mark-1024.png",
+          "256": "marks/manychat/logos/raster/mark-256.png",
+          "512": "marks/manychat/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/manychat/logos/app-icon.png",
+      "name": "ManyChat",
+      "domain": "manychat.com",
+      "brandColour": "#2C6BEE"
+    },
+    {
+      "slug": "meta",
+      "svg": {
+        "mark-dark": "marks/meta/logos/mark-dark.svg",
+        "mark-light": "marks/meta/logos/mark-light.svg",
+        "mark": "marks/meta/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/meta/logos/raster/app-icon-1024.png",
+          "256": "marks/meta/logos/raster/app-icon-256.png",
+          "512": "marks/meta/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/meta/logos/raster/mark-1024.png",
+          "256": "marks/meta/logos/raster/mark-256.png",
+          "512": "marks/meta/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/meta/logos/app-icon.png",
+      "name": "Meta",
+      "domain": "meta.com",
+      "brandColour": "#0467DF",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "midjourney",
+      "svg": {
+        "mark": "marks/midjourney/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/midjourney/logos/raster/app-icon-1024.png",
+          "256": "marks/midjourney/logos/raster/app-icon-256.png",
+          "512": "marks/midjourney/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/midjourney/logos/raster/mark-1024.png",
+          "256": "marks/midjourney/logos/raster/mark-256.png",
+          "512": "marks/midjourney/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/midjourney/logos/app-icon.png",
+      "name": "Midjourney",
+      "domain": "midjourney.com",
+      "brandColour": "#000000",
+      "aspect": 1.2,
+      "form": "symbol"
+    },
+    {
+      "slug": "miro",
+      "svg": {
+        "mark-dark": "marks/miro/logos/mark-dark.svg",
+        "mark-light": "marks/miro/logos/mark-light.svg",
+        "mark": "marks/miro/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/miro/logos/raster/app-icon-1024.png",
+          "256": "marks/miro/logos/raster/app-icon-256.png",
+          "512": "marks/miro/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/miro/logos/raster/mark-1024.png",
+          "256": "marks/miro/logos/raster/mark-256.png",
+          "512": "marks/miro/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/miro/logos/app-icon.png",
+      "name": "Miro",
+      "domain": "miro.com",
+      "brandColour": "#FFD02F",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "mistral",
+      "svg": {
+        "mark-dark": "marks/mistral/logos/mark-dark.svg",
+        "mark-light": "marks/mistral/logos/mark-light.svg",
+        "mark": "marks/mistral/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/mistral/logos/raster/app-icon-1024.png",
+          "256": "marks/mistral/logos/raster/app-icon-256.png",
+          "512": "marks/mistral/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/mistral/logos/raster/mark-1024.png",
+          "256": "marks/mistral/logos/raster/mark-256.png",
+          "512": "marks/mistral/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/mistral/logos/app-icon.png",
+      "name": "Mistral AI",
+      "domain": "mistral.ai",
+      "brandColour": "#FA520F",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "motionsites",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/motionsites/logos/raster/app-icon-1024.png",
+          "256": "marks/motionsites/logos/raster/app-icon-256.png",
+          "512": "marks/motionsites/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/motionsites/logos/raster/mark-1024.png",
+          "256": "marks/motionsites/logos/raster/mark-256.png",
+          "512": "marks/motionsites/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/motionsites/logos/app-icon.png",
+      "name": "Motion Sites",
+      "domain": "motionsites.com",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "n8n",
+      "svg": {
+        "mark-dark": "marks/n8n/logos/mark-dark.svg",
+        "mark-light": "marks/n8n/logos/mark-light.svg",
+        "mark": "marks/n8n/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/n8n/logos/raster/app-icon-1024.png",
+          "256": "marks/n8n/logos/raster/app-icon-256.png",
+          "512": "marks/n8n/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/n8n/logos/raster/mark-1024.png",
+          "256": "marks/n8n/logos/raster/mark-256.png",
+          "512": "marks/n8n/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/n8n/logos/app-icon.png",
+      "name": "n8n",
+      "domain": "n8n.io",
+      "brandColour": "#EA4B71",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "notebooklm",
+      "svg": {
+        "mark": "marks/notebooklm/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/notebooklm/logos/raster/app-icon-1024.png",
+          "256": "marks/notebooklm/logos/raster/app-icon-256.png",
+          "512": "marks/notebooklm/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/notebooklm/logos/raster/mark-1024.png",
+          "256": "marks/notebooklm/logos/raster/mark-256.png",
+          "512": "marks/notebooklm/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/notebooklm/logos/app-icon.png",
+      "name": "NotebookLM",
+      "domain": "notebooklm.google",
+      "brandColour": "#1A73E8",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "notion",
+      "svg": {
+        "mark-dark": "marks/notion/logos/mark-dark.svg",
+        "mark-light": "marks/notion/logos/mark-light.svg",
+        "mark": "marks/notion/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/notion/logos/raster/app-icon-1024.png",
+          "256": "marks/notion/logos/raster/app-icon-256.png",
+          "512": "marks/notion/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/notion/logos/raster/mark-1024.png",
+          "256": "marks/notion/logos/raster/mark-256.png",
+          "512": "marks/notion/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/notion/logos/app-icon.png",
+      "name": "Notion",
+      "domain": "notion.com",
+      "brandColour": "#000000",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "openai",
+      "svg": {
+        "mark": "marks/openai/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/openai/logos/raster/app-icon-1024.png",
+          "256": "marks/openai/logos/raster/app-icon-256.png",
+          "512": "marks/openai/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/openai/logos/raster/mark-1024.png",
+          "256": "marks/openai/logos/raster/mark-256.png",
+          "512": "marks/openai/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/openai/logos/app-icon.png",
+      "name": "OpenAI",
+      "domain": "openai.com",
+      "brandColour": "#000000",
+      "aspect": 0.98,
+      "form": "symbol"
+    },
+    {
+      "slug": "openmontage",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/openmontage/logos/raster/app-icon-1024.png",
+          "256": "marks/openmontage/logos/raster/app-icon-256.png",
+          "512": "marks/openmontage/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/openmontage/logos/raster/mark-1024.png",
+          "256": "marks/openmontage/logos/raster/mark-256.png",
+          "512": "marks/openmontage/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/openmontage/logos/app-icon.png",
+      "name": "OpenMontage",
+      "domain": "openmontage.com",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "pandadoc",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/pandadoc/logos/raster/app-icon-1024.png",
+          "256": "marks/pandadoc/logos/raster/app-icon-256.png",
+          "512": "marks/pandadoc/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/pandadoc/logos/raster/mark-1024.png",
+          "256": "marks/pandadoc/logos/raster/mark-256.png",
+          "512": "marks/pandadoc/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/pandadoc/logos/app-icon.png",
+      "name": "PandaDoc",
+      "domain": "pandadoc.com",
+      "brandColour": "#4A90E2"
+    },
+    {
+      "slug": "perplexity",
+      "svg": {
+        "mark-dark": "marks/perplexity/logos/mark-dark.svg",
+        "mark-light": "marks/perplexity/logos/mark-light.svg",
+        "mark": "marks/perplexity/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/perplexity/logos/raster/app-icon-1024.png",
+          "256": "marks/perplexity/logos/raster/app-icon-256.png",
+          "512": "marks/perplexity/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/perplexity/logos/raster/mark-1024.png",
+          "256": "marks/perplexity/logos/raster/mark-256.png",
+          "512": "marks/perplexity/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/perplexity/logos/app-icon.png",
+      "name": "Perplexity",
+      "domain": "perplexity.ai",
+      "brandColour": "#1FB8CD",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "photoroom",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/photoroom/logos/raster/app-icon-1024.png",
+          "256": "marks/photoroom/logos/raster/app-icon-256.png",
+          "512": "marks/photoroom/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/photoroom/logos/raster/mark-1024.png",
+          "256": "marks/photoroom/logos/raster/mark-256.png",
+          "512": "marks/photoroom/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/photoroom/logos/app-icon.png",
+      "name": "Photoroom",
+      "domain": "photoroom.com",
+      "brandColour": "#762BFF"
+    },
+    {
+      "slug": "quillbot",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/quillbot/logos/raster/app-icon-1024.png",
+          "256": "marks/quillbot/logos/raster/app-icon-256.png",
+          "512": "marks/quillbot/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/quillbot/logos/raster/mark-1024.png",
+          "256": "marks/quillbot/logos/raster/mark-256.png",
+          "512": "marks/quillbot/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/quillbot/logos/app-icon.png",
+      "name": "QuillBot",
+      "domain": "quillbot.com",
+      "brandColour": "#00AA83"
+    },
+    {
+      "slug": "remotion",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/remotion/logos/raster/app-icon-1024.png",
+          "256": "marks/remotion/logos/raster/app-icon-256.png",
+          "512": "marks/remotion/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/remotion/logos/raster/mark-1024.png",
+          "256": "marks/remotion/logos/raster/mark-256.png",
+          "512": "marks/remotion/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/remotion/logos/app-icon.png",
+      "name": "Remotion",
+      "domain": "remotion.dev",
+      "brandColour": "#0B84F3"
+    },
+    {
+      "slug": "seedance",
+      "svg": {
+        "mark": "marks/seedance/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/seedance/logos/raster/app-icon-1024.png",
+          "256": "marks/seedance/logos/raster/app-icon-256.png",
+          "512": "marks/seedance/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/seedance/logos/raster/mark-1024.png",
+          "256": "marks/seedance/logos/raster/mark-256.png",
+          "512": "marks/seedance/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/seedance/logos/app-icon.png",
+      "name": "Seedance",
+      "domain": "seed.bytedance.com",
+      "brandColour": "#000000",
+      "aspect": 6.81,
+      "form": "wordmark"
+    },
+    {
+      "slug": "shopify",
+      "svg": {
+        "mark-dark": "marks/shopify/logos/mark-dark.svg",
+        "mark-light": "marks/shopify/logos/mark-light.svg",
+        "mark": "marks/shopify/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/shopify/logos/raster/app-icon-1024.png",
+          "256": "marks/shopify/logos/raster/app-icon-256.png",
+          "512": "marks/shopify/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/shopify/logos/raster/mark-1024.png",
+          "256": "marks/shopify/logos/raster/mark-256.png",
+          "512": "marks/shopify/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/shopify/logos/app-icon.png",
+      "name": "Shopify",
+      "domain": "shopify.com",
+      "brandColour": "#7AB55C",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "slack",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/slack/logos/raster/app-icon-1024.png",
+          "256": "marks/slack/logos/raster/app-icon-256.png",
+          "512": "marks/slack/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/slack/logos/raster/mark-1024.png",
+          "256": "marks/slack/logos/raster/mark-256.png",
+          "512": "marks/slack/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/slack/logos/app-icon.png",
+      "name": "Slack",
+      "domain": "slack.com",
+      "brandColour": "#4A154B"
+    },
+    {
+      "slug": "stripe",
+      "svg": {
+        "mark-dark": "marks/stripe/logos/mark-dark.svg",
+        "mark-light": "marks/stripe/logos/mark-light.svg",
+        "mark": "marks/stripe/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/stripe/logos/raster/app-icon-1024.png",
+          "256": "marks/stripe/logos/raster/app-icon-256.png",
+          "512": "marks/stripe/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/stripe/logos/raster/mark-1024.png",
+          "256": "marks/stripe/logos/raster/mark-256.png",
+          "512": "marks/stripe/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/stripe/logos/app-icon.png",
+      "name": "Stripe",
+      "domain": "stripe.com",
+      "brandColour": "#635BFF",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "supabase",
+      "svg": {
+        "mark-dark": "marks/supabase/logos/mark-dark.svg",
+        "mark-light": "marks/supabase/logos/mark-light.svg",
+        "mark": "marks/supabase/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/supabase/logos/raster/app-icon-1024.png",
+          "256": "marks/supabase/logos/raster/app-icon-256.png",
+          "512": "marks/supabase/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/supabase/logos/raster/mark-1024.png",
+          "256": "marks/supabase/logos/raster/mark-256.png",
+          "512": "marks/supabase/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/supabase/logos/app-icon.png",
+      "name": "Supabase",
+      "domain": "supabase.com",
+      "brandColour": "#3FCF8E",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "tiktok",
+      "svg": {
+        "mark-dark": "marks/tiktok/logos/mark-dark.svg",
+        "mark-light": "marks/tiktok/logos/mark-light.svg",
+        "mark": "marks/tiktok/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/tiktok/logos/raster/app-icon-1024.png",
+          "256": "marks/tiktok/logos/raster/app-icon-256.png",
+          "512": "marks/tiktok/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/tiktok/logos/raster/mark-1024.png",
+          "256": "marks/tiktok/logos/raster/mark-256.png",
+          "512": "marks/tiktok/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/tiktok/logos/app-icon.png",
+      "name": "TikTok",
+      "domain": "tiktok.com",
+      "brandColour": "#000000",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "v0",
+      "svg": {
+        "mark": "marks/v0/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/v0/logos/raster/app-icon-1024.png",
+          "256": "marks/v0/logos/raster/app-icon-256.png",
+          "512": "marks/v0/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/v0/logos/raster/mark-1024.png",
+          "256": "marks/v0/logos/raster/mark-256.png",
+          "512": "marks/v0/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/v0/logos/app-icon.png",
+      "name": "v0",
+      "domain": "v0.dev",
+      "brandColour": "#000000",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "veo",
+      "svg": {
+        "mark": "marks/veo/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/veo/logos/raster/app-icon-1024.png",
+          "256": "marks/veo/logos/raster/app-icon-256.png",
+          "512": "marks/veo/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/veo/logos/raster/mark-1024.png",
+          "256": "marks/veo/logos/raster/mark-256.png",
+          "512": "marks/veo/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/veo/logos/app-icon.png",
+      "name": "Google Veo",
+      "domain": "deepmind.google",
+      "brandColour": "#4285F4",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "vercel",
+      "svg": {
+        "mark-dark": "marks/vercel/logos/mark-dark.svg",
+        "mark-light": "marks/vercel/logos/mark-light.svg",
+        "mark": "marks/vercel/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/vercel/logos/raster/app-icon-1024.png",
+          "256": "marks/vercel/logos/raster/app-icon-256.png",
+          "512": "marks/vercel/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/vercel/logos/raster/mark-1024.png",
+          "256": "marks/vercel/logos/raster/mark-256.png",
+          "512": "marks/vercel/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/vercel/logos/app-icon.png",
+      "name": "Vercel",
+      "domain": "vercel.com",
+      "brandColour": "#000000",
+      "aspect": 1.0,
+      "form": "symbol"
+    },
+    {
+      "slug": "whoop",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/whoop/logos/raster/app-icon-1024.png",
+          "256": "marks/whoop/logos/raster/app-icon-256.png",
+          "512": "marks/whoop/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/whoop/logos/raster/mark-1024.png",
+          "256": "marks/whoop/logos/raster/mark-256.png",
+          "512": "marks/whoop/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/whoop/logos/app-icon.png",
+      "name": "WHOOP",
+      "domain": "whoop.com",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "wisprflow",
+      "svg": {},
+      "raster": {
+        "app-icon": {
+          "1024": "marks/wisprflow/logos/raster/app-icon-1024.png",
+          "256": "marks/wisprflow/logos/raster/app-icon-256.png",
+          "512": "marks/wisprflow/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/wisprflow/logos/raster/mark-1024.png",
+          "256": "marks/wisprflow/logos/raster/mark-256.png",
+          "512": "marks/wisprflow/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/wisprflow/logos/app-icon.png",
+      "name": "Wispr Flow",
+      "domain": "wisprflow.ai",
+      "brandColour": "#000000"
+    },
+    {
+      "slug": "youtube",
+      "svg": {
+        "mark-dark": "marks/youtube/logos/mark-dark.svg",
+        "mark-light": "marks/youtube/logos/mark-light.svg",
+        "mark": "marks/youtube/logos/mark.svg"
+      },
+      "raster": {
+        "app-icon": {
+          "1024": "marks/youtube/logos/raster/app-icon-1024.png",
+          "256": "marks/youtube/logos/raster/app-icon-256.png",
+          "512": "marks/youtube/logos/raster/app-icon-512.png"
+        },
+        "mark": {
+          "1024": "marks/youtube/logos/raster/mark-1024.png",
+          "256": "marks/youtube/logos/raster/mark-256.png",
+          "512": "marks/youtube/logos/raster/mark-512.png"
+        }
+      },
+      "appIcon": "marks/youtube/logos/app-icon.png",
+      "name": "YouTube",
+      "domain": "youtube.com",
+      "brandColour": "#FF0000",
+      "aspect": 1.0,
+      "form": "symbol"
+    }
+  ]
+}

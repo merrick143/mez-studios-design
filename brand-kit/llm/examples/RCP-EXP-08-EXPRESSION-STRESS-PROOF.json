@@ -1,0 +1,31 @@
+{
+  "schemaVersion":"1.0.0",
+  "receiptId":"RCP-EXP-08-EXPRESSION-STRESS-PROOF",
+  "taskId":"TASK-EXP-08-EXPRESSION-STRESS-PROOF",
+  "contextBundleId":"CTX-EXP-08-EXPRESSION-STRESS-PROOF",
+  "agent":{"kind":"llm","name":"Codex","model":"GPT-5"},
+  "startedAt":"2026-07-23T01:10:00Z",
+  "finishedAt":"2026-07-23T01:32:07Z",
+  "outcome":"complete",
+  "filesChanged":[
+    {"path":"brand-kit/expressions/stress-proof/","action":"created","sha256":null,"reason":"Canonical source, schema, human approval, deterministic package, builder and verifier."},
+    {"path":"brand-kit/workbench/expressions/stress-proof/","action":"created","sha256":null,"reason":"Interactive six-suite certification lab and locked approval record."},
+    {"path":"brand-kit/llm/tasks/TASK-EXP-08-EXPRESSION-STRESS-PROOF.json","action":"created","sha256":"be6e4b053d61416b3d8d973e5df28fe31b9e2c55f2cf9923c555555df4dd0e52","reason":"Completed bounded certification task."},
+    {"path":"brand-kit/docs/ROADMAP.md","action":"modified","sha256":"a298fbf7a694e8b5b54fb390e0db2a343627637e0eadcbbdb1eb80b904bb72e8","reason":"EXP-08 closure and CMP-01 next-task sequence."}
+  ],
+  "decisionsApplied":["DEC-MOTION-002","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-WEBSITE-MOTION-SYSTEM-001","DEC-EXPRESSION-STRESS-CERTIFICATION-001"],
+  "tests":[
+    {"id":"EXP-08-CONTRACT","status":"pass","evidence":"Schema, 6/14 suite distribution, approval, dependency hashes and deterministic canonical package validate."},
+    {"id":"EXP-08-REFLOW","status":"pass","evidence":"Desktop and 320px browser proof have zero page overflow; combined 240px receiver, 400% text and RTL has zero fixture overflow."},
+    {"id":"EXP-08-FALLBACK","status":"pass","evidence":"Default mounts exactly one live material; static and no-WebGL mount zero canvases while retaining 15 materials, 15 Wings and 23 actions."},
+    {"id":"EXP-08-ACCESSIBILITY","status":"pass","evidence":"Review focus restoration, visible focus contract, semantic status, retry recovery, target sizing and non-colour meaning pass."},
+    {"id":"EXP-08-INHERITANCE","status":"pass","evidence":"Every canonical foundation, gradient, product, renderer and expression verifier passes without dependency drift."},
+    {"id":"EXP-08-HUMAN","status":"pass","evidence":"Olli explicitly approved the proof and instructed the programme to proceed."}
+  ],
+  "artifactsProduced":["Canonical Expression Stress Proof 1.0.0 contract","Deterministic canonical package","Locked interactive certification lab","EXP-08 approval and decision record"],
+  "assumptions":["The user's explicit approval applies to the bounded six-suite, fourteen-scenario proof visible in the open workbench."],
+  "exceptions":["The decision does not certify real provider logic, payment processing, production data, consumer frameworks, global-navigation anatomy or golden-homepage composition."],
+  "hiddenContextFailures":[],
+  "humanStatus":{"gateRequired":true,"gateId":"H-EXP-08-EXPRESSION-STRESS-PROOF","status":"approved"},
+  "nextAction":"Execute TASK-CMP-01-GLOBAL-NAVIGATION before composing the golden homepage."
+}

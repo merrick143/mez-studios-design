@@ -25,3 +25,10 @@ A future production-ready release can be promoted only when:
 7. one real consumer successfully ingests it.
 
 The migration alpha satisfies the identity-kernel and authority-transfer gates only. Foundations, product expressions and consumer certification remain explicit post-cutover work.
+
+## Canonical post-cutover packages
+
+- `foundations/dist/` — canonical Foundation Release `1.0.0`.
+- `components/global-navigation/1.0.0/` — canonical Global Navigation `1.0.0`, approved through `DEC-GLOBAL-NAVIGATION-COMPONENT-001`.
+
+These bounded packages do not turn the migration alpha into a complete all-system production release. The golden homepage and real consumer proof remain later gates.

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-05-TRADING-CARD-PROOF",
+  "taskId": "TASK-EXP-05-TRADING-CARD",
+  "expressionId": "mz.systems.expression.trading-card",
+  "programmeItem": "Trading Card 01",
+  "round": "expression-convergence-round-03",
+  "candidateStatus": "review-candidate",
+  "candidateRevision": "trading-card-01-r03",
+  "familyVerdicts": {
+    "faces": "approve",
+    "backs": "approve",
+    "decks": "approve",
+    "placements": "approve"
+  },
+  "specimenVerdicts": {
+    "keep": 23,
+    "revise": 0,
+    "kill": 0
+  },
+  "verdict": "approve",
+  "note": "Round 03 received 23 unanimous keeps. Lock the surviving Trading Card expression, close EXP-05 and proceed without restoring any killed direction.",
+  "reviewedAt": "2026-07-22T22:55:17Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-TRADING-CARD-EXPRESSION-001",
+  "resultingStatus": "canonical",
+  "programmeStatus": "complete",
+  "authorityScope": "The approved 23 surviving specimens, meaning, anatomy, motion, deck and placement rules, exact round receipts and prohibited collector mechanics are canonical. Golden-homepage selection, channel policy, consumer code, Figma, pricing and payment logic remain outside this decision.",
+  "productionAuthority": true
+}

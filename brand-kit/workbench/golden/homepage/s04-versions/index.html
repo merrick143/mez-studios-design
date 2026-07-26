@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · GH-S04 · five versions</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<link rel="stylesheet" href="../../../../components/global-navigation/mez-global-navigation.css" />
+<link rel="stylesheet" href="../../../../components/product-feature-bento/mez-product-feature-bento.css?v=0.1.4" />
+<style>
+:root {
+  --page-ink: var(--mz-colour-neutral-950, #0d0d0d);
+  --page-paper: var(--mz-colour-neutral-25, #f8f8f8);
+  --page-line: var(--mz-colour-neutral-200, #dadad6);
+  --page-line-strong: var(--mz-colour-neutral-400, #8a8a84);
+  --page-muted: var(--mz-colour-neutral-550, #666662);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--page-paper); color: var(--page-ink); font-family: var(--mz-font-body); }
+img { max-width: 100%; }
+
+/* ------------------------------------------------------------------ GH-S04
+   Centred head, one ink colour, no pill. The measure is capped so a centred
+   line still breaks where it should rather than running the full width. */
+.why { padding-block: clamp(84px,10vw,132px); }
+
+/* 1010px, not 1052. mz-core renders every surface through one shared framebuffer
+   capped at 2048 device pixels with dpr clamped to 2, so a material surface wider
+   than 1024 CSS pixels is drawn from source that ran out and shows a hard seam
+   near its right edge. The full-width band has to stay under that. */
+.shell { max-width: 1010px; margin-inline: auto; padding-inline: clamp(20px,5vw,40px); }
+
+.why-head { text-align: center; }
+.eyebrow { margin: 0; font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted); }
+.why h2 {
+  margin: 18px auto 0;
+  font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(30px,3.5vw,48px); line-height: 1.05; letter-spacing: -.04em;
+  max-inline-size: 20ch;
+}
+.section-lead { margin: 18px auto 0; font-size: clamp(15.5px,1.55vw,18px); line-height: 1.55; color: var(--page-muted); max-inline-size: 52ch; }
+.why-body { margin-top: clamp(38px,4.6vw,60px); }
+.why-close { margin: clamp(32px,3.8vw,48px) auto 0; text-align: center; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(17px,1.7vw,21px); line-height: 1.35; letter-spacing: -.02em; max-inline-size: 44ch; }
+
+/* Lab chrome only. */
+.top { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 11px clamp(16px,4vw,40px); background: var(--mz-colour-neutral-900,#171715); color: var(--page-paper); font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.top nav { display: flex; gap: 6px; margin-left: auto; }
+.top nav a { padding: 4px 10px; border: 1px solid rgba(248,248,248,.3); border-radius: 9999px; color: inherit; text-decoration: none; }
+.mark { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; padding: 12px clamp(16px,4vw,40px); background: #fff; border-block: 1px solid var(--page-line); position: sticky; top: 40px; z-index: 50; }
+.mark b { font-family: var(--mz-font-display); font-size: 16px; letter-spacing: -.01em; }
+.mark span { font-size: 13px; color: var(--page-muted); max-width: 74ch; line-height: 1.5; }
+.mark em { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; font-style: normal; color: var(--page-line-strong); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <strong>GH-S04 · Building blocks</strong><span>Nine versions · A to E rows, F to I Apple grammar</span>
+  <nav><a href="#a">A</a><a href="#b">B</a><a href="#c">C</a><a href="#d">D</a><a href="#e">E</a><a href="#f">F</a><a href="#g">G</a><a href="#h">H</a><a href="#i">I</a></nav>
+</header>
+
+<mez-global-navigation home-href="../" systems-href="#" about-href="#" selected="aios"></mez-global-navigation>
+
+<div id="a" class="mark"><b>A · Rows</b><em>8 cards</em><span>Two rows of four at uneven widths, the layer full width beneath. Every card carries a subline; the four with a system also carry its name.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/a-rows.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<div id="b" class="mark"><b>B · Layer first</b><em>9 cards</em><span>The layer opens the bento instead of closing it, and the blocks below are tall enough to hold a subline and a system line without crowding.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/b-band-first.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<div id="c" class="mark"><b>C · Two features</b><em>9 cards</em><span>The two blocks with the most system behind them take double the area and an oversized token; the other six hold the line.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/c-features.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<div id="d" class="mark"><b>D · Counted</b><em>12 cards</em><span>Three figures open the bento, every one derivable from the registry, then the eight blocks, then the layer. The densest of the five.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/d-counted.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<div id="e" class="mark"><b>E · Bars</b><em>9 cards</em><span>The same identity token drawn as a bar across the head of each card rather than a badge beside the title. Still a token, so the bento still spends one colour event.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/e-bars.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+
+<div id="f" class="mark"><b>F · Centre</b><em>9 cards</em><span>Hero cell centred with the moving gradient, eight blocks packed around it. Every cell is an artefact with a caption rather than a title with a sentence, which is what lets the sizes vary this hard.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/f-centre.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<div id="g" class="mark"><b>G · Dense</b><em>12 cards</em><span>Four cell sizes. The figures are artefacts in their own right, so they pack at the same density as the blocks.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/g-dense.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<div id="h" class="mark"><b>H · Wordmark</b><em>9 cards</em><span>The hero as a wordmark cell anchoring the top-left, the way Apple sets iPadOS or Titanium, with the blocks tight beneath and beside.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/h-wordmark.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<div id="i" class="mark"><b>I · Dark</b><em>9 cards</em><span>The identical grammar in the dark register, on the charcoal ramp rather than black. The one colour event still sits at the centre.</span></div>
+<section class="why">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2>We run Mez Studios on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+  <div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/s04/i-dark.json"></mez-product-feature-bento></div>
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<script type="module" src="../../../../components/global-navigation/mez-global-navigation.js"></script>
+<script type="module" src="../../../../components/product-feature-bento/mez-product-feature-bento.js?v=0.1.4"></script>
+</body>
+</html>

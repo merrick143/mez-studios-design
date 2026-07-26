@@ -1,0 +1,28 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://design.mez.systems/schemas/website-motion-candidate-0.3.0.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schemaVersion","expressionId","version","status","productionAuthority","candidateGateId","candidateRevision","proposedDecisionId","title","thesis","scope","decisionModel","families","specimens","reducedMotion","exportContract","prohibited","testViewports","dependencies"],
+  "properties":{
+    "schemaVersion":{"const":"1.0.0"},
+    "expressionId":{"const":"mz.systems.expression.channel-motion-matrix"},
+    "version":{"const":"0.3.0-candidate"},
+    "status":{"const":"review-candidate"},
+    "productionAuthority":{"const":false},
+    "candidateGateId":{"const":"H-EXP-07-CHANNEL-MOTION-PROOF"},
+    "candidateRevision":{"const":"channel-motion-matrix-01-r03"},
+    "proposedDecisionId":{"const":"DEC-WEBSITE-MOTION-SYSTEM-001"},
+    "title":{"const":"Website motion system"},
+    "thesis":{"type":"string","minLength":80},
+    "scope":{"type":"object","required":["primary","included","excludedMotionProduction","staticOnlyOutputs"]},
+    "decisionModel":{"type":"object","required":["staticBaseline","maximumActiveMotionEventsPerViewport","selectionRule","roles","durations","easing"]},
+    "families":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"object","required":["id","title","count","job"]}},
+    "specimens":{"type":"array","minItems":8,"maxItems":8,"items":{"type":"object","additionalProperties":false,"required":["id","family","title","pattern"],"properties":{"id":{"type":"string","pattern":"^MOT-[LW][0-9]{2}$"},"family":{"enum":["laws","components"]},"title":{"type":"string"},"pattern":{"type":"string"}}}},
+    "reducedMotion":{"type":"object","required":["runtime","functional","demonstration","components"]},
+    "exportContract":{"type":"object","required":["staticTwinRequired","motionMayNotCarrySoleMeaning","equivalence","sourcePaletteAuthority","requiredMetadata"]},
+    "prohibited":{"type":"array","minItems":10,"items":{"type":"string"},"uniqueItems":true},
+    "testViewports":{"const":[320,360,375,390,430,768,1024,1280,1440]},
+    "dependencies":{"type":"object","required":["disc","sphere","productCard","tradingCard","productEthos","foundationManifest","productRegistry","gradientRegistry","renderer","wings","motionResearch","programmeAudit"]}
+  }
+}

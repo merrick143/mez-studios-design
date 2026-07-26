@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-FND-03-SPATIAL-PROOF",
+  "taskId": "TASK-FND-03-SPACE-LAYOUT",
+  "foundationId": "mz.systems.foundation.space-layout",
+  "candidateRevision": "spatial-lock-01",
+  "candidateStatus": "review-candidate",
+  "verdict": "approve",
+  "note": "okay i trust you lets lock it in",
+  "reviewedAt": "2026-07-21T09:25:15.000Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-SPACE-LAYOUT-FOUNDATION-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true
+}

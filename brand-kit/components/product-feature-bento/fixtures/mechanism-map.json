@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "The building blocks of a business, and which ones Mez Systems already runs",
+  "columns": 12,
+  "copyProvenance": "Each covered block is named as the registry names the function it serves, so the mapping from a block to a system is read off registry/products.json rather than asserted here. The four blocks with no system carry no claim and no disc. The product cell resolves entirely from the registry. No sentence in this fixture is authored.",
+  "cells": [
+    { "job": "product", "productSlug": "aios", "surface": "material", "focal": true, "span": 5, "rows": 2 },
+
+    { "job": "integration", "label": "Advertising", "productSlug": "ai-ads-system", "span": 3 },
+    { "job": "integration", "label": "Organic content", "productSlug": "organic-content-os", "span": 4 },
+    { "job": "integration", "label": "Software work", "productSlug": "claude-code-os", "span": 4 },
+    { "job": "integration", "label": "Business context", "productSlug": "context-engine", "span": 3 },
+
+    { "job": "workflow", "label": "Sales", "span": 3 },
+    { "job": "workflow", "label": "Finance", "span": 2 },
+    { "job": "workflow", "label": "Client delivery", "span": 4 },
+    { "job": "workflow", "label": "Design", "span": 3 }
+  ]
+}

@@ -1,41 +1,226 @@
 {
   "schemaVersion": "1.0.0",
   "taskId": "TASK-EXP-04-PRODUCT-CARD",
-  "title": "Define Product Card 02 visual architecture then website components",
+  "title": "Build Product Card 02 Phase B Functional Website Components",
   "phase": 2,
-  "status": "in-progress",
+  "status": "complete",
   "owner": "design-system-agent",
-  "objective": "Develop Product Card 02 as a two-phase programme: first lock one narrow portrait website-card architecture and the bounded visual treatments it may use; then derive the complete responsive website component family for discovery, feature, pricing, checkout, bundle, upsell and post-purchase contexts.",
+  "objective": "Deliver Product Card 02 as one approved two-phase system: 32 canonical Phase A expressions supply the visual grammar beneath 46 unanimously kept Phase B product-and-commerce specimens across digital products, SaaS, bundles, mixed availability and mobile.",
   "scope": {
-    "included": ["Phase A round 02: one 320–360px portrait website-card architecture", "four contextual treatments: Editorial Portrait, Full Field Portrait, System Index and Product Pack", "desktop shelf, feature and mobile placement proof", "role-based light and charcoal surface allocation", "family shelf versus bundle offer semantics", "single Living Core allocation with exact fallback", "explicit Phase B website component and flow map", "bounded human proof"],
-    "excluded": ["Phase B implementation before Phase A approval", "new pricing or commercial authority", "production Stripe fields or revenue code", "golden homepage", "email and success page implementation", "Figma and consumer migration"]
+    "included": [
+      "approved Phase A visual grammar 1.0.0 and all Round 10 approval evidence",
+      "PB0 semantic models and five-layer functional-component architecture",
+      "fifteen reusable component contracts with anatomy, meaningful variants, state applicability, container behavior, accessibility, motion, data and events",
+      "thirteen product-aware website patterns for heroes, menus, featured sections, explainers, typed bento, family shelves, pricing, comparison, checkout, bundles, upsells and footers",
+      "six complete journey fixtures for multi-product discovery, one-time digital purchase, SaaS tiers, configurable bundle, mixed availability and mobile purchase continuity",
+      "illustrative fixture models for Offer, Price, Plan, Bundle, LineItem, ProofRecord, Checkout and CommerceState",
+      "Round 02 feedback evidence retaining all thirty-two approved Phase A survivors as visual inputs, revising the functional layer and killing B-FT04",
+      "exact Round 03 feedback evidence recording eleven keeps, thirty-five revisions and the B-FT06 kill",
+      "exact Round 04 feedback evidence recording forty-six keeps and zero revisions, kills or unreviewed specimens",
+      "approved Phase B review and DEC-PRODUCT-COMPONENT-SYSTEM-001",
+      "PB2 Round 04 with forty-six rendered functional specimens across six functional families, each carrying explicit Phase A lineage",
+      "one forty-six-specimen Round 04 review surface across six independently reviewable families",
+      "PB2 convergence that preserves the eleven Round 03 champions, removes both killed workflows and revises only named dimensions",
+      "representative state, responsive, interaction, motion, static-fallback and export proof",
+      "PB4 approval at the bounded human gate with exhaustive consumer-specific stress proof explicitly deferred",
+      "one automatically live Deep Mineral No. 5 focal plate with exact static twins and static commerce contexts",
+      "registry-driven future-product proof including a synthetic sixth product"
+    ],
+    "excluded": [
+      "editing or repackaging the approved Phase A 1.0.0 contract",
+      "reopening Phase A visual direction without a new human gate",
+      "live pricing or commercial authority",
+      "production Stripe fields, keys, endpoints, tax calculation or payment logic",
+      "golden homepage selection or implementation",
+      "generic application UI, dashboards or account shells",
+      "email and channel implementation",
+      "Figma production library and Code Connect",
+      "consumer repository migration",
+      "System Editions and trading-card collector framing",
+      "new product naming or Living Core assignment"
+    ]
   },
-  "dependencies": ["TASK-EXP-03-WINGS-MARK", "DEC-WINGS-MARK-EXPRESSION-001", "DEC-DISC-EXPRESSION-001", "DEC-MOTION-002", "DEC-FAMILY-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-TYPE-FOUNDATION-001"],
+  "dependencies": [
+    "TASK-EXP-03-WINGS-MARK",
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-WINGS-MARK-EXPRESSION-001",
+    "DEC-DISC-EXPRESSION-001",
+    "DEC-MOTION-002",
+    "DEC-FAMILY-001",
+    "DEC-GEOMETRY-CONTROLS-FOUNDATION-001",
+    "DEC-COLOUR-FOUNDATION-001",
+    "DEC-TYPE-FOUNDATION-001"
+    ,"DEC-PRODUCT-COMPONENT-SYSTEM-001"
+  ],
   "inputs": {
-    "requiredFiles": ["brand-kit/expressions/disc/dist/", "brand-kit/expressions/wings-mark/dist/", "brand-kit/releases/foundations/dist/", "brand-kit/registry/products.json", "brand-kit/research/phase-2/calibration-plates/product-family-commerce-01/", "brand-kit/research/phase-2/HOMEPAGE-FOUNDATION-SYNTHESIS.md", "brand-kit/skills/codex-made-it/references/product-disc-contract.md"],
-    "decisionIds": ["DEC-WINGS-MARK-EXPRESSION-001", "DEC-DISC-EXPRESSION-001", "DEC-MOTION-002", "DEC-FAMILY-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-TYPE-FOUNDATION-001"],
+    "requiredFiles": [
+      "brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md",
+      "brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md",
+      "brand-kit/expressions/product-card/product-card.source.json",
+      "brand-kit/expressions/product-card/review.json",
+      "brand-kit/expressions/product-card/round-10-feedback.json",
+      "brand-kit/expressions/product-card/phase-b/product-component-pantry.source.json",
+      "brand-kit/expressions/product-card/phase-b/round-01-feedback.json",
+      "brand-kit/expressions/product-card/phase-b/round-02-feedback.json",
+      "brand-kit/expressions/product-card/phase-b/round-03-feedback.json",
+      "brand-kit/expressions/product-card/phase-b/round-04-feedback.json",
+      "brand-kit/expressions/product-card/phase-b/review.json",
+      "brand-kit/workbench/expressions/product-card/phase-b/phase-a-lineage.js",
+      "brand-kit/expressions/disc/dist/",
+      "brand-kit/expressions/wings-mark/dist/",
+      "brand-kit/releases/foundations/dist/",
+      "brand-kit/registry/products.json",
+      "brand-kit/research/phase-2/calibration-plates/product-family-commerce-01/",
+      "brand-kit/research/phase-2/HOMEPAGE-FOUNDATION-SYNTHESIS.md",
+      "brand-kit/skills/codex-made-it/references/product-disc-contract.md"
+    ],
+    "decisionIds": [
+      "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+      "DEC-WINGS-MARK-EXPRESSION-001",
+      "DEC-DISC-EXPRESSION-001",
+      "DEC-MOTION-002",
+      "DEC-FAMILY-001",
+      "DEC-GEOMETRY-CONTROLS-FOUNDATION-001",
+      "DEC-COLOUR-FOUNDATION-001",
+      "DEC-TYPE-FOUNDATION-001"
+      ,"DEC-PRODUCT-COMPONENT-SYSTEM-001"
+    ],
     "artifactIds": [],
     "consumerIds": []
   },
   "deliverables": [
-    {"path": "brand-kit/expressions/product-card/", "acceptance": ["schema-backed two-phase programme", "one portrait architecture and four treatments are machine-checkable", "Phase B website components are explicit and held until visual lock", "candidate has no production authority"]},
-    {"path": "brand-kit/workbench/expressions/product-card/", "acceptance": ["four visibly credible AI OS card treatments inside real website contexts", "desktop shelf, focal feature and mobile proof", "canonical light and charcoal surface matrix", "family shelf and bundle offer examples", "preference receipt for the Phase A gate"]}
+    {
+      "path": "brand-kit/expressions/product-card/",
+      "acceptance": [
+        "Phase A source, schema, approval, Round 10 receipt, build, verifier and dist remain byte-for-byte pinned",
+        "the Phase A verifier continues to pass throughout Phase B"
+      ]
+    },
+    {
+      "path": "brand-kit/expressions/product-card/phase-b/",
+      "acceptance": [
+        "canonical 1.0.0 package and deterministic dist",
+        "fifteen unique reusable component IDs",
+        "thirteen unique website-pattern IDs referencing only declared components",
+        "six unique journey fixtures",
+        "complete semantic models, state dimensions, receiver profiles, variant axes, motion allocation and exclusions",
+        "Phase A integrity checks remain valid",
+        "the Round 01 through Round 04 receipts preserve the scope correction, all human feedback and the reason Phase A remains an input rather than a separate gallery",
+        "PB2 Round 04 records thirty-two approved Phase A visual inputs and forty-six unanimously kept functional specimens across six families",
+        "review.json records H-EXP-04B-CARD-FUNCTIONAL-PROOF and DEC-PRODUCT-COMPONENT-SYSTEM-001"
+      ]
+    },
+    {
+      "path": "brand-kit/workbench/expressions/product-card/phase-b/",
+      "acceptance": [
+        "the thirty-two approved Phase A survivors remain attributable visual inputs and do not render as a separate Round 04 review gallery",
+        "every functional specimen exposes the exact Phase A source IDs it inherits and cannot change their canonical verdicts",
+        "forty-six actual functional specimens render across discovery, features, pricing, checkout, bundles and upsells, and mobile after B-FT04 and B-FT06 are removed",
+        "the workbench contains exactly forty-six locked approved specimens across six families",
+        "specimens include realistic product heroes, menus, sections, bento, comparisons, checkout, bundle builders, upsells, footers and mobile flows",
+        "feedback persists per specimen and per family, with one round-level leading-family choice and notes",
+        "SaaS cadence, usage pricing, bundle selection, disclosures, checkout state and upsell controls work locally",
+        "digital-product, SaaS, bundle, waitlist and mobile scenarios are clearly labelled as canonical identity plus illustrative commerce data",
+        "no external runtime dependency"
+      ]
+    },
+    {
+      "path": "brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md",
+      "acceptance": [
+        "human-readable system architecture, component inventory, website patterns and journeys",
+        "explicit digital-product versus SaaS behavior",
+        "typed bento boundary",
+        "state applicability, responsive, accessibility and motion rules",
+        "PB0 through PB4 review sequence"
+      ]
+    }
   ],
   "verification": [
-    {"id": "EXP-04A-ARCHITECTURE", "method": "visual", "passCondition": "the portrait card is clearly the website component being reviewed and remains recognisable across four treatments"},
-    {"id": "EXP-04A-CONTEXT", "method": "visual", "passCondition": "candidates are shown in website shelves, focal features, catalogues, commerce and mobile placements rather than as isolated art cards"},
-    {"id": "EXP-04A-SURFACES", "method": "visual", "passCondition": "calm same-polarity and focal cross-contrast allocations use canonical F8, #171715, #1B1B19 and #252523 surfaces"},
-    {"id": "EXP-04A-GROUPING", "method": "visual", "passCondition": "family shelf means comparing equal products and bundle offer means buying one package with supporting included-product rows"},
-    {"id": "EXP-04A-MOTION", "method": "command", "passCondition": "exactly one Full Field Portrait may mount the Living Core and every repeated, bundle, pricing and checkout context remains static"},
-    {"id": "EXP-04A-RESPONSIVE", "method": "visual", "passCondition": "320 through 1440 preserve readable website contexts, usable review controls and no horizontal overflow"},
-    {"id": "EXP-04A-HUMAN", "method": "human", "passCondition": "Olli approves, combines or requests changes to the portrait architecture and treatment allocation"}
+    {
+      "id": "EXP-04A-REGRESSION",
+      "method": "command",
+      "command": ".venv/bin/python brand-kit/expressions/product-card/verify_product_card_contract.py",
+      "passCondition": "The approved Phase A contract, 32 survivors, feedback trail, workbench and deterministic package continue to pass."
+    },
+    {
+      "id": "EXP-04B-PB2-R04-CONTRACT",
+      "method": "command",
+      "command": ".venv/bin/python brand-kit/expressions/product-card/phase-b/verify_product_component_pantry.py",
+      "passCondition": "The canonical Phase B 1.0.0 system validates, preserves all 32 Phase A inputs, records the complete Round 03 and unanimous Round 04 feedback, omits B-FT04, B-FT06 and the separate inheritance gallery, renders the exact 46 surviving functional specimen IDs across six families and rebuilds deterministically with bounded production authority true."
+    },
+    {
+      "id": "EXP-04B-DATA",
+      "method": "schema",
+      "passCondition": "Product identity comes only from the registry; Offer, Price, Plan, Bundle, LineItem, ProofRecord and Checkout remain fixture or consumer data with no payment-provider logic."
+    },
+    {
+      "id": "EXP-04B-COVERAGE",
+      "method": "manual-inspection",
+      "passCondition": "Every approved functional specimen remains attributable to approved Phase A sources, every required component and pattern has at least one materially distinct Round 04 specimen, and the unanimous approval record remains intact."
+    },
+    {
+      "id": "EXP-04B-BENTO",
+      "method": "schema",
+      "passCondition": "Every bento cell declares a product, proof, workflow, metric, media, integration, quote or action job; decorative filler and multiple live cells are rejected."
+    },
+    {
+      "id": "EXP-04B-STATES",
+      "method": "manual-inspection",
+      "passCondition": "Each component proves only applicable interaction, choice, availability, async and commerce states, including purchase processing and recovery where owned."
+    },
+    {
+      "id": "EXP-04B-RESPONSIVE",
+      "method": "visual",
+      "passCondition": "The approval workbench proves representative compact and expanded compositions, preserves source order and documents the exhaustive 240–1160px container and 320–1440px viewport matrix as required follow-up under EXP-08 and consumer proof."
+    },
+    {
+      "id": "EXP-04B-ACCESSIBILITY",
+      "method": "manual-inspection",
+      "passCondition": "Semantic elements, focus contracts, reduced motion and truthful non-color status are present; exhaustive keyboard-only, async-announcement, touch-target and 200% zoom proof remains a named EXP-08 and consumer-proof obligation."
+    },
+    {
+      "id": "EXP-04B-MOTION",
+      "method": "command",
+      "passCondition": "At most one focal Deep Mineral plate animates automatically; repeated products and all pricing, checkout, menu, footer and mobile-summary contexts remain exact static twins. A focused bundle stack may cycle static-card emphasis without moving Wings, type or geometry and without allocating another Living Core."
+    },
+    {
+      "id": "EXP-04B-JOURNEYS",
+      "method": "visual",
+      "passCondition": "The six discovery, one-time, SaaS, bundle, waitlist and mobile journeys remain coherent from entry through confirmation or safe recovery."
+    },
+    {
+      "id": "EXP-04B-HUMAN",
+      "method": "human",
+      "passCondition": "Olli approves the complete functional website component system without reopening the Phase A visual grammar."
+    }
   ],
   "humanGate": {
     "required": true,
-    "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
+    "gateId": "H-EXP-04B-CARD-FUNCTIONAL-PROOF",
     "approver": "Olli",
-    "approvalQuestion": "Is the portrait website-card architecture correct, which treatment becomes the everyday base, and which special treatments should survive before Phase B begins?"
+    "approvalQuestion": "Do the Phase B components, website patterns and complete journeys turn the approved Round 10 grammar into a coherent, responsive, accessible and commercially honest functional website system?"
   },
-  "stopConditions": ["Phase B website components begin before the Phase A gate", "more than one Living Core animates in a viewport", "the proof returns to unexplained decorative directions", "the task changes live Stripe code or pricing authority", "the task enters homepage, Figma or consumer migration"],
-  "notes": ["product-card-01 was rejected as generic.", "The first product-card-02 rebuild went prematurely into functional discovery, pricing and checkout.", "Phase A round 01 was rejected because ten art-card treatments obscured the website component and included weak concepts.", "Round 02 recommendation: C01 Editorial Portrait base; C02 focal, C03 dense and C04 commerce-only special treatments."]
+  "stopConditions": [
+    "Phase B edits the approved Phase A source, schema, approval, receipt, package or verifier",
+    "Phase B reopens the Phase A visual grammar without a new human gate",
+    "more than one Living Core animates in a viewport",
+    "a bento contains decorative filler or unexplained cells",
+    "a specimen treats illustrative pricing as production authority",
+    "a component contains Stripe secrets, endpoints, network calls, tax calculation or payment logic",
+    "the workbench hardcodes a five-product limit",
+    "mobile hides essential products or comparison content behind swipe-only interaction",
+    "the task enters golden homepage, generic product UI, Figma, channels or consumer migration"
+  ],
+  "notes": [
+    "Product Card 02 Phase A is complete and canonical after Round 10 received 32 keeps.",
+    "PB0 architecture expands the original seven leaf components into 15 reusable components, 13 website patterns and six complete journeys.",
+    "PB1 Round 01 implemented 48 materially different functional specimens: B-DS01–08, B-FT01–10, B-PR01–10, B-CK01–08, B-BU01–08 and B-MB01–04.",
+    "PB1 Round 02 displayed 32 Phase A application bridges plus 48 functional specimens and received a complete 80-item human feedback receipt.",
+    "PB2 Round 03 corrected the architecture and received eleven keeps, thirty-five revisions and one kill across 47 functional candidates.",
+    "PB2 Round 04 preserved the eleven champions, removed B-FT06 alongside B-FT04 and received forty-six keeps with the 32 Phase A keeps as visual inputs rather than additional review items.",
+    "H-EXP-04B-CARD-FUNCTIONAL-PROOF is approved through DEC-PRODUCT-COMPONENT-SYSTEM-001; Product Card 02 is complete.",
+    "The Product Family and Commerce 01 plate contributes approved behavior only; its visual execution and historical product data remain non-authoritative.",
+    "The earlier planning-only searchable interface was removed; the active workbench shows the actual components in realistic website contexts.",
+    "The bounded component design and interaction system has production authority; illustrative commerce, provider logic, golden-homepage selection and exhaustive consumer-specific stress proof remain excluded."
+  ]
 }

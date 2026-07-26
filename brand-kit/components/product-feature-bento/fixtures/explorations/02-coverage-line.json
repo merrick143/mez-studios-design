@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "What has a system, what does not, and the line between",
+  "columns": 12,
+  "generativeRule": "The grid sorts by coverage rather than category. The seam is the coverage line and it can be re-shot each quarter.",
+  "copyProvenance": "Block names, the four system mappings and the product cell all resolve from registry/products.json. Blocks with no system carry no claim. Nothing is authored.",
+  "cells": [
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "productSlug": "ai-ads-system",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "productSlug": "organic-content-os",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "productSlug": "claude-code-os",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "productSlug": "context-engine",
+      "span": 3
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "span": 12
+    },
+    {
+      "job": "workflow",
+      "label": "Sales",
+      "span": 3,
+      "surface": "recessed"
+    },
+    {
+      "job": "workflow",
+      "label": "Finance",
+      "span": 3,
+      "surface": "recessed"
+    },
+    {
+      "job": "workflow",
+      "label": "Client delivery",
+      "span": 3,
+      "surface": "recessed"
+    },
+    {
+      "job": "workflow",
+      "label": "Design",
+      "span": 3,
+      "surface": "recessed"
+    }
+  ]
+}

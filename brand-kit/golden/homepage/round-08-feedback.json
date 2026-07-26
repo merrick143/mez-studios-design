@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r08",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-23",
+  "note": "Olli reviewed the compacted Round 08 hero and asked for two elements removed, scoped to GH-S01. No verdict was given on the remaining Wings-icon tuck flagged in the Round 08 receipt, and no other section was reviewed this round.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Remove the divider line under the card deck and its two labels, 'One operating layer' and 'Five focused systems'. Also remove the supporting line 'AI OS is available now. Specialised systems are coming next.' from the hero copy."
+    }
+  ],
+  "productionAuthority": false
+}

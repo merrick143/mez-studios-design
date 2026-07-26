@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "The layer surrounded by what it serves",
+  "columns": 12,
+  "generativeRule": "Eight blocks ring the frame, the layer fills the middle. Included to be judged on the render: it is close to GH-S03's concentric orbit two sections earlier.",
+  "copyProvenance": "Block names, the four system mappings and the product cell all resolve from registry/products.json. Blocks with no system carry no claim. Nothing is authored.",
+  "cells": [
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "productSlug": "ai-ads-system",
+      "col": 1,
+      "row": 1,
+      "span": 4
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "productSlug": "organic-content-os",
+      "col": 5,
+      "row": 1,
+      "span": 4
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "productSlug": "claude-code-os",
+      "col": 9,
+      "row": 1,
+      "span": 4
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "productSlug": "context-engine",
+      "col": 1,
+      "row": 2,
+      "span": 3,
+      "rows": 2
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "col": 4,
+      "row": 2,
+      "span": 6,
+      "rows": 2
+    },
+    {
+      "job": "workflow",
+      "label": "Sales",
+      "col": 10,
+      "row": 2,
+      "span": 3,
+      "rows": 2
+    },
+    {
+      "job": "workflow",
+      "label": "Finance",
+      "col": 1,
+      "row": 4,
+      "span": 4
+    },
+    {
+      "job": "workflow",
+      "label": "Client delivery",
+      "col": 5,
+      "row": 4,
+      "span": 4
+    },
+    {
+      "job": "workflow",
+      "label": "Design",
+      "col": 9,
+      "row": 4,
+      "span": 4
+    }
+  ]
+}

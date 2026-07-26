@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/global-navigation-candidate",
+  "version": "0.1.0-candidate",
+  "status": "review-candidate",
+  "candidateRevision": "global-navigation-01-r04",
+  "reviewGateId": "H-CMP-01-GLOBAL-NAVIGATION-PROOF",
+  "productionAuthority": false,
+  "entrypoints": {
+    "element": "components/global-navigation/mez-global-navigation.js",
+    "styles": "components/global-navigation/mez-global-navigation.css",
+    "contract": "global-navigation.source.json",
+    "schema": "global-navigation.schema.json",
+    "review": "review.json",
+    "htmlFixture": "components/global-navigation/fixtures/static-html.html",
+    "reactFixture": "components/global-navigation/fixtures/react.jsx"
+  }
+}

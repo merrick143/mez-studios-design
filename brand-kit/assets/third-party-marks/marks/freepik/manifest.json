@@ -1,0 +1,44 @@
+{
+  "slug": "freepik",
+  "name": "Freepik",
+  "domain": "freepik.com",
+  "website": "https://freepik.com",
+  "colours": {
+    "primary": "#1273EB",
+    "all": [
+      {
+        "hex": "#1273EB",
+        "role": "brand",
+        "source": "curated"
+      }
+    ]
+  },
+  "fonts": [],
+  "logos": {
+    "mark": {
+      "svg": "logos/mark.svg",
+      "png": null,
+      "light": "logos/mark-light.svg",
+      "dark": "logos/mark-dark.svg",
+      "raster": [
+        "logos/raster/mark-256.png",
+        "logos/raster/mark-512.png",
+        "logos/raster/mark-1024.png"
+      ]
+    },
+    "app_icon": {
+      "png": "logos/app-icon.png",
+      "source": "apple-touch-icon",
+      "raster": [
+        "logos/raster/app-icon-256.png",
+        "logos/raster/app-icon-512.png",
+        "logos/raster/app-icon-1024.png"
+      ]
+    },
+    "primary": "logos/mark.svg"
+  },
+  "socials": {},
+  "tier_fetched": "A",
+  "fetched_at": "2026-07-24T07:11:08Z",
+  "last_refreshed": "2026-07-24T07:11:08Z"
+}

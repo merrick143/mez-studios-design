@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-GOLD-01-GOLDEN-HOMEPAGE",
+  "receiptId": "RCP-GOLD-01-GOLDEN-HOMEPAGE",
+  "evaluatedAt": "2026-07-24T18:00:00Z",
+  "evaluator": {"kind": "hybrid", "name": "Claude Opus 4.8 plus deterministic validators"},
+  "contractChecks": [
+    {"id": "SCOPE", "status": "pass", "evidence": "Rounds 16-17 changed the six reviewed sections (S02/S03/S04 reinvented on the shared split-card family, S05 rebuilt, S06 Wings + bottom pair, S07 simplified), the family header alignment and the governance records. The locked V01 hero is byte-unchanged; S08 proof and S09 final route were not touched this round."},
+    {"id": "INSTRUCTION-FIDELITY", "status": "pass", "evidence": "Every section verdict was met: S02/S03/S04 restarted (S03 with the rented-brand logos removed for good, its explicit repeat complaint), S05 revised, S06 Wings centred + enlarged and its bottom two cards rebuilt from the attached screenshots, S07 reduced to Wings + name + Coming soon with no waitlist. The 'use those as inspo but don't force it, use the mez ethos' constraint was honoured (reference composition, Mez monochrome execution)."},
+    {"id": "STRUCTURAL-INTEGRITY", "status": "pass", "evidence": "The page keeps exactly ten ordered GH-S01..GH-S10 regions; the source contract is stamped 0.17.0-candidate / golden-homepage-01-r17; a new verify_homepage_round17.py asserts the split-card family, the S03 logo removal, the S05 rebuild, the S06 Wings-centring + bottom pair, the S07 simplification and the header-alignment fix, and it passes."},
+    {"id": "HERO-UNCHANGED", "status": "pass", "evidence": "The locked V01 hero geometry, centred identity, outline token, no-overlay-fork guard and canonical-automatic motion are all guarded as carried-forward and pass."},
+    {"id": "CLAIM-STATE", "status": "pass", "evidence": "No fabricated evidence, availability, logo or testimonial status entered the candidate. S03 shows interchangeable intelligence abstractly (no brand marks, real or invented); S05 keeps honest 'Evidence pending' redacted-screen placeholders; the testimonial consent-pending state carries forward."},
+    {"id": "GOVERNANCE", "status": "pass", "evidence": "Feedback record, contract, review, verifier, docs, status and the four LLM records advanced in lockstep with re-pinned sha256 hashes; verify_homepage_round17.py plus the portability, llm-contracts, workbench, gradient-library, architecture, authority and release validators all pass; the whole-page gate stays open."}
+  ],
+  "qualityDimensions": [
+    {"id": "instruction-fidelity", "score": 5, "maximum": 5, "evidence": "The repeated S03 logo complaint was resolved at root (no brand marks at all), and the reference screenshots were used as inspiration for composition while the execution stayed in the established Mez grammar."},
+    {"id": "restraint", "score": 5, "maximum": 5, "evidence": "One shared split-card family carries S02/S03/S04 with a bespoke per-section visual rather than three unrelated inventions; the locked hero and the not-reviewed sections were untouched; canonical tokens only, no non-canonical green, no ambient shadow/glow."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "A six-section reinvention plus the S05 first-styling were carried through the contract, verifier and records honestly, and the reintroduced header-indent bug (the one Olli originally flagged) was found and fixed across the family."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": true,
+  "notes": [
+    "Round 17 is a design-reinvention round across S02-S07; it is not a golden approval and the whole-page gate stays open.",
+    "S05 Operating proof had shipped unstyled (no CSS) since the R15 split; R17 gave it its first real styling as honest 'Evidence pending' screens.",
+    "S03's interchangeable-intelligence idea is now shown with abstract swap-slots; brand logos (real or invented) must never be reintroduced.",
+    "S05 redacted screens and testimonial publication stay blocked until evidence redaction and consent/provenance are verified by a human."
+  ]
+}

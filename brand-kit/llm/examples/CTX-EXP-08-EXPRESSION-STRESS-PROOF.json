@@ -1,0 +1,46 @@
+{
+  "schemaVersion":"1.0.0",
+  "bundleId":"CTX-EXP-08-EXPRESSION-STRESS-PROOF",
+  "taskId":"TASK-EXP-08-EXPRESSION-STRESS-PROOF",
+  "generatedAt":"2026-07-23T01:32:07Z",
+  "systemVersion":"1.0.0+expression-stress-canonical",
+  "sourceState":{"repository":"merrick143/mez-studios-design","branch":"codex/brand-kit-foundations-expressions","commit":"7c2141cc0e8effd4578a29ea4ceeb79136b2c740","workingTree":"dirty"},
+  "files":[
+    {"path":"brand-kit/START-HERE.md","sha256":"c153f0feb08cd56461accfc77e8b75ff9e45d316871507ce9e055bb39f8a0303","role":"canonical","required":true,"reason":"Current programme boundary and CMP-01 next-task state."},
+    {"path":"brand-kit/docs/CURRENT-STATE.md","sha256":"3f24763dd69eae90704929c63d3c525ab9c40783d10738e8baeb08171824f284","role":"canonical","required":true,"reason":"Live canonical authority and consumer-proof boundary."},
+    {"path":"brand-kit/docs/ROADMAP.md","sha256":"a298fbf7a694e8b5b54fb390e0db2a343627637e0eadcbbdb1eb80b904bb72e8","role":"canonical","required":true,"reason":"EXP-08 closure and CMP-01 sequence."},
+    {"path":"brand-kit/llm/tasks/TASK-EXP-08-EXPRESSION-STRESS-PROOF.json","sha256":"be6e4b053d61416b3d8d973e5df28fe31b9e2c55f2cf9923c555555df4dd0e52","role":"governance","required":true,"reason":"Completed bounded certification task."},
+    {"path":"brand-kit/expressions/stress-proof/expression-stress.source.json","sha256":"c57b1a069cf57473d0a008a88c9fb19d7daf4977384ef8e7c2da1f849c6b6268","role":"canonical","required":true,"reason":"Canonical six-suite, fourteen-scenario contract."},
+    {"path":"brand-kit/expressions/stress-proof/expression-stress.schema.json","sha256":"c5cbcdeeed617b335b75263c69e12e57f6d4aa7fde5139144a08d8ff5a4bba6f","role":"governance","required":true,"reason":"Machine-enforced canonical and authority boundary."},
+    {"path":"brand-kit/expressions/stress-proof/review.json","sha256":"f77f5f824eefd761b9c8179dfb5ed47b37652fc085f4dfc2d10099d09a7989e5","role":"canonical","required":true,"reason":"Closed human gate and bounded authority record."},
+    {"path":"brand-kit/expressions/stress-proof/dist/manifest.json","sha256":"7bfa189426b5aa2dbd1018ec6d38d567e0c6df5cf005c9d7ea7518659e7d4f1f","role":"mirror","required":true,"reason":"Deterministic canonical-package integrity."},
+    {"path":"brand-kit/workbench/expressions/stress-proof/index.html","sha256":"86436e636c2f666a471b0fd2b17a474957046f781e6e5fc8c06b26be563bdc6f","role":"fixture","required":true,"reason":"Locked human-readable certification surface."},
+    {"path":"brand-kit/workbench/expressions/stress-proof/stress-proof.js","sha256":"ef459ff6faf6987f7bb2f23ad298f8d185dc8965fd9fb4a4ebdd7c6cf8503a2b","role":"fixture","required":true,"reason":"Scenario mounting, controls, fallback allocation and locked approval export."},
+    {"path":"brand-kit/workbench/expressions/stress-proof/styles.css","sha256":"3a0cad678f4b9905b11e8d0b5618c3d9929921ac62f1ceba449bf826b5b82017","role":"fixture","required":true,"reason":"Container, text-scale, reduced-motion, focus and forced-colour fixtures."},
+    {"path":"brand-kit/expressions/disc/disc.source.json","sha256":"ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a","role":"canonical","required":true,"reason":"Inherited canonical disc authority."},
+    {"path":"brand-kit/expressions/product-card/phase-b/product-component-pantry.source.json","sha256":"cf5fc2478e59cc98a0ce206de0055fae66478dd2ad64f45255ca7a1a054aa250","role":"canonical","required":true,"reason":"Inherited component, state and content-stress contracts."},
+    {"path":"brand-kit/expressions/channel-motion/channel-motion.source.json","sha256":"f04a82f58f4283862014844dcd3911e6986d035076d784ab83638d9ed842d17d","role":"canonical","required":true,"reason":"Inherited static equivalence and one-event motion allocation."}
+  ],
+  "decisions":[
+    {"id":"DEC-DISC-EXPRESSION-001","status":"approved","productionEffect":"Exact static material and one-live allocation stay inherited."},
+    {"id":"DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001","status":"approved","productionEffect":"Rounded geometry, product hierarchy, filled actions and deliberate Wings placement stay locked."},
+    {"id":"DEC-PRODUCT-COMPONENT-SYSTEM-001","status":"approved","productionEffect":"Canonical state, receiver, recovery and accessibility contracts supply the stress fixtures."},
+    {"id":"DEC-TRADING-CARD-EXPRESSION-001","status":"approved","productionEffect":"Full-field product-object grammar remains immutable."},
+    {"id":"DEC-WEBSITE-MOTION-SYSTEM-001","status":"approved","productionEffect":"Static completeness, reduced-motion equivalence and maximum one event remain mandatory."}
+    ,{"id":"DEC-EXPRESSION-STRESS-CERTIFICATION-001","status":"approved","productionEffect":"Six adversarial suites and fourteen scenarios certify the repository expression system while preserving later consumer/provider proof."}
+  ],
+  "artifacts":[],
+  "consumers":[],
+  "knownConflicts":[
+    {"id":"CONFLICT-EXP-08-CERTIFICATION-VS-DESIGN","summary":"Stress defects may tempt a visual redesign even though approved expression grammar is outside this task.","executionEffect":"constrain"},
+    {"id":"CONFLICT-EXP-08-LAB-VS-CONSUMER","summary":"A repository lab cannot replace real framework, provider, production-data or payment proof.","executionEffect":"inform"}
+  ],
+  "stopConditions":[
+    "Do not mutate an approved expression, foundation, product, gradient, renderer or Wings asset.",
+    "Do not expand the canonical certification beyond its repository-expression scope.",
+    "Do not expand into global navigation, the golden homepage or a consumer repository.",
+    "Do not treat a simulated provider or price as production truth."
+  ],
+  "contextBudget":{"strategy":"bounded","requiredFirst":["brand-kit/START-HERE.md","brand-kit/docs/CURRENT-STATE.md","brand-kit/llm/tasks/TASK-EXP-08-EXPRESSION-STRESS-PROOF.json","brand-kit/expressions/stress-proof/expression-stress.source.json"],"omitByDefault":["brand-kit/history/","consumer repositories","complete research corpus","Figma","provider implementation"]},
+  "humanNotes":["Olli approved the certification boundary on 23 July 2026.","Approval closes EXP-08 only for the bounded repository expression suite.","CMP-01 is now the next component task."]
+}

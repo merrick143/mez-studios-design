@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Principle Lab 4 (six ways to hold the marks)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1;
+  --page-muted: #666662; --page-dark-muted: #b8b8b1;
+  --material: url("../../../../gradient-library/assets/static/mz-g13.webp");
+  --card: 880px;
+  /* container(16), not panel(24). Both are on-scale, but 24 is the house value
+     for large fields where it lands near 6% of the height. On a 136px bar it is
+     18% of the height, which is what reads as soft rather than precise. */
+  --card-radius: var(--mz-radius-container);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* ---------------------------------------------------------------- lab shell */
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 9px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-note {
+  padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: #cfcfc9;
+  font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3;
+}
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px;
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--page-muted);
+}
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 58ch; line-height: 1.5; }
+.lab-live {
+  font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 9999px; border: 1px solid var(--page-line-strong); color: var(--page-muted);
+}
+.lab-live[data-live="on"] { border-color: var(--page-ink); color: var(--page-ink); }
+
+/* ------------------------------------------------------------ section chassis */
+.pr { background: var(--page-paper); color: var(--page-ink); }
+.pr-inner {
+  max-width: 1180px; margin-inline: auto;
+  padding-inline: clamp(20px,5vw,64px); padding-block: clamp(72px,9vw,116px);
+}
+.pr-head { text-align: center; margin-inline: auto; max-width: 62ch; }
+.pr-eyebrow {
+  margin: 0; font-family: var(--mz-font-technical); font-size: 12px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted);
+}
+.pr-title {
+  margin: 18px auto 0; font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(30px,3.6vw,50px); line-height: 1.02; letter-spacing: -.04em;
+  max-inline-size: 22ch; color: var(--page-ink);
+}
+.pr-title span { display: block; }
+.pr-lead {
+  margin: 20px auto 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5;
+  color: var(--page-muted); max-inline-size: 52ch;
+}
+.stack { margin: clamp(42px,5vw,68px) auto 0; max-width: var(--card); }
+
+/* --------------------------------------------------------------- the marks */
+.mk { display: block; height: 21px; width: auto; filter: grayscale(1) brightness(0); opacity: .72; }
+.mk[alt="Gemini"] { height: 24px; }
+.mk[alt="Mistral"] { height: 18px; }
+.mk[alt="Perplexity"] { height: 22px; }
+.mk[alt="OpenAI"] { height: 22px; }
+.kicker {
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted); margin: 0; text-align: center;
+}
+.row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+
+/* --------------------------------------------------------------- the layer */
+.layer {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 136px; display: grid; place-items: center; text-align: center;
+  padding: 26px clamp(22px,4vw,40px);
+  background: #101010 center / cover no-repeat var(--material);
+  border-radius: var(--card-radius);
+}
+/* Flat tint: the lockup is centred, so a directional scrim would pick a side. */
+.layer::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: rgba(7,7,7,.46);
+}
+.layer canvas { z-index: 0; }
+.layer__lockup { position: relative; z-index: 2; display: grid; justify-items: center; gap: 10px; }
+.layer__wings { width: 24px; height: 24px; filter: brightness(0) invert(1); }
+.layer__name {
+  font-family: var(--mz-font-display); font-weight: 640; font-size: clamp(18px,1.9vw,22px);
+  letter-spacing: -.022em; color: #ffffff;
+}
+.layer__note { font-size: 13.5px; color: rgba(255,255,255,.76); max-width: 48ch; }
+
+/* The business tier, as a quiet line rather than a boxed card. */
+.biz-line {
+  margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--page-line);
+  text-align: center; font-size: 13.5px; color: var(--page-muted);
+}
+.biz-line b { color: var(--page-ink); font-weight: 620; }
+
+/* ================================================================= A · BARE */
+.a-row { gap: clamp(26px,5vw,64px); margin-bottom: 26px; }
+
+/* ================================================================= B · RAIL */
+.b-rail {
+  gap: clamp(24px,4vw,52px); width: fit-content; max-width: 100%; margin: 0 auto 26px;
+  padding: 14px clamp(20px,3vw,34px);
+  border: 1px solid var(--page-line); border-radius: var(--mz-radius-full);
+  background: var(--page-white);
+}
+
+/* ================================================================ C · SEATED */
+.c-wrap { position: relative; }
+.c-rail {
+  position: relative; z-index: 3; gap: clamp(24px,4vw,52px);
+  width: fit-content; max-width: 100%; margin: 0 auto -21px;
+  padding: 13px clamp(20px,3vw,34px);
+  border: 1px solid var(--page-line); border-radius: var(--mz-radius-full);
+  background: var(--page-white);
+}
+
+/* =============================================================== D · INSIDE */
+.d-layer { display: grid; place-items: center; gap: 20px; padding-block: 28px; }
+.d-marks { gap: clamp(22px,4vw,48px); position: relative; z-index: 2; }
+.d-marks .mk { filter: grayscale(1) brightness(0) invert(1); opacity: .82; }
+.d-rule {
+  position: relative; z-index: 2; width: min(320px, 70%); height: 1px;
+  background: rgba(255,255,255,.24);
+}
+
+/* ================================================================ E · SHELF */
+.e-marks { gap: clamp(26px,5vw,64px); padding-bottom: 18px; }
+.e-shelf { height: 1px; background: var(--page-line-mid); margin-bottom: 26px; }
+
+/* =============================================================== F · FOOTER */
+.f-card { border-radius: var(--card-radius); overflow: hidden; }
+.f-card .layer { border-radius: 0; }
+.f-foot {
+  display: flex; align-items: center; justify-content: center; gap: clamp(22px,4vw,48px);
+  flex-wrap: wrap; padding: 16px 22px;
+  background: var(--page-white); border: 1px solid var(--page-line); border-top: 0;
+}
+
+@media (max-width: 620px) {
+  :root { --card: 100%; }
+  .layer { min-height: 124px; }
+  .a-row, .b-rail, .c-rail, .d-marks, .e-marks, .f-foot { gap: 18px 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Principle Lab 4 · holding the marks</strong>
+  <nav>
+    <a href="#v1">A bare</a><a href="#v2">B rail</a><a href="#v3">C seated</a>
+    <a href="#v4">D inside</a><a href="#v5">E shelf</a><a href="#v6">F footer</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>Option B's order, six ways to hold the marks.</b> The connector lines are gone. Corners are down
+  from panel 24 to container 16: both are on-scale, but 24 is the house value for large fields where
+  it lands near 6% of the height, and on a 136px bar it is 18%, which is what read as soft. The
+  business is now a quiet line under the layer rather than a boxed card. One variable across the
+  six: how the AI marks are presented. One core, allocated to whichever layer is in view. Add
+  <code>?static</code> for the still state.
+</div>
+
+<!-- ================================================================= A · BARE -->
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">A</span><span class="lab-name">Bare row</span>
+    <span class="lab-rule">No container at all</span>
+    <span class="lab-live" data-live-badge="v1">Core idle</span>
+    <span class="lab-rat">The quietest option. The marks simply sit in the space above the layer with nothing drawn around or between them, and the alignment does the work.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <p class="kicker" style="margin-bottom:18px">Rented · interchangeable</p>
+        <div class="row a-row">
+          <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+        </div>
+        <div class="layer" data-live-anchor="v1" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+          </div>
+        </div>
+        <p class="biz-line"><b>Your business</b> runs on it. Context, workflows, decisions, history.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================================= B · RAIL -->
+<article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">B</span><span class="lab-name">One rail</span>
+    <span class="lab-rule">All five in a single pill</span>
+    <span class="lab-live" data-live-badge="v2">Core idle</span>
+    <span class="lab-rat">One hairline container holds all five, so they read as a single interchangeable set rather than five separate logos. No box per logo, which was the failure mode of earlier rounds.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <p class="kicker" style="margin-bottom:16px">Rented · interchangeable</p>
+        <div class="row b-rail">
+          <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+        </div>
+        <div class="layer" data-live-anchor="v2" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+          </div>
+        </div>
+        <p class="biz-line"><b>Your business</b> runs on it. Context, workflows, decisions, history.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =============================================================== C · SEATED -->
+<article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">C</span><span class="lab-name">Rail seated on the layer</span>
+    <span class="lab-rule">Overlapping the top edge</span>
+    <span class="lab-live" data-live-badge="v3">Core idle</span>
+    <span class="lab-rat">The same rail, sitting on the layer's top edge instead of floating above it. Contact replaces the connector lines: the models are visibly resting on the thing that runs them.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack c-wrap">
+        <p class="kicker" style="margin-bottom:16px">Rented · interchangeable</p>
+        <div class="row c-rail">
+          <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+        </div>
+        <div class="layer" data-live-anchor="v3" data-gradient-id="MZ-G13" style="padding-top:46px">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+          </div>
+        </div>
+        <p class="biz-line"><b>Your business</b> runs on it. Context, workflows, decisions, history.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =============================================================== D · INSIDE -->
+<article class="lab-item" id="v4">
+  <header class="lab-label">
+    <span class="lab-num">D</span><span class="lab-name">Marks inside the layer</span>
+    <span class="lab-rule">One object, no second box</span>
+    <span class="lab-live" data-live-badge="v4">Core idle</span>
+    <span class="lab-rat">The marks live on the material itself, above a short rule and the lockup. The section becomes a single object instead of a stack of bands, and the marks are literally inside the layer that runs them.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <div class="layer d-layer" data-live-anchor="v4" data-gradient-id="MZ-G13">
+          <div class="row d-marks">
+            <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+            <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+            <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+            <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+            <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+          </div>
+          <div class="d-rule"></div>
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+          </div>
+        </div>
+        <p class="biz-line"><b>Your business</b> runs on it. Context, workflows, decisions, history.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================================ E · SHELF -->
+<article class="lab-item" id="v5">
+  <header class="lab-label">
+    <span class="lab-num">E</span><span class="lab-name">One shelf</span>
+    <span class="lab-rule">A single rule, not five lines</span>
+    <span class="lab-live" data-live-badge="v5">Core idle</span>
+    <span class="lab-rat">The marks sit on one hairline that spans the card width. It gives them a ground to stand on without drawing a line per logo, which is what made the earlier version feel diagrammatic.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <p class="kicker" style="margin-bottom:18px">Rented · interchangeable</p>
+        <div class="row e-marks">
+          <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+        </div>
+        <div class="e-shelf"></div>
+        <div class="layer" data-live-anchor="v5" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+          </div>
+        </div>
+        <p class="biz-line"><b>Your business</b> runs on it. Context, workflows, decisions, history.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =============================================================== F · FOOTER -->
+<article class="lab-item" id="v6">
+  <header class="lab-label">
+    <span class="lab-num">F</span><span class="lab-name">Marks in the footer</span>
+    <span class="lab-rule">Below the material, inside the card</span>
+    <span class="lab-live" data-live-badge="v6">Core idle</span>
+    <span class="lab-rat">The layer leads and the marks sit in a plain strip attached beneath it, still part of the same object. It puts the owned thing first and the rented things second, which is the order the copy argues.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <div class="f-card">
+          <div class="layer" data-live-anchor="v6" data-gradient-id="MZ-G13">
+            <div class="layer__lockup">
+              <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+              <span class="layer__name">The Mez Systems layer</span>
+              <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+            </div>
+          </div>
+          <div class="f-foot">
+            <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+            <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+            <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+            <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+            <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+          </div>
+        </div>
+        <p class="biz-line"><b>Your business</b> runs on it. Context, workflows, decisions, history.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="module" src="./core.js"></script>
+</body>
+</html>

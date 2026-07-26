@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/trading-card-candidate-0.1.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion","expressionId","version","status","productionAuthority","candidateGateId","candidateRevision","proposedDecisionId","title","thesis","inherits","meaning","anatomy","motion","families","specimens","prohibited","testViewports","roundLineage","dependencies"],
+  "properties": {
+    "schemaVersion": {"const":"1.0.0"},
+    "expressionId": {"const":"mz.systems.expression.trading-card"},
+    "version": {"const":"0.1.0-candidate"},
+    "status": {"const":"review-candidate"},
+    "productionAuthority": {"const":false},
+    "candidateGateId": {"const":"H-EXP-05-TRADING-CARD-PROOF"},
+    "candidateRevision": {"const":"trading-card-01-r03"},
+    "proposedDecisionId": {"const":"DEC-TRADING-CARD-EXPRESSION-001"},
+    "title": {"type":"string"},
+    "thesis": {"type":"string"},
+    "inherits": {"type":"array","minItems":7,"items":{"type":"string"},"uniqueItems":true},
+    "meaning": {"type":"object","required":["single","back","pair","deck","omit"]},
+    "anatomy": {"type":"object","required":["masterRatio","adaptations","outerGeometry","field","contrast","identity","wings","interaction"]},
+    "motion": {"type":"object","required":["maximumLivePerViewport","eligible","static","fixed","fallback"]},
+    "families": {"type":"array","minItems":4,"maxItems":4,"items":{"type":"object","required":["id","title","count","job"]}},
+    "specimens": {"type":"array","minItems":23,"maxItems":23,"items":{"type":"object","additionalProperties":false,"required":["id","family","title","variant","productIndex"],"properties":{"id":{"type":"string","pattern":"^TC-[FBDP][0-9]{2}$"},"family":{"enum":["faces","backs","decks","placements"]},"title":{"type":"string"},"variant":{"type":"string"},"productIndex":{"type":"integer","minimum":0,"maximum":4}}}},
+    "prohibited": {"type":"array","minItems":10,"items":{"type":"string"},"uniqueItems":true},
+    "testViewports": {"const":[320,360,375,390,430,768,1024,1280,1440]},
+    "roundLineage": {"type":"object","required":["input","inputSha256","disposition","removedIds"]},
+    "dependencies": {"type":"object","required":["productCardGrammar","productCardApproval","productEthos","foundationManifest","productRegistry","gradientRegistry","renderer","wings"]}
+  }
+}

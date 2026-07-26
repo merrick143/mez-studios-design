@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "Six cells instead of nine",
+  "columns": 12,
+  "frame": "none",
+  "generativeRule": "The four blocks with a system get the cells; the four without collapse into one, so the mosaic breathes.",
+  "copyProvenance": "Block names and the four system mappings are read from registry/products.json; the four uncovered blocks carry library gradients that name no product. Captions are two to five words per the Apple bento study and are the only authored copy.",
+  "cells": [
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "detail": "Campaigns and creative",
+      "presentation": "caption",
+      "tokenSize": "xl",
+      "surface": "paper",
+      "productSlug": "ai-ads-system",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "detail": "Ideas to published",
+      "presentation": "caption",
+      "tokenSize": "xl",
+      "surface": "paper",
+      "productSlug": "organic-content-os",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "detail": "Context and execution",
+      "presentation": "caption",
+      "tokenSize": "xl",
+      "surface": "paper",
+      "productSlug": "claude-code-os",
+      "span": 3
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "detail": "How the company works",
+      "presentation": "caption",
+      "tokenSize": "xl",
+      "surface": "paper",
+      "productSlug": "context-engine",
+      "span": 3
+    },
+    {
+      "job": "workflow",
+      "label": "Also in the business",
+      "span": 6,
+      "rows": 2,
+      "align": "top",
+      "entriesDisplay": "chips",
+      "entries": [
+        {
+          "label": "Sales"
+        },
+        {
+          "label": "Finance"
+        },
+        {
+          "label": "Client delivery"
+        },
+        {
+          "label": "Design"
+        }
+      ]
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "presentation": "caption",
+      "scale": "hero",
+      "materialPosition": "center",
+      "span": 6,
+      "rows": 2
+    }
+  ]
+}

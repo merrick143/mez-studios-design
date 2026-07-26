@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "proofId": "mz.systems.expression.stress-proof",
+  "version": "0.1.0-candidate",
+  "status": "review-candidate",
+  "productionAuthority": false,
+  "artifactCount": 5,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 1155,
+      "sha256": "b3a90e75d1835f2ec5304f7c4fb2222f8644d37357f64abae20ab7239e5e943a"
+    },
+    {
+      "path": "expression-stress.schema.json",
+      "bytes": 2307,
+      "sha256": "5fe99d41bca80984292ed79a9580748ef6bccd8e31825534264f7ce752192606"
+    },
+    {
+      "path": "expression-stress.source.json",
+      "bytes": 7838,
+      "sha256": "8a9cd2ebaa0a637aeec51caaee14a9847fa1c01bf071a33037ebf3cb02977161"
+    },
+    {
+      "path": "package.json",
+      "bytes": 501,
+      "sha256": "d8054ab8f25ef41303ae84c9c27cd0f3f755f561866d112a5a6fcc80bb3ba3d9"
+    },
+    {
+      "path": "review.json",
+      "bytes": 305,
+      "sha256": "ac09a9c689de34724b2a9c299b1ff5e427dd66d08187b63c615bd49874e46a10"
+    }
+  ]
+}

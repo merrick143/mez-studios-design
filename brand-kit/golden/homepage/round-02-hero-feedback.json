@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r02",
+  "verdict": "round-feedback",
+  "note": "Make the hero family use the approved QC04 quiet portrait landing-card treatment. Show five vertically oriented product cards in the fan and animate all five by default.",
+  "references": [
+    "QC04 Quiet · portrait locked static treatment",
+    "QC04 Quiet · portrait locked animated treatment"
+  ],
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Make them like this: five animated cards, vertically oriented, using this approved portrait landing-card treatment for all five."
+    }
+  ],
+  "productionAuthority": false
+}

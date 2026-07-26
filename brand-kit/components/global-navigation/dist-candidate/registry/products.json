@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryId": "mz.systems.registry.products",
+  "authorityState": "canonical-active",
+  "productionAuthority": true,
+  "decision": "DEC-PRODUCT-ARCHITECTURE-001",
+  "namingPolicy": "literal-product-names-only",
+  "products": [
+    {
+      "productId": "mz.systems.product.aios",
+      "slug": "aios",
+      "publicName": "AI OS",
+      "function": "AI Operating System",
+      "availability": "live",
+      "summary": "One system your whole business runs on.",
+      "gradientId": "MZ-G13",
+      "identityState": "locked"
+    },
+    {
+      "productId": "mz.systems.product.context-engine",
+      "slug": "context-engine",
+      "publicName": "Context Engine",
+      "function": "Business context system",
+      "availability": "coming-soon",
+      "summary": "Turns the business into context AI can actually use.",
+      "gradientId": "MZ-G12",
+      "identityState": "locked"
+    },
+    {
+      "productId": "mz.systems.product.ai-ads-system",
+      "slug": "ai-ads-system",
+      "publicName": "AI Ads System",
+      "function": "Advertising operating system",
+      "availability": "coming-soon",
+      "summary": "Build, launch and improve advertising as a repeatable system.",
+      "gradientId": "MZ-G06",
+      "identityState": "locked"
+    },
+    {
+      "productId": "mz.systems.product.claude-code-os",
+      "slug": "claude-code-os",
+      "publicName": "Claude Code OS",
+      "function": "Software-work operating system",
+      "availability": "coming-soon",
+      "summary": "Repeatable software work for people building with Claude Code.",
+      "gradientId": "MZ-G15",
+      "identityState": "locked"
+    },
+    {
+      "productId": "mz.systems.product.organic-content-os",
+      "slug": "organic-content-os",
+      "publicName": "Organic Content OS",
+      "function": "Organic content operating system",
+      "availability": "coming-soon",
+      "summary": "Turn ideas, proof and taste into a repeatable content operation.",
+      "gradientId": "MZ-G20",
+      "identityState": "locked"
+    }
+  ]
+}

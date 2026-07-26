@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r17",
+  "verdict": "pending",
+  "reviewedAt": null,
+  "approver": "Olli",
+  "productionAuthority": false,
+  "heroSectionLock": {
+    "sectionId": "GH-S01",
+    "locked": true,
+    "provisional": true,
+    "lockedDirection": "V01 five-card arc",
+    "lockedRevision": "golden-homepage-01-r17",
+    "decidedBy": "Olli",
+    "decidedAt": "2026-07-24",
+    "note": "Hero direction locked 'for now' after the hero-lab exploration (V01-V19). GH-S02 through GH-S09 remain in review and the whole-page gate stays pending; this is not production sign-off. No hero code changed.",
+    "feedbackRecord": "brand-kit/golden/homepage/round-14-feedback.json"
+  }
+}

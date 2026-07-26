@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r13",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-23",
+  "note": "Olli asked to move the side cards even higher and only a little tighter -- a further lift of the hero fan with just a small increase in overlap, decoupling the two levers (more vertical lift, minimal extra tuck) from the previous rounds which moved both together.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Move the side cards even higher, and only a little tighter on the overlap."
+    }
+  ],
+  "implementationNote": {
+    "summary": "Reduced the per-card vertical step substantially and increased the horizontal overlap only slightly. Vertical step went from clamp(22px, 2.6vw, 38px) to clamp(12px, 1.6vw, 24px) -- at 1440px the side-card drop went from 37/75px to 23/46px, so the fan is noticeably flatter and the cards sit higher, closer to level with the central AI OS card. Horizontal overlap went from clamp(-74px, -5.2vw, -52px) to clamp(-80px, -5.6vw, -58px), about 6px more per side -- a small tightening, not another big tuck. Reserved padding below the deck reduced from clamp(48px, 5.4vw, 84px) to clamp(40px, 4.6vw, 72px) to match the shorter fan.",
+    "unchanged": "Rotation (5.5deg per slot), the centred identity treatment, the canonical card outline token, motion, and every other section. Zero horizontal overflow; five live hero canvases; mobile 2-up grid resets transforms and is unaffected."
+  },
+  "productionAuthority": false
+}

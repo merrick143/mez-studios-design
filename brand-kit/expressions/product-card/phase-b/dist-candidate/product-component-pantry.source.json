@@ -1,0 +1,455 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentSystemId": "mz.systems.components.product-commerce",
+  "version": "0.1.0",
+  "status": "active-review-candidate",
+  "productionAuthority": false,
+  "gateId": "H-EXP-04B-CARD-FUNCTIONAL-PROOF",
+  "candidateRevision": "product-card-02-phase-b-pb2-r04",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "title": "Product Card 02 · Phase B Functional Website Components",
+  "thesis": "Phase B applies the approved Round 10 visual grammar to real product-marketing and commerce interfaces. The exact Round 03 receipt records eleven keeps, thirty-five revisions and one kill across forty-seven functional candidates. PB2 Round 04 carries those eleven champions forward, rebuilds the thirty-five named revisions, removes B-FT06 alongside the previously killed B-FT04, and presents forty-six functional candidates across six families. The thirty-two canonical Phase A keeps remain approved visual inputs and lineage references, not separate Round 04 candidates. Every surviving functional candidate retains every Phase A reference recorded in the receipts, while production authority remains false and the final human gate remains pending.",
+  "inherits": {
+    "phaseAContract": {
+      "path": "brand-kit/expressions/product-card/product-card.source.json",
+      "sha256": "fa2e27bb4bffae992e4d8cde807a5c29c62d973cc1b652a22af7227fca0c39ba"
+    },
+    "phaseASchema": {
+      "path": "brand-kit/expressions/product-card/product-card.schema.json",
+      "sha256": "6c14a65b58979578d3c1ef15c2147a9443829bc84d10448e95660f619cf54a4b"
+    },
+    "phaseAApproval": {
+      "path": "brand-kit/expressions/product-card/review.json",
+      "sha256": "54b52c31e505c28bfd796e98306f32eae72fad97ac9a12f551f72aed8a34153b"
+    },
+    "round10Receipt": {
+      "path": "brand-kit/expressions/product-card/round-10-feedback.json",
+      "sha256": "f1ed134bb0562a9bc258430cfe16f469ea5b3d64c1f55d35f64dfc275cd2f966"
+    },
+    "designEthos": {
+      "path": "brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md",
+      "sha256": "d936b4373716f73f1ea63108c00f58a31ecba42bdc4aa0393c3e95457a89be86"
+    }
+  },
+  "evidence": {
+    "round01Feedback": {
+      "path": "brand-kit/expressions/product-card/phase-b/round-01-feedback.json",
+      "sha256": "858dca76ab4e3fcaabcc5a4ca3996f7ce3a4a2654681e9085220bd6d784be9b1"
+    },
+    "round02Feedback": {
+      "path": "brand-kit/expressions/product-card/phase-b/round-02-feedback.json",
+      "sha256": "86f8e5fd02514ec2a55d81eecfb08e91946f66ddcaa667a379b87c5d584b182f"
+    },
+    "round03Feedback": {
+      "path": "brand-kit/expressions/product-card/phase-b/round-03-feedback.json",
+      "sha256": "0ebc1bc12d4a41d0ec66aed163f130aa625db9615e09e24479f52fed1c7d566c"
+    }
+  },
+  "specimenContract": {
+    "totalCount": 46,
+    "phaseAVisualInputs": {
+      "count": 32,
+      "role": "approved-visual-inputs",
+      "round04CandidateCount": 0,
+      "sourceReceipt": "brand-kit/expressions/product-card/round-10-feedback.json",
+      "sourceIds": ["QC01", "QC02", "QC03", "QC04", "ES02", "ES04", "IC01", "IC02", "IC03", "HL01", "HL02", "HL04", "QF01", "QF03", "FC01", "FC02", "PO01", "PO02", "ST01", "ST02", "SG01", "FN01", "BX01", "BX02", "SH01", "SH02", "SH03", "FS01", "FS02", "EX02", "BO01", "BO02"],
+      "staticByRule": ["FS01", "FS02"],
+      "authorityEffect": "All thirty-two source expressions remain canonical approved Phase A visual inputs. Round 02 application feedback is preserved as evidence but does not create separate Round 04 candidates or alter Phase A approval."
+    },
+    "functionalSpecimens": {
+      "round02Count": 48,
+      "round03Count": 47,
+      "count": 46,
+      "groups": [
+        {"prefix": "B-DS", "count": 8},
+        {"prefix": "B-FT", "count": 8},
+        {"prefix": "B-PR", "count": 10},
+        {"prefix": "B-CK", "count": 8},
+        {"prefix": "B-BU", "count": 8},
+        {"prefix": "B-MB", "count": 4}
+      ],
+      "survivorIds": ["B-DS01", "B-DS02", "B-DS03", "B-DS04", "B-DS05", "B-DS06", "B-DS07", "B-DS08", "B-FT01", "B-FT02", "B-FT03", "B-FT05", "B-FT07", "B-FT08", "B-FT09", "B-FT10", "B-PR01", "B-PR02", "B-PR03", "B-PR04", "B-PR05", "B-PR06", "B-PR07", "B-PR08", "B-PR09", "B-PR10", "B-CK01", "B-CK02", "B-CK03", "B-CK04", "B-CK05", "B-CK06", "B-CK07", "B-CK08", "B-BU01", "B-BU02", "B-BU03", "B-BU04", "B-BU05", "B-BU06", "B-BU07", "B-BU08", "B-MB01", "B-MB02", "B-MB03", "B-MB04"],
+      "killedIds": ["B-FT04", "B-FT06"],
+      "round03VerdictCounts": {"keep": 11, "revise": 35, "kill": 1},
+      "round03KeepIds": ["B-DS02", "B-DS03", "B-DS04", "B-CK01", "B-CK02", "B-CK05", "B-CK06", "B-BU02", "B-BU03", "B-BU04", "B-BU05"],
+      "round03ReviseIds": ["B-DS01", "B-DS05", "B-DS06", "B-DS07", "B-DS08", "B-FT01", "B-FT02", "B-FT03", "B-FT05", "B-FT07", "B-FT08", "B-FT09", "B-FT10", "B-PR01", "B-PR02", "B-PR03", "B-PR04", "B-PR05", "B-PR06", "B-PR07", "B-PR08", "B-PR09", "B-PR10", "B-CK03", "B-CK04", "B-CK07", "B-CK08", "B-BU01", "B-BU06", "B-BU07", "B-BU08", "B-MB01", "B-MB02", "B-MB03", "B-MB04"],
+      "round04Treatment": "Carry every Round 03 keep forward, rebuild every Round 03 revise from its named feedback, remove B-FT06, retain the earlier B-FT04 kill, and introduce no replacement specimens.",
+      "lineageModule": "brand-kit/workbench/expressions/product-card/phase-b/phase-a-lineage.js",
+      "lineageRule": "Every surviving functional specimen preserves every approved Phase A reference recorded in the verbatim Round 02 and Round 03 receipts."
+    },
+    "requiredWorkbenchModules": ["phase-a-lineage.js"]
+  },
+  "layers": [
+    {
+      "id": "PB-L1",
+      "name": "Foundations and primitives",
+      "authority": "inherited-canonical",
+      "purpose": "Layout, controls, fields, feedback, focus, density and responsive behavior from the canonical foundation release."
+    },
+    {
+      "id": "PB-L2",
+      "name": "Product-expression adapters",
+      "authority": "inherited-canonical",
+      "purpose": "Round 10 identity, material, Wings, plate, card, bundle and motion grammar adapted to a functional job."
+    },
+    {
+      "id": "PB-L3",
+      "name": "Reusable components",
+      "authority": "phase-b-candidate",
+      "purpose": "Stable semantic components with slots, state applicability, container behavior, accessibility and consumer events."
+    },
+    {
+      "id": "PB-L4",
+      "name": "Website composition patterns",
+      "authority": "phase-b-candidate",
+      "purpose": "Heroes, menus, featured sections, explainers, bento, pricing, checkout, bundles and footers composed from reusable components."
+    },
+    {
+      "id": "PB-L5",
+      "name": "Journey fixtures",
+      "authority": "phase-b-candidate",
+      "purpose": "Complete buyer and availability journeys that prove components work together without declaring a golden homepage."
+    }
+  ],
+  "semanticModels": [
+    {"name": "Product", "authority": "canonical-registry", "purpose": "Stable product identity, public name, extended name, summary, availability and gradient assignment."},
+    {"name": "Availability", "authority": "registry-and-consumer", "purpose": "Truthful live, coming-soon, waitlist, unavailable and sold-out behavior."},
+    {"name": "Offer", "authority": "fixture-or-consumer", "purpose": "One-time, subscription, usage, bundle, enterprise, trial, waitlist, free and add-on offers without inventing production pricing."},
+    {"name": "Price", "authority": "fixture-or-consumer", "purpose": "Amount, currency, cadence, tax status, discount and disclosure supplied by the consumer."},
+    {"name": "Plan", "authority": "fixture-or-consumer", "purpose": "Tier, included capabilities, limits, recommendation and billing options for SaaS scenarios."},
+    {"name": "Bundle", "authority": "fixture-or-consumer", "purpose": "Included, optional and unavailable products plus bundle savings and selection rules."},
+    {"name": "LineItem", "authority": "fixture-or-consumer", "purpose": "Product, bundle, add-on, discount, tax, credit and total rows."},
+    {"name": "ProofRecord", "authority": "evidence-or-fixture", "purpose": "Claim, input, mechanism, changed state, result, verification, limitation and evidence class."},
+    {"name": "Action", "authority": "component-contract", "purpose": "Semantic label, intent, hierarchy, destination or callback and disabled reason."},
+    {"name": "Media", "authority": "canonical-or-consumer", "purpose": "Static material, one focal live core, screenshot, proof artifact or absent media."},
+    {"name": "Checkout", "authority": "consumer", "purpose": "Checkout state and provider slots without network calls, Stripe ownership or payment logic inside the component."},
+    {"name": "CommerceState", "authority": "component-contract", "purpose": "Empty, partial, ready, processing, confirmed, failed, cancelled and refunded lifecycle."},
+    {"name": "MotionAllocation", "authority": "canonical-motion-rule", "purpose": "One automatically live Deep Mineral focal plate with exact static twins everywhere else."}
+  ],
+  "internalPrimitives": [
+    "ProductIdentity",
+    "ProductMaterial",
+    "ProductCopyStack",
+    "AvailabilityStatus",
+    "PriceBlock",
+    "FeatureList",
+    "ProductAction",
+    "SelectionControl",
+    "OrderSummary",
+    "StickyActionBar",
+    "ProofRecordRenderer"
+  ],
+  "components": [
+    {
+      "id": "PC2-B-C01",
+      "name": "ProductDiscoveryCard",
+      "shelf": "discovery",
+      "role": "Introduce, compare or select one product without forcing a purchase decision.",
+      "anatomy": ["product identity", "material or proof slot", "job sentence", "availability", "action"],
+      "variants": ["compact", "standard", "portrait", "horizontal", "featured", "selected", "coming-soon"],
+      "stateDimensions": ["interaction", "choice", "availability", "async"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Availability", "Media", "Action"],
+      "events": ["onNavigate", "onSelect", "onWaitlist"],
+      "accessibility": "Use a single semantic link or selection control, visible focus and text-backed selection or availability.",
+      "motion": "Only an isolated featured card may request the one focal live plate; repeated discovery cards are static.",
+      "prohibited": ["nested interactive controls", "price without an Offer", "unequal sibling geometry", "forced disc or sphere"]
+    },
+    {
+      "id": "PC2-B-C02",
+      "name": "ProductFeatureCard",
+      "shelf": "features",
+      "role": "Explain one capability, use case or mechanism with visible evidence.",
+      "anatomy": ["feature title", "claim", "proof or media", "supporting copy", "optional action"],
+      "variants": ["capability", "use-case", "workflow-step", "integration", "annotated-media", "before-after"],
+      "stateDimensions": ["interaction", "async"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "ProofRecord", "Media", "Action"],
+      "events": ["onNavigate", "onOpenProof"],
+      "accessibility": "Evidence remains legible without hover and annotated media has equivalent text.",
+      "motion": "Material may animate only when this is the selected focal feature; proof and copy stay still.",
+      "prohibited": ["generic icon plus sentence", "decorative fake dashboard", "claim without proof job"]
+    },
+    {
+      "id": "PC2-B-C03",
+      "name": "ProductProofCard",
+      "shelf": "proof",
+      "role": "Render a typed ProofRecord without letting a quote impersonate mechanism or outcome evidence.",
+      "anatomy": ["evidence class", "claim", "mechanism or source", "result", "verification", "limitation"],
+      "variants": ["mechanism", "customer-outcome", "aggregate-research", "metric", "integration", "security", "provenance"],
+      "stateDimensions": ["interaction", "async"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "ProofRecord", "Media"],
+      "events": ["onOpenEvidence"],
+      "accessibility": "Evidence class, date, source and limitations are available as text and not encoded by color alone.",
+      "motion": "Proof stays static; an adjacent focal product plate may own the single live allocation.",
+      "prohibited": ["unlabelled staged UI", "unsourced metric", "quote presented as mechanism proof"]
+    },
+    {
+      "id": "PC2-B-C04",
+      "name": "ProductFeatureBento",
+      "shelf": "features",
+      "role": "Lay out typed feature and proof cells when their relationship benefits from a non-uniform grid.",
+      "anatomy": ["grid relationship", "declared cell jobs", "reading order", "one focal cell", "mobile linearization"],
+      "variants": ["mechanism-map", "workflow", "evidence-mosaic", "product-comparison"],
+      "stateDimensions": ["interaction", "async"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "ProofRecord", "Media", "Action"],
+      "events": ["onNavigate", "onOpenProof"],
+      "accessibility": "DOM order carries meaning independently of visual spans; compact receivers linearize without omission.",
+      "motion": "At most one declared focal product-material cell may animate; every other cell is static.",
+      "prohibited": ["decorative filler cells", "arbitrary spans", "generic SaaS micro-card grid", "multiple live cells"]
+    },
+    {
+      "id": "PC2-B-C05",
+      "name": "ProductPricingCard",
+      "shelf": "pricing",
+      "role": "Present one truthful offer with the correct language and controls for its commercial model.",
+      "anatomy": ["offer label", "price and cadence", "product or plan", "inclusions", "disclosures", "action"],
+      "variants": ["one-time-digital", "saas-subscription", "usage", "enterprise", "free-trial", "bundle", "add-on", "waitlist"],
+      "stateDimensions": ["interaction", "choice", "availability", "async", "commerce"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Offer", "Price", "Plan", "Availability", "Action"],
+      "events": ["onSelectOffer", "onPurchase", "onContact", "onWaitlist"],
+      "accessibility": "Price cadence, recommendation and disabled reason are explicit text; the whole card is not a nested button.",
+      "motion": "Pricing objects and comparisons are static; product material is an optional static identity field.",
+      "prohibited": ["subscription language on one-time offers", "fictional production price", "recommended by color alone", "animation in price UI"]
+    },
+    {
+      "id": "PC2-B-C06",
+      "name": "ProductPlanComparison",
+      "shelf": "pricing",
+      "role": "Compare plans, products or offers without hiding essential differences on mobile.",
+      "anatomy": ["comparison axis", "offer headings", "feature rows", "included states", "disclosures", "actions"],
+      "variants": ["tier-matrix", "product-matrix", "feature-diff", "mobile-disclosure"],
+      "stateDimensions": ["interaction", "choice", "availability", "async"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Offer", "Plan", "Price", "Availability"],
+      "events": ["onSelectOffer", "onExpandComparison"],
+      "accessibility": "Use semantic table relationships where tabular, preserve headings on compact receivers and never require horizontal swipe for essential facts.",
+      "motion": "Static only.",
+      "prohibited": ["truncated feature meaning", "hidden mobile columns", "unequal comparable geometry", "decorative recommendation"]
+    },
+    {
+      "id": "PC2-B-C07",
+      "name": "ProductCheckoutSummary",
+      "shelf": "checkout",
+      "role": "Keep the selected offer, line items, total, disclosures and commitment action understandable throughout checkout.",
+      "anatomy": ["product identity", "line items", "subtotal", "discount", "tax", "total", "primary action", "status"],
+      "variants": ["sidebar", "card", "collapsed", "drawer", "sticky-mobile", "receipt"],
+      "stateDimensions": ["interaction", "availability", "async", "commerce"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Offer", "LineItem", "Checkout", "CommerceState"],
+      "events": ["onEdit", "onSubmit", "onRetry", "onRemoveLineItem"],
+      "accessibility": "Totals are programmatically associated, async changes announce politely and processing prevents double submission.",
+      "motion": "Checkout identity and price UI remain static.",
+      "prohibited": ["network calls", "Stripe keys or endpoints", "hidden fees", "moving gradient behind form controls"]
+    },
+    {
+      "id": "PC2-B-C08",
+      "name": "ProductBundleOffer",
+      "shelf": "bundles",
+      "role": "Explain a fixed package, its relationship and its value as one purchasable offer.",
+      "anatomy": ["bundle identity", "pack visual", "included products", "offer summary", "price or status", "action"],
+      "variants": ["integrated", "stack", "measured-fan", "boxed-suite", "dark-contained", "comparison"],
+      "stateDimensions": ["interaction", "choice", "availability", "async", "commerce"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Bundle", "Product", "Offer", "Price", "Availability"],
+      "events": ["onSelectBundle", "onPurchase", "onInspectIncluded"],
+      "accessibility": "Included products and exclusions are text, selection is explicit and pack visuals are not the sole information source.",
+      "motion": "Bundle contents are static; one isolated lead cover may receive focal motion outside repeated commerce contexts.",
+      "prohibited": ["overlap that obscures products", "hard-coded five-product count", "animated bundle contents", "fake scarcity"]
+    },
+    {
+      "id": "PC2-B-C09",
+      "name": "ProductBundleBuilder",
+      "shelf": "bundles",
+      "role": "Let a buyer choose eligible products while keeping price, availability and bundle rules visible.",
+      "anatomy": ["eligible products", "selection controls", "included state", "constraint message", "running summary", "action"],
+      "variants": ["checklist", "guided", "compare", "desktop-aside", "mobile-sheet"],
+      "stateDimensions": ["interaction", "choice", "availability", "async", "commerce"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Bundle", "Product", "Offer", "Price", "Availability", "CommerceState"],
+      "events": ["onToggleProduct", "onContinue", "onReset"],
+      "accessibility": "Selection uses native controls, changes announce totals and constraints explain why an item cannot be selected.",
+      "motion": "Static only.",
+      "prohibited": ["drag-only selection", "color-only included state", "hidden constraints", "layout reordering that changes source order"]
+    },
+    {
+      "id": "PC2-B-C10",
+      "name": "ProductUpsellRow",
+      "shelf": "growth",
+      "role": "Offer one relevant addition without disguising consent or blocking the original purchase.",
+      "anatomy": ["product identity", "incremental value", "price delta", "accept or decline", "updated total"],
+      "variants": ["order-bump", "inline-row", "cart", "upgrade", "post-purchase"],
+      "stateDimensions": ["interaction", "choice", "availability", "async", "commerce"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Offer", "Price", "LineItem", "CommerceState"],
+      "events": ["onAccept", "onDecline", "onInspect"],
+      "accessibility": "Accept and decline are equally understandable, price delta is explicit and no option is preselected deceptively.",
+      "motion": "Static only.",
+      "prohibited": ["dark patterns", "preselected paid add-on", "hidden price delta", "blocking decline"]
+    },
+    {
+      "id": "PC2-B-C11",
+      "name": "ProductMobileStickySummary",
+      "shelf": "mobile",
+      "role": "Persist the current decision and action after purchase intent without covering essential page content.",
+      "anatomy": ["compact identity", "price or status", "selection summary", "primary action", "safe area"],
+      "variants": ["product", "pricing", "checkout", "bundle", "upsell"],
+      "stateDimensions": ["interaction", "choice", "availability", "async", "commerce"],
+      "receivers": ["compact"],
+      "dataModels": ["Product", "Offer", "Price", "Bundle", "Checkout", "CommerceState"],
+      "events": ["onPrimaryAction", "onExpand", "onDismiss"],
+      "accessibility": "Appears after intent, respects safe areas, retains a 48px target and never traps keyboard or screen-reader focus.",
+      "motion": "Static only; entrance is a short control transition and is removed under reduced motion.",
+      "prohibited": ["always-on obstruction", "content duplication without current state", "swipe-only expansion", "animated material"]
+    },
+    {
+      "id": "PC2-B-C12",
+      "name": "ProductFamilyMatrix",
+      "shelf": "discovery",
+      "role": "Compare the product family with equal geometry, truthful availability and future-product tolerance.",
+      "anatomy": ["family heading", "equal product cells", "comparison attributes", "availability", "family action"],
+      "variants": ["catalogue", "capability-matrix", "availability", "compact-list", "future-product"],
+      "stateDimensions": ["interaction", "choice", "availability", "async"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Availability", "ProofRecord", "Action"],
+      "events": ["onSelectProduct", "onNavigate", "onWaitlist"],
+      "accessibility": "Compact receivers preserve every product and comparison label in source order without swipe-only access.",
+      "motion": "All repeated product material is static.",
+      "prohibited": ["fixed product count", "unequal family weight", "staggered cards", "hidden coming-soon products"]
+    },
+    {
+      "id": "PC2-B-C13",
+      "name": "ProductMenuItem",
+      "shelf": "navigation",
+      "role": "Represent a product consistently inside simple menus, product mega-menus and mobile navigation.",
+      "anatomy": ["compact product identity", "public name", "extended name or job", "availability", "destination"],
+      "variants": ["compact", "with-proof", "with-availability", "selected", "mobile"],
+      "stateDimensions": ["interaction", "choice", "availability", "async"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Availability", "Media", "Action"],
+      "events": ["onNavigate", "onWaitlist"],
+      "accessibility": "Uses one link or button, current product is announced and submenu state follows the site-menu keyboard pattern.",
+      "motion": "Static product material only.",
+      "prohibited": ["price in global navigation", "empty decorative pill", "hover-only product detail", "manual animation"]
+    },
+    {
+      "id": "PC2-B-C14",
+      "name": "ProductFooterCTA",
+      "shelf": "conversion",
+      "role": "Close a product, family or bundle page with one clear next action and stable identity.",
+      "anatomy": ["product or family identity", "closing proposition", "availability or price", "primary action", "optional secondary link"],
+      "variants": ["single-product", "product-family", "bundle", "contained-dark", "slim"],
+      "stateDimensions": ["interaction", "availability", "async"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Bundle", "Offer", "Availability", "Action", "Media"],
+      "events": ["onPrimaryAction", "onSecondaryAction"],
+      "accessibility": "Heading and action remain first in reading order and mobile uses a full-width primary action.",
+      "motion": "One isolated product field may animate automatically; footer navigation and controls remain static.",
+      "prohibited": ["multiple equal CTAs", "generic gradient atmosphere", "unrelated product motion", "price without offer data"]
+    },
+    {
+      "id": "PC2-B-C15",
+      "name": "ProductPurchaseConfirmation",
+      "shelf": "checkout",
+      "role": "Confirm a completed purchase, explain access or next steps and preserve receipt clarity.",
+      "anatomy": ["success status", "purchased identity", "access or onboarding action", "receipt summary", "support route"],
+      "variants": ["digital-access", "saas-onboarding", "bundle-access", "receipt", "post-purchase-offer"],
+      "stateDimensions": ["interaction", "async", "commerce"],
+      "receivers": ["compact", "medium", "expanded", "wide"],
+      "dataModels": ["Product", "Bundle", "Offer", "Checkout", "LineItem", "CommerceState"],
+      "events": ["onAccess", "onDownloadReceipt", "onContactSupport", "onInspectOffer"],
+      "accessibility": "Success is announced once, focus moves to the confirmation heading and access instructions do not rely on email alone.",
+      "motion": "Static only; no celebratory motion is required for comprehension.",
+      "prohibited": ["confetti by default", "hidden receipt", "ambiguous access step", "forced upsell before confirmation"]
+    }
+  ],
+  "patterns": [
+    {"id": "PC2-B-P01", "name": "SingleProductHero", "shelf": "heroes", "role": "Open one product page with product-first hierarchy, one proposition and one focal product field.", "componentIds": ["PC2-B-C01", "PC2-B-C14"], "variants": ["split", "centred", "immersive", "launch", "conversion"], "proofRequirement": "The hero must identify the product job or visible outcome, not only show material.", "responsive": "Compact receivers preserve title, extended name, action and media source order.", "prohibited": ["multi-claim diagram", "multiple live cores", "outline action as arbitrary variant"]},
+    {"id": "PC2-B-P02", "name": "ProductFamilyHero", "shelf": "heroes", "role": "Introduce the product family while preserving equal product weight and live-product-first commerce.", "componentIds": ["PC2-B-C01", "PC2-B-C12"], "variants": ["equal-family", "catalogue", "live-first", "mobile-vertical"], "proofRequirement": "Every product must have a truthful job and availability state.", "responsive": "Vertical catalogue on compact receivers; no swipe-only roster.", "prohibited": ["unequal card sizes", "hard-coded five-product layout", "animated repeated cores"]},
+    {"id": "PC2-B-P03", "name": "ProductMegaMenu", "shelf": "navigation", "role": "Expose product discovery from global navigation without becoming a mini landing page.", "componentIds": ["PC2-B-C13", "PC2-B-C12"], "variants": ["suite-index", "proof-led", "compact", "availability-aware"], "proofRequirement": "Optional proof must be literal and subordinate to navigation.", "responsive": "Collapses into a keyboard-safe mobile sheet with the same item order.", "prohibited": ["price in global menu", "hover-only access", "decorative product pill grid"]},
+    {"id": "PC2-B-P04", "name": "FeaturedProductSection", "shelf": "features", "role": "Feature one product or capability in a realistic marketing section.", "componentIds": ["PC2-B-C01", "PC2-B-C02", "PC2-B-C03"], "variants": ["media-left", "media-right", "proof-first", "full-field", "compact"], "proofRequirement": "The section must connect claim, mechanism and visible evidence.", "responsive": "Copy remains ahead of supporting media when that preserves comprehension.", "prohibited": ["isolated art card", "decorative misalignment", "forced expression object"]},
+    {"id": "PC2-B-P05", "name": "ProductExplainer", "shelf": "features", "role": "Explain how a product works as a sequence, architecture or comparison.", "componentIds": ["PC2-B-C02", "PC2-B-C03"], "variants": ["split", "sequence", "workflow", "architecture", "comparison"], "proofRequirement": "Each step names input, action and result or explicitly states what is illustrative.", "responsive": "Preserve causal source order and visible step labels.", "prohibited": ["fake connector diagram", "unlabelled magical automation", "sphere as repeated step marker"]},
+    {"id": "PC2-B-P06", "name": "FeatureProofBento", "shelf": "features", "role": "Compose a meaningful non-uniform field of product, proof, workflow, metric, media, integration, quote and action cells.", "componentIds": ["PC2-B-C02", "PC2-B-C03", "PC2-B-C04"], "variants": ["mechanism", "workflow", "evidence", "comparison"], "proofRequirement": "Every cell declares its job and evidence class; filler cells are invalid.", "responsive": "Grid spans collapse into a complete, logical linear reading order.", "prohibited": ["generic SaaS bento", "empty cells", "arbitrary card collage", "more than one live cell"]},
+    {"id": "PC2-B-P07", "name": "ProductFamilyShelf", "shelf": "discovery", "role": "Browse multiple products as one authored family.", "componentIds": ["PC2-B-C01", "PC2-B-C12"], "variants": ["grid", "shelf", "rail", "list", "mixed-availability"], "proofRequirement": "Each product carries a distinct job, canonical identity and truthful availability.", "responsive": "Compact receivers use a vertical catalogue; essential products are not hidden behind a carousel.", "prohibited": ["unequal sibling geometry", "fixed count", "decorative staggering"]},
+    {"id": "PC2-B-P08", "name": "MultiPricingSection", "shelf": "pricing", "role": "Present one-time, SaaS, bundle or multi-tier decisions using the appropriate commercial language.", "componentIds": ["PC2-B-C05", "PC2-B-C06"], "variants": ["single-digital", "multi-tier-saas", "multi-product", "offer-plus-comparison"], "proofRequirement": "Every offer is marked as production data or illustrative fixture and carries complete cadence and disclosure.", "responsive": "Plans stack, comparison remains accessible and the recommended treatment never changes source order.", "prohibited": ["one-time offer with per-month framing", "fictional production price", "hidden annual billing detail"]},
+    {"id": "PC2-B-P09", "name": "ProductComparison", "shelf": "pricing", "role": "Compare products, offers or plans at a decision point.", "componentIds": ["PC2-B-C06", "PC2-B-C12"], "variants": ["products", "plans", "features", "before-after"], "proofRequirement": "Comparison criteria must be factual, defined and complete enough to support the decision.", "responsive": "Use disclosure or stacked labelled groups rather than essential horizontal overflow.", "prohibited": ["fabricated competitor claim", "hidden criterion", "color-only winner"]},
+    {"id": "PC2-B-P10", "name": "CheckoutLayout", "shelf": "checkout", "role": "Compose consumer-owned checkout fields and provider slots around a stable Mez order summary.", "componentIds": ["PC2-B-C07", "PC2-B-C15"], "variants": ["two-column", "single-column", "embedded", "drawer", "mobile"], "proofRequirement": "The chosen offer, total, tax status, action and recovery path remain visible.", "responsive": "Collapse to one decision column with the summary adjacent to the commitment action.", "prohibited": ["payment-provider logic", "hidden total", "motion behind inputs", "double-submit"]},
+    {"id": "PC2-B-P11", "name": "BundleSection", "shelf": "bundles", "role": "Present a fixed or configurable bundle in a realistic marketing and commerce context.", "componentIds": ["PC2-B-C08", "PC2-B-C09"], "variants": ["fixed-offer", "builder", "comparison", "dark-contained", "mobile-summary"], "proofRequirement": "Included products, exclusions, availability and selection effects are explicit.", "responsive": "Pack visuals simplify before selection or pricing information is removed.", "prohibited": ["cards colliding with copy", "animated bundle contents", "unexplained savings"]},
+    {"id": "PC2-B-P12", "name": "UpsellCrossSellSection", "shelf": "growth", "role": "Offer relevant additions before or after purchase without dark patterns.", "componentIds": ["PC2-B-C10", "PC2-B-C01"], "variants": ["order-bump", "paired", "rail", "upgrade", "post-purchase"], "proofRequirement": "The incremental value and price delta are specific and truthful.", "responsive": "Accept and decline remain equally reachable on compact receivers.", "prohibited": ["forced bundle", "preselected add-on", "blocked decline", "unrelated product recommendation"]},
+    {"id": "PC2-B-P13", "name": "ProductFooter", "shelf": "navigation", "role": "Close product-aware pages with stable parent identity, useful links and a bounded conversion moment.", "componentIds": ["PC2-B-C13", "PC2-B-C14"], "variants": ["full", "slim", "product", "commerce", "legal-only"], "proofRequirement": "Links and endorsement are real; conversion copy matches current availability and offer data.", "responsive": "Link groups disclose or stack without changing information order.", "prohibited": ["decorative columns", "stale product list", "multiple competing product CTAs"]}
+  ],
+  "journeys": [
+    {"id": "PC2-B-J01", "name": "Multi-product discovery", "scenario": "Browse an extensible family, compare jobs and availability, then open one product.", "steps": ["product mega-menu", "family hero", "family shelf", "product comparison", "single-product hero"], "fixtureAuthority": "canonical product identity plus illustrative navigation state"},
+    {"id": "PC2-B-J02", "name": "One-time digital purchase", "scenario": "Discover a digital product, evaluate one offer, checkout, process payment and receive access.", "steps": ["discovery", "single offer", "checkout", "processing", "success and access", "receipt"], "fixtureAuthority": "illustrative commercial data only"},
+    {"id": "PC2-B-J03", "name": "SaaS tier selection", "scenario": "Compare recurring tiers, choose billing interval and plan, hand off to checkout and confirm onboarding.", "steps": ["multi-plan pricing", "billing interval", "plan comparison", "selection", "checkout", "confirmation"], "fixtureAuthority": "illustrative SaaS product and commercial data only"},
+    {"id": "PC2-B-J04", "name": "Configurable bundle purchase", "scenario": "Choose eligible products, understand bundle rules, review the running summary and purchase the bundle.", "steps": ["bundle offer", "bundle builder", "selection recovery", "sticky summary", "checkout", "bundle access"], "fixtureAuthority": "canonical product identity plus illustrative bundle and commercial data"},
+    {"id": "PC2-B-J05", "name": "Mixed availability and waitlist", "scenario": "Browse live and coming-soon products, enter a waitlist path and receive truthful confirmation.", "steps": ["mixed family", "availability card", "waitlist action", "loading or error", "confirmation"], "fixtureAuthority": "canonical current availability plus illustrative waitlist interaction"},
+    {"id": "PC2-B-J06", "name": "Mobile purchase, upsell and confirmation", "scenario": "Complete a narrow-screen purchase with sticky summaries, an optional addition and a clear success state.", "steps": ["mobile discovery", "sticky product summary", "collapsed checkout", "optional upsell", "processing", "confirmation"], "fixtureAuthority": "illustrative commercial and checkout data only"}
+  ],
+  "variantAxes": {
+    "offerTypes": ["one-time", "subscription", "usage", "bundle", "enterprise", "trial", "waitlist", "free", "add-on"],
+    "availability": ["live", "coming-soon", "waitlist", "unavailable", "sold-out"],
+    "productCounts": [0, 1, 2, 5, 6, 7],
+    "surfaces": ["light", "contained-dark", "inverse-focal"],
+    "density": ["calm", "standard", "operational"],
+    "media": ["none", "exact-static", "one-focal-live", "proof-artifact", "screenshot"],
+    "contentStress": ["short", "long", "localized", "missing-optional", "unpriced"]
+  },
+  "stateDimensions": {
+    "interaction": ["rest", "hover", "focus-visible", "pressed", "disabled"],
+    "choice": ["unselected", "selected"],
+    "availability": ["available", "coming-soon", "unavailable"],
+    "async": ["idle", "loading", "error", "success"],
+    "commerce": ["empty", "partial", "ready", "processing", "confirmed"]
+  },
+  "responsive": {
+    "viewports": [320, 375, 430, 768, 1024, 1280, 1440],
+    "containers": [240, 320, 480, 640, 960, 1160],
+    "receiverProfiles": ["compact", "medium", "expanded", "wide"],
+    "rules": ["container behavior owns the component before page viewport", "source order is preserved", "family collections become vertical on compact receivers", "essential comparison content is never swipe-only", "checkout becomes one decision column", "sticky summaries appear only after purchase intent", "safe areas and 48px touch targets are mandatory"]
+  },
+  "motion": {
+    "maximumLivePerViewport": 1,
+    "eligible": ["one isolated focal ProductMaterial plate", "one focal hero or feature field", "one isolated lead bundle cover outside repeated commerce"],
+    "static": ["all repeated products", "pricing and comparison", "checkout", "bundle contents", "upsells", "menus", "footers", "mobile summaries"],
+    "fallback": "Exact static twin with no layout shift under reduced motion, no WebGL or runtime failure.",
+    "prohibited": ["manual animate button", "moving Wings", "moving type", "moving controls", "moving layout", "multiple live cores"]
+  },
+  "reviewProgramme": {
+    "currentRound": "PB2-R04",
+    "rounds": [
+      {"id": "PB0", "title": "Models and component architecture", "status": "complete-candidate", "deliverable": "Internal semantic models, reusable contracts and composition rules that support the rendered review candidates."},
+      {"id": "PB1-R01", "title": "Functional breadth · Round 01", "status": "scope-expanded", "deliverable": "Forty-eight rendered functional specimens established the functional breadth; review scope then expanded to include every approved Phase A survivor as an application study.", "specimenGroups": [{"prefix": "B-DS", "count": 8}, {"prefix": "B-FT", "count": 10}, {"prefix": "B-PR", "count": 10}, {"prefix": "B-CK", "count": 8}, {"prefix": "B-BU", "count": 8}, {"prefix": "B-MB", "count": 4}]},
+      {"id": "PB1-R02", "title": "Phase A application plus functional breadth · Round 02", "status": "feedback-complete", "deliverable": "Round 02 collected feedback on thirty-two Phase A application views and forty-eight functional specimens. Its application views are evidence only; the canonical Phase A keeps remain visual inputs.", "specimenGroups": [{"prefix": "B-A-", "count": 32}, {"prefix": "B-DS", "count": 8}, {"prefix": "B-FT", "count": 10}, {"prefix": "B-PR", "count": 10}, {"prefix": "B-CK", "count": 8}, {"prefix": "B-BU", "count": 8}, {"prefix": "B-MB", "count": 4}]},
+      {"id": "PB2-R03", "title": "Functional feedback convergence · Round 03", "status": "feedback-complete", "deliverable": "The exact receipt records eleven keeps, thirty-five revisions and one kill across forty-seven candidates. B-FT06 was killed; B-FT04 remained absent from the earlier Round 02 kill.", "specimenGroups": [{"prefix": "B-DS", "count": 8}, {"prefix": "B-FT", "count": 9}, {"prefix": "B-PR", "count": 10}, {"prefix": "B-CK", "count": 8}, {"prefix": "B-BU", "count": 8}, {"prefix": "B-MB", "count": 4}]},
+      {"id": "PB2-R04", "title": "Functional feedback convergence · Round 04", "status": "active-review-candidate", "deliverable": "Forty-six functional candidates across six families: eleven Round 03 champions carried forward and thirty-five named revisions rebuilt. B-FT04 and B-FT06 are absent; the thirty-two Phase A keeps remain approved visual inputs and lineage references, not candidates.", "specimenGroups": [{"prefix": "B-DS", "count": 8}, {"prefix": "B-FT", "count": 8}, {"prefix": "B-PR", "count": 10}, {"prefix": "B-CK", "count": 8}, {"prefix": "B-BU", "count": 8}, {"prefix": "B-MB", "count": 4}]},
+      {"id": "PB3", "title": "State and responsive proof", "status": "planned", "deliverable": "No new visual families; prove applicable states, containers, viewports, content stress, accessibility and failure recovery."},
+      {"id": "PB4", "title": "Candidate lock", "status": "planned", "deliverable": "Only validator-passing survivors remain for H-EXP-04B-CARD-FUNCTIONAL-PROOF."}
+    ],
+    "feedbackReceipts": ["brand-kit/expressions/product-card/phase-b/round-01-feedback.json", "brand-kit/expressions/product-card/phase-b/round-02-feedback.json", "brand-kit/expressions/product-card/phase-b/round-03-feedback.json"],
+    "feedbackCapture": ["per-shelf note", "per-component verdict and note", "per-variant verdict and note", "per-journey note", "complete approved Phase A lineage", "championVariantByComponent", "global system note"],
+    "convergenceRules": ["B-FT04 and B-FT06 are removed", "the eleven Round 03 keeps carry forward without losing their champion status", "the thirty-five Round 03 revisions change only named dimensions", "all forty-six survivors preserve every Phase A reference", "unrelated component roles do not compete for one global winner", "the thirty-two canonical Phase A keeps remain approved visual inputs and are not Round 04 candidates"]
+  },
+  "validation": {
+    "required": ["schema and unique IDs", "forty-six Round 04 functional candidates", "B-FT04 and B-FT06 absent", "eleven Round 03 keeps preserved", "thirty-five Round 03 revisions rebuilt", "thirty-two canonical Phase A visual inputs with zero Round 04 candidate count", "verbatim Round 01, Round 02 and Round 03 feedback hashes", "complete Phase A lineage preserved for every survivor", "pinned Phase A hashes", "registry-driven product identity", "synthetic sixth product", "fixture-only commerce data", "state applicability", "responsive and container proof", "keyboard and focus", "one-live-core maximum", "exact static fallback", "long copy and localization", "missing media and unpriced offers", "deterministic candidate package", "continued Phase A verification"],
+    "designRubric": ["Phase A fidelity", "utility", "product clarity", "data honesty", "responsive quality", "accessibility", "conversion clarity", "distinctiveness", "craft"]
+  },
+  "exclusions": [
+    "live pricing authority",
+    "production Stripe fields, keys, endpoints or payment logic",
+    "golden homepage selection",
+    "generic application UI and dashboards",
+    "Figma production library",
+    "consumer repository migration",
+    "System Editions and trading-card collector framing",
+    "new product naming or gradient assignment"
+  ],
+  "workbench": {
+    "route": "brand-kit/workbench/expressions/product-card/phase-b/",
+    "mode": "functional-review-round",
+    "note": "PB2 Round 04 contains forty-six functional candidates across discovery, features, pricing, checkout, bundles and mobile. Eleven Round 03 champions carry forward, thirty-five revisions are rebuilt, and B-FT04 plus B-FT06 remain absent. The thirty-two Phase A keeps remain approved visual inputs and lineage references, not separate candidates. Nothing in Phase B is approved until the human gate closes."
+  }
+}

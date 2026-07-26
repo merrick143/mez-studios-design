@@ -1,0 +1,44 @@
+{
+  "schemaVersion":"1.0.0",
+  "bundleId":"CTX-CMP-01-GLOBAL-NAVIGATION",
+  "taskId":"TASK-CMP-01-GLOBAL-NAVIGATION",
+  "generatedAt":"2026-07-23T03:18:05Z",
+  "systemVersion":"1.0.0+global-navigation-1.0.0",
+  "sourceState":{"repository":"merrick143/mez-studios-design","branch":"codex/brand-kit-foundations-expressions","commit":"7c2141cc0e8effd4578a29ea4ceeb79136b2c740","workingTree":"dirty"},
+  "files":[
+    {"path":"brand-kit/START-HERE.md","sha256":"40a4ace92a90a05e063ed5321bacecd47842830849de31c78ad347a823c34aaf","role":"canonical","required":true,"reason":"Current programme boundary, canonical CMP-01 decision and GOLD-01 handoff."},
+    {"path":"brand-kit/docs/CURRENT-STATE.md","sha256":"bcd00260859ac1b2a87b6db96f0690fb7122d604e23176e1b5826b6a3238e6de","role":"canonical","required":true,"reason":"Canonical Global Navigation scope, bounded motion exception and next golden-homepage task."},
+    {"path":"brand-kit/docs/ROADMAP.md","sha256":"4179a00e7981158fb234cb40bd50dc370d3f9851eab17556d993a4389cc03b38","role":"canonical","required":true,"reason":"CMP-01 completion and Phase 3 golden-homepage sequence."},
+    {"path":"brand-kit/llm/tasks/TASK-CMP-01-GLOBAL-NAVIGATION.json","sha256":"721111ff4a50f55976d1884a00c31344603f29a1252d48de2bd3556419751e58","role":"governance","required":true,"reason":"Completed Global Navigation task contract."},
+    {"path":"brand-kit/components/global-navigation/global-navigation.source.json","sha256":"4b6cf96dcf7beb08863aa97069af00fdedde34b2efad2a94ad4e813104df475a","role":"governance","required":true,"reason":"Canonical Living Registry family, compact five-circle preview, smooth footer-free disclosure and bounded five-sphere exception."},
+    {"path":"brand-kit/components/global-navigation/global-navigation.schema.json","sha256":"edb0e39dd98b6ee5ed3b667bd73b5976ead0fb9b9b3d9b407bf17ebf510ece3e","role":"governance","required":true,"reason":"Machine-enforced canonical 1.0.0 component contract."},
+    {"path":"brand-kit/components/global-navigation/review.json","sha256":"f5a0a2f3bec27b94bf00a943c5bc8cf6dad5d4ebe8a0ad85fdcff7395203c268","role":"governance","required":true,"reason":"Approved human-gate record and production-authority boundary."},
+    {"path":"brand-kit/components/global-navigation/dist/manifest.json","sha256":"22e5c4c70ac1cb709e375b312748cc7ab763218ba8bc3896ca8f9538ad376c45","role":"mirror","required":true,"reason":"Deterministic canonical package integrity."},
+    {"path":"brand-kit/components/global-navigation/mez-global-navigation.js","sha256":"cbbba1fbb034b01f8c9fd9c92d74f62ecb764fe4c1ce57925b4687df8f65ad17","role":"fixture","required":true,"reason":"Footer-free compact five-circle family cue, five-sphere runtime, interaction, fallback and event implementation."},
+    {"path":"brand-kit/components/global-navigation/mez-global-navigation.css","sha256":"1e7f5bc507aa7398e6e8e3c387851976bce1216d0c853479fce3e9f647a898e5","role":"fixture","required":true,"reason":"Smoother disclosure, restrained item sequence, layered compact circles, spherical geometry, responsive and accessibility presentation."},
+    {"path":"brand-kit/workbench/components/global-navigation/index.html","sha256":"17c96e7680b68c1c1f1fc31edb57a8740764a7b2a456c7c4242f3483977c3c5d","role":"fixture","required":true,"reason":"Canonical human proof surface and realistic host page."},
+    {"path":"brand-kit/workbench/components/global-navigation/global-navigation-workbench.js","sha256":"a85617430fe50d6f38f2485d3c3246fb52e993058a66b70317e636bc0419d71a","role":"fixture","required":true,"reason":"Canonical five-canvas readout, component controls and event proof."},
+    {"path":"brand-kit/workbench/components/global-navigation/styles.css","sha256":"20645739be3ebecdfa108b3fdc48f200ec1ae8759988feb3ce1c2892cc16fbc8","role":"fixture","required":true,"reason":"Review-page composition and responsive host proof."}
+  ],
+  "decisions":[
+    {"id":"DEC-FOUNDATION-RELEASE-001","status":"approved","productionEffect":"Canonical typography, colour, space and geometry remain inherited."},
+    {"id":"DEC-PRODUCT-ARCHITECTURE-001","status":"approved","productionEffect":"The five-product order, names and gradient assignments remain canonical."},
+    {"id":"DEC-PRODUCT-COMPONENT-SYSTEM-001","status":"approved","productionEffect":"Public-name-first hierarchy, equal product weight and product-aware menu anatomy are inherited."},
+    {"id":"DEC-WEBSITE-MOTION-SYSTEM-001","status":"approved","productionEffect":"User-triggered disclosure and static equivalence remain inherited; five simultaneous cores are permitted only while the canonical Global Navigation registry is expanded."},
+    {"id":"DEC-GLOBAL-NAVIGATION-COMPONENT-001","status":"approved","productionEffect":"Global Navigation 1.0.0 is canonical with one Living Registry family, two bounded surface variants and five live spheres only inside its expanded disclosure."}
+  ],
+  "artifacts":[],
+  "consumers":[],
+  "knownConflicts":[
+    {"id":"CONFLICT-CMP-01-RESEARCH-VS-PRODUCTION","summary":"The five Explore research variants could be mistaken for five supported production families.","executionEffect":"constrain"},
+    {"id":"CONFLICT-CMP-01-EVENT-VS-ROUTE","summary":"The design-system component cannot invent real consumer destinations.","executionEffect":"constrain"}
+  ],
+  "stopConditions":[
+    "Do not promote Signal, Aperture, Gallery or Console as parallel production variants.",
+    "Do not make any of the five product spheres wait for hover before animating.",
+    "Do not fabricate consumer routes or add commerce content.",
+    "Do not allow the five-live-core navigation exception to leak into homepage sections or other components."
+  ],
+  "contextBudget":{"strategy":"bounded","requiredFirst":["brand-kit/START-HERE.md","brand-kit/llm/tasks/TASK-CMP-01-GLOBAL-NAVIGATION.json","brand-kit/components/global-navigation/global-navigation.source.json","brand-kit/components/global-navigation/review.json"],"omitByDefault":["brand-kit/history/","consumer repositories","golden homepage","Figma","authenticated application shell"]},
+  "humanNotes":["Olli explicitly requested five automatically animated spheres for Round 02.","For Round 03 Olli requested a layered group of all five product circles in the compact Explore systems control so the family is visible before opening.","For Round 04 Olli requested smoother animation and removal of the Choose a system and keyboard-instruction footer copy.","Olli approved Round 04 on 23 July 2026; H-CMP-01-GLOBAL-NAVIGATION-PROOF is closed by DEC-GLOBAL-NAVIGATION-COMPONENT-001.","The five-live-core exception is canonical only inside the expanded Global Navigation registry."]
+}

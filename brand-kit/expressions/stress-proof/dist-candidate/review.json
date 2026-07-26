@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"1.0.0",
+  "gateId":"H-EXP-08-EXPRESSION-STRESS-PROOF",
+  "taskId":"TASK-EXP-08-EXPRESSION-STRESS-PROOF",
+  "candidateRevision":"expression-stress-01-r01",
+  "candidateStatus":"review-candidate",
+  "verdict":"pending",
+  "note":"",
+  "approver":"Olli",
+  "productionAuthority":false
+}

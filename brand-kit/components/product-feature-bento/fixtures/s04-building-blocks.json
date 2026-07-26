@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "The building blocks of a business, and the layer they run on",
+  "columns": 12,
+  "frame": "none",
+  "copyProvenance": "The four covered blocks are named as registry/products.json names the function each system serves, so those mappings are read rather than asserted, and their discs carry that product's gradient. The four uncovered blocks carry library gradients from gradient-library/catalogue.json: canonical material with a registry ID, chosen for brightness at disc size and for separation from the five product gradients. A library gradient names no product and makes no claim of one.",
+  "cells": [
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "productSlug": "ai-ads-system",
+      "scale": "m",
+      "span": 3,
+      "align": "top"
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "productSlug": "organic-content-os",
+      "scale": "m",
+      "span": 4,
+      "align": "top"
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "productSlug": "claude-code-os",
+      "scale": "m",
+      "span": 3,
+      "align": "top"
+    },
+    {
+      "job": "workflow",
+      "label": "Sales",
+      "gradientId": "MZ-G24",
+      "scale": "m",
+      "span": 2,
+      "align": "top"
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "productSlug": "context-engine",
+      "scale": "m",
+      "span": 4,
+      "align": "top"
+    },
+    {
+      "job": "workflow",
+      "label": "Finance",
+      "gradientId": "MZ-G32",
+      "scale": "m",
+      "span": 2,
+      "align": "top"
+    },
+    {
+      "job": "workflow",
+      "label": "Client delivery",
+      "gradientId": "MZ-G27",
+      "scale": "m",
+      "span": 4,
+      "align": "top"
+    },
+    {
+      "job": "workflow",
+      "label": "Design",
+      "gradientId": "MZ-G19",
+      "scale": "m",
+      "span": 2,
+      "align": "top"
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "scale": "xl",
+      "span": 12,
+      "materialPosition": "center 32%"
+    }
+  ]
+}

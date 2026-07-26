@@ -1,0 +1,1062 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-04B-CARD-FUNCTIONAL-PROOF",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "candidateRevision": "product-card-02-phase-b-pb1-r02",
+  "reviewScope": {
+    "phaseAApplications": 32,
+    "functionalCandidates": 48,
+    "total": 80
+  },
+  "verdict": "round-feedback",
+  "leadingFamily": "undecided",
+  "note": "",
+  "sections": [
+    {
+      "id": "phase-a-landing",
+      "title": "One product. Many first impressions.",
+      "feedback": ""
+    },
+    {
+      "id": "phase-a-cards",
+      "title": "The cards Phase B should be built from.",
+      "feedback": ""
+    },
+    {
+      "id": "phase-a-bundles",
+      "title": "Packages should feel like products together.",
+      "feedback": ""
+    },
+    {
+      "id": "phase-a-sections",
+      "title": "The expressions, doing real page work.",
+      "feedback": ""
+    },
+    {
+      "id": "discovery",
+      "title": "Find the right system.",
+      "feedback": ""
+    },
+    {
+      "id": "features",
+      "title": "Show how it works.",
+      "feedback": ""
+    },
+    {
+      "id": "pricing",
+      "title": "Make the offer clear.",
+      "feedback": ""
+    },
+    {
+      "id": "checkout",
+      "title": "Carry the decision through.",
+      "feedback": ""
+    },
+    {
+      "id": "bundles",
+      "title": "Compose more value.",
+      "feedback": ""
+    },
+    {
+      "id": "mobile",
+      "title": "The whole decision, in one hand.",
+      "feedback": ""
+    }
+  ],
+  "specimens": [
+    {
+      "id": "B-A-QC01",
+      "title": "Quiet · hierarchy locked · Primary product launch hero",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "QC01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "QC01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-QC02",
+      "title": "Quiet · mark above locked · Identity-led product hero",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "QC02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "QC02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-QC03",
+      "title": "Quiet · centred hierarchy · Centred conversion plate",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "QC03",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "QC03"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-QC04",
+      "title": "Quiet · portrait locked · Portrait product placement",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "QC04",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "QC04"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-ES02",
+      "title": "Split · centred field · Featured product split",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "ES02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "ES02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-ES04",
+      "title": "Split · vertical · Vertical feature story",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "ES04",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "ES04"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-IC01",
+      "title": "Immersive · corner locked · Immersive campaign hero",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "IC01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "IC01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-IC02",
+      "title": "Immersive · mark above locked · Immersive identity feature",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "IC02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "IC02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-IC03",
+      "title": "Immersive · centred hierarchy · Immersive centred conversion",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "IC03",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "IC03"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-HL01",
+      "title": "Launch · corner hierarchy · Dark availability launch",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "HL01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "HL01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-HL02",
+      "title": "Launch · centred hierarchy · Dark centred launch",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "HL02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "HL02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-HL04",
+      "title": "Launch · portrait · Mobile dark launch",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "HL04",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "HL04"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-QF01",
+      "title": "Frame · hierarchy locked · Framed proof introduction",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "QF01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "QF01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-QF03",
+      "title": "Frame · portrait simplified · Compact framed feature",
+      "family": "phase-a-landing",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "QF03",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "QF03"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-FC01",
+      "title": "Full field · hierarchy locked · Standard product discovery card",
+      "family": "phase-a-cards",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "FC01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "FC01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-FC02",
+      "title": "Full field · continuous dark locked · Selected dark product card",
+      "family": "phase-a-cards",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "FC02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "FC02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-PO01",
+      "title": "Portrait · corner hierarchy · Portrait feature card",
+      "family": "phase-a-cards",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "PO01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "PO01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-PO02",
+      "title": "Portrait · centred hierarchy · Centred portrait selector",
+      "family": "phase-a-cards",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "PO02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "PO02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-ST01",
+      "title": "Stack · flat media join · Bundle contents preview",
+      "family": "phase-a-bundles",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "ST01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "ST01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-ST02",
+      "title": "Stack · clean dark footer · Dark fixed-suite offer",
+      "family": "phase-a-bundles",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "ST02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "ST02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-SG01",
+      "title": "Single · light integrated card · Single flagship offer",
+      "family": "phase-a-bundles",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "SG01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "SG01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-FN01",
+      "title": "Fan · measured spread · Configurable bundle preview",
+      "family": "phase-a-bundles",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "FN01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "FN01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-BX01",
+      "title": "Boxed suite · light refined · Light complete-suite package",
+      "family": "phase-a-bundles",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "BX01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "BX01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-BX02",
+      "title": "Boxed suite · dark refined · Dark enterprise package",
+      "family": "phase-a-bundles",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "BX02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "BX02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-SH01",
+      "title": "Hero · corner hierarchy · Product hero · corner field",
+      "family": "phase-a-sections",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "SH01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "SH01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-SH02",
+      "title": "Hero · centred field left locked · Product hero · reversed field",
+      "family": "phase-a-sections",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "SH02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "SH02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-SH03",
+      "title": "Hero · centred field right locked · Product hero · centred field",
+      "family": "phase-a-sections",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "SH03",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "SH03"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-FS01",
+      "title": "Family shelf · light refined · Light product-family catalogue",
+      "family": "phase-a-sections",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "FS01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "FS01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-FS02",
+      "title": "Family shelf · charcoal · Contained-dark family shelf",
+      "family": "phase-a-sections",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "FS02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "FS02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-EX02",
+      "title": "Explainer · centred Wings · Mechanism explainer section",
+      "family": "phase-a-sections",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "EX02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "EX02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-BO01",
+      "title": "Start with one. Build the whole operating layer. · Complete-system bundle offer",
+      "family": "phase-a-sections",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "BO01",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "BO01"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-A-BO02",
+      "title": "Five systems. One operating layer. · Product-family conversion offer",
+      "family": "phase-a-sections",
+      "scope": "phase-a-inheritance",
+      "sourcePhaseAId": "BO02",
+      "canonicalPhaseAVerdict": "keep",
+      "phaseARefs": [
+        "BO02"
+      ],
+      "verdict": "keep",
+      "feedback": ""
+    },
+    {
+      "id": "B-DS01",
+      "title": "Product mega-menu",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC01",
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": "I like this but it can be presented in a better way probably. We're getting there with this. "
+    },
+    {
+      "id": "B-DS02",
+      "title": "Single product hero",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "SH01",
+        "SH02",
+        "SH03",
+        "QC01",
+        "QC02",
+        "QC03"
+      ],
+      "verdict": "revise",
+      "feedback": "This doesn't make sense. I think the M should be centered if you're going to do a single product hero and I think it should also be animated. Also the buttons don't look that good. Why is the text so small in the buttons? "
+    },
+    {
+      "id": "B-DS03",
+      "title": "Product family hero",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS02",
+        "HL01",
+        "HL02"
+      ],
+      "verdict": "revise",
+      "feedback": "This feels really overwhelming and congested. "
+    },
+    {
+      "id": "B-DS04",
+      "title": "Featured product split",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "ES02",
+        "IC01",
+        "IC02",
+        "IC03"
+      ],
+      "verdict": "revise",
+      "feedback": "This is okay. "
+    },
+    {
+      "id": "B-DS05",
+      "title": "Product family shelf",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS01",
+        "FC01",
+        "FC02",
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": "This feels really overwhelming and congested. "
+    },
+    {
+      "id": "B-DS06",
+      "title": "Product starting-point matrix",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS01"
+      ],
+      "verdict": "revise",
+      "feedback": "This is good. Maybe you could just fix it up a little probably. Like it feels like UI instead of a website component for marketing. "
+    },
+    {
+      "id": "B-DS07",
+      "title": "Compact product rail",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "PO01"
+      ],
+      "verdict": "revise",
+      "feedback": "I don't know if this is good. What do you think? Is this actually a useful component? "
+    },
+    {
+      "id": "B-DS08",
+      "title": "Product-aware footer",
+      "family": "discovery",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01",
+        "BO02",
+        "QF01"
+      ],
+      "verdict": "revise",
+      "feedback": "This is pretty cool. I think it just needs a little bit of work. "
+    },
+    {
+      "id": "B-FT01",
+      "title": "Context feature split",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "ES02",
+        "EX02"
+      ],
+      "verdict": "unreviewed",
+      "feedback": "I don't like this at all. Either rethink it or we're going to kill it. "
+    },
+    {
+      "id": "B-FT02",
+      "title": "Operating-run feature split",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "HL01",
+        "HL02",
+        "EX02"
+      ],
+      "verdict": "revise",
+      "feedback": "I don't like this at all. Either rethink it or we're going to kill it. "
+    },
+    {
+      "id": "B-FT03",
+      "title": "Typed mechanism bento",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF01",
+        "SG01"
+      ],
+      "verdict": "revise",
+      "feedback": "Okay I like the bento idea. I think the execution sucks. Bento grids need much better thinking about all the cards, and maybe not filling them but having graphics or overlays, or full bleed. I don't know if that's the right way to describe it, but when you fill the cards inside the bento, you fully fill it instead of trying to put in these margins and stuff.\n\nDefinitely putting an animated gradient could potentially be better. Having a whole bento part of it fill up with an animated gradient would look really nice. It just needs a whole bunch of thinking about what we can actually put on the bento to show off a product or something, because it's a feature card. "
+    },
+    {
+      "id": "B-FT04",
+      "title": "Four-step workflow",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC01",
+        "QF01"
+      ],
+      "verdict": "kill",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT05",
+      "title": "Proof record section",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT06",
+      "title": "System architecture map",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "IC01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT07",
+      "title": "Integration family",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC01",
+        "PO01"
+      ],
+      "verdict": "revise",
+      "feedback": "You actually need the logos here. And this design needs big improvement. I think simplification, like not having all these box fills and stuff "
+    },
+    {
+      "id": "B-FT08",
+      "title": "Before and after shift",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "ES02",
+        "ES04"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT09",
+      "title": "Feature accordion",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF03"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-FT10",
+      "title": "Dark product explainer",
+      "family": "features",
+      "scope": "functional",
+      "phaseARefs": [
+        "EX02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR01",
+      "title": "One-time digital offer",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "SG01",
+        "FC01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR02",
+      "title": "Multi-product digital pricing",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR03",
+      "title": "Single SaaS plan",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR04",
+      "title": "Three SaaS tiers",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR05",
+      "title": "Billing cadence selector",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR06",
+      "title": "Usage-based calculator",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR07",
+      "title": "Plan comparison table",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR08",
+      "title": "Enterprise offer",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01",
+        "BO02"
+      ],
+      "verdict": "revise",
+      "feedback": "This shouldn't have the wings if you're going to do full overlays. I like the idea though. "
+    },
+    {
+      "id": "B-PR09",
+      "title": "Coming-soon waitlist",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-PR10",
+      "title": "Mixed commercial models",
+      "family": "pricing",
+      "scope": "functional",
+      "phaseARefs": [
+        "FS02",
+        "FC01",
+        "FC02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK01",
+      "title": "Digital product checkout",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "SG01",
+        "QF01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK02",
+      "title": "SaaS workspace checkout",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "FC02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK03",
+      "title": "Express checkout",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF03"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK04",
+      "title": "Expanded order summary",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "SG01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK05",
+      "title": "Processing state",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC03"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK06",
+      "title": "Recoverable payment error",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK07",
+      "title": "Digital access confirmation",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-CK08",
+      "title": "SaaS workspace confirmation",
+      "family": "checkout",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU01",
+      "title": "Fixed complete suite",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "ST01",
+        "ST02",
+        "BX01",
+        "BX02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU02",
+      "title": "Configurable bundle builder",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "BX01",
+        "SG01"
+      ],
+      "verdict": "revise",
+      "feedback": "This is cool. I think we're getting there. Just needs rethinking a lot of it. "
+    },
+    {
+      "id": "B-BU03",
+      "title": "Focused product stack",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "ST01",
+        "ST02"
+      ],
+      "verdict": "revise",
+      "feedback": "This is really cool. I like this a lot. Potentially some animation between the cards, like they flicker through. And also just using animated gradients "
+    },
+    {
+      "id": "B-BU04",
+      "title": "Bundle comparison",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "FN01",
+        "BX01",
+        "BX02"
+      ],
+      "verdict": "revise",
+      "feedback": "This is really cool, like seeing two different bundles. "
+    },
+    {
+      "id": "B-BU05",
+      "title": "Checkout order bump",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "SG01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU06",
+      "title": "Cart cross-sell",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU07",
+      "title": "Order upgrade",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "ST01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-BU08",
+      "title": "Post-purchase addition",
+      "family": "bundles",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01",
+        "BO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-MB01",
+      "title": "Mobile product discovery",
+      "family": "mobile",
+      "scope": "functional",
+      "phaseARefs": [
+        "QC04",
+        "ES04",
+        "HL04",
+        "QF03",
+        "PO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-MB02",
+      "title": "Mobile plan selection",
+      "family": "mobile",
+      "scope": "functional",
+      "phaseARefs": [
+        "HL04",
+        "FC01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-MB03",
+      "title": "Mobile checkout summary",
+      "family": "mobile",
+      "scope": "functional",
+      "phaseARefs": [
+        "QF03",
+        "SG01"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "B-MB04",
+      "title": "Mobile confirmation and upsell",
+      "family": "mobile",
+      "scope": "functional",
+      "phaseARefs": [
+        "BO01",
+        "PO02"
+      ],
+      "verdict": "revise",
+      "feedback": ""
+    }
+  ],
+  "productionAuthority": false
+}

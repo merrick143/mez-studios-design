@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.space-layout",
+  "status": "canonical",
+  "portableRoot": ".",
+  "productionReadyForScope": true,
+  "artifactCount": 8,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 2012,
+      "sha256": "01208e9a37b0b145f020ec94ceaf344d96011024ca46f9a91ba31772e0f0e178"
+    },
+    {
+      "path": "package.json",
+      "bytes": 935,
+      "sha256": "d25d584b61d73685d6c186744bf4a7b175a20ddd1e986de1c1138da9cc68d2fb"
+    },
+    {
+      "path": "responsive-contracts.json",
+      "bytes": 2809,
+      "sha256": "43b4e9bb11191618b6bee9e0e2dda8d53a68f745293a82050c1e94b99d6cc6ae"
+    },
+    {
+      "path": "review.json",
+      "bytes": 541,
+      "sha256": "de97c4ef20cb9cc078363ca6ab25b03c44d5d5803e3c7e6af21dd162875aea03"
+    },
+    {
+      "path": "space-layout.schema.json",
+      "bytes": 4297,
+      "sha256": "46241239e5eb5c052b9acc7425607b626d930f11080bc062938c5ef603bae555"
+    },
+    {
+      "path": "space-layout.source.json",
+      "bytes": 4225,
+      "sha256": "31713581e7b2568cb785b51ab39e9cebcf800e88151a3641e23c35ab2cc95851"
+    },
+    {
+      "path": "tokens.css",
+      "bytes": 1925,
+      "sha256": "e8dca0a69ac5c3fdae67c47c56f0bc71f09e91f6ee684d3972995ee0dff30756"
+    },
+    {
+      "path": "tokens.json",
+      "bytes": 4460,
+      "sha256": "02b94a8870f92e910f7a396f270cf57dc7439cfa874a36c62727d634af80e7a4"
+    }
+  ]
+}

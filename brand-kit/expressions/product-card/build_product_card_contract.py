@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DIST = ROOT / "dist"
-FILES = [ROOT / name for name in ("product-card.source.json", "product-card.schema.json", "README.md", "review.json")]
+FILES = [ROOT / name for name in ("product-card.source.json", "product-card.schema.json", "README.md", "review.json", "round-05-feedback.json", "round-06-feedback.json", "round-07-feedback.json", "round-08-feedback.json", "round-09-feedback.json", "round-10-feedback.json")]
 
 
 def read(path: Path):
@@ -21,8 +21,8 @@ def sha(path: Path):
 
 def main():
     source, review = read(FILES[0]), read(FILES[3])
-    if source.get("status") != "visual-research-candidate" or source.get("productionAuthority") is not False or review.get("verdict") != "pending":
-        raise SystemExit("pending candidate required")
+    if source.get("status") != "canonical-visual-grammar" or source.get("productionAuthority") is not True or review.get("verdict") != "approve":
+        raise SystemExit("approved Phase A visual grammar required")
     if DIST.exists():
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
@@ -31,14 +31,14 @@ def main():
     package = {
         "schemaVersion": "1.0.0",
         "name": "@mez-systems/expression-product-card",
-        "version": "0.4.0",
-        "status": "visual-research-candidate",
-        "candidateRevision": "product-card-02-phase-a-r02",
+        "version": "1.0.0",
+        "status": "canonical-visual-grammar",
+        "candidateRevision": "product-card-02-phase-a-r10",
         "reviewGateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
         "programmePhase": "A-visual-architecture",
-        "phaseBStatus": "held-until-visual-lock",
-        "productionReadyForScope": False,
-        "productionAuthority": False,
+        "phaseBStatus": "ready-to-start",
+        "productionReadyForScope": True,
+        "productionAuthority": True,
         "entrypoints": {"contract": "product-card.source.json", "schema": "product-card.schema.json", "review": "review.json", "guidance": "README.md"},
         "runtimeDependencies": source["dependencies"],
     }
@@ -47,15 +47,15 @@ def main():
     manifest = {
         "schemaVersion": "1.0.0",
         "expressionId": source["expressionId"],
-        "status": "visual-research-candidate",
-        "productionAuthority": False,
+        "status": "canonical-visual-grammar",
+        "productionAuthority": True,
         "artifactCount": len(packaged),
         "artifacts": [{"path": path.name, "bytes": path.stat().st_size, "sha256": sha(path)} for path in packaged],
     }
     (DIST / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print("MEZ PRODUCT CARD 02 · PHASE A: BUILT")
-    print("- one portrait website-card architecture with four bounded treatments")
-    print("- family shelf, bundle offer and complete Phase B website-component scope")
+    print("MEZ PRODUCT CARD 02 · PHASE A 1.0.0: BUILT")
+    print("- thirty-two approved specimens across four real product jobs")
+    print("- round 05 through 10 human feedback preserved; canonical Phase B now consumes this locked visual grammar")
     return 0
 
 

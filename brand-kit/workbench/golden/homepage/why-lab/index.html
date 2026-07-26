@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Why Lab (GH-S04, eight compositions)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1; --page-muted: #666662; --page-dark-muted: #b8b8b1;
+  --card-outline: rgba(255,255,255,.14);
+  --wide: 940px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+img { max-width: 100%; }
+
+/* ------------------------------------------------------------- lab chassis */
+.lab-top { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px; padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper); font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap; }
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a { padding: 4px 9px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px; color: var(--page-paper); text-decoration: none; }
+.lab-note { padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: #cfcfc9; font-size: 13.5px; line-height: 1.6; border-bottom: 8px solid #d7d6d3; }
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-note p { margin: 0 0 9px; max-width: 108ch; }
+.lab-note p:last-child { margin-bottom: 0; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding: 14px clamp(16px,4vw,40px); background: var(--page-white); border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50; }
+.lab-num { font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em; padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; }
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule { font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-muted); }
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 62ch; line-height: 1.5; }
+.lab-live { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 9px; border-radius: 9999px; border: 1px solid var(--page-line-strong); color: var(--page-muted); }
+.lab-live[data-live="on"] { border-color: var(--page-ink); color: var(--page-ink); }
+
+/* ------------------------------------------------------- shared section head
+   Left aligned in every variant, without exception. S03 opens centred and
+   closes centred on the serif thesis; a centred S04 head would make three
+   centred beats running and the page would lose its axis. */
+.wy { background: var(--page-paper); color: var(--page-ink); }
+.wy-inner { max-width: 1180px; margin-inline: auto; padding-inline: clamp(20px,5vw,64px); padding-block: clamp(72px,9vw,112px); }
+.wy-head { max-width: 66ch; }
+.wy-eyebrow { margin: 0; font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted); }
+.wy-title { margin: 18px 0 0; font-family: var(--mz-font-display); font-weight: 660; font-size: clamp(30px,3.5vw,48px); line-height: 1.03; letter-spacing: -.04em; max-inline-size: 18ch; }
+.wy-lead { margin: 20px 0 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5; color: var(--page-muted); max-inline-size: 52ch; }
+.wy-body { margin: clamp(44px,5.2vw,72px) 0 0; }
+.wy-close { margin: clamp(38px,4.4vw,56px) 0 0; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(17px,1.7vw,21px); line-height: 1.35; letter-spacing: -.02em; max-inline-size: 40ch; }
+.wy-kicker { margin: 0; font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-muted); }
+
+/* shared material chassis */
+.mat { position: relative; isolation: isolate; overflow: hidden; background: #101010 center / cover no-repeat var(--material); border: 1px solid var(--card-outline); }
+.mat canvas { z-index: 0; }
+.ident { position: absolute; z-index: 3; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; color: var(--page-white); }
+.ident img { width: clamp(24px,2.2vw,30px); height: auto; filter: brightness(0) invert(1); }
+.ident strong { font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(16px,1.55vw,20px); line-height: 1.12; letter-spacing: -.01em; }
+.ident span { font-size: 10.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.78); }
+
+/* the house pending convention, borrowed from GH-S05's redacted screens */
+.pending { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--page-muted); }
+.pending i { width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--page-line-strong); }
+
+/* ============================================================ A · UNFINISHED */
+.uf { max-width: var(--wide); }
+.uf__card { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--mz-radius-panel); --seam: 62%; }
+.uf__card::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; background: linear-gradient(180deg, rgba(7,7,7,0) 54%, rgba(7,7,7,.44) 100%); }
+.uf__raw { position: absolute; inset: 0; z-index: 4; border-radius: inherit; background: var(--page-dark); clip-path: inset(0 calc(100% - var(--seam)) 0 0); padding: clamp(22px,3vw,36px); display: flex; flex-direction: column; }
+.uf__raw::before { content: ""; position: absolute; inset: 0; opacity: .5; background-image: linear-gradient(to right, rgba(248,248,248,.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(248,248,248,.07) 1px, transparent 1px); background-size: 42px 42px; }
+.uf__rawhead { position: relative; margin: 0 0 auto; font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-dark-muted); white-space: nowrap; }
+.uf__fields { position: relative; list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; width: max-content; max-width: 100%; }
+.uf__fields li { display: flex; align-items: baseline; gap: 12px; color: rgba(248,248,248,.9); font-size: clamp(12.5px,1.25vw,15px); white-space: nowrap; }
+.uf__fields li::before { content: ""; width: 9px; height: 9px; flex: none; border: 1px solid rgba(248,248,248,.42); }
+.uf__fields li i { flex: 1 1 90px; min-width: 44px; height: 1px; background: rgba(248,248,248,.24); }
+.uf__seam { position: absolute; z-index: 5; top: 0; bottom: 0; left: var(--seam); width: 1px; background: var(--page-paper); opacity: .9; }
+.uf__ident { left: 66%; bottom: clamp(18px,2.4vw,26px); }
+.uf__legend { display: flex; justify-content: space-between; gap: 24px; margin-top: 16px; font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--page-muted); }
+@media (max-width: 720px) {
+  .uf__card { aspect-ratio: 4 / 5; }
+  /* Stays right of the seam's resting range, or the raw panel sits on top of it. */
+  .uf__ident { left: 52%; }
+  .uf__fields li { white-space: normal; }
+}
+
+/* ============================================================== B · BUILD LOG */
+.bl { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: clamp(28px,4vw,64px); }
+.bl__prose { max-width: 44ch; }
+.bl__prose p { margin: 14px 0 0; font-size: clamp(15px,1.45vw,17px); line-height: 1.62; color: var(--page-muted); }
+.bl__prose p.bl__claim { margin-top: 16px; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(19px,2vw,25px); line-height: 1.28; letter-spacing: -.02em; color: var(--page-ink); }
+.bl__log { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--page-line); }
+.bl__log li { display: grid; grid-template-columns: 92px minmax(0,1fr); gap: clamp(14px,2vw,28px); padding: 16px 0; border-bottom: 1px solid var(--page-line); }
+.bl__mark { font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-ink); padding-top: 3px; }
+.bl__entry { font-size: clamp(13.5px,1.35vw,15.5px); line-height: 1.55; color: var(--page-muted); }
+.bl__log li.is-pending .bl__mark { color: var(--page-line-strong); }
+.bl__redact { display: block; height: 9px; border-radius: 2px; background: var(--page-line); margin-bottom: 9px; }
+.bl__redact:nth-of-type(2) { width: 74%; }
+.bl__redact:nth-of-type(3) { width: 41%; }
+@media (max-width: 860px) { .bl { grid-template-columns: minmax(0,1fr); } }
+
+/* ========================================================= C · TWO BUSINESSES */
+.tb { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); gap: clamp(20px,3.4vw,52px); align-items: stretch; max-width: var(--wide); }
+.tb__col { display: flex; flex-direction: column; }
+.tb__head { margin: 0 0 22px; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(17px,1.8vw,22px); letter-spacing: -.02em; }
+.tb__col--you .tb__head { color: var(--page-line-strong); }
+.tb__rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.tb__rows li { padding: 15px 0; border-top: 1px solid var(--page-line); font-size: clamp(13.5px,1.35vw,15.5px); line-height: 1.5; }
+.tb__rows li:last-child { border-bottom: 1px solid var(--page-line); }
+.tb__col--you .tb__rows li { color: var(--page-line-strong); border-color: var(--page-line-soft); }
+.tb__spine { position: relative; display: flex; align-items: center; justify-content: center; width: clamp(74px,9vw,116px); }
+.tb__spine::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--page-line); }
+.tb__core { position: relative; width: 100%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; }
+.tb__core img { width: 40%; height: auto; filter: brightness(0) invert(1); position: relative; z-index: 3; }
+.tb__foot { margin: 22px 0 0; font-size: 13px; line-height: 1.5; color: var(--page-muted); }
+.tb__col--you .tb__foot { color: var(--page-line-strong); }
+@media (max-width: 780px) {
+  .tb { grid-template-columns: minmax(0,1fr); }
+  .tb__spine { width: 100%; height: 120px; }
+  .tb__spine::before { top: 50%; bottom: auto; left: 0; right: 0; width: auto; height: 1px; }
+  .tb__core { width: clamp(74px,22vw,110px); }
+}
+
+/* =================================================================== D · LOOP */
+.loop { position: relative; width: 100%; max-width: var(--wide); margin-inline: auto; aspect-ratio: 940 / 520; }
+.loop__frame { position: absolute; inset: clamp(30px,5vw,52px) clamp(46px,7vw,96px); }
+.loop svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.loop__arc, .loop__return { fill: none; vector-effect: non-scaling-stroke; }
+.loop__arc { stroke: var(--page-line); stroke-width: 1; }
+.loop__return { stroke: var(--page-ink); stroke-width: 2; }
+.loop__back { position: absolute; left: 36%; top: 93%; transform: translate(-50%,-50%); font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; background: var(--page-paper); padding: 0 12px; white-space: nowrap; }
+.node { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%,-50%); }
+.node__dot { display: block; width: 11px; height: 11px; border-radius: 50%; background: var(--page-paper); border: 1px solid var(--page-ink); margin-inline: auto; }
+.node__label { position: absolute; width: 178px; }
+.node strong { display: block; font-family: var(--mz-font-display); font-weight: 600; font-size: 15.5px; letter-spacing: -.01em; }
+.node small { display: block; margin-top: 4px; font-size: 12.5px; line-height: 1.42; color: var(--page-muted); }
+.node--up .node__label { bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center; }
+.node--down .node__label { top: 20px; left: 50%; transform: translateX(-50%); text-align: center; }
+.node--left .node__label { right: 22px; top: 50%; transform: translateY(-50%); text-align: right; }
+.node--right .node__label { left: 22px; top: 50%; transform: translateY(-50%); text-align: left; }
+/* Build sits low on the path with the heavy return leg running just under it,
+   so its label rises clear rather than being set across the stroke. */
+.node--rightup .node__label { left: 22px; bottom: -4px; text-align: left; }
+.node--live { width: clamp(76px,9vw,104px); }
+.node--live .node__disc { position: relative; width: 100%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; }
+.node--live .node__disc img { width: 38%; height: auto; filter: brightness(0) invert(1); position: relative; z-index: 3; }
+/* The live node has real size, so its label clears the disc rather than sitting inside it. */
+.node--live.node--down .node__label { top: calc(100% + 14px); }
+/* The path is authored in a landscape viewBox and stretched to fit, so squeezing
+   it into a portrait box turns the straight top run into a diagonal and collapses
+   the shape back into the oval this variant exists to avoid. On narrow screens it
+   keeps its geometry and scrolls instead. */
+.loop-scroll { overflow-x: auto; }
+@media (max-width: 860px) {
+  .loop-scroll { margin-inline: calc(clamp(20px,5vw,64px) * -1); padding-inline: clamp(20px,5vw,64px); }
+  .loop { min-width: 660px; }
+}
+
+/* =============================================================== E · RECEIPTS */
+.rc { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(0,1fr); gap: clamp(30px,4.4vw,68px) clamp(30px,5vw,80px); align-items: end; max-width: var(--wide); }
+.rc__fig { display: block; margin: 0; }
+.rc__fig--lead { grid-row: span 2; }
+.rc__num { display: block; font-family: var(--mz-font-display); font-weight: 660; line-height: .84; letter-spacing: -.05em; font-size: clamp(76px,11vw,164px); }
+.rc__fig--sub .rc__num { font-size: clamp(44px,5.6vw,84px); }
+.rc__cap { display: block; margin-top: 14px; font-size: clamp(13.5px,1.35vw,15.5px); line-height: 1.45; color: var(--page-muted); max-width: 26ch; }
+.rc__bar { display: block; width: min(100%, 200px); height: 10px; border-radius: 2px; background: var(--page-line); margin-bottom: 16px; }
+.rc__pending { grid-column: 1 / -1; padding-top: clamp(22px,3vw,34px); border-top: 1px solid var(--page-line); }
+@media (max-width: 780px) { .rc { grid-template-columns: minmax(0,1fr); } .rc__fig--lead { grid-row: auto; } }
+
+/* ================================================================== F · SEAM */
+.sk { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: clamp(28px,5vw,80px); align-items: start; }
+/* 150px clears the lab's own sticky chrome. In the page this would be the
+   nav offset, around 112px. */
+.sk__hold { position: sticky; top: 150px; }
+.sk__held { margin: 0; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(24px,3vw,38px); line-height: 1.12; letter-spacing: -.035em; max-inline-size: 16ch; }
+.sk__holdfoot { margin: 22px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--page-muted); max-inline-size: 30ch; }
+.sk__pass { display: grid; }
+.sk__stage { padding: clamp(44px,7vw,92px) 0; border-bottom: 1px solid var(--page-line); }
+.sk__stage:first-child { padding-top: 0; }
+.sk__stage:last-child { border-bottom: 0; padding-bottom: 0; }
+.sk__stage strong { display: block; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(19px,2.1vw,26px); letter-spacing: -.025em; }
+.sk__stage p { margin: 10px 0 0; font-size: clamp(14px,1.4vw,16px); line-height: 1.55; color: var(--page-muted); max-inline-size: 42ch; }
+@media (max-width: 860px) { .sk { grid-template-columns: minmax(0,1fr); } .sk__hold { position: static; } }
+
+/* ============================================================= G · INVENTORY */
+.iv { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: clamp(10px,1.4vw,18px); max-width: var(--wide); }
+.iv__cell { position: relative; display: flex; align-items: flex-end; padding: clamp(20px,2.6vw,32px); border-radius: var(--mz-radius-panel); background: var(--page-dark); color: var(--page-paper); overflow: hidden; }
+.iv__cell::before { content: ""; position: absolute; inset: 0; opacity: .42; background-image: linear-gradient(to bottom, rgba(248,248,248,.06) 1px, transparent 1px); background-size: 100% 34px; }
+.iv__cell p { position: relative; margin: 0; font-family: var(--mz-font-display); font-weight: 600; line-height: 1.1; letter-spacing: -.025em; }
+.iv__cell:nth-child(1) { grid-column: span 4; min-height: clamp(190px,24vw,270px); }
+.iv__cell:nth-child(1) p { font-size: clamp(26px,3.6vw,46px); max-inline-size: 15ch; }
+.iv__cell:nth-child(2) { grid-column: span 2; min-height: clamp(190px,24vw,270px); background: var(--page-dark-recessed); }
+.iv__cell:nth-child(2) p { font-size: clamp(19px,2.1vw,26px); }
+.iv__cell:nth-child(3) { grid-column: span 3; min-height: clamp(140px,16vw,190px); background: var(--page-dark-raised); }
+.iv__cell:nth-child(3) p { font-size: clamp(19px,2.1vw,26px); }
+.iv__cell:nth-child(4) { grid-column: span 3; min-height: clamp(140px,16vw,190px); }
+.iv__cell:nth-child(4) p { font-size: clamp(19px,2.1vw,26px); }
+.iv__note { grid-column: 1 / -1; margin: clamp(8px,1.2vw,14px) 0 0; font-size: clamp(14px,1.45vw,17px); line-height: 1.58; color: var(--page-muted); max-inline-size: 58ch; }
+@media (max-width: 720px) {
+  .iv { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .iv__cell:nth-child(n) { grid-column: span 2; min-height: 150px; }
+}
+
+/* ================================================================== H · AGES */
+.ag__strip { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: clamp(10px,1.4vw,20px); align-items: end; }
+.ag__age { min-width: 0; }
+.ag__card { position: relative; aspect-ratio: 3 / 4; border-radius: var(--mz-radius-panel); overflow: hidden; }
+.ag__card--blank { background: var(--page-dark); border: 1px solid rgba(248,248,248,.16); display: grid; place-items: center; }
+.ag__scrawl { font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(248,248,248,.5); }
+.ag__rules { position: absolute; inset: 14px; display: grid; align-content: start; gap: 9px; }
+.ag__rules i { height: 1px; background: rgba(248,248,248,.26); }
+.ag__rules i:nth-child(2) { width: 70%; }
+.ag__rules i:nth-child(3) { width: 46%; }
+.ag__rules i:nth-child(4) { width: 82%; }
+.ag__card--mat { border: 1px solid var(--card-outline); }
+.ag__card--mat::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; background: linear-gradient(180deg, rgba(7,7,7,0) 52%, rgba(7,7,7,.48) 100%); }
+.ag__ident { inset: 0; left: 12px; right: 12px; align-items: center; justify-content: center; text-align: center; gap: 9px; }
+.ag__ident img { width: clamp(24px,2.6vw,34px); }
+.ag__ident strong { font-size: clamp(13px,1.35vw,17px); }
+.ag__ident span { font-size: 9.5px; }
+.ag__stage { display: block; margin-top: 14px; font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-ink); }
+.ag__what { display: block; margin-top: 6px; font-size: 12.5px; line-height: 1.45; color: var(--page-muted); }
+@media (max-width: 900px) {
+  .ag__strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(clamp(20px,5vw,64px) * -1); padding-inline: clamp(20px,5vw,64px); }
+  .ag__age { flex: 0 0 clamp(170px,52vw,220px); scroll-snap-align: start; }
+}
+
+/* GH-S05's convention: the static twin is the truth when motion is off. */
+[data-motion="static"] .lab-live { opacity: .5; }
+</style>
+</head>
+<body>
+
+<header class="lab-top">
+  <strong>GH-S04 · Why Lab</strong>
+  <span>Built on ourselves first · eight compositions</span>
+  <nav>
+    <a href="#v1">A</a><a href="#v2">B</a><a href="#v3">C</a><a href="#v4">D</a>
+    <a href="#v5">E</a><a href="#v6">F</a><a href="#v7">G</a><a href="#v8">H</a>
+  </nav>
+</header>
+
+<div class="lab-note">
+  <p><b>Copy is locked.</b> The eyebrow, title and lead are byte-identical in all eight, and every supporting line is existing GH-S04 copy. Nothing here is rewritten. The only variable is composition.</p>
+  <p><b>Three inherited constraints.</b> No vertical stack of five labelled rows, because GH-S02's staircase owns that shape. No centred head, because GH-S03 both opens and closes centred. No grid of equal cards, because GH-S05's three screens are two sections later.</p>
+  <p><b>One live core across the whole lab</b>, handed to whichever variant you are looking at. It is fixed to the AI OS and never cycles: S03 walks the whole product family because its argument is containment, and repeating that here would read as a page effect rather than a second argument. Variants A, C, D and H carry material. B, E, F and G are deliberately type-led.</p>
+  <p><b>Two variants are gated on real data.</b> B and E need entries and figures only you have. Their unknown slots use the same pending convention as GH-S05's redacted screens rather than invented numbers.</p>
+</div>
+
+<!-- ========================================================== A · UNFINISHED -->
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">A</span><span class="lab-name">Unfinished</span>
+    <span class="lab-rule">One object, mid-becoming</span>
+    <span class="lab-live" data-live-badge="a">Core idle</span>
+    <span class="lab-rat">The card from the hero, cut down the middle. Left is the operating problem as it existed inside the studio; right is the packaged system. The seam travels as you scroll and the raw half resolves. No handle, nothing draggable: it is a compositional line, not a control.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body uf">
+        <div class="uf__card mat" data-seam data-material="MZ-G13" data-live-anchor="a" data-core-shape="rect" data-core-radius="0.045">
+          <div class="uf__raw">
+            <p class="uf__rawhead">Inside Mez Studios · unresolved</p>
+            <ul class="uf__fields">
+              <li>A decision disappears<i></i></li>
+              <li>A workflow depends on one person<i></i></li>
+              <li>An AI agent lacks context<i></i></li>
+              <li>A process breaks when the tool changes<i></i></li>
+            </ul>
+          </div>
+          <span class="uf__seam"></span>
+          <div class="ident uf__ident">
+            <img src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <strong>AI OS</strong>
+            <span>AI Operating System</span>
+          </div>
+        </div>
+        <div class="uf__legend">
+          <span>The problem we had</span>
+          <span>The system you install</span>
+        </div>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== B · BUILD LOG -->
+<article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">B</span><span class="lab-name">Build log</span>
+    <span class="lab-rule">The claim, and the receipt</span>
+    <span class="lab-live">No core</span>
+    <span class="lab-rat">Prose carries the claim; a ledger in the opposite column carries the evidence. Nothing animates. The last row is the one that matters and it is the one I cannot fill: dated entries from the real build are yours to supply, so the slot is marked pending rather than invented.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body bl">
+        <div class="bl__prose">
+          <p class="wy-kicker">How a Mez System is made</p>
+          <p class="bl__claim">We build the operating layer, use it across real projects and find where it fails, then we fix it.</p>
+          <p>Only the proven version becomes a Mez System. Nothing ships because it demos well; it ships because it already runs our own business.</p>
+        </div>
+        <ol class="bl__log">
+          <li><span class="bl__mark">Build</span><span class="bl__entry">Solve a real operating problem inside Mez Studios.</span></li>
+          <li><span class="bl__mark">Run</span><span class="bl__entry">Use the system across active work, decisions and workflows.</span></li>
+          <li><span class="bl__mark">Break</span><span class="bl__entry">Find the missing context, fragile handoffs and assumptions that fail in practice.</span></li>
+          <li><span class="bl__mark">Refine</span><span class="bl__entry">Remove the friction and strengthen the operating layer.</span></li>
+          <li><span class="bl__mark">Package</span><span class="bl__entry">Turn the proven system into something another operator can install.</span></li>
+          <li class="is-pending">
+            <span class="bl__mark">Log</span>
+            <span class="bl__entry">
+              <i class="bl__redact"></i><i class="bl__redact"></i><i class="bl__redact"></i>
+              <span class="pending"><i></i>Dated entries from the live build pending</span>
+            </span>
+          </li>
+        </ol>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ====================================================== C · TWO BUSINESSES -->
+<article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">C</span><span class="lab-name">Two businesses</span>
+    <span class="lab-rule">One axis of difference</span>
+    <span class="lab-live" data-live-badge="c">Core idle</span>
+    <span class="lab-rat">The same five rows down both columns. Ours filled in, yours the identical shape waiting. One core sits on the spine belonging to neither column and to both. Typographic only: no cells, no borders, no ticks, because comparison layouts turn into pricing tables the moment you draw a box.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body tb">
+        <div class="tb__col tb__col--us">
+          <p class="tb__head">Mez Studios</p>
+          <ul class="tb__rows">
+            <li>Solve a real operating problem inside Mez Studios.</li>
+            <li>Use the system across active work, decisions and workflows.</li>
+            <li>Find the missing context, fragile handoffs and assumptions that fail in practice.</li>
+            <li>Remove the friction and strengthen the operating layer.</li>
+            <li>Turn the proven system into something another operator can install.</li>
+          </ul>
+          <p class="tb__foot">Only the proven version becomes a Mez System.</p>
+        </div>
+        <div class="tb__spine">
+          <div class="tb__core mat" data-material="MZ-G13" data-live-anchor="c" data-core-shape="disc" data-core-radius="0">
+            <img src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+          </div>
+        </div>
+        <div class="tb__col tb__col--you">
+          <p class="tb__head">Your business</p>
+          <ul class="tb__rows">
+            <li>Solve a real operating problem inside your business.</li>
+            <li>Use the system across active work, decisions and workflows.</li>
+            <li>Find the missing context, fragile handoffs and assumptions that fail in practice.</li>
+            <li>Remove the friction and strengthen the operating layer.</li>
+            <li>Install the proven system rather than building it.</li>
+          </ul>
+          <p class="tb__foot">You start at the version we finished.</p>
+        </div>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================================ D · LOOP -->
+<article class="lab-item" id="v4">
+  <header class="lab-label">
+    <span class="lab-num">D</span><span class="lab-name">Loop</span>
+    <span class="lab-rule">Drawn as the thing it claims to be</span>
+    <span class="lab-live" data-live-badge="d">Core idle</span>
+    <span class="lab-rat">The current section calls itself a loop and draws a straight line with the words "then back to Build" underneath. Here the return leg is the heaviest stroke on the page, because it is the entire claim. The path is deliberately off-grid: five equal arcs on a tidy circle is consultancy furniture.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body loop-scroll">
+       <div class="loop">
+        <div class="loop__frame">
+          <!-- A tidy circle with five equal arcs is consultancy furniture, so the
+               path carries one genuinely straight run along the top and its nodes
+               are unevenly spaced. The return leg is the only heavy stroke. -->
+          <svg viewBox="0 0 940 420" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path class="loop__arc" d="M78,300 C92,190 148,118 232,96 L486,72 C648,86 862,134 862,212 C862,302 728,364 596,374" />
+            <path class="loop__return" d="M596,374 C426,396 170,374 78,300" />
+          </svg>
+
+          <div class="node node--rightup" style="--x:8.3%; --y:71.4%">
+            <span class="node__dot"></span>
+            <span class="node__label"><strong>Build</strong><small>Solve a real operating problem inside Mez Studios.</small></span>
+          </div>
+          <div class="node node--up" style="--x:24.7%; --y:22.9%">
+            <span class="node__dot"></span>
+            <span class="node__label"><strong>Run</strong><small>Use the system across active work, decisions and workflows.</small></span>
+          </div>
+          <div class="node node--up" style="--x:51.7%; --y:17.1%">
+            <span class="node__dot"></span>
+            <span class="node__label"><strong>Break</strong><small>Find the missing context, fragile handoffs and assumptions that fail in practice.</small></span>
+          </div>
+          <div class="node node--left" style="--x:91.7%; --y:50.5%">
+            <span class="node__dot"></span>
+            <span class="node__label"><strong>Refine</strong><small>Remove the friction and strengthen the operating layer.</small></span>
+          </div>
+          <div class="node node--live node--down" style="--x:63.4%; --y:89%">
+            <div class="node__disc mat" data-material="MZ-G13" data-live-anchor="d" data-core-shape="disc" data-core-radius="0">
+              <img src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            </div>
+            <span class="node__label"><strong>Package</strong><small>Turn the proven system into something another operator can install.</small></span>
+          </div>
+          <p class="loop__back">and straight back to Build</p>
+        </div>
+       </div>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================ E · RECEIPTS -->
+<article class="lab-item" id="v5">
+  <header class="lab-label">
+    <span class="lab-num">E</span><span class="lab-name">Receipts</span>
+    <span class="lab-rule">The scale is the argument</span>
+    <span class="lab-live">No core</span>
+    <span class="lab-rat">Few large numbers, tiny labels, no cards and no borders. Every figure shown is one I can verify from the product registry. The one that would actually land, how long the AI OS ran inside the studio before it shipped, is yours to give me, so it sits as a pending row rather than a plausible guess.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body rc">
+        <figure class="rc__fig rc__fig--lead">
+          <span class="rc__num">5</span>
+          <span class="rc__cap">Systems built inside Mez Studios to solve our own operating problems.</span>
+        </figure>
+        <figure class="rc__fig rc__fig--sub">
+          <span class="rc__num">1</span>
+          <span class="rc__cap">Proven enough to package and install today.</span>
+        </figure>
+        <figure class="rc__fig rc__fig--sub">
+          <span class="rc__num">5</span>
+          <span class="rc__cap">Stages every system passes before it becomes a Mez System.</span>
+        </figure>
+        <figure class="rc__fig rc__pending">
+          <span class="rc__bar"></span>
+          <span class="pending"><i></i>Months the AI OS ran inside Mez Studios before it shipped</span>
+        </figure>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================================ F · SEAM -->
+<article class="lab-item" id="v6">
+  <header class="lab-label">
+    <span class="lab-num">F</span><span class="lab-name">Held</span>
+    <span class="lab-rule">One claim, pinned</span>
+    <span class="lab-live">No core</span>
+    <span class="lab-rat">The title pins and does not move while the five stages pass it. Honest weakness: sticky columns are everywhere, and the passing column is still five stacked blocks, which is close to the shape GH-S02 already owns. Included because you asked for all eight and it should be judged, not argued about.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body sk">
+        <div class="sk__hold">
+          <p class="wy-kicker">How a Mez System is made</p>
+          <p class="sk__held">We build the operating layer, use it across real projects and find where it fails, then we fix it.</p>
+          <p class="sk__holdfoot">Only the proven version becomes a Mez System. Nothing ships because it demos well; it ships because it already runs our own business.</p>
+        </div>
+        <div class="sk__pass">
+          <div class="sk__stage"><strong>Build</strong><p>Solve a real operating problem inside Mez Studios.</p></div>
+          <div class="sk__stage"><strong>Run</strong><p>Use the system across active work, decisions and workflows.</p></div>
+          <div class="sk__stage"><strong>Break</strong><p>Find the missing context, fragile handoffs and assumptions that fail in practice.</p></div>
+          <div class="sk__stage"><strong>Refine</strong><p>Remove the friction and strengthen the operating layer.</p></div>
+          <div class="sk__stage"><strong>Package</strong><p>Turn the proven system into something another operator can install.</p></div>
+        </div>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== G · INVENTORY -->
+<article class="lab-item" id="v7">
+  <header class="lab-label">
+    <span class="lab-num">G</span><span class="lab-name">Inventory</span>
+    <span class="lab-rule">Every product is a scar</span>
+    <span class="lab-live">No core</span>
+    <span class="lab-rat">The four failures are currently the smallest thing in the section, set as pill chips at the bottom of a column. Here they are the protagonist, at unequal size, because they did unequal damage. No per-cell product assignment: that mapping is a decision for you, and inventing it would be fabricating provenance.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body iv">
+        <div class="iv__cell"><p>A decision disappears</p></div>
+        <div class="iv__cell"><p>A workflow depends on one person</p></div>
+        <div class="iv__cell"><p>An AI agent lacks context</p></div>
+        <div class="iv__cell"><p>A process breaks when the tool changes</p></div>
+        <p class="iv__note">Only the proven version becomes a Mez System. Nothing ships because it demos well; it ships because it already runs our own business.</p>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================================ H · AGES -->
+<article class="lab-item" id="v8">
+  <header class="lab-label">
+    <span class="lab-num">H</span><span class="lab-name">Five ages</span>
+    <span class="lab-rule">You already met the last one</span>
+    <span class="lab-live" data-live-badge="h">Core idle</span>
+    <span class="lab-rat">One card, five times, gaining exactly one thing per stage: structure, then material, then the mark, then the name set properly. The last is the card the hero fanned at the top of the page, so the reader recognises it. Horizontal, so it does not repeat GH-S02's vertical stack, and it stays horizontal on mobile by scrolling rather than collapsing back into that shape.</span>
+  </header>
+  <section class="wy">
+    <div class="wy-inner">
+      <div class="wy-head">
+        <p class="wy-eyebrow">Built on ourselves first</p>
+        <h2 class="wy-title">We run Mez Studios on the systems we sell.</h2>
+        <p class="wy-lead">Every product begins with a real operating problem inside our own business.</p>
+      </div>
+      <div class="wy-body ag">
+        <div class="ag__strip">
+          <div class="ag__age">
+            <div class="ag__card ag__card--blank"><span class="ag__scrawl">the problem</span></div>
+            <span class="ag__stage">Build</span>
+            <span class="ag__what">Solve a real operating problem inside Mez Studios.</span>
+          </div>
+          <div class="ag__age">
+            <div class="ag__card ag__card--blank">
+              <div class="ag__rules"><i></i><i></i><i></i><i></i></div>
+            </div>
+            <span class="ag__stage">Run</span>
+            <span class="ag__what">Use the system across active work, decisions and workflows.</span>
+          </div>
+          <div class="ag__age">
+            <div class="ag__card ag__card--mat mat" data-material="MZ-G13"></div>
+            <span class="ag__stage">Break</span>
+            <span class="ag__what">Find the missing context, fragile handoffs and assumptions that fail in practice.</span>
+          </div>
+          <div class="ag__age">
+            <div class="ag__card ag__card--mat mat" data-material="MZ-G13">
+              <div class="ident ag__ident">
+                <img src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+              </div>
+            </div>
+            <span class="ag__stage">Refine</span>
+            <span class="ag__what">Remove the friction and strengthen the operating layer.</span>
+          </div>
+          <div class="ag__age">
+            <div class="ag__card ag__card--mat mat" data-material="MZ-G13" data-live-anchor="h" data-core-shape="rect" data-core-radius="0.06">
+              <div class="ident ag__ident">
+                <img src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+                <strong>AI OS</strong>
+                <span>AI Operating System</span>
+              </div>
+            </div>
+            <span class="ag__stage">Package</span>
+            <span class="ag__what">Turn the proven system into something another operator can install.</span>
+          </div>
+        </div>
+      </div>
+      <p class="wy-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+    </div>
+  </section>
+</article>
+
+<script type="module" src="./core.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/expression-trading-card-candidate",
+  "version": "0.1.0-candidate",
+  "status": "review-candidate",
+  "candidateRevision": "trading-card-01-r03",
+  "reviewGateId": "H-EXP-05-TRADING-CARD-PROOF",
+  "productionReadyForScope": false,
+  "productionAuthority": false,
+  "entrypoints": {
+    "contract": "trading-card.source.json",
+    "schema": "trading-card.schema.json",
+    "guidance": "README.md",
+    "round01Feedback": "round-01-feedback.json",
+    "round02Feedback": "round-02-feedback.json"
+  },
+  "note": "Round 03 review package only. It applies the Round 02 receipt; human approval is still required before canonical promotion."
+}

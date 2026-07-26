@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-04B-CARD-FUNCTIONAL-PROOF",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "componentSystemId": "mz.systems.components.product-commerce",
+  "programmeItem": "Product Card 02",
+  "phase": "B-functional-website-components",
+  "round": "functional-convergence-round-04",
+  "candidateStatus": "review-candidate",
+  "candidateRevision": "product-card-02-phase-b-pb2-r04",
+  "familyVerdicts": {"discovery":"approve","features":"approve","pricing":"approve","checkout":"approve","bundles":"approve","mobile":"approve"},
+  "verdict": "approve",
+  "note": "Good enough for now. Lock it in, close Phase B and progress. Treat all 46 Round 04 specimens as keep.",
+  "reviewedAt": "2026-07-22T13:05:12.000Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+  "resultingStatus": "canonical-functional-component-system",
+  "programmeStatus": "complete",
+  "authorityScope": "The approved component contracts, reviewed compositions, Phase A lineage, interaction states and motion allocation are canonical. Prices, payment-provider logic, golden-homepage selection and consumer-specific content remain outside this decision.",
+  "productionAuthority": true
+}

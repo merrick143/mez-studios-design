@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "The blocks printed on the layer itself",
+  "columns": 12,
+  "generativeRule": "The layer is the whole surface and the blocks are printed on it. Rows, not cards, so it stays clear of the card-inside-a-card rule.",
+  "copyProvenance": "Block names, the four system mappings and the product cell all resolve from registry/products.json. Blocks with no system carry no claim. Nothing is authored.",
+  "cells": [
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "span": 12,
+      "rows": 4,
+      "entriesDisplay": "rows",
+      "entries": [
+        {
+          "label": "Advertising",
+          "productSlug": "ai-ads-system"
+        },
+        {
+          "label": "Organic content",
+          "productSlug": "organic-content-os"
+        },
+        {
+          "label": "Software work",
+          "productSlug": "claude-code-os"
+        },
+        {
+          "label": "Business context",
+          "productSlug": "context-engine"
+        },
+        {
+          "label": "Sales"
+        },
+        {
+          "label": "Finance"
+        },
+        {
+          "label": "Client delivery"
+        },
+        {
+          "label": "Design"
+        }
+      ]
+    }
+  ]
+}

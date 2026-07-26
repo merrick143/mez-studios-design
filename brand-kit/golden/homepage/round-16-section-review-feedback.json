@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r15",
+  "verdict": "round-feedback",
+  "note": "Section-by-section review that drove the Round 17 authored-split-card reinvention. S02/S03/S04 restart-from-scratch, S05 revise (agent call), S06 Wings centred + bottom cards redesigned from Olli's reference screenshots, S07 simplified to Wings + name + Coming soon.",
+  "sections": [
+    {"id": "GH-S01", "title": "Hero", "verdict": "keep", "feedback": ""},
+    {"id": "GH-S02", "title": "The problem", "verdict": "revise", "feedback": "we need to completly restart this section from scratch"},
+    {"id": "GH-S03", "title": "The Mez Systems principle", "verdict": "revise", "feedback": "still wrong logos - still wrong design - completly reinvent this section"},
+    {"id": "GH-S04", "title": "Built on ourselves first", "verdict": "revise", "feedback": "completly restart this section from scratch"},
+    {"id": "GH-S05", "title": "Operating proof", "verdict": "revise", "feedback": ""},
+    {"id": "GH-S06", "title": "Available now: AI OS", "verdict": "revise", "feedback": "put wings in middle centre and make wings bit bigger. the card design of the two bottom cards need to be way better. we can work on this seperate as i have screenshots of good design."},
+    {"id": "GH-S07", "title": "The Mez Systems ecosystem", "verdict": "revise", "feedback": "card design is not good - remake - i dont want waitlist buttons just simple card wings name and coming soon for each"},
+    {"id": "GH-S08", "title": "Proof from the first Mez System", "verdict": "keep", "feedback": ""},
+    {"id": "GH-S09", "title": "Final route", "verdict": "keep", "feedback": ""},
+    {"id": "GH-S10", "title": "Footer", "verdict": "keep", "feedback": ""}
+  ],
+  "productionAuthority": false
+}

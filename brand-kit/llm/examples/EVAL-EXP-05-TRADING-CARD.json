@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-EXP-05-TRADING-CARD",
+  "receiptId": "RCP-EXP-05-TRADING-CARD",
+  "evaluatedAt": "2026-07-22T23:02:31Z",
+  "evaluator": {"kind":"hybrid","name":"Codex plus deterministic validators, in-app browser proof and Olli approval"},
+  "contractChecks": [
+    {"id":"SCOPE","status":"pass","evidence":"The source, receipt and workbench contain the same ordered 23 IDs: 4 faces, 4 backs, 8 decks or packs and 7 placements."},
+    {"id":"LINEAGE","status":"pass","evidence":"The exact Round 02 disposition remains 22 keep, one revise and two kill; all cumulative killed directions remain absent."},
+    {"id":"MEANING","status":"pass","evidence":"The canonical contract defines a useful portable product object and explicitly prohibits fake collector mechanics."},
+    {"id":"MOTION","status":"pass","evidence":"Mobile and desktop live proof expose exactly one runtime canvas; repeated cards stay static and fixed elements do not animate."},
+    {"id":"RESPONSIVE","status":"pass","evidence":"The locked workbench renders all 23 specimens at mobile and desktop with no page or specimen overflow, failures, warnings or errors."},
+    {"id":"AUTHORITY","status":"pass","evidence":"Canonical package authority is bounded to the approved expression; channel, homepage, commerce, Figma and consumer work remain excluded."},
+    {"id":"HUMAN-GATE","status":"pass","evidence":"Olli kept all 23 Round 03 specimens and H-EXP-05-TRADING-CARD-PROOF is closed by DEC-TRADING-CARD-EXPRESSION-001."}
+  ],
+  "qualityDimensions": [
+    {"id":"identity-clarity","score":5,"maximum":5,"evidence":"Public product names, exact Wings and complete product fields remain the dominant reading order."},
+    {"id":"system-coherence","score":5,"maximum":5,"evidence":"Faces, useful backs, decks and real placements share one bounded anatomy without restoring killed editions."},
+    {"id":"responsive-motion","score":5,"maximum":5,"evidence":"Mobile and desktop proof preserve geometry, no overflow and exactly one live core."},
+    {"id":"governance","score":5,"maximum":5,"evidence":"Three exact round receipts, the approval record, canonical source, package and roadmap agree."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["Trading Card 01 version 1.0.0 is canonical for its declared expression scope. EXP-07 is the next incomplete programme item."]
+}

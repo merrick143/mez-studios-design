@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.product-feature-bento",
+  "pantryId": "PC2-B-C04",
+  "version": "0.1.0",
+  "status": "candidate",
+  "productionAuthority": false,
+  "gateId": "H-CMP-04-PRODUCT-FEATURE-BENTO-PROOF",
+  "candidateRevision": "product-feature-bento-01-r01",
+  "taskId": "TASK-CMP-04-PRODUCT-FEATURE-BENTO",
+  "decisionIds": [],
+  "title": "Product Feature Bento",
+  "selectedFamily": "product-mosaic",
+  "thesis": "A bento is a layout contract, not a style. Every cell declares one of eight jobs, the grid has one reading order and at most one focal cell, and the compact linearization is the same order read down a single column. The component owns geometry, surface allocation and motion budget; the fixture owns content. The rule that makes it read premium rather than decorative is that colour is an event: exactly one cell may carry gradient material, it must be a product or metric cell, and a fixture that asks for two is rejected by the contract rather than by the reviewer's patience.",
+  "anatomy": [
+    "Frame: the outer container that turns unequal cells into one object. Radius frame 32, padding 8.",
+    "Cell grid: twelve columns, uniform gap 8, auto rows. Concentric with the frame by construction because 32 minus 8 is the panel radius 24.",
+    "Cell: a full composition filling its own box. Never contains another bordered cell (LAY-12).",
+    "Cell job: one of product, proof, workflow, metric, media, integration, quote, action. Declared, not inferred.",
+    "Surface: paper, recessed, raised, dark or material. Carries meaning, not variety.",
+    "Focal cell: at most one per bento, the only cell permitted to carry material.",
+    "Product cell: resolves name, function and gradient from registry/products.json. Never hardcoded.",
+    "Identity disc: a small material token naming which product a paper cell belongs to, without spending the bento's one colour event.",
+    "Scrim: the only depth cue permitted on a material cell, and its job is legibility.",
+    "Compact linearization: one column, DOM order preserved, no cell dropped."
+  ],
+  "cellJobs": [
+    "product",
+    "proof",
+    "workflow",
+    "metric",
+    "media",
+    "integration",
+    "quote",
+    "action"
+  ],
+  "surfaces": [
+    "paper",
+    "muted",
+    "tint",
+    "outline",
+    "recessed",
+    "raised",
+    "dark",
+    "material"
+  ],
+  "rules": {
+    "materialCells": "At most one cell per bento may use the material surface, and its job must be product or metric.",
+    "fillerCells": "Every cell must resolve to content: a label, or a productSlug. A cell that exists to fill a span is rejected.",
+    "cellCount": "The cell count is bound to the content it represents, never to what fits the grid.",
+    "readingOrder": "DOM order is the reading order and the compact linearization. Explicit placement may move a cell visually but never reorders the document.",
+    "focal": "At most one cell may declare focal.",
+    "spans": "Every row must sum to the declared column count. An arbitrary span that leaves a hole is rejected.",
+    "nesting": "A cell must not contain another bordered surface."
+  },
+  "states": [
+    "rest",
+    "hover on an interactive cell",
+    "focus-visible on an interactive cell",
+    "coming soon on a product cell",
+    "reduced motion, material renders as its exact static twin",
+    "no WebGL, material renders as its exact static twin",
+    "fixture unavailable, the component renders its failure row rather than an empty frame"
+  ],
+  "behaviour": {
+    "content": "Cells arrive from a fixture. The component never authors copy.",
+    "products": "Product cells resolve from the canonical registry at runtime, so a product added or removed reflows the bento without a code change.",
+    "placement": "A cell may declare span and rows for auto flow, or col and row for explicit placement. Both resolve into the same twelve column grid.",
+    "linearization": "Below 760px every cell spans the full width in DOM order. Nothing is hidden and nothing is reordered.",
+    "validation": "The contract rules are enforced at render. A violating fixture sets data-contract-failure and renders the reason rather than rendering a wrong bento."
+  },
+  "motion": {
+    "maximumLiveCores": 1,
+    "default": "The single material cell mounts one Living Core when the bento is the most visible motion region in the viewport.",
+    "repeated": "Multiple bentos on one page hand the single core between them. Two live cores are never mounted.",
+    "reduced": "prefers-reduced-motion mounts nothing and the material cell shows its exact static twin.",
+    "failure": "A renderer or catalogue failure leaves the static twin in place and records data-core-failure."
+  },
+  "variants": [
+    {
+      "id": "mechanism-map",
+      "fixture": "fixtures/mechanism-map.json",
+      "argument": "These are the building blocks of a business. Four already have a Mez System, and all of them run on the same layer.",
+      "cells": "Eight block cells and one product cell. A block whose function the registry already names takes that system's name and an identity disc; a block with no system takes neither and makes no claim."
+    },
+    {
+      "id": "workflow",
+      "fixture": "fixtures/workflow.json",
+      "argument": "Four working stages wrap the one that ships.",
+      "cells": "Five workflow cells in a pinwheel, the shipped one carrying the material at the centre."
+    },
+    {
+      "id": "evidence-mosaic",
+      "fixture": "fixtures/evidence-mosaic.json",
+      "argument": "Paper proves, material ships.",
+      "cells": "Three metric cells whose figures are derivable from the registry, and one product cell."
+    },
+    {
+      "id": "product-comparison",
+      "fixture": "fixtures/product-comparison.json",
+      "argument": "One ships, the rest are coming.",
+      "cells": "Built from the registry. The live product is a material cell; each coming product is a paper cell carrying an identity disc."
+    }
+  ],
+  "prohibited": [
+    "More than one material cell in a bento (COL-10, and the pantry rule that multiple live gradient cells fail validation)",
+    "Gradient material on a cell whose job is not product or metric",
+    "Three or more sibling cells with identical spans as the default shape (LAY-01)",
+    "A cell whose direct child is another bordered card (LAY-12)",
+    "Cell counts chosen for layout convenience rather than bound to content",
+    "Empty filler cells to complete a row",
+    "box-shadow on any cell; separation is tone and hairline only (MAT-03, MAT-04)",
+    "backdrop-filter anywhere (MAT-01)",
+    "Pure black or #0A0A0A surfaces; dark is the charcoal ramp (COL-05, CL-02)",
+    "Bespoke greyscale literals where a colour token exists (COL-07)",
+    "Sharp outer corners on the frame or any cell (LAY-07)",
+    "Decorative icons carrying no meaning (ICO-06)",
+    "Wings sprinkled onto cells where material already fills the field (ICO-05)",
+    "Hardcoded product names, functions or gradient IDs (LAY-09)",
+    "Running 01 / 02 / 03 numerals as cell furniture (CL-03)",
+    "Hiding or reordering cells in the compact linearization"
+  ],
+  "events": [
+    "mez-bento-ready, once the fixture and registry have resolved",
+    "mez-bento-cell-activate, when an interactive cell is chosen",
+    "mez-bento-contract-failure, when a fixture violates a contract rule"
+  ],
+  "testViewports": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "approval": {
+    "review": "brand-kit/components/product-feature-bento/review.json",
+    "decisionId": null,
+    "approvedAt": null,
+    "approvedFamily": null,
+    "approvedVariants": null,
+    "state": "awaiting-human-review"
+  },
+  "dependencies": {
+    "foundations": "brand-kit/releases/foundations/dist",
+    "products": "brand-kit/registry/products.json",
+    "gradients": "brand-kit/gradient-library/catalogue.json",
+    "renderer": "brand-kit/source-pack/design-system-export/mz-core.js",
+    "wings": "brand-kit/source-pack/design-system-export/assets/wings.svg",
+    "reference": "brand-kit/references/premium-neutral-with-one-colour-event/design-language.md",
+    "pantry": "brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md"
+  },
+  "openQuestions": [
+    "The eight building blocks in mechanism-map are not canonical. Four are named exactly as registry/products.json names the function each system serves, so those four are read rather than invented. The other four, Sales, Finance, Client delivery and Design, are inferred from the six departments Mez Studios actually runs in the mezcorp_claude_code repository. That repository is evidence, not authority. If this bento becomes the canonical statement of what a business is made of, the block taxonomy needs promoting into brand-kit/registry/ with a human decision behind it.",
+    "The blocks with no system deliberately carry no claim and no disc. Whether the page should say what is coming for them is a positioning call, not a layout one.",
+    "Whether GH-S04 adopts this component, and which variant, is Olli's call and is not assumed here."
+  ]
+}
