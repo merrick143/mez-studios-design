@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "taskId": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "contextBundleId": "CTX-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "agent": {
+    "kind": "hybrid",
+    "name": "Olli and Codex",
+    "model": "GPT-5"
+  },
+  "startedAt": "2026-07-28T05:00:00Z",
+  "finishedAt": "2026-07-28T06:52:45Z",
+  "outcome": "complete",
+  "filesChanged": [
+    {
+      "path": "brand-kit/releases/production-01/1.0.0-rc.1/",
+      "action": "generated",
+      "sha256": "5be57efb5e48cba8ac2bdc98445852fbaf6e2decfea1546e3b7ad0eac8d7f26c",
+      "reason": "Deterministic self-contained release candidate containing 312 integrity-manifested artifacts."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/operating-proof-review/",
+      "action": "generated",
+      "sha256": null,
+      "reason": "Four separately redacted, hash-recorded and exact-byte-approved operating-proof derivatives."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/release-candidate-approval.json",
+      "action": "created",
+      "sha256": null,
+      "reason": "Exact human approval for named-consumer proof without publication or deployment authority."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/port-03-verification.json",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Closed the human gate over the existing deterministic, visual, accessibility and Gate B evidence."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-PORT-04-NAMED-CONSUMER-PROOF.json",
+      "action": "created",
+      "sha256": null,
+      "reason": "Next bounded task, blocked only on exact consumer-repository registration."
+    },
+    {
+      "path": "brand-kit/START-HERE.md",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Routes current work from completed PORT-03 to blocked PORT-04."
+    },
+    {
+      "path": "brand-kit/docs/",
+      "action": "modified",
+      "sha256": null,
+      "reason": "CURRENT-STATE, ROADMAP and HANDOFF record the closed gate and exact next blocker."
+    }
+  ],
+  "decisionsApplied": [
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "tests": [
+    {
+      "id": "PORT-03-DETERMINISTIC-PACKAGE",
+      "status": "pass",
+      "evidence": "The repository output and two clean temporary assemblies produced identical content and manifest SHA-256 values."
+    },
+    {
+      "id": "PORT-03-ISOLATED-VERIFICATION",
+      "status": "pass",
+      "evidence": "The package verifier passed from a clean copy with an empty environment, no installed dependency and no canonical-checkout runtime path."
+    },
+    {
+      "id": "PORT-03-RESPONSIVE-ACCESSIBILITY",
+      "status": "pass",
+      "evidence": "The isolated page passed responsive structure from 320 through 1440 plus keyboard, focus, accessibility-tree, static, no-WebGL, offscreen and missing-media checks."
+    },
+    {
+      "id": "PORT-03-GATE-B",
+      "status": "pass",
+      "evidence": "Design critique scored 68/75 with no blocking, critical, major or minor finding."
+    },
+    {
+      "id": "PORT-03-HUMAN",
+      "status": "pass",
+      "evidence": "Olli approved the exact redacted derivatives and separately approved the exact package identified by manifest SHA-256 c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8."
+    },
+    {
+      "id": "CORE-VALIDATION",
+      "status": "pass",
+      "evidence": "All seven AGENT-GUIDE core validators and the relevant component, homepage, release-boundary and package validators passed."
+    }
+  ],
+  "artifactsProduced": [
+    "Approved @mez-systems/design-system-web@1.0.0-rc.1 candidate",
+    "Exact approved redacted operating-proof payload",
+    "Deterministic assembly and isolated verification receipt",
+    "Closed H-PORT-03 human gate",
+    "Blocked TASK-PORT-04 named-consumer proof contract"
+  ],
+  "assumptions": [
+    "Olli's statement 'Okay let's do it. I approve.' applies to the one exact package decision requested immediately before it."
+  ],
+  "exceptions": [
+    "Operating-system reduced-motion emulation was unavailable in the in-app browser; byte-identical canonical source proof and the complete static branch were verified.",
+    "Exact VoiceOver speech, physical hover timing, device profiling, third-party mark confirmation and live testimonial operations remain named-consumer obligations."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {
+    "gateRequired": true,
+    "gateId": "H-PORT-03-PRODUCTION-RELEASE-CANDIDATE",
+    "status": "approved"
+  },
+  "nextAction": "Register the exact repository for CON-MEZ-SYSTEMS-WEB-001, then execute TASK-PORT-04-NAMED-CONSUMER-PROOF."
+}

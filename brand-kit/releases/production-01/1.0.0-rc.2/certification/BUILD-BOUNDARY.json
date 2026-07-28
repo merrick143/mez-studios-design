@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
+  "gateId": "H-CERT-01-SYSTEM-CERTIFICATION",
+  "status": "candidate-awaiting-human",
+  "version": "1.0.0-rc.2",
+  "frozenPredecessorManifestSha256": "c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8",
+  "productionAuthority": false,
+  "publishAuthority": false,
+  "deploymentAuthority": false,
+  "consumerIntegrationAuthority": false,
+  "rule": "The exact manifest is approved only if Olli closes H-CERT-01. Until then this is gate evidence."
+}

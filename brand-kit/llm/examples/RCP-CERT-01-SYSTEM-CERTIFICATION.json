@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-CERT-01-SYSTEM-CERTIFICATION",
+  "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
+  "contextBundleId": "CTX-CERT-01-SYSTEM-CERTIFICATION",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5.6"},
+  "startedAt": "2026-07-28T12:45:00Z",
+  "finishedAt": "2026-07-28T13:06:40Z",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/certification/", "action": "created", "sha256": null, "reason": "Bounded audits, benchmark, health checks, candidate builder, verifier and closed human review packet."},
+    {"path": "brand-kit/certification/approval.json", "action": "created", "sha256": null, "reason": "Exact H-CERT-01 approval attributed to Olli without production, publication, deployment or consumer authority."},
+    {"path": "brand-kit/releases/production-01/1.0.0-rc.2/", "action": "generated", "sha256": "b5fe5cb5985270987799d28dbd2c596868de0504f84ae1312818c3ac2387fdd5", "reason": "Deterministic 351-artifact later candidate for H-CERT-01."},
+    {"path": "brand-kit/llm/examples/CTX-CERT-01-SYSTEM-CERTIFICATION.json", "action": "created", "sha256": null, "reason": "Exact bounded certification context."},
+    {"path": "brand-kit/llm/examples/RCP-CERT-01-SYSTEM-CERTIFICATION.json", "action": "created", "sha256": null, "reason": "Machine-complete, human-pending output receipt."},
+    {"path": "brand-kit/llm/examples/EVAL-CERT-01-SYSTEM-CERTIFICATION.json", "action": "created", "sha256": null, "reason": "Independent contract and quality evaluation."},
+    {"path": "brand-kit/llm/tasks/TASK-CERT-01-SYSTEM-CERTIFICATION.json", "action": "modified", "sha256": null, "reason": "Route the machine-complete task to H-CERT-01."},
+    {"path": "brand-kit/START-HERE.md", "action": "modified", "sha256": null, "reason": "Expose active certification and preserve consumer-last routing."},
+    {"path": "brand-kit/docs/", "action": "modified", "sha256": null, "reason": "Keep current state, roadmap and handoff aligned to CERT-01."}
+  ],
+  "decisionsApplied": [
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "tests": [
+    {"id": "CERT-CORE", "status": "pass", "evidence": "All seven AGENT-GUIDE core validators passed."},
+    {"id": "CERT-CURRENT-SCOPE", "status": "pass", "evidence": "All 25 selected foundation, expression, component, homepage, Figma, Product UI and package validators passed."},
+    {"id": "CERT-DETERMINISM", "status": "pass", "evidence": "Three rc.2 builds produced byte-identical manifests with 351 artifacts and content SHA-256 b5fe5cb5985270987799d28dbd2c596868de0504f84ae1312818c3ac2387fdd5."},
+    {"id": "CERT-ISOLATION", "status": "pass", "evidence": "A package-only temporary copy passed with an empty environment and isolated system Python."},
+    {"id": "CERT-MODELS", "status": "pass", "evidence": "Named GPT-5 and Claude Opus 4.8 repository receipts passed common schemas; GPT-5.6 Codex passed 2 of 2 controlled transfer cases. Fresh Claude transfer is explicitly unmeasured because the CLI is not logged in."},
+    {"id": "CERT-HUMAN", "status": "pass", "evidence": "Olli approved the exact certification record and rc.2 manifest with the named limitations visible on 28 July 2026."}
+  ],
+  "artifactsProduced": [
+    "Current-scope whole-system certification record",
+    "Named-model contract replay and bounded transfer benchmark",
+    "Recurring fail-closed health-check contract",
+    "Deterministic @mez-systems/design-system-web@1.0.0-rc.2 candidate",
+    "H-CERT-01 human review packet"
+  ],
+  "assumptions": [
+    "Olli's instruction 'lets do it' authorises executing the ready CERT-01 task but not closing its explicit human gate on his behalf."
+  ],
+  "exceptions": [
+    "Fresh Claude same-prompt execution was unavailable because the installed CLI is not logged in; historical Claude Opus 4.8 receipts were evaluated instead.",
+    "Exact spoken assistive-technology sessions and real-consumer behaviour remain named gaps.",
+    "Deferred channel families remain outside the agreed current certification scope."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-CERT-01-SYSTEM-CERTIFICATION", "status": "approved"},
+  "nextAction": "Register the exact repository path and remote identity for CON-MEZ-SYSTEMS-WEB-001, then execute TASK-PORT-04-NAMED-CONSUMER-PROOF."
+}

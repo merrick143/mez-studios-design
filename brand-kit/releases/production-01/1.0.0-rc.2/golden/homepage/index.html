@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f8f8" />
+    <meta
+      name="description"
+      content="Isolated Mez Systems Golden Homepage release candidate."
+    />
+    <title>Mez Systems — Golden Homepage · 1.0.0-rc.2</title>
+    <link rel="stylesheet" href="../../foundations/index.css" />
+    <link rel="stylesheet" href="../../components/global-navigation/mez-global-navigation.css?v=1.0.0" />
+    <link rel="stylesheet" href="../../components/testimonial-marquee/mez-testimonial-marquee.css?v=1.0.0" />
+    <link rel="stylesheet" href="./styles.css?v=0.28.1" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <mez-global-navigation
+      selected="aios"
+      home-href="#top"
+      systems-href="#ecosystem"
+      about-href="#why-mez"
+      fallback-href="#ecosystem"
+    ></mez-global-navigation>
+
+    <main id="main-content">
+      <!-- GH-S01 · Hero -->
+      <section class="hero review-target" id="top" data-review-id="GH-S01" data-review-title="Hero">
+        <div class="shell shell--reading hero-copy" data-entry>
+          <p class="eyebrow">Mez Systems</p>
+          <h1>The operating systems AI-native businesses run on.</h1>
+          <p class="hero-lead">Own the context, workflows and decisions that make AI useful.</p>
+          <div class="action-row">
+            <a class="mz-control" data-variant="primary" data-action="primary" href="#ecosystem">
+              Explore the Systems
+            </a>
+          </div>
+        </div>
+
+        <div class="shell shell--wide hero-family" id="product-family" aria-label="The five Mez Systems products">
+          <div class="product-deck product-deck--arc" data-hero-products></div>
+        </div>
+      </section>
+
+      <!-- GH-S08 · Proof from the operating system
+           Moved directly under the hero in R22. The logical review ID is
+           preserved even though its page position now leads the argument. -->
+      <section class="testimonials review-target" id="proof" data-review-id="GH-S08" data-review-title="Proof from the operating system">
+        <div class="shell review-marquee">
+          <div class="review-marquee__head" data-entry>
+            <div>
+              <p class="eyebrow">Running on Mez Systems</p>
+              <h2 class="review-marquee__title">Proof from the operating system.</h2>
+            </div>
+          </div>
+
+          <mez-testimonial-marquee
+            src="../../examples/testimonial-snapshot/ai-os-testimonials.json"
+            label="Operator testimonials for Mez Systems"
+            presentation="social-caption"
+          >
+            <p>Testimonial content is supplied by the consumer.</p>
+          </mez-testimonial-marquee>
+        </div>
+      </section>
+
+            <!-- GH-S02 · The problem -->
+      <section class="problem review-target" id="problem" data-review-id="GH-S02" data-review-title="The problem">
+        <div class="shell problem-layout" data-entry>
+          <div class="problem-head">
+            <p class="eyebrow">The problem</p>
+            <h2><span>Too many tools.</span> Too many middlemen.</h2>
+            <p class="problem-lead">
+              The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.
+            </p>
+          </div>
+
+          <div class="problem-steps" aria-label="What sits between the business and the intelligence">
+            <div class="step-row step-row--you"><span class="step-role">Your business</span></div>
+            <div class="step-row step-row--layer step-w1 step-o1"><span class="step-role">Another subscription</span></div>
+            <div class="step-row step-row--layer step-w2 step-o2"><span class="step-role">Another interface</span></div>
+            <div class="step-row step-row--layer step-w3 step-o3"><span class="step-role">Another app</span></div>
+            <div class="step-row step-row--layer step-w4 step-o4"><span class="step-role">Another login</span></div>
+          </div>
+        </div>
+
+      </section>
+
+<!-- GH-S03 · The Mez Systems principle -->
+      <section class="principle review-target" id="principle" data-review-id="GH-S03" data-review-title="The Mez Systems principle">
+        <div class="shell principle-head" data-entry>
+          <p class="eyebrow">The Mez Systems principle</p>
+          <h2><span>Use the best intelligence.</span> Own the layer around it.</h2>
+          <p class="principle-lead">
+            Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.
+          </p>
+        </div>
+
+        <div class="shell" data-entry>
+          <div class="conc">
+            <div class="conc__ring conc__ring--outer" data-orbit="connections"></div>
+            <div class="conc__ring conc__ring--inner" data-orbit="harnesses"></div>
+            <div class="conc__core core-surface" data-live-anchor="principle" data-gradient-id="MZ-G13" data-core-shape="disc">
+              <div class="conc__lockup">
+                <img src="../../identity/wings.svg" alt="" />
+                <span class="conc__product">Mez Systems</span>
+              </div>
+            </div>
+          </div>
+          <div class="conc__legend">
+            <span>Outer · your business connections</span>
+            <span>Inner · harnesses you run on</span>
+          </div>
+        </div>
+
+        <div class="shell shell--reading principle-thesis">
+          <p class="thesis-serif">The intelligence is rented.</p>
+          <p class="thesis-serif">The operating layer is yours.</p>
+          <p class="thesis-close">Build the system. Rent the model.</p>
+        </div>
+      </section>
+
+      <!-- GH-S04 · Built on ourselves first -->
+      <section class="why review-target" id="why-mez" data-review-id="GH-S04" data-review-title="Built on ourselves first">
+        <div class="shell why-head" data-entry>
+          <p class="eyebrow">Built on ourselves first</p>
+          <h2>We run Mez Studios on the systems we sell.</h2>
+          <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+        </div>
+
+        <div class="shell why-graphic">
+          <ol class="mseq" aria-label="How a Mez System is made">
+            <li><span class="mseq__marker"><span class="mseq__dot"></span></span><strong>Build</strong><span>Solve a real operating problem inside Mez Studios.</span></li>
+            <li><span class="mseq__marker"><span class="mseq__dot"></span></span><strong>Run</strong><span>Use the system across active work, decisions and workflows.</span></li>
+            <li><span class="mseq__marker"><span class="mseq__dot"></span></span><strong>Break</strong><span>Find the missing context, fragile handoffs and assumptions that fail in practice.</span></li>
+            <li><span class="mseq__marker"><span class="mseq__dot"></span></span><strong>Refine</strong><span>Remove the friction and strengthen the operating layer.</span></li>
+            <li class="is-last"><span class="mseq__marker"><span class="mseq__live" data-sequence-core><span class="mseq__core" data-core="a"></span><span class="mseq__core" data-core="b"></span></span></span><strong>Package</strong><span>Turn the proven system into something another operator can install.</span></li>
+          </ol>
+        </div>
+
+        <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+      </section>
+
+      <!-- GH-S05 · Operating proof -->
+      <section class="operating-proof review-target" id="operating-proof" data-review-id="GH-S05" data-review-title="Operating proof">
+        <div class="shell op-layout">
+          <header class="op-head" data-entry>
+            <p class="eyebrow">Proof from inside the business</p>
+            <h2>Operating proof</h2>
+            <p class="section-lead">Three operating layers, shown through four real working surfaces from Mez Studios.</p>
+          </header>
+
+          <div class="op-reel">
+            <figure class="op-record" data-proof-stage="command">
+              <figcaption class="op-record__title"><h3>Command surface</h3></figcaption>
+              <div class="op-screen">
+                <img
+                  src="./assets/operating-proof/redacted/command.png"
+                  alt="Mez Studios Command page showing quick links, active task views and the current content queue."
+                  width="1920"
+                  height="1046"
+                  loading="lazy"
+                />
+              </div>
+            </figure>
+
+            <figure class="op-record op-record--context" data-proof-stage="context">
+              <figcaption class="op-record__title"><h3>Context layer</h3></figcaption>
+              <div class="op-context-pair">
+                <div class="op-screen">
+                  <img
+                    src="./assets/operating-proof/redacted/backend.png"
+                    alt="Mez Backend page routing Growth, Client and Content hubs into a shared Knowledge OS."
+                    width="1920"
+                    height="1045"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="op-screen">
+                  <img
+                    src="./assets/operating-proof/redacted/docs.png"
+                    alt="Mez Studios Docs database grouped into Brief, Context, README, Reference, Strategy and Technical."
+                    width="1920"
+                    height="1045"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </figure>
+
+            <figure class="op-record" data-proof-stage="application">
+              <figcaption class="op-record__title"><h3>System in use</h3></figcaption>
+              <div class="op-screen">
+                <img
+                  src="./assets/operating-proof/redacted/ad-system.png"
+                  alt="Ultimate AI Ad System page with Start Here, Playbook, Strategy Vault, AI Layer and weekly production views."
+                  width="1920"
+                  height="1046"
+                  loading="lazy"
+                />
+              </div>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- GH-S06 · Available now: AI OS · simplified dark route -->
+      <section class="final-route ai-os review-target" id="ai-os" data-review-id="GH-S06" data-review-title="Available now: AI OS" data-mz-mode="dark">
+        <div class="shell final-close">
+          <div class="final-stage">
+            <div class="final-message" data-entry>
+              <p class="eyebrow">Start here</p>
+              <h2>Start with the AI OS.</h2>
+              <p class="section-lead final-lead">
+                Give your business one connected operating layer for its context, workflows, decisions and daily execution.
+              </p>
+              <p class="final-turn final-turn--strong">Your business should not need to start again with each one.</p>
+              <div class="action-row final-actions">
+                <button class="mz-control" type="button" data-variant="primary" data-action="primary" data-consumer-route="ai-os">Explore the AI OS</button>
+              </div>
+              <small class="final-availability">Available today for founders and operators building AI-native businesses.</small>
+            </div>
+
+            <div class="final-showcase">
+              <div
+                class="final-card hero-card__material"
+                data-live-anchor="ai-os"
+                data-gradient-id="MZ-G13"
+                aria-label="AI OS product material"
+              >
+                <div class="material-identity">
+                  <img class="material-wings" src="../../identity/wings.svg" alt="" />
+                  <strong>AI OS</strong>
+                  <span>AI Operating System</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GH-S07 · The Mez Systems ecosystem · selected V02 unboxed disc rail -->
+            <section class="ecosystem review-target" id="ecosystem" data-review-id="GH-S07" data-review-title="The Mez Systems ecosystem">
+        <div class="shell eco-head" data-entry>
+          <div class="eco-head__lead">
+            <p class="eyebrow">Coming next</p>
+            <h2>Specialised systems for the work AI-native businesses do.</h2>
+          </div>
+          <div class="eco-head__aside">
+            <p class="section-lead">One bloated product should not run every part of the company.</p>
+            <p class="ecosystem-follow">
+              Mez Systems builds focused operating systems around specific problems, while the customer keeps the context,
+              workflow and history underneath them.
+            </p>
+          </div>
+        </div>
+
+        <div class="shell eco-stage">
+          <div class="eco-grid" role="list" aria-label="The four coming Mez Systems">
+            <article class="eco-card" role="listitem" tabindex="0" data-product="context-engine">
+              <div
+                class="eco-card__field"
+                data-eco-live
+                data-gradient-id="MZ-G12"
+                style="--eco-field:url('../../identity/gradients/mz-g12.webp')"
+              >
+                <img class="eco-card__wings" src="../../identity/wings.svg" alt="" />
+              </div>
+              <div class="eco-card__copy">
+                <h3 class="eco-card__name">Context Engine</h3>
+                <span class="eco-card__status">Coming soon</span>
+              </div>
+            </article>
+
+            <article class="eco-card" role="listitem" tabindex="0" data-product="ai-ads-system">
+              <div
+                class="eco-card__field"
+                data-eco-live
+                data-gradient-id="MZ-G06"
+                style="--eco-field:url('../../identity/gradients/mz-g06.webp')"
+              >
+                <img class="eco-card__wings" src="../../identity/wings.svg" alt="" />
+              </div>
+              <div class="eco-card__copy">
+                <h3 class="eco-card__name">AI Ads System</h3>
+                <span class="eco-card__status">Coming soon</span>
+              </div>
+            </article>
+
+            <article class="eco-card" role="listitem" tabindex="0" data-product="claude-code-os">
+              <div
+                class="eco-card__field"
+                data-eco-live
+                data-gradient-id="MZ-G15"
+                style="--eco-field:url('../../identity/gradients/mz-g15.webp')"
+              >
+                <img class="eco-card__wings" src="../../identity/wings.svg" alt="" />
+              </div>
+              <div class="eco-card__copy">
+                <h3 class="eco-card__name">Claude Code OS</h3>
+                <span class="eco-card__status">Coming soon</span>
+              </div>
+            </article>
+
+            <article class="eco-card" role="listitem" tabindex="0" data-product="organic-content-os">
+              <div
+                class="eco-card__field"
+                data-eco-live
+                data-gradient-id="MZ-G20"
+                style="--eco-field:url('../../identity/gradients/mz-g20.webp')"
+              >
+                <img class="eco-card__wings" src="../../identity/wings.svg" alt="" />
+              </div>
+              <div class="eco-card__copy">
+                <h3 class="eco-card__name">Organic Content OS</h3>
+                <span class="eco-card__status">Coming soon</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- GH-S09 · Frequently asked questions -->
+      <section class="faq review-target" id="faq" data-review-id="GH-S09" data-review-title="Frequently asked questions">
+        <div class="shell faq-layout">
+          <header class="faq-head" data-entry>
+            <p class="eyebrow">Questions, answered</p>
+            <h2>What operators usually ask first.</h2>
+            <p class="section-lead">The short version before you explore the systems in detail.</p>
+          </header>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>
+                <span class="faq-item__index">01</span>
+                <span>What is a Mez System?</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </summary>
+              <p>A focused operating system for one part of an AI-native business. It connects the context, workflows, decisions and history needed to do that work well.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span class="faq-item__index">02</span>
+                <span>What is the AI OS?</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </summary>
+              <p>The Mez System available now: a structured operating layer inside Notion for tasks, projects, clients, goals, decisions, documentation and planning.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span class="faq-item__index">03</span>
+                <span>Do I have to replace ChatGPT, Claude or Notion AI?</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </summary>
+              <p>No. Use the model or tool that fits the job. The operating layer keeps the business context underneath it, so the intelligence can change without resetting the company.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span class="faq-item__index">04</span>
+                <span>Why not use one AI product for everything?</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </summary>
+              <p>Different parts of the business need different workflows, permissions and operating rules. Mez Systems stay focused while connecting to the same owned context layer.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span class="faq-item__index">05</span>
+                <span>Who is the AI OS for?</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </summary>
+              <p>Founders and operators building AI-native businesses who want AI connected to real work, rather than isolated chats and tools.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span class="faq-item__index">06</span>
+                <span>What is coming next?</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </summary>
+              <p>Context Engine, AI Ads System, Claude Code OS and Organic Content OS are in development as focused systems for the work AI-native businesses do.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- GH-S10 · Footer -->
+    <footer class="site-footer review-target" data-review-id="GH-S10" data-review-title="Footer" data-mz-mode="dark">
+      <div class="shell footer-grid">
+        <div class="footer-brand">
+          <img src="../../identity/wings.svg" alt="" />
+          <strong>Mez Systems</strong>
+          <p>Built by Mez Studios.</p>
+        </div>
+        <nav aria-label="Product and company">
+          <a href="#ai-os">AI OS</a>
+          <a href="#ecosystem">What we’re building</a>
+          <button type="button" data-consumer-route="mez-studios">Mez Studios</button>
+          <button type="button" data-consumer-route="contact">Contact</button>
+        </nav>
+        <nav aria-label="Legal">
+          <button type="button" data-consumer-route="privacy">Privacy</button>
+          <button type="button" data-consumer-route="terms">Terms</button>
+          <button type="button" data-consumer-route="refund-policy">Refund policy</button>
+        </nav>
+        <p class="footer-boundary">Routes are supplied by the production consumer. <span data-package-diagnostic aria-label="Design-system package version">@mez-systems/design-system-web 1.0.0-rc.2 · manifest loading</span></p>
+      </div>
+    </footer>
+
+    <script type="module" src="./homepage.js?v=0.28.1"></script>
+  </body>
+</html>

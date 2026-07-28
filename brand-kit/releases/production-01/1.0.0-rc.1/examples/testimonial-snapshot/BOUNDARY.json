@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "snapshotId": "mez.systems.example.ai-os-testimonials.2026-07-28",
+  "snapshotDate": "2026-07-28",
+  "status": "dated-example",
+  "productionAuthority": false,
+  "recordCount": 7,
+  "danielIncluded": false,
+  "followerValuesLive": false,
+  "networkRefresh": false,
+  "consentEvidence": "Olli confirmation dated 2026-07-27; see media/PROVENANCE.md.",
+  "consumerRule": "A named consumer owns wording, freshness, deployment consent operations and replacement media."
+}

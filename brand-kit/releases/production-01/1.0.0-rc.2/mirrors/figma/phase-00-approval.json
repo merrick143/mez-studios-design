@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "gateId": "H-FIG-01-FIGMA-COMPANION-SCOPE",
+  "status": "approved",
+  "approvedAt": "2026-07-28T09:14:24Z",
+  "approvedBy": "Olli",
+  "humanEvidence": "approved",
+  "approvedScope": "brand-kit/figma-companion/phase-00-discovery.json",
+  "authorises": [
+    "Create one new dedicated Figma design file for the Mez Systems companion.",
+    "Build the approved repository-backed foundations, documentation, expressions and components in Phases 1 through 4.",
+    "Use exact static authoring twins where canonical runtime behaviour cannot execute in Figma."
+  ],
+  "doesNotAuthorise": [
+    "Editing the historical Mez Systems branding file.",
+    "Giving Figma independent authority.",
+    "Publishing the library, integrating a consumer repository or deploying a website."
+  ]
+}

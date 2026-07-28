@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "auditId": "CERT-RELEASE-GOVERNANCE-01",
+  "status": "pass",
+  "method": "Verify immutable milestone preservation, explicit candidate identity, manifest-bound content, visible version diagnostics, release exclusions, rollback target and ordered final-consumer gate.",
+  "results": [
+    "The approved 1.0.0-rc.1 manifest hash is fixed and the builder refuses to target its directory.",
+    "The later package uses version 1.0.0-rc.2 and H-CERT-01 rather than overwriting the PORT-03 approval.",
+    "The package, manifest, runtime diagnostic and README expose the same candidate version.",
+    "The previous approved rc.1 remains an available rollback candidate for package-level recovery.",
+    "PORT-04 remains blocked until the exact rc.2 manifest is approved and the consumer repository is registered.",
+    "No automated health check may publish, deploy or edit a consumer."
+  ],
+  "humanDecision": "Olli approved the exact rc.2 manifest and complete current-scope certification record. PORT-04 remains blocked on exact consumer registration.",
+  "productionAuthority": false,
+  "publishAuthority": false,
+  "deploymentAuthority": false
+}

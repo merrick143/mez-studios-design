@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.sphere",
+  "version": "1.0.0",
+  "status": "canonical",
+  "productionAuthority": true,
+  "candidateGateId": "H-EXP-02-SPHERE-PROOF",
+  "candidateRevision": "sphere-contract-01",
+  "decisionIds": ["DEC-MOTION-002", "DEC-GRADIENT-LIBRARY-001", "DEC-LIVING-CORE-FINISH-001", "DEC-PRODUCT-ARCHITECTURE-001", "DEC-FOUNDATION-RELEASE-001", "DEC-DISC-EXPRESSION-001", "DEC-SPHERE-EXPRESSION-001"],
+  "relationshipToDisc": {
+    "baseExpression": "mz.systems.expression.disc",
+    "policy": "The sphere is the rare focal state of the canonical product disc. It retains the same palette, circular chassis and Wings; approved renderer-owned spherical depth is the only identity variable added.",
+    "unchanged": ["approved product gradient", "perfect 1:1 circular mask", "canonical white Wings at 39%", "hard outer edge", "fixed object geometry"],
+    "added": ["approved renderer sphere shading", "focal scale and crop rules"]
+  },
+  "geometry": {
+    "shape": "sphere",
+    "aspectRatio": 1,
+    "edge": "hard circular mask",
+    "overflow": "hidden",
+    "border": "none",
+    "cssShadow": "none",
+    "externalHalo": false,
+    "externalGlow": false,
+    "depthSource": "approved renderer sphere branch only",
+    "distortion": "never"
+  },
+  "finish": {
+    "profileId": "deep",
+    "profileName": "Deep mineral",
+    "values": {"opacity": 1, "exposure": 0.97, "saturation": 1.12, "contrast": 1.13, "lift": -0.01, "shadeStrength": 0.76, "bloomStrength": 0.9, "grainStrength": 1.1},
+    "policy": "Use the approved Deep Mineral runtime profile unchanged. Bloom is internal shader response, never a CSS glow or external cloud."
+  },
+  "wings": {
+    "assetPath": "brand-kit/source-pack/design-system-export/assets/wings.svg",
+    "sha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33",
+    "colour": "#FFFFFF",
+    "widthRatio": 0.39,
+    "alignment": "optically-centred",
+    "cropPolicy": "Wings remain completely visible and fixed even when the circular field is compositionally cropped."
+  },
+  "scaleBands": [
+    {"id": "feature", "minimumPx": 360, "maximumPx": 639, "crop": "none", "role": "single product feature", "policy": "Show the complete sphere. Below 360px, use the canonical static disc instead."},
+    {"id": "hero", "minimumPx": 640, "maximumPx": 959, "crop": "optional-edge-only", "role": "single hero focal object", "policy": "Prefer the complete sphere; a shallow edge crop is allowed when the product name and Wings remain clear."},
+    {"id": "immersive", "minimumPx": 960, "maximumPx": null, "crop": "deliberate", "role": "single immersive product moment", "policy": "The parent composition may crop the sphere, but at least 72% of its diameter and all Wings remain visible."}
+  ],
+  "allocation": {
+    "maximumLivePerViewport": 1,
+    "liveRole": "one earned focal product only",
+    "discFallbackContexts": ["sphere rendered below 360px", "repeated product family", "navigation and dense UI", "cards and collections", "email, social, Open Graph, documentation, slides and print"],
+    "interaction": "The sphere never grows, floats, spins, pulses, breathes, bounces or reveals on scroll. Pointer hover may alter internal field speed only; the circle and Wings remain fixed.",
+    "pageRule": "If another Living Core already animates in the viewport, this sphere is static or replaced by the canonical disc."
+  },
+  "surfaces": {
+    "white": "Place directly with no outline, tile, halo or shadow.",
+    "offWhite": "Place directly on #F8F8F8 with no outline, tile, halo or shadow.",
+    "dark": "Place directly on the canonical dark surface; depth must come from the sphere shader, not an external glow.",
+    "contained": "The surrounding section may own a container, but the sphere never gains its own card or inset icon tile."
+  },
+  "fallback": {
+    "trigger": ["prefers-reduced-motion", "WebGL failure", "runtime disabled", "export channel"],
+    "asset": "exact source-derived static twin",
+    "preserved": ["approved colour", "1:1 circular dimensions", "canonical Wings", "accessible product name", "layout"],
+    "removed": ["spherical depth", "motion"],
+    "truthLabel": "Exact colour fallback; depth removed.",
+    "policy": "The fallback is never described as an exact static sphere because spherical shading exists only in the approved parametric runtime."
+  },
+  "accessibility": {
+    "semanticRole": "decorative when an adjacent product name exists; otherwise expose the literal product name",
+    "reducedMotion": "do not initialise the animated renderer; retain the exact colour fallback",
+    "forcedColours": "preserve a circular boundary and visible product name; colour and depth are not semantic state",
+    "responsive": "Use a 1:1 underlying object at every viewport. Crop only through a parent composition and never stretch into an ellipse."
+  },
+  "dependencies": {
+    "canonicalDisc": {"path": "brand-kit/expressions/disc/disc.source.json", "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a"},
+    "foundationManifest": {"path": "brand-kit/releases/foundations/dist/manifest.json", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"},
+    "renderer": {"path": "brand-kit/source-pack/design-system-export/mz-core.js", "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d"},
+    "finishDecision": {"path": "brand-kit/gradient-library/calibration/depth-light-01/decision.json", "sha256": "d5c28cc593d853331b136db5897ee7dc84b7889072030a9145c46b0ae5159106"},
+    "productRegistry": {"path": "brand-kit/registry/products.json", "sha256": "665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b"},
+    "gradientRegistry": {"path": "brand-kit/registry/gradients.json", "sha256": "ab23ae9b4e88da48dac5d240a840c8bf77e99707bc6ae09ce2a2d6f5168cbfe7"}
+  },
+  "proofProduct": {
+    "productId": "mz.systems.product.aios",
+    "publicName": "AI OS",
+    "gradientId": "MZ-G13",
+    "sourcePath": "brand-kit/gradient-library/source-masters/MZ-G13.png",
+    "sourceSha256": "7932fb83949329ad562a13010221d2c0e6cad9f24312993acf781935547a946e",
+    "staticTwinPath": "brand-kit/gradient-library/assets/static/mz-g13.webp",
+    "staticTwinSha256": "1a6ce9c92252701d71ed27aca82414e84afe89dcfbcdaa8c8073b03cb4fb9538"
+  },
+  "testViewports": [320, 375, 430, 768, 1024, 1280, 1440]
+}

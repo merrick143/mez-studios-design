@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "sequenceId": "SEQ-CONSUMER-LAST-001",
+  "status": "approved-programme-sequence",
+  "approvedAt": "2026-07-28T07:43:14Z",
+  "approvedBy": "Olli",
+  "humanEvidence": [
+    "I think this is more about the final part of the actual porting, transitioning, and ingesting of the Mez design system into the actual repo. I think it's about having everything else ready first.",
+    "Okay let's do it."
+  ],
+  "decision": "Complete the Figma companion, channel systems and whole-system certification before integrating the design system into the real Mez Systems website repository.",
+  "frozenMilestone": {
+    "candidate": "@mez-systems/design-system-web@1.0.0-rc.1",
+    "path": "brand-kit/releases/production-01/1.0.0-rc.1/",
+    "manifestSha256": "c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8",
+    "treatment": "Retain byte-for-byte as the approved first portable milestone. Later system work must produce a new candidate rather than mutating rc.1."
+  },
+  "orderedWork": [
+    {
+      "order": 1,
+      "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+      "result": "A code-backed Figma companion mirrors the canonical foundations, expressions and components without creating independent authority."
+    },
+    {
+      "order": 2,
+      "taskId": "TASK-CHAN-01-FIRST-RELEASE-CHANNEL-SYSTEMS",
+      "result": "The remaining named channel systems are specified and proven from the same canonical engine."
+    },
+    {
+      "order": 3,
+      "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
+      "result": "The complete system passes cross-channel, multi-model, documentation and governance certification and a later immutable candidate is assembled."
+    },
+    {
+      "order": 4,
+      "taskId": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+      "result": "The certified later candidate is finally ingested into one registered real website consumer and proves update and rollback."
+    }
+  ],
+  "authority": {
+    "kind": "programme-sequencing",
+    "changesCanonicalDesign": false,
+    "changesApprovedCandidateBytes": false,
+    "productionAuthority": false,
+    "publishAuthority": false,
+    "deploymentAuthority": false
+  }
+}

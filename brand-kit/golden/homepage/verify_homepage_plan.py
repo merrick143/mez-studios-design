@@ -170,8 +170,8 @@ def main() -> int:
             failures.append(f"human plan missing boundary: {phrase}")
 
     task = read_json(BRAND_KIT / "llm" / "tasks" / "TASK-GOLD-01-GOLDEN-HOMEPAGE.json")
-    if task.get("status") != "in-progress":
-        failures.append("GOLD-01 task must be in-progress after Round 00 planning begins")
+    if task.get("status") not in {"in-progress", "complete"}:
+        failures.append("GOLD-01 task must be in-progress or complete after Round 00 planning begins")
     required_files = set(task.get("inputs", {}).get("requiredFiles", []))
     for path in (
         "brand-kit/golden/homepage/homepage-copy.source.json",

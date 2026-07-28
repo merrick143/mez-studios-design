@@ -8,7 +8,7 @@ This is the tool-neutral operating contract for humans, Claude Code, Codex, and 
 - Canonical path: `brand-kit/`.
 - Current machine authority: `brand-kit/authority/current.json`.
 - Immutable migration activation record: `brand-kit/authority/authority.json`.
-- Approved decisions: `brand-kit/governance/decisions.json`.
+- Approved decisions: the hash-locked cutover ledger at `brand-kit/governance/decisions.json` plus the current supplement at `brand-kit/governance/post-cutover-decisions.json`.
 - Canonical identity data: `brand-kit/registry/`.
 - Generated releases: `brand-kit/releases/`.
 - Research, historical imports, Figma, consumer websites, and `play-orb/` are evidence or consumers. They cannot create brand truth.
@@ -21,7 +21,8 @@ For any new task under `brand-kit/`, read in this order:
 2. `brand-kit/docs/CURRENT-STATE.md`.
 3. `brand-kit/docs/ROADMAP.md`.
 4. `brand-kit/governance/decisions.json`.
-5. The documentation and skill relevant to the requested task.
+5. `brand-kit/governance/post-cutover-decisions.json`.
+6. The documentation and skill relevant to the requested task.
 
 Read `brand-kit/docs/END-TO-END-ROADMAP.md` when planning a phase, changing programme sequencing, or judging whether the system is end to end.
 

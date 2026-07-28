@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/gradient.schema.json",
+  "title": "Mez Systems gradient",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "state", "source", "staticTwin", "runtime", "approximation"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^MZ-G[0-9]{2,3}$"},
+    "state": {"enum": ["active", "compatibility-alias", "retired"]},
+    "aliasOf": {"type": ["string", "null"], "pattern": "^MZ-G[0-9]{2,3}$"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "width", "height", "quality"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+        "quality": {"enum": ["pass", "approved-exception"]}
+      }
+    },
+    "staticTwin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "role": {"const": "exact-source-derived-static-fallback"}
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["anchors", "shade", "bloom"],
+      "properties": {
+        "anchors": {"type": "array", "minItems": 4, "maxItems": 4},
+        "shade": {"type": "string", "pattern": "^#[A-Fa-f0-9]{6}$"},
+        "bloom": {"type": "string", "pattern": "^#[A-Fa-f0-9]{6}$"}
+      }
+    },
+    "approximation": {"const": true}
+  }
+}

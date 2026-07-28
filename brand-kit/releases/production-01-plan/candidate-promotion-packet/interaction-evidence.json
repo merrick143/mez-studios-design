@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "candidateRevision": "testimonial-marquee-01-r04",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Codex in-app Browser",
+  "url": "http://127.0.0.1:8915/brand-kit/workbench/components/testimonial-marquee/",
+  "semantics": {
+    "method": "Rendered DOM and accessibility-oriented snapshot of the locked social-caption host.",
+    "result": "PASS. One labelled role=region viewport with tabindex=0; seven source-ordered items labelled 1 of 7 through 7 of 7; loop copies excluded from accessibility; zero anchors and zero buttons; polite atomic status text present."
+  },
+  "keyboard": {
+    "method": "Focused the labelled region, sent End, then sampled focus, outline, live text and scrollLeft after a 650ms hold.",
+    "result": "PASS. The region showed a solid 3px outline with 3px offset, announced Testimonial 7 of 7: joao moreira, remained paused and moved 0px during the hold."
+  },
+  "hover": {
+    "method": "Moved the in-app Browser pointer to the measured centre of the visible phase and sampled :hover, data-auto-state and scrollLeft before and after 650ms.",
+    "result": "UNMEASURED. The synthetic pointer surface did not establish :hover and the rail continued by 16px. This is a harness limitation, not a pass or a demonstrated component defect. The JavaScript listener and pause guard remain verifier-asserted."
+  },
+  "performance": {
+    "method": "Attempted a two-second requestAnimationFrame and PerformanceLongTaskTiming sample in the in-app Browser read-only page scope.",
+    "result": "UNMEASURED. The page scope does not expose performance instrumentation. Existing perceptible-motion, offscreen-idle and video-playback evidence remains valid; CPU, memory and battery require a named consumer/device profile."
+  },
+  "spokenOutput": {
+    "method": "Inspected roles, names, order, clone exclusion, focus, live-region attributes and status updates; did not alter the user's macOS VoiceOver setting.",
+    "result": "STRUCTURE PASS; EXACT SPEECH UNMEASURED. A real VoiceOver spoken-output session remains an explicit acceptance or named-consumer follow-up, not an asserted pass."
+  },
+  "productionAuthority": false,
+  "outputStatus": "candidate-evidence"
+}

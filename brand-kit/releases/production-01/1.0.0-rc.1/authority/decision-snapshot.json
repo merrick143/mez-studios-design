@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "candidate-authority-snapshot",
+  "productionAuthority": false,
+  "cutoverLedgerSha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587",
+  "decisionIds": [
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "rule": "This immutable candidate snapshot preserves bounded approvals; it does not create production release authority."
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Halftone Portrait · dependency-free fixture</title>
+<link rel="stylesheet" href="../mez-halftone-portrait.css" />
+<style>
+  body {
+    margin: 0;
+    padding: 40px 24px 72px;
+    background: #f8f8f6;
+    color: #171715;
+    font: 400 15px/1.6 system-ui, sans-serif;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 22px; letter-spacing: -0.02em; margin: 0 0 4px; }
+  p.lede { color: #666662; margin: 0 0 32px; max-width: 60ch; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .14em; color: #8a8a84; margin: 40px 0 12px; }
+  .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  figure { margin: 0; }
+  figcaption { margin-top: 8px; font-size: 12px; color: #666662; }
+  mez-halftone-portrait { border: 1px solid #dadad6; }
+  code { background: #eeeeeb; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Halftone Portrait</h1>
+  <p class="lede">
+    Canonical 1.0.0. No build step, no framework, no network. Add <code>?static</code>
+    to the URL to force the reduced-motion path.
+  </p>
+
+  <h2>Locked treatment</h2>
+  <div class="row">
+    <figure>
+      <mez-halftone-portrait
+        src="./media/portrait-a.mp4"
+        label="Halftone portrait, subject A"
+        grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+        contrast="1.3" brightness="-0.03"
+      ></mez-halftone-portrait>
+      <figcaption>The values Olli locked on 2026-07-27.</figcaption>
+    </figure>
+    <figure>
+      <mez-halftone-portrait
+        src="./media/portrait-b.mp4"
+        label="Halftone portrait, subject B"
+        grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+        contrast="1.3" brightness="-0.03"
+      ></mez-halftone-portrait>
+      <figcaption>
+        Second instance. Only one of these animates at a time; watch
+        <code>data-motion</code> as you scroll.
+      </figcaption>
+    </figure>
+  </div>
+
+  <h2>Range of the render contract</h2>
+  <div class="row">
+    <figure>
+      <mez-halftone-portrait src="./media/portrait-a.mp4" label="Coarse grid"
+        grid-step="10" max-radius="4.6" contrast="1.6"></mez-halftone-portrait>
+      <figcaption>Coarse grid.</figcaption>
+    </figure>
+    <figure>
+      <mez-halftone-portrait src="./media/portrait-a.mp4" label="Rotated screen"
+        grid-step="7" max-radius="3.2" screen-angle="30"></mez-halftone-portrait>
+      <figcaption>30 degree screen angle.</figcaption>
+    </figure>
+    <figure>
+      <mez-halftone-portrait src="./media/portrait-a.mp4" label="Square dots, staggered"
+        grid-step="6" max-radius="2.6" dot-shape="square" stagger></mez-halftone-portrait>
+      <figcaption>Square dots, staggered rows.</figcaption>
+    </figure>
+    <figure>
+      <mez-halftone-portrait src="./media/portrait-b.mp4" label="Inverted on charcoal"
+        grid-step="5" max-radius="2.4" invert dot-colour="#f6f6f4" background="#171715"></mez-halftone-portrait>
+      <figcaption>Inverted on charcoal.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Failure is visible, not blank</h2>
+  <div class="row">
+    <figure>
+      <mez-halftone-portrait src="./media/does-not-exist.mp4"
+        label="Deliberately broken source"></mez-halftone-portrait>
+      <figcaption>
+        A missing source keeps its box and states the reason. It does not
+        collapse the layout or render an empty square.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<script type="module" src="../mez-halftone-portrait.js"></script>
+</body>
+</html>

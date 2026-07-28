@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-PORT-03-PRODUCTION-RELEASE-CANDIDATE",
+  "taskId": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "candidateRevision": "@mez-systems/design-system-web@1.0.0-rc.1",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-28",
+  "productionAuthority": false,
+  "score": {
+    "weighted": 68,
+    "maximum": 75,
+    "verdict": "pass",
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 4,
+      "typography": 4,
+      "productTruthAndProof": 5,
+      "distinctiveness": 4,
+      "narrative": 4,
+      "conversionClarity": 5,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "At 375 and 1280 the query-only material strip removed every product background to one charcoal value and greyscaled the page. The five-card fan, compact registry cue, rounded geometry, Wings hierarchy and authored spacing remained recognisably Mez without colour."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The normal isolated page preserves nine varied regions: product-family flare, testimonial proof, stepped problem argument, architecture diagram, workflow sequence, immersive operating proof, single-product route, product-family rail and editorial FAQ. Normal GH-S08 resolves to 543px rather than repeating the hero silhouette; the static-complete 2110px list is intentionally limited to reduced motion."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "The isolated ?proof route recorded 1,335 WebGL draw calls across 2.2 seconds and a central hero-material frame delta of 10.81 percent. Five intrinsically sized hero cores were present under the separately approved hero exception, with no page core outside the hero. The static route rendered zero WebGL canvases, zero playing portrait videos, the exact static twins and all seven testimonials as a complete stacked list."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "The candidate reads all five products from the package registry, all seven dated approved testimonial records from the explicitly non-authoritative example boundary, all sixteen third-party marks from hash-recorded reference assets, and only the four exact Olli-approved redacted operating-proof derivatives. No placeholder person, fake logo or fabricated live follower claim is present."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 430, 768, 920, 1024, 1280, 1440],
+    "result": "pass",
+    "evidence": "Every width retained one H1, five hero products, seven primary testimonials, nine main sections, a ready navigation element, the package diagnostic and zero body overflow relative to the CSS viewport. Normal renders were visually read at 320, 768 and 1440; stripped renders were read at 375 and 1280; proof and fallback sections were inspected in place."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 0,
+    "method": "Read normal, material-stripped, static-complete, no-WebGL, missing-media and redacted-proof renders; swept CL, COL, TYP, LAY, MOT, ICO, CPY and MAT in ID order; checked real registry marks and exact proof hashes. LAY-02 is the existing approved centred-hero exception, MOT-01 is the existing approved five-core hero exception, and the bounded CMP-05/CMP-06 motion exceptions remain unchanged."
+  },
+  "findings": [],
+  "failureCriteriaChecked": [
+    "The gate would fail if material removal reduced the page to generic centred cards; the authored fan and other composition devices remained.",
+    "The gate would fail if two adjacent regions shared one composition family; the isolated skeleton retained the approved varied sequence.",
+    "The gate would fail if motion were inferred from canvas count; draw calls and changed pixels were measured.",
+    "The gate would fail if redaction produced apologetic blanks or damaged the operating-proof hierarchy; the in-page derivatives stayed legible and intentional.",
+    "The gate would fail if missing portrait media removed the quote or person; the source-unavailable plate preserved all testimonial meaning.",
+    "The gate would fail if static mode hid, cloned or truncated testimonials; it rendered exactly seven semantic list items with no clone track."
+  ],
+  "recommendation": {
+    "result": "advance-to-human-gate",
+    "reason": "The isolated package preserves the already approved design while making its package identity, content boundaries, proof safety and fallbacks explicit."
+  },
+  "outputStatus": "generated-candidate-awaiting-human"
+}

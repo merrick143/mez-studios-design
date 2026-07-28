@@ -61,11 +61,16 @@ def main() -> int:
     html = HTML.read_text(encoding="utf-8")
     css = CSS.read_text(encoding="utf-8")
 
-    # --- the ten reviewable regions still exist, in order ---
+    # --- the surviving reviewable regions still exist ---
+    # RETIRED AT R22: the DOM-order premise expired when Olli moved GH-S08
+    # directly under the hero as a review marquee. IDs remain stable logical
+    # review handles, so this historical round now guards presence/uniqueness.
     section_ids = re.findall(r'data-review-id="(GH-S\d{2})"', html)
-    expected = [f"GH-S{n:02d}" for n in range(1, 11)]
-    if section_ids != expected:
-        failures.append(f"section order changed: {section_ids}")
+    # UPDATED AT R25: the duplicate closing route was moved into GH-S06 and
+    # removed from above the footer, so GH-S10 retired and the footer is GH-S09.
+    expected = [f"GH-S{n:02d}" for n in range(1, 10)]
+    if len(section_ids) != 9 or set(section_ids) != set(expected):
+        failures.append(f"section IDs changed or duplicated: {section_ids}")
 
     # --- S02 is the staircase ---
     for token in ("problem-layout", "problem-steps", "step-row--you", "step-row--layer"):

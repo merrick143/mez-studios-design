@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "receiptId": "RCP-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "evaluatedAt": "2026-07-28T13:34:23+10:00",
+  "evaluator": {
+    "kind": "hybrid",
+    "name": "Olli, Codex and deterministic validators"
+  },
+  "contractChecks": [
+    {
+      "id": "SEPARATE-AUTHORITY",
+      "status": "pass",
+      "evidence": "CMP-05 and CMP-06 have separate approval records, decisions, gates and bounded authority scopes."
+    },
+    {
+      "id": "EXACT-CANDIDATES",
+      "status": "pass",
+      "evidence": "Both approvals target the exact Gate-B-reviewed candidate revisions; no component JavaScript or CSS treatment was redesigned during promotion."
+    },
+    {
+      "id": "GAP-HONESTY",
+      "status": "pass",
+      "evidence": "Every live review limitation maps to accepted, selected-policy, follow-up or out-of-component-scope disposition."
+    },
+    {
+      "id": "MOTION-HONESTY",
+      "status": "pass",
+      "evidence": "Both exceptions are attributed, implemented and reconfirmed without rewriting the general motion decision."
+    },
+    {
+      "id": "RELEASE-BOUNDARY",
+      "status": "pass",
+      "evidence": "Assembly may start, but no production release, deployment or consumer authority is claimed."
+    }
+  ],
+  "qualityDimensions": [
+    {
+      "id": "authority-precision",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "Each component promotion is separately attributable and machine-verified against governance."
+    },
+    {
+      "id": "evidence-honesty",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "Measured results and exact unmeasured consumer obligations remain explicit."
+    },
+    {
+      "id": "visual-quality",
+      "score": 4.47,
+      "maximum": 5,
+      "evidence": "Each exact candidate scored 67/75 at Gate B with no blocking reason."
+    },
+    {
+      "id": "release-readiness",
+      "score": 3,
+      "maximum": 5,
+      "evidence": "Component gates are closed, but isolated package assembly, redacted proof and named-consumer proof remain."
+    }
+  ],
+  "blockers": [
+    "Exact redacted operating-proof derivatives do not yet exist or have human approval.",
+    "No deterministic isolated 1.0.0-rc.1 package has been assembled.",
+    "Named-consumer proof and consumer registration remain future work."
+  ],
+  "verdict": "pass-with-warnings",
+  "humanReviewRequired": false,
+  "notes": [
+    "PORT-02 is complete. The warnings constrain PORT-03 and PORT-04; they do not reopen the component promotions.",
+    "Output status is two canonical components plus a closed approval packet. It is not a generated or released production package."
+  ]
+}

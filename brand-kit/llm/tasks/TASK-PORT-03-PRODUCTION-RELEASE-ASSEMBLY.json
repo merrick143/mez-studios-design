@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "title": "Assemble the first isolated production release candidate",
+  "phase": 4,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Assemble a deterministic, self-contained @mez-systems/design-system-web 1.0.0-rc.1 package from approved canonical inputs, prove it in isolation and prepare exact redacted operating-proof derivatives for human review without publishing, deploying or entering a consumer repository.",
+  "scope": {
+    "included": [
+      "copy approved canonical inputs into a versioned release-candidate package",
+      "rebase every runtime import and asset URL to package-local entrypoints",
+      "include CMP-05 and CMP-06 only within their separate approved authority scopes",
+      "generate an integrity manifest, version export, package verifier and deterministic rebuild receipt",
+      "prepare separate redacted derivatives of the four operating-proof screenshots while preserving original hashes and excluding original paths and bytes",
+      "run a package-only clean-copy proof with the canonical checkout inaccessible to the test process",
+      "prove responsive, keyboard, focus, screen-reader structure, reduced-motion, no-WebGL and missing-media states across the declared viewports",
+      "present the exact release-candidate bytes and exact redacted proof derivatives at a human gate"
+    ],
+    "excluded": [
+      "publishing or assigning production version 1.0.0",
+      "deploying any website or modifying a consumer repository",
+      "inventing or changing testimonial content, follower values or consent state",
+      "changing the locked CMP-05 treatment or CMP-06 presentation",
+      "including raw operating-proof screenshots, absolute workstation paths or unreviewed derivatives",
+      "live routes, analytics, SEO, payments, authentication or product availability",
+      "widening either component motion exception or Website Motion 1.0.0"
+    ]
+  },
+  "dependencies": [
+    "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/design-authority/",
+      "brand-kit/governance/decisions.json",
+      "brand-kit/governance/post-cutover-decisions.json",
+      "brand-kit/releases/production-01-plan/release-plan.source.json",
+      "brand-kit/releases/production-01-plan/candidate-promotion-packet/human-decision.json",
+      "brand-kit/components/halftone-portrait/approval.json",
+      "brand-kit/components/testimonial-marquee/approval.json",
+      "brand-kit/golden/homepage/round-29-approval.json",
+      "brand-kit/workbench/golden/homepage/assets/operating-proof/provenance.json"
+    ],
+    "decisionIds": [
+      "DEC-FOUNDATION-RELEASE-001",
+      "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "DEC-GOLDEN-HOMEPAGE-001",
+      "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+    ],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/releases/production-01/1.0.0-rc.1/",
+      "acceptance": [
+        "the package is deterministic and every included byte is integrity-manifested",
+        "all runtime imports, assets, fonts, licences, schemas and validators resolve package-locally",
+        "the package verifier passes from an isolated copy without network or canonical-checkout access",
+        "no raw or unreviewed operating-proof media enters the package",
+        "the release candidate exposes package name, version and manifest hash without claiming production release authority"
+      ]
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/operating-proof-review/",
+      "acceptance": [
+        "each derivative is separate from its evidence original and preserves the original SHA-256 in provenance",
+        "redaction methods, derivative SHA-256, alt text and exact review state are recorded",
+        "publicReleaseEligible remains false until Olli visually approves the exact derivative bytes"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "PORT-03-DETERMINISTIC-PACKAGE",
+      "method": "command",
+      "passCondition": "two clean assemblies produce the same manifest and the included verifier passes from the isolated copy"
+    },
+    {
+      "id": "PORT-03-NO-HIDDEN-DEPENDENCY",
+      "method": "command",
+      "passCondition": "the isolated package makes zero runtime design-network calls and contains no canonical-checkout or absolute workstation path"
+    },
+    {
+      "id": "PORT-03-RESPONSIVE-ACCESSIBILITY",
+      "method": "visual",
+      "passCondition": "the isolated example preserves complete responsive, keyboard, focus, screen-reader structure and reduced-motion meaning at 320 through 1440"
+    },
+    {
+      "id": "PORT-03-PROOF-SAFETY",
+      "method": "human",
+      "passCondition": "Olli approves the exact redacted operating-proof derivative bytes and the exact release candidate for named-consumer proof"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-PORT-03-PRODUCTION-RELEASE-CANDIDATE",
+    "approver": "Olli",
+    "approvalQuestion": "Do the exact isolated 1.0.0-rc.1 package and exact redacted operating-proof derivatives advance to named-consumer proof, remain candidate for revision, or get rejected?"
+  },
+  "stopConditions": [
+    "an input lacks canonical authority or an integrity-manifested bounded approval source",
+    "an import, font, asset or validator resolves outside the package during isolated proof",
+    "a raw screenshot, original workstation path or unreviewed proof derivative would enter the package",
+    "the package changes approved component or Golden Homepage visual behaviour without a new bounded review",
+    "the task requires a consumer repository, deployment, publishing or production version assignment",
+    "a verifier passes while the rendered isolated surface is visually or accessibly incomplete"
+  ],
+  "notes": [
+    "PORT-02 is complete and authorises release-candidate assembly, not production release.",
+    "The package remains an approved candidate, not a production release.",
+    "Named-consumer integration remains TASK-PORT-04 work.",
+    "Olli approved the four exact redacted derivative bytes and the distinct exact package at H-PORT-03-PRODUCTION-RELEASE-CANDIDATE on 2026-07-28.",
+    "The assembled candidate content SHA-256 is 5be57efb5e48cba8ac2bdc98445852fbaf6e2decfea1546e3b7ad0eac8d7f26c and its manifest file SHA-256 is c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8."
+  ]
+}

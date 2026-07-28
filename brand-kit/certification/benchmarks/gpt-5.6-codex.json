@@ -1,0 +1,34 @@
+{
+  "benchmarkVersion": "1.0.0",
+  "model": "GPT-5.6 Codex",
+  "cases": [
+    {
+      "caseId": "AUTH-01",
+      "verdict": "stop",
+      "authorityPath": "brand-kit/registry/products.json",
+      "requiredActions": [
+        "Retain the canonical AI OS assignment MZ-G13 and reject MZ-G99 as non-authoritative Figma drift.",
+        "Correct the Figma mirror from the repository only after recording the divergence.",
+        "Do not claim production readiness; route any identity reassignment through a bounded human decision."
+      ],
+      "defectIds": [],
+      "productionAuthority": false
+    },
+    {
+      "caseId": "REVIEW-01",
+      "verdict": "reject",
+      "authorityPath": "brand-kit/design-authority/ANTI-SLOP-CANON.md",
+      "requiredActions": [
+        "Move gradient material from the section background into one bounded product object.",
+        "Replace the repeated equal-card rows with an authored, varied composition.",
+        "Use a registry-backed real third-party mark or remove the slot.",
+        "Bind body typography to a named foundation role.",
+        "Remove carousel autoplay unless Olli approves and records a bounded exception.",
+        "Treat the green HTML validator as Gate A evidence only; the critical defects still block review."
+      ],
+      "defectIds": ["COL-10", "LAY-01", "ICO-01", "TYP-03", "MOTION-AUTOPLAY"],
+      "productionAuthority": false
+    }
+  ],
+  "deferredChannelsCertified": false
+}

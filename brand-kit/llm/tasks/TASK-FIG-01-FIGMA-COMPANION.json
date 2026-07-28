@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "title": "Build the repository-backed Mez Systems Figma companion",
+  "phase": 5,
+  "status": "complete",
+  "owner": "design-system-agent-plus-Olli",
+  "objective": "Create a dedicated Figma companion that mirrors the approved foundations, identity, expressions and component contracts without giving Figma independent design authority.",
+  "scope": {
+    "included": [
+      "approve the read-only Phase 0 inventory, proposed scope and conflict resolutions",
+      "create a new dedicated Mez Systems Figma companion after the Phase 0 gate",
+      "generate variables and styles from canonical repository values",
+      "mirror canonical expression and component contracts with exact static authoring twins where runtime behaviour cannot execute",
+      "document patterns, journeys, Golden Homepage composition, accessibility and repository traceability",
+      "audit naming, modes, variants, detach behaviour and source parity before a final human gate",
+      "plan Code Connect only after the library structure is approved"
+    ],
+    "excluded": [
+      "editing the historical Mez Systems branding file",
+      "inventing values, anatomy, motion or product identity in Figma",
+      "promoting research, killed directions or candidate-only experiments",
+      "reimplementing live WebGL, video, halftone or marquee runtimes in Figma",
+      "consumer repository work, publishing, deployment or production release",
+      "mutating the approved 1.0.0-rc.1 package"
+    ]
+  },
+  "dependencies": [
+    "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/docs/consumer-transition-sequence.json",
+      "brand-kit/figma-companion/phase-00-discovery.json",
+      "brand-kit/releases/foundations/dist/packages/",
+      "brand-kit/registry/products.json",
+      "brand-kit/expressions/",
+      "brand-kit/components/",
+      "brand-kit/golden/homepage/"
+    ],
+    "decisionIds": [
+      "DEC-FOUNDATION-RELEASE-001",
+      "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+      "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "DEC-GOLDEN-HOMEPAGE-001",
+      "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+    ],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/figma-companion/",
+      "acceptance": [
+        "every mirrored Figma value and component links to a canonical repository contract",
+        "the exact Figma file key, page structure, variable collections, modes, styles and components are inventoried",
+        "fluid typography, five colour modes, responsive rules and runtime-only behaviour retain honest documented boundaries",
+        "the historical file remains unchanged and no external library becomes Mez authority",
+        "validation records source parity, accessibility, naming and known gaps"
+      ]
+    },
+    {
+      "path": "new dedicated Mez Systems Figma companion file",
+      "acceptance": [
+        "variables, styles, components and documentation are organised for practical authoring",
+        "the file identifies its mirrored repository revision and never claims independent authority",
+        "all canonical modes and approved variants are represented without reviving killed or research-only directions"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "FIG-01-SOURCE-PARITY",
+      "method": "command",
+      "passCondition": "the repository inventory and exported Figma inventory agree on values, modes, roles, components and version references"
+    },
+    {
+      "id": "FIG-01-LIBRARY-STRUCTURE",
+      "method": "manual-inspection",
+      "passCondition": "variables, styles, components, variants and documentation are usable, named consistently and free from historical or external authority drift"
+    },
+    {
+      "id": "FIG-01-ACCESSIBILITY",
+      "method": "manual-inspection",
+      "passCondition": "contrast, focus representations, content resizing guidance, static equivalence and annotation semantics preserve canonical accessibility boundaries"
+    },
+    {
+      "id": "FIG-01-HUMAN",
+      "method": "human",
+      "passCondition": "Olli first approves Phase 0 scope, then separately approves the completed Figma companion"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-FIG-02-FIGMA-COMPANION-APPROVAL",
+    "approver": "Olli",
+    "approvalQuestion": "Approve the completed repository-backed Figma companion structure as the authoring mirror for the Mez Systems design system?"
+  },
+  "stopConditions": [
+    "Phase 0 scope has not been explicitly approved",
+    "a Figma value cannot be traced to canonical repository authority",
+    "the work would edit the historical branding file or reuse an unrelated external library",
+    "a runtime-only behaviour is represented as if it executes in Figma",
+    "research, candidate or killed work would be promoted without its own gate",
+    "the task expands into channels, consumer integration, publishing or deployment"
+  ],
+  "notes": [
+    "Phase 0 discovery is complete and made zero Figma mutations; Olli approved H-FIG-01-FIGMA-COMPANION-SCOPE on 28 July 2026.",
+    "The recommended target is a new dedicated file; the historical HU0GVaDhatjWrKCiSg3wlU file remains research-only.",
+    "The approved rc.1 package remains a frozen milestone and is not rebuilt by this task.",
+    "The new dedicated companion file is QxZT3FJ8BDXOZfBQDt0qPW. Phase 1 foundations passed live audit with 255 variables, 215 valid aliases, fifteen text styles and five depth styles. Phase 2 added four visually inspected documentation pages with zero missing fonts. Phase 3 added six rendered identity/expression component sets with 29 variants and zero missing fonts. Phase 4 added eighteen rendered functional component sets with 105 variants, zero missing fonts and an 18-of-18 detach pass. Gate B passed at 67/75.",
+    "Olli approved the completed companion at H-FIG-02-FIGMA-COMPANION-APPROVAL on 28 July 2026. The approved result is a Figma authoring mirror, not independent canonical authority, a published library, production Code Connect, a consumer integration or a release."
+  ]
+}

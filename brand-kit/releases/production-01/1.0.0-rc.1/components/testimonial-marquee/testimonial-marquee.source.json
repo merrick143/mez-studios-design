@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "pantryId": null,
+  "version": "1.0.0",
+  "status": "canonical",
+  "productionAuthority": true,
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r04",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "decisionIds": [
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "title": "Testimonial Marquee",
+  "selectedFamily": "testimonial-proof",
+  "thesis": "A testimonial marquee is an open proof rail rather than a boxed testimonial-card design. Round 03 retains seven video-backed testimonials, adds local curated profile images, and restructures Instagram identity as the familiar Name, Username, Followers stack without outbound social links. At Olli's explicit direction the track drifts continuously, which remains autoplay under Website Motion 1.0.0 and therefore remains a bounded CMP-06 exception rather than baseline compliance. Olli also removed visible carousel controls: the whole testimonial phase now pauses on hover or focus, native manual input pauses drift, and the loop resumes 900 milliseconds after the last manual gesture. Page-visibility, offscreen and complete static reduced-motion safeguards remain. The seven portraits compose CMP-05 at its locked treatment and use its separately recorded multi-portrait exception.",
+  "anatomy": [
+    "Host: one custom element with a same-origin testimonial source, consumer label and presentation choice.",
+    "Viewport: a labelled focusable native horizontal overflow region; page scroll is never captured or replaced.",
+    "Rail: two adjacent tracks in moving mode so the source-ordered sequence can loop without a visible jump.",
+    "Primary track: the only semantic ordered list exposed to assistive technology.",
+    "Clone track: an aria-hidden, unfocusable visual copy used only to close the loop.",
+    "Item: a wide shallow figure without a card background, outline, shadow, glow or enclosing box.",
+    "Portrait: required composed mez-halftone-portrait at the locked treatment and motion-policy always.",
+    "Quote: fixture-owned blockquote; CMP-06 does not author or rewrite it.",
+    "Instagram proof: local curated profile image plus supplied name, handle, verified state and follower snapshot in figcaption; never an outbound link.",
+    "Phase interaction: the single focusable testimonial viewport pauses drift on hover or focus and remains natively scrollable.",
+    "Status: visually hidden polite atomic announcement of explicit keyboard navigation state.",
+    "Static-complete recomposition: one source-ordered vertical list under reduced motion or forced static review."
+  ],
+  "contentModel": {
+    "required": ["id", "quote", "name", "handle", "portrait", "social"],
+    "optional": [],
+    "portraitRequired": ["src", "label"],
+    "socialRequired": ["platform", "followers", "verified", "profileImage", "evidence"],
+    "sourceOwnership": "The fixture or consumer owns every testimonial word, name, handle, social fact and media path. The component authors none of them.",
+    "socialBoundary": "Follower counts are dated fixture snapshots, not live promises. The component makes no Instagram API request and performs no production refresh.",
+    "mediaResolution": "Portrait and profile-image paths resolve relative to the same-origin fixture URL.",
+    "sourceBoundary": "Fixture URLs must be same-origin. Remote content services, consent systems and social-network authentication are outside CMP-06."
+  },
+  "mediaEligibility": {
+    "portraitRequired": true,
+    "missingPortraitPolicy": "Exclude the testimonial from this video-led fixture. Do not fabricate a monogram, avatar, placeholder or apology state.",
+    "excludedFixtureId": "daniel-leung",
+    "rationale": "Olli directed that Daniel be removed because there is no approved video image. This fixture is explicitly a seven-person, video-backed proof set."
+  },
+  "motionDecisionException": {
+    "decision": "approved-bounded",
+    "approvedBy": "Olli",
+    "approvedAt": "2026-07-28",
+    "scope": "CMP-06 continuous testimonial-track drift only",
+    "record": "brand-kit/components/testimonial-marquee/round-03-feedback.json",
+    "canonRelationship": "This exception does not alter DEC-WEBSITE-MOTION-SYSTEM-001. It acknowledges that continuous drift is carousel autoplay and limits that deviation to CMP-06.",
+    "requiredSafeguards": [
+      "Pause while the testimonial phase is hovered",
+      "Pause while the testimonial phase holds focus",
+      "Resume 900 milliseconds after the last wheel, pointer or keyboard navigation gesture",
+      "Never cancel or replace native wheel, touch or pointer scrolling",
+      "No movement while the document is hidden or the component is offscreen",
+      "Complete source-ordered static set under prefers-reduced-motion"
+    ]
+  },
+  "motion": {
+    "trackPolicy": "continuous-auto-scroll-bounded-exception",
+    "autoplay": true,
+    "continuousDrift": true,
+    "scrollHijacking": false,
+    "speedPxPerSecond": 24,
+    "interactionPauseMilliseconds": 900,
+    "trackImplementation": "A requestAnimationFrame loop advances native scrollLeft at 24 CSS pixels per second while eligible. An aria-hidden duplicate closes the cycle. The component never listens to page scroll or cancels wheel, touch or pointer input.",
+    "pausePolicy": "The loop pauses while the testimonial viewport is hovered, focused or under active pointer input, then resumes 900 milliseconds after the last direct gesture; it also pauses for hidden documents and offscreen components.",
+    "portraitPolicy": "Every portrait sets motion-policy=always. This composes the approved bounded exception recorded in CMP-05; it is separate from the CMP-06 track exception.",
+    "portraitDecisionException": "brand-kit/components/halftone-portrait/halftone-portrait.source.json#motionDecisionException",
+    "offscreen": "The host IntersectionObserver stops track movement outside the viewport. CMP-05 separately idles each clipped or page-offscreen portrait.",
+    "reduced": "The moving rail and its clone collapse into one complete source-ordered static list. No carousel controls are rendered in either mode and each portrait paints one static frame."
+  },
+  "presentations": {
+    "available": ["profile-strip", "portrait-window", "social-caption", "quote-first", "proof-ledger"],
+    "recommended": "social-caption",
+    "selected": "social-caption",
+    "boundary": "These are five minimal carriage treatments for comparison. They do not establish a canonical testimonial-card anatomy."
+  },
+  "keyboard": {
+    "focusOwner": "The labelled testimonial viewport is the only tab stop owned by CMP-06. Its focus state pauses drift; there are no carousel buttons or outbound Instagram links.",
+    "ArrowLeft": "Move to the previous testimonial and pause drift temporarily.",
+    "ArrowRight": "Move to the next testimonial and pause drift temporarily.",
+    "Home": "Move to the first testimonial and pause drift temporarily.",
+    "End": "Move to the last testimonial and pause drift temporarily.",
+    "Tab": "Enter and leave the single viewport focus stop without a focus trap; the visual clone is aria-hidden and contains no interactive descendants.",
+    "screenReader": "The viewport is labelled, only one source-ordered list is exposed, quotes use blockquote, attribution and Instagram proof use figcaption, portrait canvases carry supplied labels, verified badges have accessible names and status changes are polite and atomic."
+  },
+  "responsive": {
+    "moving": "From 320 through 1440 the rail remains native and horizontally operable. Items are deliberately wide and shallow with the next item perceptible.",
+    "compact": "At 640px and below, a 96px animated portrait and stacked profile identity share the top row; the full quote spans beneath them so no blank column remains under the portrait.",
+    "reducedMotion": "Every viewport receives one complete vertical list with no horizontal overflow, duplicate track or concealed testimonial.",
+    "sourceOrder": "Never changes. Autoscroll, explicit navigation and static recomposition all preserve fixture order."
+  },
+  "states": [
+    "source-loading",
+    "ready-auto-scroll",
+    "auto-running",
+    "auto-paused-by-pointer",
+    "auto-paused-by-hover",
+    "auto-paused-by-focus",
+    "auto-paused-after-interaction",
+    "auto-paused-offscreen",
+    "keyboard-focus",
+    "reduced-motion-static-complete",
+    "forced-static-complete",
+    "source-failure",
+    "portrait-failure"
+  ],
+  "events": [
+    "mez-testimonial-ready",
+    "mez-testimonial-change",
+    "mez-testimonial-interaction",
+    "mez-testimonial-motion-change",
+    "mez-testimonial-failure"
+  ],
+  "prohibited": [
+    "Continuous drift without the recorded CMP-06 bounded exception",
+    "Autoscroll without phase-level hover, focus and direct-input pause",
+    "Movement while hovered, focused, hidden, offscreen or under reduced motion",
+    "Preventing or replacing native wheel, touch, trackpad or pointer scrolling",
+    "Moving the track in response to page scroll",
+    "Making the duplicated loop track available to assistive technology or keyboard focus",
+    "Retuning CMP-05 grid-step, max-radius, dot-colour, background, contrast or brightness",
+    "A portrait rendered without motion-policy always on this bounded testimonial surface",
+    "A testimonial without an approved portrait in this video-led fixture",
+    "A monogram, generated avatar, placeholder or fake likeness",
+    "Owning or inventing testimonial words, names, handles, follower counts, verified state or consent",
+    "Fetching Instagram or another external network from the custom element",
+    "Owning product identity or hardcoding AI OS inside the custom element",
+    "Ambient card shadow, glow, glass, texture, container fill or enclosing testimonial-card chrome",
+    "Hiding testimonials under reduced motion",
+    "Swipe-only access without keyboard behaviour"
+  ],
+  "dependencies": {
+    "foundations": "brand-kit/releases/foundations/dist",
+    "halftonePortrait": "brand-kit/components/halftone-portrait",
+    "fixture": "brand-kit/components/testimonial-marquee/fixtures/ai-os-testimonials.json",
+    "motionAuthority": "DEC-WEBSITE-MOTION-SYSTEM-001",
+    "pantry": "brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md",
+    "designAuthority": "brand-kit/design-authority/"
+  },
+  "testViewports": [320, 375, 390, 768, 920, 1280, 1440],
+  "approval": {
+    "review": "brand-kit/components/testimonial-marquee/review.json",
+    "promotionRecord": "brand-kit/components/testimonial-marquee/approval.json",
+    "decisionId": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+    "approvedAt": "2026-07-28",
+    "approvedBy": "Olli",
+    "approvedPresentation": "social-caption",
+    "lockRecord": "brand-kit/components/testimonial-marquee/round-04-lock.json",
+    "followerPolicy": "frozen-evidence",
+    "state": "canonical"
+  },
+  "openQuestions": [],
+  "outOfScope": [
+    "canonical testimonial-card visual anatomy",
+    "new portrait capture or media preparation",
+    "live Instagram API access and follower refresh",
+    "consent capture and evidence governance",
+    "product identity and page composition",
+    "production analytics or routes",
+    "registry, release and governance changes"
+  ]
+}

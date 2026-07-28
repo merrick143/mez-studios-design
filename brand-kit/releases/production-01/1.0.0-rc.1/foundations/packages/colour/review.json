@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-FND-02-SURFACE-PROOF",
+  "taskId": "TASK-FND-02-COLOUR-SURFACES",
+  "foundationId": "mz.systems.foundation.colour",
+  "candidateRevision": "final-lock-02",
+  "candidateStatus": "review-candidate",
+  "verdict": "approve",
+  "note": "Okay I approve. Let's proceed. Make sure to lock that in.",
+  "reviewedAt": "2026-07-21T08:19:31.000Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "recommendedCanvas": "#F8F8F8",
+  "decisionId": "DEC-COLOUR-FOUNDATION-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true
+}

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r02",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Codex design-critique",
+  "verdict": "pass-review-surface",
+  "score": 64,
+  "maximum": 75,
+  "productionAuthority": false,
+  "blockingReasons": [],
+  "scope": "The five-option workbench passes as a bounded decision surface. No individual presentation is human-approved or production authority.",
+  "recommendedPresentation": "social-caption",
+  "presentationScores": {
+    "profile-strip": 61,
+    "portrait-window": 62,
+    "social-caption": 64,
+    "quote-first": 60,
+    "proof-ledger": 63
+  },
+  "scores": {
+    "hierarchy": {
+      "score": 5,
+      "weight": 2,
+      "reason": "Each option declares a different first read, and the recommended social-caption variant gives account evidence, quote and portrait an unambiguous sequence."
+    },
+    "composition": {
+      "score": 4,
+      "weight": 2,
+      "reason": "Items are 1000 to 1160px wide and 309 to 336px high at 1440. The track has no chassis, fill or card outline; the compact receiver-width correction prevents clipped copy."
+    },
+    "pacing": {
+      "score": 4,
+      "weight": 1,
+      "reason": "The slow 24px/s drift, broad line lengths and 48px controls create measured proof pacing. Five stacked demo rails are appropriate only in the workbench comparison, not a production page."
+    },
+    "typography": {
+      "score": 4,
+      "weight": 1,
+      "reason": "Display, quote, account and technical roles remain disciplined. Real long quotes are readable without introducing card-title ornament."
+    },
+    "productTruth": {
+      "score": 4,
+      "weight": 2,
+      "reason": "Seven real clips, quotes, profiles and follower snapshots replace placeholders, and Daniel is honestly absent. Five follower counts were publicly checked; two retain source-project attribution and therefore stay a known gap."
+    },
+    "distinctiveness": {
+      "score": 5,
+      "weight": 2,
+      "reason": "Live halftone people, a restrained Instagram evidence line and an open editorial rail remain recognisably Mez after colour and motion are stripped away."
+    },
+    "narrative": {
+      "score": 4,
+      "weight": 1,
+      "reason": "The workbench moves from five hierarchy choices to measured motion truth and ends at the open human decision."
+    },
+    "conversionClarity": {
+      "score": 4,
+      "weight": 1,
+      "reason": "CMP-06 has no conversion CTA by design; Pause, Previous, Next and Instagram are clearly named and visually distinct."
+    },
+    "emotionalResonance": {
+      "score": 4,
+      "weight": 1,
+      "reason": "Moving real faces and first-person operator language create warmth without testimonial theatre or fabricated identity marks."
+    },
+    "craft": {
+      "score": 4,
+      "weight": 1,
+      "reason": "A fractional motion accumulator, clean seam, passive direct input, explicit pause states, hidden clone semantics and complete reduced-motion list are resolved together."
+    },
+    "originality": {
+      "score": 4,
+      "weight": 1,
+      "reason": "The five options vary composition rather than decorative skins and avoid the familiar glossy testimonial-card carousel."
+    }
+  },
+  "namedTests": {
+    "T1StripTest": {
+      "result": "pass",
+      "method": "All five 1440px renders were inspected in their neutral palette and without relying on portrait animation.",
+      "evidence": "Hierarchy survives through proportion, source line, type and one structural rule. No gradient, glow, texture or ornamental colour is needed."
+    },
+    "T2ComponentRepetitionTest": {
+      "result": "pass",
+      "method": "The five adjacent desktop variants and compact convergence were inspected as one comparison surface.",
+      "evidence": "Profile strip, portrait window, social caption, quote first and proof ledger change reading order and spatial logic. They are not five skins on one card."
+    },
+    "T3MotionComparisonTest": {
+      "result": "pass",
+      "method": "Track scrollLeft was sampled for 1,500ms while running and 1,200ms after Pause. A visible 160 by 160 halftone crop was compared 1,250ms apart at an 8-level RGB threshold in the in-app Browser.",
+      "evidence": "The rail advanced 36px at the contracted 24px/s and moved 0px while paused. The portrait changed in 7,002 of 25,600 pixels, or 27.35%. Offscreen workbench components had 0 live portraits and 0 playing videos."
+    },
+    "T4RealContentTest": {
+      "result": "pass",
+      "method": "All renders used the seven-record AI OS fixture, local prepared portrait clips and supplied Instagram evidence.",
+      "evidence": "Seven primary items and seven aria-hidden loop items rendered in moving mode; Daniel was absent; real long and short quotes remained coherent."
+    }
+  },
+  "canonScan": {
+    "result": "pass-with-recorded-exception",
+    "notes": "No mesh gradient, indigo-violet palette, glass, ambient shadow, backdrop blur, generic card grid or decorative filler appears. Continuous carousel drift conflicts with DEC-WEBSITE-MOTION-SYSTEM-001 and is carried only by Olli's recorded CMP-06 bounded exception."
+  },
+  "findings": [
+    {
+      "rank": 1,
+      "type": "fixed-defect",
+      "location": "mez-testimonial-marquee.js tick",
+      "finding": "Sub-pixel scrollLeft assignments rounded away and could report running without visible motion.",
+      "resolution": "Added a fractional autoOffset accumulator; measured movement is now exactly 36px in 1.5 seconds."
+    },
+    {
+      "rank": 2,
+      "type": "fixed-defect",
+      "location": "mez-testimonial-marquee.css compact item",
+      "finding": "At 320px the item exceeded the receiver by 14px and clipped the final words while paused.",
+      "resolution": "Item width now uses receiver container units and matches the 280px host."
+    },
+    {
+      "rank": 3,
+      "type": "taste-call",
+      "location": "Round 02 workbench five variants",
+      "finding": "Social caption best balances platform familiarity and Mez ownership; proof ledger is the strongest more-editorial alternative.",
+      "resolution": "Leave both and the three requested contrasts visible for Olli's decision; do not promote one silently."
+    }
+  ],
+  "humanGate": {
+    "state": "open",
+    "question": "Which Round 02 presentation, if any, should move forward: profile strip, portrait window, social caption, quote first or proof ledger?"
+  },
+  "outputStatus": "candidate"
+}

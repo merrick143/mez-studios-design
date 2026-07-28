@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r04",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Codex design-critique",
+  "verdict": "pass-locked-candidate",
+  "score": 67,
+  "maximum": 75,
+  "productionAuthority": false,
+  "blockingReasons": [],
+  "scope": "Post-selection regression Gate B for Olli's locked social-caption candidate and the transparent Golden Homepage composition.",
+  "scores": {
+    "hierarchy": {"score": 5, "weight": 2},
+    "composition": {"score": 5, "weight": 2},
+    "pacing": {"score": 4, "weight": 1},
+    "typography": {"score": 4, "weight": 1},
+    "productTruth": {"score": 4, "weight": 2},
+    "distinctiveness": {"score": 5, "weight": 2},
+    "narrative": {"score": 4, "weight": 1},
+    "conversionClarity": {"score": 4, "weight": 1},
+    "emotionalResonance": {"score": 4, "weight": 1},
+    "craft": {"score": 5, "weight": 1},
+    "originality": {"score": 4, "weight": 1}
+  },
+  "namedTests": {
+    "T1StripTest": {"result": "pass", "evidence": "The open halftone proof rail, centered proof statement and profile hierarchy remain legible without a section fill, gradient, glow or card shell."},
+    "T2ComponentRepetitionTest": {"result": "pass", "evidence": "Removing the recessed plate reduces section-container repetition; whitespace now carries the transition from hero to proof to problem."},
+    "T3MotionComparisonTest": {"result": "pass", "evidence": "At 1440 the locked homepage rail advanced 30.5px in 1.25s and the single visible portrait video advanced approximately 1.257s across its loop boundary."},
+    "T4RealContentTest": {"result": "pass", "evidence": "The locked page still renders seven supplied testimonials, seven local portraits and curated local profile images with no Daniel placeholder or social link."}
+  },
+  "canonScan": {
+    "result": "pass-with-recorded-exception",
+    "notes": "Transparent canvas inheritance fixes the isolated off-white plate without adding a default cluster. The only exception remains Olli's recorded CMP-06 continuous-drift decision."
+  },
+  "findings": [
+    {"rank": 1, "type": "fixed-defect", "location": "workbench/golden/homepage/styles.css .testimonials", "finding": "The recessed surface made GH-S08 read as an independent container instead of part of the homepage flow.", "resolution": "The section background is transparent and inherits the same #F8F8F8 canvas as both neighbours; borders remain zero."}
+  ],
+  "humanGate": {
+    "state": "selected-candidate",
+    "record": "brand-kit/components/testimonial-marquee/round-04-lock.json",
+    "canonicalPromotionRequired": true
+  },
+  "outputStatus": "candidate"
+}

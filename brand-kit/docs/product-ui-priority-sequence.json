@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "sequenceId": "SEQ-PRODUCT-UI-FIRST-001",
+  "recordedAt": "2026-07-28",
+  "requestedBy": "Olli",
+  "status": "active",
+  "decisionType": "programme-priority",
+  "summary": "Product UI and data visualisation is the next active system-building priority. The remaining channel families are deferred as low priority rather than cancelled, and the final consumer transition remains last.",
+  "humanEvidence": [
+    "skip these they are low priority",
+    "Define the shared channel-system rules; Organic social; Paid advertising; Email; Presentations; Reports and documents; Motion and video; OG images, favicons and icons; Print and environmental.",
+    "lets do next part now"
+  ],
+  "activeSequence": [
+    "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION",
+    "TASK-CERT-01-SYSTEM-CERTIFICATION",
+    "TASK-PORT-04-NAMED-CONSUMER-PROOF"
+  ],
+  "deferred": [
+    "shared channel-system rules",
+    "organic social",
+    "paid advertising",
+    "email",
+    "presentations",
+    "reports and documents",
+    "motion and video",
+    "OG images, favicons and icons",
+    "print and environmental"
+  ],
+  "constraints": [
+    "Deferral does not grant approval or remove any future human gate.",
+    "Product UI evidence must be real or explicitly labelled fixture data; fabricated product dashboards and statistics are prohibited.",
+    "The consumer repository remains outside scope until TASK-PORT-04."
+  ]
+}

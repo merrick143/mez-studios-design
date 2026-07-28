@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseId": "mz.systems.release.foundations",
+  "licences": [
+    {
+      "path": "packages/typography/fonts/geist/OFL.txt",
+      "sha256": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "path": "packages/typography/fonts/ibm-plex-mono/OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "path": "packages/typography/fonts/instrument-serif/OFL.txt",
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521",
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "path": "packages/typography/fonts/inter/OFL.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "license": "SIL Open Font License 1.1"
+    }
+  ],
+  "note": "Licence texts remain beside their font files; this inventory does not replace them."
+}

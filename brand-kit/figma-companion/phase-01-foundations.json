@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "phase": 1,
+  "status": "complete",
+  "completedAt": "2026-07-28T09:34:00Z",
+  "file": {
+    "name": "Mez Systems — Design System Companion",
+    "fileKey": "QxZT3FJ8BDXOZfBQDt0qPW",
+    "url": "https://www.figma.com/design/QxZT3FJ8BDXOZfBQDt0qPW"
+  },
+  "authority": {
+    "repository": "brand-kit/",
+    "figmaRole": "companion-mirror",
+    "figmaCreatesIndependentAuthority": false,
+    "historicalFileMutated": false,
+    "frozenReleaseMutated": false
+  },
+  "collections": [
+    {"id":"VariableCollectionId:3:2","name":"Colour · Primitive","modes":["Value"],"variables":39},
+    {"id":"VariableCollectionId:3:3","name":"Colour · Web","modes":["Light","Dark"],"variables":43},
+    {"id":"VariableCollectionId:3:4","name":"Colour · Output","modes":["Email","Document","Print"],"variables":43},
+    {"id":"VariableCollectionId:3:5","name":"Space · Primitive","modes":["Value"],"variables":19},
+    {"id":"VariableCollectionId:3:6","name":"Layout · Responsive","modes":["Compact","Medium","Expanded","Wide"],"variables":7},
+    {"id":"VariableCollectionId:3:7","name":"Layout · Density","modes":["Calm","Standard","Operational"],"variables":4},
+    {"id":"VariableCollectionId:3:8","name":"Geometry · Controls","modes":["Value"],"variables":36},
+    {"id":"VariableCollectionId:3:9","name":"Typography","modes":["Authoring"],"variables":64}
+  ],
+  "liveAudit": {
+    "method": "Figma Plugin API inspection after construction",
+    "collections": 8,
+    "variables": 255,
+    "semanticAliasValues": 215,
+    "brokenAliases": 0,
+    "missingWebCodeSyntax": 0,
+    "implicitAllScopes": 0,
+    "textStyles": 15,
+    "effectStyles": 5
+  },
+  "styles": {
+    "text": [
+      "Mez/Display/Hero","Mez/Display/Section","Mez/Display/Title","Mez/Heading/Section","Mez/Heading/Subsection","Mez/Body/Lead","Mez/Body/Default","Mez/Body/Compact","Mez/UI/Control","Mez/UI/Label","Mez/Caption","Mez/Technical","Mez/Numeric/Display","Mez/Numeric/Tabular","Mez/Editorial/Accent"
+    ],
+    "effect": [
+      "Mez/Depth/Flat","Mez/Depth/Contact","Mez/Depth/Raised","Mez/Depth/Overlay","Mez/Depth/Inset Highlight"
+    ]
+  },
+  "fontAuthoringMap": {
+    "Mez Geist": "Geist",
+    "Mez Inter": "Inter",
+    "Mez Instrument Serif": "Instrument Serif",
+    "Mez IBM Plex Mono": "IBM Plex Mono"
+  },
+  "knownBoundaries": [
+    "Figma cannot execute CSS media queries; 0, 600, 920 and 1280 remain documented runtime breakpoints while responsive modes mirror representative profiles.",
+    "Figma uses the exact upstream font family names supplied by typography.source.json; Mez-prefixed family names remain runtime CSS aliases.",
+    "Mez/Editorial/Accent preserves Instrument Serif Italic with exact static weight 400. Binding Figma fontWeight resets that face to Regular, so family, size, leading and tracking remain bound while code remains runtime authority."
+  ],
+  "next": "Phase 2 documentation pages"
+}

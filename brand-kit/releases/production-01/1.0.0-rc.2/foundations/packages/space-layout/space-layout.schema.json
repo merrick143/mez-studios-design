@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/space-layout-foundation.schema.json",
+  "title": "Mez Systems space and layout foundation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "foundationId", "status", "decisionIds", "candidateGateId", "candidateRevision", "baseUnit", "space", "contentWidths", "breakpoints", "responsiveProfiles", "densityModes", "contentRoles", "relationships", "policies", "testViewports"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "foundationId": {"const": "mz.systems.foundation.space-layout"},
+    "status": {"enum": ["review-candidate", "canonical"]},
+    "decisionIds": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "pattern": "^DEC-[A-Z0-9-]+$"}},
+    "candidateGateId": {"const": "H-FND-03-SPATIAL-PROOF"},
+    "candidateRevision": {"const": "spatial-lock-01"},
+    "baseUnit": {"const": 4},
+    "space": {"type": "object", "minProperties": 12, "additionalProperties": {"type": "integer", "minimum": 0, "multipleOf": 4}},
+    "contentWidths": {"type": "object", "additionalProperties": false, "required": ["reading", "standard", "wide"], "properties": {"reading": {"type": "integer", "minimum": 600}, "standard": {"type": "integer", "minimum": 1000}, "wide": {"type": "integer", "minimum": 1200}}},
+    "breakpoints": {"type": "object", "additionalProperties": false, "required": ["compact", "medium", "expanded", "wide"], "properties": {"compact": {"const": 0}, "medium": {"const": 600}, "expanded": {"const": 920}, "wide": {"const": 1280}}},
+    "responsiveProfiles": {"type": "object", "additionalProperties": false, "required": ["compact", "medium", "expanded", "wide"], "properties": {"compact": {"$ref": "#/$defs/profile"}, "medium": {"$ref": "#/$defs/profile"}, "expanded": {"$ref": "#/$defs/profile"}, "wide": {"$ref": "#/$defs/profile"}}},
+    "densityModes": {"type": "object", "additionalProperties": false, "required": ["calm", "standard", "operational"], "properties": {"calm": {"$ref": "#/$defs/density"}, "standard": {"$ref": "#/$defs/density"}, "operational": {"$ref": "#/$defs/density"}}},
+    "contentRoles": {"type": "object", "minProperties": 3, "additionalProperties": {"type": "object", "additionalProperties": false, "required": ["width", "purpose"], "properties": {"width": {"enum": ["reading", "standard", "wide"]}, "purpose": {"type": "string", "minLength": 20}}}},
+    "relationships": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "object", "additionalProperties": false, "required": ["compact", "medium", "expanded", "wide"], "properties": {"compact": {"$ref": "#/$defs/columns"}, "medium": {"$ref": "#/$defs/columns"}, "expanded": {"$ref": "#/$defs/columns"}, "wide": {"$ref": "#/$defs/columns"}}}},
+    "policies": {"type": "object", "minProperties": 8, "additionalProperties": {"type": "string", "minLength": 30}},
+    "testViewports": {"type": "array", "const": [320, 375, 430, 768, 1024, 1280, 1440]}
+  },
+  "$defs": {
+    "profile": {"type": "object", "additionalProperties": false, "required": ["minWidth", "gridColumns", "pageGutter", "gridGap", "sectionCompact", "sectionDefault", "sectionSpacious", "heroTop"], "properties": {"minWidth": {"type": "integer", "minimum": 0}, "gridColumns": {"type": "integer", "enum": [4, 8, 12]}, "pageGutter": {"type": "integer", "multipleOf": 4}, "gridGap": {"type": "integer", "multipleOf": 4}, "sectionCompact": {"type": "integer", "multipleOf": 4}, "sectionDefault": {"type": "integer", "multipleOf": 4}, "sectionSpacious": {"type": "integer", "multipleOf": 4}, "heroTop": {"type": "integer", "multipleOf": 4}}},
+    "density": {"type": "object", "additionalProperties": false, "required": ["purpose", "componentGap", "componentPadding", "rowMinHeight", "evidenceColumns"], "properties": {"purpose": {"type": "string", "minLength": 20}, "componentGap": {"type": "integer", "multipleOf": 4}, "componentPadding": {"type": "integer", "multipleOf": 4}, "rowMinHeight": {"type": "integer", "multipleOf": 4}, "evidenceColumns": {"type": "integer", "minimum": 1, "maximum": 3}}},
+    "columns": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"type": "integer", "minimum": 1, "maximum": 12}}
+  }
+}

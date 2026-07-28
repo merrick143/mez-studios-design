@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r23",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S04 to GH-S05 to GH-S06 adjacency",
+    "GH-S05 operating proof",
+    "four supplied operating-proof assets"
+  ],
+  "score": {
+    "weighted": 67,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacing": 4,
+      "typography": 4,
+      "productTruth": 5,
+      "distinctiveness": 4,
+      "narrative": 5,
+      "conversion": 4,
+      "emotionalImpact": 4,
+      "craft": 4,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "Material-stripped captures at 1280px and 390px retain the pinned thesis, three-stage index, evidence hierarchy and the transition from the GH-S04 workflow into GH-S05. The composition does not depend on colour."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The changed-scope sequence is workflow sequence, sticky proof, authored split. No adjacent composition family repeats."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "GH-S05 claims and authors no motion. Its scoped CSS contains no animation, transition, parallax, scroll listener or canvas. CSS sticky positioning changes document relationship only and preserves the complete section with JavaScript disabled."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "Four local assets are byte-verified against Olli's supplied screenshots. The section contains no placeholder UI, fabricated metric or unsupported performance claim, and visibly states that production redaction is pending."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "All seven rendered states were visually inspected. The thesis releases from sticky to normal flow below 900px, every image remains inside the viewport, the three-stage index reflows without body overflow, and all four proof surfaces remain visible."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 0
+  },
+  "findings": [],
+  "noFindingBasis": "The section was checked for generic equal-card repetition, unsupported claims, placeholder UI, fake browser chrome, perspective treatment, shadows, glow, glass, colour-dependent hierarchy, off-screen mobile content, missing alt text, broken provenance and an ungoverned public-proof state. It would fail for any of those conditions, for a changed asset hash, for fewer than three evidence stages or four supplied surfaces, or for motion being claimed without measured proof.",
+  "smallestSetOfChanges": [],
+  "standingRisks": [
+    "The supplied screenshots retain visible internal working-state text. Public deployment is blocked until Olli approves the visible content or specifies irreversible redactions.",
+    "The GH-S05 copy amendment still needs formal relock in homepage-copy.md.",
+    "H-GOLD-01-HOMEPAGE-PROOF remains open; this Gate B record does not promote the candidate to a golden output."
+  ],
+  "readyForOlliReview": true
+}

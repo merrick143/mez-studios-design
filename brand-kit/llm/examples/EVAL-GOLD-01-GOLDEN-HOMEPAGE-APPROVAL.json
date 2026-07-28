@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-GOLD-01-GOLDEN-HOMEPAGE-APPROVAL",
+  "receiptId": "RCP-GOLD-01-GOLDEN-HOMEPAGE-APPROVAL",
+  "evaluatedAt": "2026-07-28T00:00:00Z",
+  "evaluator": {"kind": "hybrid", "name": "Olli, Gate B and deterministic validators"},
+  "contractChecks": [
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "Olli approved and directed that the complete homepage be locked in."},
+    {"id": "CANONICAL-SCOPE", "status": "pass", "evidence": "DEC-GOLDEN-HOMEPAGE-001 is recorded in the signed approval, source and review records and bounded to the design, responsive, interaction and composition reference; production release authority is not claimed."},
+    {"id": "NEXT-TASK", "status": "pass", "evidence": "START-HERE, CURRENT-STATE, ROADMAP, status data and the LLM task registry route next to TASK-PORT-01-RELEASE-BOUNDARY."},
+    {"id": "DEPENDENCY-HONESTY", "status": "pass", "evidence": "CMP-05, CMP-06, redacted proof media and consumer integration remain explicit Phase 4 obligations."}
+  ],
+  "qualityDimensions": [
+    {"id": "gate-b-design-excellence", "score": 68, "maximum": 75, "evidence": "Round 28 passed all four named tests with no blocking or canon findings."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "The human decision, source contract, review, governance register, live plans, machine task and verifier agree on status and boundary."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": [
+    "The homepage is canonical and unreleased.",
+    "Outcome validation and production-consumer proof remain future work; canonical design approval is not evidence of business effectiveness."
+  ]
+}

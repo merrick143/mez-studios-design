@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "phase": 0,
+  "status": "complete-approved",
+  "completedAt": "2026-07-28T07:43:14Z",
+  "mutationCount": 0,
+  "authority": {
+    "repository": "brand-kit/",
+    "figmaRole": "companion-mirror",
+    "figmaCreatesIndependentAuthority": false
+  },
+  "historicalFigma": {
+    "name": "Mez Systems — branding",
+    "fileKey": "HU0GVaDhatjWrKCiSg3wlU",
+    "url": "https://www.figma.com/design/HU0GVaDhatjWrKCiSg3wlU/Mez-Systems---branding?node-id=149-30",
+    "pages": [
+      "Playground for ideas - branding",
+      "Drafts",
+      "Mez Systems — Brand System",
+      "Website Foundation · Type Tests",
+      "Mez Systems · Products"
+    ],
+    "localVariableCollections": 0,
+    "localVariables": 0,
+    "localTextStyles": 0,
+    "localEffectStyles": 0,
+    "localPaintStyles": 0,
+    "components": 0,
+    "componentSets": 0,
+    "treatment": "retain-as-research-only"
+  },
+  "availableLibraries": {
+    "subscribed": [
+      "Material 3",
+      "Simple Design System",
+      "iOS 18"
+    ],
+    "compatibleMezLibraryFound": false,
+    "reuseDecision": "Do not reuse external library values or the unrelated Detailed Frameworks search results."
+  },
+  "canonicalInventory": {
+    "typography": {
+      "fontFamilies": 4,
+      "semanticRoles": 15,
+      "cssDefinitions": 64
+    },
+    "colour": {
+      "primitives": 39,
+      "semanticRoles": 43,
+      "modes": [
+        "light",
+        "dark",
+        "email",
+        "document",
+        "print"
+      ],
+      "semanticModeValues": 215,
+      "cssDefinitions": 317
+    },
+    "spaceLayout": {
+      "spacingTokens": 16,
+      "contentWidths": 3,
+      "breakpoints": 4,
+      "responsiveProfiles": 4,
+      "densityProfiles": 3,
+      "dtcgTokenObjects": 23,
+      "cssDefinitions": 59
+    },
+    "geometryControls": {
+      "radii": 8,
+      "borderWidths": 3,
+      "shadows": 5,
+      "controlScales": 3,
+      "controlVariants": 7,
+      "controlStates": 8,
+      "dtcgTokenObjects": 16,
+      "cssDefinitions": 41
+    },
+    "products": 5,
+    "expressionFamilies": [
+      "Disc 1.0.0",
+      "Sphere 1.0.0",
+      "Wings & Mark 1.0.0",
+      "Product Card visual grammar 1.0.0",
+      "Trading Card 1.0.0"
+    ],
+    "phaseBComponents": 15,
+    "compositionPatterns": 13,
+    "journeys": 6,
+    "standaloneComponents": [
+      "Global Navigation 1.0.0",
+      "Halftone Portrait 1.0.0",
+      "Testimonial Marquee 1.0.0"
+    ]
+  },
+  "proposedCompanionScope": {
+    "foundations": [
+      "typography",
+      "colour and surfaces",
+      "space, layout and density",
+      "geometry, borders, depth, focus and controls"
+    ],
+    "identityAndExpressions": [
+      "five product identities",
+      "Disc",
+      "Sphere static authoring twin",
+      "Wings and mark",
+      "Product Card visual grammar",
+      "Trading Card"
+    ],
+    "components": [
+      "fifteen canonical Phase B component contracts",
+      "Global Navigation",
+      "Halftone Portrait static authoring representation",
+      "Testimonial Marquee selected social-caption presentation"
+    ],
+    "documentationOnly": [
+      "Website Motion runtime contract",
+      "thirteen composition patterns",
+      "six journeys",
+      "Golden Homepage golden composition"
+    ],
+    "excluded": [
+      "historical experiments as production components",
+      "candidate-only Product Feature Bento as separate authority",
+      "live video, WebGL or JavaScript motion inside Figma",
+      "consumer routes, analytics, consent or live content",
+      "new visual values invented in Figma",
+      "Code Connect before the mirrored library structure is approved"
+    ]
+  },
+  "conflictsAndResolutions": [
+    {
+      "id": "FIG-CONFLICT-01-FLUID-TYPE",
+      "conflict": "A single Figma text style cannot encode CSS clamp() behaviour exactly.",
+      "resolution": "Create the fifteen semantic role styles at documented authoring reference values and place the exact canonical clamp formula beside each role; code remains runtime authority."
+    },
+    {
+      "id": "FIG-CONFLICT-02-FIVE-COLOUR-MODES",
+      "conflict": "Five canonical modes may exceed a four-mode collection limit.",
+      "resolution": "Use one primitive collection plus Colour · Web for light/dark and Colour · Output for email/document/print, with semantic variables aliasing primitives."
+    },
+    {
+      "id": "FIG-CONFLICT-03-RESPONSIVE-RUNTIME",
+      "conflict": "Breakpoints, receiver-led profiles and density behaviour are runtime rules rather than independent visual values.",
+      "resolution": "Mirror named variables where supported and document the canonical profiles with representative auto-layout examples."
+    },
+    {
+      "id": "FIG-CONFLICT-04-RUNTIME-MATERIAL",
+      "conflict": "Figma cannot execute the canonical Living Core, halftone video or marquee motion runtimes.",
+      "resolution": "Use exact static authoring twins and contract annotations; never substitute a new approximate effect."
+    },
+    {
+      "id": "FIG-CONFLICT-05-HISTORICAL-FILE",
+      "conflict": "The historical file contains broad research sections but no reusable library primitives.",
+      "resolution": "Preserve it unchanged and create a new dedicated Figma companion after the Phase 0 gate."
+    }
+  ],
+  "recommendedBuildOrder": [
+    "File structure and repository traceability",
+    "Primitive and semantic variables",
+    "Typography and effect styles",
+    "Foundation controls and product identity primitives",
+    "Canonical expressions and fifteen Phase B components",
+    "Standalone components and static runtime representations",
+    "Patterns, journeys and Golden Homepage documentation",
+    "Accessibility, naming, detach and cross-mode audit",
+    "Optional Code Connect plan after library approval"
+  ],
+  "humanGate": {
+    "gateId": "H-FIG-01-FIGMA-COMPANION-SCOPE",
+    "approver": "Olli",
+    "approvalQuestion": "Approve the Phase 0 scope and conflict resolutions so a new dedicated Figma companion can be created?",
+    "status": "approved",
+    "approval": "brand-kit/figma-companion/phase-00-approval.json"
+  }
+}

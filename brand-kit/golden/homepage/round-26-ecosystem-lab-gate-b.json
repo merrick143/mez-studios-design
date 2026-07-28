@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r25-s07-lab2",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S07 Coming next expression lab",
+    "five distinct disc, sphere and Wings compositions",
+    "static-at-rest and hover-or-focus-live states",
+    "responsive review from 320px to 1440px"
+  ],
+  "variantScores": {
+    "V01": {
+      "name": "Living directory",
+      "weighted": 72,
+      "maximum": 75,
+      "assessment": "The strongest overall system: a quiet text directory gives every product equal access while one shared sphere creates a deliberate focal point only when requested."
+    },
+    "V02": {
+      "name": "Unboxed disc rail",
+      "weighted": 70,
+      "maximum": 75,
+      "assessment": "A direct, open family expression with no card chassis. Four large materials make the range immediately legible, though the repeated discs carry more simultaneous visual weight than V01."
+    },
+    "V03": {
+      "name": "Wings ledger",
+      "weighted": 65,
+      "maximum": 75,
+      "assessment": "The most identity-led direction and the cleanest ledger. Gradient Wings are intentionally rare in the system, so using four together may overstate an exceptional expression."
+    },
+    "V04": {
+      "name": "Expression bento",
+      "weighted": 67,
+      "maximum": 75,
+      "assessment": "A useful promoted-product bento with one live sphere and four selectors. Its isolated dark lead is valid contrast, but it is the closest direction to the combined dark treatment already rejected."
+    },
+    "V05": {
+      "name": "Clear disc cards",
+      "weighted": 71,
+      "maximum": 75,
+      "assessment": "The clearest literal response to disc, name and no background. It is restrained, highly scannable and easy to place, with slightly less authored hierarchy than V01."
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "Without copy, the five silhouettes remain distinct: controlled sphere directory, open disc rail, Wings ledger, promoted bento and clear two-column disc index."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The comparison changes expression jobs and information hierarchy rather than presenting five spacing variants of one card chassis."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "A focused V01 sphere produced 146 WebGL draw calls over 1.2 seconds with exactly one canvas and one mounted host. Blur returned both counts to zero. V03 and V04 separately mounted one Wings or sphere host, never two."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "All directions use the canonical registry names, Coming soon status, exact MZ-G12, MZ-G06, MZ-G15 and MZ-G20 static twins, canonical Wings and the shared Living Core renderer."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "Geometry checks found no horizontal overflow at any target width. Mobile compositions were visually inspected at 390px, source order remained intact and all lab controls were raised to a minimum 44px touch target."
+  },
+  "fallbackReview": {
+    "result": "pass",
+    "evidence": "Both forced-static and no-WebGL modes rendered canonical static twins with zero canvases. Switching products preserved the visual dimensions and updated the requested product material."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 2
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "variant": "V03",
+      "finding": "Four gradient Wings make an intentionally rare identity expression feel routine.",
+      "smallestFix": "Choose V03 only if the exceptional Wings treatment is desired for this family; otherwise prefer V01 or V05."
+    },
+    {
+      "severity": "minor",
+      "variant": "V04",
+      "finding": "The dark promoted-product cell may still recall the dark grouping treatment the user rejected.",
+      "smallestFix": "Keep the isolated dark lead only if the contrast is valuable after direct review; the other four directions remove dark fill entirely."
+    }
+  ],
+  "recommendation": {
+    "preferred": "V01",
+    "reason": "It has the clearest hierarchy, the calmest static state and the most meaningful user-driven transformation while using only one live material.",
+    "alternate": "V05 is the cleanest literal disc-and-name option with no background fill.",
+    "selectionAuthority": "Olli"
+  },
+  "outputStatus": "research",
+  "readyForOlliReview": true
+}

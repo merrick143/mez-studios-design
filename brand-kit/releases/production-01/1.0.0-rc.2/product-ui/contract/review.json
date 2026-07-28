@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "systemId": "mz.systems.product-ui.foundation",
+  "gateId": "H-UI-01-PRODUCT-UI-FOUNDATION",
+  "candidateRevision": "product-ui-foundation-01-r01",
+  "verdict": "approved",
+  "productionAuthority": false,
+  "decisionId": null,
+  "recordedAt": "2026-07-28",
+  "summary": "Olli approved the operational-ledger candidate at H-UI-01 on 28 July 2026 after its contract, data lineage, complete state model, responsive recomposition, keyboard/focus behaviour, accessibility tree and 67/75 Gate B pass were proven. This is an approved foundation direction with no canonical or production authority.",
+  "whatWasProven": [
+    {
+      "claim": "Visible records and figures are repository-backed rather than invented product data.",
+      "method": "verify_product_ui_contract.py reads every named fixture source and cross-checks product registry counts, Figma 24/18/105 totals, component authority and the 5/1/1 status distribution.",
+      "result": "PASS; seven unique records and every summary value matched its named source."
+    },
+    {
+      "claim": "Responsive recomposition preserves every record without page overflow.",
+      "method": "In-app browser viewport sweep at 320, 375, 390, 768, 920, 1280 and 1440; measured document scroll width, row count, hidden rows and table display mode after each render.",
+      "result": "PASS; zero body overflow, seven of seven records present and zero hidden at every width. Table fields recompose to labelled blocks below 640px; the inspector follows the ledger below 1024px."
+    },
+    {
+      "claim": "Keyboard and visible-focus behaviour is functional.",
+      "method": "Pressed ArrowDown from Ledger in the roving navigation, inspected the resulting tab stops and computed focus style, then opened and closed the command dialog from the keyboard path.",
+      "result": "PASS; Registry became the only navigation tab stop, computed focus was a solid 3px ring with 3px offset, modal focus entered search, background became inert/aria-hidden, Escape restored focus to the trigger."
+    },
+    {
+      "claim": "Filtering, sorting, density, selection and bounded workspace views operate on the same source fixture.",
+      "method": "Browser interaction with the live candidate and targeted DOM checks after each action.",
+      "result": "PASS; Halftone filter returned one record, name sort set aria-sort=ascending, presentation density retained all fields, record selection updated inspector/current state, and Registry/Components/Release views returned 1/3/1 truthful records."
+    },
+    {
+      "claim": "All seven named product states preserve explicit meaning.",
+      "method": "Selected ready, loading, empty, error, stale, partial and no-permission in the running state lab and read banner, table visibility, row count and live-region output.",
+      "result": "PASS; every state produced its named explanation; error and no-permission hid the record table, empty rendered zero rows, and ready restored all records."
+    },
+    {
+      "claim": "Table and data-view semantics are available to accessibility APIs.",
+      "method": "Read the browser accessibility-tree snapshot and implementation-generated labels.",
+      "result": "PASS; named landmarks, table caption, row/column structure, buttons, aria-sort, polite live region, chart role label and complete 5-of-7 / 1-of-7 / 1-of-7 text alternative were exposed."
+    },
+    {
+      "claim": "The visual surface clears Gate B.",
+      "method": "Rendered and inspected desktop workspace, ledger/inspector, data view and mobile segments; ran T1–T4 and the anti-slop sweep.",
+      "result": "PASS at 67/75 with no blocking findings; recorded in round-01-gate-b.json."
+    }
+  ],
+  "knownGaps": [
+    "A real VoiceOver or NVDA spoken-output session has not been recorded; current screen-reader evidence is the browser accessibility tree and live-region output.",
+    "No real AI OS workflow is represented because production product evidence has not been supplied.",
+    "Authentication, persistence, routing, exports, analytics and product-specific business rules remain consumer-owned and untested by this candidate."
+  ],
+  "humanDecisionsRequired": [
+    "A later bounded task must identify which real redacted product workflow becomes the first production-evidence test; UI-01 approval does not invent or select that evidence."
+  ],
+  "outputStatus": "approved"
+}

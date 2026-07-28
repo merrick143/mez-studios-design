@@ -56,9 +56,14 @@ def main() -> int:
     css = CSS.read_text(encoding="utf-8")
     javascript = JS.read_text(encoding="utf-8")
 
+    # RETIRED AT R22: GH-S08 now leads the argument under the hero, so numeric
+    # DOM order is no longer a valid historical invariant. Stable IDs still are.
     section_ids = re.findall(r'data-review-id="(GH-S\d{2})"', html)
-    if section_ids != [f"GH-S{n:02d}" for n in range(1, 11)]:
-        failures.append(f"section order changed: {section_ids}")
+    # UPDATED AT R25: the footer-adjacent duplicate route retired with GH-S10;
+    # the remaining nine handles are stable and unique.
+    expected_ids = {f"GH-S{n:02d}" for n in range(1, 10)}
+    if len(section_ids) != 9 or set(section_ids) != expected_ids:
+        failures.append(f"section IDs changed or duplicated: {section_ids}")
 
     s03 = html[html.index('data-review-id="GH-S03"'):html.index('data-review-id="GH-S04"')]
 

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/product-ui-foundation.schema.json",
+  "title": "Mez Systems Product UI Foundation candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "systemId", "version", "status", "productionAuthority", "taskId", "gateId", "decisionIds", "candidateRevision", "title", "selectedFamily", "thesis", "authorityBoundary", "anatomy", "densityModes", "states", "behaviour", "dataTruth", "accessibility", "prohibited", "testViewports", "approval"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "systemId": {"const": "mz.systems.product-ui.foundation"},
+    "version": {"const": "0.1.0"},
+    "status": {"const": "approved"},
+    "productionAuthority": {"const": false},
+    "taskId": {"const": "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION"},
+    "gateId": {"const": "H-UI-01-PRODUCT-UI-FOUNDATION"},
+    "decisionIds": {"type": "array", "maxItems": 0},
+    "candidateRevision": {"type": "string", "minLength": 10},
+    "title": {"type": "string"},
+    "selectedFamily": {"const": "operational-ledger"},
+    "thesis": {"type": "string", "minLength": 120},
+    "authorityBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owns", "consumerOwns"],
+      "properties": {
+        "owns": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "consumerOwns": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "anatomy": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "densityModes": {"const": ["compact", "comfortable", "presentation"]},
+    "states": {"const": ["ready", "loading", "empty", "error", "stale", "partial", "no-permission"]},
+    "behaviour": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["navigation", "filtering", "sorting", "selection", "density", "state", "responsive", "motion"],
+      "properties": {
+        "navigation": {"type": "string"}, "filtering": {"type": "string"}, "sorting": {"type": "string"}, "selection": {"type": "string"}, "density": {"type": "string"}, "state": {"type": "string"}, "responsive": {"type": "string"}, "motion": {"type": "string"}
+      }
+    },
+    "dataTruth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture", "scopeLabel", "sourcePaths", "rule"],
+      "properties": {
+        "fixture": {"const": "brand-kit/workbench/product-ui/fixtures/system-proof.json"},
+        "scopeLabel": {"type": "string"},
+        "sourcePaths": {"type": "array", "minItems": 6, "items": {"type": "string"}, "uniqueItems": true},
+        "rule": {"type": "string", "minLength": 80}
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["landmarks", "table", "visualisation", "announcements", "focus", "touch"],
+      "properties": {
+        "landmarks": {"type": "string"}, "table": {"type": "string"}, "visualisation": {"type": "string"}, "announcements": {"type": "string"}, "focus": {"type": "string"}, "touch": {"type": "string"}
+      }
+    },
+    "prohibited": {"type": "array", "minItems": 11, "items": {"type": "string"}, "uniqueItems": true},
+    "testViewports": {"const": [320, 375, 390, 768, 920, 1280, 1440]},
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["review", "decisionId", "approvedAt", "state"],
+      "properties": {
+        "review": {"const": "brand-kit/product-ui/review.json"},
+        "decisionId": {"type": "null"},
+        "approvedAt": {"const": "2026-07-28"},
+        "state": {"const": "approved-foundation-direction"}
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r03",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Codex design-critique",
+  "verdict": "pass-review-surface",
+  "score": 67,
+  "maximum": 75,
+  "productionAuthority": false,
+  "blockingReasons": [],
+  "scope": "Round 03 passes as a candidate review surface. The social-caption hierarchy remains an agent recommendation; this record does not promote CMP-06 or close Olli's human gate.",
+  "recommendedPresentation": "social-caption",
+  "scores": {
+    "hierarchy": {"score": 5, "weight": 2, "reason": "The revised profile stack reads Name, Username and Followers before a broad quote, while the live portrait remains a distinct supporting proof object."},
+    "composition": {"score": 5, "weight": 2, "reason": "The desktop rail is wide and shallow without a chassis. At compact widths the 96px portrait and identity form one top band and the quote spans the complete row beneath, removing the prior empty column."},
+    "pacing": {"score": 4, "weight": 1, "reason": "A 24px/s drift, phase-level pauses and generous homepage separation create a measured proof beat. Five stacked rails remain workbench-only."},
+    "typography": {"score": 4, "weight": 1, "reason": "Display, quote, name, username and follower roles are clear with no decorative type layer. Long real quotes remain readable at every declared width."},
+    "productTruth": {"score": 4, "weight": 2, "reason": "Seven real clips, quotes and curated profile images are local and Daniel remains honestly excluded. Follower figures are dated snapshots and two retain source-project attribution, so this cannot score 5."},
+    "distinctiveness": {"score": 5, "weight": 2, "reason": "Live halftone people plus recognisable but non-clickable Instagram profile evidence create a Mez proof rail that remains distinctive without gradient, glass or card theatre."},
+    "narrative": {"score": 4, "weight": 1, "reason": "The workbench moves from five hierarchy comparisons into live measurement and an explicit human gate; the homepage gives proof a clear pause after the hero."},
+    "conversionClarity": {"score": 4, "weight": 1, "reason": "CMP-06 intentionally has no CTA. Removing carousel and social-link chrome prevents false destinations while the focusable phase remains operable."},
+    "emotionalResonance": {"score": 4, "weight": 1, "reason": "Moving real faces, familiar profile images and first-person language add human warmth without manufactured testimonial ornament."},
+    "craft": {"score": 5, "weight": 1, "reason": "Local asset resolution, one semantic list, hidden loop copy, passive native input, 907ms measured recovery, complete keyboard path, static reduced motion and offscreen idling resolve together."},
+    "originality": {"score": 4, "weight": 1, "reason": "The surface borrows Instagram's evidence order without cloning its frame and rejects the standard boxed testimonial carousel."}
+  },
+  "namedTests": {
+    "T1StripTest": {
+      "result": "pass",
+      "method": "Desktop and compact renders were inspected without relying on colour or portrait motion.",
+      "evidence": "Hierarchy survives through scale, open composition, source order, one structural rule and Mez typography; no gradient, glow, texture or profile-card shell carries the design."
+    },
+    "T2ComponentRepetitionTest": {
+      "result": "pass",
+      "method": "All five 1440px presentation families and their shared 320px convergence were inspected in adjacent context.",
+      "evidence": "Profile strip, portrait window, social caption, quote first and proof ledger change reading order and proportional logic. The component adds no repeated button or card cluster."
+    },
+    "T3MotionComparisonTest": {
+      "result": "pass",
+      "method": "The proof-ledger rail and visible portrait videos were sampled 1,250ms apart; direct-input recovery, focused hold and offscreen instances were measured separately.",
+      "evidence": "The rail advanced 31px in 1.25s; both visible videos advanced 1.273s; no clipped portrait remained live. Manual scroll recovered in 907ms and focused drift changed by 0px over 600ms."
+    },
+    "T4RealContentTest": {
+      "result": "pass",
+      "method": "Every declared viewport used the seven-record fixture, seven local prepared clips and seven cropped curated Mez profile images.",
+      "evidence": "Every width rendered 7 primary and 7 hidden-loop items in moving mode, no Daniel record, no outbound link, no placeholder and no missing local media."
+    }
+  },
+  "canonScan": {
+    "result": "pass-with-recorded-exception",
+    "notes": "No mesh gradient, indigo-violet palette, glass, ambient shadow, backdrop blur, generic card grid, pill cluster or decorative filler appears. Continuous carousel drift remains a deliberate bounded exception to DEC-WEBSITE-MOTION-SYSTEM-001, revised by Olli in round-03-feedback.json to use phase-level and direct-input safeguards without visible controls."
+  },
+  "findings": [
+    {"rank": 1, "type": "fixed-defect", "location": "Round 03 compact figure", "finding": "The previous two-column mobile structure left blank space beneath the portrait.", "resolution": "The portrait and profile now share the first row and the quote spans both columns beneath."},
+    {"rank": 2, "type": "fixed-defect", "location": "Round 03 profile anatomy", "finding": "The horizontal account row scattered identity facts and omitted the existing curated profile image.", "resolution": "Every item now renders the local profile image and a Name, Username, Followers stack with the full name allowed to wrap on compact widths."},
+    {"rank": 3, "type": "fixed-defect", "location": "proof-ledger wide profile column", "finding": "The initial 190px evidence column truncated Kayvon's name after adding the profile image.", "resolution": "The evidence column increased to 240px while preserving a wide quote measure."},
+    {"rank": 4, "type": "human-decision", "location": "CMP-06 authority", "finding": "The continuous drift exception is explicit but now has no persistent visible stop control at Olli's direction.", "resolution": "Keep the component candidate-only until Olli approves or revises this final safeguard posture."}
+  ],
+  "humanGate": {
+    "state": "open",
+    "question": "Approve, revise or reject the Round 03 social-caption recommendation and its control-free bounded auto-scroll exception."
+  },
+  "outputStatus": "candidate"
+}

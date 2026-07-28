@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "reference-assets-consumer-review-required",
+  "productionAuthority": false,
+  "ownedByMez": false,
+  "count": 16,
+  "notice": "Marks identify third-party systems in the Golden Homepage example. Their inclusion is not endorsement, ownership or Mez identity authority; named-consumer legal/attribution confirmation remains required before deployment.",
+  "marks": [
+    {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "domain": "chatgpt.com",
+      "asset": "assets/third-party-marks/marks/chatgpt/logos/mark.svg",
+      "sha256": "a4b4dae5e28790a0fb3dc7b5d8bb199b0dd6938a002e52a8b6355394c321718e"
+    },
+    {
+      "slug": "claude",
+      "name": "Claude",
+      "domain": "claude.ai",
+      "asset": "assets/third-party-marks/marks/claude/logos/mark.svg",
+      "sha256": "5119ef950a0d648b3fd62865791e73f07f32e18ddab84e4f21160f8c641c0f5f"
+    },
+    {
+      "slug": "gemini",
+      "name": "Google Gemini",
+      "domain": "gemini.google.com",
+      "asset": "assets/third-party-marks/marks/gemini/logos/mark.svg",
+      "sha256": "404eba6940a54e63d40edcce2d2e7cb2b3dbfec765e7a1d523662b6f4e0d6747"
+    },
+    {
+      "slug": "grok",
+      "name": "Grok",
+      "domain": "grok.com",
+      "asset": "assets/third-party-marks/marks/grok/logos/mark.svg",
+      "sha256": "a127a7cd42b0450f7d3827a331b0730aab49fd99c3fe920d172475b9ffc83992"
+    },
+    {
+      "slug": "mistral",
+      "name": "Mistral AI",
+      "domain": "mistral.ai",
+      "asset": "assets/third-party-marks/marks/mistral/logos/mark.svg",
+      "sha256": "5d6abe5c18446f7971139b2f472b1b1d8cf29db04af332091023d018800cfbd1"
+    },
+    {
+      "slug": "perplexity",
+      "name": "Perplexity",
+      "domain": "perplexity.ai",
+      "asset": "assets/third-party-marks/marks/perplexity/logos/mark.svg",
+      "sha256": "407ad1254700503eb124ef5650cc267d83c79dc6dea9e9332fbdc92bb2bdf262"
+    },
+    {
+      "slug": "stripe",
+      "name": "Stripe",
+      "domain": "stripe.com",
+      "asset": "assets/third-party-marks/marks/stripe/logos/mark.svg",
+      "sha256": "7576775bf9915b696bbb9162268f5c56147d2b4221a76ac6a9ca92835239b7e9"
+    },
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "domain": "notion.com",
+      "asset": "assets/third-party-marks/marks/notion/logos/mark.svg",
+      "sha256": "fdddc8f06178df169036d3f5fc336eb98b15cad375afa04d0a5cd7aa61b65739"
+    },
+    {
+      "slug": "shopify",
+      "name": "Shopify",
+      "domain": "shopify.com",
+      "asset": "assets/third-party-marks/marks/shopify/logos/mark.svg",
+      "sha256": "73b7faee1aa8969eba999c3d6622ece507a6415039592185e85ce7bb6244ddc2"
+    },
+    {
+      "slug": "figma",
+      "name": "Figma",
+      "domain": "figma.com",
+      "asset": "assets/third-party-marks/marks/figma/logos/mark.svg",
+      "sha256": "b9171110637bb953781a04044d9957478ae84f6a7ac597a25c0bfdfb3292a45e"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "domain": "github.com",
+      "asset": "assets/third-party-marks/marks/github/logos/mark.svg",
+      "sha256": "476ba7aa67b86da7d6e7567b08a4bf0eb1a2fd28da5fc243f8ee39a2f1ea6773"
+    },
+    {
+      "slug": "gmail",
+      "name": "Gmail",
+      "domain": "mail.google.com",
+      "asset": "assets/third-party-marks/marks/gmail/logos/mark.svg",
+      "sha256": "21b263638deb769267d610a85382792624bdae2fc47c1bc2f8ae6fb6a50413e9"
+    },
+    {
+      "slug": "supabase",
+      "name": "Supabase",
+      "domain": "supabase.com",
+      "asset": "assets/third-party-marks/marks/supabase/logos/mark.svg",
+      "sha256": "75f9566421d97d4f1d8d7f34526189fd6e727ca83987432fc2477c2fc8388086"
+    },
+    {
+      "slug": "vercel",
+      "name": "Vercel",
+      "domain": "vercel.com",
+      "asset": "assets/third-party-marks/marks/vercel/logos/mark.svg",
+      "sha256": "075b9d221ef5a7ea63d85f140bd2d63007f31d3ed8ceec011abc3ffd529827e3"
+    },
+    {
+      "slug": "n8n",
+      "name": "n8n",
+      "domain": "n8n.io",
+      "asset": "assets/third-party-marks/marks/n8n/logos/mark.svg",
+      "sha256": "2a415d5d2dea1903450d0df1b2b76866948d12a704e13378e54ed6896830c2e9"
+    },
+    {
+      "slug": "clickup",
+      "name": "ClickUp",
+      "domain": "clickup.com",
+      "asset": "assets/third-party-marks/marks/clickup/logos/mark.svg",
+      "sha256": "35c7c2c13ece5c57f823929aeb6924da276500be0e5aa1897574952b7831b5f1"
+    }
+  ]
+}

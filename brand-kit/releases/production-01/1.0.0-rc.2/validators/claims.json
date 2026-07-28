@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "validator": "verify_production_release_candidate.py",
+  "scope": [
+    "integrity manifest and deterministic content root",
+    "package-local runtime imports and assets",
+    "bounded authority decisions and candidate status",
+    "approved operating-proof derivatives",
+    "dated testimonial example boundary",
+    "CMP-05 and CMP-06 motion/fallback implementation claims"
+  ],
+  "sourceContractValidators": "Executed in the canonical repository by the repository validation receipt; not copied because their paths intentionally target the control-plane checkout."
+}

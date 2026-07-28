@@ -10,7 +10,8 @@ Use the repository root `mez-studios-design` and work under `brand-kit/`.
 2. `brand-kit/docs/CURRENT-STATE.md`
 3. `brand-kit/docs/ROADMAP.md`
 4. `brand-kit/governance/decisions.json`
-5. `brand-kit/AGENT-GUIDE.md`
+5. `brand-kit/governance/post-cutover-decisions.json`
+6. `brand-kit/AGENT-GUIDE.md`
 
 ## Do not restart
 
@@ -20,7 +21,7 @@ Do not continue authoring the system inside Mezcorp or a landing-page repository
 
 ## Continue here
 
-Typography, colour, space-layout, geometry-controls, unified foundation release `1.0.0`, the bounded expression suite through EXP-08 and Global Navigation `1.0.0` are canonical. `H-CMP-01-GLOBAL-NAVIGATION-PROOF` is closed by `DEC-GLOBAL-NAVIGATION-COMPONENT-001`: the compact Explore control previews five exact-static circles, and the calm footer-free registry reveals five automatically animated Deep Mineral spheres with exact fallbacks. The five-live allocation is canonical only inside the expanded navigation. The five original `explore-menu/` variants remain research evidence. Continue with `TASK-GOLD-01-GOLDEN-HOMEPAGE`: Round 14 lifts the hero fan higher (a little tighter), following Olli's Round 06 section review and subsequent hero feedback (`golden/homepage/round-06-feedback.json` through `round-13-feedback.json`). After a hero exploration lab (V01–V19), Olli provisionally locked the hero (GH-S01) at V01 — the five-card arc — recorded in `round-14-feedback.json` and as a `heroSectionLock` in `review.json`; the remaining sections await his verdicts and the whole-page gate stays open. His full section review is planned in `golden/homepage/SECTION-REVISION-PLAN.md`; Round 15 split GH-S04 into "Built on ourselves first" + "Operating proof" (ten sections now, renumbered GH-S06–GH-S10 below) and fixed the indented header; Rounds 16–17 then reinvented S02–S07 on one authored split-card family (S03 rented-brand logos removed, S05 Operating proof rebuilt from unstyled text, S06 AI OS Wings centred + bottom pair rebuilt as an orbital diagram and a 2×2 index, S07 simplified to Wings + name + Coming soon, family header indent fixed) — `verify_homepage_round17.py` is the active proof. `round-05-feedback.json` records the rebuild directive and the resolved core-layer render defect.
+Typography, colour, space-layout, geometry-controls, unified foundation release `1.0.0`, the bounded expression suite through EXP-08, Global Navigation `1.0.0`, Golden Homepage `1.0.0`, Halftone Portrait `1.0.0` and Testimonial Marquee `1.0.0` are canonical for their recorded scopes. `@mez-systems/design-system-web@1.0.0-rc.1` is deterministic, isolated, Gate B-approved and frozen against manifest SHA-256 `c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8`. `TASK-FIG-01-FIGMA-COMPANION` is complete and the repository-backed companion `QxZT3FJ8BDXOZfBQDt0qPW` is approved as an authoring mirror without independent authority. `TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION` is complete through `H-UI-01` as an approved non-production foundation direction. The remaining low-priority channel families are deferred. `TASK-CERT-01-SYSTEM-CERTIFICATION` is complete through `H-CERT-01`; exact `1.0.0-rc.2` is approved and frozen. Olli registered `mezcorp-studio/ceos-notion-landingpage` as `CON-MEZ-SYSTEMS-WEB-001` on 29 July 2026. `TASK-PORT-04-NAMED-CONSUMER-PROOF` is ready and must begin with a read-only audit. Do not publish, deploy or assign production version `1.0.0`.
 
 ## Portable skill use
 

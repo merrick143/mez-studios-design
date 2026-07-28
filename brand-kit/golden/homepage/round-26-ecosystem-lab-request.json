@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r25-s07-lab2",
+  "verdict": "exploration-request",
+  "recordedAt": "2026-07-27",
+  "productionAuthority": false,
+  "section": {
+    "id": "GH-S07",
+    "title": "The Mez Systems ecosystem",
+    "status": "open"
+  },
+  "humanDirection": [
+    "Remove the dark fill that visually combines the four coming-product cards.",
+    "Compare the actual Mez expression language rather than only changing card layouts.",
+    "Build all five proposed directions: Living directory, Unboxed disc rail, Wings ledger, Expression bento and Clear disc cards.",
+    "Show discs, Wings and spheres, static and animated states, hover animation, bento and open compositions.",
+    "Keep animation user-driven and allow only one live material at a time.",
+    "Keep the Coming next section title and current product truth while the card composition is reviewed."
+  ],
+  "approvedLineage": [
+    "DEC-DISC-EXPRESSION-001",
+    "DEC-SPHERE-EXPRESSION-001",
+    "DEC-WINGS-MARK-EXPRESSION-001",
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-WEBSITE-MOTION-SYSTEM-001"
+  ],
+  "implementationBoundary": {
+    "lab": "brand-kit/workbench/golden/homepage/s07-ecosystem-lab/",
+    "homepageChanged": false,
+    "currentSectionPreserved": true,
+    "selectionRequiredBeforeLanding": true
+  },
+  "outputStatus": "research"
+}

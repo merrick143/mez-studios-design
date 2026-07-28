@@ -1,0 +1,131 @@
+{
+  "fixtureId": "ai-os-video-testimonials",
+  "source": "https://mez.systems/ai-os",
+  "retrievedAt": "2026-07-28",
+  "socialMetadata": {
+    "platform": "Instagram",
+    "profileCheckedAt": "2026-07-28",
+    "notes": "Follower figures for Kayvon, Antonije, Omar, Hugues and Koen were read from their public Instagram profiles on 2026-07-28. Bobby and Joao retain the latest figures in the approved testimonial-slider source project because Instagram presented a login wall. Verified status for those two is supplied by Olli's 2026-07-28 feedback."
+  },
+  "testimonials": [
+    {
+      "id": "kayvon-jafarzadeh",
+      "name": "Kayvon Jafarzadeh",
+      "handle": "@kayvon.ai",
+      "quote": "I had ChatGPT, Claude, Perplexity, Notion AI, and about 10 random tools bookmarked. Still felt scattered. This made the problem obvious: I didn't need better prompts. I needed better context.",
+      "social": {
+        "platform": "Instagram",
+        "followers": "472K followers",
+        "verified": true,
+        "profileImage": "./media/kayvon-ai-profile.png",
+        "evidence": "public-profile-checked-2026-07-28"
+      },
+      "portrait": {
+        "src": "./media/kayvon-ai-matte.mp4",
+        "label": "Halftone portrait of Kayvon Jafarzadeh"
+      }
+    },
+    {
+      "id": "antonije-mirkovic",
+      "name": "Antonije Mirkovic",
+      "handle": "@mirkovicdev",
+      "quote": "I've built a lot in Notion, so I was sceptical. The value wasn't the databases by themselves. It was the way everything was structured for AI to read. It's the context layer for decisions.",
+      "social": {
+        "platform": "Instagram",
+        "followers": "278K followers",
+        "verified": true,
+        "profileImage": "./media/mirkovicdev-profile.png",
+        "evidence": "public-profile-checked-2026-07-28"
+      },
+      "portrait": {
+        "src": "./media/mirkovicdev-matte.mp4",
+        "label": "Halftone portrait of Antonije Mirkovic"
+      }
+    },
+    {
+      "id": "omar-zeineddine",
+      "name": "Omar Zeineddine",
+      "handle": "@omarontape",
+      "quote": "I thought this was going to be another nice-looking Notion template I'd abandon in a week. It wasn't. I can ask Notion AI what matters today and it gives me an actual answer based on my business.",
+      "social": {
+        "platform": "Instagram",
+        "followers": "137K followers",
+        "verified": true,
+        "profileImage": "./media/omarontape-profile.png",
+        "evidence": "public-profile-checked-2026-07-28"
+      },
+      "portrait": {
+        "src": "./media/omarontape-matte.mp4",
+        "label": "Halftone portrait of Omar Zeineddine"
+      }
+    },
+    {
+      "id": "hugues",
+      "name": "Hugues",
+      "handle": "@speedy_devv",
+      "quote": "I've bought a stupid number of templates. Most looked great and then slowly disappeared from my life. This one stuck because it's about changing how you work with AI, not the template.",
+      "social": {
+        "platform": "Instagram",
+        "followers": "67.4K followers",
+        "verified": true,
+        "profileImage": "./media/speedy-devv-profile.png",
+        "evidence": "public-profile-checked-2026-07-28"
+      },
+      "portrait": {
+        "src": "./media/speedy-devv-matte.mp4",
+        "label": "Halftone portrait of Hugues"
+      }
+    },
+    {
+      "id": "koen-salo",
+      "name": "Koen Salo",
+      "handle": "@koen_salo",
+      "quote": "The biggest shift was emotional. Every morning used to start with a low-level anxiety of \"where do I even start?\" Now I dump everything in, organise it, and ask for a priority stack.",
+      "social": {
+        "platform": "Instagram",
+        "followers": "58.4K followers",
+        "verified": true,
+        "profileImage": "./media/koen-salo-profile.png",
+        "evidence": "public-profile-checked-2026-07-28"
+      },
+      "portrait": {
+        "src": "./media/koen-salo-matte.mp4",
+        "label": "Halftone portrait of Koen Salo"
+      }
+    },
+    {
+      "id": "bobby-tandale",
+      "name": "Bobby Tandale",
+      "handle": "@tandalebobby",
+      "quote": "I can't justify hiring an assistant yet. This is the closest thing I've found to having someone help with context, planning and prep. It takes a lot of the mental sorting off my plate.",
+      "social": {
+        "platform": "Instagram",
+        "followers": "20K followers",
+        "verified": true,
+        "profileImage": "./media/tandalebobby-profile.png",
+        "evidence": "follower-count-from-approved-source-project-verification-supplied-by-olli-2026-07-28"
+      },
+      "portrait": {
+        "src": "./media/tandalebobby-matte.mp4",
+        "label": "Halftone portrait of Bobby Tandale"
+      }
+    },
+    {
+      "id": "joao-moreira",
+      "name": "João Moreira",
+      "handle": "@joaomore.ai",
+      "quote": "I'm still early, so I didn't think I needed this. But the mess compounds fast. Having leads, tasks, projects and notes connected gives you a proper operating rhythm before things get out of hand.",
+      "social": {
+        "platform": "Instagram",
+        "followers": "3.4K followers",
+        "verified": true,
+        "profileImage": "./media/joaomore-ai-profile.png",
+        "evidence": "follower-count-from-approved-source-project-verification-supplied-by-olli-2026-07-28"
+      },
+      "portrait": {
+        "src": "./media/joaomore-ai-matte.mp4",
+        "label": "Halftone portrait of João Moreira"
+      }
+    }
+  ]
+}

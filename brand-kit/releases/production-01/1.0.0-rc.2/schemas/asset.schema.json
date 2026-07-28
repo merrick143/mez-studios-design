@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/asset.schema.json",
+  "title": "Mez Systems asset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assetId", "kind", "path", "sha256", "authorityRole"],
+  "properties": {
+    "assetId": {"type": "string", "pattern": "^mz\\.systems\\.asset\\.[a-z0-9.-]+$"},
+    "kind": {"enum": ["wings", "gradient-source", "gradient-static", "runtime"]},
+    "path": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "authorityRole": {"enum": ["canonical-mark", "colour-authority", "static-fallback", "runtime-expression"]}
+  }
+}

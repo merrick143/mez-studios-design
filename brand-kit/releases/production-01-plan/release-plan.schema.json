@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/production-release-01-plan.json",
+  "title": "Mez Systems production release 01 plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "planId",
+    "taskId",
+    "status",
+    "outputStatus",
+    "productionAuthority",
+    "generatedRelease",
+    "targetPackage",
+    "dependencyClasses",
+    "inventoryGranularity",
+    "dependencies",
+    "candidateResolution",
+    "operatingProof",
+    "cleanConsumerProof",
+    "versioning",
+    "consumerInterface",
+    "authorityReconciliation",
+    "followUps"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "planId": {"const": "mz.systems.release.production-01-plan"},
+    "taskId": {"const": "TASK-PORT-01-RELEASE-BOUNDARY"},
+    "status": {"const": "complete"},
+    "outputStatus": {"const": "release-plan"},
+    "productionAuthority": {"const": false},
+    "generatedRelease": {"const": false},
+    "targetPackage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "candidateVersion", "productionVersion", "productionVersionEligibility", "entrypoints", "requiredGroups"],
+      "properties": {
+        "name": {"const": "@mez-systems/design-system-web"},
+        "candidateVersion": {"pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+-rc\\.[0-9]+$"},
+        "productionVersion": {"pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "productionVersionEligibility": {"type": "string", "minLength": 40},
+        "entrypoints": {"type": "array", "minItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+        "requiredGroups": {"type": "array", "minItems": 12, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "dependencyClasses": {
+      "const": ["canonical", "generated", "evidence-only", "consumer-owned"]
+    },
+    "inventoryGranularity": {"type": "string", "minLength": 40},
+    "dependencies": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "class", "status", "source", "releaseTreatment", "includeInTarget", "followUp"],
+        "properties": {
+          "id": {"pattern": "^DEP-[A-Z0-9-]+$"},
+          "class": {"enum": ["canonical", "candidate", "generated", "evidence-only", "consumer-owned"]},
+          "status": {"type": "string", "minLength": 3},
+          "source": {"type": "string", "minLength": 3},
+          "releaseTreatment": {"type": "string", "minLength": 30},
+          "includeInTarget": {"type": "boolean"},
+          "followUp": {"pattern": "^TASK-[A-Z0-9-]+$"}
+        }
+      }
+    },
+    "candidateResolution": {"$ref": "#/$defs/nonEmptyObject"},
+    "operatingProof": {"$ref": "#/$defs/nonEmptyObject"},
+    "cleanConsumerProof": {"$ref": "#/$defs/nonEmptyObject"},
+    "versioning": {"$ref": "#/$defs/nonEmptyObject"},
+    "consumerInterface": {"$ref": "#/$defs/nonEmptyObject"},
+    "authorityReconciliation": {"$ref": "#/$defs/nonEmptyObject"},
+    "followUps": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["taskId", "status", "owner", "exit"],
+        "properties": {
+          "taskId": {"pattern": "^TASK-PORT-[0-9]+-[A-Z0-9-]+$"},
+          "status": {"type": "string"},
+          "owner": {"type": "string"},
+          "exit": {"type": "string", "minLength": 30}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyObject": {
+      "type": "object",
+      "minProperties": 2
+    }
+  }
+}

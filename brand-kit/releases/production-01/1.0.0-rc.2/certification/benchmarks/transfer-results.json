@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "benchmarkId": "CERT-MM-TRANSFER-01",
+  "prompt": "brand-kit/certification/benchmarks/transfer-prompt.md",
+  "schema": "brand-kit/certification/benchmarks/transfer-output.schema.json",
+  "models": [
+    {
+      "name": "GPT-5.6 Codex",
+      "output": "brand-kit/certification/benchmarks/gpt-5.6-codex.json",
+      "result": "pass",
+      "casesPassed": 2,
+      "casesTotal": 2
+    },
+    {
+      "name": "Claude Opus 4.8",
+      "output": null,
+      "result": "not-run-cli-auth-unavailable",
+      "casesPassed": 0,
+      "casesTotal": 2
+    }
+  ],
+  "invariants": [
+    "The canonical repository wins over Figma drift.",
+    "A validator pass does not cancel critical design defects.",
+    "Neither model creates production authority.",
+    "Deferred channels remain uncertified."
+  ],
+  "result": "pass-with-auth-limitation",
+  "limitation": "The installed Claude CLI returned 'Not logged in'. Claude Opus 4.8 remains covered by the historical contract replay, but its same-prompt transfer case is unmeasured."
+}

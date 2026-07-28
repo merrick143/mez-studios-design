@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-PORT-01-RELEASE-BOUNDARY",
+  "taskId": "TASK-PORT-01-RELEASE-BOUNDARY",
+  "contextBundleId": "CTX-PORT-01-RELEASE-BOUNDARY",
+  "agent": {
+    "kind": "llm",
+    "name": "Codex",
+    "model": "GPT-5"
+  },
+  "startedAt": "2026-07-28T10:53:00+10:00",
+  "finishedAt": "2026-07-28T11:10:44+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {
+      "path": "brand-kit/releases/production-01-plan/",
+      "action": "created",
+      "sha256": null,
+      "reason": "Production boundary README, source, schema, proof payload contract/example, review and semantic verifier."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-PORT-01-RELEASE-BOUNDARY.json",
+      "action": "modified",
+      "sha256": null,
+      "reason": "PORT-01 is complete as a non-authoritative release plan."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES.json",
+      "action": "created",
+      "sha256": null,
+      "reason": "Next bounded task for separate CMP-05/CMP-06 decisions and authority reconciliation."
+    },
+    {
+      "path": "brand-kit/llm/examples/CTX-PORT-01-RELEASE-BOUNDARY.json",
+      "action": "created",
+      "sha256": null,
+      "reason": "Frozen bounded inputs, conflicts, consumer and stop conditions."
+    },
+    {
+      "path": "brand-kit/llm/examples/RCP-PORT-01-RELEASE-BOUNDARY.json",
+      "action": "created",
+      "sha256": null,
+      "reason": "Formal output receipt with measured validation results."
+    },
+    {
+      "path": "brand-kit/llm/examples/EVAL-PORT-01-RELEASE-BOUNDARY.json",
+      "action": "created",
+      "sha256": null,
+      "reason": "Post-task contract evaluation and future release blockers."
+    },
+    {
+      "path": "brand-kit/START-HERE.md",
+      "action": "modified",
+      "sha256": null,
+      "reason": "PORT-01 completion and PORT-02 routing."
+    },
+    {
+      "path": "brand-kit/docs/CURRENT-STATE.md",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Live plan status, next task and explicit central-ledger blocker."
+    },
+    {
+      "path": "brand-kit/docs/ROADMAP.md",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Operational Phase 4 now sequences PORT-02, PORT-03 and PORT-04 after the completed boundary."
+    },
+    {
+      "path": "brand-kit/docs/END-TO-END-ROADMAP.md",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Strategic reconciliation points to the live PORT-02 task."
+    },
+    {
+      "path": "brand-kit/docs/HANDOFF.md",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Current continuation and blockers for another agent or human."
+    },
+    {
+      "path": "brand-kit/data/status.json",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Machine-readable next task and production-boundary planning status."
+    },
+    {
+      "path": "brand-kit/llm/README.md",
+      "action": "modified",
+      "sha256": null,
+      "reason": "PORT-01 record set and PORT-02 task discovery."
+    },
+    {
+      "path": "brand-kit/scripts/verify_llm_contracts.py",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Live completion and next-task receipt output."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_canonical.py",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Preserve the historical approval route to PORT-01 while asserting the live route to PORT-02."
+    }
+  ],
+  "decisionsApplied": [
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-WEBSITE-MOTION-SYSTEM-001"
+  ],
+  "tests": [
+    {
+      "id": "PORT-01-BOUNDARY",
+      "status": "pass",
+      "evidence": "verify_release_boundary.py validates twenty-one release-copy or external ownership units across all five authority classes, source paths, runtime import trace and owning follow-ups."
+    },
+    {
+      "id": "PORT-01-NO-SILENT-PROMOTION",
+      "status": "pass",
+      "evidence": "The verifier reads both live component sources: CMP-05 and CMP-06 remain candidate, productionAuthority false, decision-free and excluded pending their own gates."
+    },
+    {
+      "id": "PORT-01-PROOF-SAFETY",
+      "status": "pass",
+      "evidence": "All four original hashes are preserved without absolute paths or bytes; no redacted derivative or approval is fabricated and publicReleaseEligible remains false."
+    },
+    {
+      "id": "PORT-01-PACKAGE-OPERATIONS",
+      "status": "pass",
+      "evidence": "The schema and semantic verifier require thirteen package groups, seven entrypoints, package-only isolation, eight viewports, zero runtime design-network dependency, visible version/hash, immutable update and rollback."
+    },
+    {
+      "id": "PORT-01-AUTHORITY-HONESTY",
+      "status": "pass",
+      "evidence": "The verifier confirms three required IDs are absent from the central ledger but present in bounded supporting records; production assembly is blocked and governance was not mutated."
+    },
+    {
+      "id": "PORT-01-CONSUMER-BOUNDARY",
+      "status": "pass",
+      "evidence": "CON-MEZ-SYSTEMS-WEB-001 is named with a null repository, mandatory registration and no cross-repository runtime import; no consumer was read or modified."
+    },
+    {
+      "id": "CORE-VALIDATION",
+      "status": "pass",
+      "evidence": "All seven AGENT-GUIDE core validators passed: portability, LLM contracts, workbench, gradient library, product architecture, authority and migration release."
+    },
+    {
+      "id": "DEPENDENCY-REGRESSION",
+      "status": "pass",
+      "evidence": "Golden Homepage canonical, CMP-05, CMP-06 and PORT-01 task verifiers pass; git diff --check reports no whitespace errors."
+    }
+  ],
+  "artifactsProduced": [
+    "Production release 01 dependency and authority-class inventory",
+    "Self-contained package and version boundary",
+    "Release-safe operating-proof payload schema and deliberately ineligible example",
+    "Clean-consumer, update, rollback and version-visibility evidence plan",
+    "Named future consumer interface",
+    "PORT-02 candidate dependency gate task"
+  ],
+  "assumptions": [
+    "A dependency inventory entry represents one release-copy unit or external ownership unit; the verifier separately traces all current Golden Homepage runtime dependency families.",
+    "The three bounded approval records are evidence of the cited decisions but do not make the stale central ledger safe to package as current.",
+    "The production consumer can be named by stable ID before its repository is registered, provided integration remains prohibited."
+  ],
+  "exceptions": [
+    "The task completed with production-assembly prerequisites intentionally left blocking: component decisions, decision-ledger reconciliation, proof redaction and consumer registration.",
+    "No design-critique run was required because PORT-01 creates no visual surface or visual change."
+  ],
+  "hiddenContextFailures": [
+    "The central decision snapshot did not contain three decision IDs cited by the task's required canonical inputs; the plan records this instead of hiding it."
+  ],
+  "humanStatus": {
+    "gateRequired": false,
+    "gateId": null,
+    "status": "not-required"
+  },
+  "nextAction": "Execute TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES: close or exclude CMP-05 and CMP-06 separately and reconcile decision authority before assembling a production release candidate."
+}

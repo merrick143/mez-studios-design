@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "scopeId": "CERT-SCOPE-CURRENT-01",
+  "status": "bounded-current-scope",
+  "certifiedOrInherited": [
+    {"id": "foundations", "authority": "canonical-1.0.0", "evidence": "brand-kit/releases/foundations/manifest.json"},
+    {"id": "identity-and-living-core", "authority": "canonical", "evidence": "brand-kit/registry/ and brand-kit/gradient-library/"},
+    {"id": "expression-suite", "authority": "canonical-1.0.0", "evidence": "brand-kit/expressions/"},
+    {"id": "global-navigation", "authority": "canonical-1.0.0", "evidence": "brand-kit/components/global-navigation/"},
+    {"id": "golden-homepage", "authority": "canonical-1.0.0-unreleased", "evidence": "brand-kit/golden/homepage/round-29-approval.json"},
+    {"id": "halftone-portrait", "authority": "canonical-1.0.0", "evidence": "brand-kit/components/halftone-portrait/approval.json"},
+    {"id": "testimonial-marquee", "authority": "canonical-1.0.0", "evidence": "brand-kit/components/testimonial-marquee/approval.json"},
+    {"id": "figma-companion", "authority": "approved-noncanonical-mirror", "evidence": "brand-kit/figma-companion/approval.json"},
+    {"id": "product-ui-foundation", "authority": "approved-nonproduction-direction", "evidence": "brand-kit/product-ui/approval.json"},
+    {"id": "llm-operating-contracts", "authority": "repository-operating-layer", "evidence": "brand-kit/llm/"},
+    {"id": "release-operations", "authority": "candidate-assembly-and-verification", "evidence": "brand-kit/releases/production-01-plan/"}
+  ],
+  "explicitlyUncertified": [
+    "shared channel-system rules",
+    "organic social",
+    "paid advertising",
+    "email",
+    "presentations",
+    "reports and documents",
+    "motion and video outside Website Motion 1.0.0",
+    "OG images, favicons and icons",
+    "print and environmental"
+  ],
+  "approvedButBounded": [
+    "Figma is an approved authoring mirror and has no independent canonical authority.",
+    "Product UI is an approved foundation direction backed by repository fixture data, not a production AI OS workflow.",
+    "Golden Homepage, CMP-05 and CMP-06 remain unreleased even where their design or component authority is canonical.",
+    "The continuous testimonial drift and bounded multi-portrait allocation retain their exact approved exceptions without widening Website Motion 1.0.0."
+  ],
+  "consumerOwnedAndUnproven": [
+    "exact consumer repository registration",
+    "routes, analytics, SEO and live availability",
+    "authentication, persistence, commerce and provider behaviour",
+    "publication and deployment",
+    "live testimonial wording, follower freshness and continuing consent operations",
+    "third-party-mark legal and attribution confirmation",
+    "named-device performance, update and rollback",
+    "exact spoken assistive-technology sessions in the final consumer"
+  ],
+  "productionAuthority": false,
+  "canonicalAuthorityCreated": false
+}

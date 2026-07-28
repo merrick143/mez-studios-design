@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r04",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Olli",
+  "verdict": "keep",
+  "productionAuthority": false,
+  "feedback": [
+    "Lock in the social-caption testimonial design.",
+    "The Golden Homepage testimonial section should not sit on a slightly off-white recessed plate or feel like a separate contained section.",
+    "Blend the testimonial section into the surrounding homepage canvas while preserving the approved centered copy, spacing, portrait/profile anatomy and auto-scroll behaviour."
+  ],
+  "selected": {
+    "presentation": "social-caption",
+    "homepageBackground": "transparent; inherit the surrounding page canvas",
+    "copy": ["Running on Mez Systems", "Proof from the operating system."],
+    "motion": "Round 03 bounded continuous auto-scroll contract",
+    "compactAnatomy": "portrait and profile identity above a full-width quote"
+  },
+  "authorityBoundary": "This is Olli's human selection of the CMP-06 candidate direction. It does not create a governance decision ID, canonical status, production authority or release.",
+  "outputStatus": "candidate"
+}

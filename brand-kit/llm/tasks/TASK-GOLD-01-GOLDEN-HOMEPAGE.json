@@ -3,7 +3,7 @@
   "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
   "title": "Compose the first Mez Systems golden homepage",
   "phase": 3,
-  "status": "in-progress",
+  "status": "complete",
   "owner": "design-system-agent",
   "objective": "Compose one complete, reviewable Mez Systems homepage from the canonical foundations, expression suite, functional components, Website Motion and Global Navigation 1.0.0, using real hierarchy and copy rather than another isolated style study.",
   "scope": {
@@ -131,6 +131,12 @@
   ],
   "verification": [
     {
+      "id": "GOLD-01-CANONICAL",
+      "method": "command",
+      "command": ".venv/bin/python brand-kit/golden/homepage/verify_homepage_canonical.py",
+      "passCondition": "Round 28 is canonical 1.0.0 through DEC-GOLDEN-HOMEPAGE-001, the human gate is closed without overstating release authority, and Phase 4 is the aligned next task"
+    },
+    {
       "id": "GOLD-01-PLAN",
       "method": "command",
       "command": ".venv/bin/python brand-kit/golden/homepage/verify_homepage_plan.py",
@@ -204,5 +210,6 @@
     ,"Round 15 begins the section revisions from Olli's full review (round-14-section-review-feedback.json), planned in SECTION-REVISION-PLAN.md. It is the structural round: 'Why Mez Systems' (GH-S04) splits into 'Built on ourselves first' (GH-S04) and 'Operating proof' (GH-S05), taking the page to ten reviewable regions -- AI OS, ecosystem, proof, final route and footer renumber to GH-S06-GH-S10 -- and the previously indented 'Built on ourselves first' header (a centred max-width:860px block) is left-aligned to its body. The locked V01 hero and every other section are byte-unchanged; motion eligibility tracks the renumber (GH-S01, GH-S06, GH-S09). Candidate golden-homepage-01-r15; verify_homepage_round15.py is the active proof; it is not a golden approval and the whole-page gate stays open."
     ,"Rounds 16-17 reinvented the section designs from Olli's next full section review (round-16-section-review-feedback.json). Given full latitude ('rebuild each section however you think in the mez systems style but use those attached as inspo'), the editorial sections S02/S03/S04 were rebuilt on one shared authored split-card family -- a light editorial half beside a charcoal generative half with a bespoke per-section visual: S02 problem a charcoal fragmentation field, S03 principle abstract interchangeable-intelligence swap-slots over an owned base (the rented-brand logos, real and invented, removed for good), S04 a Build-Run-Break-Refine-Package operating-loop timeline. S05 Operating proof, which had shipped unstyled (raw stacked text, no CSS), was rebuilt into honest charcoal 'Evidence pending' redacted-screen placeholders. The S06 AI OS Wings were centred and enlarged and its two bottom cards ('How it works' / 'Features') rebuilt from Olli's reference screenshots into a monochrome orbital diagram + a divided 2x2 index (reference polish translated to Mez mono: charcoal not black, hairlines, no glow, no non-canonical green). The S07 ecosystem cards were simplified to Wings + name + Coming soon (waitlist removed). The reintroduced family header indent was fixed across S02-S05. Candidate golden-homepage-01-r17; verify_homepage_round17.py is the active proof; the locked V01 hero, canonical motion and honest evidence/consent states carry forward and the whole-page gate stays open."
     ,"The separate technical Mez Systems repository is a future registered consumer, not a second source of design truth."
+    ,"Olli approved the complete Round 28 page on 28 July 2026. DEC-GOLDEN-HOMEPAGE-001 closes H-GOLD-01-HOMEPAGE-PROOF and promotes Golden Homepage 1.0.0 as the first canonical visual reference. The bounded approval does not release a consumer implementation or independently promote CMP-05 or CMP-06."
   ]
 }

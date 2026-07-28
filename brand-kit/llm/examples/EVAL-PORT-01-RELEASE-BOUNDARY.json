@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-PORT-01-RELEASE-BOUNDARY",
+  "receiptId": "RCP-PORT-01-RELEASE-BOUNDARY",
+  "evaluatedAt": "2026-07-28T11:10:44+10:00",
+  "evaluator": {
+    "kind": "hybrid",
+    "name": "Codex plus deterministic validators"
+  },
+  "contractChecks": [
+    {
+      "id": "COMPLETE-INVENTORY",
+      "status": "pass",
+      "evidence": "Twenty-one unique release-copy or external ownership units cover canonical, candidate, generated, evidence-only and consumer-owned dependencies; current homepage imports are traced against required units."
+    },
+    {
+      "id": "CANDIDATE-SEPARATION",
+      "status": "pass",
+      "evidence": "CMP-05 and CMP-06 remain excluded, decision-free candidates with separate gates and explicit promotion or exclusion paths."
+    },
+    {
+      "id": "PROOF-SAFETY",
+      "status": "pass",
+      "evidence": "No raw screenshot, workstation path or fabricated redacted derivative is eligible; four original hashes survive in a schema-valid pending payload."
+    },
+    {
+      "id": "SELF-CONTAINED-BOUNDARY",
+      "status": "pass",
+      "evidence": "The plan names package groups, entrypoints, local dependencies, isolation method, responsive/accessibility checks and deterministic integrity requirements."
+    },
+    {
+      "id": "OPERATIONS",
+      "status": "pass",
+      "evidence": "Version visibility, immutable update, rollback and compatibility rules are explicit and verifier-asserted."
+    },
+    {
+      "id": "AUTHORITY-DRIFT",
+      "status": "warning",
+      "evidence": "Three required post-cutover decision IDs remain absent from the central ledger. PORT-01 correctly blocks assembly and routes reconciliation instead of overstating authority."
+    },
+    {
+      "id": "CORE-REGRESSION",
+      "status": "pass",
+      "evidence": "All seven core validators and the Golden Homepage, CMP-05, CMP-06 and PORT-01 task verifiers pass."
+    }
+  ],
+  "qualityDimensions": [
+    {
+      "id": "boundary-completeness",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "The plan covers package contents, excluded dependencies, proof media, clean install, operations and consumer ownership."
+    },
+    {
+      "id": "authority-honesty",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "No candidate, screenshot, consumer or stale ledger is laundered into production authority."
+    },
+    {
+      "id": "verifiability",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "The schema and semantic verifier inspect live JavaScript/imports, component authority, provenance hashes, package operations and ledger state."
+    },
+    {
+      "id": "consumer-separation",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "The stable consumer ID and ownership interface are explicit while repository registration and all mutations remain future work."
+    },
+    {
+      "id": "release-readiness",
+      "score": 2,
+      "maximum": 5,
+      "evidence": "The boundary is executable, but no package, redacted proof or consumer integration exists and component/authority gates remain blocking by design."
+    }
+  ],
+  "blockers": [
+    "Reconcile DEC-FOUNDATION-RELEASE-001, DEC-GLOBAL-NAVIGATION-COMPONENT-001 and DEC-GOLDEN-HOMEPAGE-001 with the central decision ledger.",
+    "Give CMP-05 and CMP-06 separate promotion or exclusion verdicts and decision IDs where promoted.",
+    "Produce and visually approve the exact redacted operating-proof derivatives.",
+    "Register CON-MEZ-SYSTEMS-WEB-001 before real-consumer integration."
+  ],
+  "verdict": "pass-with-warnings",
+  "humanReviewRequired": false,
+  "notes": [
+    "PORT-01 itself is complete and requires no human gate. The listed blockers constrain production assembly and are intentionally owned by PORT-02 through PORT-04.",
+    "Output status is release-plan. It is neither a candidate component nor an approved, canonical, generated or released production package."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r24",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-27",
+  "note": "Olli found the first operating-proof candidate inconsistent and over-written. The context pair used two different image sizes, and the right evidence column carried repeated descriptions, mechanism lines, numbering and a visible governance note.",
+  "section": {
+    "id": "GH-S05",
+    "title": "Operating proof",
+    "verdict": "revise",
+    "feedback": "Make the two Context screenshots the same size. Simplify the evidence column to titles and visuals only. Delete the visible 'Internal working-state text visible. Production redaction pending.' line."
+  },
+  "selected": {
+    "compositionFamily": "Sticky proof",
+    "leftRegister": "Eyebrow, section title and one lead only",
+    "rightRegister": "Three titles and four real screenshots only",
+    "contextPair": "MEZ Backend and Mez Studios Docs share the same full width and native aspect treatment",
+    "removed": [
+      "stage index",
+      "evidence descriptions",
+      "mechanism lines",
+      "number labels",
+      "section closing copy",
+      "visible production-redaction notice"
+    ]
+  },
+  "governance": {
+    "publicRedactionStatus": "pending",
+    "visibleOnCandidate": false,
+    "note": "Olli explicitly removed the notice from customer-facing layout. The pending status remains in source and asset provenance and is not converted into production approval."
+  },
+  "outputStatus": "candidate",
+  "productionAuthority": false
+}

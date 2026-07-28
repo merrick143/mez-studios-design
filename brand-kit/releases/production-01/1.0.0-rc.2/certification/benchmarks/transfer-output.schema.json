@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["benchmarkVersion", "model", "cases", "deferredChannelsCertified"],
+  "properties": {
+    "benchmarkVersion": {"const": "1.0.0"},
+    "model": {"type": "string", "minLength": 2},
+    "cases": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["caseId", "verdict", "authorityPath", "requiredActions", "defectIds", "productionAuthority"],
+          "properties": {
+            "caseId": {"const": "AUTH-01"},
+            "verdict": {"const": "stop"},
+            "authorityPath": {"const": "brand-kit/registry/products.json"},
+            "requiredActions": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+            "defectIds": {"const": []},
+            "productionAuthority": {"const": false}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["caseId", "verdict", "authorityPath", "requiredActions", "defectIds", "productionAuthority"],
+          "properties": {
+            "caseId": {"const": "REVIEW-01"},
+            "verdict": {"const": "reject"},
+            "authorityPath": {"const": "brand-kit/design-authority/ANTI-SLOP-CANON.md"},
+            "requiredActions": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+            "defectIds": {"const": ["COL-10", "LAY-01", "ICO-01", "TYP-03", "MOTION-AUTOPLAY"]},
+            "productionAuthority": {"const": false}
+          }
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "deferredChannelsCertified": {"const": false}
+  }
+}

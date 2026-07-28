@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "gateId": "H-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "packetId": "mz.systems.release.production-01-plan.candidate-promotion-packet",
+  "verdict": "approved-and-closed",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Codex plus deterministic verifiers and design-critique",
+  "productionAuthority": false,
+  "generatedRelease": false,
+  "outputStatus": "candidate-promotion-packet",
+  "whatWasProven": [
+    {
+      "claim": "CMP-05's previously open Gate B and responsive gaps are closed on the exact candidate.",
+      "method": "Rendered inspection at all nine declared viewports plus 920px, measured overflow/geometry/allocation, screenshot frame comparison, design-critique and the extended component verifier.",
+      "result": "PASS. 0px overflow at every width; square 257-320px portrait; one live allocated instance; 36.64% live-frame change versus 0% adjacent static change; Gate B 67/75 with no blocker."
+    },
+    {
+      "claim": "CMP-06's keyboard and screen-reader structure remains complete on the locked Round 04 candidate.",
+      "method": "Rendered DOM snapshot, role/name/order inspection, focus outline inspection, End-key interaction, live-region readout and 650ms focus hold.",
+      "result": "PASS for structure and keyboard. One labelled tab stop, seven ordered items, hidden loop copies, zero links/buttons, solid 3px focus ring, item 7 announcement and 0px motion while focused. Exact VoiceOver speech remains unmeasured."
+    },
+    {
+      "claim": "Unmeasured CMP-06 claims remain visible and bounded.",
+      "method": "Independent pointer and performance attempts recorded in interaction-evidence.json and mapped one-for-one to review gaps.",
+      "result": "PASS FOR HONEST ACCOUNTING. Synthetic :hover and page performance APIs were unavailable, so neither became a false pass. Physical-pointer, spoken-output and device profiling are proposed named-consumer obligations."
+    },
+    {
+      "claim": "The locked candidates pass Gate B without redesign.",
+      "method": "design-critique on CMP-05 and exact-record regression review of CMP-06 Round 04 across the required viewports, named tests and anti-slop canon.",
+      "result": "PASS. CMP-05 67/75; CMP-06 67/75; no blocking reason. No component JS, CSS, treatment or testimonial anatomy was changed in PORT-02."
+    },
+    {
+      "claim": "Central decision authority is reconciled without inventing approval.",
+      "method": "Compared the ledger with the exact Foundation Release, Global Navigation and Golden Homepage Olli approval records before indexing them.",
+      "result": "PASS. The immutable cutover ledger retains its activated hash; the supplement indexes the three prior approvals and the two separately approved component decisions, each pointing to its exact Olli approval record."
+    },
+    {
+      "claim": "The packet preserves separate component authority.",
+      "method": "Schema and verifier comparison against both live source/review contracts, the immutable cutover ledger and the post-cutover decision supplement.",
+      "result": "PASS. Each component has a distinct approval record and decision ID. Both exact candidate revisions are canonical; the packet itself remains non-authoritative and generatedRelease remains false."
+    }
+  ],
+  "knownGaps": [
+    "Exact VoiceOver speech, physical-pointer hover timing and device CPU/memory/battery cost remain unmeasured; Olli accepted them as named-consumer proof obligations at promotion.",
+    "The Golden Homepage's pre-existing 8px document overflow at 320 is outside CMP-06 and remains a production rebasing or consumer-proof obligation.",
+    "No production release is assembled, generated, approved or published by this packet."
+  ],
+  "humanDecisionsRequired": [],
+  "authorityScope": "Closed PORT-02 evidence packet. Separate Olli approvals grant bounded authority to CMP-05 and CMP-06 through their own approval records; this packet itself creates no release, deployment or consumer authority."
+}

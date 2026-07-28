@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "gateId": "H-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "verdict": "approved",
+  "approvedAt": "2026-07-28",
+  "approvedBy": "Olli",
+  "humanEvidence": [
+    "Yes I approve all your decisions.",
+    "1. Yes.",
+    "2. Yes.",
+    "3. Yes.",
+    "4. Keep the dated snapshots.",
+    "5. Yes.",
+    "6. Yes."
+  ],
+  "componentVerdicts": [
+    {
+      "componentId": "mz.systems.component.halftone-portrait",
+      "verdict": "promote",
+      "decisionId": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "acceptedLimitations": [
+        "The baked light-plate matte degrades the optional invert treatment; the locked production treatment does not use invert."
+      ]
+    },
+    {
+      "componentId": "mz.systems.component.testimonial-marquee",
+      "verdict": "promote",
+      "decisionId": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+      "acceptedLimitations": [
+        "Exact spoken VoiceOver phrasing is deferred to the named consumer proof.",
+        "Physical-pointer hover timing is deferred to the named consumer proof because the in-app Browser did not establish a reliable synthetic hover state.",
+        "Device CPU, memory and battery profiling is deferred to the named consumer proof."
+      ]
+    }
+  ],
+  "followerPolicy": {
+    "selection": "frozen-evidence",
+    "rule": "Follower counts are dated snapshots supplied by the fixture or consumer. The component makes no Instagram request and must not describe the values as live."
+  },
+  "motionReconfirmation": [
+    {
+      "componentId": "mz.systems.component.halftone-portrait",
+      "scope": "Only explicit motion-policy=always instances; default allocation remains one and every instance idles offscreen.",
+      "verdict": "reconfirmed-bounded"
+    },
+    {
+      "componentId": "mz.systems.component.testimonial-marquee",
+      "scope": "Only CMP-06 continuous drift at 24px/s with phase pause, 900ms recovery, hidden/offscreen pause and complete static reduced motion.",
+      "verdict": "reconfirmed-bounded"
+    }
+  ],
+  "releaseCandidateAssemblyMayStart": true,
+  "productionReleaseAuthorised": false,
+  "nextTask": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "outputStatus": "approved-component-promotion-decision"
+}

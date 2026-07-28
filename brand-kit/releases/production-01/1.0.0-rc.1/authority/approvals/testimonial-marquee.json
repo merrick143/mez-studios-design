@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r04",
+  "verdict": "approved",
+  "approvedAt": "2026-07-28",
+  "approvedBy": "Olli",
+  "decisionId": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true,
+  "humanDecision": "brand-kit/releases/production-01-plan/candidate-promotion-packet/human-decision.json",
+  "authorityScope": [
+    "The locked social-caption testimonial-proof presentation and reusable semantic marquee machinery.",
+    "Native manual scrolling, one focusable phase, keyboard navigation, screen-reader structure and complete static reduced-motion list.",
+    "Continuous 24px/s track drift with phase hover/focus pause, 900ms manual-input recovery and hidden/offscreen idling as a CMP-06-only exception.",
+    "Composition of canonical CMP-05 portraits using the separately bounded motion-policy=always exception."
+  ],
+  "followerPolicy": {
+    "selection": "frozen-evidence",
+    "owner": "testimonial fixture or named consumer",
+    "rule": "Render only a dated supplied snapshot with source evidence; make no Instagram request and never imply live freshness."
+  },
+  "acceptedLimitations": [
+    "Exact spoken VoiceOver phrasing is deferred to the named consumer proof.",
+    "Physical-pointer hover timing is deferred to the named consumer proof.",
+    "Device CPU, memory and battery profiling is deferred to the named consumer proof."
+  ],
+  "excludedAuthority": [
+    "testimonial wording and identity claims",
+    "likeness consent operations",
+    "live follower refresh or Instagram integration",
+    "product identity, routes, destinations, analytics or consumer deployment",
+    "continuous drift outside CMP-06"
+  ],
+  "outputStatus": "canonical-component"
+}

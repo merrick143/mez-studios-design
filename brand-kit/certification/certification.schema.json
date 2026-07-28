@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/system-certification.schema.json",
+  "title": "Mez Systems whole-system certification contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "certificationId",
+    "taskId",
+    "gateId",
+    "status",
+    "scope",
+    "requiredAudits",
+    "benchmark",
+    "releaseCandidate",
+    "authorityBoundary",
+    "humanGate"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "certificationId": {"const": "mz.systems.certification.current-scope.01"},
+    "taskId": {"const": "TASK-CERT-01-SYSTEM-CERTIFICATION"},
+    "gateId": {"const": "H-CERT-01-SYSTEM-CERTIFICATION"},
+    "status": {"const": "approved-current-scope"},
+    "scope": {"const": "brand-kit/certification/scope.json"},
+    "requiredAudits": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {"enum": ["authority", "accessibility", "portability", "onboarding", "release-governance"]}
+    },
+    "benchmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["models", "outputClasses", "samePromptTransfer", "historicalContractReplay"],
+      "properties": {
+        "models": {"const": ["GPT-5.6 Codex", "Claude Opus 4.8"]},
+        "outputClasses": {
+          "const": ["authority-triage", "anti-example-review", "implementation-receipt", "golden-visual-receipt"]
+        },
+        "samePromptTransfer": {"const": "brand-kit/certification/benchmarks/transfer-results.json"},
+        "historicalContractReplay": {"const": "brand-kit/certification/benchmarks/contract-replay.json"}
+      }
+    },
+    "releaseCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "path", "frozenPredecessor", "productionAuthority", "published", "deployed"],
+      "properties": {
+        "name": {"const": "@mez-systems/design-system-web"},
+        "version": {"const": "1.0.0-rc.2"},
+        "path": {"const": "brand-kit/releases/production-01/1.0.0-rc.2/"},
+        "frozenPredecessor": {"const": "brand-kit/releases/production-01/1.0.0-rc.1/"},
+        "productionAuthority": {"const": false},
+        "published": {"const": false},
+        "deployed": {"const": false}
+      }
+    },
+    "authorityBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonicalAuthority", "productionAuthority", "consumerIntegrationAuthority", "deferredChannelsCertified"],
+      "properties": {
+        "canonicalAuthority": {"const": false},
+        "productionAuthority": {"const": false},
+        "consumerIntegrationAuthority": {"const": false},
+        "deferredChannelsCertified": {"const": false}
+      }
+    },
+    "humanGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "approver", "status", "approvalQuestion"],
+      "properties": {
+        "required": {"const": true},
+        "approver": {"const": "Olli"},
+        "status": {"const": "approved"},
+        "approvalQuestion": {"type": "string", "minLength": 20}
+      }
+    }
+  }
+}

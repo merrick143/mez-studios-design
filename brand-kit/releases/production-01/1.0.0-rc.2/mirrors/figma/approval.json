@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "gateId": "H-FIG-02-FIGMA-COMPANION-APPROVAL",
+  "fileKey": "QxZT3FJ8BDXOZfBQDt0qPW",
+  "verdict": "approved",
+  "approvedAt": "2026-07-28T10:51:31Z",
+  "approvedBy": "Olli",
+  "humanEvidence": [
+    "approved"
+  ],
+  "approvedScope": [
+    "The completed Mez Systems Design System Companion file structure across fourteen pages.",
+    "Eight repository-backed variable collections, fifteen semantic text styles and five depth styles.",
+    "Six identity and expression component sets with twenty-nine variants.",
+    "Fifteen Phase B functional component sets plus static authoring twins for Global Navigation, Halftone Portrait and Testimonial Marquee: eighteen sets and 105 variants.",
+    "Use of the file as the approved Figma authoring mirror of canonical repository contracts."
+  ],
+  "evidence": {
+    "phase4Receipt": "brand-kit/figma-companion/phase-04-functional-components.json",
+    "gateB": "brand-kit/figma-companion/phase-04-gate-b.json",
+    "buildState": "brand-kit/figma-companion/build-state.json",
+    "verifier": "brand-kit/figma-companion/verify_phase_04.py"
+  },
+  "authorises": [
+    "Close TASK-FIG-01-FIGMA-COMPANION.",
+    "Treat QxZT3FJ8BDXOZfBQDt0qPW as the approved Figma companion mirror.",
+    "Unblock TASK-CHAN-01-FIRST-RELEASE-CHANNEL-SYSTEMS.",
+    "Plan Code Connect against the approved component structure before any separate publishing decision."
+  ],
+  "doesNotAuthorise": [
+    "Giving Figma independent or canonical design authority.",
+    "Publishing the Figma library or creating production Code Connect mappings without a bounded follow-up task.",
+    "Changing canonical repository values, components, motion or product identity from Figma.",
+    "Publishing a package, deploying a website, entering a consumer repository or assigning production version 1.0.0."
+  ],
+  "resultingStatus": "approved-companion-mirror",
+  "productionAuthority": false,
+  "canonicalAuthority": false,
+  "nextTask": "TASK-CHAN-01-FIRST-RELEASE-CHANNEL-SYSTEMS"
+}

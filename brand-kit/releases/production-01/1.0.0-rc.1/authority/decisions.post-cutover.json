@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "registerId": "mz.systems.governance.post-cutover-decisions",
+  "sourceAuthority": "merrick143/mez-studios-design@main:brand-kit signed post-cutover review records",
+  "baseLedger": "brand-kit/governance/decisions.json",
+  "baseLedgerPolicy": "The 2026-07-21 migration ledger is hash-locked cutover evidence. This supplement indexes later approved decisions without rewriting that dated artifact.",
+  "decisions": [
+    {
+      "id": "DEC-FOUNDATION-RELEASE-001",
+      "title": "Canonical foundation release 1.0.0",
+      "status": "approved",
+      "scope": "Portable typography, colour, space-layout and geometry-controls foundation release",
+      "summary": "Lock the four separately approved foundation packages into the canonical portable foundations release without changing their bounded authority or token values.",
+      "approvedAt": "2026-07-21T11:14:07.000Z",
+      "approvedBy": "Olli",
+      "source": "brand-kit/releases/foundations/review.json"
+    },
+    {
+      "id": "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "title": "Canonical Global Navigation component",
+      "status": "approved",
+      "scope": "Global Navigation Registry family, variants, responsive behaviour and bounded five-core motion exception",
+      "summary": "Lock the quiet Living Registry, compact five-circle family cue, primary dark and bounded light surfaces, footer-free disclosure, accessibility behaviour, static fallbacks and the navigation-only five-live-core exception.",
+      "approvedAt": "2026-07-23T03:10:31Z",
+      "approvedBy": "Olli",
+      "source": "brand-kit/components/global-navigation/review.json"
+    },
+    {
+      "id": "DEC-GOLDEN-HOMEPAGE-001",
+      "title": "First canonical Golden Homepage design reference",
+      "status": "approved",
+      "scope": "Golden Homepage visual, responsive, interaction and composition reference",
+      "summary": "Lock the complete Round 28 homepage as the first canonical Mez Systems golden visual reference while keeping production packaging, consumer integration, release-safe proof media and independent component promotions outside its authority.",
+      "approvedAt": "2026-07-28",
+      "approvedBy": "Olli",
+      "source": "brand-kit/golden/homepage/round-29-approval.json"
+    },
+    {
+      "id": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "title": "Canonical Halftone Portrait component",
+      "status": "approved",
+      "scope": "Dependency-free Halftone Portrait render, accessibility, failure and bounded motion contract",
+      "summary": "Promote the exact CMP-05 candidate with its locked halftone treatment, default one-live allocation, complete static meaning, offscreen idling and explicit motion-policy=always exception. Accept the optional invert limitation and keep the utility outside the Phase B product-and-commerce pantry.",
+      "approvedAt": "2026-07-28",
+      "approvedBy": "Olli",
+      "source": "brand-kit/components/halftone-portrait/approval.json"
+    },
+    {
+      "id": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+      "title": "Canonical Testimonial Marquee component",
+      "status": "approved",
+      "scope": "Locked social-caption testimonial rail, fixture boundary, accessibility, frozen follower evidence and bounded motion contracts",
+      "summary": "Promote the exact CMP-06 Round 04 candidate with seven video-backed testimonials, no Daniel record, frozen dated follower snapshots, native interaction, static-complete reduced motion and the reconfirmed continuous-drift exception. Defer exact VoiceOver speech, physical-pointer timing and device profiling to named consumer proof.",
+      "approvedAt": "2026-07-28",
+      "approvedBy": "Olli",
+      "source": "brand-kit/components/testimonial-marquee/approval.json"
+    }
+  ],
+  "productionAuthority": false
+}

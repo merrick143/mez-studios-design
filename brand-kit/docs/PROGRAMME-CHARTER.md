@@ -48,7 +48,7 @@ Use a staged source-of-truth model:
 - Guidance, examples, and evaluation contracts live beside the canonical package and reference stable decision and artifact IDs.
 - Channel teams consume released versions. They do not fork unnamed local copies.
 
-The dedicated control plane now exists under `mez-studios-design/brand-kit`. `authority/authority.json`, `governance/decisions.json`, `registry/`, approved source assets, generated releases, and active documentation are authoritative by role. Research, Figma, consumers, `play-orb/`, `source-pack/`, and `history/` are evidence, mirrors, benchmarks, or consumers rather than independent authorities.
+The dedicated control plane now exists under `mez-studios-design/brand-kit`. `authority/authority.json`, the immutable cutover ledger `governance/decisions.json`, its post-cutover supplement `governance/post-cutover-decisions.json`, `registry/`, approved source assets, generated releases, and active documentation are authoritative by role. Research, Figma, consumers, `play-orb/`, `source-pack/`, and `history/` are evidence, mirrors, benchmarks, or consumers rather than independent authorities.
 
 ## Roles and decision rights
 

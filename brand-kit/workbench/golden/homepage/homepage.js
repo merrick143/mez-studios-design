@@ -1,4 +1,5 @@
 import "../../../components/global-navigation/mez-global-navigation.js?v=1.0.0";
+import "../../../components/testimonial-marquee/mez-testimonial-marquee.js?v=1.0.0";
 import { mountLivingCores } from "../../../source-pack/design-system-export/mz-core.js";
 
 const PRODUCTS_URL = new URL("../../../registry/products.json", import.meta.url);
@@ -8,6 +9,27 @@ const WINGS_URL = new URL("../../../source-pack/design-system-export/assets/wing
 const query = new URLSearchParams(location.search);
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const forceStatic = reducedMotion || query.has("static") || query.has("no-webgl");
+if (query.has("strip")) document.documentElement.dataset.strip = "true";
+
+/* Research-only frame evidence for Gate B. It is inert unless `?proof` is
+   present and does not alter renderer behaviour or page composition. */
+if (query.has("proof")) {
+  document.documentElement.dataset.mzDrawCalls = "0";
+  [window.WebGLRenderingContext, window.WebGL2RenderingContext]
+    .filter(Boolean)
+    .forEach(Context => {
+      ["drawArrays", "drawElements"].forEach(method => {
+        const original = Context.prototype[method];
+        if (typeof original !== "function") return;
+        Context.prototype[method] = function countedDrawCall(...args) {
+          document.documentElement.dataset.mzDrawCalls = String(
+            Number(document.documentElement.dataset.mzDrawCalls || 0) + 1
+          );
+          return original.apply(this, args);
+        };
+      });
+    });
+}
 
 const escapeHtml = value => String(value).replace(/[&<>'"]/g, character => ({
   "&": "&amp;",
@@ -85,20 +107,6 @@ heroProducts.innerHTML = products.map(product => {
 `;
 }).join("");
 
-/* GH-S07 · The coming systems are authored directly in the markup now as PO02
-   portrait product cards that hover-animate (see the eco-live wiring below).
-   comingProducts still drives the GH-S09 final-route extensions. */
-const comingProducts = products.filter(product => product.availability !== "live");
-
-/* GH-S08 · The coming systems as outlined extensions of the installed layer. */
-document.querySelector("[data-final-products]").innerHTML = comingProducts.map(product => `
-  <article class="final-extension" data-product="${escapeHtml(product.slug)}">
-    <i class="final-extension__disc" style="--material:url('${staticTwin(product.gradientId)}')" aria-hidden="true"></i>
-    <strong>${escapeHtml(product.publicName)}</strong>
-    <span>${escapeHtml(product.function)}</span>
-  </article>
-`).join("");
-
 /* Motion allocation.
    Every Living Core mounts directly on an intrinsically sized product-material
    element, never on an empty positioning layer, so the canvas always has real
@@ -119,8 +127,7 @@ const motionSections = new Map([
   [document.querySelector("#top"), { region: "hero", anchor: null }],
   [document.querySelector("#principle"), { region: "single", anchor: anchors.find(anchor => anchor.dataset.liveAnchor === "principle") }],
   [document.querySelector("#why-mez"), { region: "sequence", anchor: null }],
-  [document.querySelector("#ai-os"), { region: "single", anchor: anchors.find(anchor => anchor.dataset.liveAnchor === "ai-os") }],
-  [document.querySelector("#start"), { region: "single", anchor: anchors.find(anchor => anchor.dataset.liveAnchor === "final") }]
+  [document.querySelector("#ai-os"), { region: "single", anchor: anchors.find(anchor => anchor.dataset.liveAnchor === "ai-os") }]
 ]);
 
 function unmountCore(element) {
@@ -306,7 +313,7 @@ const allocationObserver = new IntersectionObserver(entries => {
 });
 motionSections.forEach((_, section) => allocationObserver.observe(section));
 
-/* GH-S07 · Ecosystem product cards hover-animate. The hovered card's material
+/* GH-S07 · The selected unboxed rail hover-animates one product disc. Its material
    mounts a single live core (exact static twin at rest); leaving unmounts it,
    so at most one ecosystem core is ever live and reduced-motion / no-WebGL keep
    the static twin. The ecosystem is not a motion region, so nothing competes. */
@@ -319,24 +326,36 @@ function unmountEcoField() {
 }
 ecoFields.forEach(field => {
   const card = field.closest(".eco-card") || field;
-  card.addEventListener("pointerenter", () => {
+  const activateEcoField = () => {
     if (!renderer || forceStatic || navigationOpen || ecoActiveField === field) return;
     unmountEcoField();
+    unmountSingleCore();
+    unmountSequence();
+    unmountHeroCores();
     try {
-      renderer.mount(field, field.dataset.gradientId, { shape: "rect", radius: 0.14, profile: "deep" });
+      renderer.mount(field, field.dataset.gradientId, { shape: "disc", radius: 0, profile: "deep" });
       field.dataset.mzCore = field.dataset.gradientId;
       ecoActiveField = field;
     } catch (error) {
       document.documentElement.dataset.coreFailure = error?.message || "unknown";
     }
-  });
-  card.addEventListener("pointerleave", unmountEcoField);
+  };
+  const releaseEcoField = () => {
+    unmountEcoField();
+    activateRegion(currentRegion, currentAnchor);
+  };
+  card.addEventListener("pointerenter", activateEcoField);
+  card.addEventListener("pointerleave", releaseEcoField);
+  card.addEventListener("focusin", activateEcoField);
+  card.addEventListener("focusout", releaseEcoField);
 });
 
 const navigation = document.querySelector("mez-global-navigation");
 navigation.addEventListener("mez-navigation-open", event => {
   navigationOpen = Boolean(event.detail?.expanded);
   if (navigationOpen) {
+    unmountEcoField();
+    unmountSequence();
     unmountAllPageCores();
   } else {
     activateRegion(currentRegion, currentAnchor);
@@ -473,7 +492,7 @@ function reviewPayload() {
     schemaVersion: "1.0.0",
     gateId: "H-GOLD-01-HOMEPAGE-PROOF",
     taskId: "TASK-GOLD-01-GOLDEN-HOMEPAGE",
-    candidateRevision: "golden-homepage-01-r17",
+    candidateRevision: "golden-homepage-01-r28",
     verdict: "round-feedback",
     note: document.querySelector("[data-overall-note]").value,
     sections: reviewed,
@@ -495,7 +514,7 @@ document.querySelector("[data-download-review]").addEventListener("click", () =>
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "golden-homepage-01-r17-feedback.json";
+  link.download = "golden-homepage-01-r28-feedback.json";
   link.click();
   URL.revokeObjectURL(url);
   reviewStatus.textContent = "Feedback JSON downloaded.";

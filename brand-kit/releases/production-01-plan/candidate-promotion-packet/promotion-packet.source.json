@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "1.0.0",
+  "packetId": "mz.systems.release.production-01-plan.candidate-promotion-packet",
+  "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "gateId": "H-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "status": "closed",
+  "outputStatus": "candidate-promotion-packet",
+  "productionAuthority": false,
+  "generatedRelease": false,
+  "authorityReconciliation": {
+    "status": "complete",
+    "ledger": "brand-kit/governance/post-cutover-decisions.json",
+    "baseLedger": "brand-kit/governance/decisions.json",
+    "reconciledDecisionIds": [
+      "DEC-FOUNDATION-RELEASE-001",
+      "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "DEC-GOLDEN-HOMEPAGE-001"
+    ],
+    "supportingRecords": [
+      "brand-kit/releases/foundations/review.json",
+      "brand-kit/components/global-navigation/review.json",
+      "brand-kit/golden/homepage/round-29-approval.json"
+    ],
+    "rule": "The immutable cutover ledger remains byte-identical. The supplement indexes the three prior approvals plus the two component promotions recorded at this gate; every entry points to its bounded Olli approval source."
+  },
+  "components": [
+    {
+      "id": "CMP-05",
+      "componentId": "mz.systems.component.halftone-portrait",
+      "source": "brand-kit/components/halftone-portrait/halftone-portrait.source.json",
+      "review": "brand-kit/components/halftone-portrait/review.json",
+      "candidateRevision": "halftone-portrait-01-r01",
+      "currentStatus": "canonical",
+      "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF",
+      "currentVerdict": "promote",
+      "proposedDecisionId": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "decisionId": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "agentRecommendation": "promote",
+      "promotionScope": "Promote only the dependency-free halftone render element, its locked treatment contract, default one-live allocation, reduced/static/failure behaviour and opt-in marquee-only always-on exception. Media preparation, likeness consent, quote content and surrounding layout remain consumer-owned.",
+      "evidence": {
+        "contractVerifier": "brand-kit/components/halftone-portrait/verify_halftone_portrait_contract.py",
+        "gateB": "brand-kit/components/halftone-portrait/gate-b.json",
+        "gateBScore": 67,
+        "responsive": "brand-kit/components/halftone-portrait/responsive-evidence.json",
+        "motionTruth": "36.64 percent of the live portrait changed across the measured frame interval while the adjacent allocated static portrait changed 0 percent.",
+        "authority": "canonical under brand-kit/components/halftone-portrait/approval.json"
+      },
+      "gaps": [
+        {
+          "reviewGap": "invert is degraded by the baked matte. With the subject composited over a light plate, inverting dots the plate rather than the subject, so the 'inverted' treatment that worked under live segmentation cannot be reproduced. The locked treatment does not use invert, so this is a limitation rather than a defect. An alpha-channel matte would restore it at the cost of format support.",
+          "disposition": "accepted",
+          "rationale": "Olli accepted the limitation because the locked and submitted treatment does not use invert. Any future alpha-media change remains a separate media and compatibility revision."
+        }
+      ]
+    },
+    {
+      "id": "CMP-06",
+      "componentId": "mz.systems.component.testimonial-marquee",
+      "source": "brand-kit/components/testimonial-marquee/testimonial-marquee.source.json",
+      "review": "brand-kit/components/testimonial-marquee/review.json",
+      "candidateRevision": "testimonial-marquee-01-r04",
+      "currentStatus": "canonical",
+      "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+      "currentVerdict": "promote",
+      "proposedDecisionId": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+      "decisionId": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+      "agentRecommendation": "promote",
+      "promotionScope": "Promote only the locked social-caption marquee machinery: semantic ordered proof rail, local profile anatomy, native manual scrolling and keyboard navigation, 24px/s bounded drift with 900ms recovery, complete static reduced-motion mode and composition of CMP-05. Testimonial wording, follower freshness, likeness consent operations, product identity and destinations remain consumer-owned.",
+      "evidence": {
+        "contractVerifier": "brand-kit/components/testimonial-marquee/verify_testimonial_marquee_contract.py",
+        "gateB": "brand-kit/components/testimonial-marquee/round-04-gate-b.json",
+        "gateBScore": 67,
+        "interaction": "brand-kit/releases/production-01-plan/candidate-promotion-packet/interaction-evidence.json",
+        "responsive": "brand-kit/components/testimonial-marquee/review.json#whatWasProven",
+        "authority": "canonical under brand-kit/components/testimonial-marquee/approval.json"
+      },
+      "gaps": [
+        {
+          "reviewGap": "Continuous drift remains a bounded exception to DEC-WEBSITE-MOTION-SYSTEM-001. Olli reconfirmed the control-free Round 03 safeguard posture at promotion; this does not rewrite the general motion canon.",
+          "disposition": "accepted",
+          "rationale": "Olli reconfirmed the exception only for CMP-06 at 24px/s with phase pause, 900ms recovery, offscreen idling and complete static reduced motion. Website Motion 1.0.0 remains unchanged."
+        },
+        {
+          "reviewGap": "Bobby Tandale and João Moreira follower counts could not be independently refreshed because Instagram presented a login wall. Under the approved frozen-evidence policy, every value remains a dated fixture snapshot and is never represented as live.",
+          "disposition": "policy-selected",
+          "rationale": "Olli selected frozen evidence. Follower data remains a dated fixture or consumer payload, never component state or a live Instagram claim."
+        },
+        {
+          "reviewGap": "A full spoken-output VoiceOver session was not run. Roles, names, one-tab-stop focus, clone exclusion, live-region attributes and keyboard operation were inspected; exact speech phrasing remains unmeasured.",
+          "disposition": "follow-up-required",
+          "rationale": "Olli accepted component promotion with exact spoken-output validation retained as a named-consumer obligation before deployment."
+        },
+        {
+          "reviewGap": "Pointer hover pause is implemented and asserted against the JavaScript, but the in-app Browser's synthetic pointer-move surface did not expose a reliable :hover state for an independent timing sample. Focus hold and native manual-input recovery were measured directly.",
+          "disposition": "follow-up-required",
+          "rationale": "Olli accepted the harness limitation; the named consumer must repeat the timing proof with a physical pointer before deployment."
+        },
+        {
+          "reviewGap": "CPU, memory and battery cost for a production page with seven visible always-on portraits plus one drifting rail was not profiled.",
+          "disposition": "follow-up-required",
+          "rationale": "Performance depends on the named device and consumer composition. Offscreen portrait idling and visible motion are proven; PORT-04 must profile the packaged consumer before deployment."
+        },
+        {
+          "reviewGap": "The Golden Homepage measured 8px of document overflow at 320 from pre-existing navigation or hero geometry; the CMP-06 workbench itself measured 0px at every declared viewport.",
+          "disposition": "out-of-component-scope",
+          "rationale": "The component is overflow-free. The page-level 320px overflow belongs to the release rebasing and named consumer proof, and must not be laundered into a CMP-06 defect or pass."
+        }
+      ]
+    }
+  ],
+  "followerPolicy": {
+    "owner": "testimonial fixture or named consumer, never CMP-06",
+    "choices": ["frozen-evidence", "manual-refresh", "omit"],
+    "recommendation": "frozen-evidence",
+    "selected": "frozen-evidence",
+    "recommendedRule": "Render the supplied follower string only with source attribution and a capturedAt date in the content payload; make no runtime Instagram request and never describe it as live. A consumer may replace the payload through its own reviewed content process.",
+    "reason": "The profile numbers are supporting evidence, not component state. Freezing preserves the design Olli selected without inventing an API dependency or a refresh promise the design system cannot own."
+  },
+  "motionExceptions": [
+    {
+      "componentId": "mz.systems.component.halftone-portrait",
+      "record": "brand-kit/components/halftone-portrait/halftone-portrait.source.json#motionDecisionException",
+      "currentState": "approved-bounded",
+      "promotionReconfirmation": "reconfirmed-bounded",
+      "scope": "Only instances explicitly setting motion-policy=always; every instance idles when clipped or page-offscreen; the default allocated maximum remains one."
+    },
+    {
+      "componentId": "mz.systems.component.testimonial-marquee",
+      "record": "brand-kit/components/testimonial-marquee/round-03-feedback.json#motionDecisionException",
+      "currentState": "approved-bounded",
+      "promotionReconfirmation": "reconfirmed-bounded",
+      "scope": "Only CMP-06 at 24px/s with phase hover/focus pause, native manual input, 900ms recovery, hidden/offscreen pause and complete static reduced motion."
+    }
+  ],
+  "humanGate": {
+    "state": "closed",
+    "approver": "Olli",
+    "separateQuestions": [
+      "Promote CMP-05 Halftone Portrait under DEC-HALFTONE-PORTRAIT-COMPONENT-001, or exclude it from the production package?",
+      "Promote CMP-06 Testimonial Marquee under DEC-TESTIMONIAL-MARQUEE-COMPONENT-001, or exclude it from the production package?"
+    ],
+    "requiredWithPromotion": [
+      "accept the component-specific known-gap dispositions",
+      "reconfirm both bounded motion exceptions without widening Website Motion 1.0.0",
+      "select frozen-evidence, manual-refresh or omit for follower counts"
+    ],
+    "combinedDecisionForbidden": true,
+    "decisionRecord": "brand-kit/releases/production-01-plan/candidate-promotion-packet/human-decision.json"
+  },
+  "next": {
+    "ifBothPromote": "Record two independent decisions, update each component authority without changing its locked bytes, then route to TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY.",
+    "ifEitherExcluded": "Keep the excluded candidate out of the package and route GH-S08 through the stable complete static testimonial-proof adapter; review any visual departure before claiming Golden Homepage parity.",
+    "productionAssemblyAllowedNow": true
+  }
+}

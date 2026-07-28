@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r25",
+  "verdict": "direction-selected",
+  "recordedAt": "2026-07-27",
+  "productionAuthority": false,
+  "note": "Olli rejected the expanded GH-S06 bento after reviewing the ten-option exploration and selected a simpler structural move: promote the existing dark Start here route from above the footer into the Available now position.",
+  "section": {
+    "id": "GH-S06",
+    "title": "Available now: AI OS",
+    "status": "revise"
+  },
+  "selected": {
+    "composition": "The former dark Start here split becomes GH-S06, immediately after Operating proof.",
+    "contrast": "Keep the contained dark background and the MZ-G13 AI OS product material.",
+    "productCard": "Use the smaller portrait AI OS card from the former closing route rather than the oversized bento product card.",
+    "pageStructure": "Remove the duplicate closing route from above the footer; the footer becomes GH-S09 and the page has nine reviewable regions."
+  },
+  "removed": [
+    "the complete GH-S06 bento, including How it works and Features panels",
+    "The models will keep improving.",
+    "Installed first",
+    "Four focused systems extend the same operating layer",
+    "the four-system extension rail beneath the dark route"
+  ],
+  "preserved": [
+    "Start here",
+    "Start with the AI OS.",
+    "the dark background",
+    "the compact AI OS material card",
+    "the primary AI OS action",
+    "the availability line"
+  ],
+  "outputStatus": "candidate"
+}

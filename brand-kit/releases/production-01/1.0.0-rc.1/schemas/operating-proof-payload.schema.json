@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/operating-proof-payload-1.0.0.json",
+  "title": "Release-safe Mez operating-proof payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "payloadId", "status", "publicReleaseEligible", "sourceProvenance", "records", "review"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "payloadId": {"pattern": "^mz\\.systems\\.operating-proof\\.[a-z0-9-]+$"},
+    "status": {"enum": ["redaction-pending", "redacted-awaiting-review", "redacted-approved", "rejected"]},
+    "publicReleaseEligible": {"type": "boolean"},
+    "sourceProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repositoryRecord", "originalPathsIncluded", "originalBytesIncluded"],
+      "properties": {
+        "repositoryRecord": {"type": "string"},
+        "originalPathsIncluded": {"const": false},
+        "originalBytesIncluded": {"const": false}
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "role", "originalSha256", "redactedAsset", "redactedSha256", "alt", "redactionMethods", "publicReleaseEligible"],
+        "properties": {
+          "id": {"pattern": "^proof-[a-z0-9-]+$"},
+          "role": {"type": "string", "minLength": 3},
+          "originalSha256": {"pattern": "^[a-f0-9]{64}$"},
+          "redactedAsset": {"type": ["string", "null"]},
+          "redactedSha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "alt": {"type": ["string", "null"]},
+          "redactionMethods": {"type": "array", "items": {"type": "string"}},
+          "publicReleaseEligible": {"type": "boolean"}
+        }
+      }
+    },
+    "review": {
+      "type": ["object", "null"],
+      "properties": {
+        "reviewedBy": {"type": "string"},
+        "reviewedAt": {"type": "string", "format": "date-time"},
+        "exactDerivativeBytesInspected": {"const": true},
+        "verdict": {"enum": ["approve", "reject"]}
+      },
+      "required": ["reviewedBy", "reviewedAt", "exactDerivativeBytesInspected", "verdict"],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"publicReleaseEligible": {"const": true}}},
+      "then": {
+        "properties": {
+          "status": {"const": "redacted-approved"},
+          "review": {"type": "object"},
+          "records": {
+            "items": {
+              "properties": {
+                "redactedAsset": {"type": "string", "pattern": "^assets/operating-proof/redacted/[a-z0-9-]+\\.(png|webp)$"},
+                "redactedSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+                "alt": {"type": "string", "minLength": 12},
+                "redactionMethods": {"minItems": 1},
+                "publicReleaseEligible": {"const": true}
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

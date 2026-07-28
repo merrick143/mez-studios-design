@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "systemId": "mz.systems.product-ui.foundation",
+  "version": "0.1.0",
+  "status": "approved",
+  "productionAuthority": false,
+  "taskId": "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION",
+  "gateId": "H-UI-01-PRODUCT-UI-FOUNDATION",
+  "decisionIds": [],
+  "candidateRevision": "product-ui-foundation-01-r01",
+  "title": "Product UI Foundation",
+  "selectedFamily": "operational-ledger",
+  "thesis": "A Mez product workspace is one legible operating surface, not a dashboard of interchangeable cards. The current object, the records that support it and the action available now share one reading order. Density changes the amount of air, never the information hierarchy. Product material identifies the workspace once; semantic colour only communicates state.",
+  "authorityBoundary": {
+    "owns": [
+      "application shell and contextual navigation geometry",
+      "ledger semantics, filtering, sorting, selection and density",
+      "contextual inspector behaviour",
+      "semantic status and accessible data-view patterns",
+      "responsive recomposition and local interaction states"
+    ],
+    "consumerOwns": [
+      "production product content and data",
+      "authentication, permissions and persistence",
+      "routing, analytics, exports and side effects",
+      "product-specific workflows and business rules"
+    ]
+  },
+  "anatomy": [
+    "Identity rail: a dark, narrow application landmark carrying the product switcher and primary workspace navigation.",
+    "Context header: names the current workspace, exposes search and records the fixture boundary.",
+    "Ledger: the primary evidence surface; rows are the visual protagonist and remain a semantic table at every width.",
+    "Inspector: discloses the selected record without nesting another mini-dashboard.",
+    "Status distribution: one compact, labelled visual summary with a complete text equivalent.",
+    "State lab: review-only control that proves loading, empty, error, stale, partial and no-permission meanings."
+  ],
+  "densityModes": ["compact", "comfortable", "presentation"],
+  "states": ["ready", "loading", "empty", "error", "stale", "partial", "no-permission"],
+  "behaviour": {
+    "navigation": "Primary workspace buttons use a roving tab stop and support ArrowUp, ArrowDown, Home and End.",
+    "filtering": "Search filters by record name, type, status and source without changing the source fixture.",
+    "sorting": "Name and updated columns are button-operated and expose aria-sort on the active header.",
+    "selection": "Every record exposes a named button; selection updates the inspector and a polite live region.",
+    "density": "Compact, comfortable and presentation modes alter row and spacing tokens only; no field or action disappears.",
+    "state": "Review states replace or annotate the ledger with complete textual status and recovery meaning.",
+    "responsive": "Below 1024px the inspector follows the ledger. Below 640px table cells recompose into labelled record fields while table semantics and DOM order remain intact.",
+    "motion": "Only 120–180ms control transitions are used. Reduced motion removes transitions; no autoplay or expressive motion exists."
+  },
+  "dataTruth": {
+    "fixture": "brand-kit/workbench/product-ui/fixtures/system-proof.json",
+    "scopeLabel": "Design-system control-plane review fixture",
+    "sourcePaths": [
+      "brand-kit/registry/products.json",
+      "brand-kit/data/status.json",
+      "brand-kit/figma-companion/phase-04-functional-components.json",
+      "brand-kit/components/global-navigation/global-navigation.source.json",
+      "brand-kit/components/halftone-portrait/halftone-portrait.source.json",
+      "brand-kit/components/testimonial-marquee/testimonial-marquee.source.json"
+    ],
+    "rule": "Every visible figure and record must be asserted against a named repository source by the verifier. No production product, customer or business metric is implied."
+  },
+  "accessibility": {
+    "landmarks": "Header, primary navigation, main workspace and contextual aside are named landmarks.",
+    "table": "The ledger has a caption, column headers, aria-sort and real buttons for record selection.",
+    "visualisation": "The status distribution is labelled and immediately followed by a screen-reader text equivalent.",
+    "announcements": "Filtering, sorting, selection, density and review state changes update a polite live region.",
+    "focus": "Every control has a visible three-pixel canonical focus ring with an offset.",
+    "touch": "Interactive controls meet or exceed the canonical 40px compact control height."
+  },
+  "prohibited": [
+    "invented customer, revenue, usage or performance data",
+    "generic metric-card dashboard grids",
+    "nested bordered mini-cards",
+    "product gradients used as decoration or chart categories",
+    "colour-only status communication",
+    "unlabelled charts or charts without a complete text alternative",
+    "hover-only actions",
+    "page-level horizontal scrolling",
+    "hidden mobile records or reordered reading order",
+    "pure black surfaces, purple accents, glass, blur or decorative shadows",
+    "autoplay, scroll hijacking or decorative interface motion"
+  ],
+  "testViewports": [320, 375, 390, 768, 920, 1280, 1440],
+  "approval": {
+    "review": "brand-kit/product-ui/review.json",
+    "decisionId": null,
+    "approvedAt": "2026-07-28",
+    "state": "approved-foundation-direction"
+  }
+}

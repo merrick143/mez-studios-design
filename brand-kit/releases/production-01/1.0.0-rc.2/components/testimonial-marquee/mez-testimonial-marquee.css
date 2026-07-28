@@ -1,0 +1,434 @@
+/* TASK-CMP-06 · Testimonial Marquee · Round 03
+ *
+ * Five wider, shallower testimonial-proof compositions. The track has no card
+ * chassis or enclosing box. Each presentation changes hierarchy and proportion,
+ * not merely decoration. Instagram metadata remains fixture-owned evidence.
+ */
+
+@import url("../halftone-portrait/mez-halftone-portrait.css");
+
+mez-testimonial-marquee {
+  --testimonial-ink: var(--mz-text-primary, #171715);
+  --testimonial-body: var(--mz-text-secondary, #3f3f3b);
+  --testimonial-muted: var(--mz-text-muted, #666662);
+  --testimonial-line: var(--mz-border-default, #dadad6);
+  --testimonial-paper: var(--mz-surface-canvas, #f8f8f8);
+  --testimonial-white: var(--mz-surface-raised, #ffffff);
+  --testimonial-focus: var(--mz-focus-ring, #2e2e2e);
+  --testimonial-instagram-blue: #0095f6;
+  --testimonial-gap: var(--mz-space-12, 48px);
+
+  display: block;
+  min-width: 0;
+  container-type: inline-size;
+  color: var(--testimonial-ink);
+  font-family: var(--mz-font-body, system-ui, sans-serif);
+}
+
+mez-testimonial-marquee *,
+mez-testimonial-marquee *::before,
+mez-testimonial-marquee *::after {
+  box-sizing: border-box;
+}
+
+.mz-testimonial-marquee__frame,
+.mz-testimonial-marquee__viewport {
+  min-width: 0;
+}
+
+.mz-testimonial-marquee__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  outline: none;
+}
+
+.mz-testimonial-marquee__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.mz-testimonial-marquee__viewport:focus-visible {
+  outline: var(--mz-focus-width, 3px) solid var(--testimonial-focus);
+  outline-offset: var(--mz-focus-offset, 3px);
+  border-radius: var(--mz-radius-fine, 4px);
+}
+
+.mz-testimonial-marquee__rail,
+.mz-testimonial-marquee__track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+}
+
+.mz-testimonial-marquee__track {
+  gap: var(--testimonial-gap);
+  margin: 0;
+  padding: 0 var(--testimonial-gap) 0 0;
+  list-style: none;
+}
+
+.mz-testimonial-marquee__item {
+  width: clamp(720px, 76vw, 980px);
+  flex: 0 0 auto;
+  padding-block: var(--mz-space-4, 16px);
+}
+
+.mz-testimonial-marquee__item figure {
+  display: grid;
+  align-items: center;
+  gap: var(--mz-space-8, 32px);
+  min-height: 228px;
+  margin: 0;
+}
+
+.mz-testimonial-marquee__portrait {
+  width: 100%;
+  max-width: 220px;
+  align-self: center;
+  border-radius: var(--mz-radius-container, 16px);
+  background: var(--testimonial-white);
+}
+
+.mz-testimonial-marquee__copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--mz-space-6, 24px);
+}
+
+.mz-testimonial-marquee__copy blockquote {
+  max-inline-size: 48ch;
+  margin: 0;
+  color: var(--testimonial-body);
+  font-family: var(--mz-font-display, system-ui, sans-serif);
+  font-size: var(--mz-type-heading-subsection-size, 22px);
+  font-weight: var(--mz-type-body-lead-weight, 450);
+  line-height: var(--mz-type-heading-subsection-leading, 1.24);
+  letter-spacing: var(--mz-type-heading-subsection-tracking, -.025em);
+  text-wrap: pretty;
+}
+
+.mz-testimonial-marquee__instagram {
+  display: flex;
+  align-items: center;
+  gap: var(--mz-space-3, 12px);
+  min-width: 0;
+}
+
+.mz-testimonial-marquee__profile-image {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: var(--mz-radius-full, 9999px);
+  object-fit: cover;
+}
+
+.mz-testimonial-marquee__profile-copy {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.mz-testimonial-marquee__name-line {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mz-space-1, 4px);
+  min-width: 0;
+}
+
+.mz-testimonial-marquee__name,
+.mz-testimonial-marquee__handle,
+.mz-testimonial-marquee__followers,
+.mz-testimonial-marquee__instagram {
+  font-size: var(--mz-type-body-compact-size, 14px);
+  line-height: var(--mz-type-body-compact-leading, 1.5);
+  letter-spacing: var(--mz-type-body-compact-tracking, -.011em);
+}
+
+.mz-testimonial-marquee__name {
+  overflow: hidden;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mz-testimonial-marquee__verified {
+  display: inline-grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  border-radius: var(--mz-radius-full, 9999px);
+  background: var(--testimonial-instagram-blue);
+  color: var(--testimonial-white);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mz-testimonial-marquee__handle,
+.mz-testimonial-marquee__followers {
+  color: var(--testimonial-muted);
+}
+
+.mz-testimonial-marquee__followers {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.mz-testimonial-marquee__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mz-testimonial-marquee__failure {
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: var(--testimonial-muted);
+}
+
+/* V01 · profile strip. Social proof leads; the portrait is a supporting seal. */
+mez-testimonial-marquee[data-presentation="profile-strip"] .mz-testimonial-marquee__item {
+  width: clamp(760px, 78vw, 1000px);
+}
+
+mez-testimonial-marquee[data-presentation="profile-strip"] .mz-testimonial-marquee__item figure {
+  grid-template-columns: 188px minmax(0, 1fr);
+}
+
+mez-testimonial-marquee[data-presentation="profile-strip"] .mz-testimonial-marquee__copy {
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+
+mez-testimonial-marquee[data-presentation="profile-strip"] .mz-testimonial-marquee__portrait {
+  max-width: 188px;
+}
+
+/* V02 · portrait window. The live person has the strongest material weight. */
+mez-testimonial-marquee[data-presentation="portrait-window"] .mz-testimonial-marquee__item {
+  width: clamp(800px, 82vw, 1080px);
+}
+
+mez-testimonial-marquee[data-presentation="portrait-window"] .mz-testimonial-marquee__item figure {
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: var(--mz-space-10, 40px);
+}
+
+mez-testimonial-marquee[data-presentation="portrait-window"] .mz-testimonial-marquee__portrait {
+  max-width: 240px;
+}
+
+mez-testimonial-marquee[data-presentation="portrait-window"] .mz-testimonial-marquee__copy blockquote {
+  font-size: var(--mz-type-heading-section-size, 26px);
+  line-height: var(--mz-type-heading-section-leading, 1.14);
+  letter-spacing: var(--mz-type-heading-section-tracking, -.032em);
+}
+
+/* V03 · social caption. Recommended: Instagram rhythm without platform mimicry. */
+mez-testimonial-marquee[data-presentation="social-caption"] .mz-testimonial-marquee__item {
+  width: clamp(780px, 80vw, 1040px);
+}
+
+mez-testimonial-marquee[data-presentation="social-caption"] .mz-testimonial-marquee__item figure {
+  grid-template-columns: 208px minmax(0, 1fr);
+}
+
+mez-testimonial-marquee[data-presentation="social-caption"] .mz-testimonial-marquee__portrait {
+  max-width: 208px;
+}
+
+mez-testimonial-marquee[data-presentation="social-caption"] .mz-testimonial-marquee__instagram {
+  padding-block-end: var(--mz-space-3, 12px);
+  border-block-end: var(--mz-border-width-hairline, 1px) solid var(--testimonial-line);
+}
+
+/* V04 · quote first. The human is the punctuation at the right edge. */
+mez-testimonial-marquee[data-presentation="quote-first"] .mz-testimonial-marquee__item {
+  width: clamp(820px, 84vw, 1120px);
+}
+
+mez-testimonial-marquee[data-presentation="quote-first"] .mz-testimonial-marquee__item figure {
+  grid-template-columns: minmax(0, 1fr) 168px;
+  gap: var(--mz-space-10, 40px);
+}
+
+mez-testimonial-marquee[data-presentation="quote-first"] .mz-testimonial-marquee__portrait {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 168px;
+}
+
+mez-testimonial-marquee[data-presentation="quote-first"] .mz-testimonial-marquee__copy {
+  grid-column: 1;
+  grid-row: 1;
+  flex-direction: column-reverse;
+}
+
+mez-testimonial-marquee[data-presentation="quote-first"] .mz-testimonial-marquee__copy blockquote {
+  max-inline-size: 56ch;
+  font-size: var(--mz-type-heading-section-size, 26px);
+  line-height: var(--mz-type-heading-section-leading, 1.14);
+  letter-spacing: var(--mz-type-heading-section-tracking, -.032em);
+}
+
+/* V05 · proof ledger. Quote and account evidence read on parallel axes. */
+mez-testimonial-marquee[data-presentation="proof-ledger"] .mz-testimonial-marquee__item {
+  width: clamp(860px, 86vw, 1160px);
+  padding-block: var(--mz-space-6, 24px);
+  border-block-start: var(--mz-border-width-hairline, 1px) solid var(--testimonial-line);
+}
+
+mez-testimonial-marquee[data-presentation="proof-ledger"] .mz-testimonial-marquee__item figure {
+  grid-template-columns: 160px minmax(0, 1fr);
+  min-height: 196px;
+}
+
+mez-testimonial-marquee[data-presentation="proof-ledger"] .mz-testimonial-marquee__portrait {
+  max-width: 160px;
+}
+
+mez-testimonial-marquee[data-presentation="proof-ledger"] .mz-testimonial-marquee__copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  align-items: end;
+}
+
+mez-testimonial-marquee[data-presentation="proof-ledger"] .mz-testimonial-marquee__copy blockquote {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+mez-testimonial-marquee[data-presentation="proof-ledger"] .mz-testimonial-marquee__instagram {
+  grid-column: 2;
+  grid-row: 1;
+  align-content: end;
+  align-items: flex-start;
+  gap: var(--mz-space-1, 4px);
+  padding-inline-start: var(--mz-space-6, 24px);
+  border-inline-start: var(--mz-border-width-hairline, 1px) solid var(--testimonial-line);
+}
+
+@media (max-width: 640px) {
+  mez-testimonial-marquee {
+    --testimonial-gap: var(--mz-space-7, 28px);
+  }
+
+  .mz-testimonial-marquee__item,
+  mez-testimonial-marquee[data-presentation] .mz-testimonial-marquee__item {
+    width: min(100cqi, 520px);
+    padding-block: var(--mz-space-4, 16px);
+  }
+
+  .mz-testimonial-marquee__item figure,
+  mez-testimonial-marquee[data-presentation] .mz-testimonial-marquee__item figure {
+    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: var(--mz-space-5, 20px) var(--mz-space-4, 16px);
+    min-height: 0;
+    align-items: start;
+  }
+
+  .mz-testimonial-marquee__portrait,
+  mez-testimonial-marquee[data-presentation] .mz-testimonial-marquee__portrait {
+    grid-column: 1;
+    grid-row: 1;
+    width: 96px;
+    max-width: 96px;
+    align-self: start;
+  }
+
+  .mz-testimonial-marquee__copy,
+  mez-testimonial-marquee[data-presentation] .mz-testimonial-marquee__copy {
+    display: contents;
+  }
+
+  .mz-testimonial-marquee__copy blockquote,
+  mez-testimonial-marquee[data-presentation] .mz-testimonial-marquee__copy blockquote {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: var(--mz-type-body-default-size, 16px);
+    line-height: var(--mz-type-body-default-leading, 1.56);
+    letter-spacing: var(--mz-type-body-default-tracking, -.011em);
+  }
+
+  .mz-testimonial-marquee__instagram,
+  mez-testimonial-marquee[data-presentation] .mz-testimonial-marquee__instagram {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--mz-space-2, 8px);
+    padding: 0;
+    border: 0;
+  }
+
+  .mz-testimonial-marquee__profile-image {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .mz-testimonial-marquee__name-line {
+    align-items: flex-start;
+  }
+
+  .mz-testimonial-marquee__name {
+    white-space: normal;
+  }
+}
+
+/* Reduced motion preserves meaning as one complete source-ordered list. */
+@media (prefers-reduced-motion: reduce) {
+  .mz-testimonial-marquee__viewport {
+    overflow: visible;
+  }
+
+  .mz-testimonial-marquee__rail,
+  .mz-testimonial-marquee__track {
+    display: grid;
+    width: 100%;
+  }
+
+  .mz-testimonial-marquee__track {
+    gap: 0;
+    padding: 0;
+  }
+
+  .mz-testimonial-marquee__item,
+  mez-testimonial-marquee[data-presentation] .mz-testimonial-marquee__item {
+    width: auto;
+    border-block-start: var(--mz-border-width-hairline, 1px) solid var(--testimonial-line);
+  }
+
+}
+
+mez-testimonial-marquee[data-motion-mode="static-complete"] .mz-testimonial-marquee__viewport {
+  overflow: visible;
+}
+
+mez-testimonial-marquee[data-motion-mode="static-complete"] .mz-testimonial-marquee__rail,
+mez-testimonial-marquee[data-motion-mode="static-complete"] .mz-testimonial-marquee__track {
+  display: grid;
+  width: 100%;
+}
+
+mez-testimonial-marquee[data-motion-mode="static-complete"] .mz-testimonial-marquee__track {
+  gap: 0;
+  padding: 0;
+}
+
+mez-testimonial-marquee[data-motion-mode="static-complete"] .mz-testimonial-marquee__item {
+  width: auto;
+  border-block-start: var(--mz-border-width-hairline, 1px) solid var(--testimonial-line);
+}

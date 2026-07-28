@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.typography",
+  "status": "canonical",
+  "decisionIds": ["DEC-TYPE-001", "DEC-TYPE-FOUNDATION-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "families": {
+    "display": {
+      "name": "Geist",
+      "cssFamily": "Mez Geist",
+      "role": "Display titles only; never body or general UI",
+      "fallback": "\"Mez Inter\", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "version": "1.7.2",
+      "sourceUrl": "https://github.com/vercel/geist-font/releases/tag/v1.7.2",
+      "sourceRef": "a73329da8fc62afc917f796555202e4997f79b7c",
+      "archiveSha256": "7fc800d2ac6b92844895196e5041aca55d814c15db70c44f79b3b83ab82b04e2",
+      "licence": "SIL-OFL-1.1",
+      "licencePath": "fonts/geist/OFL.txt",
+      "web": [{"path": "fonts/geist/Geist-Variable.woff2", "format": "woff2", "style": "normal", "weight": "100 900"}],
+      "authoring": [{"path": "fonts/geist/Geist-Variable.ttf", "format": "ttf", "style": "normal", "weight": "100 900"}]
+    },
+    "body": {
+      "name": "Inter",
+      "cssFamily": "Mez Inter",
+      "role": "Body, UI, headings below display level, labels and numerals",
+      "fallback": "Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "version": "4.1",
+      "sourceUrl": "https://github.com/rsms/inter/releases/tag/v4.1",
+      "sourceRef": "e3a3d4c57d5ecc01453a575621882a384c1995a3",
+      "archiveSha256": "9883fdd4a49d4fb66bd8177ba6625ef9a64aa45899767dde3d36aa425756b11e",
+      "licence": "SIL-OFL-1.1",
+      "licencePath": "fonts/inter/OFL.txt",
+      "web": [
+        {"path": "fonts/inter/Inter-Variable.woff2", "format": "woff2", "style": "normal", "weight": "100 900"},
+        {"path": "fonts/inter/Inter-Variable-Italic.woff2", "format": "woff2", "style": "italic", "weight": "100 900"}
+      ],
+      "authoring": [
+        {"path": "fonts/inter/Inter-Variable.ttf", "format": "ttf", "style": "normal", "weight": "100 900"},
+        {"path": "fonts/inter/Inter-Variable-Italic.ttf", "format": "ttf", "style": "italic", "weight": "100 900"}
+      ]
+    },
+    "editorial": {
+      "name": "Instrument Serif",
+      "cssFamily": "Mez Instrument Serif",
+      "role": "Contextual editorial voice only; never a quota, body family or UI family",
+      "fallback": "Georgia, \"Times New Roman\", serif",
+      "version": "source-65c0ef2",
+      "sourceUrl": "https://github.com/Instrument/instrument-serif",
+      "sourceRef": "65c0ef225f386a3c7e87570a4aa9cc0262c2fd81",
+      "licence": "SIL-OFL-1.1",
+      "licencePath": "fonts/instrument-serif/OFL.txt",
+      "web": [
+        {"path": "fonts/instrument-serif/InstrumentSerif-Regular.woff2", "format": "woff2", "style": "normal", "weight": 400},
+        {"path": "fonts/instrument-serif/InstrumentSerif-Italic.woff2", "format": "woff2", "style": "italic", "weight": 400}
+      ],
+      "authoring": [
+        {"path": "fonts/instrument-serif/InstrumentSerif-Regular.ttf", "format": "ttf", "style": "normal", "weight": 400},
+        {"path": "fonts/instrument-serif/InstrumentSerif-Italic.ttf", "format": "ttf", "style": "italic", "weight": 400}
+      ]
+    },
+    "technical": {
+      "name": "IBM Plex Mono",
+      "cssFamily": "Mez IBM Plex Mono",
+      "role": "Code, provenance and technical metadata only; never decorative copy",
+      "fallback": "ui-monospace, \"SFMono-Regular\", Consolas, \"Liberation Mono\", monospace",
+      "version": "2.5.0",
+      "sourceUrl": "https://www.npmjs.com/package/@ibm/plex-mono/v/2.5.0",
+      "sourceRef": "2f9ba1b25957d958db71a849e85d72e3ecfb845a",
+      "licence": "SIL-OFL-1.1",
+      "licencePath": "fonts/ibm-plex-mono/OFL.txt",
+      "web": [{"path": "fonts/ibm-plex-mono/IBMPlexMono-Regular.woff2", "format": "woff2", "style": "normal", "weight": 400}],
+      "authoring": [{"path": "fonts/ibm-plex-mono/IBMPlexMono-Regular.ttf", "format": "ttf", "style": "normal", "weight": 400}]
+    }
+  },
+  "roles": {
+    "display.hero": {"family": "display", "weight": 700, "size": {"minPx": 50, "preferredVw": 8, "maxPx": 112}, "lineHeight": 0.91, "trackingEm": -0.064, "case": "none", "features": ["kern", "liga"], "maxWidth": "12ch", "usage": "Primary campaign and homepage statement; one per surface"},
+    "display.section": {"family": "display", "weight": 680, "size": {"minPx": 36, "preferredVw": 5.8, "maxPx": 76}, "lineHeight": 0.98, "trackingEm": -0.052, "case": "none", "features": ["kern", "liga"], "maxWidth": "15ch", "usage": "Major section or chapter opening"},
+    "display.title": {"family": "display", "weight": 670, "size": {"minPx": 32, "preferredVw": 4.2, "maxPx": 56}, "lineHeight": 1, "trackingEm": -0.044, "case": "none", "features": ["kern", "liga"], "maxWidth": "19ch", "usage": "Page, product and document cover titles"},
+    "heading.section": {"family": "body", "weight": 650, "size": {"minPx": 26, "preferredVw": 2.7, "maxPx": 34}, "lineHeight": 1.14, "trackingEm": -0.028, "case": "none", "features": ["kern", "liga"], "maxWidth": "28ch", "usage": "Content section heading below a display title"},
+    "heading.subsection": {"family": "body", "weight": 640, "size": {"minPx": 20, "preferredVw": 2, "maxPx": 24}, "lineHeight": 1.24, "trackingEm": -0.02, "case": "none", "features": ["kern", "liga"], "maxWidth": "34ch", "usage": "Card, module and subsection heading"},
+    "body.lead": {"family": "body", "weight": 420, "size": {"minPx": 18, "preferredVw": 1.65, "maxPx": 21}, "lineHeight": 1.5, "trackingEm": -0.018, "case": "none", "features": ["kern", "liga"], "maxWidth": "42ch", "usage": "Introductory explanation and product promise"},
+    "body.default": {"family": "body", "weight": 400, "size": {"minPx": 16, "preferredVw": 1.2, "maxPx": 17}, "lineHeight": 1.56, "trackingEm": -0.011, "case": "none", "features": ["kern", "liga"], "maxWidth": "66ch", "usage": "Default reading text across web, email and documents"},
+    "body.compact": {"family": "body", "weight": 420, "size": 14, "lineHeight": 1.46, "trackingEm": -0.006, "case": "none", "features": ["kern", "liga"], "maxWidth": "72ch", "usage": "Dense UI, tables and secondary detail"},
+    "ui.control": {"family": "body", "weight": 650, "size": 14, "lineHeight": 1, "trackingEm": -0.012, "case": "none", "features": ["kern", "liga"], "usage": "Buttons, navigation and action controls"},
+    "ui.label": {"family": "body", "weight": 680, "size": 11, "lineHeight": 1.2, "trackingEm": 0.09, "case": "uppercase", "features": ["kern"], "usage": "Eyebrows and short categorical labels; never prose"},
+    "caption": {"family": "body", "weight": 450, "size": 12, "lineHeight": 1.42, "trackingEm": -0.002, "case": "none", "features": ["kern", "liga"], "maxWidth": "72ch", "usage": "Metadata, captions, timestamps and supporting notes"},
+    "technical": {"family": "technical", "weight": 400, "size": 13, "lineHeight": 1.46, "trackingEm": 0, "case": "none", "features": ["zero", "tnum"], "maxWidth": "80ch", "usage": "Code, file paths, provenance, IDs and version strings"},
+    "numeric.display": {"family": "body", "weight": 660, "size": {"minPx": 34, "preferredVw": 4.2, "maxPx": 58}, "lineHeight": 0.98, "trackingEm": -0.042, "case": "none", "features": ["tnum", "ss01", "cv05", "cv08"], "usage": "Prices, totals and headline metrics"},
+    "numeric.tabular": {"family": "body", "weight": 560, "size": 14, "lineHeight": 1.35, "trackingEm": -0.008, "case": "none", "features": ["tnum", "zero", "cv05", "cv08"], "usage": "Tables, dates, versions, durations and aligned quantities"},
+    "editorial.accent": {"family": "editorial", "weight": 400, "style": "italic", "size": {"minPx": 28, "preferredVw": 3.8, "maxPx": 52}, "lineHeight": 1.02, "trackingEm": -0.018, "case": "none", "features": ["kern", "liga"], "maxWidth": "22ch", "usage": "A contextual editorial statement; never an automatic once-per-page flourish"}
+  },
+  "behaviour": {
+    "lineLengths": {"display": "12–19 characters per line where composition permits", "lead": "38–42ch", "body": "58–66ch", "longForm": "66–74ch", "technical": "80ch maximum before horizontal treatment is considered"},
+    "truncation": {"display": "Do not truncate; rewrite or recompose", "body": "Do not truncate reading copy", "ui": "Use one-line ellipsis only when the full value is available on focus, hover or an adjacent detail view", "table": "Preserve identifiers and critical quantities; truncate descriptive fields first"},
+    "fallbacks": {"loading": "Use font-display: swap and reserve layout with the declared metric-compatible stack", "failure": "Geist falls back through Inter; Inter falls back through the system UI stack; technical content uses the system mono stack", "email": "Use Arial or the receiving client sans after Inter; do not require webfont loading for hierarchy", "document": "Embed the packaged authoring font where the format and licence permit, otherwise declare the named fallback in the export receipt"},
+    "localisation": {"expansion": "Test 30 percent text expansion before reducing type size", "rtl": "Do not apply negative tracking mechanically to scripts that do not support it", "unsupportedScript": "Use a script-appropriate system family and preserve role size, weight and hierarchy", "minimum": "Body text remains at least 16px on responsive web surfaces and 11pt in documents"}
+  },
+  "testViewports": [320, 375, 768, 1280, 1440]
+}

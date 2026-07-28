@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "phase": 3,
+  "status": "complete",
+  "completedAt": "2026-07-28T10:13:48Z",
+  "fileKey": "QxZT3FJ8BDXOZfBQDt0qPW",
+  "authority": {
+    "figmaRole": "companion-mirror",
+    "historicalFileMutated": false,
+    "frozenReleaseMutated": false,
+    "runtimeAssetsRemainRepositoryOwned": true
+  },
+  "pages": [
+    {"name":"10 · Product Identity","pageId":"29:2","componentSetId":"30:14","visualInspection":"pass"},
+    {"name":"11 · Disc","pageId":"29:3","componentSetId":"35:32","visualInspection":"pass"},
+    {"name":"12 · Sphere","pageId":"29:4","componentSetId":"36:52","visualInspection":"pass"},
+    {"name":"13 · Wings & Mark","pageId":"29:5","componentSetId":"34:33","visualInspection":"pass"},
+    {"name":"14 · Product Card Grammar","pageId":"29:6","componentSetId":"37:78","visualInspection":"pass"},
+    {"name":"15 · Trading Card","pageId":"29:7","componentSetId":"38:85","visualInspection":"pass"}
+  ],
+  "componentSets": {
+    "Product Material": {"id":"30:14","variants":5,"axis":"Product"},
+    "Wings & Mark": {"id":"34:33","variants":6,"axes":["Role","Surface"]},
+    "Disc": {"id":"35:32","variants":5,"axis":"Product"},
+    "Sphere · Colour Fallback": {"id":"36:52","variants":5,"axis":"Product"},
+    "Product Card Grammar": {"id":"37:78","variants":4,"axis":"Family","editableProperties":["Title","Extended Name","Supporting Copy","Action","Material"]},
+    "Trading Card": {"id":"38:85","variants":4,"axis":"Family","editableProperties":["Title","Extended Name","Supporting Copy","Material","Card"]}
+  },
+  "assetTruth": {
+    "figmaAuthoringSource": "brand-kit/gradient-library/source-masters/MZ-G*.png",
+    "runtimeDistributionSource": "brand-kit/gradient-library/assets/static/mz-g*.webp",
+    "wingsSource": "brand-kit/source-pack/design-system-export/assets/wings.svg",
+    "webpUploadFinding": "The Figma upload endpoint accepted the canonical WebPs but rendered blank frames, so the exact canonical PNG source masters supply Figma fills while the runtime WebP hashes remain documented authority.",
+    "temporaryUploadNodesRemaining": 0
+  },
+  "runtimeBoundaries": [
+    "Sphere is labelled an exact colour fallback; renderer-owned Deep Mineral spherical depth is absent.",
+    "Product Card Grammar mirrors approved visual families and does not replace the fifteen functional Phase B contracts.",
+    "Trading Card is static in Figma and does not invent flip interaction, editions, rarity or ambient effects.",
+    "All materials remain static; runtime animation is not represented as executable Figma behaviour."
+  ],
+  "liveAudit": {
+    "method": "Figma Plugin API whole-file traversal plus rendered screenshot inspection of all six Phase 3 pages",
+    "pages": 10,
+    "nodes": 1030,
+    "components": 29,
+    "componentSets": 6,
+    "instances": 29,
+    "textNodes": 469,
+    "missingFontTextNodes": 0,
+    "phase3TaggedNodes": 70,
+    "temporaryUploadNodes": 0
+  },
+  "knownGaps": [
+    "Figma cannot execute the runtime Living Core renderer or reproduce its approved spherical depth.",
+    "Runtime WebP assets are documented but PNG source masters are used for Figma fills because the accepted WebP uploads rendered blank.",
+    "Component detach behaviour and functional accessibility contracts are audited in Phase 4 rather than inferred from expression components."
+  ],
+  "next": "Phase 4 functional component contracts"
+}

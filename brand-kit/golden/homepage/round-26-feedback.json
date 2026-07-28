@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r26",
+  "verdict": "direction-selected",
+  "recordedAt": "2026-07-27",
+  "productionAuthority": false,
+  "note": "Olli selected V02 Unboxed disc rail from the five-direction GH-S07 expression lab and requested a modest reduction in disc size.",
+  "section": {
+    "id": "GH-S07",
+    "title": "The Mez Systems ecosystem",
+    "locked": true,
+    "provisional": true
+  },
+  "selected": {
+    "direction": "V02 Unboxed disc rail",
+    "composition": "Four equal open product objects inside the standard 1160px content width, with centred disc, name and status stacks and no shared dark fill or card chassis.",
+    "desktopDiscBand": "116–164px, reduced from the lab's 250px maximum and the first homepage pass's 196px cap.",
+    "compactDiscSize": "88px with the product name and Coming soon status beside it.",
+    "motion": "Exact static twins at rest; one hovered disc may use the shared Living Core renderer while every other page core is unmounted."
+  },
+  "removed": [
+    "the combined near-charcoal ecosystem stage",
+    "white portrait card chassis",
+    "rounded-rectangle ecosystem material fields"
+  ],
+  "preserved": [
+    "Coming next",
+    "Specialised systems for the work AI-native businesses do.",
+    "the four canonical coming-soon products and assignments",
+    "Different systems. Same rule.",
+    "the locked ecosystem coda and AI OS action",
+    "the compact horizontal product rows below 640px"
+  ],
+  "outputStatus": "candidate"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "proofId": "MEZ-CLEAN-CLONE-2026-07-21-01",
+  "cutoverId": "CUTOVER-2026-07-21-01",
+  "status": "passed",
+  "validatedRepository": "merrick143/mez-studios-design",
+  "validatedBranch": "codex/brand-kit-workbench",
+  "validatedCommit": "698152ede765958e0e35323652a0dccc0470afde",
+  "release": "0.1.0-alpha.1",
+  "environment": {
+    "python": "3.14",
+    "numpy": "2.3.5",
+    "pillow": "12.2.0",
+    "dependencySource": "brand-kit/source-pack/living-core/requirements.txt"
+  },
+  "checks": [
+    {"id":"release-self-verification","status":"passed","command":"python3 brand-kit/releases/0.1.0-alpha.1/verify.py"},
+    {"id":"prepared-authority-gate","status":"passed","command":"python3 brand-kit/scripts/verify_authority.py"},
+    {"id":"deterministic-gradient-rebuild","status":"passed","command":"python brand-kit/gradient-library/build_library.py --verify"},
+    {"id":"deterministic-snapshot-rebuild","status":"passed","command":"python3 brand-kit/scripts/build_migration_release.py --authority-state prepared"},
+    {"id":"zero-generated-diff","status":"passed","command":"git diff --exit-code"},
+    {"id":"clean-worktree","status":"passed","command":"test -z \"$(git status --porcelain)\""}
+  ],
+  "releaseArtifactManifestSha256": "3db5512596298b60ac1f7cf3b89345e2e83e4167111b3bf9b2a8d65f004bdb32",
+  "result": "The prepared migration snapshot rebuilds and validates from a fresh remote clone with no access to the authoring checkout and no tracked drift.",
+  "productionAuthority": false
+}

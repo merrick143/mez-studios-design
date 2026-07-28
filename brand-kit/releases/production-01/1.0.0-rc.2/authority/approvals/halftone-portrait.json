@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.halftone-portrait",
+  "taskId": "TASK-CMP-05-HALFTONE-PORTRAIT",
+  "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF",
+  "candidateRevision": "halftone-portrait-01-r01",
+  "verdict": "approved",
+  "approvedAt": "2026-07-28",
+  "approvedBy": "Olli",
+  "decisionId": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true,
+  "humanDecision": "brand-kit/releases/production-01-plan/candidate-promotion-packet/human-decision.json",
+  "authorityScope": [
+    "The dependency-free mez-halftone-portrait custom element and its documented render contract.",
+    "The Olli-locked halftone treatment recorded on 2026-07-27.",
+    "Default one-live-instance allocation, complete static/reduced-motion meaning and visible failure behaviour.",
+    "The explicit motion-policy=always exception only for opt-in repeated portrait contexts, with offscreen idling unchanged."
+  ],
+  "acceptedLimitations": [
+    "The baked light-plate matte degrades the optional invert treatment; the locked production treatment does not use invert."
+  ],
+  "excludedAuthority": [
+    "media preparation or segmentation tooling",
+    "likeness consent operations",
+    "testimonial content, cards, marquees or surrounding layout",
+    "automatic use of motion-policy=always outside its recorded bounded context"
+  ],
+  "pantryPlacement": "Canonical utility component outside the Phase B product-and-commerce pantry.",
+  "outputStatus": "canonical-component"
+}

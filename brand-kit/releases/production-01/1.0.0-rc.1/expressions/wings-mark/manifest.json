@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.wings-mark",
+  "status": "canonical",
+  "productionAuthority": true,
+  "artifactCount": 5,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 478,
+      "sha256": "1ef593d30b10a62006178ec7e29c53007e6c1665afce17491b82e405f44af33e"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1371,
+      "sha256": "194db73c9d3143e95d217e6a4c4aeb5647307f163ebd298d8f9974b20f2f006c"
+    },
+    {
+      "path": "review.json",
+      "bytes": 576,
+      "sha256": "a394d4aeb479597ce12f60e39c7bd276e9773a88f9226858fb238d7a76a745b2"
+    },
+    {
+      "path": "wings-mark.schema.json",
+      "bytes": 1359,
+      "sha256": "4d6d0aabc12a23c5c513bca48018d77cac866534a8b55ca60ee989058ed4981b"
+    },
+    {
+      "path": "wings-mark.source.json",
+      "bytes": 5240,
+      "sha256": "4e7b0660e50516428594813b5419328cdaf5368a66ee4793c9492a593eeea8a1"
+    }
+  ]
+}

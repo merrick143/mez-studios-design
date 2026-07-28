@@ -96,51 +96,48 @@ Human gate: approve one reusable navigation family before it is composed into th
 
 ## Phase 3: golden homepage
 
-- `GOLD-01` Golden homepage — in progress as `TASK-GOLD-01-GOLDEN-HOMEPAGE`.
-- Round 00 is complete: `DEC-GOLDEN-HOMEPAGE-COPY-001` locks the supplied eight-section copy, and the implementation plan defines ten composed regions, canonical lineage, responsive source order, one-live-page-core allocation, proof intake and the separate technical-consumer boundary.
-- Round 01 feedback is captured in `brand-kit/golden/homepage/round-01-feedback.json`; Olli kept the footer and requested stronger approved-expression inheritance across the other eight regions.
-- Round 14 is the active review candidate in `brand-kit/workbench/golden/homepage/`, a further hero-fan lift recorded in `round-13-feedback.json`: Olli asked to move the side cards even higher and only a little tighter. The per-card vertical step went to `clamp(12px, 1.6vw, 24px)` (side-card drop 23/46px at 1440), flatter and closer to level with AI OS, and the horizontal overlap increased only slightly to `clamp(-80px, -5.6vw, -58px)`. Round 13's compaction, Round 12's canonical card-outline token, Round 11's centred identity (with the no-overlay-fork guard) and every other section carry forward unchanged. The Round 03–05 render-defect exclusion holds: Living Cores mount only on intrinsically sized hosts with canonical Phase A automatic motion. `DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001` still grants the hero its bounded five-live-core allocation; ordinary page regions remain capped at one and Global Navigation suppresses all page motion while open.
-- Hero locked (provisional): after Round 14, Olli reviewed a hero exploration lab (`workbench/golden/homepage/hero-lab/`, variations V01–V19: clean even spreads and auto-advancing single-card carousels, all non-canonical) and locked the hero at V01 — the five-card arc that is the current r14 hero — for now. Recorded in `round-14-feedback.json` and as a `heroSectionLock` in `review.json`; no hero code changed and the whole-page gate stays open.
-- Section revisions underway: Olli's full section review (`golden/homepage/round-14-section-review-feedback.json`) is planned in `golden/homepage/SECTION-REVISION-PLAN.md`. Round 15 (the structural round) split "Why Mez Systems" into "Built on ourselves first" (GH-S04) and "Operating proof" (GH-S05), taking the page to ten sections (AI OS→GH-S06 … footer→GH-S10) and left-aligning the indented header. Rounds 16–17 then reinvented the section designs (`round-16-section-review-feedback.json`): S02/S03/S04 on one authored split-card family (S03 rented-brand logos removed for good), S05 Operating proof rebuilt from unstyled text into honest "Evidence pending" screens, S06 AI OS Wings centred + its bottom pair rebuilt (orbital diagram + 2×2 index), S07 simplified to Wings + name + Coming soon, and the family header indent fixed. The locked hero is unchanged; `verify_homepage_round17.py` proves it.
-- Next: work the remaining planned section rounds one at a time — S02 problem rebuild, AI OS bento (HL01), ecosystem product cards (PO02, hover-animated), greyscale logomarks, then proof and final route — verifying each. Do not begin consumer integration, deployment or proof publication until `H-GOLD-01-HOMEPAGE-PROOF` is explicitly closed and evidence consent/provenance are resolved.
-- Build the centred five-product hero from approved foundations and expressions.
-- Preserve all five products on mobile through the approved compact deck/family-pack expressions; do not truncate to three or require swipe-only discovery.
-- Build problem, ethos, product family, bundle, proof, and final conversion sections from real homepage copy.
-- Use Notion, ElevenLabs, Ramp, Stripe, and Linear evidence as references without copying compositions.
-- Validate conversion clarity, responsive behaviour, accessibility, and identity recognition.
-- Package the eventual candidate here as a self-contained versioned design release. The separate technical Mez Systems repository remains a registered future consumer and may not become a second source of visual truth.
+- `GOLD-01` Golden Homepage — complete and canonical `1.0.0` through `TASK-GOLD-01-GOLDEN-HOMEPAGE`.
+- Olli approved the complete Round 28 page on 28 July 2026. `H-GOLD-01-HOMEPAGE-PROOF` is closed by `DEC-GOLDEN-HOMEPAGE-001`; `round-29-approval.json` records the human decision and `round-28-gate-b.json` records the 68/75 design-excellence pass.
+- The approved page has ten regions, preserves all five products on desktop and mobile, composes the canonical Global Navigation unchanged, keeps the documented homepage motion allocations, and carries a complete static/reduced-motion meaning from 320 through 1440.
+- The Golden Homepage is canonical as a design, responsive, interaction and composition reference. It is not released: CMP-05 and CMP-06 are now separately canonical, operating-proof media still needs an exact redacted release payload, and the future consumer still owns routes, analytics, live availability and integration.
 
-Human gate: promote one homepage as the first golden output.
+Human gate: closed. The first golden output is approved.
 
-## Phase 4: portability and consumer proof
+## Phase 4: portable candidate milestone
 
-- Generate a self-contained production release containing tokens, fonts, assets, renderer, components, guidance, skills, schemas, validators, and examples.
-- Validate it with no access to the canonical checkout.
-- Integrate one real consumer without copied values.
-- Prove update, rollback, and version visibility.
+- `PORT-01` Release boundary — complete as `TASK-PORT-01-RELEASE-BOUNDARY`. The `production-01-plan` inventory classifies twenty-one release-copy or external ownership units, defines the redacted proof schema, self-contained package, clean-install proof, named consumer interface, update, rollback and version visibility. It is a plan with `productionAuthority: false`, not a generated release.
+- `PORT-02` Homepage dependency gates — complete as `TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES`. Olli separately promoted CMP-05 under `DEC-HALFTONE-PORTRAIT-COMPONENT-001` and CMP-06 under `DEC-TESTIMONIAL-MARQUEE-COMPONENT-001`, accepted the recorded limitations, chose frozen dated follower evidence and reconfirmed both motion exceptions without widening Website Motion 1.0.0. The immutable cutover ledger is unchanged; its supplement now indexes five post-cutover approvals.
+- `PORT-03` Production release assembly — complete as `TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY`. The deterministic isolated `1.0.0-rc.1` package, exact approved redacted derivatives, responsive/accessibility proof, clean-copy verifier and Gate B pass are complete; Olli approved the exact manifest-identified candidate at `H-PORT-03-PRODUCTION-RELEASE-CANDIDATE`. This authorises named-consumer proof, not publication, deployment or production version `1.0.0`.
+- `PORT-04` Named consumer proof — deliberately deferred. `SEQ-CONSUMER-LAST-001` records Olli's direction that real website ingestion is the final transition after the Figma companion, agreed current system scope and whole-system certification. The approved `1.0.0-rc.1` bytes remain a frozen milestone; later tasks must assemble a new candidate rather than mutate it.
 
-Exit: a fresh human or LLM can make a credible output using only the release.
+Exit: passed as a portable milestone. A fresh human or LLM can inspect and run the exact approved candidate without treating it as the complete design-system release.
 
 ## Phase 5: Figma companion
 
-- Generate variables from the approved canonical tokens.
-- Build components and variants from approved code contracts.
-- Add Code Connect where it improves transfer.
-- Record the exact release version mirrored by Figma.
+- `FIG-01` Figma companion — complete. Olli approved the scope through `H-FIG-01-FIGMA-COMPANION-SCOPE` and the completed repository-backed companion through `H-FIG-02-FIGMA-COMPANION-APPROVAL`; the historical file remains unchanged and the approved companion is `QxZT3FJ8BDXOZfBQDt0qPW`.
+- Phase 1 foundations are complete: eight collections, 255 variables, 215 alias values with zero broken targets, fifteen semantic text styles and five depth styles. Phase 2 added four visually inspected documentation pages with zero missing fonts. Phase 3 added six rendered identity and expression component sets with 29 variants and zero missing fonts. Phase 4 added eighteen functional component sets with 105 variants, an 18-of-18 detach pass and zero missing fonts; Gate B passed at 67/75 after rendered craft and content-truth repairs.
+- Represent runtime-only material, halftone video and marquee behaviour with exact static authoring twins plus contract documentation.
+- Source parity, modes, accessibility boundaries, naming and detach behaviour are audited. The approval gives Figma no independent canonical or production authority.
+- Code Connect may now be planned as a bounded follow-up; it is not implemented or published by FIG-01.
 
 Figma mirrors the system. It does not own independent values.
 
-## Phase 6: channels and certification
+## Phase 6: channel systems
 
-- Marketing web and commerce.
-- Paid advertising.
-- Organic social.
-- Email.
-- Presentations and reports.
-- Product UI and data visualisation where Mez products require it.
-- Motion and video.
-- OG, icon, print, and environmental outputs.
-- Multi-model benchmark, golden and anti-example evaluation, team onboarding, release governance, and recurring health checks.
+- `UI-01` Product UI and data visualisation — complete. The code-first operational ledger proves the shared shell, real bounded views, accessible data view, complete states, densities and 320–1440 reflow through a repository-backed fixture. Gate B passed at 67/75; Olli approved the non-production foundation direction through `H-UI-01-PRODUCT-UI-FOUNDATION` on 28 July 2026.
+- `CHAN-01` Remaining channel systems — priority-deferred by `SEQ-PRODUCT-UI-FIRST-001`. Shared rules, paid advertising, organic social, email, presentations, reports/documents, motion/video, OG/icons and print/environmental retain future contracts and human gates; none are implied complete.
+- Marketing web and commerce remain represented by the canonical components and Golden Homepage; real consumer ingestion is still deferred.
+
+## Phase 7: whole-system certification and release refresh
+
+- `CERT-01` System certification — complete for the explicitly agreed current scope through `H-CERT-01-SYSTEM-CERTIFICATION`. Authority, accessibility, portability, onboarding, release-governance, health-check and named-model artifact evidence pass with the fresh Claude transfer limitation visible. Deferred channels remain named as uncertified.
+- Deterministic immutable `1.0.0-rc.2` is assembled separately from the approved `1.0.0-rc.1` milestone. Three builds agree on 351 artifacts and manifest SHA-256 `129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9`.
+- Olli approved the certification record and exact later candidate at `H-CERT-01-SYSTEM-CERTIFICATION`; publication, deployment and production version `1.0.0` remain unauthorised.
+
+## Phase 8: final consumer transition
+
+- `PORT-04` Named consumer proof — ready. Olli registered `mezcorp-studio/ceos-notion-landingpage` as `CON-MEZ-SYSTEMS-WEB-001` on 29 July 2026. Begin with a read-only forensic audit from fetched `origin/main`; do not modify, publish or deploy the consumer before its protected routes, redirects, SEO, analytics, attribution, commerce, pricing, product configuration, consent, testimonial content and structured-data contracts are mapped.
+- Prove accessibility, named-device performance, version visibility, update and rollback in that real consumer before any separate publication or deployment decision.
 
 ## Task rule
 

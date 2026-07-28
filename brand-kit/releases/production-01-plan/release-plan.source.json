@@ -1,0 +1,362 @@
+{
+  "schemaVersion": "1.0.0",
+  "planId": "mz.systems.release.production-01-plan",
+  "taskId": "TASK-PORT-01-RELEASE-BOUNDARY",
+  "status": "complete",
+  "outputStatus": "release-plan",
+  "productionAuthority": false,
+  "generatedRelease": false,
+  "targetPackage": {
+    "name": "@mez-systems/design-system-web",
+    "candidateVersion": "1.0.0-rc.1",
+    "productionVersion": "1.0.0",
+    "productionVersionEligibility": "Only after authority reconciliation, CMP-05/CMP-06 disposition, redacted proof review, isolated package proof and named consumer proof pass.",
+    "entrypoints": [
+      "styles/index.css",
+      "runtime/index.js",
+      "components/index.js",
+      "golden/homepage/index.html",
+      "package.json",
+      "manifest.json",
+      "verify.py"
+    ],
+    "requiredGroups": [
+      "authority",
+      "foundations",
+      "identity",
+      "runtime",
+      "expressions",
+      "components",
+      "golden-homepage",
+      "guidance",
+      "skills",
+      "schemas",
+      "validators",
+      "examples",
+      "licences"
+    ]
+  },
+  "dependencyClasses": [
+    "canonical",
+    "generated",
+    "evidence-only",
+    "consumer-owned"
+  ],
+  "inventoryGranularity": "Each entry is one release-copy unit or one explicitly external ownership unit. Runtime references are additionally traced by verify_release_boundary.py.",
+  "dependencies": [
+    {
+      "id": "DEP-AUTHORITY-CONTROL-PLANE",
+      "class": "canonical",
+      "status": "active",
+      "source": "brand-kit/authority/",
+      "releaseTreatment": "Copy the active authority manifest and bounded approval records into an immutable package authority snapshot after ledger reconciliation.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES"
+    },
+    {
+      "id": "DEP-GOVERNANCE-DECISION-LEDGER",
+      "class": "canonical",
+      "status": "release-eligible",
+      "source": "brand-kit/governance/post-cutover-decisions.json",
+      "releaseTreatment": "Copy the immutable cutover ledger and its reconciled post-cutover supplement into the package authority snapshot, retaining every cited bounded approval source.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-FOUNDATIONS-1-0-0",
+      "class": "canonical",
+      "status": "release-eligible",
+      "source": "brand-kit/releases/foundations/dist/",
+      "releaseTreatment": "Copy byte-for-byte with fonts, licences, manifests and ordered CSS entrypoint.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-IDENTITY-MIGRATION-SNAPSHOT",
+      "class": "generated",
+      "status": "reference-input-not-nested-release",
+      "source": "brand-kit/releases/0.1.0-alpha.1/",
+      "releaseTreatment": "Use its verified identity data, renderer, palettes and assets as assembly inputs; do not nest or relabel the migration snapshot as production-ready.",
+      "includeInTarget": false,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-PRODUCT-REGISTRY",
+      "class": "canonical",
+      "status": "release-eligible",
+      "source": "brand-kit/registry/products.json",
+      "releaseTreatment": "Copy into package identity data with its source hash and schema.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-GRADIENT-CATALOGUE-AND-STATIC-TWINS",
+      "class": "generated",
+      "status": "release-eligible-derived",
+      "source": "brand-kit/gradient-library/catalogue.json",
+      "releaseTreatment": "Generate the package catalogue, runtime palettes and exact static twins from canonical source authority; retain integrity and provenance.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-LIVING-CORE-RUNTIME",
+      "class": "canonical",
+      "status": "release-eligible",
+      "source": "brand-kit/source-pack/design-system-export/mz-core.js",
+      "releaseTreatment": "Copy the approved shared renderer with local palette data and no canonical-checkout import.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-WINGS-ASSET",
+      "class": "canonical",
+      "status": "release-eligible",
+      "source": "brand-kit/source-pack/design-system-export/assets/wings.svg",
+      "releaseTreatment": "Copy the exact two-path asset once and reference the package-local URL.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-EXPRESSION-SUITE",
+      "class": "canonical",
+      "status": "release-eligible-bounded",
+      "source": "brand-kit/expressions/",
+      "releaseTreatment": "Package approved disc, sphere, Wings/mark, Product Card, Trading Card, Website Motion and Expression Stress contracts with their schemas, validators, guidance and examples; retain each scope boundary.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-GLOBAL-NAVIGATION-1-0-0",
+      "class": "canonical",
+      "status": "release-eligible",
+      "source": "brand-kit/releases/components/global-navigation/1.0.0/",
+      "releaseTreatment": "Consume the deterministic component release rather than the workbench-relative source import.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-GOLDEN-HOMEPAGE-CONTRACT",
+      "class": "canonical",
+      "status": "canonical-design-unreleased",
+      "source": "brand-kit/golden/homepage/",
+      "releaseTreatment": "Copy the approved Round 28 source, schema, review, approval, composition and accessibility contracts without claiming consumer routes or deployment authority.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-GOLDEN-HOMEPAGE-IMPLEMENTATION",
+      "class": "canonical",
+      "status": "canonical-reference-requires-rebasing",
+      "source": "brand-kit/workbench/golden/homepage/",
+      "releaseTreatment": "Copy only the approved page-local HTML, CSS and JavaScript after rebasing every import to package entrypoints; exclude review controls, labs and raw evidence media.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-THIRD-PARTY-MARKS",
+      "class": "evidence-only",
+      "status": "reference-assets-production-authority-false",
+      "source": "brand-kit/assets/third-party-marks/",
+      "releaseTreatment": "Copy only the sixteen referenced mark assets plus attribution/provenance if legal review permits; never copy the full research registry by default or treat marks as Mez identity data.",
+      "includeInTarget": false,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-CMP-05-HALFTONE-PORTRAIT",
+      "class": "canonical",
+      "status": "release-eligible-approved",
+      "source": "brand-kit/components/halftone-portrait/",
+      "releaseTreatment": "Copy only the canonical 1.0.0 code, schema, guidance, approval and verifier. Media preparation, fixture likenesses and consumer content remain outside the component package unless separately reviewed.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-CMP-06-TESTIMONIAL-MARQUEE",
+      "class": "canonical",
+      "status": "release-eligible-approved",
+      "source": "brand-kit/components/testimonial-marquee/",
+      "releaseTreatment": "Copy the canonical 1.0.0 component machinery, schema, guidance, approval and verifier. Keep the seven-person fixture as dated example content and require consumer-owned media and consent provenance for deployment.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-TESTIMONIAL-CONTENT",
+      "class": "consumer-owned",
+      "status": "fixture-not-production-truth",
+      "source": "brand-kit/components/testimonial-marquee/fixtures/ai-os-testimonials.json",
+      "releaseTreatment": "Ship only as a clearly dated example unless the named consumer supplies and owns a production content payload with freshness and consent metadata.",
+      "includeInTarget": false,
+      "followUp": "TASK-PORT-04-NAMED-CONSUMER-PROOF"
+    },
+    {
+      "id": "DEP-TESTIMONIAL-MEDIA",
+      "class": "consumer-owned",
+      "status": "consented-workbench-media-release-review-required",
+      "source": "brand-kit/components/testimonial-marquee/fixtures/media/",
+      "releaseTreatment": "Do not include by default. The consumer supplies approved public derivatives and consent provenance through the testimonial content interface.",
+      "includeInTarget": false,
+      "followUp": "TASK-PORT-04-NAMED-CONSUMER-PROOF"
+    },
+    {
+      "id": "DEP-OPERATING-PROOF-RAW",
+      "class": "evidence-only",
+      "status": "redaction-pending-release-ineligible",
+      "source": "brand-kit/workbench/golden/homepage/assets/operating-proof/",
+      "releaseTreatment": "Never copy raw PNG bytes. Accept only derivatives that validate against operating-proof-payload.schema.json and carry public-release approval.",
+      "includeInTarget": false,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-HOMEPAGE-REVIEW-EVIDENCE",
+      "class": "evidence-only",
+      "status": "retain-in-authority-not-runtime",
+      "source": "brand-kit/golden/homepage/round-28-gate-b.json",
+      "releaseTreatment": "Include concise approval and test receipts in guidance; exclude rejected labs, feedback controls and historical workbench rounds from runtime.",
+      "includeInTarget": true,
+      "followUp": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY"
+    },
+    {
+      "id": "DEP-ROUTES-ANALYTICS-SEO-AVAILABILITY",
+      "class": "consumer-owned",
+      "status": "registered-consumer-audit-pending",
+      "source": "consumer://mez-systems-production-web/runtime",
+      "releaseTreatment": "The package dispatches documented destination events and accepts content/configuration; the consumer owns URLs, analytics, SEO deployment and live availability.",
+      "includeInTarget": false,
+      "followUp": "TASK-PORT-04-NAMED-CONSUMER-PROOF"
+    },
+    {
+      "id": "DEP-EXTERNAL-TESTIMONIAL-SOURCE-LINK",
+      "class": "consumer-owned",
+      "status": "example-destination-only",
+      "source": "external://mez.systems/ai-os",
+      "releaseTreatment": "Do not hardcode as design-system authority. The named consumer supplies the destination or omits it.",
+      "includeInTarget": false,
+      "followUp": "TASK-PORT-04-NAMED-CONSUMER-PROOF"
+    }
+  ],
+  "candidateResolution": {
+    "status": "both-promoted",
+    "decisionRecord": "brand-kit/releases/production-01-plan/candidate-promotion-packet/human-decision.json",
+    "policy": "No candidate enters a production package without its own closed gate and distinct decision ID.",
+    "promotionPath": {
+      "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+      "components": [
+        {
+          "id": "CMP-05",
+          "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF",
+          "requiredDecisionId": "DEC-HALFTONE-PORTRAIT-COMPONENT-001"
+        },
+        {
+          "id": "CMP-06",
+          "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+          "requiredDecisionId": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+        }
+      ]
+    },
+    "exclusionInterface": {
+      "slot": "testimonial-proof",
+      "inputContract": "Source-ordered testimonials with quote, name, handle, follower snapshot metadata, verified state, optional approved portrait and consent/provenance reference.",
+      "staticAdapter": "A complete semantic ordered list is required when CMP-05 or CMP-06 is unavailable, under reduced motion and in media failure.",
+      "parityRule": "If the candidate components are excluded, the package may not claim exact Golden Homepage visual parity until a bounded homepage adaptation is reviewed."
+    }
+  },
+  "operatingProof": {
+    "sourceProvenance": "brand-kit/workbench/golden/homepage/assets/operating-proof/provenance.json",
+    "payloadSchema": "brand-kit/releases/production-01-plan/operating-proof-payload.schema.json",
+    "example": "brand-kit/releases/production-01-plan/operating-proof-payload.example.json",
+    "rawMediaReleaseEligible": false,
+    "requiredPublicState": "redacted-approved",
+    "requirements": [
+      "Preserve original SHA-256 and semantic role without preserving an absolute source path.",
+      "Create a separate derivative; never overwrite the evidence original.",
+      "Record redaction methods, derivative SHA-256, alt text, reviewer and review timestamp.",
+      "Verify that names, personal data, customer data, secrets, tokens, URLs, workspace identifiers and unrelated private content are absent or deliberately approved.",
+      "Set publicReleaseEligible true only after human visual inspection of the exact derivative bytes."
+    ]
+  },
+  "cleanConsumerProof": {
+    "taskId": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+    "method": "Copy only the assembled package into a temporary directory, make the canonical checkout inaccessible to the test process, install no network dependency, serve the included example, and run the included verifier from that copy.",
+    "viewports": [320, 375, 390, 430, 768, 1024, 1280, 1440],
+    "requiredChecks": [
+      "all package manifests and SHA-256 hashes agree after a deterministic rebuild",
+      "all CSS, JavaScript, fonts, licences, JSON, static twins, SVGs and approved media resolve package-locally",
+      "zero runtime HTTP or HTTPS design dependency and zero canonical-checkout path",
+      "keyboard order, visible focus, screen-reader landmarks and names, reduced motion, no-WebGL and missing-media states preserve complete meaning",
+      "no document overflow at declared viewports and no content hidden behind swipe-only access",
+      "the rendered footer or diagnostic endpoint exposes package name, version and manifest hash"
+    ]
+  },
+  "versioning": {
+    "visibility": "Expose package name, semantic version and manifest hash through package metadata, a runtime read-only version export and a visible diagnostic/footer hook controlled by the consumer.",
+    "update": "Install the next immutable package version, run its verifier and consumer smoke suite, compare the recorded previous and next manifest hashes, then switch the consumer lockfile reference.",
+    "rollback": "Retain the last known-good immutable package and consumer lockfile. Restore that exact version and manifest hash without reverting consumer-owned content or copying canonical source files.",
+    "compatibility": "Breaking public entrypoint, event, content or slot changes require a major version. Candidate-component promotion may not mutate an already published package version."
+  },
+  "consumerInterface": {
+    "consumerId": "CON-MEZ-SYSTEMS-WEB-001",
+    "name": "Mez Systems production web",
+    "repository": {
+      "remote": "https://github.com/mezcorp-studio/ceos-notion-landingpage.git",
+      "owner": "mezcorp-studio",
+      "name": "ceos-notion-landingpage",
+      "defaultBranch": "main"
+    },
+    "localCheckout": "/Users/olivermerrick/Desktop/mez-studios/landing-pages/apps/ceos-notion-landingpage",
+    "registrationRecord": "brand-kit/governance/consumer-register.json",
+    "registrationRequiredBeforeIntegration": false,
+    "runtimeCrossRepositoryImportAllowed": false,
+    "packageOwns": [
+      "tokens and local fonts",
+      "identity assets and Living Core runtime",
+      "approved component implementations and events",
+      "Golden Homepage composition and responsive behaviour",
+      "accessibility and fallback contracts",
+      "schemas, validators, guidance and examples"
+    ],
+    "consumerOwns": [
+      "routes and destination mapping",
+      "analytics and consent state",
+      "SEO and deployment",
+      "live product availability",
+      "testimonial wording, follower freshness and likeness consent operations",
+      "application, commerce, authentication and payment logic"
+    ]
+  },
+  "authorityReconciliation": {
+    "status": "reconciled",
+    "ledger": "brand-kit/governance/post-cutover-decisions.json",
+    "baseLedger": "brand-kit/governance/decisions.json",
+    "reconciledDecisionIds": [
+      "DEC-FOUNDATION-RELEASE-001",
+      "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "DEC-GOLDEN-HOMEPAGE-001"
+    ],
+    "supportingRecords": [
+      "brand-kit/releases/foundations/review.json",
+      "brand-kit/components/global-navigation/review.json",
+      "brand-kit/golden/homepage/round-29-approval.json"
+    ],
+    "rule": "PORT-02 preserved the hash-locked 2026-07-21 cutover ledger, retained the three existing Olli approval records and added two separately approved component promotions to the post-cutover supplement."
+  },
+  "followUps": [
+    {
+      "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+      "status": "complete",
+      "owner": "design-system-agent-plus-Olli",
+      "exit": "Separate promotion or exclusion decisions exist for CMP-05 and CMP-06, follower policy is resolved, and decision authority is reconciled."
+    },
+    {
+      "taskId": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+      "status": "complete",
+      "owner": "design-system-agent",
+      "exit": "A deterministic self-contained release candidate and redacted proof payload pass isolated verification."
+    },
+    {
+      "taskId": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+      "status": "ready-for-read-only-consumer-audit",
+      "owner": "consumer-integration-agent",
+      "exit": "The registered consumer proves the later approved candidate's install, version visibility, update and rollback without copied design values."
+    }
+  ]
+}

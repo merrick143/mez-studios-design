@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "systemId": "mz.systems.product-ui.foundation",
+  "candidateRevision": "product-ui-foundation-01-r01",
+  "recordedAt": "2026-07-28",
+  "reviewer": "design-system-agent",
+  "verdict": "gate-b",
+  "productionAuthority": false,
+  "score": {
+    "hierarchy": 4,
+    "composition": 4,
+    "pacingAndDensity": 4,
+    "typography": 5,
+    "productTruthAndProof": 5,
+    "distinctiveness": 4,
+    "narrative": 4,
+    "conversionClarity": 4,
+    "emotionalImpact": 4,
+    "craft": 4,
+    "originality": 4,
+    "weighted": 67,
+    "maximum": 75,
+    "verdict": "pass"
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "method": "Inspected the rendered surface with the single AI OS material treated as removable.",
+      "evidence": "The asymmetric dark identity rail, technical provenance strip, large declarative heading, ledger-first workspace and numbered inspector remain a coherent Mez composition without the gradient signal."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "method": "Mapped every major region by composition family at desktop and mobile.",
+      "evidence": "The application rail, header/provenance stack, operational ledger with inspector, and status distribution use four different jobs and shapes. No metric-card grid or repeated container family is present."
+    },
+    "T3MotionTruth": {
+      "result": "pass-not-applicable",
+      "method": "Inspected source contract, JavaScript and CSS for motion claims and runtime behaviour.",
+      "evidence": "The candidate claims no expressive or autoplay motion. Only canonical 120ms control-state transitions exist, and prefers-reduced-motion reduces them to effectively zero."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "method": "Ran verify_product_ui_contract.py against the seven fixture records, registry, component sources and Figma evidence, then inspected all visible values.",
+      "evidence": "All records, the five-product summary, 24/18/105 Figma values and the 5/1/1 distribution resolve to named repository sources. The page explicitly denies production-product-data authority."
+    }
+  },
+  "canonSweep": {
+    "result": "pass",
+    "blockingFindings": [],
+    "checked": [
+      "no generic metric-card dashboard or nested mini-card cluster",
+      "no fabricated statistics, customer data, product screens or placeholder marks",
+      "no pure-black, purple, glass, blur, decorative shadow or gradient-as-chart-category styling",
+      "no colour-only status, hidden mobile records, horizontal body overflow, autoplay or scroll hijacking",
+      "one Living Core source image is used once as workspace identity and not as decoration"
+    ]
+  },
+  "visualEvidence": {
+    "viewports": [320, 375, 390, 768, 920, 1280, 1440],
+    "results": "All seven widths rendered with seven visible records and zero body overflow. At 320–390 the table becomes labelled record fields; at 768–920 the inspector follows the ledger; at 1280–1440 the inspector shares the ledger row.",
+    "repairsDuringGate": [
+      "Moved the stacked shell breakpoint from 920 to 1024 after the exact 920px render exposed 43px of horizontal overflow.",
+      "Reduced mobile headline scale so the title resolves as two strong phrases rather than a five-line word stack.",
+      "Turned the four rail items into real bounded views instead of decorative navigation.",
+      "Added modal background isolation, focus trapping, focus restoration and JavaScript-disabled access to the complete fixture."
+    ]
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "area": "real assistive technology",
+      "finding": "The browser accessibility tree proves names, roles, table structure, aria-sort, live regions and chart alternatives, but an external VoiceOver or NVDA spoken session has not been recorded.",
+      "effect": "No Gate B visual blocker; keep the exact spoken-output session as a named follow-up before canonical promotion."
+    }
+  ],
+  "smallestNextStep": "Present the single operational-ledger family at H-UI-01. If Olli keeps the grammar, obtain one real redacted Mez product workflow and test the accepted shell against it before expanding the component inventory.",
+  "readyForOlliReview": true
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "auditId": "CERT-ACCESSIBILITY-01",
+  "status": "pass-with-known-consumer-gaps",
+  "method": "Aggregate foundation contrast and state contracts, expression stress proof, component keyboard and fallback proof, Golden Homepage responsive semantics, Product UI table/dialog proof and the isolated candidate baseline.",
+  "evidence": [
+    "brand-kit/foundations/colour/review.json",
+    "brand-kit/foundations/geometry-controls/review.json",
+    "brand-kit/expressions/stress-proof/review.json",
+    "brand-kit/components/global-navigation/review.json",
+    "brand-kit/components/halftone-portrait/review.json",
+    "brand-kit/components/testimonial-marquee/review.json",
+    "brand-kit/golden/homepage/review.json",
+    "brand-kit/product-ui/review.json",
+    "brand-kit/releases/production-01-plan/port-03-verification.json"
+  ],
+  "covered": [
+    "semantic structure and source order",
+    "keyboard navigation, focus visibility and focus restoration",
+    "named regions, live status and complete text alternatives",
+    "320 through 1440 responsive reflow",
+    "200 and 400 percent text growth",
+    "reduced-motion and no-WebGL static meaning",
+    "missing-media, loading, empty, error, stale, partial and no-permission states",
+    "colour-independent state labels and contrast-bound foundation tokens"
+  ],
+  "knownGaps": [
+    "No exact spoken VoiceOver or NVDA session has been recorded for Product UI or the final package.",
+    "CMP-06 exact spoken phrasing, physical-pointer timing and named-device profiling remain PORT-04 obligations.",
+    "Real consumer framework, routing, authentication and provider behaviour remain untested until PORT-04."
+  ],
+  "effect": "The repository surface passes its bounded accessibility contract. These named gaps prevent a claim of final consumer accessibility certification.",
+  "productionAuthority": false
+}

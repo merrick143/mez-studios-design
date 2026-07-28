@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r04",
+  "verdict": "direction-selected",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Olli",
+  "productionAuthority": false,
+  "decisionId": null,
+  "component": {
+    "presentation": "social-caption",
+    "locked": true,
+    "provisional": true
+  },
+  "homepageComposition": {
+    "background": "transparent",
+    "ownsSectionFill": false,
+    "headingAlignment": "center",
+    "eyebrow": "Running on Mez Systems",
+    "headline": "Proof from the operating system."
+  },
+  "preserveUntilReopened": [
+    "seven video-backed testimonials with Daniel excluded",
+    "local curated profile image plus Name, Username and Followers",
+    "no outbound Instagram links",
+    "no visible carousel controls or status chrome",
+    "24px/s bounded continuous drift with 900ms direct-input recovery",
+    "phase-level hover and focus pause",
+    "compact portrait/profile top row over a full-width quote",
+    "transparent Golden Homepage section background with no top or bottom rules"
+  ],
+  "openRisks": [
+    "Canonical promotion still requires a governance decision ID.",
+    "Follower-count refresh policy remains unresolved.",
+    "CMP-05 and CMP-06 both remain candidate dependencies without production authority."
+  ],
+  "outputStatus": "candidate"
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.disc",
+  "status": "canonical",
+  "productionAuthority": true,
+  "artifactCount": 5,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 1219,
+      "sha256": "62bca6aafc6097f1b79548aaabd907ca1b38e7d42920ab4d78030200921213cd"
+    },
+    {
+      "path": "disc.schema.json",
+      "bytes": 2362,
+      "sha256": "ecd7d555ee76db38765944dd4cdfb1c60736f234207ca690ca55302da90be286"
+    },
+    {
+      "path": "disc.source.json",
+      "bytes": 7452,
+      "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1197,
+      "sha256": "1a9d3e4aace7f61281594079dbadd578f06c16f67f1b1e1257f6c2b3f0803b58"
+    },
+    {
+      "path": "review.json",
+      "bytes": 566,
+      "sha256": "45c0e7c586b10f68ed0dcf610503431b445006266496d2020517bafb3249770d"
+    }
+  ]
+}

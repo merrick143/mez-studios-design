@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/website-motion",
+  "version": "1.0.0",
+  "status": "canonical",
+  "candidateRevision": "channel-motion-matrix-01-r03",
+  "reviewGateId": "H-EXP-07-CHANNEL-MOTION-PROOF",
+  "decisionId": "DEC-WEBSITE-MOTION-SYSTEM-001",
+  "productionReadyForScope": true,
+  "productionAuthority": true,
+  "entrypoints": {
+    "contract": "channel-motion.source.json",
+    "schema": "channel-motion.schema.json",
+    "guidance": "README.md",
+    "review": "review.json",
+    "round01Feedback": "round-01-feedback.json",
+    "round02Feedback": "round-02-feedback.json",
+    "round03Feedback": "round-03-feedback.json"
+  },
+  "deferredTaskId": "TASK-CMP-01-GLOBAL-NAVIGATION",
+  "note": "Canonical seven-specimen website-motion grammar. The menu component remains separate and deferred."
+}

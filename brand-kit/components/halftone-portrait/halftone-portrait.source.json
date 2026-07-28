@@ -1,0 +1,225 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.halftone-portrait",
+  "pantryId": null,
+  "version": "1.0.0",
+  "status": "canonical",
+  "productionAuthority": true,
+  "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF",
+  "candidateRevision": "halftone-portrait-01-r01",
+  "taskId": "TASK-CMP-05-HALFTONE-PORTRAIT",
+  "decisionIds": [
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001"
+  ],
+  "title": "Halftone Portrait",
+  "thesis": "A human face rendered as a live halftone dot grid, drawn from video on a canvas one frame at a time. The component owns the render contract and the motion allocation; the consumer owns the media, the caption and the surrounding layout. The cutout is deliberately not a runtime concern: a matted source composited over a flat light plate reproduces the entire look for free, because a light plate maps to no dots, so the element carries no machine-learning runtime, no model weights and no network calls.",
+  "anatomy": [
+    "Host box: square by default, radius panel 24, clipped. The only styled surface.",
+    "Source video: decode-only, muted, looped, inline, never displayed.",
+    "Sample canvas: offscreen, sized to the dot grid rather than the display.",
+    "Visible canvas: role=img with a consumer-supplied accessible label.",
+    "Dot grid: one dot per cell, radius driven by cell luminance.",
+    "Tone curve: auto-levels, then contrast, brightness and dot gamma.",
+    "Lattice: axis-aligned by default; rotated and staggered variants share one slower path.",
+    "Failure plate: the box keeps its size and states the reason."
+  ],
+  "states": [
+    "static",
+    "live",
+    "reduced-motion",
+    "forced-static",
+    "source-loading",
+    "source-failure",
+    "sample-failure"
+  ],
+  "renderContract": {
+    "luminance": "0.299R + 0.587G + 0.114B per grid cell.",
+    "autoLevels": "Per-frame 64-bin histogram, 2nd and 98th percentile stretched to the full range, eased 12 percent per frame so exposure changes do not pulse the grid.",
+    "tone": "darkness = (value - 0.5) * contrast + 0.5 + brightness, clamped, then raised to dotGamma.",
+    "sampling": "The offscreen canvas is sized to cols x rows, so the browser performs the downscale and getImageData reads one pixel per cell instead of the whole frame.",
+    "devicePixelRatio": "Clamped to 2. A 3x backing store triples fill cost with no visible gain at this dot size.",
+    "path": "All dots are added to a single path and filled once. A fill per dot is an order of magnitude slower at this density."
+  },
+  "motion": {
+    "defaultPolicy": "allocated",
+    "maximumLiveInstancesDefault": 1,
+    "default": "Every instance mounts static. Under the default allocated policy the single most visible instance is handed the animation and yields it when another becomes more visible.",
+    "repeated": "Instances that are not animating hold a complete static halftone frame. They are not blank, dimmed or placeholder.",
+    "reduced": "prefers-reduced-motion paints one frame and never starts a render loop. The static frame carries the same meaning as the animation.",
+    "failure": "A missing source, a decode error or a tainted canvas releases motion, keeps the box and states the reason.",
+    "autoplayRefused": "Downgrades silently to the static frame already painted. No play control is fabricated.",
+    "offscreen": "An always-on instance idles the moment it leaves the viewport, so a long marquee never pays for portraits nobody can see."
+  },
+  "mediaContract": {
+    "preparation": "The cutout is baked into the source before it reaches the browser. See pipeline provenance in fixtures/media/PROVENANCE.md.",
+    "rationale": "Live segmentation costs an 11MB wasm runtime plus a per-frame neural network for a result that is fixed once a clip is approved.",
+    "expected": "Square, muted, short loop, subject composited over a flat light plate.",
+    "componentNeverDoes": [
+      "fabricate a subject",
+      "assert consent for a likeness",
+      "fetch media it was not given",
+      "run segmentation or any model at runtime"
+    ]
+  },
+  "attributes": [
+    {
+      "name": "src",
+      "required": true,
+      "notes": "Source video URL. Same-origin or CORS-enabled, otherwise the canvas taints and the element fails visibly."
+    },
+    {
+      "name": "label",
+      "required": true,
+      "notes": "Accessible label for the rendered image."
+    },
+    {
+      "name": "grid-step",
+      "default": 4,
+      "notes": "Grid pitch in CSS pixels. Lower is finer and costs more."
+    },
+    {
+      "name": "max-radius",
+      "default": "grid-step / 2",
+      "notes": "Radius of a fully dark dot."
+    },
+    {
+      "name": "dot-colour",
+      "default": "#212121"
+    },
+    {
+      "name": "background",
+      "default": "#ffffff",
+      "notes": "Plate painted behind the dots."
+    },
+    {
+      "name": "contrast",
+      "default": 1.3
+    },
+    {
+      "name": "brightness",
+      "default": -0.03
+    },
+    {
+      "name": "dot-gamma",
+      "default": 1,
+      "notes": "Radius response curve. Below 1 fattens midtones."
+    },
+    {
+      "name": "screen-angle",
+      "default": 0,
+      "notes": "Rotates the lattice, as a print screen angle does."
+    },
+    {
+      "name": "stagger",
+      "default": false,
+      "notes": "Half-step offset on alternate rows."
+    },
+    {
+      "name": "invert",
+      "default": false
+    },
+    {
+      "name": "auto-levels",
+      "default": "on",
+      "notes": "Set to off to disable the per-frame histogram stretch."
+    },
+    {
+      "name": "dot-shape",
+      "default": "circle",
+      "notes": "circle, square, diamond, cross or ring."
+    },
+    {
+      "name": "zoom",
+      "default": 1,
+      "notes": "Crop in. Never below 1: there is no source outside the frame."
+    },
+    {
+      "name": "focus-x",
+      "default": 0.5
+    },
+    {
+      "name": "focus-y",
+      "default": 0.5
+    },
+    {
+      "name": "motion-policy",
+      "default": "allocated",
+      "notes": "allocated or always. always opts out of the one-live allocation and is a bounded exception; see motionDecisionException."
+    }
+  ],
+  "lockedTreatment": {
+    "recordedAt": "2026-07-27",
+    "recordedBy": "Olli",
+    "note": "The treatment approved on the originating surface. Carried here as evidence of intent, not as component authority: a consumer may set any supported attribute.",
+    "values": {
+      "grid-step": 4,
+      "max-radius": 1.8,
+      "dot-colour": "#212121",
+      "background": "#ffffff",
+      "contrast": 1.3,
+      "brightness": -0.03,
+      "dot-gamma": 1,
+      "screen-angle": 0,
+      "stagger": false,
+      "invert": false,
+      "auto-levels": "on",
+      "dot-shape": "circle"
+    }
+  },
+  "prohibited": [
+    "more than one animated instance under the default allocated policy",
+    "running segmentation or any model at runtime",
+    "fetching a model, a runtime or media the consumer did not supply",
+    "a blank or placeholder box when motion is unavailable",
+    "hiding the subject under reduced motion",
+    "fabricating a play control when autoplay is refused",
+    "owning a quote, a name, an attribution or a consent state",
+    "owning card, marquee or section layout",
+    "scroll-driven playback or scroll hijacking",
+    "audio of any kind"
+  ],
+  "events": [
+    {
+      "name": "mez-halftone-ready",
+      "detail": []
+    },
+    {
+      "name": "mez-halftone-failure",
+      "detail": [
+        "reason"
+      ]
+    }
+  ],
+  "testViewports": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "openQuestions": [],
+  "outOfScope": [
+    "the testimonial card, its quote typography and its attribution",
+    "the marquee or slider that may eventually carry several portraits",
+    "consent capture and evidence governance for a likeness",
+    "media preparation tooling, which lives with the pipeline that produces the clips"
+  ],
+  "motionDecisionException": {
+    "status": "approved-bounded",
+    "requestedBy": "Olli",
+    "requestedAt": "2026-07-27",
+    "attribute": "motion-policy=\"always\"",
+    "summary": "Olli approved multiple simultaneously animated halftone portraits for the testimonial marquee on 2026-07-27. Website Motion 1.0.0 otherwise permits one expressive event in the viewport, and Global Navigation carries the equivalent bounded exception for five live cores. This exception is cheaper than that one: a halftone portrait costs a canvas fill, not a WebGL context or a neural network, and every instance still idles the moment it leaves the viewport. The exception applies only to instances that explicitly set the attribute. The default policy is unchanged, so a portrait dropped onto any other surface still allocates one live instance."
+  },
+  "approval": {
+    "record": "brand-kit/components/halftone-portrait/approval.json",
+    "decisionId": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "approvedAt": "2026-07-28",
+    "approvedBy": "Olli",
+    "state": "canonical"
+  }
+}

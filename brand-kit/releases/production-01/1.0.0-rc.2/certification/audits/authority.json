@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "auditId": "CERT-AUTHORITY-01",
+  "status": "pass",
+  "method": "Reconcile current machine authority, immutable and post-cutover decision ledgers, canonical registries, bounded human approvals, task routing and candidate release flags.",
+  "evidence": [
+    "brand-kit/authority/current.json",
+    "brand-kit/authority/authority.json",
+    "brand-kit/governance/decisions.json",
+    "brand-kit/governance/post-cutover-decisions.json",
+    "brand-kit/figma-companion/approval.json",
+    "brand-kit/product-ui/approval.json",
+    "brand-kit/docs/product-ui-priority-sequence.json"
+  ],
+  "results": [
+    "Canonical authority resolves to merrick143/mez-studios-design main:brand-kit.",
+    "Figma is an approved mirror with canonicalAuthority false and productionAuthority false.",
+    "Product UI is an approved foundation direction with no decision ID, canonical authority or production authority.",
+    "The frozen rc.1 and later rc.2 are candidates and do not grant publication, deployment or consumer-integration authority.",
+    "The nine deferred channel families remain explicitly uncertified."
+  ],
+  "failClosedChecks": [
+    "A Figma-versus-repository conflict stops and routes to the repository.",
+    "A missing human approval cannot be inferred from verifier output.",
+    "No certification output may change governance ledgers or canonical registries without a separate bounded decision."
+  ],
+  "knownGaps": [],
+  "productionAuthority": false
+}

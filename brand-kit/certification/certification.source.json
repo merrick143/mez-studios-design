@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "certificationId": "mz.systems.certification.current-scope.01",
+  "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
+  "gateId": "H-CERT-01-SYSTEM-CERTIFICATION",
+  "status": "approved-current-scope",
+  "scope": "brand-kit/certification/scope.json",
+  "requiredAudits": [
+    "authority",
+    "accessibility",
+    "portability",
+    "onboarding",
+    "release-governance"
+  ],
+  "benchmark": {
+    "models": ["GPT-5.6 Codex", "Claude Opus 4.8"],
+    "outputClasses": [
+      "authority-triage",
+      "anti-example-review",
+      "implementation-receipt",
+      "golden-visual-receipt"
+    ],
+    "samePromptTransfer": "brand-kit/certification/benchmarks/transfer-results.json",
+    "historicalContractReplay": "brand-kit/certification/benchmarks/contract-replay.json"
+  },
+  "releaseCandidate": {
+    "name": "@mez-systems/design-system-web",
+    "version": "1.0.0-rc.2",
+    "path": "brand-kit/releases/production-01/1.0.0-rc.2/",
+    "frozenPredecessor": "brand-kit/releases/production-01/1.0.0-rc.1/",
+    "productionAuthority": false,
+    "published": false,
+    "deployed": false
+  },
+  "authorityBoundary": {
+    "canonicalAuthority": false,
+    "productionAuthority": false,
+    "consumerIntegrationAuthority": false,
+    "deferredChannelsCertified": false
+  },
+  "humanGate": {
+    "required": true,
+    "approver": "Olli",
+    "status": "approved",
+    "approvalQuestion": "Is the complete current-scope certification record and exact 1.0.0-rc.2 candidate ready to enter final named-consumer transition?"
+  }
+}

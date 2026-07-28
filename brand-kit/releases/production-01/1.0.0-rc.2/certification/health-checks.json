@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "healthCheckId": "CERT-HEALTH-01",
+  "status": "active-contract",
+  "failurePolicy": "fail-closed",
+  "checks": [
+    {
+      "id": "daily-authority-drift",
+      "cadence": "daily or before any governed build",
+      "commands": [
+        ".venv/bin/python brand-kit/scripts/verify_authority.py",
+        ".venv/bin/python brand-kit/scripts/verify_llm_contracts.py"
+      ],
+      "failureRoute": "Stop governed work and reconcile current authority or contract drift."
+    },
+    {
+      "id": "change-set-core",
+      "cadence": "every brand-kit change",
+      "commands": [
+        ".venv/bin/python brand-kit/scripts/verify_portability.py",
+        ".venv/bin/python brand-kit/scripts/verify_workbench.py",
+        ".venv/bin/python brand-kit/gradient-library/verify_library.py",
+        ".venv/bin/python brand-kit/product-architecture/verify_architecture.py",
+        ".venv/bin/python brand-kit/scripts/verify_release.py --release brand-kit/releases/0.1.0-alpha.1"
+      ],
+      "failureRoute": "Do not hand off or assemble a candidate."
+    },
+    {
+      "id": "release-candidate-integrity",
+      "cadence": "every candidate assembly and before human review",
+      "commands": [
+        ".venv/bin/python brand-kit/certification/verify_certification.py",
+        ".venv/bin/python brand-kit/certification/verify_certified_release_candidate.py brand-kit/releases/production-01/1.0.0-rc.2"
+      ],
+      "failureRoute": "Invalidate the candidate and keep H-CERT-01 pending."
+    },
+    {
+      "id": "quarterly-human-audit",
+      "cadence": "quarterly or after a major identity, component or release decision",
+      "commands": [],
+      "failureRoute": "Open a bounded audit task; never silently rewrite canonical values."
+    }
+  ],
+  "automationCreated": false,
+  "note": "This file defines the governed cadence. It does not create an external scheduler or grant mutation authority."
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "payloadId": "mz.systems.operating-proof.production-01",
+  "status": "redacted-approved",
+  "publicReleaseEligible": true,
+  "sourceProvenance": {
+    "repositoryRecord": "brand-kit/workbench/golden/homepage/assets/operating-proof/provenance.json",
+    "originalPathsIncluded": false,
+    "originalBytesIncluded": false
+  },
+  "records": [
+    {
+      "id": "proof-command",
+      "role": "command",
+      "originalSha256": "97f576860ab1151ef1379ed1bfcf7e44ccd7da5c7376e773f3091eb6326c6f59",
+      "redactedAsset": "assets/operating-proof/redacted/command.png",
+      "redactedSha256": "f1d6c36b1e464895401c61588a0894b13eccb8b8ca8d840e192ead846bd5f1ed",
+      "alt": "Redacted Mez Studios command surface showing the branded operating shell and private working regions concealed.",
+      "redactionMethods": [
+        "cropped Notion workspace chrome",
+        "opaque masks over personal title and internal links, tasks and content labels"
+      ],
+      "publicReleaseEligible": true
+    },
+    {
+      "id": "proof-context-backbone",
+      "role": "context-backbone",
+      "originalSha256": "6e34b55413ed333ab7230227e705a6bb4642f0b5e61ef6bb47fbf76467f14e73",
+      "redactedAsset": "assets/operating-proof/redacted/backend.png",
+      "redactedSha256": "2b9f40fcb5c9e6c2c3b0142930ffeccbbd5b1e563a765d181693e18da591ab4d",
+      "alt": "Redacted Mez Backend surface showing Growth, Client, Content and Knowledge OS structure without internal destinations.",
+      "redactionMethods": [
+        "cropped Notion workspace chrome",
+        "opaque masks over internal destination names and descriptions"
+      ],
+      "publicReleaseEligible": true
+    },
+    {
+      "id": "proof-structured-documentation",
+      "role": "structured-documentation",
+      "originalSha256": "069b7d76fe274801c6e3208b8f28c2277536854b872b050c0d01272a8b4e70d8",
+      "redactedAsset": "assets/operating-proof/redacted/docs.png",
+      "redactedSha256": "e57729900aee5b7eba3e13c36846f2487a519d954fd503c01fc84e3e4469c0fc",
+      "alt": "Mez Studios Docs surface grouped into Brief, Context, README, Reference, Strategy and Technical.",
+      "redactionMethods": [
+        "cropped Notion workspace chrome containing breadcrumb, avatar and sharing controls"
+      ],
+      "publicReleaseEligible": true
+    },
+    {
+      "id": "proof-working-application",
+      "role": "working-application",
+      "originalSha256": "af217f1949122469004055050389da7a10169a267dc2de057cd4fde2ef2937e8",
+      "redactedAsset": "assets/operating-proof/redacted/ad-system.png",
+      "redactedSha256": "02279977b6a6a40de066d71e7fba75edad66a5a3f2d50268fe0b0c05e51b5b8f",
+      "alt": "Ultimate AI Ad System surface showing onboarding, playbook, strategy, AI and weekly operating views.",
+      "redactionMethods": [
+        "cropped Notion workspace chrome containing breadcrumb, avatar and sharing controls"
+      ],
+      "publicReleaseEligible": true
+    }
+  ],
+  "review": {
+    "reviewedBy": "Olli",
+    "reviewedAt": "2026-07-28T05:56:58Z",
+    "exactDerivativeBytesInspected": true,
+    "verdict": "approve"
+  }
+}

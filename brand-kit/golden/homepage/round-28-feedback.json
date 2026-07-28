@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r28",
+  "verdict": "revision-requested",
+  "recordedAt": "2026-07-28",
+  "productionAuthority": false,
+  "note": "Olli reviewed the homepage on mobile and requested a bounded responsive correction across the hero, principle orbit and Built on ourselves process.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "feedback": "Keep one H1, one subtitle and one action across desktop and mobile. Remove the duplicate second subtitle, improve the title composition, and retain the five-card flare at a smaller mobile scale instead of the oversized card grid."
+    },
+    {
+      "id": "GH-S03",
+      "title": "The Mez Systems principle",
+      "feedback": "Reduce the mobile orbit, central gradient circle and Mez Systems lockup together so the full instrument fits comfortably inside the viewport. Preserve the Wings logo's native aspect ratio instead of forcing the mark into a square."
+    },
+    {
+      "id": "GH-S04",
+      "title": "Built on ourselves first",
+      "feedback": "Recompose the desktop left-to-right process as a top-to-bottom mobile guide with one line aligned down the left and each stage's copy aligned beside its marker."
+    }
+  ],
+  "copyAmendment": {
+    "scope": "GH-S01 visible hero copy",
+    "keptH1": "The operating systems AI-native businesses run on.",
+    "keptSubtitle": "Own the context, workflows and decisions that make AI useful.",
+    "removedDuplicateSubtitle": "Every Mez System is built inside Mez Studios first, tested against real work, then packaged for you to install.",
+    "authority": "Direct copy-owner instruction in the Round 28 mobile review; formal copy decision re-recording remains part of the open homepage gate."
+  },
+  "implemented": {
+    "hero": "A balanced H1 and single subtitle over a compact, overlapping five-card mobile flare.",
+    "principle": "A 300px maximum compact orbit with a 26% core and a mark-only mobile Wings treatment rendered at the SVG's native aspect ratio.",
+    "process": "A single-column process whose shared vertical rule passes through every left-hand marker centre."
+  },
+  "outputStatus": "candidate"
+}

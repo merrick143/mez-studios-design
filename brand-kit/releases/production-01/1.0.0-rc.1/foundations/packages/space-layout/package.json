@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageId": "mz.systems.package.space-layout",
+  "version": "1.0.0",
+  "scope": "space-layout-responsive-foundation",
+  "foundationId": "mz.systems.foundation.space-layout",
+  "status": "canonical",
+  "decisionIds": [
+    "DEC-TYPE-FOUNDATION-001",
+    "DEC-COLOUR-FOUNDATION-001",
+    "DEC-SPACE-LAYOUT-FOUNDATION-001",
+    "DEC-MIGRATION-SEQUENCE-001"
+  ],
+  "reviewGateId": "H-FND-03-SPATIAL-PROOF",
+  "candidateRevision": "spatial-lock-01",
+  "productionReadyForScope": true,
+  "entrypoints": {
+    "css": "tokens.css",
+    "tokens": "tokens.json",
+    "responsiveContracts": "responsive-contracts.json",
+    "source": "space-layout.source.json",
+    "review": "review.json"
+  },
+  "notes": [
+    "Canonical for the bounded space, layout and responsive scope approved through H-FND-03-SPATIAL-PROOF.",
+    "Typography, colour, geometry, product-expression and release data are not included."
+  ]
+}

@@ -63,9 +63,14 @@ def main() -> int:
     css = CSS.read_text(encoding="utf-8")
     javascript = JS.read_text(encoding="utf-8")
 
+    # RETIRED AT R22: GH-S08 now sits directly after the hero, so numeric DOM
+    # order is no longer a valid premise. The logical IDs remain stable.
     section_ids = re.findall(r'data-review-id="(GH-S\d{2})"', html)
-    if section_ids != [f"GH-S{n:02d}" for n in range(1, 11)]:
-        failures.append(f"section order changed: {section_ids}")
+    # UPDATED AT R25: the footer-adjacent duplicate route retired with GH-S10;
+    # the remaining nine handles are stable and unique.
+    expected_ids = {f"GH-S{n:02d}" for n in range(1, 10)}
+    if len(section_ids) != 9 or set(section_ids) != expected_ids:
+        failures.append(f"section IDs changed or duplicated: {section_ids}")
 
     s04 = html[html.index('data-review-id="GH-S04"'):html.index('data-review-id="GH-S05"')]
 
@@ -93,10 +98,12 @@ def main() -> int:
     # --- geometry that only holds if it is derived, not typed ---
     if "--mseq-disc" not in css or "--mseq-dot" not in css:
         failures.append("the marker sizes must be variables the connector can be derived from")
-    if "nth-last-child(2)" not in css:
-        failures.append("the last connector must be sized for the disc, not for a dot")
-    if "var(--mseq-disc) / 2" not in css:
-        failures.append("the connector must reach the disc centre from the same variable that sizes it")
+    # RETIRED AT R22: the left-aligned-marker premise and its special last
+    # connector expired when Olli asked for the whole rail to centre. Every
+    # marker is now on the centre of its column, so one connector formula works.
+    marker = re.search(r"\.mseq__marker \{(.*?)\}", css, re.S)
+    if not marker or "justify-items: center" not in marker.group(1):
+        failures.append("the R22 sequence must centre each marker in its column")
 
     # The connector was first written against a token this page does not define,
     # so it rendered transparent while every measurement still passed.
@@ -104,6 +111,8 @@ def main() -> int:
     if not connector:
         failures.append("missing the .mseq connector rule")
     else:
+        if "left: 50%" not in connector.group(1):
+            failures.append("the centred sequence connector must start at the column centre")
         colour = re.search(r"background:\s*([^;]+);", connector.group(1))
         if not colour:
             failures.append("the connector has no colour")

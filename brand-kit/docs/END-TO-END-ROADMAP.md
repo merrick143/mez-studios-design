@@ -4,6 +4,10 @@
 >
 > This is the complete original audit and detailed end-to-end programme. Its analysis, quality bar, human/LLM model, channel scope, and task detail remain required. Repository timing and live status are now governed by `CURRENT-STATE.md` and `ROADMAP.md`. Paths that refer to the previous Mezcorp pack are historical unless an active document explicitly promotes them.
 
+> Live reconciliation · 28 July 2026
+>
+> The standalone execution roadmap has completed foundations, the bounded expression suite, Global Navigation, Golden Homepage `1.0.0`, the non-authoritative production release boundary and the separate CMP-05/CMP-06 promotion gates. The next live task is `TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY`; use the active roadmap's Phase 4 portability sequence rather than the historical `NEXT-001` backlog below.
+
 > Status: strategic execution plan
 >
 > Written: 2026-07-19

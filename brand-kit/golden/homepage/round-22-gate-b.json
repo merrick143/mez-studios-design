@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r22",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S01 to GH-S08 to GH-S02 adjacency",
+    "GH-S02 problem close",
+    "GH-S04 workflow alignment",
+    "GH-S08 testimonial proof rail"
+  ],
+  "score": {
+    "weighted": 64,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 4,
+      "pacing": 4,
+      "typography": 4,
+      "productTruth": 4,
+      "distinctiveness": 4,
+      "narrative": 5,
+      "conversion": 4,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "At 1280px and 375px, the stripped-material render retained the hero fan, comparison staircase, centred workflow sequence and overall Mez hierarchy."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The changed-scope sequence uses five distinct composition families: product hero, testimonial rail, comparison staircase, architecture diagram and workflow sequence. No adjacent family repeats."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "The GH-S04 material terminus produced 360 WebGL draw calls in three seconds. Screenshots 2.4 seconds apart changed 1315 of 2116 sampled pixels, or 62.15 percent. Exactly one live core and one canvas were present."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "All three review lines are excerpts of the existing attributed source text, consent is visibly marked pending, and the workflow uses one canonical live material disc. No changed surface contains fabricated metrics or placeholder content."
+    }
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0
+  },
+  "findings": [],
+  "noFindingBasis": "The candidate was rendered and visually inspected at 320, 375, 390, 768, 920, 1280 and 1440 pixels; checked for overflow, alignment, content order, token use, motion truth, product truth and changed-scope canon violations. It would fail for an off-axis workflow, a moving testimonial rail, unauthorised testimonial claims, a second live core, more than one canvas, less than ten percent live pixel change, responsive overflow, an adjacent composition-family repeat, or any canon critical.",
+  "smallestSetOfChanges": [],
+  "standingRisks": [
+    "Testimonial consent verification remains pending before production use.",
+    "GH-S05 still carries evidence-pending operating proof outside this round's Gate B scope.",
+    "H-GOLD-01-HOMEPAGE-PROOF remains open; this record does not promote the candidate to a golden output."
+  ],
+  "readyForOlliReview": true
+}

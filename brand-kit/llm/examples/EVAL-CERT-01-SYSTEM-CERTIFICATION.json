@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-CERT-01-SYSTEM-CERTIFICATION",
+  "receiptId": "RCP-CERT-01-SYSTEM-CERTIFICATION",
+  "evaluatedAt": "2026-07-28T13:06:40Z",
+  "evaluator": {"kind": "hybrid", "name": "Olli and CERT-01 repository and isolated-package verifiers"},
+  "contractChecks": [
+    {"id": "SCOPE", "status": "pass", "evidence": "Certified, bounded, consumer-owned and nine deferred channel families are explicit."},
+    {"id": "AUTHORITY", "status": "pass", "evidence": "Canonical registry and decision authority remains unchanged; Figma and Product UI remain bounded."},
+    {"id": "ACCESSIBILITY", "status": "warning", "evidence": "Repository accessibility contracts pass, but exact spoken AT and final-consumer proof remain unmeasured."},
+    {"id": "MULTI-MODEL", "status": "warning", "evidence": "GPT-5 and Claude Opus 4.8 artifacts pass common contracts; fresh Claude transfer was unavailable due local CLI authentication."},
+    {"id": "PORTABILITY", "status": "pass", "evidence": "Three deterministic builds and one empty-environment isolated run passed."},
+    {"id": "RELEASE-BOUNDARY", "status": "pass", "evidence": "rc.1 is unchanged; rc.2 remains candidate, generated and unreleased."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "Olli approved the exact certification record and rc.2 manifest for final named-consumer proof."}
+  ],
+  "qualityDimensions": [
+    {"id": "authority-integrity", "score": 5, "maximum": 5, "evidence": "No registry or decision authority was widened."},
+    {"id": "scope-honesty", "score": 5, "maximum": 5, "evidence": "Deferred channels and consumer gaps remain explicit."},
+    {"id": "portability", "score": 5, "maximum": 5, "evidence": "The exact package is deterministic and independently isolated."},
+    {"id": "model-transfer", "score": 3.5, "maximum": 5, "evidence": "Real named-model artifacts validate, but the controlled second-model run is unmeasured."},
+    {"id": "accessibility-evidence", "score": 4, "maximum": 5, "evidence": "Broad repository evidence passes; exact AT speech and consumer proof remain."},
+    {"id": "release-operations", "score": 5, "maximum": 5, "evidence": "Version, hash, predecessor, rollback and human-gate boundaries are explicit."}
+  ],
+  "blockers": [],
+  "verdict": "pass-with-warnings",
+  "humanReviewRequired": false,
+  "notes": [
+    "Olli approved the bounded current scope with the evidence gaps visible.",
+    "Output status is approved candidate, generated and unreleased. It is not canonical or production authority."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r25",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S05 to GH-S06 to GH-S07 adjacency",
+    "simplified dark AI OS route",
+    "removal of the duplicate footer-adjacent route"
+  ],
+  "score": {
+    "weighted": 70,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacing": 5,
+      "typography": 5,
+      "productTruth": 5,
+      "distinctiveness": 4,
+      "narrative": 5,
+      "conversion": 4,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "Without product material, the section remains a deliberate dark identity break with one concise route message and one portrait product object. It does not depend on a default bento grid for hierarchy."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The changed adjacency is sticky operating proof, contained dark product route, then the light ecosystem catalogue. Each uses a different composition family and pacing role."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "The moved AI OS material mounts exactly one canvas while its section owns the viewport. Two card captures 1.2 seconds apart changed 93.7 percent of pixels; the exact static MZ-G13 twin remains the reduced-motion and no-WebGL fallback."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "The card uses canonical AI OS naming, canonical Wings and MZ-G13. No capability, metric or availability claim was added; the revision removes copy and duplicate structure only."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "The section contract was checked across all seven widths. Fresh 1280px and 390px renders show a concise split becoming one source-ordered column, no horizontal overflow, a 44px primary action and one visible product object."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 0
+  },
+  "findings": [],
+  "noFindingBasis": "The selected section was checked for leftover bento markup, duplicate final routes, nested cards, excessive copy, invalid self-links, invented claims, noncanonical material, glow, glass, shadows, perspective, uncontrolled motion, horizontal overflow and weak mobile order. It would fail if any removed line or extension rail returned, if more than one route or live core existed, or if the dark contrast ceased to be structural.",
+  "smallestSetOfChanges": [],
+  "standingRisks": [
+    "The AI OS consumer destination remains supplied by the production consumer event contract.",
+    "The whole-page human gate remains open.",
+    "The old aios-prefixed CSS is now dead code and can be removed in a later bounded cleanup without changing the rendered candidate."
+  ],
+  "readyForOlliReview": true
+}

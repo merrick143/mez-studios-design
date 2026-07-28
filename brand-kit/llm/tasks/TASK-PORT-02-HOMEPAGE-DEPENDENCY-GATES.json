@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "title": "Resolve the Golden Homepage candidate release dependencies",
+  "phase": 4,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Prepare one bounded human review packet for CMP-05 Halftone Portrait and CMP-06 Testimonial Marquee while preserving separate component authority, resolving their remaining release gaps and reconciling the decision records required before production assembly.",
+  "scope": {
+    "included": [
+      "close or explicitly defer CMP-05 Gate B and responsive evidence gaps",
+      "close or explicitly accept CMP-06 spoken-output, performance and hover-measurement gaps",
+      "choose frozen, manually refreshed or omitted follower counts for CMP-06",
+      "reconfirm the existing bounded portrait and marquee motion exceptions without widening them",
+      "present separate promote or exclude decisions for CMP-05 and CMP-06 in one review packet",
+      "reconcile the Foundation Release, Global Navigation and Golden Homepage decision records with the central governance ledger",
+      "route the approved or excluded result into the production release assembly task"
+    ],
+    "excluded": [
+      "redesigning the locked testimonial presentation",
+      "retuning the locked halftone treatment",
+      "creating new portrait footage or fabricated likenesses",
+      "publishing a release",
+      "redacting operating-proof media",
+      "modifying or deploying a consumer repository",
+      "widening Website Motion 1.0.0 outside the two recorded component exceptions"
+    ]
+  },
+  "dependencies": [
+    "TASK-PORT-01-RELEASE-BOUNDARY",
+    "TASK-CMP-05-HALFTONE-PORTRAIT",
+    "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-WEBSITE-MOTION-SYSTEM-001"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/design-authority/",
+      "brand-kit/governance/decisions.json",
+      "brand-kit/releases/production-01-plan/release-plan.source.json",
+      "brand-kit/releases/production-01-plan/review.json",
+      "brand-kit/components/halftone-portrait/halftone-portrait.source.json",
+      "brand-kit/components/halftone-portrait/review.json",
+      "brand-kit/components/testimonial-marquee/testimonial-marquee.source.json",
+      "brand-kit/components/testimonial-marquee/review.json",
+      "brand-kit/components/testimonial-marquee/round-04-lock.json"
+    ],
+    "decisionIds": [
+      "DEC-GOLDEN-HOMEPAGE-001",
+      "DEC-WEBSITE-MOTION-SYSTEM-001"
+    ],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/releases/production-01-plan/candidate-promotion-packet/",
+      "acceptance": [
+        "CMP-05 and CMP-06 receive separate promote or exclude verdicts",
+        "each promotion has its own closed source gate, decision ID and bounded authority scope",
+        "all measured, accepted and unresolved release gaps are visible",
+        "follower freshness and both motion exceptions have explicit production policies",
+        "central decision authority is reconciled before production assembly"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "PORT-02-SEPARATE-AUTHORITY",
+      "method": "schema",
+      "passCondition": "each component has one independent verdict, gate, decision ID, authority scope and release treatment"
+    },
+    {
+      "id": "PORT-02-RELEASE-GAPS",
+      "method": "command",
+      "passCondition": "the packet agrees with both live component contracts and records every known gap as closed, accepted or blocking"
+    },
+    {
+      "id": "PORT-02-GATE-B",
+      "method": "visual",
+      "passCondition": "the design-critique skill finds no blocking regression in the exact candidate bytes submitted for promotion"
+    },
+    {
+      "id": "PORT-02-HUMAN",
+      "method": "human",
+      "passCondition": "Olli gives separate promote or exclude verdicts for CMP-05 and CMP-06"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+    "approver": "Olli",
+    "approvalQuestion": "For each component separately: should CMP-05 Halftone Portrait and CMP-06 Testimonial Marquee become canonical production dependencies for the Golden Homepage release, or remain excluded behind the stable testimonial-proof interface?"
+  },
+  "stopConditions": [
+    "either component is described as canonical before its separate human verdict and decision ID",
+    "a release gap is hidden rather than closed, explicitly accepted or left blocking",
+    "the locked halftone treatment or testimonial design changes without a new revision review",
+    "a bounded motion exception is widened beyond its recorded component scope",
+    "governance reconciliation would invent an approval not supported by an existing human record",
+    "the task enters production release assembly, proof redaction or a consumer repository"
+  ],
+  "notes": [
+    "This is one efficient review packet, not one combined component authority decision.",
+    "A rejection is valid: PORT-01 already defines the static testimonial-proof exclusion interface and its required homepage adaptation gate.",
+    "Production assembly remained blocked until this task was complete.",
+    "Completed on 2026-07-28. Olli separately approved CMP-05 and CMP-06, accepted the recorded limitations, selected frozen dated follower snapshots and reconfirmed both bounded motion exceptions without widening Website Motion 1.0.0.",
+    "No release or deployment was authorised. TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY is now ready."
+  ]
+}

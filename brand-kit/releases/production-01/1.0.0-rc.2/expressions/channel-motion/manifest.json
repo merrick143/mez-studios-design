@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.channel-motion-matrix",
+  "version": "1.0.0",
+  "status": "canonical",
+  "decisionId": "DEC-WEBSITE-MOTION-SYSTEM-001",
+  "productionAuthority": true,
+  "artifactCount": 8,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 1359,
+      "sha256": "49a96b44d6d8cf0205ec1c09d1f8825e43aa655af932dfa9f6ff790f20f21275"
+    },
+    {
+      "path": "channel-motion.schema.json",
+      "bytes": 3461,
+      "sha256": "f655d7b9ae42498fb1cc5fc6b57eefd2e7184a20ef049065f801ff0209155f1d"
+    },
+    {
+      "path": "channel-motion.source.json",
+      "bytes": 8116,
+      "sha256": "f04a82f58f4283862014844dcd3911e6986d035076d784ab83638d9ed842d17d"
+    },
+    {
+      "path": "package.json",
+      "bytes": 823,
+      "sha256": "5c2fcd3b25b2d5d78aee15921bbedaca267ddd5d30525a640b284d9f1bbf959e"
+    },
+    {
+      "path": "review.json",
+      "bytes": 1562,
+      "sha256": "7fa91e1b609b6320436bb03bbb6bd658b8f583a345850a0e3f0f71da3339ecab"
+    },
+    {
+      "path": "round-01-feedback.json",
+      "bytes": 1673,
+      "sha256": "ce839445e44a3c0448138c5883c87691f4a16115190f98a15d6459373a7b0572"
+    },
+    {
+      "path": "round-02-feedback.json",
+      "bytes": 1998,
+      "sha256": "8dd05fa5e15686dda0d0c1d73ae56bf9a1a5bc6574016f8dec98a292903d1c90"
+    },
+    {
+      "path": "round-03-feedback.json",
+      "bytes": 2009,
+      "sha256": "c9cc026ab200f52c69393d6c48111b61f5b5393efc33127a17e088df68a13cce"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r22",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-27",
+  "note": "Olli requested three bounded homepage changes: centre the GH-S04 workflow as a complete visual group, move the existing review proof directly under the hero in a very simple marquee-like treatment, and remove the two-sentence dependency line from GH-S02 while retaining the stronger operating-layer close.",
+  "sections": [
+    {
+      "id": "GH-S02",
+      "title": "The problem",
+      "verdict": "revise",
+      "feedback": "Delete the complete close: 'External tools can create real value. Dependency without ownership does not. Your business needs an operating layer it controls.' It feels out of place."
+    },
+    {
+      "id": "GH-S04",
+      "title": "Built on ourselves first",
+      "verdict": "revise",
+      "feedback": "The visual does not feel centre-aligned as one whole group. Centre the complete workflow rather than leaving its weight offset to the left."
+    },
+    {
+      "id": "GH-S08",
+      "title": "Proof from the first Mez System",
+      "verdict": "revise",
+      "feedback": "Put a review section directly under the hero, like a marquee, with a super simple design."
+    }
+  ],
+  "selected": {
+    "reviewComposition": "A static testimonial-proof rail directly below GH-S01. Three existing attributed review excerpts sit in one horizontal strip with hairline separators and no card chassis.",
+    "reviewMotion": "The rail has a marquee silhouette but does not move. MOT-04 keeps Wings, type and layout static.",
+    "sequenceAlignment": "Each of the five GH-S04 markers moves to the centre of its grid column. The first and last marker centres are therefore symmetric around the page axis, and one connector formula reaches every marker.",
+    "problemClose": "The complete two-part dependency and operating-layer close is removed. GH-S02 now ends on the staircase."
+  },
+  "copyAmendment": {
+    "scope": "GH-S02 closing copy in the review candidate",
+    "removed": "External tools can create real value. Dependency without ownership does not. Your business needs an operating layer it controls.",
+    "authorisedBy": "Olli",
+    "formalCopyRelockPending": true,
+    "note": "homepage-copy.md 1.0.0 remains the canonical locked source until its next formal copy revision."
+  },
+  "openRisks": [
+    "The three review excerpts retain their existing attributed source status, but consent verification is still pending before production use.",
+    "H-GOLD-01-HOMEPAGE-PROOF remains open. Round 22 is a review candidate, not a golden-output promotion."
+  ],
+  "outputStatus": "candidate",
+  "productionAuthority": false
+}

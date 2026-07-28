@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-FIG-02-FIGMA-COMPANION-APPROVAL",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "candidateRevision": "figma-companion-phase-04",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-28",
+  "productionAuthority": false,
+  "score": {
+    "weighted": 67,
+    "maximum": 75,
+    "verdict": "pass",
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 4,
+      "typography": 4,
+      "productTruthAndProof": 5,
+      "distinctiveness": 4,
+      "narrative": 4,
+      "conversionClarity": 4,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "The rendered library remains recognisably Mez without relying on product colour: authored light/charcoal splits, full-height material rails, Wings geometry, source-labelled runtime twins and the halftone dot portrait remain legible structural devices."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The functional library uses distinct composition families for discovery, comparison, checkout, bundle building, horizontal upsell, sticky summary, catalogue matrix, split footer, navigation state system and runtime portrait/marquee twins. ProductFeatureBento was rebuilt from inset mini-cards into four full compositions before scoring."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "No Figma object claims executable motion. Global Navigation, Halftone Portrait and Testimonial Marquee explicitly identify themselves as static state or first-frame twins, preserve reduced/static states, and route live behaviour to the repository contracts. Runtime motion proof is therefore not fabricated in Figma."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "Product components use the five canonical Product Material instances; Wings and identity primitives come from canonical sources; the Halftone twin uses the locked treatment; and the testimonial placeholder was replaced with Kayvon Jafarzadeh's exact approved repository fixture and matching media before scoring."
+    }
+  },
+  "reviewMethod": {
+    "renderedSets": [
+      "ProductDiscoveryCard",
+      "ProductFeatureBento",
+      "ProductPricingCard",
+      "ProductCheckoutSummary",
+      "ProductFooterCTA",
+      "Global Navigation",
+      "Halftone Portrait",
+      "Testimonial Marquee"
+    ],
+    "compactAndWide": "Explicit Wide and Compact runtime variants were rendered and read. Figma does not execute browser viewport reflow, so no browser-width claim is made for this static companion.",
+    "canonSweep": "Checked the rendered sets against the Phase B pantry, Product Card ethos, Anti-Slop Canon and Craft composition families; then re-rendered the corrected bento and marquee before scoring."
+  },
+  "findings": [],
+  "recommendation": {
+    "result": "keep-for-review",
+    "reason": "The companion is now a practical, restrained mirror of the repository system: real materials remain the protagonist, functional variants are editable and detachable, and runtime-only behaviour is represented honestly instead of simulated."
+  },
+  "outputStatus": "candidate-companion-mirror",
+  "readyForOlliReview": true
+}

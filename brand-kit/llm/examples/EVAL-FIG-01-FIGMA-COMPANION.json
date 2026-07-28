@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-FIG-01-FIGMA-COMPANION",
+  "receiptId": "RCP-FIG-01-FIGMA-COMPANION",
+  "evaluatedAt": "2026-07-28T10:51:31Z",
+  "evaluator": {
+    "kind": "hybrid",
+    "name": "Olli, Codex and deterministic validators"
+  },
+  "contractChecks": [
+    {"id":"SOURCE-PARITY","status":"pass","evidence":"Variables, styles, product materials and functional sets trace to repository authority; the historical file was not reused as truth."},
+    {"id":"LIBRARY-STRUCTURE","status":"pass","evidence":"Fourteen ordered pages, consistent naming, practical property surfaces and 18-of-18 detachment provide a usable authoring structure."},
+    {"id":"RUNTIME-HONESTY","status":"pass","evidence":"Navigation, halftone and marquee components are explicitly static twins and never claim executable Figma behaviour."},
+    {"id":"PRODUCT-TRUTH","status":"pass","evidence":"Canonical product materials and the exact approved Kayvon fixture replaced placeholders before final review."},
+    {"id":"DESIGN-EXCELLENCE","status":"pass","evidence":"Gate B passed at 67/75 with no blocking test failure or unresolved finding."},
+    {"id":"HUMAN-GATE","status":"pass","evidence":"Olli approved the completed companion through H-FIG-02."},
+    {"id":"AUTHORITY-BOUNDARY","status":"pass","evidence":"Approval explicitly withholds independent Figma authority, publication, Code Connect implementation, consumer integration and production release."}
+  ],
+  "qualityDimensions": [
+    {"id":"source-integrity","score":5,"maximum":5,"evidence":"Every mirrored family resolves to a canonical repository contract or exact approved fixture."},
+    {"id":"authoring-usability","score":4.5,"maximum":5,"evidence":"Twenty-four sets, editable properties and clean detach behaviour make the file useful without turning it into a second source of truth."},
+    {"id":"design-quality","score":4.47,"maximum":5,"evidence":"The final rendered library scored 67/75 at Gate B."},
+    {"id":"boundary-honesty","score":5,"maximum":5,"evidence":"Static runtime twins, PNG authoring substitutions and Figma's non-authority role are explicitly documented."},
+    {"id":"production-readiness","score":3,"maximum":5,"evidence":"The authoring mirror is approved, but publishing, Code Connect, channel systems, certification and consumer integration remain later work."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": [
+    "FIG-01 is complete and CHAN-01 is the first incomplete programme task.",
+    "Output status is approved companion mirror; it is not canonical repository authority, a published library, a consumer build or a release."
+  ]
+}

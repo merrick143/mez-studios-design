@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r28",
+  "verdict": "approved",
+  "approvedBy": "Olli",
+  "approvedAt": "2026-07-28",
+  "decisionId": "DEC-GOLDEN-HOMEPAGE-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": false,
+  "humanEvidence": [
+    "Perfect let's lock this in.",
+    "I'm actually happy with the home page now.",
+    "Let's lock this in and then let me know what's next."
+  ],
+  "approvedScope": [
+    "The complete ten-region Round 28 homepage composition and narrative.",
+    "The compact five-card mobile hero, undistorted principle mark and vertical mobile process guide.",
+    "The selected transparent GH-S08 Testimonial Marquee composition using the social-caption candidate presentation.",
+    "Responsive, keyboard, reduced-motion, static-fallback and bounded motion behaviour proven from 320 through 1440 pixels.",
+    "Use as the first canonical Mez Systems golden visual reference."
+  ],
+  "releaseBoundary": [
+    "This approval does not publish or deploy a consumer website.",
+    "CMP-05 Halftone Portrait and CMP-06 Testimonial Marquee keep their independent candidate status and require their own promotion decisions before a production package may treat them as canonical components.",
+    "Operating-proof media remains blocked from release until a redacted, provenance-preserving payload is prepared.",
+    "Routes, analytics, live availability, follower refresh and consumer integration remain outside GOLD-01."
+  ],
+  "evidence": {
+    "gateB": "brand-kit/golden/homepage/round-28-gate-b.json",
+    "responsiveVerifier": "brand-kit/golden/homepage/verify_homepage_round28.py",
+    "canonicalVerifier": "brand-kit/golden/homepage/verify_homepage_canonical.py",
+    "source": "brand-kit/golden/homepage/homepage.source.json",
+    "review": "brand-kit/golden/homepage/review.json",
+    "workbench": "brand-kit/workbench/golden/homepage/"
+  },
+  "nextTask": "TASK-PORT-01-RELEASE-BOUNDARY",
+  "outputStatus": "canonical-design-reference-unreleased"
+}

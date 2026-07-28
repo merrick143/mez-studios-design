@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "phase": 2,
+  "status": "complete",
+  "completedAt": "2026-07-28T09:52:10Z",
+  "fileKey": "QxZT3FJ8BDXOZfBQDt0qPW",
+  "authority": {
+    "figmaRole": "companion-mirror",
+    "historicalFileMutated": false,
+    "frozenReleaseMutated": false
+  },
+  "pages": [
+    {"name":"00 · Cover","pageId":"0:1","rootId":"13:2","width":1440,"height":900,"visualInspection":"pass"},
+    {"name":"01 · Foundations","pageId":"13:3","rootId":"13:4","width":1440,"height":7333,"visualInspection":"pass"},
+    {"name":"02 · Responsive & Runtime","pageId":"13:5","rootId":"13:6","width":1440,"height":2130,"visualInspection":"pass"},
+    {"name":"03 · Source & Governance","pageId":"13:7","rootId":"13:8","width":1440,"height":2017,"visualInspection":"pass"}
+  ],
+  "liveAudit": {
+    "method": "Figma Plugin API page traversal plus rendered screenshot inspection",
+    "pages": 4,
+    "textNodes": 409,
+    "variableBoundNodes": 638,
+    "missingFontTextNodes": 0,
+    "components": 0,
+    "instances": 0
+  },
+  "visualRepairs": [
+    "Increased all 82 colour swatch cards so CSS syntax labels remain readable.",
+    "Increased the four responsive profile cards so the gutter syntax remains readable.",
+    "Changed four governance identity stacks to content height so titles and repository references remain readable."
+  ],
+  "runtimeBoundariesDocumented": [
+    "CSS breakpoints remain documentation-only.",
+    "Figma modes are representative authoring states, not media queries.",
+    "Living Core, halftone video and marquee motion require exact static authoring twins.",
+    "Reduced motion must preserve the same complete meaning.",
+    "Website Motion 1.0.0 and every bounded exception retain repository authority."
+  ],
+  "next": "Phase 3 product identity and expression families"
+}
