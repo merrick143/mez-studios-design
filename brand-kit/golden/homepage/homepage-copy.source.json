@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "mz.systems.copy.homepage",
+  "version": "1.0.0",
+  "status": "canonical",
+  "productionAuthority": true,
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "decisionId": "DEC-GOLDEN-HOMEPAGE-COPY-001",
+  "source": {
+    "path": "brand-kit/golden/homepage/homepage-copy.md",
+    "sha256": "a728499ca63590bc4505526c45235d410f1e5c038d680e5e8f0995f13b842070"
+  },
+  "review": {
+    "path": "brand-kit/golden/homepage/homepage-copy.review.json",
+    "sha256": "7553fc9adf528f7c03fc3543ba21d3b37717c4e8521fee952c733e0e856298fd"
+  },
+  "sectionOrder": [
+    "hero",
+    "problem",
+    "principle",
+    "why-mez-systems",
+    "available-now",
+    "ecosystem",
+    "proof",
+    "final-route"
+  ],
+  "primaryAction": "Explore the AI OS",
+  "secondaryAction": "See what we’re building",
+  "claimBoundaries": {
+    "testimonials": "Copy and attribution are locked as supplied, but publication requires separately verified consent and provenance.",
+    "screens": "Operating-proof screens must be deliberately redacted, approved for publication and imported as governed evidence assets.",
+    "availability": "AI OS is available now; the four specialised systems are coming soon.",
+    "visualNotes": "Visual-direction notes are planning inputs and cannot override canonical foundations, expressions, components or motion allocation."
+  }
+}

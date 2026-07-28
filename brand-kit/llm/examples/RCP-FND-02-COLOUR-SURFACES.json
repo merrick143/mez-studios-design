@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-FND-02-COLOUR-SURFACES",
+  "taskId": "TASK-FND-02-COLOUR-SURFACES",
+  "contextBundleId": "CTX-FND-02-COLOUR-SURFACES",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-21T16:35:00+10:00",
+  "finishedAt": "2026-07-21T18:24:36+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/foundations/colour/", "action": "created", "sha256": null, "reason": "One semantic source, schema, generator, validator, package and guidance for colour and surfaces."},
+    {"path": "brand-kit/foundations/colour/colour.source.json", "action": "created", "sha256": "ba16cbba5e25341c22ae1d94fe12ef10c9a406ebff5d8f3493b4cb56343b914c", "reason": "Canonical thirty-nine primitives and forty-three semantic roles across five explicit modes."},
+    {"path": "brand-kit/foundations/colour/review.json", "action": "created", "sha256": "6a1a0d449b31de79df96b6d27b71615a71c75c6f7ad213408306e81d98ba3dcf", "reason": "Immutable H-FND-02-SURFACE-PROOF approval record for final-lock-02."},
+    {"path": "brand-kit/foundations/colour/dist/manifest.json", "action": "generated", "sha256": "c1c8283bee32e8526c026c135ca81d0102d11e7a4227714d98bcd4e9279f2c25", "reason": "Portable canonical artifact integrity record."},
+    {"path": "brand-kit/foundations/colour/dist/package.json", "action": "generated", "sha256": "183c2acccaeb95737f77b9a5cc77644be03b95054fe6260ee339d68b4afa420b", "reason": "Bounded canonical package metadata, approval entrypoint and production authority."},
+    {"path": "brand-kit/foundations/colour/dist/contrast-report.json", "action": "generated", "sha256": "240fa8bea7ed60c945ef5870ba5ffec82cce1b02876149a722d10acb781d2abf", "reason": "Eighty-five resolved contrast checks with zero failures."},
+    {"path": "brand-kit/workbench/foundations/colour/index.html", "action": "created", "sha256": "8666249c6c7b445e162d7ae43fd037dce5076ca2da87ce688ab6831a7149b6a7", "reason": "Matched canvas decision, identity inheritance, contained dark, restrained feedback, channel and canonical approval proof."},
+    {"path": "brand-kit/workbench/foundations/colour/styles.css", "action": "created", "sha256": "81668fef8a3aacd9bdd52d9c388ef14d8b954dac82eb13795233f34dc959e1e9", "reason": "Responsive instrument-grade proof from 320px through wide desktop."},
+    {"path": "brand-kit/workbench/foundations/colour/review.js", "action": "created", "sha256": "a65eff1e6709098f8ca9681f3ad8f0545149f60f1038441df7c1dfa0e9398043", "reason": "Grayscale, annotation and accessible approval-record interactions."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-02-COLOUR-SURFACES.json", "action": "modified", "sha256": "6613d98eeca78e9b3796181e6bc1e42860b2cedcb6f18bf56ba7f26efc48dae8", "reason": "Task completed after the human gate passed."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-03-SPACE-LAYOUT.json", "action": "created", "sha256": "ea6e399155f4fe504d639858affc7be444e693f5eaefa8f6a9eda2029005276f", "reason": "Next bounded foundation task is ready with canonical FND-01 and FND-02 dependencies."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "action": "modified", "sha256": "bd9497268b6a1894f1ecd95667b478873d7d4441d213772dc6454ffbd7777337", "reason": "Live status advances to FND-03."},
+    {"path": "brand-kit/docs/ROADMAP.md", "action": "modified", "sha256": "a4ad267a8ebd510d51884151a8775b529374e0ae1ee36987ef41254e82d982f3", "reason": "FND-02 is complete and FND-03 is next."}
+  ],
+  "decisionsApplied": ["DEC-TYPE-FOUNDATION-001", "DEC-CONTROL-001", "DEC-COLOUR-FOUNDATION-001", "DEC-GRADIENT-LIBRARY-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "tests": [
+    {"id": "FND-02-SCHEMA", "status": "pass", "evidence": "Draft 2020-12 source validation, primitive resolution, semantic role parity and deterministic generation pass."},
+    {"id": "FND-02-CONTRAST", "status": "pass", "evidence": "Eighty-five normal-text, brand, action, selection, neutral-feedback, emphasis-feedback and disabled pairings pass their declared 7.0, 4.5 or 3.0 thresholds."},
+    {"id": "FND-02-CHANNELS", "status": "pass", "evidence": "Light, contained dark, email, document and print mappings are explicit in source, CSS, tokens and proof."},
+    {"id": "FND-02-RESPONSIVE", "status": "pass", "evidence": "Browser proof passes 320, 375, 768, 1280 and 1440 with no document overflow."},
+    {"id": "FND-02-INTERACTION", "status": "pass", "evidence": "Grayscale simulation, annotations and the accessible review drawer preserve meaning and state at mobile width."},
+    {"id": "FND-02-PORTABILITY", "status": "pass", "evidence": "The canonical package copies to an isolated directory with every declared entrypoint, including the approval record, present."},
+    {"id": "FND-02-PROTECTED-AUTHORITY", "status": "pass", "evidence": "Gradient registry, gradient approval and Living Core palette hashes remain unchanged across generation."},
+    {"id": "FND-02-HUMAN", "status": "pass", "evidence": "Olli approved H-FND-02-SURFACE-PROOF at 2026-07-21T08:19:31.000Z and directed that final-lock-02 be locked in."}
+  ],
+  "artifactsProduced": [
+    "Five-mode semantic colour source and generated CSS/JSON tokens",
+    "Explicit email, document, print and forced-colour mappings",
+    "Eighty-five-check contrast report and deterministic portable canonical manifest",
+    "Responsive canonical canvas, inheritance, surface-character and failure-mode regression proof"
+  ],
+  "assumptions": ["The historical light-monochrome surface ladder remains the strongest evidence; Mez Systems inherits the parent F8F8F8 canvas and 2E2E2E Wings; functional hues are a semantic accessibility exception, not a new decorative brand palette."],
+  "exceptions": [],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-FND-02-SURFACE-PROOF", "status": "approved"},
+  "nextAction": "Begin TASK-FND-03-SPACE-LAYOUT with a read-only audit of spatial evidence, responsive behaviour and token conflicts."
+}

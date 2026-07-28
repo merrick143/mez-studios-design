@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r05",
+  "verdict": "round-feedback",
+  "note": "Olli redirected the task before issuing a Round 05 hero verdict: completely rebuild the homepage from scratch from the ingested canonical design system and the locked copy, with creative authority delegated to the implementing agent for every region except the governed hero contract. The hero must stay a centred vertical composition: five Phase A product cards with one product centred, two stepping out left and two stepping out right, using the Phase A automatic Living Core material in the simplest possible way, with Wings and text positioned cleanly and both desktop and compact strong. During the same review the implementing agent diagnosed why three rounds of hero animation never registered as animated: the dedicated .hero-core-layer mount hosts collapsed to 0x0 because mz-core.js stamps inline position:relative on statically positioned hosts, overriding the stylesheet's position:absolute inset sizing, so every live card only ever displayed its exact static twin beneath an unsized canvas. Round 06 must mount Living Cores on intrinsically sized hosts.",
+  "sections": [
+    {"id": "GH-S01", "title": "Hero", "verdict": "revise", "feedback": "Vertically centred hero. Five product cards centred with AI OS in the middle, two cards coming out left and two coming out right. Use the Phase A animated card material in the simplest possible way. Wings and text positioned well on every card. Desktop and mobile must both look good."},
+    {"id": "GH-S02", "title": "The problem", "verdict": "revise", "feedback": "Rebuild from scratch using the canonical design system; creative direction delegated."},
+    {"id": "GH-S03", "title": "The Mez Systems principle", "verdict": "revise", "feedback": "Rebuild from scratch using the canonical design system; creative direction delegated."},
+    {"id": "GH-S04", "title": "Why Mez Systems", "verdict": "revise", "feedback": "Rebuild from scratch using the canonical design system; creative direction delegated."},
+    {"id": "GH-S05", "title": "Available now: AI OS", "verdict": "revise", "feedback": "Rebuild from scratch using the canonical design system; creative direction delegated."},
+    {"id": "GH-S06", "title": "The Mez Systems ecosystem", "verdict": "revise", "feedback": "Rebuild from scratch using the canonical design system; creative direction delegated."},
+    {"id": "GH-S07", "title": "Proof from the first Mez System", "verdict": "revise", "feedback": "Rebuild from scratch using the canonical design system; creative direction delegated."},
+    {"id": "GH-S08", "title": "Final route", "verdict": "revise", "feedback": "Rebuild from scratch using the canonical design system; creative direction delegated."},
+    {"id": "GH-S09", "title": "Footer", "verdict": "keep", "feedback": "Preserve the kept Round 01 footer design while rebuilding its markup inside the new page."}
+  ],
+  "renderDefect": {
+    "discoveredDuring": "round-05-inspection",
+    "summary": "Hero Living Core canvases were laid out at 0x0 in every browser from Round 03 through Round 05.",
+    "rootCause": "styles.css positioned .hero-core-layer with position:absolute inset:0, but mz-core.js mount() sets inline position:relative on hosts whose inline position is empty; inline styles override the stylesheet, the empty layer collapses, and the canvas inherits zero size.",
+    "evidence": "Playwright inspection on 2026-07-23: layer getBoundingClientRect 0x0, canvas clientWidth 0, zero WebGL draw calls in 1.2s while requestAnimationFrame ran at 76fps, byte-identical hero screenshots 3.2s apart, fresh-canvas WebGL2 available (ANGLE Metal).",
+    "resolution": "Round 06 mounts every Living Core directly on the intrinsically sized product-material element."
+  },
+  "productionAuthority": false
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/candidate-promotion-packet.json",
+  "title": "Mez Systems candidate component promotion packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packetId",
+    "taskId",
+    "gateId",
+    "status",
+    "outputStatus",
+    "productionAuthority",
+    "generatedRelease",
+    "authorityReconciliation",
+    "components",
+    "followerPolicy",
+    "motionExceptions",
+    "humanGate",
+    "next"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "packetId": {"const": "mz.systems.release.production-01-plan.candidate-promotion-packet"},
+    "taskId": {"const": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES"},
+    "gateId": {"const": "H-PORT-02-HOMEPAGE-DEPENDENCY-GATES"},
+    "status": {"enum": ["awaiting-human", "closed"]},
+    "outputStatus": {"const": "candidate-promotion-packet"},
+    "productionAuthority": {"type": "boolean"},
+    "generatedRelease": {"const": false},
+    "authorityReconciliation": {"$ref": "#/$defs/nonEmptyObject"},
+    "components": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "componentId", "source", "review", "candidateRevision", "currentStatus", "gateId", "currentVerdict", "proposedDecisionId", "decisionId", "agentRecommendation", "promotionScope", "evidence", "gaps"],
+        "properties": {
+          "id": {"enum": ["CMP-05", "CMP-06"]},
+          "componentId": {"type": "string"},
+          "source": {"type": "string"},
+          "review": {"type": "string"},
+          "candidateRevision": {"type": "string"},
+          "currentStatus": {"enum": ["candidate", "canonical", "excluded"]},
+          "gateId": {"type": "string"},
+          "currentVerdict": {"enum": ["pending-human", "promote", "exclude"]},
+          "proposedDecisionId": {"type": "string"},
+          "decisionId": {"type": ["string", "null"]},
+          "agentRecommendation": {"enum": ["promote", "exclude"]},
+          "promotionScope": {"type": "string", "minLength": 80},
+          "evidence": {"$ref": "#/$defs/nonEmptyObject"},
+          "gaps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["reviewGap", "disposition", "rationale"],
+              "properties": {
+                "reviewGap": {"type": "string", "minLength": 20},
+                "disposition": {"enum": ["closed", "accepted", "policy-selected", "follow-up-required", "out-of-component-scope"]},
+                "rationale": {"type": "string", "minLength": 40}
+              }
+            }
+          }
+        }
+      }
+    },
+    "followerPolicy": {"$ref": "#/$defs/nonEmptyObject"},
+    "motionExceptions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/nonEmptyObject"}},
+    "humanGate": {"$ref": "#/$defs/nonEmptyObject"},
+    "next": {"$ref": "#/$defs/nonEmptyObject"}
+  },
+  "$defs": {
+    "nonEmptyObject": {"type": "object", "minProperties": 2}
+  }
+}

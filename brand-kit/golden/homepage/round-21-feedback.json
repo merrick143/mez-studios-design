@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r21",
+  "verdict": "direction-selected",
+  "recordedAt": "2026-07-26",
+  "note": "GH-S04 direction locked after a long exploration. The section is a horizontal workflow sequence carrying the original GH-S04 copy. Not a bento: the bento line was explored across four labs and rejected by Olli as the wrong way to present this content.",
+  "selected": {
+    "composition": "Workflow sequence, horizontal. Four charcoal dots and one small material disc on a single hairline, with the stage name and description beneath each marker.",
+    "head": "Caption, title, one sub-body line, the graphic, one closing sentence. Centred, one ink colour, no pill.",
+    "terminus": "Small disc, 44px. Chosen from nine expressions: disc, sphere, pill, rounded square, card, wings-masked, disc with Wings composed, large disc, small disc.",
+    "whySmall": "The terminus is the last step of the sequence rather than a destination that outweighs the four stages before it."
+  },
+  "rejectedAlongTheWay": [
+    "Bento in every form. Ten generative rules, then a component with four variants, then Apple-grammar mosaics, then ten treatments of one mosaic. Olli: not the best way to present this.",
+    "Building blocks and departments as the content model. Superseded by returning to the original GH-S04 copy.",
+    "Gradients on all five markers. Only the thing that ships carries material, which leaves the section one colour event.",
+    "Open hairline rings for the four stages.",
+    "A rectangle terminus while the others were dots, which broke the row."
+  ],
+  "defectsFoundAndFixed": [
+    {
+      "defect": "The connector was drawn from ten to ninety percent of the row, which only lands on the markers if they are centred in their columns. They are left aligned, so it never touched a single centre.",
+      "fix": "Each connector is drawn per item from one marker centre to the next, one column plus one gap. Measured error under one pixel at every junction, including into the differently sized terminus."
+    },
+    {
+      "defect": "The live core rendered nothing and every marker showed as a black circle. mount() writes position:relative onto its host inline, which overrode position:absolute on the stacked core layers and collapsed them to zero size. MOT-03.",
+      "fix": "The two cores stack in one CSS grid cell instead. Grid stacking needs no position, so the renderer can stamp what it likes."
+    },
+    {
+      "defect": "The gradient change read as static because it faded through the exact static twin, which is the GH-S03 device for hiding a hard setCore cut.",
+      "fix": "Two cores are mounted on the one WebGL context and cross-faded, so both sides of the transition are moving. Traced live: one core at rest, two for the 1.6 second blend, back to one."
+    },
+    {
+      "defect": "Five 66px filled circles read as blobs rather than as a sequence.",
+      "fix": "Four 11px charcoal dots and one 44px material disc, with a fixed-height marker row so labels stay on one baseline despite the size difference."
+    }
+  ],
+  "processNote": "Olli twice had to point out that work was being reported as verified on the strength of DOM measurements without the render being looked at, and that renders were being made in a headless browser he could not see. Both are failures of the design-authority contract, which says to look at the render before judging anything, including your own work.",
+  "artifacts": {
+    "locked": "brand-kit/workbench/golden/homepage/s04-sequence/",
+    "packageExpressions": "brand-kit/workbench/golden/homepage/s04-package/",
+    "tenTreatments": "brand-kit/workbench/golden/homepage/s04-original-copy/",
+    "bentoComponent": "brand-kit/components/product-feature-bento/ (candidate, not adopted by GH-S04)"
+  },
+  "validations": [
+    {"check": "marker centres share one baseline", "result": "pass, all five at y 569"},
+    {"check": "connectors meet every marker centre", "result": "pass, within one pixel"},
+    {"check": "labels share one baseline across a 11px and a 44px marker", "result": "pass"},
+    {"check": "live to live blend, one context", "result": "pass, one core at rest and two during the blend"},
+    {"check": "reduced motion and no-WebGL", "result": "pass, every marker holds its exact static twin"}
+  ],
+  "openRisks": [
+    "brand-kit/workbench/golden/ is still not under version control. A destructive edit there has no undo, and this section is now the product of a long exploration that would be expensive to lose.",
+    "The section has not been landed in the Golden Homepage. GH-S04 there still carries the R17 split card.",
+    "design-critique has not been run on the locked section."
+  ],
+  "outputStatus": "candidate",
+  "productionAuthority": false
+}

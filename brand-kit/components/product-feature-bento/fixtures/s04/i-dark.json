@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "The same mosaic in the dark register",
+  "columns": 12,
+  "frame": "none",
+  "generativeRule": "Apple runs the identical grammar on near-black. Ours is the charcoal ramp, never black, and the one colour event still sits at the centre.",
+  "copyProvenance": "Block names and the four system mappings are read from registry/products.json; the four uncovered blocks carry library gradients that name no product. Captions are cut to two to five words per the Apple bento study. Figures are derivable from the registry. Authored copy is the eight captions only.",
+  "cells": [
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "detail": "Campaigns and creative",
+      "presentation": "caption",
+      "tokenSize": "l",
+      "productSlug": "ai-ads-system",
+      "span": 3,
+      "surface": "dark"
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "detail": "Ideas to published",
+      "presentation": "caption",
+      "tokenSize": "l",
+      "productSlug": "organic-content-os",
+      "span": 3,
+      "surface": "dark"
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "detail": "Context and execution",
+      "presentation": "caption",
+      "tokenSize": "l",
+      "productSlug": "claude-code-os",
+      "span": 3,
+      "surface": "dark"
+    },
+    {
+      "job": "workflow",
+      "label": "Sales",
+      "detail": "Leads and pipeline",
+      "presentation": "caption",
+      "tokenSize": "l",
+      "gradientId": "MZ-G24",
+      "span": 3,
+      "surface": "recessed"
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "detail": "How the company works",
+      "presentation": "caption",
+      "tokenSize": "xl",
+      "productSlug": "context-engine",
+      "span": 3,
+      "rows": 2,
+      "surface": "recessed"
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "presentation": "caption",
+      "scale": "hero",
+      "materialPosition": "center",
+      "span": 6,
+      "rows": 2
+    },
+    {
+      "job": "workflow",
+      "label": "Finance",
+      "detail": "Invoicing and runway",
+      "presentation": "caption",
+      "tokenSize": "xl",
+      "gradientId": "MZ-G16",
+      "span": 3,
+      "rows": 2,
+      "surface": "dark"
+    },
+    {
+      "job": "workflow",
+      "label": "Client delivery",
+      "detail": "Onboarding to handoff",
+      "presentation": "caption",
+      "tokenSize": "l",
+      "gradientId": "MZ-G27",
+      "span": 6,
+      "surface": "recessed"
+    },
+    {
+      "job": "workflow",
+      "label": "Design",
+      "detail": "Brand and craft",
+      "presentation": "caption",
+      "tokenSize": "l",
+      "gradientId": "MZ-G19",
+      "span": 6,
+      "surface": "dark"
+    }
+  ]
+}

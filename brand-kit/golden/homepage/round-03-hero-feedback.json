@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r03",
+  "verdict": "round-feedback",
+  "note": "Simplify the five hero cards. Each card should contain only bottom-left Wings, the public product name and its extended system name. Remove card buttons and descriptive copy. The live card must preserve the same outline and composition as the exact static twin.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Use only bottom-left Wings, product name and extended name. No buttons. The animated version must look like the outlined non-animated card."
+    }
+  ],
+  "productionAuthority": false
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion":"1.0.0",
+  "evaluationId":"EVAL-EXP-08-EXPRESSION-STRESS-PROOF",
+  "receiptId":"RCP-EXP-08-EXPRESSION-STRESS-PROOF",
+  "evaluatedAt":"2026-07-23T01:32:07Z",
+  "evaluator":{"kind":"hybrid","name":"Codex plus deterministic validators, browser proof and Olli approval"},
+  "contractChecks":[
+    {"id":"SCOPE","status":"pass","evidence":"Exactly six suites and fourteen scenarios cover the named repository-expression risks without adding a visual direction."},
+    {"id":"INHERITANCE","status":"pass","evidence":"All canonical expression dependencies remain byte-identical and every inherited verifier passes."},
+    {"id":"REFLOW-CONTENT","status":"pass","evidence":"Desktop, 320px viewport and 240px plus 400% plus RTL receiver states retain zero measured overflow."},
+    {"id":"FALLBACK-MOTION","status":"pass","evidence":"The default state allocates one live material; reduced/static and no-WebGL retain complete identity and actions with zero canvases."},
+    {"id":"ACCESSIBILITY-RECOVERY","status":"pass","evidence":"Keyboard focus restoration, polite status, retry and text-backed state meaning are present and exercised."},
+    {"id":"AUTHORITY","status":"pass","evidence":"DEC-EXPRESSION-STRESS-CERTIFICATION-001 limits authority to repository-expression certification and preserves later consumer/provider proof."},
+    {"id":"HUMAN-GATE","status":"pass","evidence":"Olli approved H-EXP-08-EXPRESSION-STRESS-PROOF and asked to proceed."}
+  ],
+  "qualityDimensions":[
+    {"id":"coverage","score":5,"maximum":5,"evidence":"Six suites cover the highest-risk receiver, content, runtime, input, recovery and invariant seams."},
+    {"id":"fidelity","score":5,"maximum":5,"evidence":"Fixtures inherit canonical products, material, Wings, hierarchy, geometry, controls and motion allocation."},
+    {"id":"accessibility","score":5,"maximum":5,"evidence":"Zoom, reflow, RTL, keyboard, focus, targets, semantic status, reduced motion and forced-colour contracts are present."},
+    {"id":"governance","score":5,"maximum":5,"evidence":"Human approval, decision, source, schema, package, task, receipt, evaluation and roadmap state agree."},
+    {"id":"scope-discipline","score":5,"maximum":5,"evidence":"The certification explicitly excludes providers, payments, production data, consumers, navigation and the golden homepage."}
+  ],
+  "blockers":[],
+  "verdict":"pass",
+  "humanReviewRequired":false,
+  "notes":["Expression Stress Proof 1.0.0 is canonical for its bounded repository scope.","TASK-CMP-01-GLOBAL-NAVIGATION is next."]
+}

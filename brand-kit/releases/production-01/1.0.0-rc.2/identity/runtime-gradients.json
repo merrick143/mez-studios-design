@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": "assigned-product-cores-only",
+  "scopeNote": "This portable release intentionally includes the four currently assigned product cores, not the 53-swatch research library. Basic use requires no Figma or private repository access.",
+  "assetContract": {
+    "format": "WebP",
+    "width": 1600,
+    "height": 1600,
+    "quality": 92,
+    "sourceWidth": 4000,
+    "sourceHeight": 4000,
+    "sourceKind": "exact Figma image asset, resized once for production distribution",
+    "path": "assets/gradients/{file}"
+  },
+  "cores": {
+    "aios": {
+      "product": "AI OS",
+      "id": "MZ-G13",
+      "state": "locked",
+      "file": "mz-g13.webp",
+      "sourceNode": "312:35",
+      "sourceImageHash": "4ea105843cbc5fe3450b70aa0f3c3bcc9b487408",
+      "sourceSha256": "9b07c9ac2817a5608808a7b61a047990e53f20b078e8c55f1debd3e14e9e8174",
+      "exportSha256": "7f0e273a4652a68172f6ae3fcf63dcec809216d3f9d89be45fd6e26a21074cdc",
+      "anchors": [
+        {
+          "hex": "#2C498D",
+          "pos": [
+            0.1406,
+            -0.153
+          ],
+          "weight": 1.215,
+          "sourceShare": 0.2718
+        },
+        {
+          "hex": "#69DEF6",
+          "pos": [
+            -0.1506,
+            0.2746
+          ],
+          "weight": 1.075,
+          "sourceShare": 0.2215
+        },
+        {
+          "hex": "#5078C1",
+          "pos": [
+            -0.1172,
+            -0.1048
+          ],
+          "weight": 1.03,
+          "sourceShare": 0.2065
+        },
+        {
+          "hex": "#64B0D8",
+          "pos": [
+            0.004,
+            0.1956
+          ],
+          "weight": 0.61,
+          "sourceShare": 0.0862
+        }
+      ],
+      "shade": "#2D196F",
+      "bloom": "#CAF3FC",
+      "bloomAnchor": 1,
+      "staticTwin": "mz-g13.webp",
+      "approximation": true
+    },
+    "aurora": {
+      "product": "Aurora",
+      "id": "MZ-G20",
+      "state": "candidate",
+      "file": "mz-g20.webp",
+      "sourceNode": "312:42",
+      "sourceImageHash": "76df089a7f3d0fe9f9fc44349a71401ed214c4d9",
+      "sourceSha256": "7d542c9d7953b0d0d50cc5bd6f456d667e79713f18193fd92576b56eea6c1e6b",
+      "exportSha256": "b90e1e14ed5c0e81312fdcb5219e98e0698612f6264c608b03cbbe05c1272153",
+      "anchors": [
+        {
+          "hex": "#F8CCAD",
+          "pos": [
+            0.2353,
+            -0.2333
+          ],
+          "weight": 1.018,
+          "sourceShare": 0.193
+        },
+        {
+          "hex": "#D78445",
+          "pos": [
+            0.1614,
+            0.2009
+          ],
+          "weight": 1.017,
+          "sourceShare": 0.1927
+        },
+        {
+          "hex": "#ECA57A",
+          "pos": [
+            0.103,
+            -0.0891
+          ],
+          "weight": 1.002,
+          "sourceShare": 0.188
+        },
+        {
+          "hex": "#DB5154",
+          "pos": [
+            -0.1914,
+            -0.0803
+          ],
+          "weight": 0.961,
+          "sourceShare": 0.1754
+        }
+      ],
+      "shade": "#EE1256",
+      "bloom": "#FDEDE2",
+      "bloomAnchor": 0,
+      "staticTwin": "mz-g20.webp",
+      "approximation": true
+    },
+    "prism": {
+      "product": "Prism",
+      "id": "MZ-G06",
+      "state": "candidate",
+      "file": "mz-g06.webp",
+      "sourceNode": "312:28",
+      "sourceImageHash": "34e197fd0fc94cdc231d66446fa6c3f2b1e48fad",
+      "sourceSha256": "d300aab35e57321aad83a211f2172fec11ebf6ecc122ad46a994e0c05e149993",
+      "exportSha256": "bb8bcfc87b68c7d179fd8fa5cf5281efb3e7c993e5e00e62e3c75a7d7a271578",
+      "anchors": [
+        {
+          "hex": "#84F0EB",
+          "pos": [
+            0.2795,
+            -0.0861
+          ],
+          "weight": 1.132,
+          "sourceShare": 0.2341
+        },
+        {
+          "hex": "#A160E0",
+          "pos": [
+            -0.1857,
+            0.0009
+          ],
+          "weight": 1.128,
+          "sourceShare": 0.2327
+        },
+        {
+          "hex": "#C09CE7",
+          "pos": [
+            0.056,
+            -0.1135
+          ],
+          "weight": 0.97,
+          "sourceShare": 0.1811
+        },
+        {
+          "hex": "#E7C0F3",
+          "pos": [
+            0.2329,
+            0.3038
+          ],
+          "weight": 0.734,
+          "sourceShare": 0.1137
+        }
+      ],
+      "shade": "#6E36C6",
+      "bloom": "#D4FAF8",
+      "bloomAnchor": 0,
+      "staticTwin": "mz-g06.webp",
+      "approximation": true
+    },
+    "forge": {
+      "product": "Forge",
+      "id": "MZ-G15",
+      "state": "candidate",
+      "file": "mz-g15.webp",
+      "sourceNode": "312:37",
+      "sourceImageHash": "876be3cf1c6da154d9a532d2b5a865199b29c939",
+      "sourceSha256": "364057c6255324c6f012ef6125cb583352c934eb8ad680579589192c17f69422",
+      "exportSha256": "8759bd7a1d31a1aabd3684ff69b64c15f1db91139236069b1de07117a0408e02",
+      "anchors": [
+        {
+          "hex": "#75B99A",
+          "pos": [
+            0.1169,
+            0.0929
+          ],
+          "weight": 1.118,
+          "sourceShare": 0.2566
+        },
+        {
+          "hex": "#1FA695",
+          "pos": [
+            0.0543,
+            -0.1316
+          ],
+          "weight": 1.111,
+          "sourceShare": 0.2537
+        },
+        {
+          "hex": "#B6C673",
+          "pos": [
+            -0.0097,
+            -0.1645
+          ],
+          "weight": 1.051,
+          "sourceShare": 0.2314
+        },
+        {
+          "hex": "#5DE3D3",
+          "pos": [
+            -0.0068,
+            0.0988
+          ],
+          "weight": 0.673,
+          "sourceShare": 0.1102
+        }
+      ],
+      "shade": "#17877A",
+      "bloom": "#C6F5EF",
+      "bloomAnchor": 3,
+      "staticTwin": "mz-g15.webp",
+      "approximation": true
+    }
+  },
+  "treatments": [
+    "disc",
+    "gradient-m",
+    "trading",
+    "sphere",
+    "living-core"
+  ],
+  "retiredTreatments": {
+    "glow": "Retired. Never build. The flat disc replaced it."
+  },
+  "lockupSafety": {
+    "tradingCard": {
+      "zone": "bottom 45 percent",
+      "scrimToken": "--mz-lockup-scrim",
+      "scrim": "linear-gradient(to top, rgba(13,13,13,.68), rgba(13,13,13,.58))",
+      "whiteContrastFloor": "4.7:1 even over an RGB 255 source pixel"
+    },
+    "disc": "White wings remain centred at 50 percent of disc diameter; use the supplied asset and treatment, never a glow."
+  },
+  "livingCoreExtraction": {
+    "method": "k-means++",
+    "clusters": 5,
+    "sample": 160,
+    "seed": 7,
+    "colourSpace": "sRGB extraction, linear-space shader mixing",
+    "decision": "DEC-MOTION-002"
+  }
+}

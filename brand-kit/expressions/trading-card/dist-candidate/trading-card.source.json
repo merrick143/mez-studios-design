@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.trading-card",
+  "version": "0.1.0-candidate",
+  "status": "review-candidate",
+  "productionAuthority": false,
+  "candidateGateId": "H-EXP-05-TRADING-CARD-PROOF",
+  "candidateRevision": "trading-card-01-r03",
+  "proposedDecisionId": "DEC-TRADING-CARD-EXPRESSION-001",
+  "title": "Trading Card and full-field expression",
+  "thesis": "A Mez trading card is a portable full-field product object: the product material owns the chassis, the public product name owns the reading order, and the exact Wings appear only where identity needs them. It may stand alone, turn over to carry useful product information, or join a measured deck that explains product relationships. It is not an edition, a rarity token or a decorative reskin.",
+  "inherits": [
+    "public product name first, extended system name second and supporting job third",
+    "rounded outer geometry and flat internal joins",
+    "filled primary actions in product-led placements",
+    "canonical F8, white and contained-charcoal rooms",
+    "compositional Wings placement",
+    "one automatic Deep Mineral No. 5 Living Core per viewport",
+    "exact static twins for repeated, reduced-motion and failed-runtime contexts"
+  ],
+  "meaning": {
+    "single": "A portable identity and orientation object for one Mez Systems product.",
+    "back": "A structured second surface for capabilities, sequence, proof or access information that earns a card metaphor.",
+    "pair": "Two cards show a direct operating relationship or before-and-after handoff.",
+    "deck": "Three or more cards communicate an actual family, suite or ordered operating layer.",
+    "omit": "Omit the card when ordinary type, a simple product mark or a functional Product Card 02 component communicates the job more directly."
+  },
+  "anatomy": {
+    "masterRatio": "3:4",
+    "adaptations": ["4:5 portrait", "1:1 compact", "4:3 landscape"],
+    "outerGeometry": "canonical rounded product-object radius",
+    "field": "one canonical product gradient fills the complete material chassis",
+    "contrast": "use a controlled charcoal scrim, quiet solid nameplate or protected contrast zone; never rely on drop shadow",
+    "identity": "public product name is largest, extended system name follows, supporting job is optional",
+    "wings": "white exact Wings may be centred, mark-above or supporting-corner according to composition",
+    "interaction": "no manual animate button; no card flip is required to understand essential content"
+  },
+  "motion": {
+    "maximumLivePerViewport": 1,
+    "eligible": "one focal front field in the most visible specimen",
+    "static": ["all non-focal information backs", "repeated deck cards", "secondary twins", "mobile below the runtime threshold"],
+    "fixed": ["card geometry", "Wings", "type", "nameplate", "controls", "deck offsets"],
+    "fallback": "exact source-derived static twin with no layout shift"
+  },
+  "families": [
+    {"id": "faces", "title": "Card Faces", "count": 4, "job": "Preserve the four face compositions approved in Round 02 without adding decorative formats."},
+    {"id": "backs", "title": "Information Backs", "count": 4, "job": "Rebuild useful orientation, sequence, waitlist and quiet reverse surfaces without fake scores, stats, codes or rarity language."},
+    {"id": "decks", "title": "Decks and Packs", "count": 8, "job": "Define when card relationships communicate architecture, sequence or a real package."},
+    {"id": "placements", "title": "Website Placements", "count": 7, "job": "Preserve six approved placements and resolve the remaining suite-feature composition."}
+  ],
+  "specimens": [
+    {"id":"TC-F01","family":"faces","title":"Anchored identity","variant":"anchored","productIndex":0},
+    {"id":"TC-F02","family":"faces","title":"Centred identity refined","variant":"centred","productIndex":1},
+    {"id":"TC-F03","family":"faces","title":"Measured name","variant":"oversized","productIndex":2},
+    {"id":"TC-F05","family":"faces","title":"Corner identity","variant":"corner","productIndex":4},
+    {"id":"TC-B01","family":"backs","title":"Product orientation refined","variant":"orientation","productIndex":0},
+    {"id":"TC-B02","family":"backs","title":"Operating sequence — static and alive","variant":"sequence","productIndex":3},
+    {"id":"TC-B05","family":"backs","title":"Waitlist opening","variant":"access","productIndex":4},
+    {"id":"TC-B06","family":"backs","title":"Quiet reverse refined","variant":"quiet","productIndex":0},
+    {"id":"TC-D01","family":"decks","title":"Single object","variant":"single","productIndex":0},
+    {"id":"TC-D02","family":"decks","title":"Connected pair","variant":"pair","productIndex":0},
+    {"id":"TC-D03","family":"decks","title":"Consistent operating handoff","variant":"handoff","productIndex":1},
+    {"id":"TC-D04","family":"decks","title":"Measured three-stack","variant":"stack","productIndex":2},
+    {"id":"TC-D05","family":"decks","title":"Five-system deck","variant":"family","productIndex":0},
+    {"id":"TC-D06","family":"decks","title":"Contained light pack","variant":"pack-light","productIndex":0},
+    {"id":"TC-D07","family":"decks","title":"Contained charcoal pack","variant":"pack-dark","productIndex":0},
+    {"id":"TC-D08","family":"decks","title":"Compact mobile deck","variant":"mobile-deck","productIndex":0},
+    {"id":"TC-P01","family":"placements","title":"Single-product hero","variant":"hero","productIndex":0},
+    {"id":"TC-P02","family":"placements","title":"Full-field launch","variant":"launch","productIndex":2},
+    {"id":"TC-P03","family":"placements","title":"Product explainer recomposed","variant":"explainer","productIndex":3},
+    {"id":"TC-P05","family":"placements","title":"Operating-layer sequence","variant":"story","productIndex":1},
+    {"id":"TC-P06","family":"placements","title":"Suite feature — balanced deck","variant":"suite","productIndex":0},
+    {"id":"TC-P07","family":"placements","title":"Mobile product opening","variant":"mobile-product","productIndex":4},
+    {"id":"TC-P08","family":"placements","title":"Mobile family pack","variant":"mobile-pack","productIndex":0}
+  ],
+  "prohibited": [
+    "edition numbers or archive codes",
+    "founder foil, rarity or scarcity ladders",
+    "fake scores, ranks, attributes or statistics",
+    "empty MEZ SYSTEMS pills",
+    "pure black containers",
+    "white outline strokes on charcoal objects",
+    "ambient glow, glass or shadow as premium shortcuts",
+    "multiple live cores",
+    "decorative stacks without product relationships",
+    "sharp outer corners",
+    "extended system name before public product name"
+  ],
+  "testViewports": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+  "roundLineage": {
+    "previousCandidate": "trading-card-01-r02",
+    "input": "brand-kit/expressions/trading-card/round-02-feedback.json",
+    "inputSha256": "41d03daa9dac20a2fd3439154f92a1376e3b23b791603157211bd8c445fb4e34",
+    "disposition": {"champions":22,"rebuilds":1,"removed":2,"round03Candidates":23},
+    "removedIds": ["TC-F06","TC-P04"],
+    "previousInput": "brand-kit/expressions/trading-card/round-01-feedback.json",
+    "previousInputSha256": "661cb1a6521c1605b8b3599f82bc4dd5149492700232a327e7c9aa17b6804a41",
+    "cumulativeRemovedIds": ["TC-F04","TC-F06","TC-F07","TC-F08","TC-B03","TC-B04","TC-P04"]
+  },
+  "dependencies": {
+    "productCardGrammar": {"path":"brand-kit/expressions/product-card/product-card.source.json","sha256":"fa2e27bb4bffae992e4d8cde807a5c29c62d973cc1b652a22af7227fca0c39ba"},
+    "productCardApproval": {"path":"brand-kit/expressions/product-card/review.json","sha256":"54b52c31e505c28bfd796e98306f32eae72fad97ac9a12f551f72aed8a34153b"},
+    "productEthos": {"path":"brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md","sha256":"d936b4373716f73f1ea63108c00f58a31ecba42bdc4aa0393c3e95457a89be86"},
+    "foundationManifest": {"path":"brand-kit/releases/foundations/dist/manifest.json","sha256":"2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"},
+    "productRegistry": {"path":"brand-kit/registry/products.json","sha256":"665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b"},
+    "gradientRegistry": {"path":"brand-kit/registry/gradients.json","sha256":"ab23ae9b4e88da48dac5d240a840c8bf77e99707bc6ae09ce2a2d6f5168cbfe7"},
+    "renderer": {"path":"brand-kit/source-pack/design-system-export/mz-core.js","sha256":"7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d"},
+    "wings": {"path":"brand-kit/source-pack/design-system-export/assets/wings.svg","sha256":"e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33"}
+  }
+}

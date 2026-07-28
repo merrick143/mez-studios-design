@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-FND-05-FOUNDATION-RELEASE",
+  "taskId": "TASK-FND-05-FOUNDATION-RELEASE",
+  "contextBundleId": "CTX-FND-05-FOUNDATION-RELEASE",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-21T19:55:00+10:00",
+  "finishedAt": "2026-07-21T21:33:08+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/releases/foundations/", "action": "created", "sha256": null, "reason": "Source, schema, deterministic builder, verifier, guidance, approved review and canonical generated release."},
+    {"path": "brand-kit/releases/foundations/release.source.json", "action": "created", "sha256": "fa4bc64cac98b00b47d5a854a40071e66a6eb1286ed3050ceff7d4187d3c0e97", "reason": "Four source package hashes, fixed load order, test viewports, decision and bounded canonical authority."},
+    {"path": "brand-kit/releases/foundations/dist/package.json", "action": "generated", "sha256": "ca72b698ecc473d0cbbf774075f812cc45eda4283afea3f88715d5f8728f6c07", "reason": "Unified canonical package metadata and source provenance."},
+    {"path": "brand-kit/releases/foundations/dist/manifest.json", "action": "generated", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639", "reason": "Canonical integrity record for 57 portable release artifacts."},
+    {"path": "brand-kit/workbench/foundations/release/index.html", "action": "created", "sha256": "49b2fa2c9e06ed2036c5ec73063cf8893b167043292ceebdd91c970cb8c48e79", "reason": "One-entrypoint audit, integration, mode, responsive, accessibility, portability, migration proof and approval record."},
+    {"path": "brand-kit/workbench/foundations/release/styles.css", "action": "created", "sha256": "7e35155f38b326e09291029d3201414f84dd7d9f9cf4d6d82678fb34b23b7560", "reason": "Responsive proof styling using only released foundation roles."},
+    {"path": "brand-kit/workbench/foundations/release/review.js", "action": "created", "sha256": "e6162d69e5725e422e58b1f52f5eed0f13f2e799d02303f7826b427baf0f530d", "reason": "Mode, density, validation, viewport and permanent approval-record interactions."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-05-FOUNDATION-RELEASE.json", "action": "modified", "sha256": "25d28505770705887dbeb3f5d78ced7d01bf4d75fb48cd0ca9e3ecc21952b59b", "reason": "Task is complete after its required human gate."},
+    {"path": "brand-kit/START-HERE.md", "action": "modified", "sha256": "a3bca4f2d1b37b0508a3c7e248653e8ec18e9b0b60d5c88c48523b5987611e46", "reason": "Canonical foundation release and active expression boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "action": "modified", "sha256": "c8b068bca6e8b7c1f0d973d0185d31fb96cc7a2b901d20d4c678256d293ec521", "reason": "Live programme state records Phase 1 closure."},
+    {"path": "brand-kit/docs/ROADMAP.md", "action": "modified", "sha256": "b13176ef82b4e5e790eb9c7e75edc80b3bf9f5adc6e7874928b0deba6f3010ba", "reason": "FND-05 exit passed and Phase 2 is active."}
+  ],
+  "decisionsApplied": ["DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "tests": [
+    {"id": "FND-05-INTEGRITY", "status": "pass", "evidence": "Declared source package and manifest hashes match; nested distributions are byte-for-byte canonical copies after deterministic rebuild."},
+    {"id": "FND-05-ISOLATION", "status": "pass", "evidence": "A temporary clean copy resolves the single CSS entrypoint, all local font URLs, licences and nested entrypoints without canonical-checkout or network dependency."},
+    {"id": "FND-05-ACCESSIBILITY", "status": "pass", "evidence": "Responsive proofs at 320, 375, 430, 768, 1024, 1280 and 1440 have no horizontal overflow; focus, forced-colour and reduced-motion contracts remain present."},
+    {"id": "FND-05-BROWSER", "status": "pass", "evidence": "Unified font loading, light/dark mode, density, review payload, default reset and console checks pass in the local in-app browser."},
+    {"id": "FND-05-AUTHORITY", "status": "pass", "evidence": "The approved package and manifest carry bounded productionReadyForScope and productionAuthority true without granting consumer or expression authority."},
+    {"id": "FND-05-HUMAN", "status": "pass", "evidence": "Olli approved foundation-release-01 through H-FND-05-FOUNDATION-RELEASE; DEC-FOUNDATION-RELEASE-001 records the promotion."}
+  ],
+  "artifactsProduced": ["Canonical deterministic unified foundation release", "Single ordered CSS entrypoint and load-order guidance", "Integrity and licence inventories", "Isolated responsive release proof and permanent approval record"],
+  "assumptions": ["The four approved 1.0.0 packages are immutable inputs; integration may add packaging metadata but no new foundation values."],
+  "exceptions": [],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-FND-05-FOUNDATION-RELEASE", "status": "approved"},
+  "nextAction": "Review TASK-EXP-01-DISC-CONTRACT candidate disc-contract-01 through H-EXP-01-DISC-PROOF."
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "candidateRevision": "product-card-02-phase-a-r06",
+  "verdict": "round-feedback",
+  "leadingWorld": "undecided",
+  "note": "we are still so far off - like are you even ingesting all of the previous tasks and phases we did???? Like why are all corners of everything not rounded this is not our brand ethos? What the fuck are we missing???? Im so confused how we cant just build different card desaigns that fit our ethos?\n\nAgain i want default anaimated versions i dont want to press a fucking button to aniamte.\n\nso many of these are just fucked",
+  "specimens": [
+    {"id":"M01","title":"Product hero","world":"monolith","verdict":"unreviewed"},
+    {"id":"M02","title":"Family discovery","world":"monolith","verdict":"unreviewed"},
+    {"id":"M03","title":"Product explainer","world":"monolith","verdict":"unreviewed"},
+    {"id":"M04","title":"System edition","world":"monolith","verdict":"unreviewed"},
+    {"id":"M05","title":"Suite / bundle","world":"monolith","verdict":"unreviewed"},
+    {"id":"M06","title":"Mobile product","world":"monolith","verdict":"unreviewed"},
+    {"id":"S01","title":"Product hero","world":"signal","verdict":"unreviewed"},
+    {"id":"S02","title":"Family discovery","world":"signal","verdict":"keep"},
+    {"id":"S03","title":"Product explainer","world":"signal","verdict":"kill"},
+    {"id":"S04","title":"System edition","world":"signal","verdict":"revise"},
+    {"id":"S05","title":"Suite / bundle","world":"signal","verdict":"revise"},
+    {"id":"S06","title":"Mobile product","world":"signal","verdict":"revise"},
+    {"id":"I01","title":"Product hero","world":"instrument","verdict":"unreviewed"},
+    {"id":"I02","title":"Family discovery","world":"instrument","verdict":"revise"},
+    {"id":"I03","title":"Product explainer","world":"instrument","verdict":"revise"},
+    {"id":"I04","title":"System edition","world":"instrument","verdict":"revise"},
+    {"id":"I05","title":"Suite / bundle","world":"instrument","verdict":"revise"},
+    {"id":"I06","title":"Mobile product","world":"instrument","verdict":"revise"}
+  ],
+  "agentInterpretation": {
+    "failure": "Round 06 abandoned the approved rounded geometry, hid the established expression vocabulary behind invented worlds, and made motion opt-in instead of a default property of eligible focal specimens.",
+    "positiveSignal": "S02 is the only kept study. It supports aligned family discovery with equal product weight, but its hard-edged execution must be rebuilt in the approved geometry.",
+    "nextMove": "Return to the canonical disc, sphere, rounded plate and squircle, trading card, capsule, stack and bundle vocabulary. Show static and automatically animated pairs, keep one live focal core per viewport, and organise studies by real card job rather than abstract aesthetic world."
+  },
+  "productionAuthority": false
+}

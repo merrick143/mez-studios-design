@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.colour",
+  "status": "canonical",
+  "decisionIds": ["DEC-CONTROL-001", "DEC-COLOUR-FOUNDATION-001", "DEC-GRADIENT-LIBRARY-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "candidateGateId": "H-FND-02-SURFACE-PROOF",
+  "candidateRevision": "final-lock-02",
+  "primitives": {
+    "neutral.0": "#FFFFFF",
+    "neutral.25": "#F8F8F8",
+    "neutral.50": "#F6F5F4",
+    "neutral.100": "#EEEEEB",
+    "neutral.150": "#E4E4E0",
+    "neutral.200": "#DADAD6",
+    "neutral.300": "#B8B8B1",
+    "neutral.400": "#8A8A84",
+    "neutral.500": "#72726D",
+    "neutral.550": "#666662",
+    "neutral.600": "#4F4F4B",
+    "neutral.700": "#3B3B38",
+    "neutral.750": "#2E2E2E",
+    "neutral.800": "#252523",
+    "neutral.850": "#1B1B19",
+    "neutral.900": "#171715",
+    "neutral.950": "#0D0D0D",
+    "neutral.1000": "#000000",
+    "blue.50": "#EAF1FF",
+    "blue.400": "#8BB4FF",
+    "blue.500": "#6E91D6",
+    "blue.650": "#1A56DB",
+    "blue.700": "#174EA6",
+    "blue.900": "#17294A",
+    "green.50": "#E8F3EC",
+    "green.300": "#9AD3B4",
+    "green.500": "#5D9477",
+    "green.700": "#17633F",
+    "green.900": "#153526",
+    "amber.50": "#FFF4D6",
+    "amber.300": "#F0CC75",
+    "amber.500": "#A87B22",
+    "amber.750": "#6B4700",
+    "amber.900": "#3B2B08",
+    "red.50": "#FCEAEA",
+    "red.300": "#FFB0AA",
+    "red.500": "#B86C6C",
+    "red.700": "#9B2727",
+    "red.900": "#481E1E"
+  },
+  "modes": {
+    "light": {
+      "purpose": "Default brand and application surface",
+      "roles": {
+        "brand.canvas": "neutral.25", "brand.wings": "neutral.750", "brand.wings.inverse": "neutral.0",
+        "canvas": "neutral.25", "surface.base": "neutral.0", "surface.raised": "neutral.0", "surface.recessed": "neutral.50", "surface.inverse": "neutral.950",
+        "text.primary": "neutral.950", "text.secondary": "neutral.750", "text.muted": "neutral.550", "text.inverse": "neutral.25", "text.link": "blue.700",
+        "border.default": "neutral.200", "border.strong": "neutral.400", "border.inverse": "neutral.600",
+        "action.primary.background": "neutral.950", "action.primary.foreground": "neutral.0", "action.secondary.background": "neutral.0", "action.secondary.foreground": "neutral.950", "action.secondary.border": "neutral.400",
+        "focus.ring": "blue.650", "selection.background": "blue.50", "selection.foreground": "neutral.950",
+        "feedback.success.surface": "neutral.0", "feedback.success.emphasis": "green.50", "feedback.success.text": "green.700", "feedback.success.border": "green.500",
+        "feedback.warning.surface": "neutral.0", "feedback.warning.emphasis": "amber.50", "feedback.warning.text": "amber.750", "feedback.warning.border": "amber.500",
+        "feedback.danger.surface": "neutral.0", "feedback.danger.emphasis": "red.50", "feedback.danger.text": "red.700", "feedback.danger.border": "red.500",
+        "feedback.info.surface": "neutral.0", "feedback.info.emphasis": "blue.50", "feedback.info.text": "blue.700", "feedback.info.border": "blue.500",
+        "disabled.surface": "neutral.150", "disabled.text": "neutral.500", "disabled.border": "neutral.300"
+      }
+    },
+    "dark": {
+      "purpose": "Contained inverse room; never an automatic global theme",
+      "roles": {
+        "brand.canvas": "neutral.25", "brand.wings": "neutral.750", "brand.wings.inverse": "neutral.0",
+        "canvas": "neutral.950", "surface.base": "neutral.900", "surface.raised": "neutral.800", "surface.recessed": "neutral.850", "surface.inverse": "neutral.25",
+        "text.primary": "neutral.25", "text.secondary": "neutral.200", "text.muted": "neutral.300", "text.inverse": "neutral.950", "text.link": "blue.400",
+        "border.default": "neutral.700", "border.strong": "neutral.550", "border.inverse": "neutral.300",
+        "action.primary.background": "neutral.25", "action.primary.foreground": "neutral.950", "action.secondary.background": "neutral.900", "action.secondary.foreground": "neutral.25", "action.secondary.border": "neutral.550",
+        "focus.ring": "blue.400", "selection.background": "blue.900", "selection.foreground": "neutral.25",
+        "feedback.success.surface": "neutral.900", "feedback.success.emphasis": "green.900", "feedback.success.text": "green.300", "feedback.success.border": "green.500",
+        "feedback.warning.surface": "neutral.900", "feedback.warning.emphasis": "amber.900", "feedback.warning.text": "amber.300", "feedback.warning.border": "amber.500",
+        "feedback.danger.surface": "neutral.900", "feedback.danger.emphasis": "red.900", "feedback.danger.text": "red.300", "feedback.danger.border": "red.500",
+        "feedback.info.surface": "neutral.900", "feedback.info.emphasis": "blue.900", "feedback.info.text": "blue.400", "feedback.info.border": "blue.500",
+        "disabled.surface": "neutral.800", "disabled.text": "neutral.400", "disabled.border": "neutral.700"
+      }
+    },
+    "email": {
+      "purpose": "Email-client-safe light mapping with no transparency dependency",
+      "roles": {
+        "brand.canvas": "neutral.25", "brand.wings": "neutral.750", "brand.wings.inverse": "neutral.0",
+        "canvas": "neutral.0", "surface.base": "neutral.0", "surface.raised": "neutral.0", "surface.recessed": "neutral.50", "surface.inverse": "neutral.950",
+        "text.primary": "neutral.950", "text.secondary": "neutral.750", "text.muted": "neutral.550", "text.inverse": "neutral.0", "text.link": "blue.700",
+        "border.default": "neutral.200", "border.strong": "neutral.400", "border.inverse": "neutral.600",
+        "action.primary.background": "neutral.950", "action.primary.foreground": "neutral.0", "action.secondary.background": "neutral.0", "action.secondary.foreground": "neutral.950", "action.secondary.border": "neutral.400",
+        "focus.ring": "blue.650", "selection.background": "blue.50", "selection.foreground": "neutral.950",
+        "feedback.success.surface": "neutral.0", "feedback.success.emphasis": "green.50", "feedback.success.text": "green.700", "feedback.success.border": "green.500",
+        "feedback.warning.surface": "neutral.0", "feedback.warning.emphasis": "amber.50", "feedback.warning.text": "amber.750", "feedback.warning.border": "amber.500",
+        "feedback.danger.surface": "neutral.0", "feedback.danger.emphasis": "red.50", "feedback.danger.text": "red.700", "feedback.danger.border": "red.500",
+        "feedback.info.surface": "neutral.0", "feedback.info.emphasis": "blue.50", "feedback.info.text": "blue.700", "feedback.info.border": "blue.500",
+        "disabled.surface": "neutral.150", "disabled.text": "neutral.500", "disabled.border": "neutral.300"
+      }
+    },
+    "document": {
+      "purpose": "Office and PDF-safe mapping with visible rules and economical fills",
+      "roles": {
+        "brand.canvas": "neutral.25", "brand.wings": "neutral.750", "brand.wings.inverse": "neutral.0",
+        "canvas": "neutral.0", "surface.base": "neutral.0", "surface.raised": "neutral.0", "surface.recessed": "neutral.100", "surface.inverse": "neutral.950",
+        "text.primary": "neutral.950", "text.secondary": "neutral.750", "text.muted": "neutral.600", "text.inverse": "neutral.0", "text.link": "blue.700",
+        "border.default": "neutral.300", "border.strong": "neutral.400", "border.inverse": "neutral.600",
+        "action.primary.background": "neutral.950", "action.primary.foreground": "neutral.0", "action.secondary.background": "neutral.0", "action.secondary.foreground": "neutral.950", "action.secondary.border": "neutral.400",
+        "focus.ring": "blue.650", "selection.background": "blue.50", "selection.foreground": "neutral.950",
+        "feedback.success.surface": "neutral.0", "feedback.success.emphasis": "green.50", "feedback.success.text": "green.700", "feedback.success.border": "green.500",
+        "feedback.warning.surface": "neutral.0", "feedback.warning.emphasis": "amber.50", "feedback.warning.text": "amber.750", "feedback.warning.border": "amber.500",
+        "feedback.danger.surface": "neutral.0", "feedback.danger.emphasis": "red.50", "feedback.danger.text": "red.700", "feedback.danger.border": "red.500",
+        "feedback.info.surface": "neutral.0", "feedback.info.emphasis": "blue.50", "feedback.info.text": "blue.700", "feedback.info.border": "blue.500",
+        "disabled.surface": "neutral.150", "disabled.text": "neutral.500", "disabled.border": "neutral.300"
+      }
+    },
+    "print": {
+      "purpose": "Grayscale-safe print mapping; feedback meaning must include text or symbol",
+      "roles": {
+        "brand.canvas": "neutral.25", "brand.wings": "neutral.750", "brand.wings.inverse": "neutral.0",
+        "canvas": "neutral.0", "surface.base": "neutral.0", "surface.raised": "neutral.0", "surface.recessed": "neutral.100", "surface.inverse": "neutral.1000",
+        "text.primary": "neutral.1000", "text.secondary": "neutral.800", "text.muted": "neutral.600", "text.inverse": "neutral.0", "text.link": "neutral.1000",
+        "border.default": "neutral.300", "border.strong": "neutral.500", "border.inverse": "neutral.400",
+        "action.primary.background": "neutral.1000", "action.primary.foreground": "neutral.0", "action.secondary.background": "neutral.0", "action.secondary.foreground": "neutral.1000", "action.secondary.border": "neutral.500",
+        "focus.ring": "neutral.1000", "selection.background": "neutral.100", "selection.foreground": "neutral.1000",
+        "feedback.success.surface": "neutral.0", "feedback.success.emphasis": "neutral.100", "feedback.success.text": "neutral.1000", "feedback.success.border": "neutral.500",
+        "feedback.warning.surface": "neutral.0", "feedback.warning.emphasis": "neutral.100", "feedback.warning.text": "neutral.1000", "feedback.warning.border": "neutral.500",
+        "feedback.danger.surface": "neutral.0", "feedback.danger.emphasis": "neutral.100", "feedback.danger.text": "neutral.1000", "feedback.danger.border": "neutral.500",
+        "feedback.info.surface": "neutral.0", "feedback.info.emphasis": "neutral.100", "feedback.info.text": "neutral.1000", "feedback.info.border": "neutral.500",
+        "disabled.surface": "neutral.150", "disabled.text": "neutral.600", "disabled.border": "neutral.400"
+      }
+    }
+  },
+  "contrastPairs": [
+    {"id": "text-primary", "foreground": "text.primary", "background": "canvas", "minimum": 7.0},
+    {"id": "text-secondary", "foreground": "text.secondary", "background": "canvas", "minimum": 4.5},
+    {"id": "text-muted", "foreground": "text.muted", "background": "canvas", "minimum": 4.5},
+    {"id": "text-link", "foreground": "text.link", "background": "canvas", "minimum": 4.5},
+    {"id": "brand-wings", "foreground": "brand.wings", "background": "brand.canvas", "minimum": 4.5},
+    {"id": "primary-action", "foreground": "action.primary.foreground", "background": "action.primary.background", "minimum": 4.5},
+    {"id": "secondary-action", "foreground": "action.secondary.foreground", "background": "action.secondary.background", "minimum": 4.5},
+    {"id": "selection", "foreground": "selection.foreground", "background": "selection.background", "minimum": 4.5},
+    {"id": "feedback-success", "foreground": "feedback.success.text", "background": "feedback.success.surface", "minimum": 4.5},
+    {"id": "feedback-warning", "foreground": "feedback.warning.text", "background": "feedback.warning.surface", "minimum": 4.5},
+    {"id": "feedback-danger", "foreground": "feedback.danger.text", "background": "feedback.danger.surface", "minimum": 4.5},
+    {"id": "feedback-info", "foreground": "feedback.info.text", "background": "feedback.info.surface", "minimum": 4.5},
+    {"id": "feedback-success-emphasis", "foreground": "feedback.success.text", "background": "feedback.success.emphasis", "minimum": 4.5},
+    {"id": "feedback-warning-emphasis", "foreground": "feedback.warning.text", "background": "feedback.warning.emphasis", "minimum": 4.5},
+    {"id": "feedback-danger-emphasis", "foreground": "feedback.danger.text", "background": "feedback.danger.emphasis", "minimum": 4.5},
+    {"id": "feedback-info-emphasis", "foreground": "feedback.info.text", "background": "feedback.info.emphasis", "minimum": 4.5},
+    {"id": "disabled", "foreground": "disabled.text", "background": "disabled.surface", "minimum": 3.0}
+  ],
+  "policies": {
+    "gradient": "Product gradients remain identity objects. Never use a Living Core or gradient as a page wash, generic accent, text fill, status colour or decorative infrastructure.",
+    "functionalColour": "Blue, green, amber and red exist only for links, focus, selection and explicit feedback. The default state surface stays neutral; tinted emphasis is reserved for critical banners. Pair every state with text, iconography or structure so colour is never the sole signal.",
+    "dark": "Dark is a contained inverse room for bundles, technical detail and deliberate contrast. Do not auto-convert the complete brand experience into a dark theme.",
+    "email": "Use opaque sRGB values and preserve hierarchy if client dark-mode transformations occur. Never depend on a webfont, blend mode, transparency or background image for meaning.",
+    "document": "Prefer white pages, economical recessed fills and explicit rules. Embed values in export adapters rather than relying on screen colour profiles.",
+    "print": "Collapse functional hues to grayscale, retain labels or symbols, and avoid large near-black coverage where a rule or heading provides enough hierarchy.",
+    "forcedColours": "Map canvas, text, buttons, links and focus to system colours. Preserve borders and never suppress forced-colour adjustment on semantic controls."
+  },
+  "testViewports": [320, 375, 768, 1280, 1440]
+}

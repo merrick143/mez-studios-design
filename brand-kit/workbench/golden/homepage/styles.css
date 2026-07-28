@@ -1,0 +1,2806 @@
+/* Mez Systems · Golden Homepage · Round 28
+   Current review candidate on the canonical foundation release.
+   Colour appears only as product identity; structure stays monochrome. */
+
+:root {
+  --page-ink: #0d0d0d;
+  --page-body: #34342f;
+  --page-charcoal: #2e2e2e;
+  --page-dark: #171715;
+  --page-dark-raised: #252523;
+  --page-paper: #f8f8f8;
+  --page-white: #ffffff;
+  --page-recessed: #f6f5f4;
+  --page-line: #dadad6;
+  --page-line-soft: #e7e5e1;
+  --page-muted: #666662;
+  --page-dark-muted: #b8b8b1;
+  --page-dark-body: #cfcfc9;
+  --card-outline: var(--mz-border-default);
+  --page-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  color: var(--page-ink);
+  background: var(--page-paper);
+  font-family: var(--mz-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.review-open {
+  overflow: hidden;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button,
+a,
+textarea {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 16px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 0 0 var(--mz-radius-control) var(--mz-radius-control);
+  background: var(--page-dark);
+  color: var(--page-paper);
+  text-decoration: none;
+  font-size: 13px;
+  transition: top .2s var(--page-ease);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ---------------------------------------------------------------- shells */
+
+.shell {
+  width: min(1160px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.shell--reading {
+  width: min(720px, calc(100% - 48px));
+}
+
+.shell--wide {
+  width: min(1380px, calc(100% - 40px));
+}
+
+section {
+  padding-block: clamp(72px, 9vw, 128px);
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+h1 {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(46px, 6.6vw, 78px);
+  line-height: 1.01;
+  letter-spacing: -.025em;
+}
+
+h2 {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(33px, 4.4vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+
+h3 {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.section-lead {
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.5;
+  color: var(--page-body);
+}
+
+.statement {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -.015em;
+}
+
+/* One restrained section-entry treatment.
+   Armed by JavaScript only, so content stays visible without it. */
+.entry-armed [data-entry] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s var(--page-ease), transform .6s var(--page-ease);
+}
+
+.entry-armed [data-entry].is-entered {
+  opacity: 1;
+  transform: none;
+}
+
+.review-target[data-current-review] {
+  outline: 2px solid var(--page-charcoal);
+  outline-offset: -2px;
+}
+
+/* ---------------------------------------------------- product material */
+
+.hero-card__material,
+.ai-os-field {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--mz-radius-panel);
+  border: var(--mz-border-width-hairline, 1px) solid var(--card-outline);
+  background: #101010 center / cover no-repeat var(--material);
+}
+
+.hero-card__material::after,
+.ai-os-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(7, 7, 7, 0) 52%, rgba(7, 7, 7, .12) 72%, rgba(7, 7, 7, .5) 100%);
+}
+
+.hero-card__material canvas,
+.ai-os-field canvas {
+  z-index: 0;
+}
+
+.material-identity {
+  position: absolute;
+  z-index: 2;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  color: var(--page-white);
+}
+
+.material-identity .material-wings {
+  width: clamp(22px, 2vw, 27px);
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.material-identity strong {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(16px, 1.55vw, 20px);
+  line-height: 1.12;
+  letter-spacing: -.01em;
+}
+
+.material-identity span {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .78);
+}
+
+/* -------------------------------------------------------- GH-S01 · hero */
+
+.hero {
+  padding-top: clamp(112px, 15vh, 172px);
+  padding-bottom: clamp(72px, 8vw, 112px);
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.hero-copy h1 {
+  max-width: 17ch;
+  text-wrap: balance;
+}
+
+.hero-lead {
+  max-width: 46ch;
+  font-size: clamp(19px, 2.1vw, 22px);
+  line-height: 1.45;
+  color: var(--page-body);
+  text-wrap: balance;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.hero-family {
+  margin-top: clamp(44px, 5.6vw, 80px);
+}
+
+/* Spreading-deck fan: AI OS front and centre on top, two cards stepping out
+   each side, pushed in to overlap, tilted outward so the family curves
+   downwards. Deep arc drops keep every bottom-left identity visible below
+   its covering neighbour. */
+.product-deck--arc {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: clamp(40px, 4.6vw, 72px);
+}
+
+.hero-card {
+  order: calc(var(--arc-slot) + 2);
+  width: clamp(180px, 17.6vw, 252px);
+  flex: none;
+  margin-inline: clamp(-80px, -5.6vw, -58px);
+  z-index: calc(6 - var(--arc-depth));
+  transform: translateY(calc(var(--arc-depth) * clamp(12px, 1.6vw, 24px))) rotate(calc(var(--arc-slot) * 5.5deg));
+  transform-origin: 50% 100%;
+}
+
+.hero-card__material {
+  aspect-ratio: 3 / 4;
+}
+
+/* Hero identity mark is centred, not bottom-left: a large centred Wings
+   mark with the titles stacked beneath. In the tight overlapping fan a
+   tucked-under card's centred mark may be partly covered by its neighbour;
+   that trade is deliberate — a bigger, cleaner mark on the visible cards
+   over guaranteed full legibility on every buried one. */
+.hero-card .material-identity {
+  inset: 0;
+  left: 14px;
+  right: 14px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.hero-card .material-identity .material-wings {
+  width: clamp(30px, 3.2vw, 40px);
+}
+
+.hero-card .material-identity strong {
+  font-size: clamp(17px, 1.7vw, 21px);
+}
+
+.hero-card .material-identity span {
+  font-size: 10.5px;
+}
+
+@media (max-width: 839px) {
+  .product-deck--arc {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: 0 0 28px;
+    margin-inline: auto;
+  }
+
+  .hero-card {
+    width: clamp(98px, 30vw, 118px);
+    margin-inline: clamp(-33px, -8vw, -25px);
+    transform: translateY(calc(var(--arc-depth) * clamp(7px, 2.4vw, 10px))) rotate(calc(var(--arc-slot) * 4deg));
+  }
+
+  .hero-card .material-identity {
+    left: 8px;
+    right: 8px;
+    gap: 5px;
+  }
+
+  .hero-card .material-identity .material-wings {
+    width: clamp(21px, 6vw, 25px);
+  }
+
+  .hero-card .material-identity strong {
+    font-size: clamp(11px, 3.4vw, 13.5px);
+    line-height: 1.04;
+  }
+
+  .hero-card .material-identity span {
+    font-size: clamp(6px, 1.8vw, 7.5px);
+    line-height: 1.2;
+    letter-spacing: .1em;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding-top: 104px;
+    padding-bottom: 64px;
+  }
+
+  .hero-copy {
+    gap: 16px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(38px, 10.5vw, 42px);
+    line-height: .99;
+  }
+
+  .hero-lead {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .hero-family {
+    margin-top: 40px;
+  }
+}
+
+/* ---------------------------------------------------- GH-S02 · problem */
+
+/* Reinvented R17: rebuilt on the shared .split-card family (defined in the
+   GH-S03 principle block). LEFT states the tension; RIGHT is a charcoal
+   fragmentation field — scattered third-party windows around a hollow centre
+   where the owned operating layer should be. No product material lives here:
+   these are middlemen, so no Living Core / gradient (AP-002 — material stays
+   the protagonist of the owned sections downstream). */
+/* GH-S02 · the problem, as a staircase. Locked at lab 8 variant A: two columns,
+   head left, treads right. Equal-width treads that step sideways read as strata;
+   narrowing them tapers the stack and loses the reading. The grey-prefix heading
+   was removed here on Olli's note, so both sentences sit in the ink. */
+.problem-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(36px, 5.5vw, 76px);
+  align-items: center;
+}
+.problem-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.problem-head h2 {
+  max-width: 20ch;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+.problem-head h2 span {
+  display: block;
+}
+.problem-lead {
+  margin: 8px 0 0;
+  max-width: 42ch;
+  color: var(--page-muted);
+}
+
+/* --- the treads ------------------------------------------------------------ */
+/* --step is the travel per tread. Each tread is the container width less the
+   total travel, so the last one finishes flush with the right edge. */
+.problem-steps {
+  --step: clamp(12px, 2vw, 30px);
+  display: grid;
+  gap: 4px;
+}
+.step-row {
+  display: flex;
+  align-items: baseline;
+  padding: 18px 22px;
+  border-radius: var(--mz-radius-compact);
+  border: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+  width: calc(100% - (var(--step) * 4));
+}
+.step-role {
+  font-family: var(--mz-font-display);
+  font-weight: 640;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+/* Ink hairline, not the mid-grey one: the business reads as definite. */
+.step-row--you {
+  background: var(--page-white);
+  border-color: var(--page-ink);
+}
+.step-row--layer {
+  color: var(--page-paper);
+}
+.step-row--layer .step-role {
+  color: var(--page-paper);
+  font-weight: 600;
+}
+/* Weight ramp. Each tread is heavier than the one above it. Charcoal ramp only,
+   never pure black. */
+.step-w1 { background: #3b3b38; border-color: #3b3b38; }
+.step-w2 { background: var(--page-charcoal); border-color: var(--page-charcoal); }
+.step-w3 { background: var(--page-dark-raised); border-color: var(--page-dark-raised); }
+.step-w4 { background: var(--page-dark); border-color: var(--page-dark); }
+
+.step-o1 { margin-left: calc(var(--step) * 1); }
+.step-o2 { margin-left: calc(var(--step) * 2); }
+.step-o3 { margin-left: calc(var(--step) * 3); }
+.step-o4 { margin-left: calc(var(--step) * 4); }
+
+@media (max-width: 900px) {
+  .problem-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 620px) {
+  .problem-steps { --step: 9px; }
+}
+
+/* -------------------------------------------------- GH-S03 · principle */
+
+/* Locked at principle-lab-8 variant A. Three radii of one object: business
+   connections on the outer ring, harnesses on the inner, the product core at the
+   centre. Nothing is stacked; everything is a distance from the core.
+
+   The core cycles through all five product gradients. The renderer can swap a
+   mounted surface's gradient but not blend it, so homepage.js rides the exact
+   static twins across the cut. One WebGL context throughout. */
+
+.principle-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  text-align: center;
+}
+.principle-head h2 {
+  max-width: 22ch;
+  margin-inline: auto;
+}
+.principle-head h2 span { display: block; }
+.principle-lead {
+  margin: 6px auto 0;
+  max-width: 52ch;
+  color: var(--page-muted);
+}
+
+/* A rotated slot has a larger bounding box than the ring it sits on, so the
+   padding keeps the marks inside and the clip contains the slot corners. */
+.conc {
+  position: relative;
+  width: min(560px, 100%);
+  aspect-ratio: 1;
+  margin: clamp(40px, 5vw, 64px) auto 0;
+  padding: 28px;
+  overflow: hidden;
+}
+.conc__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+  animation: conc-spin 64s linear infinite;
+}
+.conc__ring--outer { inset: 28px; }
+.conc__ring--inner {
+  inset: 24%;
+  border-color: #b8b8b1;
+  animation-duration: 44s;
+  animation-direction: reverse;
+}
+@keyframes conc-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.conc__slot { position: absolute; inset: 0; transform: rotate(var(--a)); }
+/* The counter-rotation is the base transform, not only the animation's first
+   keyframe: without it, stopping for reduced motion leaves every mark tilted. */
+.conc__upright {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin: -21px 0 0 -21px;
+  border-radius: 50%;
+  background: var(--page-paper);
+  transform: rotate(calc(var(--a) * -1));
+  animation: conc-upright 64s linear infinite;
+}
+.conc__ring--inner .conc__upright {
+  animation-duration: 44s;
+  animation-direction: reverse;
+}
+@keyframes conc-upright {
+  from { transform: rotate(calc(var(--a) * -1)); }
+  to { transform: rotate(calc(var(--a) * -1 - 360deg)); }
+}
+
+/* Third-party marks: freestanding symbols only, flattened to one ink so a ring
+   of peers reads as a set. Two registers: a harness is a system you run on, a
+   connection is a tool you already use. */
+.conc__mark { display: block; width: auto; filter: grayscale(1) brightness(0); }
+.conc__mark--harness { height: 25px; opacity: .82; }
+.conc__mark--tool { height: 17px; opacity: .5; }
+
+/* Sized on one axis with aspect-ratio squaring it: a percentage inset resolves
+   per axis, which collapses the disc to an ellipse inside a padded box. */
+.conc__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #101010 center / cover no-repeat var(--conc-material);
+}
+.conc__core canvas { z-index: 0; }
+/* The cross-fade veil sits under the scrim so it reads identically to the live
+   canvas it is covering. */
+.conc__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.1s linear;
+  pointer-events: none;
+}
+.conc__core::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  background: rgba(7, 7, 7, .42);
+}
+.conc__lockup {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  justify-items: center;
+  width: 70%;
+  gap: 7px;
+  text-align: center;
+}
+/* Identity is the focal event on this core, so the mark is composed larger.
+   Approved invariant 4: Wings may be larger when identity is the focal event. */
+.conc__lockup img {
+  width: 36px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.conc__product {
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, .78);
+}
+
+.conc__legend {
+  display: flex;
+  justify-content: center;
+  gap: clamp(18px, 4vw, 44px);
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.conc__legend span {
+  font-family: var(--mz-font-technical);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conc__ring, .conc__upright { animation: none; }
+  .conc__veil { transition: none; }
+}
+
+@media (max-width: 520px) {
+  .conc {
+    width: min(300px, 100%);
+    padding: 22px;
+    margin-top: 36px;
+  }
+
+  .conc__ring--outer { inset: 22px; }
+
+  .conc__upright {
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+  }
+
+  .conc__mark--harness { height: 21px; }
+  .conc__mark--tool { height: 15px; }
+
+  .conc__core { width: 26%; }
+  .conc__lockup {
+    width: auto;
+    gap: 0;
+  }
+  .conc__lockup img {
+    width: 28px;
+    height: auto;
+  }
+  .conc__product {
+    display: none;
+  }
+
+  .conc__legend {
+    gap: 10px 18px;
+    margin-top: 18px;
+  }
+
+  .conc__legend span {
+    font-size: 9px;
+    letter-spacing: .12em;
+  }
+}
+
+/* GH-S03's closing thesis. It sat inside the range the R21 rewrite replaced
+   and was deleted with it. Recovered from git, which is the first time this
+   directory has had history to recover from. */
+/* The closing thesis. Rewritten rather than recovered: the previous rules were
+   removed with the old S03 block and this workbench is not under version
+   control, so there was nothing to restore from. Set to the canonical editorial
+   accent and display roles. */
+.principle-thesis {
+  margin-top: clamp(44px, 5vw, 72px);
+  display: grid;
+  gap: 4px;
+  text-align: center;
+}
+.thesis-serif {
+  margin: 0;
+  font-family: var(--mz-font-editorial);
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--page-ink);
+}
+.thesis-close {
+  margin: 18px 0 0;
+  font-family: var(--mz-font-display);
+  font-weight: 650;
+  font-size: clamp(17px, 1.8vw, 21px);
+  letter-spacing: -0.022em;
+  color: var(--page-ink);
+}
+
+/* -------------------------------------- GH-S04 · built on ourselves first
+   R21. The authored split card and its five-step console are gone. Both were
+   exclusive to this section, so nothing else lost a rule when they went.
+
+   The section is now a horizontal workflow sequence: four charcoal dots and one
+   small material disc on a single hairline. Horizontal on purpose, because
+   GH-S02 owns the vertical staircase and repeating it two sections later is the
+   repetition test failing.
+
+   Only the thing that ships carries material, so the section spends exactly one
+   colour event. */
+
+.why-head {
+  text-align: center;
+}
+
+.why-head h2 {
+  margin: 18px auto 0;
+  max-inline-size: 20ch;
+}
+
+.why-head .section-lead {
+  margin: 18px auto 0;
+  max-inline-size: 54ch;
+}
+
+.why-graphic {
+  margin-top: clamp(52px, 6.5vw, 86px);
+}
+
+.why-close {
+  margin: clamp(46px, 5.5vw, 72px) auto 0;
+  text-align: center;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.35;
+  letter-spacing: -.02em;
+  max-inline-size: 44ch;
+}
+
+/* One value drives the marker row, the dot and the rule that joins them, so the
+   line can never sit off a marker centre however they are resized. */
+.mseq {
+  --mseq-disc: clamp(40px, 3.6vw, 44px);
+  --mseq-dot: clamp(9px, .95vw, 11px);
+  --mseq-rule: 1px;
+  --mseq-gap: clamp(12px, 2vw, 28px);
+  --mseq-fade: 1600ms;
+
+  position: relative;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--mseq-gap);
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.mseq li {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  justify-items: stretch;
+}
+
+/* Every item opens with a marker row of one fixed height, so an 11px dot and a
+   44px disc still leave their labels on the same baseline. */
+.mseq__marker {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: var(--mseq-disc);
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+/* Drawn per item, from this marker's centre to the next one's, which is exactly
+   one column plus one gap away. One bar across the whole row only lands on the
+   markers. R22 centres every marker in its grid column, so the first and last
+   centres sit symmetrically around the page axis. */
+.mseq li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--mseq-disc) / 2 - var(--mseq-rule) / 2);
+  left: 50%;
+  width: calc(100% + var(--mseq-gap));
+  height: var(--mseq-rule);
+  background: var(--mz-colour-neutral-400, #8a8a84);
+}
+
+/* The four stages are process, not product: no material, no weight. */
+.mseq__dot {
+  position: relative;
+  z-index: 2;
+  width: var(--mseq-dot);
+  height: var(--mseq-dot);
+  border-radius: 50%;
+  background: var(--page-dark);
+}
+
+/* The one that ships. Grid stacking rather than absolute positioning, because
+   mount() writes position:relative onto its host inline, which would override
+   position:absolute and collapse the layer to nothing (MOT-03). */
+.mseq__live {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: var(--mseq-disc);
+  height: var(--mseq-disc);
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--page-dark);
+}
+
+.mseq__core {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: opacity var(--mseq-fade) cubic-bezier(.4, 0, .2, 1);
+}
+
+.mseq__core canvas { border-radius: 50%; }
+
+.mseq strong {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(16px, 1.7vw, 20px);
+  letter-spacing: -.022em;
+}
+
+.mseq li > span:last-child {
+  font-size: clamp(12.5px, 1.3vw, 14px);
+  line-height: 1.5;
+  color: var(--page-muted);
+}
+
+@media (max-width: 860px) {
+  .mseq {
+    --mseq-mobile-gap: clamp(28px, 7vw, 40px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--mseq-mobile-gap);
+    width: min(620px, 100%);
+  }
+
+  .mseq li {
+    grid-template-columns: var(--mseq-disc) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 6px;
+  }
+
+  .mseq__marker {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: var(--mseq-disc);
+    height: var(--mseq-disc);
+    margin: 0;
+    align-self: start;
+  }
+
+  .mseq strong,
+  .mseq li > span:last-child {
+    grid-column: 2;
+  }
+
+  .mseq li:not(:last-child)::before {
+    top: calc(var(--mseq-disc) / 2);
+    bottom: calc(0px - var(--mseq-mobile-gap) - var(--mseq-disc) / 2);
+    left: calc(var(--mseq-disc) / 2 - var(--mseq-rule) / 2);
+    width: var(--mseq-rule);
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mseq__live canvas { display: none !important; }
+  .mseq__core { transition-duration: .001ms; }
+}
+
+/* -------------------------------------- GH-S05 · operating proof (R24) */
+/* Sticky proof: the thesis holds while three real evidence stages accumulate.
+   Supplied pixels remain plain and inspectable: no mock browser, perspective,
+   glow or fabricated interface. */
+.op-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, .72fr) minmax(0, 1.58fr);
+  align-items: start;
+  gap: var(--mz-space-14);
+}
+
+.op-head {
+  position: sticky;
+  top: calc(var(--mz-space-16) + var(--mz-space-8));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--mz-space-4);
+}
+
+.op-reel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mz-space-16);
+  min-width: 0;
+}
+
+.op-record {
+  display: grid;
+  gap: var(--mz-space-4);
+}
+
+.op-record__title h3 {
+  font-size: var(--mz-type-heading-subsection-size);
+  font-weight: var(--mz-type-heading-subsection-weight);
+  line-height: var(--mz-type-heading-subsection-leading);
+  letter-spacing: var(--mz-type-heading-subsection-tracking);
+}
+
+.op-screen {
+  overflow: hidden;
+  border: var(--mz-border-width-hairline, 1px) solid var(--mz-border-default);
+  border-radius: var(--mz-radius-container);
+  background: var(--page-white);
+}
+
+.op-screen img {
+  width: 100%;
+  height: auto;
+}
+
+.op-context-pair {
+  display: grid;
+  gap: var(--mz-space-5);
+}
+
+@media (max-width: 900px) {
+  .op-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--mz-space-12);
+  }
+
+  .op-head {
+    position: static;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .op-reel {
+    gap: var(--mz-space-12);
+  }
+
+}
+
+/* ------------------------------------------------------ GH-S05 · AI OS */
+
+.ai-os {
+  padding-block: clamp(56px, 7vw, 96px);
+}
+
+.ai-os-room {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 5vw, 64px);
+  padding: clamp(26px, 4.5vw, 64px);
+  border: 1px solid var(--page-line);
+  border-radius: var(--mz-radius-frame);
+  background: var(--page-white);
+}
+
+.ai-os-intro {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(32px, 4.5vw, 64px);
+  align-items: center;
+}
+
+.ai-os-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--page-body);
+}
+
+.ai-os-nouns {
+  font-family: var(--mz-font-technical);
+  font-size: 12px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+.ai-os-field {
+  --material: url("../../../gradient-library/assets/static/mz-g13.webp");
+  width: min(400px, 100%);
+  aspect-ratio: 4 / 5;
+  justify-self: center;
+}
+
+/* (R16) The AI OS section no longer uses .ai-os-field--identity; the full-card
+   darkening overlay that murked the material is removed. */
+
+.identity-event {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  color: var(--page-white);
+}
+
+.identity-event .material-wings {
+  width: clamp(46px, 4.6vw, 62px);
+  filter: brightness(0) invert(1);
+}
+
+.identity-event strong {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(30px, 3.4vw, 42px);
+  letter-spacing: -.015em;
+  line-height: 1.05;
+}
+
+.identity-event span {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .82);
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.capability-grid article {
+  padding: 22px;
+  border: 1px solid var(--page-line-soft);
+  border-radius: var(--mz-radius-container);
+  background: var(--page-paper);
+}
+
+.capability-grid h3 {
+  margin-bottom: 8px;
+  font-size: 16.5px;
+}
+
+.capability-grid p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--page-muted);
+}
+
+.mechanism {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.mechanism h3 {
+  font-size: clamp(20px, 2.2vw, 26px);
+}
+
+.mechanism-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mechanism-flow li {
+  position: relative;
+  margin-bottom: 38px;
+  padding: 18px 24px;
+  border: 1px solid var(--page-line);
+  border-radius: var(--mz-radius-container);
+  background: var(--page-white);
+}
+
+.mechanism-flow li::after {
+  content: "↓";
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: var(--page-muted);
+}
+
+.mechanism-flow li:last-child {
+  margin-bottom: 0;
+}
+
+.mechanism-flow li:last-child::after {
+  content: none;
+}
+
+.mechanism-flow strong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 16.5px;
+}
+
+.mechanism-flow p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--page-muted);
+}
+
+.mechanism-flow li.mechanism-node--aios {
+  border-color: var(--page-dark);
+  background: var(--page-dark);
+  color: var(--page-paper);
+}
+
+.mechanism-node--aios p {
+  color: var(--page-dark-muted);
+}
+
+.mechanism-disc {
+  --material: url("../../../gradient-library/assets/static/mz-g13.webp");
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--mz-radius-full);
+  background: center / cover no-repeat var(--material);
+}
+
+.mechanism-node--aios strong .mechanism-disc {
+  flex: none;
+}
+
+.mechanism-close {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(17px, 1.9vw, 20px);
+  line-height: 1.4;
+}
+
+.ai-os-route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.ai-os-route small {
+  font-size: 13px;
+  color: var(--page-muted);
+}
+
+@media (max-width: 900px) {
+  .ai-os-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------------------------- GH-S06 · ecosystem */
+
+.ecosystem-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 860px;
+}
+
+.ecosystem-follow {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--page-muted);
+  max-width: 680px;
+}
+
+.ecosystem-shelf {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: var(--mz-space-12);
+}
+
+/* Coming systems inherit the hero card language: full-field static portrait
+   cards with bottom-left identity, copy below each card. */
+.ecosystem-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ecosystem-card__field {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--mz-radius-panel);
+  border: 1px solid var(--card-outline);
+  background: #101010 center / cover no-repeat var(--material);
+}
+
+.ecosystem-card__field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(7, 7, 7, 0) 52%, rgba(7, 7, 7, .12) 72%, rgba(7, 7, 7, .5) 100%);
+}
+
+.ecosystem-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  padding: 0 2px;
+}
+
+.ecosystem-card__body strong {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ecosystem-card__body p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--page-muted);
+}
+
+.ecosystem-card__process {
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--page-muted);
+}
+
+.ecosystem-card__availability {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #eceae7;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+.ecosystem-rule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: var(--mz-space-20);
+  text-align: center;
+}
+
+.ecosystem-rule h3 {
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.rule-lead {
+  font-size: 15px;
+  color: var(--page-muted);
+}
+
+.rule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 560px;
+  text-align: left;
+}
+
+.rule-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e3e1dd;
+  font-size: 15px;
+}
+
+.ecosystem-rule .mz-control {
+  margin-top: 10px;
+}
+
+@media (max-width: 1100px) {
+  .ecosystem-shelf {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ecosystem-shelf {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------------------- GH-S07 · testimonials */
+
+.testimonials {
+  margin-block: clamp(24px, 3vw, 48px);
+  padding-block: clamp(64px, 7vw, 104px);
+  background: transparent;
+  border-block: 0;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: var(--mz-space-12);
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--page-line);
+  border-radius: var(--mz-radius-panel);
+  background: var(--page-white);
+}
+
+.testimonial-card blockquote {
+  flex: 1;
+  font-size: 15.5px;
+  line-height: 1.62;
+  color: var(--page-body);
+}
+
+.testimonial-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e3e1dd;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.testimonial-disc {
+  --material: url("../../../gradient-library/assets/static/mz-g13.webp");
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: var(--mz-radius-full);
+  background: center / cover no-repeat var(--material);
+}
+
+.testimonial-governance {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--page-muted);
+}
+
+@media (max-width: 900px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------- GH-S08 · final route */
+
+.final-route {
+  background: var(--page-dark);
+  color: var(--page-paper);
+}
+
+.final-route .eyebrow {
+  color: rgba(248, 248, 248, .52);
+}
+
+.final-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 88px);
+  align-items: center;
+}
+
+.final-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.final-copy h2 {
+  margin-bottom: 4px;
+}
+
+.final-copy p {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--page-dark-body);
+}
+
+.final-copy .action-row {
+  justify-content: flex-start;
+  margin-top: 14px;
+}
+
+.final-copy small {
+  font-size: 13px;
+  color: var(--page-dark-muted);
+}
+
+.final-system {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.final-installed {
+  --material: url("../../../gradient-library/assets/static/mz-g13.webp");
+  width: min(280px, 78%);
+  aspect-ratio: 3 / 4;
+  border-color: rgba(255, 255, 255, .2);
+}
+
+.final-extensions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: min(380px, 100%);
+}
+
+.final-extension {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  align-items: center;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: var(--mz-radius-container);
+  background: rgba(255, 255, 255, .03);
+}
+
+.final-extension__disc {
+  grid-row: 1 / 3;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--mz-radius-full);
+  background: center / cover no-repeat var(--material);
+}
+
+.final-extension strong {
+  grid-column: 2;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.final-extension span {
+  grid-column: 2;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+.final-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(380px, 100%);
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+@media (max-width: 900px) {
+  .final-split {
+    grid-template-columns: 1fr;
+  }
+
+  .final-copy .action-row {
+    justify-content: center;
+  }
+
+  .final-copy {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* ------------------------------------------------------ GH-S09 · footer */
+
+.site-footer {
+  padding-block: var(--mz-space-16);
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  background: var(--page-dark);
+  color: var(--page-paper);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 32px;
+}
+
+.footer-brand img {
+  width: 26px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-brand strong {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.footer-brand p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--page-dark-muted);
+}
+
+.footer-grid nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-grid nav a,
+.footer-grid nav button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #d9d9d3;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-grid nav a:hover,
+.footer-grid nav button:hover {
+  color: var(--page-white);
+  text-decoration: underline;
+}
+
+.footer-boundary {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  font-size: 11.5px;
+  color: #8f8f89;
+}
+
+@media (max-width: 700px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* -------------------------------------------------------- review tools */
+
+.review-trigger {
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: var(--mz-radius-full);
+  background: var(--page-dark);
+  color: var(--page-paper);
+  font-size: 13px;
+  font-weight: 500;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.review-trigger span {
+  padding: 3px 9px;
+  border-radius: var(--mz-radius-full);
+  background: rgba(255, 255, 255, .12);
+  font-size: 11.5px;
+}
+
+.review-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 58;
+  background: rgba(13, 13, 13, .44);
+}
+
+.review-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(440px, 94vw);
+  padding: 26px;
+  border-left: 1px solid var(--page-line);
+  background: var(--page-white);
+  overflow-y: auto;
+}
+
+.review-drawer header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.review-drawer header p {
+  font-family: var(--mz-font-technical);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+.review-drawer header h2 {
+  margin-top: 6px;
+  font-size: 22px;
+}
+
+.review-drawer header button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--page-line);
+  border-radius: var(--mz-radius-full);
+  background: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.review-intro {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--page-muted);
+}
+
+.review-overall span,
+.review-note span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+.review-drawer textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--page-line);
+  border-radius: var(--mz-radius-control);
+  background: var(--page-paper);
+  font-size: 13.5px;
+  resize: vertical;
+}
+
+.review-items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.review-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--page-line);
+  border-radius: var(--mz-radius-container);
+}
+
+.review-item__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-item__head span {
+  font-family: var(--mz-font-technical);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+.review-item__head strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 14.5px;
+}
+
+.review-jump {
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: var(--page-muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.review-verdicts {
+  display: flex;
+  gap: 8px;
+}
+
+.review-verdicts button {
+  flex: 1;
+  padding: 8px 0;
+  border: 1px solid var(--page-line);
+  border-radius: var(--mz-radius-control);
+  background: var(--page-white);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.review-verdicts button[aria-pressed="true"] {
+  border-color: var(--page-charcoal);
+  background: var(--page-charcoal);
+  color: var(--page-paper);
+}
+
+.review-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.review-actions [data-review-status] {
+  min-height: 16px;
+  font-size: 12px;
+  color: var(--page-muted);
+}
+
+@media (max-width: 700px) {
+  .review-trigger {
+    top: auto;
+    bottom: 18px;
+    right: 14px;
+    transform: none;
+  }
+}
+
+/* ------------------------------------------------------ reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .entry-armed [data-entry] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .method-progress i,
+  .intelligence-chip {
+    transition: none;
+  }
+}
+
+
+/* ==================================================================
+   R16 SECTION REBUILDS (problem / principle / aios / eco / proof / final)
+   Appended after existing rules so final-* restyle wins by source order.
+   ================================================================== */
+
+/* ---- R17 · problem ---- */
+/* The R16 problem-tile / fragments / consequence-thread markup was replaced:
+   S02 was reinvented on the shared .split-card family with a charcoal
+   fragmentation field (see the GH-S02 problem block above). */
+
+/* ---- R17 · principle ---- */
+/* The R16 interchange logomarks were removed: S03 was reinvented as an
+   authored split card with an abstract swap-slot diagram (no brand logos,
+   real or invented). See the GH-S03 principle block above. */
+
+/* ---- R16 · aios ---- */
+/* ============================================ GH-S06 · Available now: AI OS
+   Synthesis (built from Variant A, adversarially hardened). Removes the
+   confirmed full-card darkening bug: the vibrant MZ-G13 material is the
+   protagonist, held by a charcoal chassis, never darkened by an overlay.
+   All new classes are aios- prefixed and self-contained; the <section> keeps
+   class="ai-os" so its padding-block rhythm is preserved.
+
+   The old .ai-os-room / .ai-os-intro / .ai-os-copy / .ai-os-nouns /
+   .ai-os-field / .ai-os-field--identity / .identity-event / .capability-grid /
+   .mechanism* / .ai-os-route rules become dead (no element uses them) and may
+   be deleted in cleanup — INCLUDING the buggy .ai-os-field--identity::after
+   darkening at styles.css line ~957. Do NOT delete the .ai-os section-padding
+   rule (this section keeps class="ai-os") or the shared
+   .hero-card__material,.ai-os-field base rule (still used by the hero and
+   final-route materials). */
+
+.aios-shell {
+  --aios-field: url("../../../gradient-library/assets/static/mz-g13.webp");
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5vw, 60px);
+}
+
+/* -- section header (mirrors the operating-proof / why-head rhythm) ------ */
+.aios-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 720px;
+}
+
+.aios-nouns {
+  margin-top: 2px;
+  font-family: var(--mz-font-technical);
+  font-size: 12px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+/* -- the AI OS product card · HL01 "Launch · corner hierarchy" ----------
+   Charcoal chassis holding public-name-first copy beside the vibrant material.
+   data-mz-mode="dark" scopes the foundations dark tokens to the card only, so
+   the in-card .mz-control[data-variant="primary"] renders white and the
+   hairlines resolve to #3B3B38 — the exact pattern proven live on #principle,
+   #start and the footer. The explicit background wins over the mode token's
+   #0D0D0D canvas, so the chassis stays #171715 (never pure black). */
+.aios-card {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: 12px;
+  padding: 12px;
+  min-height: clamp(360px, 40vw, 452px);
+  overflow: hidden;
+  border: var(--mz-border-width-hairline, 1px) solid var(--mz-border-default);
+  border-radius: var(--mz-radius-frame);
+  background: var(--page-dark);
+  color: var(--page-paper);
+}
+
+.aios-card__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: clamp(22px, 2.6vw, 38px);
+}
+
+.aios-card__id {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.aios-card__name {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(40px, 5.2vw, 58px);
+  line-height: .95;
+  letter-spacing: -.03em;
+}
+
+.aios-card__extended {
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+.aios-card__desc {
+  max-width: 42ch;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--page-dark-body);
+}
+
+.aios-card__copy .mz-control {
+  margin-top: 6px;
+}
+
+/* Vibrant material panel — the Living Core anchor. No overlay of any kind: no
+   full-card darkening, no bottom scrim (no text sits over the material, only
+   the centred Wings identity mark). Static twin (var(--aios-field) -> mz-g13.webp)
+   shows at rest and under reduced-motion / no-WebGL; the renderer prepends its
+   <canvas data-mz-core-canvas> at z-index 0, clipped by overflow:hidden. */
+.aios-material {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 260px;
+  border-radius: var(--mz-radius-panel);
+  border: var(--mz-border-width-hairline, 1px) solid var(--mz-border-default);
+  background: #101010 center / cover no-repeat var(--aios-field);
+}
+
+.aios-material canvas {
+  z-index: 0;
+}
+
+.aios-material__wings {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(104px, 13vw, 176px);
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* -- two bottom cards · How it works | Features ----------------------------
+   R17: reference-inspired (Olli's split-card screenshots) but Mez-grounded.
+   "How it works" is a charcoal card carrying a monochrome orbital diagram —
+   the AI OS at the centre, business context and intelligence orbiting it.
+   "Features" is a light card with a divided 2x2 index. Charcoal #171715 (never
+   pure black), hairlines only, NO ambient shadow / glow, NO non-canonical
+   colour (the SaaS green becomes mono). The orbit is pure CSS — no second
+   live core. */
+.aios-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+  gap: clamp(18px, 2.4vw, 28px);
+  align-items: stretch;
+}
+
+.aios-panel {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.2vw, 26px);
+  padding: clamp(24px, 3vw, 38px);
+  border: var(--mz-border-width-hairline, 1px) solid var(--mz-border-default);
+  border-radius: var(--mz-radius-frame);
+}
+.aios-panel--how {
+  background: var(--page-dark);
+  color: var(--page-paper);
+}
+.aios-panel--features {
+  background: var(--page-white);
+}
+.aios-panel__head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.aios-panel__title {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(20px, 2.1vw, 25px);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+}
+.aios-panel__sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--page-dark-body);
+}
+.aios-panel--features .aios-panel__sub {
+  color: var(--page-muted);
+}
+
+/* Orbital "how it works" diagram */
+.aios-orbit {
+  position: relative;
+  height: clamp(210px, 24vw, 268px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.aios-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.aios-ring--1 {
+  width: 120px;
+  height: 120px;
+  border: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .14);
+}
+.aios-ring--2 {
+  width: 216px;
+  height: 216px;
+  border: var(--mz-border-width-hairline, 1px) dashed rgba(248, 248, 248, .1);
+}
+.aios-ring--3 {
+  width: 316px;
+  height: 316px;
+  border: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .06);
+}
+.aios-orbit__core {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  border: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .34);
+  background: var(--page-dark-raised);
+}
+.aios-orbit__wings {
+  width: 28px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.aios-orbit__core b {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -.01em;
+  color: var(--page-paper);
+}
+.aios-orbit__node {
+  position: absolute;
+  z-index: 2;
+  padding: 7px 13px;
+  border: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .2);
+  border-radius: var(--mz-radius-full);
+  background: var(--page-dark);
+  font-family: var(--mz-font-technical);
+  font-size: 10.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--page-dark-body);
+  white-space: nowrap;
+}
+.aios-orbit__node--context {
+  left: 0;
+  top: 20%;
+}
+.aios-orbit__node--intel {
+  right: 0;
+  bottom: 20%;
+}
+
+/* Three-stage legend */
+.aios-legend {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.aios-legend > div {
+  display: grid;
+  grid-template-columns: minmax(120px, auto) 1fr;
+  gap: 16px;
+  padding: 11px 0;
+  border-top: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .1);
+}
+.aios-legend > div:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.aios-legend dt {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--page-paper);
+}
+.aios-legend dd {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--page-dark-muted);
+}
+.aios-panel__close {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .12);
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--page-paper);
+}
+
+/* Features — divided 2x2 index (no card-in-card, no shadow) */
+.aios-featuregrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  align-content: center;
+}
+.aios-feat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+}
+.aios-feat:nth-child(odd) {
+  padding-right: 24px;
+}
+.aios-feat:nth-child(even) {
+  padding-left: 24px;
+  border-left: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+}
+.aios-feat:nth-child(n+3) {
+  border-top: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+}
+.aios-feat:nth-child(1),
+.aios-feat:nth-child(2) {
+  padding-top: 0;
+}
+.aios-feat__no {
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: var(--page-muted);
+}
+.aios-feat h4 {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+  color: var(--page-ink);
+}
+.aios-feat p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--page-muted);
+}
+
+/* -- closing route (locked action + supporting line) -------------------- */
+.aios-route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.aios-route small {
+  font-size: 13px;
+  color: var(--page-muted);
+}
+
+@media (max-width: 900px) {
+  .aios-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .aios-card__copy {
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+
+  .aios-material {
+    grid-row: 1;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .aios-split {
+    grid-template-columns: 1fr;
+  }
+
+  .aios-featuregrid {
+    grid-template-columns: 1fr;
+  }
+
+  .aios-feat:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .aios-feat:nth-child(2) {
+    padding-top: 18px;
+    border-top: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+  }
+}
+
+/* ---- R26 · eco · selected V02 unboxed disc rail ---- */
+/* ============================================================
+   GH-S07 · The Mez Systems ecosystem
+   Asymmetric editorial header -> four equal, unboxed product discs.
+   There is no shared stage fill and no card chassis. Exact static twins
+   are complete at rest; hover gives one disc the shared Living Core renderer.
+   ============================================================ */
+
+/* Asymmetric editorial header */
+.ecosystem { scroll-margin-top: var(--mz-space-24); }
+.eco-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(280px, 0.78fr);
+  align-items: end;
+  gap: clamp(24px, 3vw, 48px);
+  padding-bottom: clamp(20px, 2.4vw, 32px);
+  border-bottom: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+}
+.eco-head__lead { display: flex; flex-direction: column; gap: var(--mz-space-3); }
+.eco-head__aside { display: flex; flex-direction: column; gap: var(--mz-space-3); }
+
+/* Open rail: the product objects sit directly in the page rhythm. */
+.eco-stage {
+  margin-top: var(--mz-space-8);
+}
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+/* Equal siblings, deliberately without a card background or border. */
+.eco-card {
+  display: grid;
+  justify-items: center;
+  gap: var(--mz-space-4);
+  min-width: 0;
+  text-align: center;
+}
+.eco-card:focus-visible {
+  outline: var(--mz-focus-width) solid var(--mz-focus-ring);
+  outline-offset: var(--mz-focus-offset);
+  border-radius: var(--mz-radius-container);
+}
+
+/* The lab rail capped discs at 250px. The tightened homepage version is a
+   quieter 116–164px band, keeping the family legible without four materials
+   dominating the section. The hard circular edge is the canonical disc. */
+.eco-card__field {
+  position: relative;
+  isolation: isolate;
+  width: clamp(116px, 11.5vw, 164px);
+  max-width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--mz-radius-full);
+  background: var(--page-dark) center / cover no-repeat var(--eco-field);
+}
+.eco-card__field canvas {
+  z-index: 0;
+}
+
+/* Large centred canonical Wings over the undarkened material */
+.eco-card__wings {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: 39%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: brightness(0) invert(1);
+}
+
+/* Simple teaser hierarchy: public name + honest "Coming soon". No extended
+   name, no job line, no action — these systems are not orderable yet, so the
+   card is Wings + name + status only. */
+.eco-card__copy {
+  display: grid;
+  justify-items: center;
+  gap: var(--mz-space-2);
+  text-align: center;
+}
+.eco-card__name {
+  font-family: var(--mz-font-display);
+  font-weight: 610;
+  font-size: clamp(22px, 1.65vw, 28px);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  color: var(--page-ink);
+}
+.eco-card__status {
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+@media (max-width: 1100px) {
+  .eco-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .eco-head { grid-template-columns: 1fr; align-items: start; }
+}
+@media (max-width: 640px) {
+  .eco-grid { grid-template-columns: 1fr; }
+  .eco-card {
+    grid-template-columns: 88px minmax(0, 1fr);
+    align-items: center;
+    justify-items: start;
+    gap: var(--mz-space-5);
+    text-align: left;
+  }
+  .eco-card__field { width: 88px; }
+  .eco-card__copy { justify-items: start; text-align: left; }
+}
+
+/* Gate B identity strip. Query-only, never part of the normal candidate. */
+html[data-strip="true"] { filter: grayscale(1); }
+html[data-strip="true"] .eco-card__field {
+  background-image: none !important;
+  background-color: var(--page-charcoal) !important;
+}
+
+/* ---- R27 · FAQ close ---- */
+/* A quiet editorial close after the product rail. Native details/summary keeps
+   every answer accessible without adding a new JavaScript interaction layer. */
+.faq {
+  padding-block: clamp(64px, 8vw, 104px);
+  border-top: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+  background: var(--page-recessed);
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr);
+  align-items: start;
+  gap: clamp(40px, 7vw, 96px);
+}
+
+.faq-head {
+  position: sticky;
+  top: calc(var(--mz-space-16) + var(--mz-space-8));
+  display: grid;
+  gap: var(--mz-space-4);
+}
+
+.faq-head h2 {
+  max-width: 11ch;
+}
+
+.faq-head .section-lead {
+  max-width: 32ch;
+  font-size: 17px;
+}
+
+.faq-list {
+  border-top: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+}
+
+.faq-item {
+  border-bottom: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+}
+
+.faq-item summary {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: var(--mz-space-4);
+  min-height: 76px;
+  padding-block: var(--mz-space-5);
+  color: var(--page-ink);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--mz-font-display);
+  font-size: clamp(18px, 1.8vw, 23px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -.018em;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary:focus-visible {
+  outline: var(--mz-focus-width) solid var(--mz-focus-ring);
+  outline-offset: var(--mz-focus-offset);
+}
+
+.faq-item__index {
+  align-self: start;
+  padding-top: 4px;
+  font-family: var(--mz-font-technical);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: var(--page-muted);
+}
+
+.faq-item__toggle {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  justify-self: end;
+}
+
+.faq-item__toggle::before,
+.faq-item__toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: var(--mz-border-width-default, 1px);
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform .22s var(--page-ease);
+}
+
+.faq-item__toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-item[open] .faq-item__toggle::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.faq-item > p {
+  max-width: 60ch;
+  padding: 0 40px var(--mz-space-6) 48px;
+  color: var(--page-body);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+@media (hover: hover) {
+  .faq-item summary:hover {
+    color: var(--page-muted);
+  }
+}
+
+@media (max-width: 820px) {
+  .faq-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--mz-space-10);
+  }
+
+  .faq-head {
+    position: static;
+  }
+
+  .faq-head h2,
+  .faq-head .section-lead {
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .faq-item summary {
+    grid-template-columns: 24px minmax(0, 1fr) 20px;
+    gap: var(--mz-space-3);
+    min-height: 68px;
+  }
+
+  .faq-item > p {
+    padding-left: 36px;
+    padding-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__toggle::before,
+  .faq-item__toggle::after {
+    transition: none;
+  }
+}
+
+/* ---- R22 · proof marquee ---- */
+/* GH-S08 moves directly beneath the hero as a testimonial-proof rail. It uses
+   no page-local cards, no invented product object and no moving type. CMP-06
+   owns the user-driven rail; this page owns only the section composition. */
+
+.review-marquee__head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mz-space-6);
+  text-align: center;
+}
+
+.review-marquee__head .eyebrow {
+  margin-bottom: var(--mz-space-2);
+}
+
+.review-marquee__title {
+  font-size: var(--mz-type-heading-subsection-size);
+  font-weight: var(--mz-type-heading-subsection-weight);
+  line-height: var(--mz-type-heading-subsection-leading);
+  letter-spacing: var(--mz-type-heading-subsection-tracking);
+  text-wrap: balance;
+}
+
+.review-marquee > mez-testimonial-marquee {
+  display: block;
+  margin-top: clamp(36px, 4vw, 56px);
+}
+
+@media (max-width: 900px) {
+  .review-marquee__head {
+    align-items: center;
+    flex-direction: column;
+  }
+
+}
+
+/* ---- R16 · final ---- */
+/* ============================================== GH-S06 · Simplified dark AI OS
+   Product route moved forward from the former closing CTA. The AI OS material is the protagonist: it reuses the shared
+   .hero-card__material grammar, so it inherits the canonical BOTTOM-ONLY
+   legibility gradient (::after: transparent to ~52% then a slight dark floor)
+   and the hairline bound to --mz-border-default (via --card-outline). No
+   full-card overlay, no ambient blob, no glow, no card shadow. All NEW classes
+   are final- prefixed. The superseded layout wrappers are renamed, so the old
+   .final-split / .final-copy / .final-system / .final-installed /
+   .final-extensions / .final-caption rules match nothing and fall dead.
+   .final-extension(+__disc) are authored by homepage.js and are RESTYLED here;
+   this block must sit AFTER the existing .final-* rules so the redefined
+   .final-extension / .final-extension__disc win by source order. */
+
+.final-close {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Stage — closing statement + CTA beside the protagonist material */
+.final-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(260px, .84fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+
+.final-message {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.final-message h2 {
+  margin-bottom: 2px;
+  max-width: 14ch;
+}
+
+/* Dark-section override of the shared .section-lead colour (--page-body is a
+   light-canvas ink); later source order + equal specificity means this wins. */
+.final-lead {
+  color: var(--page-paper);
+}
+
+.final-turn {
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--page-dark-body);
+}
+
+/* Promote the closing turn line for CTA emphasis while keeping the section h2 at
+   the default rhythm — no bespoke oversized headline. */
+.final-turn--strong {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.34;
+  letter-spacing: -.015em;
+  color: var(--page-paper);
+}
+
+.final-actions {
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.final-availability {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--page-dark-muted);
+  max-width: 46ch;
+}
+
+/* Protagonist AI OS card. Reuses .hero-card__material (bottom-only ::after,
+   canvas z-index 0, hairline bound to --mz-border-default). The identity stays
+   bottom-anchored so the white lockup sits OVER the legibility gradient, never
+   over the bright centre of the material. */
+.final-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.final-card {
+  --material: url("../../../gradient-library/assets/static/mz-g13.webp");
+  width: min(340px, 100%);
+  aspect-ratio: 4 / 5;
+}
+
+.final-card .material-identity {
+  left: clamp(20px, 2.2vw, 28px);
+  right: clamp(20px, 2.2vw, 28px);
+  bottom: clamp(18px, 2vw, 26px);
+  gap: 9px;
+}
+
+.final-card .material-identity .material-wings {
+  width: clamp(30px, 3vw, 40px);
+}
+
+.final-card .material-identity strong {
+  font-size: clamp(22px, 2.4vw, 32px);
+}
+
+.final-card .material-identity span {
+  font-size: 11.5px;
+  letter-spacing: .16em;
+}
+
+.final-tag {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+.final-live-dot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: var(--mz-radius-full);
+  background: var(--page-white);
+}
+
+/* Quiet full-width rail: the four coming systems extend the owned layer */
+.final-layer {
+  padding-top: clamp(28px, 3.6vw, 42px);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.final-layer__label {
+  margin-bottom: clamp(18px, 2vw, 24px);
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+.final-systems {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* homepage.js output: <article.final-extension><i.final-extension__disc/><strong/><span/> */
+.final-extension {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  row-gap: 3px;
+  align-items: center;
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: var(--mz-radius-container);
+  background: rgba(255, 255, 255, .03);
+}
+
+.final-extension__disc {
+  grid-row: 1 / 3;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--mz-radius-full);
+  background: center / cover no-repeat var(--material);
+}
+
+.final-extension strong {
+  grid-column: 2;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--page-paper);
+}
+
+.final-extension span {
+  grid-column: 2;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+@media (max-width: 900px) {
+  .final-stage {
+    grid-template-columns: 1fr;
+    gap: clamp(36px, 8vw, 56px);
+  }
+
+  .final-message {
+    text-align: center;
+    align-items: center;
+  }
+
+  .final-message h2 {
+    max-width: none;
+  }
+
+  .final-actions {
+    justify-content: center;
+  }
+
+  .final-systems {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .final-systems {
+    grid-template-columns: 1fr;
+  }
+}

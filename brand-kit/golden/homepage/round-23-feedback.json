@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r23",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-27",
+  "note": "Olli supplied four real Mez Studios operating screenshots and asked to begin GH-S05. This resolves the handoff's evidence-intake blocker and selects a screenshot-led proof direction.",
+  "section": {
+    "id": "GH-S05",
+    "title": "Operating proof",
+    "verdict": "revise",
+    "feedback": "Use the supplied images to begin the proof-from-inside-the-business section."
+  },
+  "evidence": {
+    "surfaces": [
+      "Oliver's Command",
+      "MEZ Backend",
+      "Mez Studios Docs",
+      "The Ultimate AI Ad System"
+    ],
+    "provenance": "brand-kit/workbench/golden/homepage/assets/operating-proof/provenance.json",
+    "publicRedactionStatus": "pending"
+  },
+  "selected": {
+    "compositionFamily": "Sticky proof",
+    "sequence": "Command, context, application",
+    "contextPair": "MEZ Backend and Mez Studios Docs form one evidence stage",
+    "treatment": "Real supplied pixels in plain hairline frames. No mock browser, perspective, shadow, fabricated dashboard or invented metric."
+  },
+  "copyAmendment": {
+    "scope": "GH-S05 lead and evidence labels",
+    "authorisedBy": "Olli's supplied evidence and request to begin the section",
+    "formalCopyRelockPending": true,
+    "note": "The candidate copy is narrowed to claims directly visible in the supplied screens. homepage-copy.md remains the canonical locked source until its next formal revision."
+  },
+  "openRisks": [
+    "The supplied screenshots retain visible internal working-state text. Olli must approve or specify irreversible redactions before public deployment.",
+    "H-GOLD-01-HOMEPAGE-PROOF remains open. Round 23 is a review candidate, not a golden-output promotion."
+  ],
+  "outputStatus": "candidate",
+  "productionAuthority": false
+}

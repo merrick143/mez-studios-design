@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.geometry-controls",
+  "status": "canonical",
+  "portableRoot": ".",
+  "productionReadyForScope": true,
+  "artifactCount": 9,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 2328,
+      "sha256": "8e2283e461334b5425d77602a140f466f4a5106be404f75e90b7418807d9f39f"
+    },
+    {
+      "path": "control-contracts.json",
+      "bytes": 4782,
+      "sha256": "c8efed8897c430f9a651dbb5dd45130e910aa7ab0f3e495a95d5d415924d1cf8"
+    },
+    {
+      "path": "controls.css",
+      "bytes": 8124,
+      "sha256": "6199590a4e3101a871afcf221ea8a40ac15cec2f251d0b51e27bee0b1f8c6e27"
+    },
+    {
+      "path": "geometry-controls.schema.json",
+      "bytes": 2877,
+      "sha256": "59934a90271a0507ae132c9ba6cd39bb3ebdb112b339a915a909f2d55731dcf8"
+    },
+    {
+      "path": "geometry-controls.source.json",
+      "bytes": 5923,
+      "sha256": "701397c2c5ca1ece9642d5cd66f647e646469dc55f8e5b01fcd491598a876dde"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1241,
+      "sha256": "204bcddc03a7b9694d62025a503c12342f23fe27841675fa45da4d6767073ce9"
+    },
+    {
+      "path": "review.json",
+      "bytes": 524,
+      "sha256": "e1d09d46ad028fa60166bcb07ee05206a392a9faab06fd18dcd00e709bf9802a"
+    },
+    {
+      "path": "tokens.css",
+      "bytes": 1560,
+      "sha256": "855087a4c0e63e249ecfe78fd532c3d212b840ac01b649f0649ef867360e3562"
+    },
+    {
+      "path": "tokens.json",
+      "bytes": 3098,
+      "sha256": "29bb3f5128a4866ed2ec0859e6ba2d4d03b00c2875b7ac8f5d44a0d95d73cf48"
+    }
+  ]
+}

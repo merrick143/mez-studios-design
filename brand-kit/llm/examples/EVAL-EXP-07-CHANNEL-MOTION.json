@@ -1,0 +1,24 @@
+{
+  "schemaVersion":"1.0.0",
+  "evaluationId":"EVAL-EXP-07-CHANNEL-MOTION",
+  "receiptId":"RCP-EXP-07-CHANNEL-MOTION",
+  "evaluatedAt":"2026-07-23T00:55:00Z",
+  "evaluator":{"kind":"hybrid","name":"Codex plus deterministic validators and Olli approval"},
+  "contractChecks":[
+    {"id":"SCOPE","status":"pass","evidence":"The source and locked workbench contain the same seven approved IDs: three laws and four component behaviours."},
+    {"id":"DEFERRAL","status":"pass","evidence":"MOT-W02 is absent from canonical specimens and explicitly owned by planned TASK-CMP-01-GLOBAL-NAVIGATION with explore-menu research evidence."},
+    {"id":"MOTION","status":"pass","evidence":"Static is complete, at most one expressive event may move, carousel movement requires user intent and reduced motion preserves meaning."},
+    {"id":"AUTHORITY","status":"pass","evidence":"Canonical authority is bounded to motion grammar and explicitly excludes global-navigation anatomy, golden homepage, channels, Figma and consumers."},
+    {"id":"HUMAN-GATE","status":"pass","evidence":"Olli kept seven specimens and instructed the system to close EXP-07 while moving the menu into a separate component phase."}
+  ],
+  "qualityDimensions":[
+    {"id":"restraint","score":5,"maximum":5,"evidence":"The system limits motion reasons, duration, active allocation and automatic behaviour."},
+    {"id":"clarity","score":5,"maximum":5,"evidence":"Every animated state has a complete static or immediate equivalent."},
+    {"id":"scope-discipline","score":5,"maximum":5,"evidence":"Channel production and the real navigation component have explicit owners outside EXP-07."},
+    {"id":"governance","score":5,"maximum":5,"evidence":"Three feedback rounds, exact approval, canonical package and roadmap sequence agree."}
+  ],
+  "blockers":[],
+  "verdict":"pass",
+  "humanReviewRequired":false,
+  "notes":["Website Motion 1.0.0 is canonical for its declared seven-specimen scope. EXP-08 is next; CMP-01 follows before the golden homepage."]
+}

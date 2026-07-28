@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/expression-channel-motion-candidate",
+  "version": "0.3.0-candidate",
+  "status": "review-candidate",
+  "candidateRevision": "channel-motion-matrix-01-r03",
+  "reviewGateId": "H-EXP-07-CHANNEL-MOTION-PROOF",
+  "productionReadyForScope": false,
+  "productionAuthority": false,
+  "entrypoints": {
+    "contract": "channel-motion.source.json",
+    "schema": "channel-motion.schema.json",
+    "guidance": "README.md"
+  },
+  "note": "Round 03 website-motion review package only. Human approval is required before promotion."
+}

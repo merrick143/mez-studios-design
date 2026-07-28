@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-29",
+  "consumers": [
+    {
+      "id": "CON-MEZ-SYSTEMS-WEB-001",
+      "name": "Mez Systems production web",
+      "type": "website-repository",
+      "repository": {
+        "remote": "https://github.com/mezcorp-studio/ceos-notion-landingpage.git",
+        "owner": "mezcorp-studio",
+        "name": "ceos-notion-landingpage",
+        "defaultBranch": "main"
+      },
+      "localCheckout": "/Users/olivermerrick/Desktop/mez-studios/landing-pages/apps/ceos-notion-landingpage",
+      "state": "registered-not-integrated",
+      "migrationState": "ready-for-read-only-audit",
+      "designSystemCandidate": {
+        "name": "@mez-systems/design-system-web",
+        "version": "1.0.0-rc.2",
+        "manifestSha256": "129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9"
+      },
+      "authorityBoundary": {
+        "designSystemOwns": "versioned design values, runtime assets and approved component contracts",
+        "consumerOwns": "routes, redirects, SEO, analytics, attribution, pricing, product configuration, consent, testimonial content and structured data, commerce, deployment and application behaviour",
+        "consumerMutationAuthorised": false,
+        "productionDeploymentAuthorised": false
+      },
+      "humanConfirmation": {
+        "approver": "Olli",
+        "confirmedAt": "2026-07-29",
+        "result": "The local checkout and GitHub remote are the exact repository for final named-consumer proof."
+      }
+    }
+  ]
+}

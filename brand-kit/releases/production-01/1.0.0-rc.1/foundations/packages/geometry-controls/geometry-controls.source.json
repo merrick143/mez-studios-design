@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.geometry-controls",
+  "status": "canonical",
+  "decisionIds": ["DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-CONTROL-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "candidateGateId": "H-FND-04-CONTROL-PROOF",
+  "candidateRevision": "control-lock-01",
+  "radii": {
+    "none": 0,
+    "fine": 4,
+    "compact": 8,
+    "control": 12,
+    "container": 16,
+    "panel": 24,
+    "frame": 32,
+    "full": 9999
+  },
+  "borders": {
+    "hairline": 1,
+    "emphasis": 2,
+    "focus": 3
+  },
+  "depth": {
+    "flat": "none",
+    "contact": "0 7px 16px -10px rgb(13 13 13 / 0.52)",
+    "raised": "0 18px 40px -28px rgb(13 13 13 / 0.32)",
+    "overlay": "0 28px 80px -32px rgb(13 13 13 / 0.48)",
+    "insetHighlight": "inset 0 1px 0 rgb(255 255 255 / 0.12)"
+  },
+  "motion": {
+    "durationFast": 120,
+    "durationDefault": 180,
+    "easeControl": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+    "hoverLift": -1,
+    "activePress": 0,
+    "iconTravel": 2
+  },
+  "focus": {
+    "width": 3,
+    "offset": 3,
+    "role": "focus.ring"
+  },
+  "controlScale": {
+    "compact": {"height": 40, "paddingInline": 14, "labelRole": "ui-control", "use": "Dense desktop utilities only"},
+    "default": {"height": 48, "paddingInline": 18, "labelRole": "ui-control", "use": "Default actions and fields"},
+    "prominent": {"height": 52, "paddingInline": 20, "labelRole": "ui-control", "use": "One leading conversion action"}
+  },
+  "iconControl": {
+    "defaultSize": 48,
+    "compactSize": 40,
+    "iconSize": 20,
+    "minimumTouchTarget": 48,
+    "iconGap": 8
+  },
+  "variants": {
+    "primary": {"surface": "action.primary.background", "foreground": "action.primary.foreground", "border": "transparent", "hierarchy": 1},
+    "secondary": {"surface": "action.secondary.background", "foreground": "action.secondary.foreground", "border": "action.secondary.border", "hierarchy": 2},
+    "tertiary": {"surface": "transparent", "foreground": "text.primary", "border": "transparent", "hierarchy": 3},
+    "destructive": {"surface": "feedback.danger.text", "foreground": "neutral.0", "border": "transparent", "hierarchy": 1},
+    "inversePrimary": {"surface": "neutral.0", "foreground": "neutral.950", "border": "transparent", "hierarchy": 1},
+    "inverseSecondary": {"surface": "transparent", "foreground": "text.inverse", "border": "border.inverse", "hierarchy": 2},
+    "inverseTertiary": {"surface": "transparent", "foreground": "text.inverse", "border": "transparent", "hierarchy": 3}
+  },
+  "stateContracts": {
+    "rest": {"requirements": ["stable geometry", "visible hierarchy", "no ambient shadow on ordinary controls"]},
+    "hover": {"requirements": ["hover-capable pointers only", "one-pixel lift for solid and outlined actions", "tight contact shadow", "directional icon may travel two pixels"]},
+    "focusVisible": {"requirements": ["three-pixel focus ring", "three-pixel offset", "never suppressed by hover or error"]},
+    "active": {"requirements": ["return to resting baseline", "remove contact shadow", "retain label and icon position"]},
+    "loading": {"requirements": ["aria-busy true", "preserve control width", "prevent duplicate activation", "retain an accessible name"]},
+    "disabled": {"requirements": ["native disabled when available", "no lift or shadow", "not conveyed by opacity alone", "preserve readable label"]},
+    "error": {"requirements": ["field-level message", "danger border or marker", "focus remains independently visible", "never colour-only"]},
+    "destructiveConfirmation": {"requirements": ["explicit destructive label", "confirmation for irreversible work", "safe action remains visually available"]}
+  },
+  "fields": {
+    "height": 48,
+    "textareaMinHeight": 120,
+    "paddingInline": 16,
+    "choiceSize": 20,
+    "switchWidth": 44,
+    "switchHeight": 24,
+    "labelGap": 8,
+    "messageGap": 8
+  },
+  "policies": {
+    "shape": "Use the smallest named radius that preserves the object's role. Controls use twelve pixels. Ordinary cards and panels do not inherit the control radius automatically.",
+    "pill": "Full rounding is reserved for binary switches, status capsules with short stable content, and genuinely circular controls. It is not the default action shape.",
+    "border": "Hairlines provide ordinary structure, two-pixel borders mark emphasis or state, and three pixels are reserved for the focus ring. Do not stack borders and shadows to manufacture hierarchy.",
+    "depth": "Flat is the default. Contact depth exists only during hover, raised depth is reserved for detached temporary surfaces, and overlay depth is reserved for drawers or dialogs. Glow and glass are forbidden.",
+    "hierarchy": "Use one primary action per decision region, then outlined secondary and text tertiary. Destructive is semantic, not a more exciting primary.",
+    "mobile": "Use one full-width primary, followed by a quiet secondary link or outline. Preserve a forty-eight-pixel touch target for icon-only actions and never rely on hover.",
+    "icons": "Use directional icons only when movement, reveal, download, external navigation or continuation becomes clearer. Decorative icons do not enter every button.",
+    "accessibility": "Keyboard order follows source order. Focus remains visible in every state. Loading retains a name, error retains a message, disabled retains legibility, and forced-colour mode retains boundaries.",
+    "motion": "Interaction motion is local, fast and interruptible. Reduced motion removes lift and icon travel while preserving colour, border and label feedback.",
+    "contentSafety": "Labels may wrap only in exceptional high-consequence controls; otherwise controls grow inline or become full-width. Never truncate a destructive or purchase action."
+  },
+  "testViewports": [320, 375, 430, 768, 1024, 1280, 1440]
+}

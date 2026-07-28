@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-FIG-01-FIGMA-COMPANION",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "generatedAt": "2026-07-28T10:51:31Z",
+  "systemVersion": "figma-companion-1.0.0+approved-mirror",
+  "sourceState": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-foundations-expressions",
+    "commit": "2d9bcdebd1a931f3925adf7f3d5aa6edc0483368",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {
+      "path": "brand-kit/figma-companion/phase-04-functional-components.json",
+      "sha256": "0a358406afd121e5b526d3d7ca5fef134c271efc901703798989a8fad9bbbebc",
+      "role": "evidence",
+      "required": true,
+      "reason": "Exact final component inventory, runtime boundaries, fixture truth, detach evidence and whole-file audit."
+    },
+    {
+      "path": "brand-kit/figma-companion/phase-04-gate-b.json",
+      "sha256": "c15929f33edfdee602ac0f87c92d16000625bd966edb22b79a419de5113e1512",
+      "role": "evidence",
+      "required": true,
+      "reason": "Design-excellence pass over the completed companion before human review."
+    },
+    {
+      "path": "brand-kit/figma-companion/approval.json",
+      "sha256": "c85514527ffa2e98a42e3427cd61db697e57955cc3780ad141cec176d391031c",
+      "role": "governance",
+      "required": true,
+      "reason": "Exact H-FIG-02 approval and retained non-authority boundaries."
+    },
+    {
+      "path": "brand-kit/governance/decisions.json",
+      "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587",
+      "role": "governance",
+      "required": true,
+      "reason": "Immutable cutover decision authority."
+    },
+    {
+      "path": "brand-kit/governance/post-cutover-decisions.json",
+      "sha256": "9e3313fdd4fac1f9dd02a03d4870f228381faa9f245d76a121828342b1ec9ced",
+      "role": "governance",
+      "required": true,
+      "reason": "Approved repository contracts mirrored by the companion."
+    },
+    {
+      "path": "brand-kit/components/testimonial-marquee/fixtures/ai-os-testimonials.json",
+      "sha256": "e1e3f01ecd493014e924b3c28a3e6d1a5803a1be8837f82102cf8b4d5be38fc2",
+      "role": "fixture",
+      "required": true,
+      "reason": "Exact real testimonial record used to remove the earlier fabricated Figma sample."
+    }
+  ],
+  "decisions": [
+    {"id":"DEC-FOUNDATION-RELEASE-001","status":"approved","productionEffect":"Supplies the canonical portable foundation values mirrored into Figma."},
+    {"id":"DEC-PRODUCT-COMPONENT-SYSTEM-001","status":"approved","productionEffect":"Supplies the fifteen Phase B functional component contracts mirrored into Figma."},
+    {"id":"DEC-GLOBAL-NAVIGATION-COMPONENT-001","status":"approved","productionEffect":"Supplies the canonical navigation states represented as static authoring twins."},
+    {"id":"DEC-GOLDEN-HOMEPAGE-001","status":"approved-unreleased","productionEffect":"Supplies the first canonical visual reference without giving Figma release authority."},
+    {"id":"DEC-HALFTONE-PORTRAIT-COMPONENT-001","status":"approved","productionEffect":"Supplies the locked portrait treatment and static runtime-state twins."},
+    {"id":"DEC-TESTIMONIAL-MARQUEE-COMPONENT-001","status":"approved","productionEffect":"Supplies the approved marquee state, content and bounded motion contracts."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {
+      "id": "CONFLICT-FIG-RUNTIME-STATIC",
+      "summary": "Figma cannot execute renderer, video, marquee, keyboard, focus or screen-reader behaviour.",
+      "executionEffect": "constrain"
+    },
+    {
+      "id": "CONFLICT-FIG-NOT-PUBLISHED",
+      "summary": "The approved companion structure is not a published Figma library.",
+      "executionEffect": "constrain"
+    },
+    {
+      "id": "CONFLICT-FIG-CODE-CONNECT-DEFERRED",
+      "summary": "Code Connect may be planned only through a bounded follow-up and is not implemented by FIG-01.",
+      "executionEffect": "constrain"
+    }
+  ],
+  "stopConditions": [
+    "Do not treat Figma as an independent or canonical source of values or behaviour.",
+    "Do not publish the library or create production Code Connect mappings from this approval alone.",
+    "Do not enter a consumer repository, publish a package or deploy a website.",
+    "Do not mutate the historical Figma branding file or the approved frozen rc.1 package."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/figma-companion/phase-04-functional-components.json",
+      "brand-kit/figma-companion/phase-04-gate-b.json"
+    ],
+    "omitByDefault": [
+      "brand-kit/history/",
+      "brand-kit/workbench/golden/homepage/problem-lab-9/",
+      "play-orb/"
+    ]
+  },
+  "humanNotes": [
+    "Olli approved the completed companion immediately after receiving the exact H-FIG-02 decision request."
+  ]
+}

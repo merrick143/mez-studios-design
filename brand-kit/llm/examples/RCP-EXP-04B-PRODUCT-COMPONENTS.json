@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-EXP-04B-PRODUCT-COMPONENTS",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "contextBundleId": "CTX-EXP-04B-PRODUCT-COMPONENTS",
+  "agent": {
+    "kind": "llm",
+    "name": "Codex",
+    "model": "GPT-5"
+  },
+  "startedAt": "2026-07-22T20:49:33+10:00",
+  "finishedAt": "2026-07-22T23:05:12+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {
+      "path": "brand-kit/expressions/product-card/phase-b/round-04-feedback.json",
+      "action": "created",
+      "sha256": "2a2f7779de4f2251d837eba163be936ab9e991080acdab06c1d3f9974c6fb844",
+      "reason": "Preserved the exact 46-item unanimous human keep receipt that closes Phase B."
+    },
+    {
+      "path": "brand-kit/expressions/product-card/phase-b/review.json",
+      "action": "created",
+      "sha256": "ff1397a73e7193e4aa574a2e8d6f17396beee8bf4fa64c26d99d408cdfe8dae5",
+      "reason": "Recorded approval of H-EXP-04B-CARD-FUNCTIONAL-PROOF through DEC-PRODUCT-COMPONENT-SYSTEM-001."
+    },
+    {
+      "path": "brand-kit/expressions/product-card/phase-b/round-03-feedback.json",
+      "action": "created",
+      "sha256": "0ebc1bc12d4a41d0ec66aed163f130aa625db9615e09e24479f52fed1c7d566c",
+      "reason": "Preserved the exact 47-item Round 03 human export recording 11 keeps, 35 revisions and the B-FT06 kill."
+    },
+    {
+      "path": "brand-kit/expressions/product-card/phase-b/product-component-pantry.source.json",
+      "action": "modified",
+      "sha256": "cf5fc2478e59cc98a0ce206de0055fae66478dd2ad64f45255ca7a1a054aa250",
+      "reason": "Promoted the unanimously approved 46-specimen Phase B contract to canonical 1.0.0 with bounded production authority."
+    },
+    {
+      "path": "brand-kit/expressions/product-card/phase-b/product-component-pantry.schema.json",
+      "action": "modified",
+      "sha256": "e5410f59d8e1969ac3fce49a5cec59588c43de82f2762bb1c7c8f482b0d7e9f0",
+      "reason": "Enforced canonical 1.0.0 status, exact unanimous Round 04 approval, 46 survivors, two historical kills and bounded production authority."
+    },
+    {
+      "path": "brand-kit/expressions/product-card/phase-b/dist/manifest.json",
+      "action": "generated",
+      "sha256": "ee260d091983c9cc38f75f4ade9fe6432cb4e8a8ea9659c9165eb3012c6a72f6",
+      "reason": "Recorded deterministic canonical package integrity including all four feedback receipts and the approval record."
+    },
+    {
+      "path": "brand-kit/workbench/expressions/product-card/phase-b/index.html",
+      "action": "modified",
+      "sha256": "3427d7d0904fd3ae6627d31fb25a6ef11198e37aa1f87efd2079b8dd9b9e55f4",
+      "reason": "Locked the 46 surviving functional specimens as the canonical approved review surface."
+    },
+    {
+      "path": "brand-kit/workbench/expressions/product-card/phase-b/app.js",
+      "action": "modified",
+      "sha256": "5eaaafea3c5b5e8187a097cd7852fb2231aa297845d1fab3026060b2a87b55bf",
+      "reason": "Mounted 46 approved functional specimens, excluded B-FT04 and B-FT06, locked all verdicts to keep and retained the exact structured approval export."
+    },
+    {
+      "path": "brand-kit/workbench/expressions/product-card/phase-b/phase-a-lineage.js",
+      "action": "modified",
+      "sha256": "50b2f60cfa3995dfa5cea1afd964f2b31c28f50d73d4a76c57b3b04e7a461a8c",
+      "reason": "Preserved every survivor's exact approved Phase A ancestry while retaining killed lineage only as historical audit evidence."
+    },
+    {
+      "path": "brand-kit/workbench/expressions/product-card/phase-b/functional-components.js",
+      "action": "modified",
+      "sha256": "031c25359811600d466e14cc6b08ba1961bfa0cea1d090250a8751c3aec15fb4",
+      "reason": "Carried 11 champions forward, rebuilt all 35 Round 03 revisions and removed the B-FT06 workflow without adding a replacement specimen."
+    },
+    {
+      "path": "brand-kit/workbench/expressions/product-card/phase-b/styles.css",
+      "action": "modified",
+      "sha256": "192c08a082f12154737d7e368dae7f44ba757f62031fd54333793932a30207b5",
+      "reason": "Implemented Round 04 equal sibling geometry, complete-card bento composition, bounded focal motion, exact static contexts and responsive refinement."
+    },
+    {
+      "path": "brand-kit/workbench/expressions/product-card/phase-b/assets/integrations/",
+      "action": "created",
+      "sha256": null,
+      "reason": "Added six locally sourced integration-image review fixtures plus explicit provenance and non-authority documentation for B-FT07."
+    },
+    {
+      "path": "brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md",
+      "action": "modified",
+      "sha256": "30c5a777bed2339e19b199170f8d62bff69a1ce00e18e8835e6459136847d975",
+      "reason": "Recorded unanimous Round 04 approval, canonical scope and the explicit later consumer-proof boundary."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-EXP-04-PRODUCT-CARD.json",
+      "action": "modified",
+      "sha256": "aec7f30928aeed4f4536c56448dac4d9b767fde77fd3398bb5d10b95cf1e2d19",
+      "reason": "Closed Product Card 02 with canonical Phase A and Phase B authority, 46 approved Phase B specimens and explicit follow-up exclusions."
+    },
+    {
+      "path": "brand-kit/llm/examples/CTX-EXP-04B-PRODUCT-COMPONENTS.json",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Refreshed required files, hashes, evidence, constraints and human notes for canonical Phase B 1.0.0."
+    },
+    {
+      "path": "brand-kit/llm/examples/RCP-EXP-04B-PRODUCT-COMPONENTS.json",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Recorded the exact 46-keep human approval, canonical promotion and bounded follow-up exclusions."
+    },
+    {
+      "path": "brand-kit/llm/examples/EVAL-EXP-04B-PRODUCT-COMPONENTS.json",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Evaluated canonical Round 04 approval and live behavior without claiming exhaustive consumer-specific stress proof."
+    }
+  ],
+  "decisionsApplied": [
+    "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-WINGS-MARK-EXPRESSION-001",
+    "DEC-DISC-EXPRESSION-001",
+    "DEC-MOTION-002",
+    "DEC-FAMILY-001",
+    "DEC-GEOMETRY-CONTROLS-FOUNDATION-001",
+    "DEC-COLOUR-FOUNDATION-001",
+    "DEC-TYPE-FOUNDATION-001"
+  ],
+  "tests": [
+    {
+      "id": "EXP-04B-ROUND03-FEEDBACK-INTEGRITY",
+      "status": "pass",
+      "evidence": "The exact Round 03 receipt SHA-256 is 0ebc1bc12d4a41d0ec66aed163f130aa625db9615e09e24479f52fed1c7d566c and contains 47 functional verdicts: 11 keep, 35 revise and 1 kill."
+    },
+    {
+      "id": "EXP-04B-PB2-R04-CONTRACT",
+      "status": "pass",
+      "evidence": "The deterministic Phase B verifier passes for canonical 1.0.0 with 32 approved Phase A visual inputs, zero Phase A candidates, 46 approved functional specimens and bounded productionAuthority true."
+    },
+    {
+      "id": "EXP-04B-R04-LIVE-SCOPE",
+      "status": "pass",
+      "evidence": "Live DOM inspection mounts exactly 46 specimens with family counts 8 discovery, 8 features, 10 pricing, 8 checkout, 8 bundles and 4 mobile; B-FT04 and B-FT06 are absent, every survivor has lineage, and no render failure, page overflow or console log occurs."
+    },
+    {
+      "id": "EXP-04B-R04-NAMED-CONVERGENCE",
+      "status": "pass",
+      "evidence": "Live inspection confirms exact equal geometry for DS05 and PR10, FT03 as four complete cards with one live field, FT07 loading six local image assets after lazy viewport entry, FT08 displaying an explicit Phase A card, and PR09 receiving default-live material."
+    },
+    {
+      "id": "EXP-04B-R04-INTERACTIONS",
+      "status": "pass",
+      "evidence": "Pricing cadence, feature accordion, configurable bundle and checkout fields all update locally; the Round 04 export reports 32/46/46 scope, six sections, 46 functional records, no killed or missing-lineage ID and productionAuthority false."
+    },
+    {
+      "id": "EXP-04B-R04-MOTION",
+      "status": "pass",
+      "evidence": "Normal-motion focus hands exactly one canvas from DS02 to FT03 to PR09 to BU03. Identity, type, controls and repeated commerce geometry remain static."
+    },
+    {
+      "id": "EXP-04B-R04-STATIC-FALLBACK",
+      "status": "pass",
+      "evidence": "The forced-static route mounts 46 specimens with zero canvases, zero live surfaces, zero failures and no page overflow."
+    },
+    {
+      "id": "EXP-04B-PB3-RESPONSIVE-ACCESSIBILITY",
+      "status": "not-applicable",
+      "evidence": "Exhaustive consumer-specific container, viewport, zoom, keyboard, localization, missing-media and recovery proof is explicitly outside this bounded component-system approval and remains follow-up work."
+    },
+    {
+      "id": "EXP-04B-ROUND04-HUMAN-APPROVAL",
+      "status": "pass",
+      "evidence": "The exact Round 04 receipt hash is 2a2f7779de4f2251d837eba163be936ab9e991080acdab06c1d3f9974c6fb844 and records keep for all 46 surviving specimens; H-EXP-04B-CARD-FUNCTIONAL-PROOF is approved through DEC-PRODUCT-COMPONENT-SYSTEM-001."
+    }
+  ],
+  "artifactsProduced": [
+    "Canonical Product Card 02 Phase B 1.0.0 component system",
+    "Exact Round 03 feedback receipt with 11 keep, 35 revise and 1 kill",
+    "32 approved Phase A visual inputs with zero duplicate Round 04 candidates",
+    "46 approved functional specimens across discovery, features, pricing, checkout, bundles and mobile",
+    "B-FT04 and B-FT06 absent from the canonical system",
+    "Eleven Round 03 champions carried forward and thirty-five revisions rebuilt",
+    "Four-card one-live bento, equal family and commercial geometry, real local integration images, explicit Phase A before-and-after card and default-live waitlist material",
+    "Exact 46-keep Round 04 approval receipt with explicit phaseARefs",
+    "Canonical deterministic package and approval record"
+  ],
+  "assumptions": [
+    "The 32 Phase A keeps remain approved visual grammar and lineage inputs; they are not Round 04 review candidates.",
+    "The 11 Round 03 keeps are champions to preserve, while the 35 revisions authorize bounded refinement and not an aesthetic reset.",
+    "B-FT04 and B-FT06 are the only killed Phase B workflows and remain historical evidence rather than active candidates.",
+    "Illustrative digital-product, SaaS, bundle and checkout data demonstrates component behavior without creating commercial authority.",
+    "The six locally sourced integration images are review fixtures and do not create trademark, redistribution or production authority."
+  ],
+  "exceptions": [
+    "Exhaustive consumer-specific responsive, container, accessibility, keyboard, zoom, content-stress and failure-recovery proof remains explicit follow-up work.",
+    "No payment-provider integration, network call, tax engine or production checkout mutation is included.",
+    "Locally sourced integration images remain explicitly non-authoritative review fixtures."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {
+    "gateRequired": true,
+    "gateId": "H-EXP-04B-CARD-FUNCTIONAL-PROOF",
+    "status": "approved"
+  },
+  "nextAction": "Proceed to TASK-EXP-05-TRADING-CARD; apply the canonical Product Card 02 grammar and preserve the explicit consumer-proof and payment-provider exclusions."
+}

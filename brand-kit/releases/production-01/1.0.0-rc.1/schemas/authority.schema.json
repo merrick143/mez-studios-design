@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/authority.schema.json",
+  "title": "Mez Systems authority manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "cutoverId", "status", "rank", "repository", "branch", "path", "productionAuthority", "activeRelease", "previousAuthority", "activationConditions", "rollback"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "cutoverId": {"type": "string"},
+    "status": {"enum": ["prepared", "canonical-active"]},
+    "rank": {"type": ["integer", "null"], "minimum": 1},
+    "repository": {"type": "string"},
+    "branch": {"type": "string"},
+    "path": {"type": "string"},
+    "productionAuthority": {"type": "boolean"},
+    "activeRelease": {"type": "string"},
+    "previousAuthority": {"type": "object"},
+    "activationConditions": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "rollback": {"type": "object"}
+  }
+}

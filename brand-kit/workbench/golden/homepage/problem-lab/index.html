@@ -1,0 +1,3031 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems — Problem Section Lab (8 concepts)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #34342f; --page-charcoal: #2e2e2e;
+  --page-dark: #171715; --page-dark-raised: #252523; --page-paper: #f8f8f8;
+  --page-white: #ffffff; --page-recessed: #f6f5f4; --page-line: #dadad6;
+  --page-line-soft: #e7e5e1; --page-muted: #666662; --page-dark-muted: #b8b8b1;
+  --page-dark-body: #cfcfc9; --card-outline: var(--mz-border-default);
+  --page-ease: cubic-bezier(.22, 1, .36, 1);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 10px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-top nav a:hover { background: rgba(248,248,248,.1); }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; color: var(--page-ink);
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 60ch; }
+.lab-render { position: relative; }
+/* ---- variant styles ---- */
+.pv1-section {
+  width: 100%;
+  background: var(--page-paper);
+  color: var(--page-ink);
+}
+
+.pv1-inner {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+  padding-block: clamp(72px, 9vw, 132px);
+}
+
+.pv1-eyebrow {
+  margin: 0;
+  font-family: var(--mz-font-technical);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+/* Masthead headline: de-emphasised prefix collapses into the oversized subject */
+.pv1-headline {
+  margin: clamp(26px, 4vw, 46px) 0 0;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+}
+
+.pv1-prefix {
+  display: block;
+  max-width: 24ch;
+  font-size: clamp(20px, 2.9vw, 33px);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -.01em;
+  color: var(--page-muted);
+}
+
+.pv1-subject {
+  display: block;
+  margin-top: clamp(14px, 1.7vw, 24px);
+  font-size: clamp(30px, 8.2vw, 100px);
+  line-height: .96;
+  letter-spacing: -.03em;
+  color: var(--page-ink);
+  overflow-wrap: break-word;
+}
+
+/* Standfirst deck */
+.pv1-deck {
+  margin: clamp(24px, 3vw, 38px) 0 0;
+  max-width: 32ch;
+  font-family: var(--mz-font-body);
+  font-size: clamp(19px, 2.3vw, 27px);
+  font-weight: 400;
+  line-height: 1.32;
+  letter-spacing: -.01em;
+  color: var(--page-ink);
+}
+
+/* The single permitted hairline rule — the masthead divider */
+.pv1-rule {
+  height: var(--mz-border-width-hairline, 1px);
+  margin: clamp(38px, 5.4vw, 66px) 0;
+  border: 0;
+  background: var(--mz-border-strong, #8A8A84);
+}
+
+.pv1-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(30px, 5vw, 76px);
+}
+
+.pv1-col {
+  min-width: 0;
+}
+
+.pv1-kicker {
+  margin: 0 0 clamp(14px, 1.7vw, 20px);
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+/* Anaphoric symptom stack — echoes the prefix/subject weight contrast */
+.pv1-stack {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(7px, 1vw, 13px);
+}
+
+.pv1-stack li {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(21px, 2.6vw, 31px);
+  line-height: 1.1;
+  letter-spacing: -.018em;
+  color: var(--page-ink);
+  overflow-wrap: break-word;
+}
+
+.pv1-stack li span {
+  font-weight: 500;
+  color: var(--page-muted);
+}
+
+.pv1-consequence {
+  margin: 0;
+  max-width: 44ch;
+  font-family: var(--mz-font-body);
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.64;
+  color: var(--page-muted);
+  overflow-wrap: break-word;
+}
+
+.pv1-consequence strong {
+  font-weight: 600;
+  color: var(--page-ink);
+}
+
+/* Serif turn line — the single editorial pivot */
+.pv1-turn {
+  margin: clamp(64px, 9vw, 120px) 0 0;
+  max-width: 22ch;
+  font-family: var(--mz-font-editorial);
+  font-weight: 400;
+  font-size: clamp(30px, 5.4vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  color: var(--page-ink);
+}
+
+/* Quiet, confident resolution */
+.pv1-close {
+  margin: clamp(38px, 5vw, 60px) 0 0;
+  max-width: 26ch;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(21px, 3.3vw, 39px);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--page-ink);
+}
+
+@media (max-width: 760px) {
+  .pv1-columns {
+    grid-template-columns: 1fr;
+    gap: clamp(30px, 8vw, 48px);
+  }
+}
+
+/* Subtle, optional entrance — content is fully visible without it */
+@media (prefers-reduced-motion: no-preference) {
+  .pv1-headline,
+  .pv1-deck,
+  .pv1-columns,
+  .pv1-turn,
+  .pv1-close {
+    animation: pv1-rise .7s var(--page-ease) both;
+  }
+
+  .pv1-deck { animation-delay: .06s; }
+  .pv1-columns { animation-delay: .14s; }
+  .pv1-turn { animation-delay: .22s; }
+  .pv1-close { animation-delay: .3s; }
+
+  .pv1-rule {
+    transform-origin: left center;
+    animation: pv1-draw .9s var(--page-ease) both;
+    animation-delay: .1s;
+  }
+}
+
+@keyframes pv1-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes pv1-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.pv2-section {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--page-paper);
+  color: var(--page-ink);
+  font-family: var(--mz-font-body);
+}
+.pv2-section *,
+.pv2-section *::before,
+.pv2-section *::after {
+  box-sizing: border-box;
+}
+
+.pv2-inner {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+  padding-block: clamp(72px, 9vw, 132px);
+}
+
+/* -------------------------------------------------------------- head */
+.pv2-head {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.6vw, 20px);
+  max-width: 720px;
+}
+.pv2-eyebrow {
+  margin: 0;
+  font-family: var(--mz-font-technical);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+.pv2-headline {
+  margin: 0;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(34px, 5.2vw, 60px);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+  color: var(--page-ink);
+}
+.pv2-headline .pv2-quiet {
+  color: var(--page-muted);
+}
+.pv2-setup {
+  margin: 0;
+  max-width: 58ch;
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.55;
+  color: var(--page-muted);
+}
+
+/* ------------------------------------------------------------- stage */
+.pv2-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  margin-top: clamp(40px, 5vw, 72px);
+}
+
+/* ------------------------------------------------ the accumulating pile */
+.pv2-pilewrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+.pv2-pile {
+  position: relative;
+  min-height: clamp(384px, 46vw, 468px);
+}
+
+/* the business being buried: a solid charcoal base (never pure black) */
+.pv2-base {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--mz-radius-frame);
+  border: var(--mz-border-width-hairline, 1px) solid var(--mz-border-strong);
+  background: var(--page-dark);
+  overflow: hidden;
+}
+.pv2-base::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(248, 248, 248, .045) 0 1px, transparent 1px 27px);
+}
+.pv2-base__id {
+  position: absolute;
+  left: clamp(18px, 2.4vw, 26px);
+  right: clamp(18px, 2.4vw, 26px);
+  bottom: clamp(16px, 2vw, 22px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  text-align: right;
+}
+.pv2-base__id strong {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(15px, 1.5vw, 18px);
+  letter-spacing: -.01em;
+  color: var(--page-paper);
+}
+.pv2-base__id span {
+  font-family: var(--mz-font-technical);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+/* each rented tool: a hairline chrome mini-window */
+.pv2-slab {
+  --i: 1;
+  --rot: 0deg;
+  position: absolute;
+  top: calc(clamp(22px, 2.4vw, 28px) + (var(--i) - 1) * clamp(34px, 4.6vw, 50px));
+  left: calc(clamp(12px, 2vw, 22px) + (var(--i) - 1) * clamp(12px, 1.8vw, 20px));
+  width: min(62%, 332px);
+  min-height: clamp(150px, 20vw, 182px);
+  z-index: var(--i);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--mz-radius-container);
+  border: var(--mz-border-width-hairline, 1px) solid var(--mz-border-default);
+  background: var(--page-white);
+  overflow: hidden;
+  transform: rotate(var(--rot));
+  transform-origin: 50% 28%;
+}
+.pv2-pile > .pv2-slab:nth-child(2) { --i: 1; --rot: -0.9deg; }
+.pv2-pile > .pv2-slab:nth-child(3) { --i: 2; --rot: 0.7deg; }
+.pv2-pile > .pv2-slab:nth-child(4) { --i: 3; --rot: -0.6deg; }
+.pv2-pile > .pv2-slab:nth-child(5) { --i: 4; --rot: 0.5deg; }
+
+.pv2-slab__bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: var(--mz-border-width-hairline, 1px) solid var(--page-line-soft);
+  background: var(--page-paper);
+}
+.pv2-slab__dots {
+  display: flex;
+  gap: 5px;
+  flex: none;
+}
+.pv2-slab__dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--mz-radius-full);
+  border: var(--mz-border-width-hairline, 1px) solid var(--mz-border-strong);
+}
+.pv2-slab__name {
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--page-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pv2-slab__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 14px;
+}
+.pv2-slab__line {
+  height: 8px;
+  border-radius: var(--mz-radius-full);
+  background: var(--page-line-soft);
+}
+.pv2-slab__line:nth-child(1) { width: 82%; }
+.pv2-slab__line:nth-child(2) { width: 64%; }
+.pv2-slab__note {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--page-muted);
+}
+.pv2-slab__tag {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 4px 9px;
+  border: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+  border-radius: var(--mz-radius-full);
+  font-family: var(--mz-font-technical);
+  font-size: 9.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+.pv2-pilecap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+.pv2-pilecap::before {
+  content: "";
+  flex: none;
+  width: 22px;
+  height: 1px;
+  background: var(--mz-border-strong);
+}
+
+/* ----------------------------------------------- reading of the weight */
+.pv2-reading {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+  min-width: 0;
+}
+.pv2-reading__cap {
+  margin: 0;
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+.pv2-ledger {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+}
+.pv2-ledger li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: clamp(16px, 1.8vw, 22px) 0;
+  border-bottom: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+}
+.pv2-ledger__k {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(17px, 1.7vw, 20px);
+  letter-spacing: -.01em;
+  color: var(--page-ink);
+}
+.pv2-ledger__n {
+  flex: none;
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: var(--page-muted);
+}
+.pv2-ledger__v {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--page-muted);
+}
+
+/* --------------------------------------------------------- the turn */
+.pv2-turn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(12px, 1.6vw, 18px);
+  margin-top: clamp(56px, 7vw, 104px);
+  padding-top: clamp(36px, 4.5vw, 64px);
+  border-top: var(--mz-border-width-hairline, 1px) solid var(--page-line);
+}
+.pv2-turn__eyebrow {
+  margin: 0;
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+.pv2-turn__lead {
+  margin: 0;
+  max-width: 40ch;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(18px, 2vw, 24px);
+  letter-spacing: -.01em;
+  color: var(--page-muted);
+}
+.pv2-turn__serif {
+  margin: 0;
+  max-width: 20ch;
+  font-family: var(--mz-font-editorial);
+  font-weight: 400;
+  font-size: clamp(34px, 5.4vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  color: var(--page-ink);
+}
+.pv2-turn__own-line {
+  margin: clamp(6px, 1vw, 12px) 0 0;
+  max-width: 24ch;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(18px, 1.9vw, 22px);
+  letter-spacing: -.005em;
+  color: var(--page-ink);
+}
+
+/* single owned layer: one solid mark answers the pile of hollow windows */
+.pv2-owned {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(560px, 100%);
+  margin-top: clamp(10px, 1.5vw, 18px);
+  padding: clamp(16px, 1.8vw, 22px) clamp(18px, 2vw, 26px);
+  border-radius: var(--mz-radius-container);
+  border: var(--mz-border-width-hairline, 1px) solid var(--mz-border-strong);
+  background: var(--page-dark);
+  text-align: left;
+}
+.pv2-owned__mark {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--page-paper);
+}
+.pv2-owned__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.pv2-owned__text strong {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(15px, 1.5vw, 17px);
+  letter-spacing: -.01em;
+  color: var(--page-paper);
+}
+.pv2-owned__text span {
+  font-family: var(--mz-font-technical);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+/* ------------------------------------------------------- responsive */
+@media (max-width: 900px) {
+  .pv2-stage {
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 6vw, 40px);
+  }
+  .pv2-pilewrap {
+    max-width: 520px;
+  }
+}
+
+/* --------------------------------------------------- optional motion */
+@keyframes pv2-sway {
+  0%, 100% { transform: rotate(var(--rot)) translateY(0); }
+  50%      { transform: rotate(var(--rot)) translateY(-3px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pv2-slab {
+    animation: pv2-sway 7.5s var(--page-ease) infinite;
+    animation-delay: calc(var(--i) * -1.3s);
+  }
+}
+
+.pv3-section{
+  width:100%;
+  background:var(--page-dark);
+  color:var(--page-dark-body);
+  font-family:var(--mz-font-body);
+  -webkit-font-smoothing:antialiased;
+}
+.pv3-inner{
+  max-width:1180px;
+  margin-inline:auto;
+  padding-inline:clamp(20px,5vw,64px);
+  padding-block:clamp(72px,9vw,132px);
+}
+
+/* ---- head ---- */
+.pv3-head{ display:flex; flex-direction:column; gap:16px; max-width:760px; }
+.pv3-eyebrow{
+  margin:0;
+  font-family:var(--mz-font-technical);
+  font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--page-dark-muted);
+}
+.pv3-title{
+  margin:0;
+  font-family:var(--mz-font-display); font-weight:600;
+  font-size:clamp(34px,5.2vw,60px); line-height:1.02; letter-spacing:-.025em;
+  color:var(--page-paper);
+}
+.pv3-title .pv3-quiet{ color:var(--page-dark-muted); }
+.pv3-setup{
+  margin:0;
+  font-size:clamp(16px,1.9vw,19px); line-height:1.55; color:var(--page-dark-body);
+  max-width:60ch;
+}
+
+/* ---- field caption ---- */
+.pv3-fieldcap{
+  display:flex; align-items:center; flex-wrap:wrap; gap:12px;
+  margin-top:clamp(44px,6vw,76px);
+}
+.pv3-fieldcap span{
+  font-family:var(--mz-font-technical);
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--page-dark-muted);
+  padding:5px 11px;
+  border:var(--mz-border-width-hairline) solid rgba(248,248,248,.16);
+  border-radius:var(--mz-radius-full);
+}
+.pv3-fieldcap b{ font-weight:500; font-size:14px; color:var(--page-dark-body); }
+
+/* ---- disconnected field ---- */
+.pv3-field{
+  position:relative;
+  margin-top:16px;
+  min-height:clamp(360px,44vw,520px);
+  border:var(--mz-border-width-hairline) solid rgba(248,248,248,.10);
+  border-radius:var(--mz-radius-frame);
+  background:radial-gradient(130% 100% at 50% 50%, rgba(248,248,248,.045), rgba(248,248,248,0) 62%);
+  overflow:hidden;
+}
+
+/* broken radial connectors — short faded stubs that reach nothing */
+.pv3-wires{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+.pv3-wires i{
+  position:absolute; left:50%; top:50%;
+  height:var(--mz-border-width-hairline); width:var(--len,clamp(52px,7vw,88px));
+  transform-origin:0 50%;
+  transform:rotate(var(--ang));
+  background:linear-gradient(90deg,
+    rgba(248,248,248,0) 0 26%,
+    rgba(248,248,248,.24) 52%,
+    rgba(248,248,248,.24) 64%,
+    rgba(248,248,248,0) 94%);
+}
+
+/* hollow, empty centre where the owned layer should be */
+.pv3-void{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  z-index:3;
+  width:clamp(120px,14vw,158px); aspect-ratio:1;
+  display:grid; place-items:center; text-align:center;
+}
+.pv3-void::before{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  border:var(--mz-border-width-hairline) dashed rgba(248,248,248,.30);
+}
+.pv3-void span{
+  position:relative; max-width:9ch;
+  font-family:var(--mz-font-technical);
+  font-size:9.5px; letter-spacing:.11em; line-height:1.45; text-transform:uppercase;
+  color:rgba(248,248,248,.52);
+}
+
+/* abstract app-window chips */
+.pv3-win{
+  position:absolute; left:var(--x); top:var(--y);
+  transform:translate(-50%,-50%) rotate(var(--tilt,0deg));
+  z-index:2; margin:0;
+  width:clamp(118px,15vw,166px);
+  padding:10px 11px 12px;
+  border:var(--mz-border-width-hairline) solid rgba(248,248,248,.16);
+  border-radius:var(--mz-radius-compact);
+  background:rgba(37,37,35,.92);
+}
+.pv3-win__bar{ display:flex; align-items:center; gap:5px; margin-bottom:10px; }
+.pv3-win__bar i{ width:5px; height:5px; border-radius:50%; background:rgba(248,248,248,.30); }
+.pv3-win__bar b{ flex:1; height:4px; border-radius:2px; margin-left:4px; background:rgba(248,248,248,.10); }
+.pv3-win__body{ display:flex; flex-direction:column; gap:6px; }
+.pv3-win__body span{ height:4px; border-radius:2px; background:rgba(248,248,248,.09); }
+.pv3-win__body span:nth-child(1){ width:100%; }
+.pv3-win__body span:nth-child(2){ width:64%; }
+.pv3-win__tag{
+  margin-top:12px;
+  font-family:var(--mz-font-technical);
+  font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:rgba(248,248,248,.58);
+}
+
+/* ---- field note ---- */
+.pv3-note{
+  margin:clamp(24px,3vw,32px) 0 0;
+  max-width:64ch;
+  font-size:15px; line-height:1.6; color:var(--page-dark-muted);
+}
+
+/* ---- consequences ---- */
+.pv3-conskick{
+  margin:clamp(48px,6.5vw,84px) 0 16px;
+  font-family:var(--mz-font-technical);
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--page-dark-muted);
+}
+.pv3-cons{
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:repeat(3,1fr);
+  border:var(--mz-border-width-hairline) solid rgba(248,248,248,.12);
+  border-radius:var(--mz-radius-frame);
+  overflow:hidden;
+}
+.pv3-cons li{
+  padding:clamp(22px,2.6vw,34px);
+  border-left:var(--mz-border-width-hairline) solid rgba(248,248,248,.12);
+}
+.pv3-cons li:first-child{ border-left:0; }
+.pv3-cons__k{
+  display:block; margin-bottom:14px;
+  font-family:var(--mz-font-technical);
+  font-size:11px; letter-spacing:.12em;
+  color:var(--page-dark-muted);
+}
+.pv3-cons__t{
+  margin:0 0 9px;
+  font-family:var(--mz-font-display); font-weight:600;
+  font-size:clamp(16px,1.7vw,18px); line-height:1.2; letter-spacing:-.01em;
+  color:var(--page-paper);
+}
+.pv3-cons li p{ margin:0; font-size:14.5px; line-height:1.6; color:var(--page-dark-muted); }
+
+/* ---- the turn ---- */
+.pv3-turn{
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+  margin-top:clamp(52px,7vw,96px);
+  text-align:center;
+}
+.pv3-turn-lead{ margin:0; font-size:15.5px; color:var(--page-dark-muted); }
+.pv3-turn-line{
+  margin:0;
+  font-family:var(--mz-font-editorial); font-weight:400;
+  font-size:clamp(32px,4.8vw,54px); line-height:1.08; letter-spacing:-.01em;
+  color:var(--page-paper);
+}
+.pv3-turn-cta{
+  margin:8px 0 0;
+  font-family:var(--mz-font-display); font-weight:600;
+  font-size:clamp(17px,2vw,22px); letter-spacing:-.01em;
+  color:var(--page-dark-body);
+}
+
+/* ---- responsive: stack the field below 860px ---- */
+@media (max-width:859px){
+  .pv3-field{
+    min-height:0;
+    display:flex; flex-direction:column; gap:12px;
+    padding:clamp(16px,4.5vw,24px);
+    background:none;
+  }
+  .pv3-wires{ display:none; }
+  .pv3-win{
+    position:static; transform:none; width:100%;
+    display:flex; flex-direction:column;
+  }
+  .pv3-win__tag{ margin-top:11px; }
+  .pv3-void{
+    position:static; transform:none;
+    width:100%; aspect-ratio:auto; min-height:88px;
+    padding:22px;
+  }
+  .pv3-void::before{ border-radius:var(--mz-radius-container); }
+}
+
+@media (max-width:720px){
+  .pv3-cons{ grid-template-columns:1fr; }
+  .pv3-cons li{ border-left:0; border-top:var(--mz-border-width-hairline) solid rgba(248,248,248,.12); }
+  .pv3-cons li:first-child{ border-top:0; }
+}
+
+/* ---- optional, subtle motion ---- */
+@media (prefers-reduced-motion: no-preference){
+  .pv3-void::before{ animation:pv3-spin 44s linear infinite; }
+  .pv3-wires i{ opacity:.5; animation:pv3-flick 5.2s var(--page-ease) infinite; }
+  .pv3-wires i:nth-child(2){ animation-delay:.7s; }
+  .pv3-wires i:nth-child(3){ animation-delay:1.5s; }
+  .pv3-wires i:nth-child(4){ animation-delay:2.2s; }
+  .pv3-wires i:nth-child(5){ animation-delay:1.1s; }
+  .pv3-wires i:nth-child(6){ animation-delay:2.9s; }
+}
+@keyframes pv3-spin{ to{ transform:rotate(360deg); } }
+@keyframes pv3-flick{ 0%,100%{ opacity:.3; } 50%{ opacity:.85; } }
+
+.pv4-section{
+  --pv4-doc-pad:clamp(22px,4vw,44px);
+  background:var(--page-paper);
+  color:var(--page-ink);
+  font-family:var(--mz-font-body);
+  -webkit-font-smoothing:antialiased;
+}
+.pv4-inner{
+  max-width:1180px;
+  margin-inline:auto;
+  padding-inline:clamp(20px,5vw,64px);
+  padding-block:clamp(72px,9vw,132px);
+}
+
+/* masthead */
+.pv4-eyebrow{
+  margin:0 0 clamp(22px,3vw,34px);
+  font-family:var(--mz-font-technical);
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--page-muted);
+}
+.pv4-masthead-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  align-items:end;
+  gap:clamp(20px,4vw,56px);
+}
+.pv4-headline{
+  margin:0;
+  font-family:var(--mz-font-display);
+  font-weight:600;
+  font-size:clamp(33px,4.6vw,56px);
+  line-height:1.03;
+  letter-spacing:-.022em;
+  color:var(--page-ink);
+}
+.pv4-setup{
+  margin:0;
+  max-width:46ch;
+  font-size:clamp(15px,1.5vw,17.5px);
+  line-height:1.62;
+  color:var(--page-body);
+}
+
+/* statement document */
+.pv4-statement{
+  position:relative;
+  overflow:visible;
+  max-width:640px;
+  margin:clamp(44px,6vw,80px) auto 0;
+  padding:var(--pv4-doc-pad);
+  border:var(--mz-border-width-hairline) solid var(--mz-border-default);
+  border-radius:var(--mz-radius-panel);
+  background:var(--page-white);
+}
+.pv4-statement-head{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px 24px;
+}
+.pv4-doc-title{display:flex;flex-direction:column;gap:7px;}
+.pv4-doc-kicker{
+  font-family:var(--mz-font-technical);
+  font-size:11px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--page-muted);
+}
+.pv4-doc-title strong{
+  font-family:var(--mz-font-display);
+  font-weight:600;
+  font-size:clamp(19px,2.1vw,23px);
+  letter-spacing:-.01em;
+  color:var(--page-ink);
+}
+.pv4-doc-meta{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin:0;
+  text-align:left;
+}
+.pv4-doc-meta > div{
+  display:flex;
+  gap:10px;
+  justify-content:flex-start;
+  font-family:var(--mz-font-technical);
+  font-size:11.5px;
+  line-height:1.3;
+}
+.pv4-doc-meta dt{
+  color:var(--page-muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.pv4-doc-meta dd{margin:0;color:var(--page-ink);}
+
+/* tear rule with punched notches */
+.pv4-tear{
+  position:relative;
+  height:1px;
+  margin:clamp(18px,2.6vw,26px) calc(-1 * var(--pv4-doc-pad));
+  background-image:repeating-linear-gradient(90deg,var(--mz-border-strong) 0 5px,transparent 5px 11px);
+}
+.pv4-tear::before,
+.pv4-tear::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:18px;height:18px;
+  border-radius:50%;
+  background:var(--page-paper);
+  transform:translateY(-50%);
+}
+.pv4-tear::before{left:-9px;}
+.pv4-tear::after{right:-9px;}
+
+/* column header */
+.pv4-lines-head{
+  display:flex;
+  justify-content:space-between;
+  padding:0 2px 4px;
+  font-family:var(--mz-font-technical);
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--page-muted);
+}
+
+/* itemised lines */
+.pv4-lines{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.pv4-line{
+  display:flex;
+  gap:12px;
+  padding:15px 2px;
+  border-top:var(--mz-border-width-hairline) solid var(--page-line-soft);
+}
+.pv4-line:first-child{border-top:0;}
+.pv4-line-idx{
+  flex:0 0 auto;
+  font-family:var(--mz-font-technical);
+  font-size:12px;
+  line-height:1.5;
+  color:var(--page-muted);
+}
+.pv4-line-main{flex:1 1 auto;min-width:0;}
+.pv4-line-top{
+  display:flex;
+  align-items:baseline;
+}
+.pv4-line-label{
+  flex:0 1 auto;
+  font-family:var(--mz-font-technical);
+  font-size:13.5px;
+  letter-spacing:-.01em;
+  color:var(--page-ink);
+}
+.pv4-leader{
+  flex:1 1 auto;
+  min-width:18px;
+  margin:0 10px;
+  transform:translateY(-3px);
+  border-bottom:var(--mz-border-width-hairline) dotted var(--mz-border-strong);
+}
+.pv4-line-charge{
+  flex:0 0 auto;
+  white-space:nowrap;
+  font-family:var(--mz-font-technical);
+  font-size:12.5px;
+  color:var(--page-body);
+}
+.pv4-line-sub{
+  display:block;
+  margin-top:5px;
+  font-size:13px;
+  line-height:1.5;
+  color:var(--page-muted);
+}
+
+/* subtotal */
+.pv4-subtotal{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:4px 16px;
+  padding:15px 2px 0;
+  border-top:var(--mz-border-width-hairline) solid var(--page-line);
+}
+.pv4-subtotal-label{
+  flex:0 0 auto;
+  font-family:var(--mz-font-technical);
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--page-muted);
+}
+.pv4-subtotal-note{
+  flex:0 1 auto;
+  min-width:0;
+  text-align:right;
+  font-family:var(--mz-font-technical);
+  font-size:12.5px;
+  color:var(--page-ink);
+}
+
+/* rising indicator */
+.pv4-rising{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-top:clamp(18px,2.4vw,24px);
+  padding:16px 18px;
+  border:var(--mz-border-width-hairline) solid var(--page-line-soft);
+  border-radius:var(--mz-radius-container);
+}
+.pv4-rising-bars{
+  flex:0 0 auto;
+  display:flex;
+  align-items:flex-end;
+  gap:6px;
+  height:38px;
+  padding-bottom:6px;
+  border-bottom:var(--mz-border-width-hairline) solid var(--page-line);
+}
+.pv4-rising-bars i{
+  width:9px;
+  background:var(--page-ink);
+  border-radius:2px 2px 0 0;
+}
+.pv4-rising-bars i:nth-child(1){height:26%;}
+.pv4-rising-bars i:nth-child(2){height:43%;}
+.pv4-rising-bars i:nth-child(3){height:60%;}
+.pv4-rising-bars i:nth-child(4){height:78%;}
+.pv4-rising-bars i:nth-child(5){height:100%;}
+.pv4-rising-text{
+  margin:0;
+  font-size:13px;
+  line-height:1.5;
+  color:var(--page-muted);
+}
+
+/* retained by vendor */
+.pv4-retained{
+  margin-top:clamp(18px,2.4vw,24px);
+  padding:clamp(16px,2vw,22px);
+  border:var(--mz-border-width-hairline) solid var(--page-line);
+  border-radius:var(--mz-radius-container);
+  background:var(--page-paper);
+}
+.pv4-retained-tag{
+  margin:0 0 12px;
+  font-family:var(--mz-font-technical);
+  font-size:10.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--page-muted);
+}
+.pv4-retained-list{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0 0 12px;
+  padding:0;
+}
+.pv4-retained-list li{
+  padding:7px 13px;
+  border:var(--mz-border-width-hairline) solid var(--page-line);
+  border-radius:var(--mz-radius-control);
+  font-family:var(--mz-font-technical);
+  font-size:12px;
+  color:var(--page-ink);
+}
+.pv4-retained-note{
+  margin:0;
+  font-size:13.5px;
+  line-height:1.55;
+  color:var(--page-body);
+}
+
+/* fine print */
+.pv4-fineprint{
+  margin:clamp(16px,2vw,20px) 0 0;
+  font-family:var(--mz-font-technical);
+  font-size:11.5px;
+  line-height:1.65;
+  color:var(--page-muted);
+}
+
+/* amount due */
+.pv4-due{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px 20px;
+}
+.pv4-due-label{
+  font-family:var(--mz-font-technical);
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--page-muted);
+}
+.pv4-due-amount{
+  display:inline-flex;
+  align-items:center;
+  gap:16px;
+}
+.pv4-due-struck{
+  font-family:var(--mz-font-technical);
+  font-size:clamp(18px,2.4vw,24px);
+  color:var(--page-muted);
+  text-decoration-thickness:from-font;
+}
+.pv4-due-real{
+  display:inline-block;
+  padding:7px 18px;
+  border:1.5px solid var(--page-ink);
+  border-radius:var(--mz-radius-control);
+  transform:rotate(-3deg);
+  font-family:var(--mz-font-display);
+  font-weight:600;
+  font-size:clamp(22px,3vw,30px);
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  color:var(--page-ink);
+}
+.pv4-due-note{
+  margin:14px 0 0;
+  font-size:13px;
+  line-height:1.55;
+  color:var(--page-muted);
+}
+
+/* coda */
+.pv4-coda{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  max-width:760px;
+  margin:clamp(52px,7vw,96px) auto 0;
+  text-align:center;
+}
+.pv4-turn{
+  margin:0;
+  font-family:var(--mz-font-editorial);
+  font-weight:400;
+  font-size:clamp(28px,4.4vw,46px);
+  line-height:1.1;
+  letter-spacing:-.01em;
+  color:var(--page-ink);
+}
+.pv4-close{
+  margin:0;
+  font-family:var(--mz-font-display);
+  font-weight:600;
+  font-size:clamp(16px,1.9vw,20px);
+  letter-spacing:.005em;
+  color:var(--page-muted);
+}
+
+/* responsive */
+@media (max-width:760px){
+  .pv4-masthead-grid{grid-template-columns:1fr;align-items:start;gap:18px;}
+  .pv4-statement-head{flex-direction:column;}
+}
+@media (max-width:520px){
+  .pv4-line-label{font-size:12.5px;}
+  .pv4-line-charge{font-size:11.5px;}
+  .pv4-leader{margin:0 8px;}
+  .pv4-rising{flex-direction:column;align-items:flex-start;gap:12px;}
+}
+
+/* subtle, optional motion */
+@media (prefers-reduced-motion:no-preference){
+  .pv4-rising-bars i{
+    transform-origin:bottom;
+    animation:pv4-rise .7s var(--page-ease) both;
+  }
+  .pv4-rising-bars i:nth-child(1){animation-delay:.02s;}
+  .pv4-rising-bars i:nth-child(2){animation-delay:.10s;}
+  .pv4-rising-bars i:nth-child(3){animation-delay:.18s;}
+  .pv4-rising-bars i:nth-child(4){animation-delay:.26s;}
+  .pv4-rising-bars i:nth-child(5){animation-delay:.34s;}
+  .pv4-due-real{animation:pv4-stamp .5s var(--page-ease) .42s both;}
+  @keyframes pv4-rise{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+  @keyframes pv4-stamp{
+    0%{opacity:0;transform:rotate(-3deg) scale(1.35);}
+    60%{opacity:1;}
+    100%{opacity:1;transform:rotate(-3deg) scale(1);}
+  }
+}
+
+.pv5-section {
+  --pv5-hair: var(--mz-border-width-hairline, 1px);
+  --pv5-ink-soft: var(--page-body, #34342f);
+  --pv5-dark-hair: rgba(248, 248, 248, .14);
+  position: relative;
+  width: 100%;
+  background: var(--page-paper);
+  color: var(--page-ink);
+  font-family: var(--mz-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+.pv5-inner {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+  padding-block: clamp(72px, 9vw, 132px);
+}
+.pv5-head {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.6vw, 20px);
+  max-width: 720px;
+}
+.pv5-eyebrow {
+  font-family: var(--mz-font-technical);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+.pv5-headline {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -.025em;
+  color: var(--page-ink);
+}
+.pv5-headline-quiet {
+  display: block;
+  color: var(--page-muted);
+}
+.pv5-setup {
+  max-width: 60ch;
+  font-size: clamp(16px, 1.7vw, 19px);
+  line-height: 1.55;
+  color: var(--pv5-ink-soft);
+}
+
+/* Diptych frame — rented light half beside owned charcoal half */
+.pv5-diptych {
+  margin-top: clamp(36px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px;
+  border: var(--pv5-hair) solid var(--mz-border-default);
+  border-radius: var(--mz-radius-frame);
+  background: var(--page-white);
+}
+.pv5-side {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.2vw, 26px);
+  padding: clamp(22px, 3vw, 38px);
+  border-radius: var(--mz-radius-panel);
+}
+.pv5-side--rented {
+  background: var(--page-paper);
+}
+.pv5-side--owned {
+  background: var(--page-dark);
+  color: var(--page-paper);
+}
+
+.pv5-side-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pv5-state {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  border-radius: var(--mz-radius-full);
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.pv5-state--rented {
+  border: var(--pv5-hair) solid var(--mz-border-strong);
+  color: var(--page-muted);
+  background: transparent;
+}
+.pv5-state--owned {
+  background: var(--page-paper);
+  color: var(--page-dark);
+}
+.pv5-state-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.pv5-state--rented .pv5-state-dot {
+  border: var(--pv5-hair) solid var(--mz-border-strong);
+}
+.pv5-state--owned .pv5-state-dot {
+  background: var(--page-dark);
+}
+.pv5-side-note {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(17px, 1.8vw, 21px);
+  line-height: 1.25;
+  letter-spacing: -.01em;
+}
+.pv5-side--rented .pv5-side-note {
+  color: var(--page-ink);
+}
+.pv5-side--owned .pv5-side-note {
+  color: var(--page-paper);
+}
+
+/* Rented side — scattered, disconnected chrome fragments */
+.pv5-scatter {
+  position: relative;
+  min-height: clamp(268px, 30vw, 324px);
+  overflow: hidden;
+  border-radius: var(--mz-radius-container);
+}
+.pv5-frag {
+  position: absolute;
+  width: clamp(126px, 15vw, 166px);
+  padding: 11px 12px 13px;
+  border: var(--pv5-hair) solid var(--page-line);
+  border-radius: var(--mz-radius-compact);
+  background: var(--page-white);
+  rotate: var(--pv5-rot, 0deg);
+}
+.pv5-frag--a { left: 1%;  top: 3%;  --pv5-rot: -5deg; z-index: 3; }
+.pv5-frag--b { left: 45%; top: 0%;  --pv5-rot: 4deg;  z-index: 5; }
+.pv5-frag--c { left: 19%; top: 33%; --pv5-rot: -2deg; z-index: 6; }
+.pv5-frag--d { left: 52%; top: 45%; --pv5-rot: 6deg;  z-index: 4; }
+.pv5-frag--e { left: 4%;  top: 57%; --pv5-rot: 3deg;  z-index: 2; }
+.pv5-frag-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-bottom: 9px;
+  margin-bottom: 10px;
+  border-bottom: var(--pv5-hair) solid var(--page-line-soft);
+}
+.pv5-frag-dot {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  border: var(--pv5-hair) solid var(--mz-border-strong);
+}
+.pv5-frag-chip {
+  font-family: var(--mz-font-technical);
+  font-size: 8.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+.pv5-frag-label {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: -.005em;
+  color: var(--page-ink);
+}
+.pv5-frag-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+.pv5-frag-lines i {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--page-line);
+}
+.pv5-frag-lines i:nth-child(2) {
+  width: 70%;
+}
+.pv5-meter {
+  margin-top: 11px;
+  height: 6px;
+  border-radius: var(--mz-radius-full);
+  background: var(--page-line-soft);
+  overflow: hidden;
+}
+.pv5-meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--page-muted);
+}
+.pv5-meter--low span { width: 22%; }
+.pv5-meter--high span { width: 88%; }
+.pv5-frag-foot {
+  margin-top: 8px;
+  font-family: var(--mz-font-technical);
+  font-size: 8.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+.pv5-side-foot {
+  margin-top: auto;
+  font-size: clamp(13.5px, 1.4vw, 15px);
+  line-height: 1.6;
+}
+.pv5-side--rented .pv5-side-foot { color: var(--page-muted); }
+.pv5-side--owned .pv5-side-foot { color: var(--page-dark-body); }
+.pv5-side-foot strong { font-weight: 600; }
+.pv5-side--rented .pv5-side-foot strong { color: var(--page-ink); }
+.pv5-side--owned .pv5-side-foot strong { color: var(--page-paper); }
+
+/* Owned side — one calm surface holding the same concerns */
+.pv5-owned-surface {
+  display: flex;
+  flex-direction: column;
+  border: var(--pv5-hair) solid var(--pv5-dark-hair);
+  border-radius: var(--mz-radius-container);
+  background: var(--page-dark-raised);
+  overflow: hidden;
+}
+.pv5-owned-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 18px;
+  border-bottom: var(--pv5-hair) solid var(--pv5-dark-hair);
+}
+.pv5-owned-title {
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -.01em;
+  color: var(--page-paper);
+}
+.pv5-owned-owner {
+  font-family: var(--mz-font-technical);
+  font-size: 9.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+.pv5-owned-rows {
+  display: flex;
+  flex-direction: column;
+}
+.pv5-owned-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-top: var(--pv5-hair) solid var(--pv5-dark-hair);
+}
+.pv5-owned-row:first-child {
+  border-top: 0;
+}
+.pv5-owned-hold {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 2px;
+  background: var(--page-paper);
+}
+.pv5-owned-row span {
+  font-size: 13.5px;
+  color: var(--page-dark-body);
+}
+.pv5-owned-row b {
+  margin-left: auto;
+  font-family: var(--mz-font-technical);
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+/* Turn coda — editorial serif turn line into the answer */
+.pv5-turn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: clamp(44px, 6vw, 84px);
+  text-align: center;
+}
+.pv5-turn-line {
+  max-width: 640px;
+  font-family: var(--mz-font-editorial);
+  font-weight: 400;
+  font-size: clamp(28px, 4.4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--page-ink);
+}
+.pv5-turn-line em {
+  font-style: normal;
+  color: var(--page-muted);
+}
+.pv5-turn-strong {
+  max-width: 44ch;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(16px, 1.9vw, 21px);
+  line-height: 1.35;
+  letter-spacing: -.005em;
+  color: var(--pv5-ink-soft);
+}
+
+@media (max-width: 860px) {
+  .pv5-diptych { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .pv5-frag { width: clamp(120px, 44vw, 152px); }
+  .pv5-scatter { min-height: 300px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pv5-frag--b,
+  .pv5-frag--d,
+  .pv5-frag--e { animation: pv5-drift 12s var(--page-ease) infinite; }
+  .pv5-frag--d { animation-duration: 15s; animation-delay: -4s; }
+  .pv5-frag--e { animation-duration: 13s; animation-delay: -7s; }
+  .pv5-meter span { animation: pv5-flicker 7s var(--page-ease) infinite; }
+}
+@keyframes pv5-drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -5px; }
+}
+@keyframes pv5-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+
+.pv6-section{
+  background:var(--page-paper);
+  color:var(--page-ink);
+  font-family:var(--mz-font-body);
+}
+.pv6-inner{
+  max-width:1180px;
+  margin-inline:auto;
+  padding-inline:clamp(20px,5vw,64px);
+  padding-block:clamp(72px,9vw,132px);
+}
+
+/* -- header -- */
+.pv6-head{ display:flex; flex-direction:column; gap:18px; max-width:720px; }
+.pv6-eyebrow{
+  font-family:var(--mz-font-technical);
+  font-size:12px; font-weight:500; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--page-muted);
+}
+.pv6-headline{
+  font-family:var(--mz-font-display); font-weight:600;
+  font-size:clamp(33px,5vw,58px); line-height:1.02; letter-spacing:-.025em;
+  color:var(--page-ink);
+}
+.pv6-quiet{ color:var(--page-muted); }
+.pv6-setup{
+  max-width:58ch;
+  font-size:clamp(17px,1.9vw,21px); line-height:1.5; color:var(--page-muted);
+}
+
+/* -- the charcoal loop stage (focal dark object in a light room) -- */
+.pv6-stage{
+  position:relative;
+  margin-top:clamp(40px,6vw,72px);
+  padding:clamp(24px,4.5vw,56px);
+  border:var(--mz-border-width-hairline,1px) solid var(--mz-border-default);
+  border-radius:var(--mz-radius-frame);
+  background:var(--page-dark);
+  color:var(--page-paper);
+  overflow:hidden;
+}
+.pv6-stage__label{
+  display:block; text-align:center;
+  font-family:var(--mz-font-technical);
+  font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--page-dark-muted);
+}
+
+/* radial orbit (tablet + desktop) */
+.pv6-orbit{
+  position:relative;
+  width:clamp(300px,42vw,420px);
+  aspect-ratio:1;
+  margin:clamp(64px,7vw,88px) auto clamp(56px,6vw,76px);
+}
+.pv6-ring{
+  position:absolute; inset:0; border-radius:50%;
+  border:var(--mz-border-width-hairline,1px) solid rgba(248,248,248,.16);
+}
+.pv6-ring::after{
+  content:""; position:absolute; inset:12.5%; border-radius:50%;
+  border:var(--mz-border-width-hairline,1px) dashed rgba(248,248,248,.07);
+}
+.pv6-travel{ position:absolute; inset:0; }
+.pv6-dot{
+  position:absolute; left:50%; top:0; width:10px; height:10px;
+  margin:-5px 0 0 -5px; border-radius:50%;
+  background:var(--page-paper);
+  box-shadow:0 0 0 4px rgba(248,248,248,.08);
+}
+.pv6-reset{
+  position:absolute; left:14.6%; top:14.6%;
+  transform:translate(-50%,-50%);
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 11px; white-space:nowrap;
+  border-radius:var(--mz-radius-full);
+  border:var(--mz-border-width-hairline,1px) solid rgba(248,248,248,.24);
+  background:var(--page-dark);
+  font-family:var(--mz-font-technical);
+  font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--page-dark-body);
+}
+.pv6-core{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:clamp(118px,15vw,152px); aspect-ratio:1;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  text-align:center; border-radius:50%;
+  border:var(--mz-border-width-hairline,1px) solid rgba(248,248,248,.18);
+  background:var(--page-dark-raised);
+}
+.pv6-core b{
+  font-family:var(--mz-font-display); font-weight:600;
+  font-size:clamp(30px,4vw,42px); line-height:1; letter-spacing:-.02em;
+  color:var(--page-paper);
+}
+.pv6-core span{
+  max-width:12ch; line-height:1.3;
+  font-family:var(--mz-font-technical);
+  font-size:9.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--page-dark-muted);
+}
+.pv6-node{
+  position:absolute; width:clamp(128px,15.5vw,164px);
+  display:flex; flex-direction:column; gap:3px;
+  padding:12px 14px; text-align:left;
+  border-radius:var(--mz-radius-container);
+  border:var(--mz-border-width-hairline,1px) solid rgba(248,248,248,.18);
+  background:var(--page-dark);
+}
+.pv6-node em{
+  font-style:normal; font-family:var(--mz-font-technical);
+  font-size:10px; letter-spacing:.14em; color:var(--page-dark-muted);
+}
+.pv6-node strong{
+  font-family:var(--mz-font-display); font-weight:600;
+  font-size:14.5px; line-height:1.15; letter-spacing:-.01em; color:var(--page-paper);
+}
+.pv6-node small{ font-size:11.5px; line-height:1.4; color:var(--page-dark-body); }
+.pv6-node--1{ left:50%; top:0; transform:translate(-50%,-50%); text-align:center; align-items:center; }
+.pv6-node--2{ left:100%; top:50%; transform:translate(-50%,-50%); }
+.pv6-node--3{ left:50%; top:100%; transform:translate(-50%,-50%); text-align:center; align-items:center; }
+.pv6-node--4{ left:0; top:50%; transform:translate(-50%,-50%); text-align:right; align-items:flex-end; }
+
+/* linear loop (mobile fallback) — hidden until the small-screen breakpoint */
+.pv6-track{ display:none; }
+
+/* accumulation footer — "too many tools" */
+.pv6-adds{
+  list-style:none;
+  display:flex; flex-wrap:wrap; gap:8px 10px; justify-content:center;
+  padding-top:clamp(20px,2.6vw,28px);
+  border-top:var(--mz-border-width-hairline,1px) solid rgba(248,248,248,.12);
+}
+.pv6-adds li{
+  padding:7px 12px;
+  border:var(--mz-border-width-hairline,1px) solid rgba(248,248,248,.14);
+  border-radius:var(--mz-radius-full);
+  font-family:var(--mz-font-technical);
+  font-size:11px; letter-spacing:.02em; color:var(--page-dark-muted);
+}
+
+/* consequences enclosure */
+.pv6-consequences{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  margin-top:clamp(40px,5vw,64px);
+  border:var(--mz-border-width-hairline,1px) solid var(--page-line);
+  border-radius:var(--mz-radius-frame);
+  overflow:hidden;
+}
+.pv6-consequence{
+  padding:clamp(22px,2.6vw,32px);
+  border-left:var(--mz-border-width-hairline,1px) solid var(--page-line);
+}
+.pv6-consequence:first-child{ border-left:0; }
+.pv6-consequence h3{
+  margin-bottom:10px;
+  font-family:var(--mz-font-display); font-weight:600;
+  font-size:16.5px; line-height:1.25; letter-spacing:-.01em; color:var(--page-ink);
+}
+.pv6-consequence p{ font-size:14.5px; line-height:1.6; color:var(--page-muted); }
+
+/* the turn */
+.pv6-turn{
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  margin-top:clamp(52px,7vw,92px); text-align:center;
+}
+.pv6-turn__kicker{
+  font-family:var(--mz-font-technical);
+  font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--page-muted);
+}
+.pv6-turn__lead{
+  max-width:36ch; font-size:clamp(16px,1.9vw,19px); line-height:1.5; color:var(--page-muted);
+}
+.pv6-turn__line{
+  max-width:20ch; margin-top:6px;
+  font-family:var(--mz-font-display); font-weight:600;
+  font-size:clamp(24px,3.4vw,40px); line-height:1.1; letter-spacing:-.02em; color:var(--page-ink);
+}
+
+/* motion — one subtle marker travelling the loop, never resolving */
+@media (prefers-reduced-motion:no-preference){
+  .pv6-travel{ animation:pv6-orbit 18s linear infinite; transform-origin:50% 50%; }
+}
+@keyframes pv6-orbit{ to{ transform:rotate(360deg); } }
+
+/* responsive */
+@media (max-width:900px){
+  .pv6-consequences{ grid-template-columns:1fr; }
+  .pv6-consequence{ border-left:0; border-top:var(--mz-border-width-hairline,1px) solid var(--page-line); }
+  .pv6-consequence:first-child{ border-top:0; }
+}
+@media (max-width:620px){
+  .pv6-orbit{ display:none; }
+  .pv6-stage__label{ text-align:left; }
+  .pv6-adds{ justify-content:flex-start; }
+  .pv6-track{
+    display:block; list-style:none;
+    margin-top:clamp(22px,5vw,28px);
+    position:relative;
+  }
+  .pv6-track li{
+    position:relative; display:flex; gap:14px;
+    padding:15px 0 15px 2px;
+    border-top:var(--mz-border-width-hairline,1px) solid rgba(248,248,248,.1);
+  }
+  .pv6-track li:first-child{ border-top:0; }
+  .pv6-track em{
+    font-style:normal; min-width:20px; padding-top:2px;
+    font-family:var(--mz-font-technical);
+    font-size:11px; letter-spacing:.1em; color:var(--page-dark-muted);
+  }
+  .pv6-track strong{
+    display:block; font-family:var(--mz-font-display); font-weight:600;
+    font-size:15px; letter-spacing:-.01em; color:var(--page-paper);
+  }
+  .pv6-track small{ display:block; margin-top:2px; font-size:12.5px; color:var(--page-dark-body); }
+  .pv6-track__reset em{ color:var(--page-dark-body); font-size:14px; }
+  .pv6-track__reset strong{ color:var(--page-dark-body); }
+}
+
+.pv7-section {
+  background: var(--page-dark);
+  color: var(--page-dark-body);
+  font-family: var(--mz-font-body);
+}
+
+.pv7-inner {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+  padding-block: clamp(72px, 9vw, 132px);
+}
+
+/* ---- head ---- */
+.pv7-head {
+  max-width: 730px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: clamp(40px, 5.5vw, 76px);
+}
+.pv7-eyebrow {
+  margin: 0;
+  font-family: var(--mz-font-technical);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+.pv7-headline {
+  margin: 0;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(33px, 4.6vw, 56px);
+  line-height: 1.03;
+  letter-spacing: -.02em;
+  color: var(--page-white);
+}
+.pv7-head-quiet {
+  color: var(--page-dark-muted);
+}
+.pv7-lead {
+  margin: 0;
+  max-width: 58ch;
+  font-size: clamp(16px, 1.9vw, 20px);
+  line-height: 1.55;
+  color: var(--page-dark-body);
+}
+
+/* ---- stage: the receding blind windows ---- */
+.pv7-stage-wrap {
+  margin-block: clamp(8px, 2vw, 22px);
+}
+.pv7-stage-kicker {
+  margin: 0 0 clamp(18px, 2.4vw, 26px);
+  text-align: center;
+  font-family: var(--mz-font-technical);
+  font-size: 10.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+
+.pv7-stage {
+  --peek: clamp(28px, 5vw, 42px);
+  --vgap: clamp(20px, 3vw, 30px);
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  height: clamp(360px, 60vw, 480px);
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: var(--mz-radius-frame);
+  border: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .1);
+  /* flat tonal recession toward the vanishing point — not a glow */
+  background:
+    radial-gradient(130% 74% at 50% 0%, rgba(248, 248, 248, .05), rgba(248, 248, 248, 0) 58%),
+    var(--page-dark);
+}
+
+/* vanishing marker: the layer that is not there */
+.pv7-vanish {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--vgap) / 2);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-family: var(--mz-font-technical);
+  font-size: 9px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(248, 248, 248, .24);
+  white-space: nowrap;
+}
+
+.pv7-window {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  opacity: var(--o);
+  background: var(--page-dark-raised);
+  border: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .14);
+  border-bottom: 0;
+  border-radius: var(--mz-radius-container) var(--mz-radius-container) 0 0;
+}
+.pv7-window--5 { width: min(272px, 54%); top: var(--vgap);                          z-index: 2; --o: .28; }
+.pv7-window--4 { width: min(308px, 61%); top: calc(var(--vgap) + var(--peek));      z-index: 3; --o: .42; }
+.pv7-window--3 { width: min(348px, 69%); top: calc(var(--vgap) + var(--peek) * 2);  z-index: 4; --o: .6; }
+.pv7-window--2 { width: min(392px, 78%); top: calc(var(--vgap) + var(--peek) * 3);  z-index: 5; --o: .82; }
+.pv7-window--1 { width: min(440px, 88%); top: calc(var(--vgap) + var(--peek) * 4);  z-index: 6; --o: 1; }
+
+/* the front window's border reads a touch brighter — it is the one you see */
+.pv7-window--1 { border-color: rgba(248, 248, 248, .2); }
+
+.pv7-chrome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--peek);
+  padding-inline: clamp(12px, 2.4vw, 18px);
+  border-bottom: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .1);
+}
+.pv7-dots {
+  display: inline-flex;
+  gap: 5px;
+  flex: 0 0 auto;
+}
+.pv7-dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 248, 248, .3);
+}
+.pv7-tab {
+  min-width: 0;
+  font-family: var(--mz-font-technical);
+  font-size: clamp(9px, 1.5vw, 10.5px);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pv7-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(16px, 3vw, 26px) clamp(16px, 3vw, 24px);
+}
+.pv7-scope {
+  margin: 0;
+  font-family: var(--mz-font-technical);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--page-dark-muted);
+}
+.pv7-blind {
+  margin: 0;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(16px, 2.6vw, 21px);
+  line-height: 1.18;
+  letter-spacing: -.01em;
+  color: var(--page-white);
+}
+.pv7-trapped {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 2px;
+}
+.pv7-trap-label {
+  font-family: var(--mz-font-technical);
+  font-size: 9.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(248, 248, 248, .4);
+}
+.pv7-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pv7-chips li {
+  padding: 6px 11px;
+  border: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .16);
+  border-radius: var(--mz-radius-full);
+  background: rgba(248, 248, 248, .02);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--page-dark-body);
+}
+
+.pv7-stage-caption {
+  max-width: 52ch;
+  margin: clamp(20px, 2.6vw, 30px) auto 0;
+  text-align: center;
+  font-size: clamp(13.5px, 1.6vw, 15.5px);
+  line-height: 1.55;
+  color: var(--page-dark-muted);
+}
+
+/* ---- three consequences ---- */
+.pv7-consequences {
+  list-style: none;
+  margin: clamp(44px, 6vw, 76px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .12);
+  border-radius: var(--mz-radius-frame);
+  overflow: hidden;
+}
+.pv7-consequence {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: clamp(22px, 2.6vw, 32px);
+  border-left: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .12);
+}
+.pv7-consequence:first-child {
+  border-left: 0;
+}
+.pv7-dots--mini {
+  position: absolute;
+  top: clamp(22px, 2.6vw, 32px);
+  right: clamp(22px, 2.6vw, 32px);
+  gap: 4px;
+  opacity: .5;
+}
+.pv7-dots--mini i {
+  width: 5px;
+  height: 5px;
+}
+.pv7-index {
+  font-family: var(--mz-font-technical);
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--page-dark-muted);
+}
+.pv7-consequence h3 {
+  margin: 0;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: 16.5px;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  color: var(--page-white);
+}
+.pv7-consequence p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--page-dark-muted);
+}
+
+/* ---- close ---- */
+.pv7-close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: clamp(44px, 6vw, 82px);
+  text-align: center;
+}
+.pv7-turn {
+  margin: 0;
+  max-width: 30ch;
+  font-family: var(--mz-font-editorial);
+  font-size: clamp(19px, 2.6vw, 27px);
+  line-height: 1.3;
+  color: var(--page-dark-body);
+}
+.pv7-statement {
+  margin: 0;
+  max-width: 20ch;
+  font-family: var(--mz-font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 3.6vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -.015em;
+  color: var(--page-white);
+}
+
+/* ---- responsive ---- */
+@media (max-width: 720px) {
+  .pv7-consequences {
+    grid-template-columns: 1fr;
+  }
+  .pv7-consequence {
+    border-left: 0;
+    border-top: var(--mz-border-width-hairline, 1px) solid rgba(248, 248, 248, .12);
+  }
+  .pv7-consequence:first-child {
+    border-top: 0;
+  }
+}
+
+/* ---- optional, subtle entrance only ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .pv7-window {
+    animation: pv7-rise .7s var(--page-ease) both;
+  }
+  .pv7-window--5 { animation-delay: .04s; }
+  .pv7-window--4 { animation-delay: .11s; }
+  .pv7-window--3 { animation-delay: .18s; }
+  .pv7-window--2 { animation-delay: .25s; }
+  .pv7-window--1 { animation-delay: .32s; }
+
+  @keyframes pv7-rise {
+    from { opacity: 0; transform: translate(-50%, 16px); }
+    to   { opacity: var(--o); transform: translate(-50%, 0); }
+  }
+}
+
+.pv8-section{
+  box-sizing:border-box;
+  width:100%;
+  background:var(--page-paper);
+  color:var(--page-ink);
+  font-family:var(--mz-font-body);
+}
+.pv8-section *{ box-sizing:border-box; }
+
+.pv8-inner{
+  max-width:1180px;
+  margin-inline:auto;
+  padding-inline:clamp(20px,5vw,64px);
+  padding-block:clamp(72px,9vw,132px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.pv8-eyebrow{
+  margin:0;
+  font-family:var(--mz-font-technical);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--page-muted);
+}
+
+.pv8-headline{
+  margin:clamp(22px,2.6vw,32px) 0 0;
+  max-width:16ch;
+  font-family:var(--mz-font-display);
+  font-weight:600;
+  font-size:clamp(40px,6.4vw,74px);
+  line-height:1;
+  letter-spacing:-.03em;
+  color:var(--page-ink);
+}
+.pv8-headline-quiet{ color:var(--page-muted); }
+
+/* ---- the single quiet device: severed connective hairline + empty socket ---- */
+.pv8-device{
+  width:100%;
+  max-width:660px;
+  margin-top:clamp(60px,8.5vw,116px);
+}
+.pv8-axis{
+  display:flex;
+  align-items:center;
+  gap:0;
+}
+.pv8-node-dot{
+  flex:none;
+  width:11px;
+  height:11px;
+  border-radius:var(--mz-radius-full);
+  background:var(--page-ink);
+}
+.pv8-wire{
+  position:relative;
+  flex:1;
+  height:12px;
+  min-width:80px;
+}
+.pv8-wire-line{
+  position:absolute;
+  left:0;
+  right:clamp(22px,5vw,48px);
+  top:50%;
+  height:var(--mz-border-width-hairline,1px);
+  background:var(--mz-border-strong);
+  transform:translateY(-50%);
+}
+.pv8-wire-line::after{ /* the plug tip that never seats */
+  content:"";
+  position:absolute;
+  right:0;
+  top:50%;
+  width:8px;
+  height:8px;
+  border:var(--mz-border-width-hairline,1px) solid var(--page-ink);
+  border-radius:2px;
+  background:var(--page-paper);
+  transform:translate(50%,-50%);
+}
+.pv8-wire-pulse{
+  position:absolute;
+  left:0;
+  top:50%;
+  width:6px;
+  height:6px;
+  border-radius:var(--mz-radius-full);
+  background:var(--page-ink);
+  transform:translate(-50%,-50%);
+  opacity:0;
+}
+.pv8-socket{
+  flex:none;
+  position:relative;
+  width:clamp(64px,15vw,92px);
+  aspect-ratio:1;
+}
+.pv8-socket-ring{
+  position:absolute;
+  inset:0;
+  border-radius:var(--mz-radius-full);
+  border:var(--mz-border-width-hairline,1px) solid var(--mz-border-strong);
+}
+.pv8-socket-ring::after{ /* the empty seat where the owned layer should sit */
+  content:"";
+  position:absolute;
+  inset:27%;
+  border-radius:var(--mz-radius-full);
+  border:var(--mz-border-width-hairline,1px) dashed var(--mz-border-default);
+}
+.pv8-labels{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  margin-top:16px;
+  font-family:var(--mz-font-technical);
+  font-size:10.5px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--page-muted);
+  white-space:nowrap;
+}
+.pv8-labels span{ display:inline-block; }
+.pv8-socket-label{ text-align:right; }
+.pv8-labels em{ font-style:normal; color:var(--mz-border-strong); }
+
+/* ---- supporting hierarchy ---- */
+.pv8-setup{
+  margin:clamp(58px,8vw,104px) auto 0;
+  max-width:26ch;
+  font-family:var(--mz-font-display);
+  font-weight:600;
+  font-size:clamp(21px,2.7vw,31px);
+  line-height:1.18;
+  letter-spacing:-.018em;
+  color:var(--page-ink);
+}
+.pv8-detail{
+  margin:clamp(18px,2vw,26px) auto 0;
+  max-width:54ch;
+  font-size:clamp(15px,1.5vw,16.5px);
+  line-height:1.72;
+  color:var(--page-muted);
+}
+.pv8-turn{
+  margin:clamp(48px,6.2vw,88px) auto 0;
+  max-width:30ch;
+  font-family:var(--mz-font-display);
+  font-weight:600;
+  font-size:clamp(21px,2.7vw,31px);
+  line-height:1.2;
+  letter-spacing:-.018em;
+  color:var(--page-ink);
+}
+.pv8-turn em{
+  font-family:var(--mz-font-editorial);
+  font-style:normal;
+  font-weight:400;
+  letter-spacing:0;
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .pv8-wire-pulse{
+    animation:pv8-travel 7.5s var(--page-ease) infinite;
+  }
+  @keyframes pv8-travel{
+    0%{ left:0; opacity:0; }
+    10%{ opacity:1; }
+    66%{ opacity:1; }
+    84%{ left:100%; opacity:0; }
+    100%{ left:100%; opacity:0; }
+  }
+}
+</style>
+</head>
+<body>
+<div class="lab-top">
+  <strong>Problem Section · 8 concepts</strong>
+  <span>pick one + tell me what lands</span>
+  <nav><a href="#v1">V1</a><a href="#v2">V2</a><a href="#v3">V3</a><a href="#v4">V4</a><a href="#v5">V5</a><a href="#v6">V6</a><a href="#v7">V7</a><a href="#v8">V8</a></nav>
+</div>
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">V1</span>
+    <span class="lab-name">Editorial Thesis</span>
+    <span class="lab-rat">Treating the problem as a magazine feature — a de-emphasised setup line collapsing into an oversized &quot;Too many tools. Too many middlemen.&quot; subject, a single masthead rule, an anaphoric &quot;Another…&quot; symptom stack, and an Instrument-Serif turn line — lets proportion, weight and whitespace carry the argument, so the fragmentation reads as a considered thesis rather than a decorated feature grid.</span>
+  </header>
+  <div class="lab-render">
+<section class="pv1-section" aria-label="The problem">
+  <div class="pv1-inner">
+    <p class="pv1-eyebrow">The problem</p>
+
+    <h2 class="pv1-headline">
+      <span class="pv1-prefix">AI was supposed to make the business simpler.</span>
+      <span class="pv1-subject">Too&nbsp;many&nbsp;tools.<br>Too&nbsp;many&nbsp;middlemen.</span>
+    </h2>
+
+    <p class="pv1-deck">The models keep improving. The tools keep changing. And the business keeps explaining itself from the beginning — every single time.</p>
+
+    <hr class="pv1-rule" aria-hidden="true">
+
+    <div class="pv1-columns">
+      <div class="pv1-col">
+        <p class="pv1-kicker">What actually got added</p>
+        <ul class="pv1-stack">
+          <li><span>Another</span> interface.</li>
+          <li><span>Another</span> subscription.</li>
+          <li><span>Another</span> credit system.</li>
+          <li><span>Another</span> isolated window that knows nothing about the rest of the company.</li>
+        </ul>
+      </div>
+      <div class="pv1-col">
+        <p class="pv1-kicker">What it actually costs</p>
+        <p class="pv1-consequence">The same intelligence, repackaged. You get <strong>more limits and less control</strong> — the intermediary picks the models, the features, the credits, the rate limits and the upgrade schedule. And <strong>your context</strong> — every prompt, the workflow logic, the accumulated business memory — stays trapped inside <strong>a tool you don't control</strong>.</p>
+      </div>
+    </div>
+
+    <p class="pv1-turn">External tools can create real value. Dependency without ownership cannot.</p>
+
+    <p class="pv1-close">Your business needs an operating layer it controls.</p>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">V2</span>
+    <span class="lab-name">The Accumulating Stack</span>
+    <span class="lab-rat">The burden is made physical: four hairline chrome windows cascade and pile over a solid charcoal &quot;your business&quot; base, only their title bars peeking out like too many open apps, literally burying the company beneath repackaged tools. The messy pile then resolves into a single calm owned layer, so the composition itself argues for ownership.</span>
+  </header>
+  <div class="lab-render">
+<section class="pv2-section">
+  <div class="pv2-inner">
+    <header class="pv2-head">
+      <p class="pv2-eyebrow">The problem</p>
+      <h2 class="pv2-headline">Too many tools. <span class="pv2-quiet">Too many middlemen.</span></h2>
+      <p class="pv2-setup">AI was supposed to simplify the business. Instead the models keep improving, the tools keep changing &mdash; and the business keeps explaining itself from the beginning.</p>
+    </header>
+
+    <div class="pv2-stage">
+      <div class="pv2-pilewrap">
+        <div class="pv2-pile">
+          <div class="pv2-base">
+            <div class="pv2-base__id">
+              <strong>Your business</strong>
+              <span>Context &middot; workflow &middot; memory &mdash; buried underneath</span>
+            </div>
+          </div>
+
+          <article class="pv2-slab">
+            <div class="pv2-slab__bar">
+              <span class="pv2-slab__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="pv2-slab__name">Another interface</span>
+            </div>
+            <div class="pv2-slab__body" aria-hidden="true">
+              <span class="pv2-slab__line"></span>
+              <span class="pv2-slab__line"></span>
+            </div>
+          </article>
+
+          <article class="pv2-slab">
+            <div class="pv2-slab__bar">
+              <span class="pv2-slab__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="pv2-slab__name">Another subscription</span>
+            </div>
+            <div class="pv2-slab__body" aria-hidden="true">
+              <span class="pv2-slab__line"></span>
+              <span class="pv2-slab__line"></span>
+            </div>
+          </article>
+
+          <article class="pv2-slab">
+            <div class="pv2-slab__bar">
+              <span class="pv2-slab__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="pv2-slab__name">Another credit system</span>
+            </div>
+            <div class="pv2-slab__body" aria-hidden="true">
+              <span class="pv2-slab__line"></span>
+              <span class="pv2-slab__line"></span>
+            </div>
+          </article>
+
+          <article class="pv2-slab">
+            <div class="pv2-slab__bar">
+              <span class="pv2-slab__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="pv2-slab__name">Another isolated window</span>
+            </div>
+            <div class="pv2-slab__body">
+              <span class="pv2-slab__line" aria-hidden="true"></span>
+              <span class="pv2-slab__line" aria-hidden="true"></span>
+              <p class="pv2-slab__note">Knows nothing about the rest of the company.</p>
+              <span class="pv2-slab__tag">Same model &middot; new wrapper</span>
+            </div>
+          </article>
+        </div>
+        <p class="pv2-pilecap">Four windows &middot; four bills &middot; four logins &middot; zero shared memory</p>
+      </div>
+
+      <div class="pv2-reading">
+        <p class="pv2-reading__cap">What actually stacked up</p>
+        <ol class="pv2-ledger">
+          <li>
+            <div class="pv2-ledger__k"><span class="pv2-ledger__n">01</span> Same intelligence, repackaged</div>
+            <p class="pv2-ledger__v">Every layer resells the same models behind one more interface.</p>
+          </li>
+          <li>
+            <div class="pv2-ledger__k"><span class="pv2-ledger__n">02</span> More limits, less control</div>
+            <p class="pv2-ledger__v">The intermediary sets the models, features, credits, rate limits and upgrade schedule.</p>
+          </li>
+          <li>
+            <div class="pv2-ledger__k"><span class="pv2-ledger__n">03</span> Context you can&rsquo;t reach</div>
+            <p class="pv2-ledger__v">Prompts, workflow logic and business memory sit locked inside a tool you don&rsquo;t own.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="pv2-turn">
+      <p class="pv2-turn__eyebrow">The turn</p>
+      <p class="pv2-turn__lead">External tools can create real value.</p>
+      <p class="pv2-turn__serif">Dependency without ownership doesn&rsquo;t.</p>
+      <p class="pv2-turn__own-line">Your business needs an operating layer it controls.</p>
+      <div class="pv2-owned">
+        <span class="pv2-owned__mark" aria-hidden="true"></span>
+        <span class="pv2-owned__text">
+          <strong>One operating layer &mdash; yours</strong>
+          <span>Owned &middot; shared context &middot; one schedule</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">V3</span>
+    <span class="lab-name">Disconnected Interfaces</span>
+    <span class="lab-rat">Makes &quot;nothing joins up&quot; literal but disciplined: abstract app-window chips scatter across a charcoal field with severed, dead-end connectors that never reach a hollow dashed centre where the owned operating layer should be — so the reader sees the fragmentation before reading a word, then the consequences and the turn land as the inevitable conclusion.</span>
+  </header>
+  <div class="lab-render">
+<section class="pv3-section">
+  <div class="pv3-inner">
+    <header class="pv3-head">
+      <p class="pv3-eyebrow">The problem</p>
+      <h2 class="pv3-title">Too many tools.<br><span class="pv3-quiet">Too many middlemen.</span></h2>
+      <p class="pv3-setup">AI was supposed to simplify the business. Instead the models keep improving, the tools keep changing &mdash; and the business keeps explaining itself from the beginning.</p>
+    </header>
+
+    <div class="pv3-fieldcap">
+      <span>The usual fix</span>
+      <b>More surfaces to manage, not fewer.</b>
+    </div>
+
+    <div class="pv3-field">
+      <div class="pv3-wires" aria-hidden="true">
+        <i style="--ang:-30deg;--len:clamp(58px,7.5vw,94px)"></i>
+        <i style="--ang:-74deg;--len:clamp(52px,6.5vw,80px)"></i>
+        <i style="--ang:-126deg;--len:clamp(56px,7vw,88px)"></i>
+        <i style="--ang:152deg;--len:clamp(50px,6.4vw,78px)"></i>
+        <i style="--ang:104deg;--len:clamp(58px,7.4vw,92px)"></i>
+        <i style="--ang:46deg;--len:clamp(52px,6.6vw,82px)"></i>
+      </div>
+
+      <figure class="pv3-win" style="--x:15%;--y:23%;--tilt:-3deg">
+        <span class="pv3-win__bar" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+        <span class="pv3-win__body" aria-hidden="true"><span></span><span></span></span>
+        <figcaption class="pv3-win__tag">Another interface</figcaption>
+      </figure>
+
+      <figure class="pv3-win" style="--x:85%;--y:19%;--tilt:3deg">
+        <span class="pv3-win__bar" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+        <span class="pv3-win__body" aria-hidden="true"><span></span><span></span></span>
+        <figcaption class="pv3-win__tag">Another subscription</figcaption>
+      </figure>
+
+      <div class="pv3-void"><span>No shared operating layer</span></div>
+
+      <figure class="pv3-win" style="--x:86%;--y:63%;--tilt:-2deg">
+        <span class="pv3-win__bar" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+        <span class="pv3-win__body" aria-hidden="true"><span></span><span></span></span>
+        <figcaption class="pv3-win__tag">Another credit system</figcaption>
+      </figure>
+
+      <figure class="pv3-win" style="--x:16%;--y:74%;--tilt:2deg">
+        <span class="pv3-win__bar" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+        <span class="pv3-win__body" aria-hidden="true"><span></span><span></span></span>
+        <figcaption class="pv3-win__tag">Another login</figcaption>
+      </figure>
+
+      <figure class="pv3-win" style="--x:53%;--y:84%;--tilt:-3deg">
+        <span class="pv3-win__bar" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+        <span class="pv3-win__body" aria-hidden="true"><span></span><span></span></span>
+        <figcaption class="pv3-win__tag">Another dashboard</figcaption>
+      </figure>
+    </div>
+
+    <p class="pv3-note">Each new window is an isolated island &mdash; a login, a bill, a credit balance that knows nothing about the rest of the company.</p>
+
+    <p class="pv3-conskick">What you&rsquo;re actually left with</p>
+    <ul class="pv3-cons">
+      <li>
+        <span class="pv3-cons__k">01</span>
+        <h3 class="pv3-cons__t">The same intelligence, repackaged</h3>
+        <p>You pay a markup on models you could reach directly. The intelligence is unchanged; only the intermediary is new.</p>
+      </li>
+      <li>
+        <span class="pv3-cons__k">02</span>
+        <h3 class="pv3-cons__t">More limits, less control</h3>
+        <p>They pick the models, features, credits, rate limits and upgrade schedule. Your ceiling is set by their roadmap.</p>
+      </li>
+      <li>
+        <span class="pv3-cons__k">03</span>
+        <h3 class="pv3-cons__t">Your context, held hostage</h3>
+        <p>Prompts, workflow logic and business memory accumulate inside a tool you don&rsquo;t own &mdash; and can&rsquo;t take with you.</p>
+      </li>
+    </ul>
+
+    <div class="pv3-turn">
+      <p class="pv3-turn-lead">External tools can create real value.</p>
+      <p class="pv3-turn-line">Dependency without ownership does not.</p>
+      <p class="pv3-turn-cta">Your business needs an operating layer it controls.</p>
+    </div>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v4">
+  <header class="lab-label">
+    <span class="lab-num">V4</span>
+    <span class="lab-name">The Mounting Bill</span>
+    <span class="lab-rat">Framing the middlemen as an itemised monthly statement makes the abstract cost concrete and cumulative — dotted-leader line items, a rising bar-chart total, a &quot;retained by vendor&quot; clause and fine print that names who sets the terms all build to one punch: the amount due isn&#x27;t dollars, it&#x27;s control. The receipt metaphor lets the section indict dependency without any product colour, keeping the bad-stuff section strictly monochrome per the ethos.</span>
+  </header>
+  <div class="lab-render">
+<section class="pv4-section" aria-label="The problem: too many tools, too many middlemen">
+  <div class="pv4-inner">
+    <header class="pv4-masthead">
+      <p class="pv4-eyebrow">The problem</p>
+      <div class="pv4-masthead-grid">
+        <h2 class="pv4-headline">Too many tools.<br>Too many middlemen.</h2>
+        <p class="pv4-setup">AI was supposed to simplify the business. Instead the models keep improving, the tools keep changing, and the business keeps explaining itself from the beginning &mdash; because each new tool arrived as another layer between your work and the intelligence.</p>
+      </div>
+    </header>
+
+    <article class="pv4-statement" aria-label="Statement: the mounting cost of middlemen">
+      <div class="pv4-statement-head">
+        <div class="pv4-doc-title">
+          <span class="pv4-doc-kicker">Statement</span>
+          <strong>The cost of middlemen</strong>
+        </div>
+        <dl class="pv4-doc-meta">
+          <div><dt>Account</dt><dd>Your business</dd></div>
+          <div><dt>Billing</dt><dd>Monthly &middot; auto-renewing</dd></div>
+          <div><dt>Denominated in</dt><dd>Control, not dollars</dd></div>
+        </dl>
+      </div>
+
+      <div class="pv4-tear" role="presentation"></div>
+
+      <div class="pv4-lines-head" aria-hidden="true">
+        <span>Item</span>
+        <span>On their terms</span>
+      </div>
+      <ol class="pv4-lines">
+        <li class="pv4-line">
+          <span class="pv4-line-idx">01</span>
+          <div class="pv4-line-main">
+            <div class="pv4-line-top">
+              <span class="pv4-line-label">Another interface</span>
+              <span class="pv4-leader" aria-hidden="true"></span>
+              <span class="pv4-line-charge">their UI</span>
+            </div>
+            <span class="pv4-line-sub">One more window to learn, log into and switch between.</span>
+          </div>
+        </li>
+        <li class="pv4-line">
+          <span class="pv4-line-idx">02</span>
+          <div class="pv4-line-main">
+            <div class="pv4-line-top">
+              <span class="pv4-line-label">Another subscription</span>
+              <span class="pv4-leader" aria-hidden="true"></span>
+              <span class="pv4-line-charge">their pricing</span>
+            </div>
+            <span class="pv4-line-sub">A recurring charge on a bill you don&rsquo;t set.</span>
+          </div>
+        </li>
+        <li class="pv4-line">
+          <span class="pv4-line-idx">03</span>
+          <div class="pv4-line-main">
+            <div class="pv4-line-top">
+              <span class="pv4-line-label">Another credit system</span>
+              <span class="pv4-leader" aria-hidden="true"></span>
+              <span class="pv4-line-charge">their meter</span>
+            </div>
+            <span class="pv4-line-sub">Intelligence, metered and sold back to you.</span>
+          </div>
+        </li>
+        <li class="pv4-line">
+          <span class="pv4-line-idx">04</span>
+          <div class="pv4-line-main">
+            <div class="pv4-line-top">
+              <span class="pv4-line-label">Another rate limit</span>
+              <span class="pv4-leader" aria-hidden="true"></span>
+              <span class="pv4-line-charge">their limits</span>
+            </div>
+            <span class="pv4-line-sub">Throughput decided somewhere outside the building.</span>
+          </div>
+        </li>
+        <li class="pv4-line">
+          <span class="pv4-line-idx">05</span>
+          <div class="pv4-line-main">
+            <div class="pv4-line-top">
+              <span class="pv4-line-label">Another upgrade cycle</span>
+              <span class="pv4-leader" aria-hidden="true"></span>
+              <span class="pv4-line-charge">their schedule</span>
+            </div>
+            <span class="pv4-line-sub">A new model every quarter &mdash; and the business explains itself again.</span>
+          </div>
+        </li>
+      </ol>
+
+      <div class="pv4-subtotal">
+        <span class="pv4-subtotal-label">Subtotal</span>
+        <span class="pv4-subtotal-note">the same intelligence, repackaged</span>
+      </div>
+
+      <div class="pv4-rising">
+        <div class="pv4-rising-bars" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <p class="pv4-rising-text">Monthly, and rising. Every tool adds a line; none of them add up to more control.</p>
+      </div>
+
+      <div class="pv4-retained">
+        <p class="pv4-retained-tag">Retained by vendor &middot; non-transferable</p>
+        <ul class="pv4-retained-list">
+          <li>Prompts</li>
+          <li>Workflow logic</li>
+          <li>Business memory</li>
+        </ul>
+        <p class="pv4-retained-note">Your context lives inside a tool you don&rsquo;t control &mdash; and each window knows nothing about the rest of the company.</p>
+      </div>
+
+      <p class="pv4-fineprint">Terms are set by the intermediary and change without notice &mdash; the models, the features, the credits, the rate limits and the upgrade schedule are theirs to set, not yours.</p>
+
+      <div class="pv4-tear" role="presentation"></div>
+
+      <div class="pv4-due">
+        <span class="pv4-due-label">Amount due</span>
+        <span class="pv4-due-amount">
+          <s class="pv4-due-struck">$&mdash;&mdash;</s>
+          <strong class="pv4-due-real">Control</strong>
+        </span>
+      </div>
+      <p class="pv4-due-note">Billed monthly in dollars. The dollars were never the expensive part.</p>
+    </article>
+
+    <div class="pv4-coda">
+      <p class="pv4-turn">External tools can create real value. Dependency without ownership can&rsquo;t.</p>
+      <p class="pv4-close">Your business needs an operating layer it controls.</p>
+    </div>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v5">
+  <header class="lab-label">
+    <span class="lab-num">V5</span>
+    <span class="lab-name">Rented vs Owned</span>
+    <span class="lab-rat">The problem becomes a two-state diptych — a light field of scattered, disconnected rented windows set against one calm charcoal layer the business owns — so the reader feels the fragmentation and the relief of ownership before reading a word of the argument. Scattered chaos versus a single whole surface makes ownership look obviously better while staying strictly monochrome, hairline and Wings-free.</span>
+  </header>
+  <div class="lab-render">
+<section class="pv5-section">
+  <div class="pv5-inner">
+    <header class="pv5-head">
+      <p class="pv5-eyebrow">The problem</p>
+      <h2 class="pv5-headline">Too many tools.<span class="pv5-headline-quiet">Too many middlemen.</span></h2>
+      <p class="pv5-setup">AI was supposed to simplify the business. Instead the models keep improving, the tools keep changing &mdash; and the business keeps explaining itself from the beginning.</p>
+    </header>
+
+    <div class="pv5-diptych">
+      <div class="pv5-side pv5-side--rented">
+        <div class="pv5-side-head">
+          <span class="pv5-state pv5-state--rented"><span class="pv5-state-dot"></span>Rented</span>
+          <p class="pv5-side-note">Every answer arrived as one more thing to bolt on.</p>
+        </div>
+
+        <div class="pv5-scatter">
+          <article class="pv5-frag pv5-frag--a">
+            <div class="pv5-frag-bar"><span class="pv5-frag-dot"></span><span class="pv5-frag-chip">tool</span></div>
+            <p class="pv5-frag-label">Another interface</p>
+            <div class="pv5-frag-lines"><i></i><i></i></div>
+          </article>
+          <article class="pv5-frag pv5-frag--b">
+            <div class="pv5-frag-bar"><span class="pv5-frag-dot"></span><span class="pv5-frag-chip">billed monthly</span></div>
+            <p class="pv5-frag-label">Another subscription</p>
+            <div class="pv5-frag-lines"><i></i><i></i></div>
+          </article>
+          <article class="pv5-frag pv5-frag--c">
+            <div class="pv5-frag-bar"><span class="pv5-frag-dot"></span><span class="pv5-frag-chip">metered</span></div>
+            <p class="pv5-frag-label">Another credit system</p>
+            <div class="pv5-meter pv5-meter--low"><span></span></div>
+            <p class="pv5-frag-foot">credits low</p>
+          </article>
+          <article class="pv5-frag pv5-frag--d">
+            <div class="pv5-frag-bar"><span class="pv5-frag-dot"></span><span class="pv5-frag-chip">capped</span></div>
+            <p class="pv5-frag-label">Another rate limit</p>
+            <div class="pv5-meter pv5-meter--high"><span></span></div>
+            <p class="pv5-frag-foot">rate limit</p>
+          </article>
+          <article class="pv5-frag pv5-frag--e">
+            <div class="pv5-frag-bar"><span class="pv5-frag-dot"></span><span class="pv5-frag-chip">isolated</span></div>
+            <p class="pv5-frag-label">Another window</p>
+            <div class="pv5-frag-lines"><i></i><i></i></div>
+            <p class="pv5-frag-foot">knows nothing else</p>
+          </article>
+        </div>
+
+        <p class="pv5-side-foot"><strong>The same intelligence, repackaged.</strong> Someone else picks the models, features, credits, rate limits and upgrade schedule &mdash; and your prompts, workflow logic and business memory stay trapped inside.</p>
+      </div>
+
+      <div class="pv5-side pv5-side--owned">
+        <div class="pv5-side-head">
+          <span class="pv5-state pv5-state--owned"><span class="pv5-state-dot"></span>Owned</span>
+          <p class="pv5-side-note">The same work, held in one layer you control.</p>
+        </div>
+
+        <div class="pv5-owned-surface">
+          <div class="pv5-owned-head">
+            <span class="pv5-owned-title">Your operating layer</span>
+            <span class="pv5-owned-owner">one owner</span>
+          </div>
+          <div class="pv5-owned-rows">
+            <div class="pv5-owned-row"><span class="pv5-owned-hold"></span><span>Interface</span><b>held</b></div>
+            <div class="pv5-owned-row"><span class="pv5-owned-hold"></span><span>Workflow logic</span><b>held</b></div>
+            <div class="pv5-owned-row"><span class="pv5-owned-hold"></span><span>Business memory</span><b>held</b></div>
+            <div class="pv5-owned-row"><span class="pv5-owned-hold"></span><span>Models</span><b>held</b></div>
+          </div>
+        </div>
+
+        <p class="pv5-side-foot"><strong>One layer, one owner.</strong> Interface, logic, memory and models stay where you can reach them &mdash; not locked inside a tool you rent.</p>
+      </div>
+    </div>
+
+    <div class="pv5-turn">
+      <p class="pv5-turn-line">External tools can create real value. <em>Dependency without ownership does not.</em></p>
+      <p class="pv5-turn-strong">Your business needs an operating layer it controls.</p>
+    </div>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v6">
+  <header class="lab-label">
+    <span class="lab-num">V6</span>
+    <span class="lab-name">The Re-Explaining Loop</span>
+    <span class="lab-rat">It stages the problem as a cycle that never resolves — a charcoal loop where you feed in context, the model improves, the tool changes and it snaps back to zero — so the reader feels the wasted repetition rather than just reading a bullet list, with the quiet &quot;0% context retained&quot; core naming exactly what dependency costs.</span>
+  </header>
+  <div class="lab-render">
+<section class="pv6-section" aria-label="The problem">
+  <div class="pv6-inner">
+    <header class="pv6-head">
+      <p class="pv6-eyebrow">The problem</p>
+      <h2 class="pv6-headline">Too many tools.<br><span class="pv6-quiet">Too many middlemen.</span></h2>
+      <p class="pv6-setup">AI was supposed to simplify the business. Instead the models keep improving, the tools keep changing &mdash; and the business keeps explaining itself from the beginning.</p>
+    </header>
+
+    <figure class="pv6-stage">
+      <figcaption class="pv6-stage__label">The re-explaining loop</figcaption>
+
+      <div class="pv6-orbit" role="img" aria-label="A loop that never resolves: you explain the business, the model improves, the tool changes, you start over — and it resets to zero.">
+        <span class="pv6-ring"></span>
+        <span class="pv6-travel"><i class="pv6-dot"></i></span>
+        <span class="pv6-reset">&#8635;&nbsp; from zero</span>
+
+        <div class="pv6-core">
+          <b>0%</b>
+          <span>context retained</span>
+        </div>
+
+        <article class="pv6-node pv6-node--1">
+          <em>01</em>
+          <strong>You explain the business</strong>
+          <small>prompts, workflow, memory</small>
+        </article>
+        <article class="pv6-node pv6-node--2">
+          <em>02</em>
+          <strong>The model improves</strong>
+          <small>a new version ships</small>
+        </article>
+        <article class="pv6-node pv6-node--3">
+          <em>03</em>
+          <strong>The tool changes</strong>
+          <small>features and credits shift</small>
+        </article>
+        <article class="pv6-node pv6-node--4">
+          <em>04</em>
+          <strong>You start over</strong>
+          <small>nothing carried across</small>
+        </article>
+      </div>
+
+      <ol class="pv6-track" aria-label="The re-explaining loop, step by step">
+        <li><em>01</em><div><strong>You explain the business</strong><small>prompts, workflow, memory</small></div></li>
+        <li><em>02</em><div><strong>The model improves</strong><small>a new version ships</small></div></li>
+        <li><em>03</em><div><strong>The tool changes</strong><small>features and credits shift</small></div></li>
+        <li><em>04</em><div><strong>You start over</strong><small>nothing carried across</small></div></li>
+        <li class="pv6-track__reset"><em>&#8635;</em><div><strong>Back to zero</strong><small>the business explains itself again</small></div></li>
+      </ol>
+
+      <ul class="pv6-adds">
+        <li>+ another interface</li>
+        <li>+ another subscription</li>
+        <li>+ another credit system</li>
+        <li>+ another window that knows nothing about the company</li>
+      </ul>
+    </figure>
+
+    <div class="pv6-consequences">
+      <article class="pv6-consequence">
+        <h3>The same intelligence, repackaged</h3>
+        <p>You pay a middleman to resell the models you could reach directly &mdash; wrapped in one more interface.</p>
+      </article>
+      <article class="pv6-consequence">
+        <h3>More limits, less control</h3>
+        <p>The intermediary picks the models, features, credits, rate limits and upgrade schedule. You inherit their roadmap.</p>
+      </article>
+      <article class="pv6-consequence">
+        <h3>Context you can&rsquo;t take with you</h3>
+        <p>Prompts, workflow logic and business memory stay trapped in a tool you do not control.</p>
+      </article>
+    </div>
+
+    <div class="pv6-turn">
+      <p class="pv6-turn__kicker">The turn</p>
+      <p class="pv6-turn__lead">External tools can create real value. Dependency without ownership does not.</p>
+      <p class="pv6-turn__line">Your business needs an operating layer it controls.</p>
+    </div>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v7">
+  <header class="lab-label">
+    <span class="lab-num">V7</span>
+    <span class="lab-name">Layered Blind Windows</span>
+    <span class="lab-rat">Each middleman tool is drawn as an isolated window receding into depth, deliberately occluding the one behind it so none can see the whole company — the fragmentation is shown structurally through overlap and hairline recession rather than described, with the vanishing point marked as the missing &quot;no shared layer.&quot; Depth is built entirely from stacking, tonal step-down and hairline strength (never shadow or glow), keeping it precise and premium within the monochrome Mez grammar.</span>
+  </header>
+  <div class="lab-render">
+<section class="pv7-section">
+  <div class="pv7-inner">
+    <header class="pv7-head">
+      <p class="pv7-eyebrow">The problem</p>
+      <h2 class="pv7-headline"><span class="pv7-head-quiet">Too many tools.</span> Too many middlemen.</h2>
+      <p class="pv7-lead">AI was supposed to simplify the business. Instead the models keep improving, the tools keep changing, and the business keeps explaining itself from the beginning.</p>
+    </header>
+
+    <div class="pv7-stage-wrap">
+      <p class="pv7-stage-kicker">What most operators actually added</p>
+
+      <div class="pv7-stage">
+        <span class="pv7-vanish" aria-hidden="true">No shared layer</span>
+
+        <div class="pv7-window pv7-window--5" aria-hidden="true">
+          <div class="pv7-chrome"><span class="pv7-dots"><i></i><i></i><i></i></span><span class="pv7-tab">Another window</span></div>
+        </div>
+        <div class="pv7-window pv7-window--4" aria-hidden="true">
+          <div class="pv7-chrome"><span class="pv7-dots"><i></i><i></i><i></i></span><span class="pv7-tab">Another rate limit</span></div>
+        </div>
+        <div class="pv7-window pv7-window--3" aria-hidden="true">
+          <div class="pv7-chrome"><span class="pv7-dots"><i></i><i></i><i></i></span><span class="pv7-tab">Another credit system</span></div>
+        </div>
+        <div class="pv7-window pv7-window--2" aria-hidden="true">
+          <div class="pv7-chrome"><span class="pv7-dots"><i></i><i></i><i></i></span><span class="pv7-tab">Another subscription</span></div>
+        </div>
+
+        <div class="pv7-window pv7-window--1">
+          <div class="pv7-chrome"><span class="pv7-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="pv7-tab">Another interface</span></div>
+          <div class="pv7-body">
+            <p class="pv7-scope">Sees this window only</p>
+            <p class="pv7-blind">It knows nothing about the rest of the company.</p>
+            <div class="pv7-trapped">
+              <span class="pv7-trap-label">Trapped inside</span>
+              <ul class="pv7-chips">
+                <li>Prompts</li>
+                <li>Workflow logic</li>
+                <li>Business memory</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="pv7-stage-caption">Every tool is one more isolated window. Each sees only its own fragment &mdash; none can see the whole company, because there is no shared layer they connect to.</p>
+    </div>
+
+    <ul class="pv7-consequences" aria-label="Three consequences of renting the middle layer">
+      <li class="pv7-consequence">
+        <span class="pv7-dots pv7-dots--mini" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="pv7-index">01</span>
+        <h3>The same intelligence, repackaged</h3>
+        <p>A new interface wrapped around intelligence you can already access directly.</p>
+      </li>
+      <li class="pv7-consequence">
+        <span class="pv7-dots pv7-dots--mini" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="pv7-index">02</span>
+        <h3>More limits, less control</h3>
+        <p>The intermediary picks the models, features, credits, rate limits and upgrade schedule.</p>
+      </li>
+      <li class="pv7-consequence">
+        <span class="pv7-dots pv7-dots--mini" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="pv7-index">03</span>
+        <h3>Context you cannot take with you</h3>
+        <p>Your prompts, workflow logic and business memory stay locked in a tool you do not control.</p>
+      </li>
+    </ul>
+
+    <div class="pv7-close">
+      <p class="pv7-turn">External tools can create real value. Dependency without ownership does not.</p>
+      <p class="pv7-statement">Your business needs an operating layer it controls.</p>
+    </div>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v8">
+  <header class="lab-label">
+    <span class="lab-num">V8</span>
+    <span class="lab-name">Severed Line, Empty Socket</span>
+    <span class="lab-rat">A single commanding line and one quiet CSS device — your context runs down a hairline toward the seat where an owned operating layer should sit, but the plug never seats and the socket is empty — states the whole problem (dependency without ownership) with maximum whitespace and zero decoration. The empty socket is literally the operating layer the closing turn says you need, so the device and the argument resolve into each other.</span>
+  </header>
+  <div class="lab-render">
+<section class="pv8-section" aria-label="The problem">
+  <div class="pv8-inner">
+    <p class="pv8-eyebrow">The problem</p>
+
+    <h2 class="pv8-headline">
+      Too many tools.<br>
+      <span class="pv8-headline-quiet">Too many middlemen.</span>
+    </h2>
+
+    <div class="pv8-device" role="img"
+         aria-label="Your context runs along a single line toward the seat where an operating layer you own should sit. The line is severed before it arrives, and the socket is empty.">
+      <div class="pv8-axis">
+        <span class="pv8-node-dot" aria-hidden="true"></span>
+        <span class="pv8-wire" aria-hidden="true">
+          <span class="pv8-wire-line"><span class="pv8-wire-pulse"></span></span>
+        </span>
+        <span class="pv8-socket" aria-hidden="true">
+          <span class="pv8-socket-ring"></span>
+        </span>
+      </div>
+      <div class="pv8-labels" aria-hidden="true">
+        <span class="pv8-node-label">Your context</span>
+        <span class="pv8-socket-label">Operating layer <em>&middot; empty</em></span>
+      </div>
+    </div>
+
+    <p class="pv8-setup">
+      AI was supposed to simplify the business. Instead the models keep improving,
+      the tools keep changing, and the company explains itself from the beginning again.
+    </p>
+
+    <p class="pv8-detail">
+      Each answer now arrives through another interface, another subscription, another
+      isolated window that knows nothing about the rest of you &mdash; the same intelligence
+      repackaged behind someone else&rsquo;s limits, credits and schedule, with your context
+      held inside a tool you don&rsquo;t control.
+    </p>
+
+    <p class="pv8-turn">
+      External tools can create real value. Dependency without ownership does not &mdash;
+      your business needs <em>an operating layer it controls.</em>
+    </p>
+  </div>
+</section>
+  </div>
+</article>
+</body>
+</html>

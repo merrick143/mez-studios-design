@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-EXP-04-PRODUCT-CARD",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "contextBundleId": "CTX-EXP-04-PRODUCT-CARD",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-22T10:05:00+10:00",
+  "finishedAt": "2026-07-22T17:51:56+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/expressions/product-card/", "action": "modified", "sha256": null, "reason": "Promoted the approved Phase A visual grammar to 1.0.0 with 32 unanimous keeps, complete Round 05–10 evidence and bounded production authority."},
+    {"path": "brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md", "action": "created", "sha256": null, "reason": "Synthesized ten rounds of positive and negative visual feedback into reusable approved guidance for future products, channels and agents."},
+    {"path": "brand-kit/workbench/expressions/product-card/index.html", "action": "modified", "sha256": null, "reason": "Removed the edition family and rebuilt the review surface around landing, product-card, bundle and realistic website-section families."},
+    {"path": "brand-kit/workbench/expressions/product-card/card-components.js", "action": "modified", "sha256": null, "reason": "Registry-driven factories for 32 static and animated candidates with product-first hierarchy, filled actions and all Round 09 edition kills absent."},
+    {"path": "brand-kit/workbench/expressions/product-card/product-card.js", "action": "modified", "sha256": null, "reason": "Controller for canonical data, exact 32-study count, four-family review export and automatic one-live Deep Mineral allocation."},
+    {"path": "brand-kit/workbench/expressions/product-card/styles.css", "action": "modified", "sha256": null, "reason": "Added canonical hierarchy styling, requested Wings scale and measured fan spacing while preserving rounded responsive geometry."},
+    {"path": "brand-kit/llm/tasks/TASK-EXP-04-PRODUCT-CARD.json", "action": "modified", "sha256": null, "reason": "Closed Phase A and made the Phase B component and functional proof the active subphase."},
+    {"path": "brand-kit/START-HERE.md", "action": "modified", "sha256": null, "reason": "Recorded Phase A authority, the design-ethos guidance and Phase B as the next active work."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "action": "modified", "sha256": null, "reason": "Moved Product Card 02 Phase A into the canonical set and made Phase B explicitly incomplete."},
+    {"path": "brand-kit/docs/ROADMAP.md", "action": "modified", "sha256": null, "reason": "Closed EXP-04 Phase A and opened the seven-component Phase B scope at its own functional gate."},
+    {"path": "brand-kit/docs/HANDOFF.md", "action": "modified", "sha256": null, "reason": "Updated the product-card handoff paragraph to Round 10."},
+    {"path": "brand-kit/data/status.json", "action": "modified", "sha256": null, "reason": "Updated the expressions section summary to Round 10."},
+    {"path": "brand-kit/index.html", "action": "modified", "sha256": null, "reason": "Updated the workbench index entry for the Round 10 hierarchy-lock system."}
+  ],
+  "decisionsApplied": ["DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001", "DEC-WINGS-MARK-EXPRESSION-001", "DEC-DISC-EXPRESSION-001", "DEC-MOTION-002", "DEC-LIVING-CORE-FINISH-001", "DEC-FAMILY-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-TYPE-FOUNDATION-001"],
+  "tests": [
+    {"id": "EXP-04A-ARCHITECTURE", "status": "pass", "evidence": "verify_product_card_contract.py passes: four rounded card families render 32 hierarchy-locked candidates and all four killed Round 09 editions are absent."},
+    {"id": "EXP-04A-CONTEXT", "status": "pass", "evidence": "Landing, product card, bundle and real website-section families expose practical placement rather than isolated art-card styling."},
+    {"id": "EXP-04A-SURFACES", "status": "pass", "evidence": "Charcoal rooms use #171715/#1B1B19/#252523 token remaps; charcoal objects use #2E2E2E; light and dark environments each carry one cross-contrast focal object."},
+    {"id": "EXP-04A-MOTION", "status": "pass", "evidence": "IntersectionObserver moves one live slot automatically to the dominant motion pane; no button exists and ?static or ?no-webgl uses exact static twins."},
+    {"id": "EXP-04A-GROUPING", "status": "pass", "evidence": "Stacks, a single integrated card, measured fan and boxed suites show bounded product relationships without copy collision."},
+    {"id": "EXP-04A-RESPONSIVE", "status": "pass", "evidence": "Responsive CSS recomposes every family to one column and realistic site sections to mobile source order below 760px."},
+    {"id": "EXP-04A-HUMAN", "status": "pass", "evidence": "Olli kept all 32 Round 10 specimens, described the work as really, really good and explicitly asked to close Phase A and carry the feedback trail into the rest of the design system."}
+  ],
+  "artifactsProduced": ["Product Card 02 Phase A canonical visual grammar 1.0.0", "Deterministic approved Phase A package", "32-design permanent regression workbench", "Preserved round-05 through round-10 feedback", "Approved product-expression ethos"],
+  "assumptions": ["Framework-free ES-module factories satisfy the reusable-component requirement because the repository forbids external URLs in proofs and carries no Node toolchain; the factories port directly into the Phase B website stack.", "The play-orb page and expression atlas 02 are creative donors with recorded provenance, not authority; their useful grammar was rebuilt on canonical tokens rather than copied."],
+  "exceptions": ["The gradient-Wings monogram appears in the treatment matrix flagged as the recorded rare identity exception.", "System Editions are removed from Product Card 02; any future collectible work belongs to EXP-05 and requires a new decision.", "The single live slot is movable in the motion laboratory; production surfaces would pin it to one focal placement."],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION", "status": "approved"},
+  "nextAction": "Begin Phase B with ProductDiscoveryCard, ProductFeatureCard, ProductPricingCard, ProductCheckoutSummary, ProductBundleOffer, ProductUpsellRow and ProductMobileStickySummary; stop at H-EXP-04B-CARD-FUNCTIONAL-PROOF."
+}

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "taskId": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "generatedAt": "2026-07-28T06:52:45Z",
+  "systemVersion": "1.0.0-rc.1+approved-candidate-unreleased",
+  "sourceState": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-foundations-expressions",
+    "commit": "2d9bcdebd1a931f3925adf7f3d5aa6edc0483368",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {
+      "path": "brand-kit/START-HERE.md",
+      "sha256": "1e13ab48012b64721ae7a0c0a4ea9a14060939447c723d98a4522577c5e0e0f0",
+      "role": "canonical",
+      "required": true,
+      "reason": "Control-plane state immediately before the exact package gate closed."
+    },
+    {
+      "path": "brand-kit/docs/CURRENT-STATE.md",
+      "sha256": "12463908e854965c7aa52e3aff7152f08858ffcb790cb9e0bc14d73e008c7337",
+      "role": "canonical",
+      "required": true,
+      "reason": "Exact pre-gate programme state and release boundary."
+    },
+    {
+      "path": "brand-kit/docs/ROADMAP.md",
+      "sha256": "1f1321a25b1b19b2e2124e22027f02b357dc629f22523d57a4ef66d530988e76",
+      "role": "canonical",
+      "required": true,
+      "reason": "Phase 4 sequence through PORT-04."
+    },
+    {
+      "path": "brand-kit/governance/decisions.json",
+      "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587",
+      "role": "governance",
+      "required": true,
+      "reason": "Immutable cutover decision authority."
+    },
+    {
+      "path": "brand-kit/governance/post-cutover-decisions.json",
+      "sha256": "9e3313fdd4fac1f9dd02a03d4870f228381faa9f245d76a121828342b1ec9ced",
+      "role": "governance",
+      "required": true,
+      "reason": "Five approved inputs to the assembled package."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/release-plan.source.json",
+      "sha256": "154771e822fba9f77d4466c944df461ff4f9573bdef5be596f6be1dce131b37d",
+      "role": "governance",
+      "required": true,
+      "reason": "Package, proof, consumer, versioning and rollback boundary used for assembly."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/port-03-verification.json",
+      "sha256": "9b5602fc993ee404e1ebe8771dda5e77fc085f1bba219376c3921f3df2a9dfbc",
+      "role": "evidence",
+      "required": true,
+      "reason": "Pre-gate deterministic, isolated, visual, interaction and Gate B evidence."
+    },
+    {
+      "path": "brand-kit/releases/production-01/1.0.0-rc.1/manifest.json",
+      "sha256": "c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8",
+      "role": "evidence",
+      "required": true,
+      "reason": "Exact package bytes approved by Olli."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-FOUNDATION-RELEASE-001",
+      "status": "approved",
+      "productionEffect": "Supplies the bounded portable foundation release to the candidate."
+    },
+    {
+      "id": "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "status": "approved",
+      "productionEffect": "Supplies canonical Global Navigation 1.0.0 to the candidate."
+    },
+    {
+      "id": "DEC-GOLDEN-HOMEPAGE-001",
+      "status": "approved-unreleased",
+      "productionEffect": "Supplies the canonical Golden Homepage design reference without deployment authority."
+    },
+    {
+      "id": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "status": "approved",
+      "productionEffect": "Supplies canonical CMP-05 with its bounded motion exception."
+    },
+    {
+      "id": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+      "status": "approved",
+      "productionEffect": "Supplies canonical CMP-06 with frozen evidence and bounded drift."
+    }
+  ],
+  "artifacts": [],
+  "consumers": [
+    "CON-MEZ-SYSTEMS-WEB-001"
+  ],
+  "knownConflicts": [
+    {
+      "id": "CONFLICT-PORT-03-CONSUMER-UNREGISTERED",
+      "summary": "The named consumer has no exact repository registration.",
+      "executionEffect": "stop"
+    },
+    {
+      "id": "CONFLICT-PORT-03-THIRD-PARTY-MARKS",
+      "summary": "Sixteen reference marks require consumer legal and attribution confirmation before deployment.",
+      "executionEffect": "constrain"
+    },
+    {
+      "id": "CONFLICT-PORT-03-LIVE-CONTENT",
+      "summary": "Testimonial freshness and continuing consent remain consumer-owned operations.",
+      "executionEffect": "constrain"
+    }
+  ],
+  "stopConditions": [
+    "Do not publish, deploy or assign production version 1.0.0 from PORT-03 approval.",
+    "Do not enter a consumer until CON-MEZ-SYSTEMS-WEB-001 has one exact repository registration.",
+    "Do not change the approved package bytes while recording the gate.",
+    "Do not treat examples, third-party marks or dated follower evidence as live consumer truth."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/llm/tasks/TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY.json",
+      "brand-kit/releases/production-01-plan/port-03-verification.json"
+    ],
+    "omitByDefault": [
+      "brand-kit/history/",
+      "brand-kit/workbench/golden/homepage/problem-lab-9/",
+      "play-orb/"
+    ]
+  },
+  "humanNotes": [
+    "Olli approved the four exact redacted derivatives and separately approved the exact 1.0.0-rc.1 package on 2026-07-28."
+  ]
+}

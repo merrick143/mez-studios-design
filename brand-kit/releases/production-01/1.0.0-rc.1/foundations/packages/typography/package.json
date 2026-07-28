@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageId": "mz.systems.package.typography",
+  "version": "1.0.0",
+  "scope": "typography-foundation",
+  "foundationId": "mz.systems.foundation.typography",
+  "status": "canonical",
+  "decisionIds": [
+    "DEC-TYPE-001",
+    "DEC-TYPE-FOUNDATION-001",
+    "DEC-MIGRATION-SEQUENCE-001"
+  ],
+  "reviewGateId": "H-FND-01-TYPE-PROOF",
+  "productionReadyForScope": true,
+  "entrypoints": {
+    "css": "tokens.css",
+    "tokens": "tokens.json",
+    "source": "typography.source.json"
+  },
+  "notes": [
+    "This is a portable typography slice, not the foundation-complete design-system release."
+  ]
+}

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Problem Section Lab 8 (C refined)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-dark-soft: #2e2e2e; --page-dark-softer: #3b3b38;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1;
+  --page-muted: #666662; --page-dark-muted: #b8b8b1; --page-dark-body: #cfcfc9;
+  --step: clamp(12px, 2vw, 30px);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* ---------------------------------------------------------------- lab shell */
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 10px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-top nav a:hover { background: rgba(248,248,248,.1); }
+.lab-note {
+  padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: var(--page-dark-body);
+  font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3;
+}
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; color: var(--page-ink);
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--page-muted);
+}
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 62ch; line-height: 1.5; }
+
+/* ------------------------------------------------------------ section chassis */
+/* Layout locked to lab 7 variant C: two columns, head left, steps right. */
+.pf { background: var(--page-paper); color: var(--page-ink); }
+.pf-inner {
+  max-width: 1180px; margin-inline: auto;
+  padding-inline: clamp(20px,5vw,64px);
+  padding-block: clamp(72px,9vw,124px);
+  display: grid; grid-template-columns: minmax(0,.95fr) minmax(0,1.05fr);
+  gap: clamp(36px,5.5vw,76px); align-items: center;
+}
+.pf-eyebrow {
+  margin: 0; font-family: var(--mz-font-technical); font-size: 12px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted);
+}
+/* One ink colour. The grey-prefix treatment is gone: the two sentences are
+   separated by the line break alone. */
+.pf-title {
+  margin: 18px 0 0; font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(30px,3.6vw,48px); line-height: 1.02; letter-spacing: -.04em;
+  max-inline-size: 20ch; color: var(--page-ink);
+}
+.pf-title span { display: block; }
+.pf-lead {
+  margin: 22px 0 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5;
+  color: var(--page-muted); max-inline-size: 42ch;
+}
+@media (max-width: 900px) { .pf-inner { grid-template-columns: 1fr; gap: 44px; } }
+
+/* --------------------------------------------------------- shared step anatomy */
+.st { display: grid; gap: 4px; }
+.st-row {
+  position: relative; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 18px 22px; border-radius: var(--mz-radius-compact);
+  border: 1px solid var(--page-line);
+  width: calc(100% - (var(--step) * 4));
+}
+.st-role {
+  font-family: var(--mz-font-display); font-weight: 640; font-size: 16px; letter-spacing: -.02em;
+}
+.st-layer { background: var(--page-dark); border-color: var(--page-dark); color: var(--page-paper); }
+.st-layer .st-role { color: var(--page-paper); font-weight: 600; }
+.o-1 { margin-left: calc(var(--step) * 1); }
+.o-2 { margin-left: calc(var(--step) * 2); }
+.o-3 { margin-left: calc(var(--step) * 3); }
+.o-4 { margin-left: calc(var(--step) * 4); }
+
+/* The weight ramp, unchanged. */
+.w-1 { background: var(--page-dark-softer); border-color: var(--page-dark-softer); }
+.w-2 { background: var(--page-dark-soft); border-color: var(--page-dark-soft); }
+.w-3 { background: var(--page-dark-raised); border-color: var(--page-dark-raised); }
+.w-4 { background: var(--page-dark); border-color: var(--page-dark); }
+
+/* ------------------------------------------- the variable: the business tread */
+/* A · ink hairline. White fill, ink border, so it is definite rather than pale. */
+.you--hairline { background: var(--page-white); border-color: var(--page-ink); }
+/* B · ink emphasis. The same, at the emphasis border width. */
+.you--emphasis {
+  background: var(--page-white);
+  border: var(--mz-border-width-emphasis, 2px) solid var(--page-ink);
+}
+/* C · anchored. Ink hairline plus real height and a larger role, so the tread
+   reads as the thing the layers are stacked away from. */
+.you--anchor {
+  background: var(--page-white); border-color: var(--page-ink);
+  padding-block: 26px;
+}
+.you--anchor .st-role { font-size: 21px; letter-spacing: -.026em; }
+
+@media (max-width: 620px) {
+  :root { --step: 9px; }
+}
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Problem Section · Lab 8 · C refined</strong>
+  <nav>
+    <a href="#a">A ink hairline</a><a href="#b">B ink emphasis</a><a href="#c">C anchored</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>Lab 7 variant C, with both notes applied.</b> The grey-prefix heading is gone: the title is one
+  ink colour and the two sentences are separated by the line break alone. The business tread no
+  longer sits on a mid-grey border. Everything else is held: two-column layout, radius 8,
+  equal-width offset treads, the weight ramp, canonical copy, no notes, no intelligence block.
+  The only variable across these three is how much presence the business tread carries.
+</div>
+
+<!-- ======================================================== A · INK HAIRLINE -->
+<article class="lab-item" id="a">
+  <header class="lab-label">
+    <span class="lab-num">A</span>
+    <span class="lab-name">Ink hairline</span>
+    <span class="lab-rule">Business tread · 1px ink border</span>
+    <span class="lab-rat">The minimal correction. Same hairline weight as everything else in the system, but drawn in ink instead of mid grey, so the tread reads as definite rather than washed out.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner">
+    <div>
+      <p class="pf-eyebrow">The problem</p>
+      <h2 class="pf-title"><span>Too many tools.</span> Too many middlemen.</h2>
+      <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+    </div>
+    <div>
+      <div class="st">
+        <div class="st-row you--hairline"><span class="st-role">Your business</span></div>
+        <div class="st-row st-layer w-1 o-1"><span class="st-role">Another subscription</span></div>
+        <div class="st-row st-layer w-2 o-2"><span class="st-role">Another interface</span></div>
+        <div class="st-row st-layer w-3 o-3"><span class="st-role">Another app</span></div>
+        <div class="st-row st-layer w-4 o-4"><span class="st-role">Another login</span></div>
+      </div>
+    </div>
+    </div>
+  </section>
+</article>
+
+<!-- ======================================================= B · INK EMPHASIS -->
+<article class="lab-item" id="b">
+  <header class="lab-label">
+    <span class="lab-num">B</span>
+    <span class="lab-name">Ink emphasis</span>
+    <span class="lab-rule">Business tread · 2px ink border</span>
+    <span class="lab-rat">The same ink border at the emphasis width the geometry scale defines. It claims more of the composition without changing the tread's size or the ramp beneath it.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner">
+    <div>
+      <p class="pf-eyebrow">The problem</p>
+      <h2 class="pf-title"><span>Too many tools.</span> Too many middlemen.</h2>
+      <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+    </div>
+    <div>
+      <div class="st">
+        <div class="st-row you--emphasis"><span class="st-role">Your business</span></div>
+        <div class="st-row st-layer w-1 o-1"><span class="st-role">Another subscription</span></div>
+        <div class="st-row st-layer w-2 o-2"><span class="st-role">Another interface</span></div>
+        <div class="st-row st-layer w-3 o-3"><span class="st-role">Another app</span></div>
+        <div class="st-row st-layer w-4 o-4"><span class="st-role">Another login</span></div>
+      </div>
+    </div>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== C · ANCHORED -->
+<article class="lab-item" id="c">
+  <header class="lab-label">
+    <span class="lab-num">C</span>
+    <span class="lab-name">Anchored</span>
+    <span class="lab-rule">Business tread · ink hairline, more height, larger role</span>
+    <span class="lab-rat">Presence through hierarchy rather than through border weight. The tread is taller and its label is set larger, so it reads as the thing the layers are stacked away from rather than as the first item in a list of five.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner">
+    <div>
+      <p class="pf-eyebrow">The problem</p>
+      <h2 class="pf-title"><span>Too many tools.</span> Too many middlemen.</h2>
+      <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+    </div>
+    <div>
+      <div class="st">
+        <div class="st-row you--anchor"><span class="st-role">Your business</span></div>
+        <div class="st-row st-layer w-1 o-1"><span class="st-role">Another subscription</span></div>
+        <div class="st-row st-layer w-2 o-2"><span class="st-role">Another interface</span></div>
+        <div class="st-row st-layer w-3 o-3"><span class="st-role">Another app</span></div>
+        <div class="st-row st-layer w-4 o-4"><span class="st-role">Another login</span></div>
+      </div>
+    </div>
+    </div>
+  </section>
+</article>
+
+</body>
+</html>

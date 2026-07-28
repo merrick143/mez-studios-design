@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.halftone-portrait",
+  "taskId": "TASK-CMP-05-HALFTONE-PORTRAIT",
+  "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF",
+  "candidateRevision": "halftone-portrait-01-r01",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Codex design-critique",
+  "verdict": "pass-candidate",
+  "score": 67,
+  "maximum": 75,
+  "productionAuthority": false,
+  "blockingReasons": [],
+  "scope": "Gate B on the exact CMP-05 candidate bytes and live workbench at the locked treatment. This does not promote the component.",
+  "scores": {
+    "hierarchy": {"score": 5, "weight": 2},
+    "composition": {"score": 4, "weight": 2},
+    "pacing": {"score": 4, "weight": 1},
+    "typography": {"score": 4, "weight": 1},
+    "productTruth": {"score": 5, "weight": 2},
+    "distinctiveness": {"score": 5, "weight": 2},
+    "narrative": {"score": 4, "weight": 1},
+    "conversionClarity": {"score": 3, "weight": 1},
+    "emotionalResonance": {"score": 4, "weight": 1},
+    "craft": {"score": 5, "weight": 1},
+    "originality": {"score": 5, "weight": 1}
+  },
+  "namedTests": {
+    "T1StripTest": {"result": "pass", "evidence": "With colour, movement and workbench copy mentally removed, the dot-screen likeness and controlled absence of ink on the matte remain recognisably the Mez halftone portrait rather than a generic avatar treatment."},
+    "T2ComponentRepetitionTest": {"result": "pass", "evidence": "The component owns one clipped image surface and no quote, profile or generic card anatomy. Repetition in the workbench exists only to prove allocation, range and failure states."},
+    "T3MotionComparisonTest": {"result": "pass", "evidence": "Two full-viewport screenshots sampled 1.04 video-seconds apart changed 37,050 of 101,124 pixels, or 36.64%, inside the live allocated portrait. The adjacent allocated static portrait changed 0 of 100,806 pixels."},
+    "T4RealContentTest": {"result": "pass", "evidence": "The locked treatment, range, allocation and failure states use the approved local matted portrait clips and a deliberate missing-source fixture; no fabricated likeness, remote fetch or placeholder portrait is present."}
+  },
+  "canonScan": {
+    "result": "pass-with-recorded-exception",
+    "notes": "No gradients, glow, glass, ornamental motion, nested card anatomy or ungoverned network/runtime dependency were found. The only motion escape is the already recorded motion-policy=always exception, and it remains opt-in and offscreen-idled."
+  },
+  "findings": [
+    {
+      "rank": 1,
+      "type": "non-blocking-limit",
+      "location": "invert attribute with baked light-plate matte",
+      "finding": "The inverted range example dots the baked plate and is materially weaker than the locked treatment.",
+      "resolution": "Keep this as a documented capability limitation. The locked treatment does not use invert; restoring it would require an alpha-channel media decision outside this gate."
+    }
+  ],
+  "humanGate": {"state": "ready", "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF", "canonicalPromotionRequired": true},
+  "outputStatus": "candidate"
+}

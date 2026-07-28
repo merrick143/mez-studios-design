@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "proofId": "mz.systems.expression.stress-proof",
+  "version": "1.0.0",
+  "status": "canonical",
+  "decisionId": "DEC-EXPRESSION-STRESS-CERTIFICATION-001",
+  "productionAuthority": true,
+  "artifactCount": 5,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 1371,
+      "sha256": "662b34d3fba5801479204a2b88b26943167c2c8df0ea0612de6a4d23d1a823e5"
+    },
+    {
+      "path": "expression-stress.schema.json",
+      "bytes": 2868,
+      "sha256": "c5cbcdeeed617b335b75263c69e12e57f6d4aa7fde5139144a08d8ff5a4bba6f"
+    },
+    {
+      "path": "expression-stress.source.json",
+      "bytes": 8123,
+      "sha256": "c57b1a069cf57473d0a008a88c9fb19d7daf4977384ef8e7c2da1f849c6b6268"
+    },
+    {
+      "path": "package.json",
+      "bytes": 542,
+      "sha256": "bdc1b432b09668c76d0db05f8d9d9d2c64e1d982558ae13d110f39d10439b6b3"
+    },
+    {
+      "path": "review.json",
+      "bytes": 1101,
+      "sha256": "f77f5f824eefd761b9c8179dfb5ed47b37652fc085f4dfc2d10099d09a7989e5"
+    }
+  ]
+}

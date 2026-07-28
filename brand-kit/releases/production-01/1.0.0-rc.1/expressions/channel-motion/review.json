@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-07-CHANNEL-MOTION-PROOF",
+  "taskId": "TASK-EXP-07-CHANNEL-MOTION",
+  "expressionId": "mz.systems.expression.channel-motion-matrix",
+  "programmeItem": "Website Motion 01",
+  "candidateRevision": "channel-motion-matrix-01-r03",
+  "verdict": "approve-with-deferral",
+  "specimenVerdicts": {"keep": 7, "defer": 1, "revise": 0, "kill": 0},
+  "note": "Seven Round 03 specimens are approved as the complete bounded website-motion grammar. MOT-W02 is not a failed direction: its illustrative menu is removed from EXP-07 and deferred to TASK-CMP-01-GLOBAL-NAVIGATION, which will treat the existing mez-explore-menu Web Component as research evidence.",
+  "reviewedAt": "2026-07-23T00:49:47Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-WEBSITE-MOTION-SYSTEM-001",
+  "resultingStatus": "canonical",
+  "programmeStatus": "complete",
+  "authorityScope": "The three approved motion laws, section entry, accordion/tabs, user-driven carousel, processor/progress, static equivalence, one-event allocation, timing, easing, exclusions and prohibitions are canonical. No global navigation component, menu visual direction, golden homepage, consumer implementation, channel-production motion or Figma work is authorised by this decision.",
+  "deferred": {"specimenId": "MOT-W02", "taskId": "TASK-CMP-01-GLOBAL-NAVIGATION", "evidence": ["explore-menu/explore-menu.js", "explore-menu/explore-menu.css", "explore-menu/index.html", "explore-menu/showcase.js"]},
+  "productionAuthority": true
+}

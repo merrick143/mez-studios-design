@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "pantryId": null,
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "candidateRevision": "testimonial-marquee-01-r04",
+  "verdict": "approved",
+  "productionAuthority": true,
+  "decisionId": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+  "recordedAt": "2026-07-28",
+  "requestedBy": "Olli",
+  "summary": "Olli selected and locked the Round 03 social-caption design, approved the exact Round 04 candidate for canonical promotion and chose frozen dated follower snapshots on 2026-07-28. The component is canonical under DEC-TESTIMONIAL-MARQUEE-COMPONENT-001. No release package or consumer deployment is implied.",
+  "provenance": {
+    "content": "https://mez.systems/ai-os, refreshed 2026-07-28 from the originating testimonial-slider source",
+    "profileImages": "Curated Mez testimonial images from testimonial-slider/pipeline/accounts.json referenceUrl values; stored as local 280px crops.",
+    "portraitPreparation": "mezcorp_claude_code/departments/design/projects/testimonial-slider/pipeline/matted",
+    "portraitRender": "brand-kit/components/halftone-portrait canonical 1.0.0",
+    "motionAuthority": "DEC-WEBSITE-MOTION-SYSTEM-001",
+    "trackMotionException": "brand-kit/components/testimonial-marquee/round-03-feedback.json#motionDecisionException",
+    "portraitMotionException": "brand-kit/components/halftone-portrait/halftone-portrait.source.json#motionDecisionException",
+    "consent": "Confirmed by Olli on 2026-07-27; recorded in CMP-05 fixture media provenance."
+  },
+  "whatWasProven": [
+    {
+      "claim": "The live fixture contains seven video-backed testimonials, seven local profile images and no Daniel record.",
+      "method": "Fixture, filesystem and rendered DOM inspection.",
+      "result": "Seven primary items rendered in source order. Every record resolved one local clip and one complete local profile image; Daniel Leung was absent."
+    },
+    {
+      "claim": "Profile anatomy is Name, Username and Followers with verified state and no social destination.",
+      "method": "Rendered DOM and accessibility snapshot on all five workbench presentations.",
+      "result": "Each primary item exposed the supplied name, handle, follower snapshot and named verified badge. Each CMP-06 host contained 0 anchors and 0 buttons."
+    },
+    {
+      "claim": "Continuous drift is real and resumes quickly after manual scrolling.",
+      "method": "In-app Browser at 1440. A native horizontal wheel gesture was sent inside the social-caption phase, the pointer moved out, and motion state plus scrollLeft were sampled at 150ms, 950ms and 1300ms.",
+      "result": "The rail was paused at 150ms, running at 950ms and had advanced another 8.5px by 1300ms. The workbench event measurement recorded 907ms recovery, within its 1.2s sampling tolerance and consistent with the contracted 900ms pause."
+    },
+    {
+      "claim": "Keyboard focus pauses the whole testimonial phase and keyboard navigation remains complete without buttons.",
+      "method": "In-app Browser keyboard End interaction plus computed-style and motion sampling.",
+      "result": "The labelled viewport was the CMP-06 tab stop with a solid 3px outline and 3px offset. End selected testimonial 7 of 7 and the rail changed by 0px over the following 600ms while focused. ArrowLeft, ArrowRight, Home and End remain verifier-asserted against JavaScript."
+    },
+    {
+      "claim": "Only visible workbench instances and visible portraits receive motion.",
+      "method": "In-app Browser sampling with proof-ledger centered after 1.25s.",
+      "result": "The three page-offscreen components reported paused with 0 live portraits and 0 playing videos. The two visible components each had one live, playing portrait. No clipped portrait inside the measured viewport remained live."
+    },
+    {
+      "claim": "Track and portrait motion are both perceptible rather than nominal.",
+      "method": "Track scrollLeft and playing video currentTime were sampled 1,250ms apart on the visible proof-ledger presentation.",
+      "result": "The track advanced 31px. Both visible portrait videos advanced 1.273 seconds."
+    },
+    {
+      "claim": "The recommended composition is responsive from 320 through 1440.",
+      "method": "Browser geometry at 320, 375, 390, 768, 920, 1280 and 1440 CSS px.",
+      "result": "The component workbench had 0px page overflow at every width. All widths rendered 7 primary plus 7 aria-hidden loop items, 0 links and 0 buttons. At 320, 375 and 390 the quote top was below both the portrait and profile bottoms, proving the full-width lower row; desktop items remained 260px high."
+    },
+    {
+      "claim": "Reduced motion preserves a static, complete set with the same meaning.",
+      "method": "Forced-static Browser run at 320 across all five presentations.",
+      "result": "Every presentation rendered 7 primary items, 0 clone items, 0 live portraits, visible overflow and the status All 7 testimonials are shown as a complete list. The page had 0px horizontal overflow."
+    },
+    {
+      "claim": "The Golden Homepage owns composition but not reusable testimonial machinery.",
+      "method": "Rendered and source inspection at 1440 and 320.",
+      "result": "GH-S08 renders Running on Mez Systems and Proof from the operating system centered above CMP-06. Its background is transparent at every declared width, matching the #F8F8F8 body canvas and both adjacent transparent sections; top and bottom borders remain 0px. The element has 7 testimonials, 0 buttons and 0 links."
+    },
+    {
+      "claim": "The selected Round 04 surface passed a post-lock Gate B regression.",
+      "method": "Design-critique skill with rendered compact and wide homepage inspection, all declared viewport geometry, four named tests and anti-slop sweep.",
+      "result": "Round 04 retained 67 of 75 with no blocking reason. The transparent background removed the isolated section plate without changing the locked component anatomy or motion."
+    }
+  ],
+  "defectsFoundAndFixed": [
+    {
+      "defect": "Manual input stayed paused for five seconds after the user stopped.",
+      "fix": "Reduced the trailing direct-input pause to 900ms and measured 907ms workbench recovery."
+    },
+    {
+      "defect": "Mobile kept the quote in the right column, leaving unused space under the portrait.",
+      "fix": "Made the compact copy wrapper participate in the figure grid: portrait and identity share row one; the quote spans both columns in row two."
+    },
+    {
+      "defect": "The account facts were spread horizontally and omitted the existing curated profile image.",
+      "fix": "Added local profile crops and a compact Name, Username, Followers stack. Full names wrap at compact widths."
+    },
+    {
+      "defect": "The proof-ledger evidence column truncated the name after adding the profile image.",
+      "fix": "Expanded its profile column from 190px to 240px."
+    },
+    {
+      "defect": "The workbench readiness sampler could miss events fired before its listeners attached.",
+      "fix": "Initial readiness now also derives from the component's rendered data-count state."
+    }
+  ],
+  "knownGaps": [
+    "Continuous drift remains a bounded exception to DEC-WEBSITE-MOTION-SYSTEM-001. Olli reconfirmed the control-free Round 03 safeguard posture at promotion; this does not rewrite the general motion canon.",
+    "Bobby Tandale and João Moreira follower counts could not be independently refreshed because Instagram presented a login wall. Under the approved frozen-evidence policy, every value remains a dated fixture snapshot and is never represented as live.",
+    "A full spoken-output VoiceOver session was not run. Roles, names, one-tab-stop focus, clone exclusion, live-region attributes and keyboard operation were inspected; exact speech phrasing remains unmeasured.",
+    "Pointer hover pause is implemented and asserted against the JavaScript, but the in-app Browser's synthetic pointer-move surface did not expose a reliable :hover state for an independent timing sample. Focus hold and native manual-input recovery were measured directly.",
+    "CPU, memory and battery cost for a production page with seven visible always-on portraits plus one drifting rail was not profiled.",
+    "The Golden Homepage measured 8px of document overflow at 320 from pre-existing navigation or hero geometry; the CMP-06 workbench itself measured 0px at every declared viewport."
+  ],
+  "humanDecisionsRequired": [],
+  "gateB": {
+    "record": "brand-kit/components/testimonial-marquee/round-04-gate-b.json",
+    "score": 67,
+    "maximum": 75,
+    "verdict": "pass-locked-candidate",
+    "blockingReasonCount": 0,
+    "method": "Rendered inspection at all declared viewports, the four named tests and the anti-slop canon sweep."
+  },
+  "authorityScope": "Canonical component authority granted by Olli on 2026-07-28 under DEC-TESTIMONIAL-MARQUEE-COMPONENT-001. It covers the locked social-caption presentation, seven-video fixture policy, native rail interaction, accessibility contract, frozen dated follower evidence and both explicitly bounded motion exceptions. It does not authorize live social fetching, content invention, consent operations, product identity, page composition, release packaging or deployment.",
+  "approval": "brand-kit/components/testimonial-marquee/approval.json",
+  "outputStatus": "canonical-component"
+}

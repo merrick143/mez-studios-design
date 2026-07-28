@@ -1,0 +1,102 @@
+/* Workbench chrome only. Nothing here is component authority. */
+
+:root {
+  --wb-canvas: #f8f8f6;
+  --wb-ink: #171715;
+  --wb-muted: #666662;
+  --wb-line: #dadad6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 48px 24px 96px;
+  background: var(--wb-canvas);
+  color: var(--wb-ink);
+  font: 400 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wb-head, main { max-width: 1080px; margin: 0 auto; }
+
+.wb-kicker {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8a8a84;
+}
+
+h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: -0.03em; }
+
+.wb-lede { margin: 0 0 20px; max-width: 62ch; color: var(--wb-muted); }
+
+.wb-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.wb-actions a {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid var(--wb-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--wb-ink);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.wb-actions a:hover { background: var(--wb-ink); color: #fff; border-color: var(--wb-ink); }
+
+section { margin-top: 56px; }
+
+h2 {
+  margin: 0 0 4px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a8a84;
+}
+
+.wb-note { margin: 0 0 16px; max-width: 68ch; color: var(--wb-muted); font-size: 14px; }
+
+.wb-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.wb-grid--two { grid-template-columns: repeat(auto-fit, minmax(240px, 320px)); }
+
+figure { margin: 0; }
+
+figure mez-halftone-portrait { border: 1px solid var(--wb-line); }
+
+figcaption { margin-top: 8px; font-size: 12px; color: var(--wb-muted); }
+
+.wb-readout {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--wb-line);
+  border-radius: 12px;
+  background: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+}
+
+.wb-readout[data-state="breach"] {
+  border-color: #b23c17;
+  color: #b23c17;
+}
+
+/* Marquee proof row for the bounded always-on policy. */
+.wb-marquee {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.wb-marquee__item {
+  flex: 0 0 clamp(120px, 15vw, 170px);
+  border: 1px solid var(--wb-line);
+}

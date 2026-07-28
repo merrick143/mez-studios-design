@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/sphere-contract-1.0.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "expressionId", "version", "status", "productionAuthority", "candidateGateId", "candidateRevision", "decisionIds", "relationshipToDisc", "geometry", "finish", "wings", "scaleBands", "allocation", "surfaces", "fallback", "accessibility", "dependencies", "proofProduct", "testViewports"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "expressionId": {"const": "mz.systems.expression.sphere"},
+    "version": {"const": "1.0.0"},
+    "status": {"const": "canonical"},
+    "productionAuthority": {"const": true},
+    "candidateGateId": {"const": "H-EXP-02-SPHERE-PROOF"},
+    "candidateRevision": {"const": "sphere-contract-01"},
+    "decisionIds": {"type": "array", "minItems": 7, "items": {"type": "string"}, "uniqueItems": true},
+    "relationshipToDisc": {"type": "object", "required": ["baseExpression", "policy", "unchanged", "added"]},
+    "geometry": {"type": "object", "required": ["shape", "aspectRatio", "edge", "overflow", "border", "cssShadow", "externalHalo", "externalGlow", "depthSource", "distortion"]},
+    "finish": {"type": "object", "required": ["profileId", "profileName", "values", "policy"]},
+    "wings": {"type": "object", "required": ["assetPath", "sha256", "colour", "widthRatio", "alignment", "cropPolicy"]},
+    "scaleBands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["id", "minimumPx", "maximumPx", "crop", "role", "policy"]}},
+    "allocation": {"type": "object", "required": ["maximumLivePerViewport", "liveRole", "discFallbackContexts", "interaction", "pageRule"]},
+    "surfaces": {"type": "object", "required": ["white", "offWhite", "dark", "contained"]},
+    "fallback": {"type": "object", "required": ["trigger", "asset", "preserved", "removed", "truthLabel", "policy"]},
+    "accessibility": {"type": "object", "required": ["semanticRole", "reducedMotion", "forcedColours", "responsive"]},
+    "dependencies": {"type": "object", "required": ["canonicalDisc", "foundationManifest", "renderer", "finishDecision", "productRegistry", "gradientRegistry"]},
+    "proofProduct": {"type": "object", "required": ["productId", "publicName", "gradientId", "sourcePath", "sourceSha256", "staticTwinPath", "staticTwinSha256"]},
+    "testViewports": {"const": [320, 375, 430, 768, 1024, 1280, 1440]}
+  }
+}

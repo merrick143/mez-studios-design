@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "contextBundleId": "CTX-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "agent": {
+    "kind": "llm",
+    "name": "Codex",
+    "model": "GPT-5"
+  },
+  "startedAt": "2026-07-28T12:00:00+10:00",
+  "finishedAt": "2026-07-28T13:34:23+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {
+      "path": "brand-kit/components/halftone-portrait/",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Canonical 1.0.0 authority, approval and verifier without visual or JavaScript retuning."
+    },
+    {
+      "path": "brand-kit/components/testimonial-marquee/",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Canonical 1.0.0 authority, frozen follower policy, approval and verifier without visual or JavaScript redesign."
+    },
+    {
+      "path": "brand-kit/governance/post-cutover-decisions.json",
+      "action": "modified",
+      "sha256": "9e3313fdd4fac1f9dd02a03d4870f228381faa9f245d76a121828342b1ec9ced",
+      "reason": "Indexes the two separate component decisions while the cutover ledger stays immutable."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/candidate-promotion-packet/",
+      "action": "modified",
+      "sha256": null,
+      "reason": "Closed human gate, selected policies and one-to-one accepted gap dispositions."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY.json",
+      "action": "created",
+      "sha256": "fdf61bf1c62f5d1d4eee81b43df762ca4923b2c38d8c0771f6233870fb11efd2",
+      "reason": "Next isolated release-candidate assembly task."
+    },
+    {
+      "path": "brand-kit/START-HERE.md",
+      "action": "modified",
+      "sha256": "eb9a3c6b9b685f6a912f14e96cbc92347143f330e309ffaeb1e4f4d438936822",
+      "reason": "Current canonical component state and PORT-03 routing."
+    },
+    {
+      "path": "brand-kit/docs/",
+      "action": "modified",
+      "sha256": null,
+      "reason": "CURRENT-STATE, ROADMAP and HANDOFF now agree on the completed gate and next task."
+    }
+  ],
+  "decisionsApplied": [
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+    "DEC-WEBSITE-MOTION-SYSTEM-001"
+  ],
+  "tests": [
+    {
+      "id": "CORE-VALIDATION",
+      "status": "pass",
+      "evidence": "All seven AGENT-GUIDE core validators passed after promotion."
+    },
+    {
+      "id": "CMP-05-CONTRACT",
+      "status": "pass",
+      "evidence": "Verifier confirms canonical 1.0.0, distinct decision authority, implemented one-live allocation, bounded always-on exception and no runtime ML or fetch."
+    },
+    {
+      "id": "CMP-06-CONTRACT",
+      "status": "pass",
+      "evidence": "Verifier confirms canonical 1.0.0, frozen follower policy, seven video-backed records, implemented drift safeguards and complete static reduced motion."
+    },
+    {
+      "id": "PORT-02-CLOSED-PACKET",
+      "status": "pass",
+      "evidence": "Packet verifier confirms two separate approvals, all gap dispositions, frozen evidence, reconfirmed exceptions and no production release authority."
+    },
+    {
+      "id": "PORT-01-BOUNDARY-REGRESSION",
+      "status": "pass",
+      "evidence": "Release-boundary verifier recognizes both components as canonical PORT-03 inputs while raw proof remains excluded."
+    },
+    {
+      "id": "GOLDEN-HOMEPAGE-REGRESSION",
+      "status": "pass",
+      "evidence": "Canonical homepage verifier preserves historical authority and routes current state to ready PORT-03."
+    }
+  ],
+  "artifactsProduced": [
+    "Separate CMP-05 and CMP-06 approval records",
+    "Closed candidate promotion packet and human decision record",
+    "Two post-cutover governance decision entries",
+    "Ready PORT-03 release-candidate assembly task"
+  ],
+  "assumptions": [
+    "Olli's numbered yes responses map in order to the six decision prompts previously presented.",
+    "Release-candidate assembly is reversible agent work and does not imply permission to publish, deploy or assign production version 1.0.0."
+  ],
+  "exceptions": [
+    "The CMP-05 invert limitation is accepted because the locked treatment does not use invert.",
+    "Exact spoken VoiceOver, physical-pointer timing and device profiling are deferred to named-consumer proof.",
+    "Both component motion deviations remain bounded exceptions; Website Motion 1.0.0 is unchanged."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {
+    "gateRequired": true,
+    "gateId": "H-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+    "status": "approved"
+  },
+  "nextAction": "Execute TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY and stop at H-PORT-03-PRODUCTION-RELEASE-CANDIDATE with the exact isolated package and exact redacted derivative bytes."
+}

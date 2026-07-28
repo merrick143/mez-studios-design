@@ -1,0 +1,36 @@
+{
+  "schemaVersion":"1.0.0",
+  "taskId":"TASK-EXP-07-CHANNEL-MOTION",
+  "title":"Define the restrained website motion system",
+  "phase":2,
+  "status":"complete",
+  "owner":"design-system-agent",
+  "objective":"Define the smallest reusable motion grammar needed for Mez marketing websites: one live product material, short functional responses, one simplified demonstration and five calm component behaviours with complete static and reduced-motion states.",
+  "scope":{
+    "included":["three website motion laws","section entry","menu and disclosure","accordion and tabs","user-driven product carousel","processor and progress","one-active-event allocation","exact static twins","reduced-motion behaviour","atomic review feedback"],
+    "excluded":["email motion","advertising motion","organic social motion","video and film production","motion graphics","Figma animation","redesigning canonical expressions","golden homepage","consumer integration","EXP-08 exhaustive stress proof"]
+  },
+  "dependencies":["TASK-EXP-05-TRADING-CARD","DEC-MOTION-002","DEC-DISC-EXPRESSION-001","DEC-SPHERE-EXPRESSION-001","DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-TRADING-CARD-EXPRESSION-001"],
+  "inputs":{
+    "requiredFiles":["brand-kit/START-HERE.md","brand-kit/docs/CURRENT-STATE.md","brand-kit/docs/ROADMAP.md","brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md","brand-kit/expressions/channel-motion/round-02-feedback.json","brand-kit/expressions/disc/disc.source.json","brand-kit/expressions/product-card/product-card.source.json","brand-kit/expressions/trading-card/trading-card.source.json"],
+    "decisionIds":["DEC-MOTION-002","DEC-DISC-EXPRESSION-001","DEC-SPHERE-EXPRESSION-001","DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-TRADING-CARD-EXPRESSION-001"],
+    "artifactIds":[],
+    "consumerIds":[]
+  },
+  "deliverables":[
+    {"path":"brand-kit/expressions/channel-motion/","acceptance":["one schema-validated canonical contract defines three motion laws and four approved website component behaviours","MOT-W02 and the real navigation component are explicitly deferred to TASK-CMP-01-GLOBAL-NAVIGATION","channel-motion production for email, ads, social and film is explicitly excluded","all canonical expression dependencies remain immutable","the deterministic package carries bounded authority through DEC-WEBSITE-MOTION-SYSTEM-001"]},
+    {"path":"brand-kit/workbench/expressions/channel-motion/","acceptance":["seven approved specimens remain visible as complete static and restrained motion comparisons","accordion, tabs and carousel respond to real interactions","motion-capable specimens start automatically only when appropriate","the locked approval record identifies the menu deferral","mobile and desktop retain zero horizontal page overflow"]}
+  ],
+  "verification":[
+    {"id":"EXP-07-SCOPE","method":"command","passCondition":"exactly 7 unique approved specimens render across 3 motion laws and 4 website components; MOT-W02 is deferred"},
+    {"id":"EXP-07-INHERITANCE","method":"command","passCondition":"canonical products, Wings, expressions, foundations and renderer hashes remain unchanged"},
+    {"id":"EXP-07-ALLOCATION","method":"visual","passCondition":"at most one eligible expressive event runs in the viewport"},
+    {"id":"EXP-07-INTERACTION","method":"visual","passCondition":"tabs, accordion, carousel and processor show brief local state changes without autoplay"},
+    {"id":"EXP-07-STATIC","method":"visual","passCondition":"every component remains complete without motion and motion carries no sole meaning"},
+    {"id":"EXP-07-RESPONSIVE","method":"visual","passCondition":"the workbench has no horizontal page overflow at 320 through 1440 pixels"},
+    {"id":"EXP-07-HUMAN","method":"human","passCondition":"Olli approved seven Round 03 specimens and explicitly deferred MOT-W02 to TASK-CMP-01-GLOBAL-NAVIGATION"}
+  ],
+  "humanGate":{"required":true,"gateId":"H-EXP-07-CHANNEL-MOTION-PROOF","approver":"Olli","approvalQuestion":"Is this website-only motion system simple, restrained and useful enough to govern Mez components without making the brand feel overanimated?"},
+  "stopConditions":["a candidate mutates an approved expression contract","more than one expressive event runs in the viewport","motion carries meaning absent from the static state","a carousel moves without user intent","the task expands back into email, advertising, social, film, Figma or motion-graphics production","the task expands into a golden homepage or consumer rollout","candidate work is presented as canonical before the human gate"],
+  "notes":["Round 02 killed film/social story, email, paid advertising, organic social and video/film motion. Documents, icons and open graph were kept as static decisions and removed from motion review. Focal material, functional UI and marketing web were kept.","Round 03 follows Olli's request for Apple-like restraint: simple entry, selection and process behaviour, with no decorative spectacle.","Olli kept seven specimens and moved MOT-W02 out of EXP-07. The real global navigation will be resolved later under TASK-CMP-01-GLOBAL-NAVIGATION from the existing explore-menu research component.","21st.dev may be reviewed later as an implementation catalogue after the component task has a concrete need; it is not a design authority."]
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FND-05-FOUNDATION-RELEASE",
+  "title": "Assemble and prove the canonical foundation release",
+  "phase": 1,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Assemble the four approved foundation packages into one self-contained, versioned, deterministic release with ordering guidance, accessibility validation, migration notes, and isolated consumer proof.",
+  "scope": {
+    "included": ["package typography, colour, space-layout, and geometry-controls without changing their canonical values", "define dependency and CSS loading order", "generate a unified manifest, version metadata, integrity hashes, licences, guidance, and migration notes", "validate accessibility, contrast, responsive, forced-colour, reduced-motion, clean-copy, and isolated consumer usage", "build a bounded foundation-release proof and promotion gate"],
+    "excluded": ["new foundation design decisions", "product-expression components", "golden homepage composition", "production consumer migration", "Figma library", "changing migration release 0.1.0-alpha.1" ]
+  },
+  "dependencies": ["TASK-FND-04-GEOMETRY-CONTROLS", "DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001"],
+  "inputs": {
+    "requiredFiles": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/foundations/typography/dist/", "brand-kit/foundations/colour/dist/", "brand-kit/foundations/space-layout/dist/", "brand-kit/foundations/geometry-controls/dist/"],
+    "decisionIds": ["DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-SPACE-LAYOUT-FOUNDATION-001", "DEC-GEOMETRY-CONTROLS-FOUNDATION-001"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/releases/foundations/", "acceptance": ["one deterministic release contains all declared foundation entrypoints and licences", "source package hashes and decision IDs are preserved", "release status and production authority are explicit"]},
+    {"path": "brand-kit/workbench/foundations/release/", "acceptance": ["isolated fixtures prove loading order, typography, modes, responsive profiles, controls and accessibility", "human release verdict can be recorded without changing source foundations"]}
+  ],
+  "verification": [
+    {"id": "FND-05-INTEGRITY", "method": "command", "passCondition": "source package hashes, manifests, approval records and unified release agree after deterministic rebuild"},
+    {"id": "FND-05-ISOLATION", "method": "command", "passCondition": "release builds and serves from an isolated directory with no canonical-checkout dependency"},
+    {"id": "FND-05-ACCESSIBILITY", "method": "visual", "passCondition": "responsive, contrast, keyboard, focus, forced-colour and reduced-motion fixtures pass from 320px through wide desktop"},
+    {"id": "FND-05-HUMAN", "method": "human", "passCondition": "Olli approves the complete foundation release for promotion"}
+  ],
+  "humanGate": {"required": true, "gateId": "H-FND-05-FOUNDATION-RELEASE", "approver": "Olli", "approvalQuestion": "Does this release faithfully package the four approved foundations as one portable, coherent, production-useful system without introducing new design decisions?"},
+  "stopConditions": ["a release build changes any canonical source package or approval record", "an entrypoint, font, licence, manifest, accessibility fixture or migration note is missing", "isolated consumer proof depends on the canonical checkout", "the task introduces product-expression, homepage, Figma, or consumer-specific design work"],
+  "notes": ["Begin with a read-only inventory of all four canonical package manifests and overlapping entrypoints.", "This is integration and release engineering, not a new taste gate for already approved values.", "The migration identity release 0.1.0-alpha.1 remains immutable and distinct."]
+}

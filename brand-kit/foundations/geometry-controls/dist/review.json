@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-FND-04-CONTROL-PROOF",
+  "taskId": "TASK-FND-04-GEOMETRY-CONTROLS",
+  "foundationId": "mz.systems.foundation.geometry-controls",
+  "candidateRevision": "control-lock-01",
+  "candidateStatus": "review-candidate",
+  "verdict": "approve",
+  "note": "",
+  "reviewedAt": "2026-07-21T09:49:34.352Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-GEOMETRY-CONTROLS-FOUNDATION-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true
+}

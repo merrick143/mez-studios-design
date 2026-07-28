@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.colour",
+  "status": "canonical",
+  "portableRoot": ".",
+  "productionReadyForScope": true,
+  "artifactCount": 9,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 2003,
+      "sha256": "3cd2986220328dbaae883ff889c7cfcdfdf2c244801f5bb9958be0b074bc7fc7"
+    },
+    {
+      "path": "channels.json",
+      "bytes": 20548,
+      "sha256": "2ea5b5df5d19cc8d601274b76af96fcc4b40273ce1c81638025a165906050387"
+    },
+    {
+      "path": "colour.schema.json",
+      "bytes": 2646,
+      "sha256": "848e2f8322400b14a3fcc9a6370248f89bc65eaf21e21bc5b6c5e20ecb3fa952"
+    },
+    {
+      "path": "colour.source.json",
+      "bytes": 13713,
+      "sha256": "ba16cbba5e25341c22ae1d94fe12ef10c9a406ebff5d8f3493b4cb56343b914c"
+    },
+    {
+      "path": "contrast-report.json",
+      "bytes": 25193,
+      "sha256": "240fa8bea7ed60c945ef5870ba5ffec82cce1b02876149a722d10acb781d2abf"
+    },
+    {
+      "path": "package.json",
+      "bytes": 862,
+      "sha256": "183c2acccaeb95737f77b9a5cc77644be03b95054fe6260ee339d68b4afa420b"
+    },
+    {
+      "path": "review.json",
+      "bytes": 589,
+      "sha256": "6a1a0d449b31de79df96b6d27b71615a71c75c6f7ad213408306e81d98ba3dcf"
+    },
+    {
+      "path": "tokens.css",
+      "bytes": 12343,
+      "sha256": "2a7e9752bacd8a642dbe25646b23c783558abf3308d546de788099e5add87222"
+    },
+    {
+      "path": "tokens.json",
+      "bytes": 45809,
+      "sha256": "96af050abdda8fe289f2cba1b7d8c4ead0affaf0ce0ead3c4606e9944e38a8e9"
+    }
+  ]
+}

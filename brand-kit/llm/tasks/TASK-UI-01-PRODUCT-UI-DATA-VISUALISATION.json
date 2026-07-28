@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION",
+  "title": "Build the Mez Systems Product UI and Data Visualisation foundation",
+  "phase": 6,
+  "status": "complete",
+  "owner": "design-system-agent-plus-Olli",
+  "objective": "Establish a code-first product interface grammar and accessible data language through one evidence-backed operational workspace before expanding into product-specific workflows.",
+  "scope": {
+    "included": [
+      "shared application shell, contextual navigation, command/search and responsive recomposition",
+      "one operational ledger using repository-backed fixture data",
+      "accessible table, selection, filtering, sorting, density and disclosure behaviour",
+      "one truthful data visualisation with a complete text alternative",
+      "loading, empty, error, stale, partial and no-permission states",
+      "keyboard, visible focus, screen-reader and reduced-motion proof",
+      "a candidate contract, workbench, verifier, review record and Gate B assessment"
+    ],
+    "excluded": [
+      "inventing production product screens, metrics, users or customer data",
+      "building every final product workflow in the first round",
+      "changing canonical foundations, identity or existing component decisions",
+      "deferred advertising, social, email, deck, document, video, icon, print or environmental channel systems",
+      "consumer repository ingestion, publishing or deployment",
+      "using Figma as independent behaviour or production authority"
+    ]
+  },
+  "dependencies": [
+    "TASK-FIG-01-FIGMA-COMPANION"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/docs/product-ui-priority-sequence.json",
+      "brand-kit/design-authority/",
+      "brand-kit/registry/products.json",
+      "brand-kit/releases/foundations/dist/"
+    ],
+    "decisionIds": [],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/product-ui/",
+      "acceptance": [
+        "source contract and schema define authority, data truth, anatomy, states, density, accessibility and responsive behaviour",
+        "review distinguishes measured results, unmeasured claims, known gaps and human decisions",
+        "verifier checks the contract against the implementation rather than JSON alone"
+      ]
+    },
+    {
+      "path": "brand-kit/workbench/product-ui/",
+      "acceptance": [
+        "the review surface uses only repository-backed fixture facts",
+        "the operational ledger is the visual protagonist rather than a generic metric-card dashboard",
+        "responsive, state, keyboard, focus, screen-reader and data-alternative behaviour can be exercised in the browser"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "UI-01-CONTRACT",
+      "method": "command",
+      "command": "python3 brand-kit/product-ui/verify_product_ui_contract.py",
+      "passCondition": "authority, data lineage, accessible table and visualisation alternatives, state coverage and implementation behaviours pass"
+    },
+    {
+      "id": "UI-01-RESPONSIVE",
+      "method": "visual",
+      "passCondition": "real renders at 320, 375, 390, 768, 920, 1280 and 1440 preserve order, hierarchy and access without body overflow"
+    },
+    {
+      "id": "UI-01-ACCESSIBILITY",
+      "method": "manual-inspection",
+      "passCondition": "keyboard, focus, spoken labels, table semantics and chart text alternative are proven in the running workbench"
+    },
+    {
+      "id": "UI-01-GATE-B",
+      "method": "human",
+      "passCondition": "Olli accepts, revises or rejects the candidate after a Gate B design critique"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-UI-01-PRODUCT-UI-FOUNDATION",
+    "approver": "Olli",
+    "approvalQuestion": "Does this operational ledger establish a distinctive, credible and usable Mez product-interface grammar worth expanding into the real product workflows?"
+  },
+  "stopConditions": [
+    "the candidate requires invented production data or customer claims",
+    "the interface becomes a generic card-grid dashboard rather than one coherent workspace",
+    "responsive behaviour hides meaning or requires page-level horizontal scrolling",
+    "a chart has no complete text alternative",
+    "the work enters a consumer repository, publishes or deploys"
+  ],
+  "notes": [
+    "SEQ-PRODUCT-UI-FIRST-001 records Olli's priority change; deferred channel systems remain future work.",
+    "The first review fixture is the design-system control plane itself because its data can be verified locally. It is not presented as a production Mez product screen.",
+    "Real AI OS and other product workflows follow only after the shared grammar is accepted and source evidence is available.",
+    "Round 01 passed its bounded verifier, responsive and interaction proof and Gate B at 67/75.",
+    "Olli approved the operational-ledger foundation direction through H-UI-01-PRODUCT-UI-FOUNDATION on 28 July 2026. The approval creates no canonical or production authority."
+  ]
+}

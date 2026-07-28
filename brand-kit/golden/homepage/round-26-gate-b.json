@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r26",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S07 selected V02 unboxed disc rail",
+    "standard-width centred composition and reduced disc scale",
+    "static-at-rest and hover-or-focus-live behaviour",
+    "page composition adjacency and responsive reflow"
+  ],
+  "score": {
+    "weighted": 66,
+    "maximum": 75,
+    "verdict": "pass",
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 4,
+      "typography": 4,
+      "productTruthAndProof": 5,
+      "distinctiveness": 4,
+      "narrative": 4,
+      "conversionClarity": 4,
+      "emotionalImpact": 4,
+      "craft": 4,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "At 1280px and 375px with all material stripped to charcoal and the page greyscaled, the hard circular family, exact centred Wings, open equal rail and asymmetric editorial header remain recognisably Mez."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The page sequence remains hero mosaic, testimonial rail, problem field, architecture diagram, workflow sequence, sticky proof, authored dark split and product mosaic. GH-S07 does not repeat an adjacent family."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "The tightened candidate produced 146 WebGL draw calls over 1.2 seconds with exactly one ecosystem canvas live. The preceding motion proof also measured 45.61% pixel change, confirmed single-host switching from MZ-G12 to MZ-G06, and returned ecosystem hosts and canvases to zero on blur; only layout CSS changed after that proof."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "The rail uses the four canonical coming-soon names, MZ-G12, MZ-G06, MZ-G15 and MZ-G20, their exact static twins, the shared renderer and canonical Wings. No placeholder or invented product data appears."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "No horizontal overflow was observed. The rail is held to the standard 1160px shell; discs resolve to 88px at 320–390, 116px at 768–920, 147px at 1280 and the selected 164px cap at 1440. At desktop every disc and copy centre matches its column centre; the four-column rail becomes two centred columns and then a compact source-ordered vertical list."
+  },
+  "fallbackReview": {
+    "result": "pass",
+    "evidence": "Forced-static and no-WebGL states keep the exact MZ-G12 twin, a 1:1 147px disc at 1280 and zero canvases or live hosts after focus."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 0,
+    "method": "Rendered normal, compact, stripped, live, forced-static and no-WebGL states; checked COL, TYP, LAY, MOT, ICO, CPY and MAT in ID order. The gate would fail on a restored dark tray, card chassis, non-circular field, second live core, missing static twin, off-token focus, horizontal overflow or invented product truth."
+  },
+  "findings": [],
+  "recommendation": {
+    "result": "keep",
+    "reason": "The standard-width rail and smaller centred product stacks preserve the unboxed expression Olli selected while removing the scattered feel of the earlier wide composition.",
+    "selectionAuthority": "Olli"
+  },
+  "outputStatus": "candidate",
+  "readyForOlliReview": true
+}

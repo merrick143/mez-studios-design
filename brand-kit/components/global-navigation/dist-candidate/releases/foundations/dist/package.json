@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageId": "mz.systems.package.foundation-release",
+  "releaseId": "mz.systems.release.foundations",
+  "version": "1.0.0",
+  "scope": "typography-colour-space-layout-geometry-controls",
+  "status": "canonical",
+  "candidateRevision": "foundation-release-01",
+  "reviewGateId": "H-FND-05-FOUNDATION-RELEASE",
+  "productionReadyForScope": true,
+  "productionAuthority": true,
+  "decisionIds": [
+    "DEC-TYPE-FOUNDATION-001",
+    "DEC-COLOUR-FOUNDATION-001",
+    "DEC-SPACE-LAYOUT-FOUNDATION-001",
+    "DEC-GEOMETRY-CONTROLS-FOUNDATION-001",
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-MIGRATION-SEQUENCE-001"
+  ],
+  "entrypoints": {
+    "css": "index.css",
+    "loadOrder": "load-order.json",
+    "licences": "licences.json",
+    "source": "release.source.json",
+    "review": "review.json",
+    "migration": "MIGRATION.md"
+  },
+  "packages": [
+    {
+      "key": "typography",
+      "path": "packages/typography",
+      "packageId": "mz.systems.package.typography",
+      "version": "1.0.0",
+      "reviewGateId": "H-FND-01-TYPE-PROOF",
+      "packageSha256": "c5c741bd0b6194610b350e9e4734aa2d591606c5657bb5601cbe603a627f6ecc",
+      "manifestSha256": "b96dab0d582580fe0753438c3889f7c37a5ed5ca7ab4509b1a067eae144bd513"
+    },
+    {
+      "key": "colour",
+      "path": "packages/colour",
+      "packageId": "mz.systems.package.colour",
+      "version": "1.0.0",
+      "reviewGateId": "H-FND-02-SURFACE-PROOF",
+      "packageSha256": "183c2acccaeb95737f77b9a5cc77644be03b95054fe6260ee339d68b4afa420b",
+      "manifestSha256": "c1c8283bee32e8526c026c135ca81d0102d11e7a4227714d98bcd4e9279f2c25"
+    },
+    {
+      "key": "space-layout",
+      "path": "packages/space-layout",
+      "packageId": "mz.systems.package.space-layout",
+      "version": "1.0.0",
+      "reviewGateId": "H-FND-03-SPATIAL-PROOF",
+      "packageSha256": "d25d584b61d73685d6c186744bf4a7b175a20ddd1e986de1c1138da9cc68d2fb",
+      "manifestSha256": "8914ee15f3639a8d73e9ba658b5cb1f6aa09efd05e8baeec862625788bab86d2"
+    },
+    {
+      "key": "geometry-controls",
+      "path": "packages/geometry-controls",
+      "packageId": "mz.systems.package.geometry-controls",
+      "version": "1.0.0",
+      "reviewGateId": "H-FND-04-CONTROL-PROOF",
+      "packageSha256": "204bcddc03a7b9694d62025a503c12342f23fe27841675fa45da4d6767073ce9",
+      "manifestSha256": "efb2342e7bab143913c84f509348b07a8ecc8cd01cef5e4fdf8aae17693272d8"
+    }
+  ],
+  "notes": [
+    "The four nested packages are byte-for-byte copies of their canonical 1.0.0 distributions.",
+    "The assembled release is canonical and production-authorised for its bounded foundation scope through H-FND-05-FOUNDATION-RELEASE."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-EXP-05-TRADING-CARD",
+  "taskId": "TASK-EXP-05-TRADING-CARD",
+  "generatedAt": "2026-07-22T23:02:31Z",
+  "systemVersion": "1.0.0+trading-card",
+  "sourceState": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-foundations-expressions",
+    "commit": "7c2141cc0e8effd4578a29ea4ceeb79136b2c740",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {"path":"brand-kit/START-HERE.md","sha256":"fd44f6079ee5ac31ff1a91a1c8a11a63ffa3929e2b1fc8d42190a8565122cff0","role":"canonical","required":true,"reason":"Canonical EXP-05 closeout and EXP-07 handoff."},
+    {"path":"brand-kit/docs/CURRENT-STATE.md","sha256":"73db09de4e7baafab19912a75fede408872c0b73164a4540a1efd3d555c9de3f","role":"canonical","required":true,"reason":"Live programme boundary after Trading Card approval."},
+    {"path":"brand-kit/docs/ROADMAP.md","sha256":"5ace76fc0c4bc6b08baebeff091eb4524c7665dbfc4fff1978a43fc96d05ea30","role":"canonical","required":true,"reason":"EXP-05 canonical state and EXP-07 sequence."},
+    {"path":"brand-kit/llm/tasks/TASK-EXP-05-TRADING-CARD.json","sha256":"a695f730e481951447065dd5848422014ecfeaefafb1690acf96313e8c11714e","role":"governance","required":true,"reason":"Bounded completed task and human gate."},
+    {"path":"brand-kit/expressions/trading-card/trading-card.source.json","sha256":"28750981346dd128ec0c0e64cd879345631e0867f2247ae20f224958f54b882f","role":"canonical","required":true,"reason":"Canonical Trading Card 01 source contract."},
+    {"path":"brand-kit/expressions/trading-card/review.json","sha256":"8f6cb78d0c1543a7f88f89993bc0778afca4520daf5c4ca22e8481f45a6a110a","role":"governance","required":true,"reason":"Human approval and bounded authority record."},
+    {"path":"brand-kit/expressions/trading-card/round-03-feedback.json","sha256":"cc725be9ce487a6a68081520cfbb68a73a748a9127c7364826c7b9fa26458759","role":"evidence","required":true,"reason":"Exact unanimous 23-keep receipt."},
+    {"path":"brand-kit/expressions/trading-card/dist/manifest.json","sha256":"1fea6bdbe3fc1d11088292a62262f4c51630aca770cad012614dd883b22ebd6d","role":"mirror","required":true,"reason":"Deterministic canonical package integrity."},
+    {"path":"brand-kit/workbench/expressions/trading-card/index.html","sha256":"9e324edfac7baeb6a42805dcf6191b12d4dcaf99291ebd44a0d278ab805ff8e4","role":"fixture","required":true,"reason":"Locked canonical human proof."},
+    {"path":"brand-kit/workbench/expressions/trading-card/trading-card.js","sha256":"45db25a941dafcabeecdb1091981dcdde7e696907e95244a65c8d89a1eccb8e0","role":"fixture","required":true,"reason":"Approved specimen rendering and one-live motion allocation."},
+    {"path":"brand-kit/releases/foundations/dist/manifest.json","sha256":"2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639","role":"canonical","required":true,"reason":"Inherited canonical foundations."},
+    {"path":"brand-kit/source-pack/design-system-export/assets/wings.svg","sha256":"e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33","role":"canonical","required":true,"reason":"Exact Wings identity asset."}
+  ],
+  "decisions": [
+    {"id":"DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001","status":"approved","productionEffect":"Public-name-first hierarchy, rounded geometry, filled actions and deliberate Wings placement are inherited."},
+    {"id":"DEC-PRODUCT-COMPONENT-SYSTEM-001","status":"approved","productionEffect":"Trading Card stays distinct from ordinary functional Product Card 02 components."},
+    {"id":"DEC-WINGS-MARK-EXPRESSION-001","status":"approved","productionEffect":"Every mark uses the exact shared Wings asset and approved role hierarchy."},
+    {"id":"DEC-GRADIENT-LIBRARY-001","status":"approved","productionEffect":"The five assigned source-derived product cores remain colour authority."},
+    {"id":"DEC-LIVING-CORE-FINISH-001","status":"approved","productionEffect":"Deep Mineral No. 5 supplies the approved focal runtime finish."},
+    {"id":"DEC-MOTION-002","status":"approved","productionEffect":"At most one internal Living Core field moves; geometry, Wings and type stay fixed."},
+    {"id":"DEC-TRADING-CARD-EXPRESSION-001","status":"approved","productionEffect":"The 23 surviving Trading Card specimens and bounded expression rules are canonical 1.0.0."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id":"CONFLICT-EXP-05-EDITIONS","summary":"Product Card 02 System Editions and seven killed Trading Card directions are historical evidence, not reusable candidates.","executionEffect":"constrain"},
+    {"id":"CONFLICT-EXP-05-COLLECTOR","summary":"Historical trading-card studies included rarity, numbering, fake stats and archive language that the canonical contract prohibits.","executionEffect":"constrain"}
+  ],
+  "stopConditions": [
+    "Do not restore a killed Trading Card or Product Card System Edition direction.",
+    "Do not add rarity, numbering, fake statistics, founder foil or collector mechanics.",
+    "Do not mutate canonical products, Wings, gradients, foundations or the Living Core renderer.",
+    "Do not expand this approval into channel policy, golden-homepage selection, Figma or consumer rollout."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["brand-kit/START-HERE.md","brand-kit/docs/CURRENT-STATE.md","brand-kit/llm/tasks/TASK-EXP-05-TRADING-CARD.json","brand-kit/expressions/trading-card/trading-card.source.json"],
+    "omitByDefault": ["brand-kit/history/","consumer repositories","Figma","killed Trading Card directions"]
+  },
+  "humanNotes": ["Olli kept every one of the 23 Round 03 specimens. The unanimous receipt closes H-EXP-05-TRADING-CARD-PROOF without another visual round."]
+}

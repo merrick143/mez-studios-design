@@ -10,7 +10,7 @@
 - typography, controls, product-family, hero, motion, and identity calibration records;
 - homepage studies and the later authority reset.
 
-Research files are evidence, not current authority. Approved decisions are summarized in `brand-kit/governance/decisions.json`.
+Research files are evidence, not current authority. Approved decisions are indexed by the immutable cutover ledger `brand-kit/governance/decisions.json` and its current supplement `brand-kit/governance/post-cutover-decisions.json`.
 
 ## Invalid work remains invalid
 

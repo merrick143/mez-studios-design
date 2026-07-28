@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
+  "gateId": "H-CERT-01-SYSTEM-CERTIFICATION",
+  "certificationId": "mz.systems.certification.current-scope.01",
+  "verdict": "approved-for-final-consumer-transition",
+  "approvedAt": "2026-07-28",
+  "approvedBy": "Olli",
+  "humanEvidence": ["approve"],
+  "exactCandidate": {
+    "name": "@mez-systems/design-system-web",
+    "version": "1.0.0-rc.2",
+    "path": "brand-kit/releases/production-01/1.0.0-rc.2/",
+    "artifactCount": 351,
+    "contentSha256": "b5fe5cb5985270987799d28dbd2c596868de0504f84ae1312818c3ac2387fdd5",
+    "manifestSha256": "129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9"
+  },
+  "approvedScope": [
+    "The explicitly agreed current repository scope listed in brand-kit/certification/scope.json.",
+    "The authority, accessibility, portability, onboarding, release-governance and health-check certification record with its known gaps visible.",
+    "The named-model artifact replay and bounded GPT-5.6 transfer result, with the unavailable fresh Claude run recorded as a limitation.",
+    "Use of the exact immutable 1.0.0-rc.2 candidate as the package input to final named-consumer proof."
+  ],
+  "knownGapsAcceptedForThisGate": [
+    "Fresh same-prompt Claude transfer remains unmeasured because the installed CLI was not authenticated.",
+    "Exact spoken VoiceOver and NVDA sessions remain a PORT-04 consumer-proof obligation.",
+    "Real consumer behaviour, device performance, update, rollback, legal review and live-content operations remain PORT-04 obligations.",
+    "The nine priority-deferred channel families remain uncertified."
+  ],
+  "authorises": [
+    "Close TASK-CERT-01-SYSTEM-CERTIFICATION for the explicitly agreed current scope.",
+    "Treat exact manifest 129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9 as the approved later candidate for TASK-PORT-04-NAMED-CONSUMER-PROOF.",
+    "Route the programme to exact registration of CON-MEZ-SYSTEMS-WEB-001, after which PORT-04 may become ready."
+  ],
+  "doesNotAuthorise": [
+    "Publishing @mez-systems/design-system-web or the Figma library.",
+    "Deploying a website or assigning production version 1.0.0.",
+    "Entering a consumer repository before exact CON-MEZ-SYSTEMS-WEB-001 registration and bounded PORT-04 execution.",
+    "Changing canonical design, Product UI authority, identity assignments, governance decisions or deferred channel status.",
+    "Treating the Product UI fixture as a real AI OS workflow or dated testimonial evidence as live content truth."
+  ],
+  "resultingStatus": "approved-current-scope-candidate-unreleased",
+  "canonicalAuthority": false,
+  "productionAuthority": false,
+  "publishAuthority": false,
+  "deploymentAuthority": false,
+  "consumerIntegrationAuthority": false,
+  "decisionId": null,
+  "nextTask": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+  "nextTaskStatus": "blocked-pending-exact-consumer-registration"
+}

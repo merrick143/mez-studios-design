@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
+  "title": "Certify the complete Mez Systems design system",
+  "phase": 7,
+  "status": "complete",
+  "owner": "design-system-agent-plus-Olli",
+  "objective": "Certify the completed repository, Figma companion and explicitly agreed current release scope across model use, accessibility, portability, governance and release operations, then assemble a later immutable candidate for final consumer transition while leaving deferred channels visibly uncertified.",
+  "scope": {
+    "included": [
+      "multi-model benchmark and golden or anti-example evaluation",
+      "cross-channel authority and accessibility audit",
+      "team onboarding and operating guidance",
+      "release governance and recurring health checks",
+      "deterministic assembly of a later candidate containing the completed system",
+      "exact human review of the later candidate before consumer transition"
+    ],
+    "excluded": [
+      "mutating the frozen 1.0.0-rc.1 milestone",
+      "integrating or deploying the real website consumer",
+      "claiming certification beyond the explicitly agreed current release scope"
+    ]
+  },
+  "dependencies": [
+    "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/docs/consumer-transition-sequence.json",
+      "brand-kit/figma-companion/",
+      "brand-kit/product-ui/",
+      "brand-kit/releases/production-01/1.0.0-rc.1/manifest.json"
+    ],
+    "decisionIds": [],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/certification/",
+      "acceptance": [
+        "the complete system is benchmarked across named models and output classes",
+        "authority, accessibility, portability, onboarding, versioning and health-check results are explicit",
+        "known gaps and failed cases remain visible"
+      ]
+    },
+    {
+      "path": "later immutable release candidate",
+      "acceptance": [
+        "the completed Figma and channel era is represented without changing rc.1",
+        "deterministic clean-copy proof and an exact human approval precede PORT-04"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "CERT-01-SYSTEM",
+      "method": "command",
+      "passCondition": "all core, Figma, channel, model, documentation and release checks pass from clean evidence"
+    },
+    {
+      "id": "CERT-01-HUMAN",
+      "method": "human",
+      "passCondition": "Olli approves the complete certification record and exact later candidate for final consumer transition"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-CERT-01-SYSTEM-CERTIFICATION",
+    "approver": "Olli",
+    "approvalQuestion": "Is the complete system and exact later candidate ready to enter the final real-consumer transition?"
+  },
+  "stopConditions": [
+    "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION is incomplete",
+    "a benchmark, accessibility or portability failure is hidden",
+    "the frozen rc.1 bytes would be changed",
+    "the work enters or deploys a consumer repository before certification approval"
+  ],
+  "notes": [
+    "PORT-04 follows this task and is the final consumer transition, not an input to certification.",
+    "SEQ-PRODUCT-UI-FIRST-001 limits this certification pass to the agreed current release scope. Deferred channel families are not silently certified and remain future work.",
+    "UI-01 closed through H-UI-01-PRODUCT-UI-FOUNDATION on 28 July 2026 as an approved non-production foundation direction.",
+    "Olli closed H-CERT-01-SYSTEM-CERTIFICATION on 28 July 2026 over exact rc.2 manifest 129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9; publication, deployment and production authority remain false."
+  ]
+}

@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Principle Lab 2 (the layer, with live material)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1;
+  --page-muted: #666662; --page-dark-muted: #b8b8b1; --page-dark-body: #cfcfc9;
+  --material: url("../../../../gradient-library/assets/static/mz-g13.webp");
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* ---------------------------------------------------------------- lab shell */
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 10px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-top nav a:hover { background: rgba(248,248,248,.1); }
+.lab-note {
+  padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: var(--page-dark-body);
+  font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3;
+}
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; color: var(--page-ink);
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--page-muted);
+}
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 60ch; line-height: 1.5; }
+.lab-live {
+  font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 9999px; border: 1px solid var(--page-line-strong); color: var(--page-muted);
+}
+.lab-live[data-live="on"] { border-color: var(--page-ink); color: var(--page-ink); }
+
+/* ------------------------------------------------------------ section chassis */
+.pr { background: var(--page-paper); color: var(--page-ink); overflow: hidden; }
+.pr-inner {
+  max-width: 1180px; margin-inline: auto;
+  padding-inline: clamp(20px,5vw,64px);
+  padding-block: clamp(72px,9vw,116px);
+}
+.pr-head--centre { text-align: center; margin-inline: auto; max-width: 62ch; }
+.pr-eyebrow {
+  margin: 0; font-family: var(--mz-font-technical); font-size: 12px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted);
+}
+.pr-title {
+  margin: 18px 0 0; font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(30px,3.6vw,50px); line-height: 1.02; letter-spacing: -.04em;
+  color: var(--page-ink);
+}
+.pr-title span { display: block; }
+.pr-head--centre .pr-title { max-inline-size: 22ch; margin-inline: auto; }
+.pr-lead {
+  margin: 20px 0 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5;
+  color: var(--page-muted); max-inline-size: 52ch;
+}
+.pr-head--centre .pr-lead { margin-inline: auto; }
+.pr-stage { margin-top: clamp(42px,5vw,68px); }
+
+/* --------------------------------------------------------------- shared parts */
+/* Freestanding marks, flattened to one ink and optically sized: these symbols
+   have very different ink-to-box ratios, so equal heights look unequal. */
+.mk { display: block; height: 22px; width: auto; filter: grayscale(1) brightness(0); opacity: .74; }
+.mk[alt="Gemini"] { height: 25px; }
+.mk[alt="Mistral"] { height: 19px; }
+.mk[alt="Perplexity"] { height: 23px; }
+.mk[alt="OpenAI"] { height: 23px; }
+.mk-row {
+  display: flex; align-items: center; gap: clamp(22px,4vw,56px); flex-wrap: wrap;
+}
+.mk-row--centre { justify-content: center; }
+.kicker {
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted); margin: 0;
+}
+
+/* --- the layer -------------------------------------------------------------
+   The bar is the AI OS product surface, so it carries product material: this is
+   a product element, which is the only place material is allowed. It is sized
+   intrinsically because a Living Core must never mount on an empty positioning
+   layer, and it keeps the exact static twin behind the canvas so reduced motion
+   and a missing WebGL context both resolve without layout shift. */
+.layer {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 132px; display: flex; align-items: center;
+  padding: 22px clamp(22px,4vw,40px);
+  background: #101010 center / cover no-repeat var(--material);
+  border-radius: var(--mz-radius-panel);
+}
+.layer--bleed {
+  border-radius: 0;
+  margin-inline: calc(50% - 50vw); width: 100vw;
+  padding-inline: max(clamp(22px,4vw,40px), calc(50vw - 590px + clamp(20px,5vw,64px)));
+}
+/* Scrim: legibility over unpredictable material, sitting above the canvas and
+   below the text. Not decoration. */
+.layer::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(7,7,7,.62), rgba(7,7,7,.18) 52%, rgba(7,7,7,0) 78%);
+}
+.layer canvas { z-index: 0; }
+.layer__lockup { position: relative; z-index: 2; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.layer__wings { width: 22px; height: 22px; filter: brightness(0) invert(1); flex: none; }
+.layer__name {
+  font-family: var(--mz-font-display); font-weight: 640; font-size: clamp(17px,1.8vw,21px);
+  letter-spacing: -.022em; color: #ffffff;
+}
+.layer__note { font-size: 13px; color: rgba(255,255,255,.72); }
+@media (max-width: 620px) {
+  .layer { min-height: 116px; }
+  .layer__note { width: 100%; }
+}
+
+/* ================================================== 3 · MARKS SEATED ON LAYER */
+.seat { position: relative; }
+.seat .mk-row {
+  position: relative; z-index: 3; justify-content: center;
+  background: var(--page-white); border: 1px solid var(--page-line);
+  border-radius: var(--mz-radius-compact); padding: 18px clamp(20px,4vw,40px);
+  width: fit-content; max-width: 100%; margin-inline: auto;
+  margin-bottom: -22px;
+}
+
+/* ====================================================== 4 · MARKS PLUGGED IN */
+.plug-row { display: flex; align-items: flex-end; justify-content: center; gap: clamp(22px,5vw,72px); flex-wrap: wrap; }
+.plug { display: grid; justify-items: center; gap: 12px; }
+.plug i { display: block; width: 1px; height: 26px; background: var(--page-line-mid); }
+
+/* --------------------------------------------------------------- lab notice */
+.static-note {
+  margin-top: 14px; font-family: var(--mz-font-technical); font-size: 10.5px;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--page-line-strong);
+}
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Principle Lab 2 · the layer, live material</strong>
+  <nav>
+    <a href="#v1">1 centred, plated</a><a href="#v2">2 centred, full bleed</a>
+    <a href="#v3">3 seated</a><a href="#v4">4 plugged in</a><a href="#v5">5 left head</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>One anatomy, five compositions.</b> The models sit above as equal peers, and one wide bar
+  underneath is the business operating layer. That bar carries live AI OS material, because the
+  operating layer <i>is</i> the product and a product element is the only place material belongs.
+  <b>Only one core runs at a time</b>: a single renderer moves to whichever bar is most in view, the
+  same allocation pattern the homepage uses. Every bar keeps its exact static twin behind the
+  canvas, so reduced motion and a missing WebGL context both resolve with no layout shift. Add
+  <code>?static</code> to the URL to see the still state.
+</div>
+
+<!-- ==================================================== 1 · CENTRED, PLATED -->
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">1</span><span class="lab-name">Centred head, plated bar</span>
+    <span class="lab-rule">Centred · contained</span>
+    <span class="lab-live" data-live-badge="1">Core idle</span>
+    <span class="lab-rat">Your suggestion straight: everything on the centre axis, the layer held inside the container as a plate. The most symmetrical of the five.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head--centre">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+
+      <div class="pr-stage">
+        <p class="kicker" style="text-align:center">Rented · interchangeable</p>
+        <div class="mk-row mk-row--centre" style="margin-top:18px">
+          <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+        </div>
+
+        <div class="layer" data-live-anchor="v1" data-gradient-id="MZ-G13" style="margin-top:34px">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">Your business operating layer</span>
+            <span class="layer__note">Context, workflows, decisions, history</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================ 2 · CENTRED, FULL BLEED -->
+<article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">2</span><span class="lab-name">Centred head, full-bleed layer</span>
+    <span class="lab-rule">Centred · edge to edge</span>
+    <span class="lab-live" data-live-badge="2">Core idle</span>
+    <span class="lab-rat">Same head, but the layer breaks the container and runs the full width of the page. The band is a shape S02 does not have, so the section stops repeating the one above it without becoming a centred stack of boxes.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head--centre">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+
+      <div class="pr-stage">
+        <p class="kicker" style="text-align:center">Rented · interchangeable</p>
+        <div class="mk-row mk-row--centre" style="margin-top:18px;margin-bottom:34px">
+          <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+        </div>
+
+        <div class="layer layer--bleed" data-live-anchor="v2" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">Your business operating layer</span>
+            <span class="layer__note">Context, workflows, decisions, history</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================== 3 · SEATED -->
+<article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">3</span><span class="lab-name">Marks seated on the layer</span>
+    <span class="lab-rule">Resting on it</span>
+    <span class="lab-live" data-live-badge="3">Core idle</span>
+    <span class="lab-rat">The marks sit in a plate that rests on the bar's top edge rather than floating above it. Foundation logic: the thing underneath is visibly carrying the thing on top.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head--centre">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+
+      <div class="pr-stage seat">
+        <div class="mk-row">
+          <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+        </div>
+        <div class="layer" data-live-anchor="v3" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">Your business operating layer</span>
+            <span class="layer__note">Context, workflows, decisions, history</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ========================================================== 4 · PLUGGED IN -->
+<article class="lab-item" id="v4">
+  <header class="lab-label">
+    <span class="lab-num">4</span><span class="lab-name">Marks plugged in</span>
+    <span class="lab-rule">Many plugs, one layer</span>
+    <span class="lab-live" data-live-badge="4">Core idle</span>
+    <span class="lab-rat">A short hairline runs from each mark down into the bar. It makes "they all connect to the same thing" literal without drawing a diagram, and it is the only variant where the marks and the layer are structurally joined.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head--centre">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+
+      <div class="pr-stage">
+        <div class="plug-row">
+          <span class="plug"><img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" /><i></i></span>
+          <span class="plug"><img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" /><i></i></span>
+          <span class="plug"><img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" /><i></i></span>
+          <span class="plug"><img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" /><i></i></span>
+          <span class="plug"><img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" /><i></i></span>
+        </div>
+        <div class="layer" data-live-anchor="v4" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">Your business operating layer</span>
+            <span class="layer__note">Context, workflows, decisions, history</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== 5 · LEFT HEAD -->
+<article class="lab-item" id="v5">
+  <header class="lab-label">
+    <span class="lab-num">5</span><span class="lab-name">Left head, full-bleed layer</span>
+    <span class="lab-rule">Control · not centred</span>
+    <span class="lab-live" data-live-badge="5">Core idle</span>
+    <span class="lab-rat">The control. Everything else is identical to 2, but the head is left-anchored, so the question of whether centring actually earns its place can be answered by looking rather than by arguing.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div>
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title" style="max-inline-size:22ch"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+
+      <div class="pr-stage">
+        <p class="kicker">Rented · interchangeable</p>
+        <div class="mk-row" style="margin-top:18px;margin-bottom:34px">
+          <img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" />
+          <img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" />
+        </div>
+
+        <div class="layer layer--bleed" data-live-anchor="v5" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">Your business operating layer</span>
+            <span class="layer__note">Context, workflows, decisions, history</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="module" src="./core.js"></script>
+</body>
+</html>

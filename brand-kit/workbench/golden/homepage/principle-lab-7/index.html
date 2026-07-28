@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Principle Lab 7 (harnesses, layer, business)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1; --page-muted: #666662; --page-dark-muted: #b8b8b1;
+  --material: url("../../../../gradient-library/assets/static/mz-g13.webp");
+  --card: 900px; --r: var(--mz-radius-container);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* lab shell */
+.lab-top { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px; padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper); font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap; }
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a { padding: 4px 9px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px; color: var(--page-paper); text-decoration: none; }
+.lab-note { padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: #cfcfc9; font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3; }
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding: 14px clamp(16px,4vw,40px); background: var(--page-white); border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50; }
+.lab-num { font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em; padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; }
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule { font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-muted); }
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 58ch; line-height: 1.5; }
+.lab-live { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 9px; border-radius: 9999px; border: 1px solid var(--page-line-strong); color: var(--page-muted); }
+.lab-live[data-live="on"] { border-color: var(--page-ink); color: var(--page-ink); }
+
+/* chassis */
+.pr { background: var(--page-paper); color: var(--page-ink); }
+.pr-inner { max-width: 1180px; margin-inline: auto; padding-inline: clamp(20px,5vw,64px); padding-block: clamp(72px,9vw,112px); }
+.pr-head { text-align: center; margin-inline: auto; max-width: 62ch; }
+.pr-eyebrow { margin: 0; font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted); }
+.pr-title { margin: 18px auto 0; font-family: var(--mz-font-display); font-weight: 660; font-size: clamp(30px,3.6vw,50px); line-height: 1.02; letter-spacing: -.04em; max-inline-size: 22ch; color: var(--page-ink); }
+.pr-title span { display: block; }
+.pr-lead { margin: 20px auto 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5; color: var(--page-muted); max-inline-size: 52ch; }
+.stack { margin: clamp(42px,5vw,68px) auto 0; max-width: var(--card); }
+.stack > * { min-width: 0; }
+.kicker { font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-muted); margin: 0; text-align: center; }
+.kicker--dark { color: var(--page-dark-muted); }
+
+/* --- two registers of mark ------------------------------------------------
+   A harness is named and set large. A connection is small and unnamed. The gap
+   between the two treatments is what says one is a system you run on and the
+   other is a tool you plug in. */
+.mk { display: block; width: auto; filter: grayscale(1) brightness(0); flex: none; }
+.mk--harness { height: 26px; opacity: .82; }
+.mk--tool { height: 18px; opacity: .5; }
+.on-dark .mk { filter: grayscale(1) brightness(0) invert(1); }
+.on-dark .mk--harness { opacity: .9; }
+.on-dark .mk--tool { opacity: .55; }
+
+.harnesses { display: flex; align-items: flex-start; justify-content: center; gap: clamp(22px,4vw,54px); flex-wrap: wrap; }
+.harness { display: grid; justify-items: center; gap: 9px; }
+.harness__name { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--page-muted); }
+.on-dark .harness__name { color: var(--page-dark-muted); }
+
+.conns { display: flex; align-items: center; justify-content: center; gap: 16px clamp(20px,3vw,38px); flex-wrap: wrap; }
+
+/* marquee */
+.marquee { position: relative; overflow: hidden; min-width: 0; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%); }
+.marquee__track { display: flex; align-items: center; gap: clamp(26px,3.4vw,46px); width: max-content; will-change: transform; animation: mq 52s linear infinite; }
+.marquee--rev .marquee__track { animation-direction: reverse; }
+@keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; width: 100%; flex-wrap: wrap; justify-content: center; gap: 16px 26px; }
+  .marquee { -webkit-mask-image: none; mask-image: none; }
+}
+[data-motion="static"] .marquee__track { animation: none; width: 100%; flex-wrap: wrap; justify-content: center; gap: 16px 26px; }
+[data-motion="static"] .marquee { -webkit-mask-image: none; mask-image: none; }
+
+/* --- the layer, as rect or pill ------------------------------------------- */
+.layer { position: relative; isolation: isolate; overflow: hidden; min-height: 128px; display: grid; place-items: center; text-align: center; padding: 24px clamp(20px,3.4vw,36px); background: #101010 center / cover no-repeat var(--material); border-radius: var(--r); }
+.layer--pill { border-radius: 9999px; min-height: 116px; padding-inline: clamp(30px,5vw,64px); }
+.layer::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: rgba(7,7,7,.46); }
+.layer canvas { z-index: 0; }
+.layer__lockup { position: relative; z-index: 2; display: grid; justify-items: center; gap: 8px; }
+.layer__wings { width: 22px; height: 22px; filter: brightness(0) invert(1); }
+.layer__name { font-family: var(--mz-font-display); font-weight: 640; font-size: clamp(17px,1.8vw,21px); letter-spacing: -.022em; color: #fff; }
+.layer__note { font-size: 13px; color: rgba(255,255,255,.76); max-width: 46ch; }
+
+/* --- the business band ---------------------------------------------------- */
+.biz { background: var(--page-dark); border-radius: var(--mz-radius-panel); padding: 18px; display: grid; gap: 14px; }
+.biz > * { min-width: 0; }
+.biz__head { display: grid; justify-items: center; gap: 6px; text-align: center; padding: 8px 6px 0; }
+.biz__name { font-family: var(--mz-font-display); font-weight: 640; font-size: 17px; letter-spacing: -.022em; color: var(--page-paper); }
+.biz__runs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 8px; margin: 4px 0 0; padding: 0; list-style: none; }
+.biz__runs li { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--page-dark-muted); border: 1px solid rgba(248,248,248,.2); border-radius: 9999px; padding: 5px 11px; }
+.biz__band { background: var(--page-dark-recessed); border-radius: var(--mz-radius-compact); padding: 16px; min-width: 0; }
+
+/* ================================================================== A · ORBIT */
+/* The core is a canonical disc expression, not a circle drawn for this section.
+   Two rings turn in opposite directions; each mark counter-rotates so it stays
+   upright while its ring moves. */
+/* A rotated slot has a larger bounding box than the ring it sits on, so it
+   pushes the page into horizontal scroll on a narrow screen. The padding keeps
+   the marks inside the box and the clip contains the slot corners. */
+.orbit { position: relative; width: min(520px, 100%); aspect-ratio: 1; margin-inline: auto; padding: 26px; overflow: hidden; }
+.orbit__ring { position: absolute; border-radius: 50%; border: 1px solid var(--page-line); animation: spin 60s linear infinite; }
+.orbit__ring--outer { inset: 0; }
+.orbit__ring--inner { inset: 21%; border-color: var(--page-line-mid); animation-duration: 42s; animation-direction: reverse; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.orbit__slot { position: absolute; inset: 0; transform: rotate(var(--a)); }
+/* The counter-rotation is the element's base transform, not only the animation's
+   first keyframe. Without it, stopping the animation for reduced motion or the
+   static switch leaves every mark rotated by its own slot angle. */
+.orbit__upright { position: absolute; top: 0; left: 50%; display: grid; place-items: center; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: var(--page-paper); transform: rotate(calc(var(--a) * -1)); animation: upright 60s linear infinite; }
+.orbit__ring--inner .orbit__upright { animation-duration: 42s; animation-direction: reverse; }
+@keyframes upright { from { transform: rotate(calc(var(--a) * -1)); } to { transform: rotate(calc(var(--a) * -1 - 360deg)); } }
+/* Sized on one axis with aspect-ratio squaring it, rather than inset:%. A
+   percentage inset resolves against each axis separately, so inside a padded
+   aspect-ratio box the disc came out as a flat ellipse. */
+.orbit__core { position: absolute; top: 50%; left: 50%; width: 34%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; overflow: hidden; isolation: isolate; background: #101010 center / cover no-repeat var(--material); display: grid; place-items: center; }
+.orbit__core::after { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(7,7,7,.42); border-radius: inherit; }
+.orbit__core canvas { z-index: 0; }
+.orbit__core img { position: relative; z-index: 2; width: 30px; height: 30px; filter: brightness(0) invert(1); }
+@media (prefers-reduced-motion: reduce) { .orbit__ring, .orbit__upright { animation: none; } }
+[data-motion="static"] .orbit__ring, [data-motion="static"] .orbit__upright { animation: none; }
+.orbit-legend { display: flex; justify-content: center; gap: clamp(20px,4vw,48px); flex-wrap: wrap; margin-top: 26px; }
+
+@media (max-width: 620px) {
+  :root { --card: 100%; }
+  .layer { min-height: 118px; }
+  .layer--pill { border-radius: var(--mz-radius-panel); }
+  .orbit { width: 100%; }
+  .orbit__upright { width: 36px; height: 36px; margin: -18px 0 0 -18px; }
+}
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Principle Lab 7 · harnesses · layer · business</strong>
+  <nav>
+    <a href="#v1">A orbit</a><a href="#v2">B opposing rails</a><a href="#v3">C pill</a><a href="#v4">D enclosure</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>Three tiers, two registers of mark.</b> A <b>harness</b> is a system you run the business from:
+  named, set large, treated as an object. A <b>connection</b> is a tool you already use: small,
+  unnamed, quiet. The difference between the two treatments is what says one is not a plugin.
+  Slack, Linear, HubSpot, Klaviyo, 1Password, Google Drive, Google Calendar, shadcn and MCP have no
+  mark in the registry, so they are absent rather than drawn. In A the core is mounted as a
+  canonical <b>disc</b> expression rather than a circle invented for the section. Add
+  <code>?static</code> to stop everything.
+</div>
+
+<!-- ================================================================== A · ORBIT -->
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">A</span><span class="lab-name">Orbit</span>
+    <span class="lab-rule">Disc core, two counter-rotating rings</span>
+    <span class="lab-live" data-live-badge="v1">Core idle</span>
+    <span class="lab-rat">The living material as a disc at the centre, harnesses orbiting one way on the inner ring and the business connections the other way on the outer. Everything turns around the layer, which is the only still thing.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <div class="orbit">
+          <div class="orbit__ring orbit__ring--outer" data-orbit="connections"></div>
+          <div class="orbit__ring orbit__ring--inner" data-orbit="harnesses"></div>
+          <div class="orbit__core" data-live-anchor="v1" data-gradient-id="MZ-G13" data-core-shape="disc">
+            <img src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+          </div>
+        </div>
+        <div class="orbit-legend">
+          <span class="kicker">Inner · harnesses you run on</span>
+          <span class="kicker">Outer · tools you already use</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ========================================================= B · OPPOSING RAILS -->
+<article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">B</span><span class="lab-name">Opposing rails</span>
+    <span class="lab-rule">Two directions, one still layer</span>
+    <span class="lab-live" data-live-badge="v2">Core idle</span>
+    <span class="lab-rat">Harnesses travel one way above and the business connections the other way below, with the owned layer holding still between them. The flat version of the orbit, and it survives a narrow screen better.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <p class="kicker" style="margin-bottom:14px">Harnesses you run on</p>
+        <div class="harnesses" data-harnesses style="margin-bottom:26px"></div>
+
+        <div class="layer" data-live-anchor="v2" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever harness fits the job</span>
+          </div>
+        </div>
+
+        <div class="biz on-dark" style="margin-top:12px">
+          <div class="biz__head">
+            <span class="biz__name">Your business runs on it</span>
+            <ul class="biz__runs">
+              <li>Contacts</li><li>SOPs</li><li>Processes</li><li>People</li><li>Teams</li><li>History</li>
+            </ul>
+          </div>
+          <div class="biz__band">
+            <div class="marquee marquee--rev"><div class="marquee__track" data-connections data-loop></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =================================================================== C · PILL -->
+<article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">C</span><span class="lab-name">Pill</span>
+    <span class="lab-rule">The layer as a capsule</span>
+    <span class="lab-live" data-live-badge="v3">Core idle</span>
+    <span class="lab-rat">The owned layer as a full-radius capsule, which is an existing shape in the kit rather than a new one. The pill reads as a single component sitting between the harnesses and the business, not as another band.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <p class="kicker" style="margin-bottom:14px">Harnesses you run on</p>
+        <div class="harnesses" data-harnesses style="margin-bottom:28px"></div>
+
+        <div class="layer layer--pill" data-live-anchor="v3" data-gradient-id="MZ-G13" data-core-radius="0.5">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+          </div>
+        </div>
+
+        <div style="margin-top:30px">
+          <p class="kicker" style="margin-bottom:6px">Your business runs on it</p>
+          <p class="kicker" style="color:var(--page-line-strong);margin-bottom:16px">Contacts · SOPs · processes · people · teams</p>
+          <div class="marquee marquee--rev"><div class="marquee__track" data-connections data-loop></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================== D · ENCLOSURE -->
+<article class="lab-item" id="v4">
+  <header class="lab-label">
+    <span class="lab-num">D</span><span class="lab-name">Enclosure</span>
+    <span class="lab-rule">The business holds all three</span>
+    <span class="lab-live" data-live-badge="v4">Core idle</span>
+    <span class="lab-rat">The version you liked, with the two registers separated properly: named harnesses in their own band, the owned layer, then the business and the quiet marquee of what it already runs. Everything inside one container.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <div class="biz on-dark">
+          <div class="biz__band">
+            <p class="kicker kicker--dark" style="margin-bottom:14px">Harnesses you run on</p>
+            <div class="harnesses" data-harnesses></div>
+          </div>
+
+          <div class="layer" data-live-anchor="v4" data-gradient-id="MZ-G13">
+            <div class="layer__lockup">
+              <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+              <span class="layer__name">The Mez Systems layer</span>
+              <span class="layer__note">Owns the context and calls whatever harness fits the job</span>
+            </div>
+          </div>
+
+          <div class="biz__head">
+            <span class="biz__name">Your business runs on it</span>
+            <ul class="biz__runs">
+              <li>Contacts</li><li>SOPs</li><li>Processes</li><li>People</li><li>Teams</li><li>History</li>
+            </ul>
+          </div>
+          <div class="biz__band">
+            <div class="marquee marquee--rev"><div class="marquee__track" data-connections data-loop></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="module" src="./core.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171715" />
+    <title>Mez Systems — Product UI Foundation · Approved 0.1.0</title>
+    <link rel="stylesheet" href="../../releases/foundations/dist/index.css" />
+    <link rel="stylesheet" href="./styles.css?v=0.1.0" />
+  </head>
+  <body data-density="comfortable">
+    <a class="skip-link" href="#workspace">Skip to workspace</a>
+
+    <header class="topbar">
+      <div class="brand-lockup" aria-label="Mez Systems">
+        <img src="../../source-pack/design-system-export/assets/wings.svg" alt="" />
+        <span>MEZ SYSTEMS</span>
+      </div>
+      <p class="fixture-label"><span aria-hidden="true"></span> Review fixture · repository facts</p>
+      <button class="command-trigger" type="button" data-command aria-haspopup="dialog">
+        <span>Search system</span><kbd>⌘ K</kbd>
+      </button>
+    </header>
+
+    <div class="app-shell">
+      <nav class="identity-rail" aria-label="Product workspace">
+        <div class="product-signal" aria-hidden="true">
+          <img src="../../gradient-library/assets/static/mz-g13.webp" alt="" />
+        </div>
+        <div class="product-name"><strong>AI OS</strong><span>System control</span></div>
+        <div class="rail-rule"></div>
+        <div class="rail-items" data-roving-nav>
+          <button type="button" class="rail-item is-current" data-view="ledger" aria-current="page"><span>01</span>Ledger</button>
+          <button type="button" class="rail-item" data-view="registry" tabindex="-1"><span>02</span>Registry</button>
+          <button type="button" class="rail-item" data-view="components" tabindex="-1"><span>03</span>Components</button>
+          <button type="button" class="rail-item" data-view="release" tabindex="-1"><span>04</span>Release</button>
+        </div>
+        <p class="candidate-stamp">UI-01<br />APPROVED</p>
+      </nav>
+
+      <main id="workspace" class="workspace" tabindex="-1">
+        <section class="workspace-header" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">SYSTEM CONTROL / OPERATING LEDGER</p>
+            <h1 id="page-title">What is true<br />right now.</h1>
+          </div>
+          <p class="workspace-intro">One readable control surface for authority, status and next action. The data below describes this repository fixture—not a customer account or production Mez product.</p>
+        </section>
+
+        <section class="proof-strip" aria-label="Fixture provenance">
+          <div><span>Source boundary</span><strong data-fixture-name>Loading fixture…</strong></div>
+          <div><span>Records</span><strong data-record-count>—</strong></div>
+          <div><span>Last reconciled</span><strong>28 JUL 2026</strong></div>
+        </section>
+
+        <section class="control-row" aria-label="Ledger controls">
+          <label class="search-field">
+            <span class="sr-only">Filter ledger records</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
+            <input type="search" placeholder="Filter records" data-filter />
+          </label>
+          <fieldset class="density-control">
+            <legend class="sr-only">Ledger density</legend>
+            <button type="button" data-density-value="compact">Compact</button>
+            <button type="button" class="is-active" data-density-value="comfortable" aria-pressed="true">Comfortable</button>
+            <button type="button" data-density-value="presentation">Present</button>
+          </fieldset>
+          <label class="state-control">
+            <span>Review state</span>
+            <select data-state>
+              <option value="ready">Ready</option>
+              <option value="loading">Loading</option>
+              <option value="empty">Empty</option>
+              <option value="error">Error</option>
+              <option value="stale">Stale</option>
+              <option value="partial">Partial</option>
+              <option value="no-permission">No permission</option>
+            </select>
+          </label>
+        </section>
+
+        <div class="workspace-grid">
+          <section class="ledger-region" aria-labelledby="ledger-heading">
+            <div class="section-heading">
+              <div><p class="eyebrow">CURRENT SCOPE</p><h2 id="ledger-heading">Authority ledger</h2></div>
+              <p data-result-summary>Loading records…</p>
+            </div>
+
+            <div class="state-banner" data-state-banner hidden role="status"></div>
+            <div class="table-wrap" data-table-wrap>
+              <table>
+                <caption>Repository-backed status records in the Product UI review fixture</caption>
+                <thead>
+                  <tr>
+                    <th scope="col"><button type="button" data-sort="name">Record <span aria-hidden="true">↕</span></button></th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" aria-sort="descending"><button type="button" data-sort="updated">Updated <span aria-hidden="true">↓</span></button></th>
+                  </tr>
+                </thead>
+                <tbody data-ledger-body></tbody>
+              </table>
+            </div>
+          </section>
+
+          <aside class="inspector" aria-labelledby="inspector-title" data-inspector>
+            <div class="inspector-index" aria-hidden="true" data-inspector-index>01</div>
+            <p class="eyebrow">SELECTED RECORD</p>
+            <h2 id="inspector-title" data-inspector-name>Choose a record</h2>
+            <p class="inspector-type" data-inspector-type>Context appears here.</p>
+            <p class="inspector-detail" data-inspector-detail>Select a named ledger row to inspect its source and authority boundary.</p>
+            <dl>
+              <div><dt>Status</dt><dd data-inspector-status>—</dd></div>
+              <div><dt>Source</dt><dd data-inspector-source>—</dd></div>
+              <div><dt>Updated</dt><dd data-inspector-updated>—</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <section class="distribution" aria-labelledby="distribution-title">
+          <div class="distribution-copy">
+            <p class="eyebrow">ACCESSIBLE DATA VIEW / CURRENT FIXTURE</p>
+            <h2 id="distribution-title">Authority is visible,<br />not implied.</h2>
+            <p>This summary counts only the seven records shown in this fixture. It does not claim complete programme coverage.</p>
+          </div>
+          <figure>
+            <div class="status-bar" data-status-bar role="img" aria-label="Loading status distribution"></div>
+            <div class="status-legend" data-status-legend></div>
+            <figcaption data-status-caption>Loading fixture distribution.</figcaption>
+            <ul class="sr-only" data-status-alternative aria-label="Text alternative for status distribution"></ul>
+          </figure>
+        </section>
+
+        <footer class="workbench-boundary">
+          <p><strong>Approved foundation boundary.</strong> This establishes shared product-interface grammar. It does not represent a real customer account or grant canonical or production authority.</p>
+          <p>H-UI-01-PRODUCT-UI-FOUNDATION · APPROVED BY OLLI · 28 JUL 2026</p>
+        </footer>
+      </main>
+    </div>
+
+    <div class="command-dialog" data-dialog hidden>
+      <button class="dialog-scrim" type="button" data-dialog-close tabindex="-1" aria-label="Close search"></button>
+      <section role="dialog" aria-modal="true" aria-labelledby="command-title">
+        <div class="dialog-head"><div><p class="eyebrow">COMMAND</p><h2 id="command-title">Find a record.</h2></div><button type="button" data-dialog-close aria-label="Close search">×</button></div>
+        <label><span class="sr-only">Search all records</span><input type="search" data-command-input placeholder="Type a name, status or source" /></label>
+        <div data-command-results aria-live="polite"></div>
+      </section>
+    </div>
+
+    <noscript>
+      <section class="noscript-boundary" aria-labelledby="noscript-title">
+        <p class="eyebrow">PRODUCT UI FOUNDATION / STATIC MEANING</p>
+        <h1 id="noscript-title">The operational ledger needs JavaScript.</h1>
+        <p>This candidate reads a local review fixture to provide filtering, sorting, selection and state behaviour. No production product data is hidden behind the runtime.</p>
+        <a href="./fixtures/system-proof.json">Open the complete seven-record source fixture</a>
+      </section>
+    </noscript>
+
+    <p class="sr-only" aria-live="polite" aria-atomic="true" data-live-region></p>
+    <script type="module" src="./product-ui.js?v=0.1.0"></script>
+  </body>
+</html>

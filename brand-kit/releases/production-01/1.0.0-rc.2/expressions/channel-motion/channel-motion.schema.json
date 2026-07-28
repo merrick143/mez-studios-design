@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/website-motion-1.0.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion","expressionId","version","status","productionAuthority","candidateGateId","candidateRevision","decisionIds","title","thesis","scope","decisionModel","families","specimens","reducedMotion","exportContract","prohibited","deferral","approval","testViewports","dependencies"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "expressionId": {"const": "mz.systems.expression.channel-motion-matrix"},
+    "version": {"const": "1.0.0"},
+    "status": {"const": "canonical"},
+    "productionAuthority": {"const": true},
+    "candidateGateId": {"const": "H-EXP-07-CHANNEL-MOTION-PROOF"},
+    "candidateRevision": {"const": "channel-motion-matrix-01-r03"},
+    "decisionIds": {"type":"array","contains":{"const":"DEC-WEBSITE-MOTION-SYSTEM-001"},"items":{"type":"string"},"uniqueItems":true},
+    "title": {"const": "Website motion system"},
+    "thesis": {"type": "string", "minLength": 80},
+    "scope": {"type": "object", "required": ["primary","included","excludedMotionProduction","staticOnlyOutputs"]},
+    "decisionModel": {"type": "object", "required": ["staticBaseline","maximumActiveMotionEventsPerViewport","selectionRule","roles","durations","easing"]},
+    "families": {"type":"array","minItems":2,"maxItems":2,"items":{"type":"object","required":["id","title","count","job"]}},
+    "specimens": {"type":"array","minItems":7,"maxItems":7,"items":{"type":"object","additionalProperties":false,"required":["id","family","title","pattern"],"properties":{"id":{"enum":["MOT-L01","MOT-L02","MOT-L03","MOT-W01","MOT-W03","MOT-W04","MOT-W05"]},"family":{"enum":["laws","components"]},"title":{"type":"string"},"pattern":{"type":"string"}}}},
+    "reducedMotion": {"type":"object","required":["runtime","functional","demonstration","components"]},
+    "exportContract": {"type":"object","required":["staticTwinRequired","motionMayNotCarrySoleMeaning","equivalence","sourcePaletteAuthority","requiredMetadata"]},
+    "prohibited": {"type":"array","minItems":10,"items":{"type":"string"},"uniqueItems":true},
+    "deferral": {"type":"object","additionalProperties":false,"required":["specimenId","reason","taskId","evidence","boundary"],"properties":{"specimenId":{"const":"MOT-W02"},"reason":{"type":"string"},"taskId":{"const":"TASK-CMP-01-GLOBAL-NAVIGATION"},"evidence":{"type":"array","minItems":4,"items":{"type":"string"},"uniqueItems":true},"boundary":{"type":"string"}}},
+    "approval": {"type":"object","additionalProperties":false,"required":["review","round03Feedback","round03FeedbackSha256","decisionId","approvedSpecimens","deferredSpecimens"],"properties":{"review":{"const":"brand-kit/expressions/channel-motion/review.json"},"round03Feedback":{"const":"brand-kit/expressions/channel-motion/round-03-feedback.json"},"round03FeedbackSha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"decisionId":{"const":"DEC-WEBSITE-MOTION-SYSTEM-001"},"approvedSpecimens":{"const":7},"deferredSpecimens":{"const":["MOT-W02"]}}},
+    "testViewports": {"const":[320,360,375,390,430,768,1024,1280,1440]},
+    "dependencies": {"type":"object","required":["disc","sphere","productCard","tradingCard","productEthos","foundationManifest","productRegistry","gradientRegistry","renderer","wings","motionResearch","programmeAudit"]}
+  }
+}

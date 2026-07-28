@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A morphing product exploration menu for Mez Systems.">
+    <title>Explore Menu · Mez Systems</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../brand-kit/releases/foundations/dist/index.css">
+    <link rel="stylesheet" href="./explore-menu.css">
+  </head>
+  <body>
+    <mez-explore-menu selected="aios" variant="registry"></mez-explore-menu>
+
+    <aside class="variant-lab" aria-label="Explore menu design directions">
+      <div class="variant-lab__heading">
+        <span id="variant-index">Direction 01 / 05</span>
+        <strong id="variant-name">Registry</strong>
+      </div>
+      <div class="variant-lab__controls" role="group" aria-label="Choose a design direction">
+        <button type="button" data-menu-variant="registry" aria-pressed="true">01</button>
+        <button type="button" data-menu-variant="signal" aria-pressed="false">02</button>
+        <button type="button" data-menu-variant="aperture" aria-pressed="false">03</button>
+        <button type="button" data-menu-variant="gallery" aria-pressed="false">04</button>
+        <button type="button" data-menu-variant="console" aria-pressed="false">05</button>
+      </div>
+      <p id="variant-description">A quiet product registry with equal weight and contained depth.</p>
+    </aside>
+
+    <main class="demo-page" id="start">
+      <section class="demo-hero" aria-labelledby="demo-title">
+        <p class="demo-kicker">Mez Systems / Interaction study 01</p>
+        <h1 id="demo-title">One place to enter the system.</h1>
+        <p class="demo-lede">Five operating layers. One shared language. Open Explore to move between the products without leaving the page.</p>
+        <div class="demo-grid" aria-label="System outcomes">
+          <article>
+            <span>01</span>
+            <strong>Connect the work</strong>
+            <p>Move from scattered tools into one legible operating layer.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Keep the context</strong>
+            <p>Give every system the business memory it needs to act well.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Compound the proof</strong>
+            <p>Turn each completed cycle into the input for the next.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./explore-menu.js"></script>
+    <script type="module" src="./showcase.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r10",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-23",
+  "note": "Olli asked for a different card content style rather than further positional tightening: centre-aligned in-card content, with a bigger centred Wings mark and the public name / extended name stacked beneath it. He explicitly authorised partial occlusion on the cards tucked behind their neighbours in exchange for a better-looking mark on the whole -- a deliberate relaxation of the full-legibility requirement that bounded Rounds 08 and 10.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Centre-aligned versions of the in-card content. Make the Wings bigger and have them centred, then have the titles under that. I don't mind if a bit of it gets cut off on the others -- it's more about making it look better."
+    }
+  ],
+  "constraintSupersession": {
+    "priorConstraint": "Rounds 08 and 10 treated 'every card's public name must remain fully legible under hit-testing' as a hard requirement that bounded how tight the fan could compact.",
+    "supersededBy": "Olli's explicit statement that partial occlusion (cutoff) on the tucked-under cards is acceptable, in service of a cleaner and bigger centred mark on the whole family.",
+    "scope": "This authorisation applies to occlusion caused by the fan's own overlapping cards, not to accessibility, contrast or rendering failures -- those remain governed by the existing static-twin, reduced-motion and WebGL-failure fallbacks.",
+    "implementation": "The hero identity mark moved from bottom-left anchored to fully centred (horizontally and vertically) within each card, with a larger Wings icon and larger title type. Ecosystem-shelf and final-route cards, which use the same shared component, are unchanged. The overlapping fan geometry itself (per-card step and horizontal overlap) is unchanged from Round 10."
+  },
+  "productionAuthority": false
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/design-system-web",
+  "version": "1.0.0-rc.1",
+  "type": "module",
+  "status": "candidate",
+  "productionAuthority": false,
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "exports": {
+    ".": "./runtime/index.js",
+    "./styles": "./styles/index.css",
+    "./components": "./components/index.js",
+    "./homepage": "./golden/homepage/index.html",
+    "./manifest": "./manifest.json"
+  },
+  "scripts": {
+    "verify": "python3 -B verify.py"
+  }
+}

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems — Problem Section Lab (8 concepts)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #34342f; --page-charcoal: #2e2e2e;
+  --page-dark: #171715; --page-dark-raised: #252523; --page-paper: #f8f8f8;
+  --page-white: #ffffff; --page-recessed: #f6f5f4; --page-line: #dadad6;
+  --page-line-soft: #e7e5e1; --page-muted: #666662; --page-dark-muted: #b8b8b1;
+  --page-dark-body: #cfcfc9; --card-outline: var(--mz-border-default);
+  --page-ease: cubic-bezier(.22, 1, .36, 1);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 10px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-top nav a:hover { background: rgba(248,248,248,.1); }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; color: var(--page-ink);
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 60ch; }
+.lab-render { position: relative; }
+/* ---- variant styles ---- */
+.s1-section{background:var(--page-paper);color:var(--page-ink);}
+.s1-inner{max-width:1180px;margin-inline:auto;padding-inline:clamp(20px,5vw,64px);padding-block:clamp(96px,12vw,184px);}
+.s1-eyebrow{margin:0;font-family:var(--mz-font-technical);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--page-muted);}
+.s1-title{margin:clamp(28px,4vw,52px) 0 0;font-family:var(--mz-font-display);font-weight:600;font-size:clamp(38px,7.4vw,92px);line-height:.98;letter-spacing:-.03em;max-width:15ch;}
+.s1-lede{margin:clamp(34px,4vw,54px) 0 0;font-family:var(--mz-font-body);font-size:clamp(18px,2vw,24px);line-height:1.4;color:var(--page-ink);max-width:42ch;}
+.s1-serif{margin:clamp(40px,5vw,72px) 0 0;font-family:var(--mz-font-editorial);font-weight:400;font-size:clamp(21px,2.6vw,32px);line-height:1.24;color:var(--page-muted);max-width:38ch;}
+.s1-turn{margin:clamp(52px,8vw,120px) 0 0;font-family:var(--mz-font-display);font-weight:600;font-size:clamp(23px,3.2vw,40px);line-height:1.08;letter-spacing:-.02em;max-width:24ch;color:var(--page-ink);}
+
+.s2-section{background:var(--page-paper);color:var(--page-ink);}
+.s2-inner{max-width:1180px;margin-inline:auto;padding-inline:clamp(20px,5vw,64px);padding-block:clamp(88px,11vw,152px);}
+.s2-head{max-width:720px;}
+.s2-eyebrow{margin:0;font-family:var(--mz-font-technical);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--page-muted);}
+.s2-title{margin:22px 0 0;font-family:var(--mz-font-display);font-weight:600;font-size:clamp(34px,5.2vw,62px);line-height:1;letter-spacing:-.03em;}
+.s2-lede{margin:24px 0 0;font-family:var(--mz-font-body);font-size:clamp(17px,1.8vw,20px);line-height:1.5;color:var(--page-muted);max-width:46ch;}
+.s2-list{list-style:none;margin:clamp(48px,6vw,84px) 0 0;padding:0;border-top:1px solid var(--page-line);}
+.s2-list li{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1.4fr);gap:clamp(16px,3vw,44px);align-items:baseline;padding:clamp(20px,2.5vw,32px) 0;border-bottom:1px solid var(--page-line);}
+.s2-idx{font-family:var(--mz-font-technical);font-size:12px;letter-spacing:.1em;color:var(--page-muted);}
+.s2-name{font-family:var(--mz-font-display);font-weight:600;font-size:clamp(19px,2.2vw,27px);letter-spacing:-.02em;color:var(--page-ink);}
+.s2-note{font-family:var(--mz-font-body);font-size:clamp(14px,1.5vw,16px);line-height:1.5;color:var(--page-muted);}
+.s2-turn{margin:clamp(40px,5vw,66px) 0 0;font-family:var(--mz-font-body);font-size:clamp(17px,1.8vw,21px);line-height:1.5;color:var(--page-muted);max-width:60ch;}
+.s2-turn strong{display:block;margin-top:10px;font-family:var(--mz-font-display);font-weight:600;font-size:clamp(20px,2.5vw,31px);letter-spacing:-.02em;color:var(--page-ink);}
+@media (max-width:640px){.s2-list li{grid-template-columns:auto 1fr;}.s2-note{grid-column:2;}}
+
+.s3-section{background:var(--page-dark);color:var(--page-paper);}
+.s3-inner{max-width:1180px;margin-inline:auto;padding-inline:clamp(20px,5vw,64px);padding-block:clamp(88px,11vw,152px);}
+.s3-eyebrow{margin:0;font-family:var(--mz-font-technical);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--page-dark-muted);}
+.s3-title{margin:24px 0 0;font-family:var(--mz-font-display);font-weight:600;font-size:clamp(36px,6vw,78px);line-height:.98;letter-spacing:-.03em;}
+.s3-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px);align-items:center;margin:clamp(48px,6vw,90px) 0 0;}
+.s3-lede{margin:0;font-family:var(--mz-font-body);font-size:clamp(17px,1.8vw,21px);line-height:1.55;color:var(--page-dark-body);max-width:46ch;}
+.s3-socket{aspect-ratio:16/10;border:1px dashed rgba(248,248,248,.26);border-radius:var(--mz-radius-panel);display:grid;place-items:center;}
+.s3-socket__label{font-family:var(--mz-font-technical);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,248,248,.4);}
+.s3-turn{margin:clamp(44px,5vw,74px) 0 0;font-family:var(--mz-font-body);font-size:clamp(17px,1.8vw,21px);line-height:1.5;color:var(--page-dark-body);max-width:60ch;}
+.s3-turn strong{display:block;margin-top:10px;font-family:var(--mz-font-display);font-weight:600;font-size:clamp(20px,2.5vw,31px);letter-spacing:-.02em;color:var(--page-paper);}
+@media (max-width:760px){.s3-body{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="lab-top">
+  <strong>Problem Section · 8 concepts</strong>
+  <span>pick one + tell me what lands</span>
+  <nav><a href="#v1">V1</a><a href="#v2">V2</a><a href="#v3">V3</a></nav>
+</div>
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">V1</span>
+    <span class="lab-name">Stated plainly</span>
+    <span class="lab-rat">Pure type and air. No diagram. The argument is carried by Mez Geist scale, an Instrument Serif turn, and generous whitespace — the calmest, most confident register.</span>
+  </header>
+  <div class="lab-render">
+<section class="s1-section">
+  <div class="s1-inner">
+    <p class="s1-eyebrow">The problem</p>
+    <h2 class="s1-title">Too many tools.<br>Too many middlemen.</h2>
+    <p class="s1-lede">AI was supposed to simplify the business. Instead the models keep improving, the tools keep changing &mdash; and the business keeps explaining itself from the beginning.</p>
+    <p class="s1-serif">Every new tool is one more interface, one more subscription, one more window that knows nothing about the rest of the company.</p>
+    <p class="s1-turn">Your business needs an operating layer it controls.</p>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">V2</span>
+    <span class="lab-name">Stated + the list</span>
+    <span class="lab-rat">The same calm statement, plus the four middlemen as one quiet hairline index (mono number, Geist name, muted note). Structure without a diagram — restrained and unmistakably Mez.</span>
+  </header>
+  <div class="lab-render">
+<section class="s2-section">
+  <div class="s2-inner">
+    <header class="s2-head">
+      <p class="s2-eyebrow">The problem</p>
+      <h2 class="s2-title">Too many tools. Too many middlemen.</h2>
+      <p class="s2-lede">AI was supposed to simplify the business. Instead every &ldquo;solution&rdquo; is one more layer between your work and the intelligence.</p>
+    </header>
+    <ul class="s2-list">
+      <li><span class="s2-idx">01</span><span class="s2-name">Another interface</span><span class="s2-note">wrapped around models you can already reach directly</span></li>
+      <li><span class="s2-idx">02</span><span class="s2-name">Another subscription</span><span class="s2-note">a recurring bill on terms you do not set</span></li>
+      <li><span class="s2-idx">03</span><span class="s2-name">Another credit system</span><span class="s2-note">the same intelligence, metered and sold back to you</span></li>
+      <li><span class="s2-idx">04</span><span class="s2-name">Another isolated window</span><span class="s2-note">that knows nothing about the rest of the company</span></li>
+    </ul>
+    <p class="s2-turn">External tools can create real value. Dependency without ownership does not.<strong>Your business needs an operating layer it controls.</strong></p>
+  </div>
+</section>
+  </div>
+</article><article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">V3</span>
+    <span class="lab-name">One quiet device</span>
+    <span class="lab-rat">A single premium charcoal beat with one restrained device: an empty, hairline socket where the operating layer should be. Minimal, still, and clearly Mez — one idea, perfectly placed.</span>
+  </header>
+  <div class="lab-render">
+<section class="s3-section">
+  <div class="s3-inner">
+    <p class="s3-eyebrow">The problem</p>
+    <h2 class="s3-title">Too many tools.<br>Too many middlemen.</h2>
+    <div class="s3-body">
+      <p class="s3-lede">AI was supposed to simplify the business. Instead the models keep improving, the tools keep changing, and the business keeps explaining itself from the beginning &mdash; to another window that knows nothing about the rest of the company.</p>
+      <div class="s3-socket" aria-hidden="true"><span class="s3-socket__label">no operating layer</span></div>
+    </div>
+    <p class="s3-turn">Dependency without ownership is the problem.<strong>Your business needs an operating layer it controls.</strong></p>
+  </div>
+</section>
+  </div>
+</article>
+</body>
+</html>

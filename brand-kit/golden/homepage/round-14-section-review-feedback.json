@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r14",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-24",
+  "note": "Olli's full section-by-section review of the r14 candidate, captured verbatim from the workbench keep/revise/kill drawer. Hero (GH-S01) and Footer (GH-S09) are keeps; GH-S02 through GH-S08 are revises. This drives the next bounded section rounds (r15+). GH-S07 and GH-S08 were marked revise with no detail and need clarification; GH-S03 real-logo intake is governance-sensitive.",
+  "sections": [
+    {"id": "GH-S01", "title": "Hero", "verdict": "keep", "feedback": ""},
+    {"id": "GH-S02", "title": "The problem", "verdict": "revise", "feedback": "the visualisation and layout of this is not following our style rebuild completly."},
+    {"id": "GH-S03", "title": "The Mez Systems principle", "verdict": "revise", "feedback": "we are moving in right direction for this. again we need the logos not filled versions- like a standalone logomark of all the ai logos like chatgpt, claude etc - also in a greyscale version is better as well."},
+    {"id": "GH-S04", "title": "Why Mez Systems", "verdict": "revise", "feedback": "why does the title 'We run Mez Studios on the systems we sell.' isnt lined up right? Like wehy is it indended in a way??? also split up the built on ourselves first and the operating proof into their own sections cause your cramming too much in"},
+    {"id": "GH-S05", "title": "Available now: AI OS", "verdict": "revise", "feedback": "close - its just the like posoitninng and laytout and design doesnt feel like our ethos we've built.\n\nit also feels like there is a dark overlay on tihs as well???!!\n\nwe can turn this into a bento box so product card up top use this one - Launch · corner hierarchy\nR09 revise · Organic Content OS first · extended name second\n\nthen under than a split of two column one side is the how it works. the other is the features. "},
+    {"id": "GH-S06", "title": "The Mez Systems ecosystem", "verdict": "revise", "feedback": "make the card design like the actual ones we make on the product cards like these Portrait · centred hierarchy\nR09 revise · larger Wings · public name first · filled action\n\nand make them animated versions."},
+    {"id": "GH-S07", "title": "Proof from the first Mez System", "verdict": "revise", "feedback": ""},
+    {"id": "GH-S08", "title": "Final route", "verdict": "revise", "feedback": ""},
+    {"id": "GH-S09", "title": "Footer", "verdict": "keep", "feedback": ""}
+  ],
+  "openQuestions": [
+    "GH-S07 and GH-S08 are marked revise with no feedback text -- need Olli's specific direction before rebuilding.",
+    "GH-S03 asks for real standalone AI logomarks (ChatGPT, Claude, etc.) in greyscale. These are third-party brand assets not in the repo and previously deferred as 'governed logo intake'; some names (Hermes, OpenClaw, Manus) may not map to real marks. Needs a sourcing/scope decision.",
+    "GH-S05 references Phase A specimen 'Launch · corner hierarchy (R09 revise)' and GH-S06 references 'Portrait · centred hierarchy (R09 revise, larger Wings, public name first, filled action)' -- to be reused from the approved Product Card Phase A workbench."
+  ],
+  "productionAuthority": false
+}

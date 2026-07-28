@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-PORT-01-RELEASE-BOUNDARY",
+  "taskId": "TASK-PORT-01-RELEASE-BOUNDARY",
+  "generatedAt": "2026-07-28T11:08:59+10:00",
+  "systemVersion": "1.0.0+golden-homepage-canonical-unreleased",
+  "sourceState": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-foundations-expressions",
+    "commit": "2d9bcdebd1a931f3925adf7f3d5aa6edc0483368",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {
+      "path": "brand-kit/START-HERE.md",
+      "sha256": "a0ce7279c29020a469288a5110476a3e1631fde234036289eb7a18855e579218",
+      "role": "canonical",
+      "required": true,
+      "reason": "Live control-plane status and next Phase 4 task."
+    },
+    {
+      "path": "brand-kit/docs/CURRENT-STATE.md",
+      "sha256": "4827f0524fee8e93c5ed5a2b9242b6b0fa2f0ab5d14b2b024d1e00b9f11129a5",
+      "role": "canonical",
+      "required": true,
+      "reason": "Exact canonical, incomplete and consumer authority boundary."
+    },
+    {
+      "path": "brand-kit/docs/ROADMAP.md",
+      "sha256": "a7dd8921b5226dd85f8ace1bff5dd0b52533aeee6daf82c092c2bdeb25504784",
+      "role": "canonical",
+      "required": true,
+      "reason": "Active Phase 4 portability and consumer-proof sequence."
+    },
+    {
+      "path": "brand-kit/governance/decisions.json",
+      "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587",
+      "role": "governance",
+      "required": true,
+      "reason": "Central decision snapshot; post-cutover decision record drift is a blocking release prerequisite."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-PORT-01-RELEASE-BOUNDARY.json",
+      "sha256": "28936de61e3b7ed22156147d7549d460f807c0e1b870dbb0ba765da68294890b",
+      "role": "governance",
+      "required": true,
+      "reason": "Completed bounded release-planning task."
+    },
+    {
+      "path": "brand-kit/golden/homepage/homepage.source.json",
+      "sha256": "ac1bc3043e7d07edfb1417db95dda2db8850434e1fc0535aeab1b69a81c4dc2e",
+      "role": "canonical",
+      "required": true,
+      "reason": "Canonical homepage composition, motion, proof and consumer boundary."
+    },
+    {
+      "path": "brand-kit/golden/homepage/review.json",
+      "sha256": "877c919cd08762c9a0578cd9abd11c85f85c06c8ef825c6073a48ffa650d28cb",
+      "role": "governance",
+      "required": true,
+      "reason": "Bounded canonical homepage review without production authority."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-29-approval.json",
+      "sha256": "3bc0193507d20ee5fd998a61f4f2e51551072e52c90bde7de0c982f553e12f17",
+      "role": "governance",
+      "required": true,
+      "reason": "Human approval and explicit candidate/proof/consumer release boundary."
+    },
+    {
+      "path": "brand-kit/components/halftone-portrait/halftone-portrait.source.json",
+      "sha256": "dd29b8e44c5e12b08f359e98f7eaf8b9e9370ea331be3ace1b465d09e3ade517",
+      "role": "research",
+      "required": true,
+      "reason": "CMP-05 candidate authority and bounded multi-portrait exception."
+    },
+    {
+      "path": "brand-kit/components/testimonial-marquee/testimonial-marquee.source.json",
+      "sha256": "b742b5cf73dd396ce26828ed7cb48f133be289714346146dab66123ba3a3cbdd",
+      "role": "research",
+      "required": true,
+      "reason": "CMP-06 selected-candidate authority, content boundary and autoplay exception."
+    },
+    {
+      "path": "brand-kit/releases/0.1.0-alpha.1/release.json",
+      "sha256": "bb106e40fc55a58a8c3cf3dd91f14e39c6ad403216fd948af3203a586cf1a59d",
+      "role": "mirror",
+      "required": true,
+      "reason": "Immutable migration snapshot scope and non-production boundary."
+    },
+    {
+      "path": "brand-kit/releases/0.1.0-alpha.1/artifact-manifest.json",
+      "sha256": "f5b0b63eccb897f6871285687df48c7626ebcb09f51456322f014dfa91a3de1a",
+      "role": "mirror",
+      "required": true,
+      "reason": "Existing deterministic identity artifact pattern."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/release-plan.source.json",
+      "sha256": "cf161b8cecca87a010d27caae021f1267d3b7cee887b82f38991013e02ae63bf",
+      "role": "governance",
+      "required": true,
+      "reason": "Completed non-authoritative production boundary."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/review.json",
+      "sha256": "62cdebbcbf4bea4eaaf8b5a4d6704be2fef099a3b1217283217fc43aec1dc017",
+      "role": "evidence",
+      "required": true,
+      "reason": "Methods, real results, future blockers and human decisions."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-GOLDEN-HOMEPAGE-001",
+      "status": "approved-in-bounded-record-ledger-reconciliation-required",
+      "productionEffect": "The Round 28 design is canonical but remains unreleased and cannot promote composed candidate components."
+    },
+    {
+      "id": "DEC-FOUNDATION-RELEASE-001",
+      "status": "approved-in-bounded-record-ledger-reconciliation-required",
+      "productionEffect": "Foundation release 1.0.0 is the immutable package input for its bounded scope."
+    },
+    {
+      "id": "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "status": "approved-in-bounded-record-ledger-reconciliation-required",
+      "productionEffect": "The deterministic Global Navigation 1.0.0 release is eligible as a production package input."
+    }
+  ],
+  "artifacts": [],
+  "consumers": [
+    "CON-MEZ-SYSTEMS-WEB-001"
+  ],
+  "knownConflicts": [
+    {
+      "id": "CONFLICT-PORT-01-DECISION-LEDGER",
+      "summary": "Three required post-cutover decision IDs are supported by bounded records but absent from the central decision snapshot.",
+      "executionEffect": "stop"
+    },
+    {
+      "id": "CONFLICT-PORT-01-CANDIDATES",
+      "summary": "The canonical homepage composes CMP-05 and CMP-06, but both retain candidate authority and no decision ID.",
+      "executionEffect": "constrain"
+    },
+    {
+      "id": "CONFLICT-PORT-01-PROOF-MEDIA",
+      "summary": "Four supplied screenshots prove the workbench composition but remain unredacted evidence-only media.",
+      "executionEffect": "stop"
+    },
+    {
+      "id": "CONFLICT-PORT-01-CONSUMER",
+      "summary": "The future production web consumer is named but its repository is not registered or authorised for integration.",
+      "executionEffect": "constrain"
+    }
+  ],
+  "stopConditions": [
+    "Do not assemble a production release until the central decision authority is reconciled.",
+    "Do not copy CMP-05 or CMP-06 into a production package without their separate gates and decision IDs.",
+    "Do not copy raw operating-proof screenshots or absolute source paths into a release.",
+    "Do not read, modify or deploy the future consumer before it is registered in a separate task.",
+    "Do not claim that this plan is a generated, canonical, approved or released package."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/llm/tasks/TASK-PORT-01-RELEASE-BOUNDARY.json"
+    ],
+    "omitByDefault": [
+      "brand-kit/history/",
+      "brand-kit/workbench/golden/homepage/problem-lab-9/",
+      "brand-kit/workbench/golden/homepage/s06-ai-os-lab/",
+      "brand-kit/workbench/golden/homepage/s07-ecosystem-lab/",
+      "play-orb/"
+    ]
+  },
+  "humanNotes": [
+    "Olli authorised execution of the next big-plan task on 28 July 2026. PORT-01 requires no new human gate because it defines boundaries and future gates without promoting or releasing anything."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r24",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S04 to GH-S05 to GH-S06 adjacency",
+    "GH-S05 simplified operating proof",
+    "four supplied operating-proof assets"
+  ],
+  "score": {
+    "weighted": 68,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacing": 4,
+      "typography": 5,
+      "productTruth": 5,
+      "distinctiveness": 4,
+      "narrative": 4,
+      "conversion": 4,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "The two-register proof composition remains legible without material styling: a single concise thesis sits opposite three titled groups of real operating evidence. Equal Context frames strengthen the evidence hierarchy instead of relying on decorative treatment."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The changed-scope sequence is workflow sequence, sticky proof and authored split. No adjacent composition family repeats."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "GH-S05 claims and authors no motion. Its scoped CSS contains no animation, transition, parallax, scroll listener or canvas. CSS sticky positioning changes document relationship only and releases to normal flow on narrow viewports."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "Four local assets remain byte-verified against Olli's supplied screenshots. The section contains no placeholder UI, fabricated metric or unsupported performance claim. Pending public-redaction governance remains in source and provenance without appearing as customer-facing copy."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "The existing seven-width responsive contract remains unchanged outside the simplified proof content. Fresh 390px and 1280px renders confirm no horizontal overflow, a static narrow-screen thesis, zero paragraph blocks in the evidence register, and exactly equal Context frames; the CSS contract preserves those properties across the declared breakpoints."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 0
+  },
+  "findings": [],
+  "noFindingBasis": "The revision was checked for inconsistent screenshot sizing, repeated explanatory copy, generic equal-card repetition, unsupported claims, placeholder UI, fake browser chrome, perspective treatment, shadows, glow, glass, colour-dependent hierarchy, off-screen mobile content, missing alt text, broken provenance and accidental promotion of the pending public-proof state. It would fail for any of those conditions, for a changed asset hash, for unequal Context frames, for any paragraph in the right evidence register or for motion being claimed without measured proof.",
+  "smallestSetOfChanges": [],
+  "standingRisks": [
+    "The supplied screenshots retain visible internal working-state text. Public deployment is blocked until Olli approves the visible content or specifies irreversible redactions.",
+    "The GH-S05 copy amendment still needs formal relock in homepage-copy.md.",
+    "H-GOLD-01-HOMEPAGE-PROOF remains open; this Gate B record does not promote the candidate to a golden output."
+  ],
+  "readyForOlliReview": true
+}

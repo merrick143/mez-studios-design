@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-FIG-01-FIGMA-COMPANION",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "contextBundleId": "CTX-FIG-01-FIGMA-COMPANION",
+  "agent": {
+    "kind": "hybrid",
+    "name": "Olli and Codex",
+    "model": "GPT-5"
+  },
+  "startedAt": "2026-07-28T09:14:24Z",
+  "finishedAt": "2026-07-28T10:51:31Z",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path":"brand-kit/figma-companion/","action":"created","sha256":null,"reason":"Repository ledger, phase receipts, verifiers, Gate B review and approval for the dedicated Figma companion."},
+    {"path":"brand-kit/llm/tasks/TASK-FIG-01-FIGMA-COMPANION.json","action":"modified","sha256":null,"reason":"Closed the approved companion task without creating production authority."},
+    {"path":"brand-kit/llm/tasks/TASK-CHAN-01-FIRST-RELEASE-CHANNEL-SYSTEMS.json","action":"modified","sha256":null,"reason":"Unblocked the next ordered programme task."},
+    {"path":"brand-kit/START-HERE.md","action":"modified","sha256":null,"reason":"Routes current work to CHAN-01 after the completed Figma gate."},
+    {"path":"brand-kit/docs/","action":"modified","sha256":null,"reason":"CURRENT-STATE, ROADMAP and HANDOFF record the approved mirror boundary and next task."},
+    {"path":"brand-kit/data/status.json","action":"modified","sha256":null,"reason":"Records FIG-01 complete and CHAN-01 ready."}
+  ],
+  "decisionsApplied": [
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "tests": [
+    {"id":"FIG-01-SOURCE-PARITY","status":"pass","evidence":"Eight collections, 255 variables, 215 aliases, fifteen text styles and five depth styles retain the repository-backed mirror boundary."},
+    {"id":"FIG-01-COMPONENT-INVENTORY","status":"pass","evidence":"The approved file contains six identity/expression sets plus eighteen functional sets with 105 Phase 4 variants."},
+    {"id":"FIG-01-DETACH","status":"pass","evidence":"All eighteen default Phase 4 variants detached with width, height and direct child count preserved."},
+    {"id":"FIG-01-VISUAL","status":"pass","evidence":"Rendered component-set inspection repaired footer, navigation, portrait, bento and testimonial truth defects before Gate B passed at 67/75."},
+    {"id":"FIG-01-FONT-AUDIT","status":"pass","evidence":"The final 14-page, 2,505-node whole-file audit found zero missing-font text nodes."},
+    {"id":"FIG-01-HUMAN","status":"pass","evidence":"Olli approved the exact completed companion through H-FIG-02-FIGMA-COMPANION-APPROVAL."},
+    {"id":"CORE-VALIDATION","status":"pass","evidence":"All five Figma phase verifiers and all seven AGENT-GUIDE core validators passed before approval was presented."}
+  ],
+  "artifactsProduced": [
+    "Approved Mez Systems Design System Companion QxZT3FJ8BDXOZfBQDt0qPW",
+    "Eight repository-backed variable collections and twenty semantic styles",
+    "Twenty-four component sets across identity, expressions and functional contracts",
+    "Closed H-FIG-02 completed-library gate"
+  ],
+  "assumptions": [
+    "Olli's one-word approval applies to the exact H-FIG-02 decision requested immediately before it."
+  ],
+  "exceptions": [
+    "Figma represents runtime components as exact static authoring twins and does not execute code-owned motion, accessibility or responsive behaviour.",
+    "The library is not published and Code Connect is not implemented by this task.",
+    "The historical Figma branding file remains research-only and unchanged."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {
+    "gateRequired": true,
+    "gateId": "H-FIG-02-FIGMA-COMPANION-APPROVAL",
+    "status": "approved"
+  },
+  "nextAction": "Select the first bounded channel under TASK-CHAN-01-FIRST-RELEASE-CHANNEL-SYSTEMS."
+}

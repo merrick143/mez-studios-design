@@ -45,7 +45,7 @@ def main() -> int:
 
     print("LLM CONTRACTS: PASS")
     print("- bounded tasks, context bundles, receipts and evaluations validate")
-    print("- TASK-FND-01-TYPOGRAPHY is ready for a fresh human or LLM session")
+    print("- FND-01 through FND-05, EXP-01/02/03/04/05/07/08, CMP-01, GOLD-01, PORT-01/02/03, FIG-01, UI-01 and CERT-01 are complete; exact consumer registration makes final PORT-04 ready; CHAN-01 is priority-deferred")
     return 0
 
 

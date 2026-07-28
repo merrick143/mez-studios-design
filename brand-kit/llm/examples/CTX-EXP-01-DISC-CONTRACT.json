@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-EXP-01-DISC-CONTRACT",
+  "taskId": "TASK-EXP-01-DISC-CONTRACT",
+  "generatedAt": "2026-07-21T23:32:29+10:00",
+  "systemVersion": "1.0.0+disc-canonical",
+  "sourceState": {"repository": "merrick143/mez-studios-design", "branch": "codex/fnd-01-typography", "commit": "5d6d4bd152db299678b7c1dfa8de50c07deedbeb", "workingTree": "dirty"},
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "bd15a85dcb06acf83a70dff84e448326646f232824e6d27b76eceb9070bfdc50", "role": "canonical", "required": true, "reason": "Canonical disc status and EXP-02 review boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "ca1c82c006188a29d95a4a7642411dd52ab7dfa7a1e9db8fa1852b5bc69ce451", "role": "canonical", "required": true, "reason": "Live canonical disc status and sphere candidate gate."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "1d69926e8e0b55c2e1e33d84a08d9410431bd2b5ce3d753c95e0abce1f68fa10", "role": "canonical", "required": true, "reason": "EXP-01 exit and EXP-02 review status."},
+    {"path": "brand-kit/llm/tasks/TASK-EXP-01-DISC-CONTRACT.json", "sha256": "4e87362d3cda50de41c0fe09737eb3b2e99141155af03f56341240c57455ba67", "role": "governance", "required": true, "reason": "Completed bounded scope, stop conditions, verification and human gate."},
+    {"path": "brand-kit/expressions/disc/disc.source.json", "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a", "role": "canonical", "required": true, "reason": "Schema-backed canonical contract for geometry, Wings, scale, allocation, surfaces, channels and accessibility."},
+    {"path": "brand-kit/expressions/disc/review.json", "sha256": "45c0e7c586b10f68ed0dcf610503431b445006266496d2020517bafb3249770d", "role": "governance", "required": true, "reason": "Olli's informed approval of the explicit disc rules."},
+    {"path": "brand-kit/expressions/disc/dist/manifest.json", "sha256": "003264f6910cb92f31b75a8e0f050d73720c1ed2235fb4dea2854103d7bccf1c", "role": "mirror", "required": true, "reason": "Deterministic canonical package integrity after informed approval."},
+    {"path": "brand-kit/workbench/expressions/disc/index.html", "sha256": "6e8d3fddf02a6b6137b5394ec6b96f38eb8378f2f3632ced0184edd08a4fa29e", "role": "fixture", "required": true, "reason": "Canonical proof and permanent approval record."},
+    {"path": "brand-kit/source-pack/design-system-export/mz-core.js", "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d", "role": "canonical", "required": true, "reason": "Approved parametric runtime preserved unchanged."},
+    {"path": "brand-kit/source-pack/design-system-export/assets/wings.svg", "sha256": "e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33", "role": "canonical", "required": true, "reason": "Canonical Wings geometry preserved unchanged."},
+    {"path": "brand-kit/releases/foundations/dist/manifest.json", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639", "role": "canonical", "required": true, "reason": "Canonical foundation release used by the proof without mutation."}
+  ],
+  "decisions": [
+    {"id": "DEC-MOTION-002", "status": "approved", "productionEffect": "Static remains default and no more than one living focal object is used per viewport."},
+    {"id": "DEC-GRADIENT-LIBRARY-001", "status": "approved", "productionEffect": "Approved source gradients and exact static twins are immutable inputs."},
+    {"id": "DEC-LIVING-CORE-FINISH-001", "status": "approved", "productionEffect": "Deep Mineral is the approved parametric runtime finish."},
+    {"id": "DEC-PRODUCT-ARCHITECTURE-001", "status": "approved", "productionEffect": "Five literal products and MZ-G13/G12/G06/G15/G20 assignments are fixed."},
+    {"id": "DEC-FAMILY-001", "status": "approved", "productionEffect": "Equal products use equal aligned geometry and repeated cores are static."},
+    {"id": "DEC-FOUNDATION-RELEASE-001", "status": "approved", "productionEffect": "Canonical foundation release 1.0.0 styles the isolated proof."},
+    {"id": "DEC-DISC-EXPRESSION-001", "status": "approved", "productionEffect": "disc-contract-01 is canonical 1.0.0 for the bounded disc-expression scope."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id": "CONFLICT-EXP-01-HOVER", "summary": "Historical research removed hover speed-up while the active renderer contract permits internal field-speed change only.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-EXP-01-MICRO", "summary": "Canonical Wings are not reliably legible below 48px.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-EXP-01-SCOPE", "summary": "Historical sphere, card, pill, stack and collection studies are research-only.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": ["Do not change a source PNG, exact static twin, renderer, Wings, product assignment or canonical foundation.", "Do not add sphere shading, inset tiles, halos, glow, floating motion or non-circular geometry.", "Do not animate repeated family or dense contexts.", "Do not infer sphere, card, homepage, Figma or consumer authority from this candidate."],
+  "contextBudget": {"strategy": "bounded", "requiredFirst": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/llm/tasks/TASK-EXP-01-DISC-CONTRACT.json", "brand-kit/skills/codex-made-it/references/product-disc-contract.md"], "omitByDefault": ["brand-kit/history/", "play-orb/", "consumer repositories", "Figma"]},
+  "humanNotes": ["After the proof scope was clarified, Olli explicitly approved all stated disc rules and asked that they be locked through H-EXP-01-DISC-PROOF on 21 July 2026. DEC-DISC-EXPRESSION-001 records the canonical bounded result."]
+}

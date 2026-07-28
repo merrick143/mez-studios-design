@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Workbench · Halftone Portrait (candidate)</title>
+<link rel="stylesheet" href="../../../components/halftone-portrait/mez-halftone-portrait.css" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header class="wb-head">
+  <p class="wb-kicker">TASK-CMP-05 · canonical 1.0.0 · DEC-HALFTONE-PORTRAIT-COMPONENT-001</p>
+  <h1>Halftone Portrait</h1>
+  <p class="wb-lede">
+    A face rendered as a live halftone dot grid, drawn from video on a canvas one
+    frame at a time. No model, no wasm, no network. The cutout is baked into the
+    source, because a light plate maps to no dots.
+  </p>
+  <div class="wb-actions">
+    <a href="?static">Force static</a>
+    <a href="./">Normal</a>
+    <a href="../../../components/halftone-portrait/fixtures/static-html.html">Raw fixture</a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>Locked treatment</h2>
+    <p class="wb-note">The values Olli locked on 2026-07-27, at the size the portrait ships at.</p>
+    <div class="wb-grid wb-grid--two">
+      <figure>
+        <mez-halftone-portrait id="primary"
+          src="../../../components/halftone-portrait/fixtures/media/portrait-a.mp4"
+          label="Halftone portrait, subject A"
+          grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+          contrast="1.3" brightness="-0.03"></mez-halftone-portrait>
+        <figcaption>Subject A · <span data-motion-for="primary">…</span></figcaption>
+      </figure>
+      <figure>
+        <mez-halftone-portrait id="secondary"
+          src="../../../components/halftone-portrait/fixtures/media/portrait-b.mp4"
+          label="Halftone portrait, subject B"
+          grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+          contrast="1.3" brightness="-0.03"></mez-halftone-portrait>
+        <figcaption>Subject B · <span data-motion-for="secondary">…</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Motion allocation</h2>
+    <p class="wb-note">
+      Website Motion 1.0.0 permits one expressive event in the viewport. Every
+      portrait mounts static and the most visible one is handed the animation.
+      This panel counts them live, so the rule is measured rather than asserted.
+    </p>
+    <output class="wb-readout" id="readout">measuring…</output>
+  </section>
+
+
+  <section>
+    <h2>Marquee policy · motion-policy="always"</h2>
+    <p class="wb-note">
+      The bounded exception Olli approved on 2026-07-27. These six opt out of the
+      allocation and animate together while visible. Each still idles the moment
+      it leaves the viewport, so a long marquee never pays for portraits nobody
+      can see. The readout above counts them.
+    </p>
+    <div class="wb-marquee">
+      <mez-halftone-portrait class="wb-marquee__item" motion-policy="always"
+        src="../../../components/halftone-portrait/fixtures/media/portrait-a.mp4"
+        label="Marquee portrait 1"
+        grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+        contrast="1.3" brightness="-0.03"></mez-halftone-portrait>
+      <mez-halftone-portrait class="wb-marquee__item" motion-policy="always"
+        src="../../../components/halftone-portrait/fixtures/media/portrait-b.mp4"
+        label="Marquee portrait 2"
+        grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+        contrast="1.3" brightness="-0.03"></mez-halftone-portrait>
+      <mez-halftone-portrait class="wb-marquee__item" motion-policy="always"
+        src="../../../components/halftone-portrait/fixtures/media/portrait-a.mp4"
+        label="Marquee portrait 3"
+        grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+        contrast="1.3" brightness="-0.03"></mez-halftone-portrait>
+      <mez-halftone-portrait class="wb-marquee__item" motion-policy="always"
+        src="../../../components/halftone-portrait/fixtures/media/portrait-b.mp4"
+        label="Marquee portrait 4"
+        grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+        contrast="1.3" brightness="-0.03"></mez-halftone-portrait>
+      <mez-halftone-portrait class="wb-marquee__item" motion-policy="always"
+        src="../../../components/halftone-portrait/fixtures/media/portrait-a.mp4"
+        label="Marquee portrait 5"
+        grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+        contrast="1.3" brightness="-0.03"></mez-halftone-portrait>
+      <mez-halftone-portrait class="wb-marquee__item" motion-policy="always"
+        src="../../../components/halftone-portrait/fixtures/media/portrait-b.mp4"
+        label="Marquee portrait 6"
+        grid-step="4" max-radius="1.8" dot-colour="#212121" background="#ffffff"
+        contrast="1.3" brightness="-0.03"></mez-halftone-portrait>
+    </div>
+  </section>
+
+  <section>
+    <h2>Range</h2>
+    <p class="wb-note">One render contract, not a set of styles.</p>
+    <div class="wb-grid">
+      <figure>
+        <mez-halftone-portrait src="../../../components/halftone-portrait/fixtures/media/portrait-a.mp4"
+          label="Coarse grid" grid-step="10" max-radius="4.6" contrast="1.6"></mez-halftone-portrait>
+        <figcaption>Coarse</figcaption>
+      </figure>
+      <figure>
+        <mez-halftone-portrait src="../../../components/halftone-portrait/fixtures/media/portrait-a.mp4"
+          label="Rotated screen" grid-step="7" max-radius="3.2" screen-angle="30"></mez-halftone-portrait>
+        <figcaption>30 degree screen</figcaption>
+      </figure>
+      <figure>
+        <mez-halftone-portrait src="../../../components/halftone-portrait/fixtures/media/portrait-a.mp4"
+          label="Square staggered" grid-step="6" max-radius="2.6" dot-shape="square" stagger></mez-halftone-portrait>
+        <figcaption>Square, staggered</figcaption>
+      </figure>
+      <figure>
+        <mez-halftone-portrait src="../../../components/halftone-portrait/fixtures/media/portrait-b.mp4"
+          label="Inverted on charcoal" grid-step="5" max-radius="2.4" invert
+          dot-colour="#f6f6f4" background="#171715"></mez-halftone-portrait>
+        <figcaption>Inverted</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Failure</h2>
+    <p class="wb-note">A portrait that cannot load keeps its box and says why.</p>
+    <div class="wb-grid wb-grid--two">
+      <figure>
+        <mez-halftone-portrait src="./nothing-here.mp4" label="Broken source"></mez-halftone-portrait>
+        <figcaption>Missing source</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="../../../components/halftone-portrait/mez-halftone-portrait.js"></script>
+<script type="module" src="./halftone-portrait-workbench.js"></script>
+</body>
+</html>

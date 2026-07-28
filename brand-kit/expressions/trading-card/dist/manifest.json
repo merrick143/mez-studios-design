@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.trading-card",
+  "version": "1.0.0",
+  "status": "canonical",
+  "decisionId": "DEC-TRADING-CARD-EXPRESSION-001",
+  "productionAuthority": true,
+  "artifactCount": 8,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 2220,
+      "sha256": "5d527f3acf68ace999c199e8a2e4566ce70fb48081ef9db242520143858fd5b1"
+    },
+    {
+      "path": "package.json",
+      "bytes": 775,
+      "sha256": "ad8fa0d71b895b05a23301cc4b00f9b2a785c560d920023160c26bbbfd7f988d"
+    },
+    {
+      "path": "review.json",
+      "bytes": 1284,
+      "sha256": "8f6cb78d0c1543a7f88f89993bc0778afca4520daf5c4ca22e8481f45a6a110a"
+    },
+    {
+      "path": "round-01-feedback.json",
+      "bytes": 4747,
+      "sha256": "661cb1a6521c1605b8b3599f82bc4dd5149492700232a327e7c9aa17b6804a41"
+    },
+    {
+      "path": "round-02-feedback.json",
+      "bytes": 3474,
+      "sha256": "41d03daa9dac20a2fd3439154f92a1376e3b23b791603157211bd8c445fb4e34"
+    },
+    {
+      "path": "round-03-feedback.json",
+      "bytes": 2914,
+      "sha256": "cc725be9ce487a6a68081520cfbb68a73a748a9127c7364826c7b9fa26458759"
+    },
+    {
+      "path": "trading-card.schema.json",
+      "bytes": 2966,
+      "sha256": "bb0e0dfcb26bf68caf4852b79141d2b2811d1ec70cdb54ae643c08ad5b2af287"
+    },
+    {
+      "path": "trading-card.source.json",
+      "bytes": 9278,
+      "sha256": "28750981346dd128ec0c0e64cd879345631e0867f2247ae20f224958f54b882f"
+    }
+  ]
+}

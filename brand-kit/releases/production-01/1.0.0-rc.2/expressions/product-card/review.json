@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "expressionId": "mz.systems.expression.product-card",
+  "programmeItem": "Product Card 02",
+  "phase": "A-visual-architecture",
+  "round": "visual-architecture-round-10",
+  "candidateStatus": "review-candidate",
+  "candidateRevision": "product-card-02-phase-a-r10",
+  "selectedBaseExpression": "round-10-bounded-grammar",
+  "expressionVerdicts": {"landing": "approve", "cards": "approve", "bundles": "approve", "sections": "approve"},
+  "verdict": "approve",
+  "note": "Round 10 is really, really good. All 32 surviving specimens are kept. Close Phase A, preserve the ten-round taste and decision trail as design-system guidance, and proceed to Phase B without reopening the visual grammar.",
+  "reviewedAt": "2026-07-22T07:51:56.000Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+  "resultingStatus": "canonical-visual-grammar",
+  "phaseBStatus": "ready-to-start",
+  "productionAuthority": true
+}

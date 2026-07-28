@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.channel-motion-matrix",
+  "status": "review-candidate",
+  "productionAuthority": false,
+  "artifactCount": 4,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 1340,
+      "sha256": "6a465652b0f94bf5fd3d25137c91d95295c68cb09bc5ea3c469b6ceb70a38e98"
+    },
+    {
+      "path": "channel-motion.schema.json",
+      "bytes": 2409,
+      "sha256": "12c7592d361e513b982ccc536b0039bd95c6cb42c9467717276cdbe7bd4283ff"
+    },
+    {
+      "path": "channel-motion.source.json",
+      "bytes": 7285,
+      "sha256": "7393fbdcdaeb7cd1acfbe0843a809572252ce5490a7cd29f6d44cf6385bb3712"
+    },
+    {
+      "path": "package.json",
+      "bytes": 576,
+      "sha256": "f83b756b147d00d233d61d27e41e053adb9ff0a17639d6ba312bb4a33378cca1"
+    }
+  ]
+}

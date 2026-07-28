@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · GH-S04 · ten iterations of F</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<link rel="stylesheet" href="../../../../components/global-navigation/mez-global-navigation.css" />
+<link rel="stylesheet" href="../../../../components/product-feature-bento/mez-product-feature-bento.css?v=0.1.5" />
+<style>
+:root {
+  --page-ink: var(--mz-colour-neutral-950, #0d0d0d);
+  --page-paper: var(--mz-colour-neutral-25, #f8f8f8);
+  --page-line: var(--mz-colour-neutral-200, #dadad6);
+  --page-line-strong: var(--mz-colour-neutral-400, #8a8a84);
+  --page-muted: var(--mz-colour-neutral-550, #666662);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--page-paper); color: var(--page-ink); font-family: var(--mz-font-body); }
+img { max-width: 100%; }
+
+/* GH-S04. 1010px, not wider: mz-core renders every surface through one shared
+   framebuffer capped at 2048 device pixels with dpr clamped to 2, so a material
+   surface past 1024 CSS pixels is drawn from source that ran out. */
+.why { padding-block: clamp(80px,9vw,124px); }
+.shell { max-width: 1010px; margin-inline: auto; padding-inline: clamp(20px,5vw,40px); }
+.why-head { text-align: center; }
+.eyebrow { margin: 0; font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted); }
+.why h2 { margin: 18px auto 0; font-family: var(--mz-font-display); font-weight: 660; font-size: clamp(30px,3.5vw,48px); line-height: 1.05; letter-spacing: -.04em; max-inline-size: 20ch; }
+.section-lead { margin: 18px auto 0; font-size: clamp(15.5px,1.55vw,18px); line-height: 1.55; color: var(--page-muted); max-inline-size: 52ch; }
+.why-body { margin-top: clamp(36px,4.4vw,56px); }
+.why-close { margin: clamp(30px,3.6vw,46px) auto 0; text-align: center; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(17px,1.7vw,21px); line-height: 1.35; letter-spacing: -.02em; max-inline-size: 44ch; }
+
+/* Some iterations change what the page under the cards is, not just the cards. */
+.why[data-page="white"] { background: var(--mz-colour-neutral-0, #fff); }
+.why[data-page="tint"] { background: var(--mz-colour-neutral-100, #eeeeeb); }
+
+/* Lab chrome only. */
+.top { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 11px clamp(16px,4vw,40px); background: var(--mz-colour-neutral-900,#171715); color: var(--page-paper); font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.top nav { display: flex; gap: 5px; margin-left: auto; flex-wrap: wrap; }
+.top nav a { padding: 4px 9px; border: 1px solid rgba(248,248,248,.3); border-radius: 9999px; color: inherit; text-decoration: none; }
+.note { padding: 16px clamp(16px,4vw,40px); background: var(--mz-colour-neutral-850,#1b1b19); color: #cfcfc9; font-size: 13.5px; line-height: 1.6; }
+.note b { color: var(--page-paper); font-weight: 600; }
+.note p { margin: 0 0 8px; max-width: 106ch; } .note p:last-child { margin: 0; }
+.mark { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; padding: 12px clamp(16px,4vw,40px); background: #fff; border-block: 1px solid var(--page-line); position: sticky; top: 40px; z-index: 50; }
+.mark b { font-family: var(--mz-font-display); font-size: 16px; letter-spacing: -.01em; }
+.mark span { font-size: 13px; color: var(--page-muted); max-width: 76ch; line-height: 1.5; }
+.mark em { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; font-style: normal; color: var(--page-line-strong); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <strong>GH-S04 · F iterations</strong><span>One composition, ten treatments</span>
+  <nav><a href="#f1">1</a><a href="#f2">2</a><a href="#f3">3</a><a href="#f4">4</a><a href="#f5">5</a><a href="#f6">6</a><a href="#f7">7</a><a href="#f8">8</a><a href="#f9">9</a><a href="#f10">10</a></nav>
+</header>
+
+<div class="note">
+  <p><b>All ten are F.</b> Hero centred and alive, blocks around it, artefact and caption in every cell. What changes is cell count, hero proportion, card background and where the token sits. Content is identical throughout, so anything you prefer here is a treatment preference and not a content one.</p>
+  <p><b>Three of them change the page, not just the cards.</b> 3 puts the cards a step below the page, 4 removes card fills entirely, 5 lets the background carry which blocks have a system. Those are the ones worth looking at hardest, because they change what the section is made of rather than how it is arranged.</p>
+</div>
+
+<mez-global-navigation home-href="../" systems-href="#" about-href="#" selected="aios"></mez-global-navigation>
+
+<div id="f1" class="mark"><b>1 · Baseline</b><em>9 cells</em><span>F unchanged, as the control. White cards on the paper canvas, six-column hero.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f1-baseline.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f2" class="mark"><b>2 · Tight centre</b><em>9 cells</em><span>The hero drops from six columns to four, so the two cells either side grow and the mosaic balances rather than being dominated by its middle.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f2-tight.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f3" class="mark"><b>3 · Cards below the page</b><em>9 cells</em><span>Cards on neutral-50 against a white page. The tone relationship inverts: the page becomes the light surface and the cards sit into it rather than on it.</span></div>
+<section class="why" data-page="white"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f3-muted.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f4" class="mark"><b>4 · Hairline only</b><em>9 cells</em><span>No card fills at all. Every block is an outline on the page and the hero is the only solid object in the section, which is the strongest possible version of one colour event.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f4-hairline.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f5" class="mark"><b>5 · Background carries coverage</b><em>9 cells</em><span>Blocks with a system are white; blocks without are a tint. The argument moves out of the words and into the surfaces, so you can read it without reading it.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f5-coverage-tone.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f6" class="mark"><b>6 · Tokens past the frame</b><em>9 cells</em><span>The token grows to 150px and is clipped by the top edge of its cell, the way a device render breaks its frame in the Apple bentos.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f6-bleed.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f7" class="mark"><b>7 · Portrait hero</b><em>9 cells</em><span>The hero is a portrait rather than a landscape, three rows deep between two stacks of blocks. Closest to the iPhone cell in the Apple bentos.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f7-portrait.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f8" class="mark"><b>8 · Six cells</b><em>6 cells</em><span>The four blocks with a system get their own cells; the four without collapse into one. Fewer, larger, calmer, at the cost of giving those four less presence.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f8-fewer.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f9" class="mark"><b>9 · Off the axis</b><em>9 cells</em><span>The hero sits right of centre rather than dead centre, so the composition has a direction instead of a mirror line.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f9-offcentre.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<div id="f10" class="mark"><b>10 · Two rings</b><em>9 cells</em><span>The two cells touching the hero are charcoal and everything outside them is paper, so the mosaic gains depth toward its centre without a single shadow.</span></div>
+<section class="why"><div class="shell why-head"><p class="eyebrow">Built on ourselves first</p><h2>We run Mez Studios on the systems we sell.</h2><p class="section-lead">Every product begins with a real operating problem inside our own business.</p></div><div class="shell why-body"><mez-product-feature-bento fixture="../../../../components/product-feature-bento/fixtures/f-iterations/f10-rings.json"></mez-product-feature-bento></div><p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p></section>
+
+<script type="module" src="../../../../components/global-navigation/mez-global-navigation.js"></script>
+<script type="module" src="../../../../components/product-feature-bento/mez-product-feature-bento.js?v=0.1.5"></script>
+</body>
+</html>

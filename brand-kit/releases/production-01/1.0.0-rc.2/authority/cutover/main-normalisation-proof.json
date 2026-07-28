@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "proofId": "MEZ-MAIN-NORMALISATION-PROOF-2026-07-21-01",
+  "status": "passed",
+  "validatedRepository": "merrick143/mez-studios-design",
+  "validatedBranch": "main",
+  "validatedCommit": "369d9615be3c8beef36d15f38c853be828e2b0a3",
+  "basisCutoverId": "CUTOVER-2026-07-21-01",
+  "checks": [
+    "current authority resolved to main:brand-kit",
+    "knowledge portability and LLM contracts passed",
+    "shared Claude Code and Codex skill validated",
+    "workbench, gradient library and product architecture passed",
+    "deterministic gradient rebuild produced zero drift",
+    "authority and migration release validators passed",
+    "clean remote main clone remained clean after validation"
+  ],
+  "nextTask": "TASK-FND-01-TYPOGRAPHY",
+  "productionAuthority": true
+}

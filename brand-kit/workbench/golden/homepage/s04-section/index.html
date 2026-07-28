@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · GH-S04 in place</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<link rel="stylesheet" href="../../../../components/global-navigation/mez-global-navigation.css" />
+<link rel="stylesheet" href="../../../../components/product-feature-bento/mez-product-feature-bento.css?v=0.1.1" />
+<style>
+:root {
+  --page-ink: var(--mz-colour-neutral-950, #0d0d0d);
+  --page-paper: var(--mz-colour-neutral-25, #f8f8f8);
+  --page-line: var(--mz-colour-neutral-200, #dadad6);
+  --page-line-strong: var(--mz-colour-neutral-400, #8a8a84);
+  --page-muted: var(--mz-colour-neutral-550, #666662);
+  --page-white: var(--mz-colour-neutral-0, #ffffff);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--page-paper); color: var(--page-ink); font-family: var(--mz-font-body); }
+img { max-width: 100%; }
+
+/* Neighbour markers, so the section is judged with the rhythm around it rather
+   than floating on its own. Not part of the section. */
+.neighbour { padding: clamp(90px,12vw,150px) clamp(20px,5vw,64px); text-align: center; font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--page-line-strong); border-block: 1px dashed var(--page-line); }
+
+/* ------------------------------------------------------------------ GH-S04 */
+.why { padding-block: clamp(84px,10vw,132px); }
+.shell { max-width: 1180px; margin-inline: auto; padding-inline: clamp(20px,5vw,64px); }
+.why-head { max-width: 66ch; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0;
+  padding: 6px 13px 6px 11px;
+  border: 1px solid var(--page-line); border-radius: var(--mz-radius-full, 9999px);
+  background: var(--page-white);
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted);
+}
+.eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--page-line-strong); }
+.why h2 {
+  margin: 20px 0 0;
+  font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(30px,3.5vw,48px); line-height: 1.05; letter-spacing: -.04em;
+  max-inline-size: 18ch;
+}
+.why h2 span { color: var(--page-line-strong); }
+.section-lead { margin: 18px 0 0; font-size: clamp(15.5px,1.55vw,18px); line-height: 1.55; color: var(--page-muted); max-inline-size: 50ch; }
+.why-body { margin-top: clamp(38px,4.6vw,60px); }
+.why-close { margin: clamp(32px,3.8vw,48px) 0 0; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(17px,1.7vw,21px); line-height: 1.35; letter-spacing: -.02em; max-inline-size: 40ch; }
+
+/* Lab chrome only. */
+.lab { position: fixed; right: 12px; bottom: 12px; z-index: 90; display: flex; gap: 6px; font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.lab a { padding: 7px 12px; border-radius: 9999px; background: var(--mz-colour-neutral-900,#171715); color: var(--page-paper); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<mez-global-navigation home-href="../" systems-href="#" about-href="#" selected="aios"></mez-global-navigation>
+
+<div class="neighbour">GH-S03 · The Mez Systems principle sits above</div>
+
+<section class="why" id="why-mez" data-review-id="GH-S04" data-review-title="Built on ourselves first">
+  <div class="shell why-head">
+    <p class="eyebrow">Built on ourselves first</p>
+    <h2><span>We run Mez Studios</span> on the systems we sell.</h2>
+    <p class="section-lead">Every product begins with a real operating problem inside our own business.</p>
+  </div>
+
+  <div class="shell why-body">
+    <mez-product-feature-bento
+      fixture="../../../../components/product-feature-bento/fixtures/s04-building-blocks.json"></mez-product-feature-bento>
+  </div>
+
+  <p class="shell why-close">Built inside the business. Proven by the business. Packaged for yours.</p>
+</section>
+
+<div class="neighbour">GH-S05 · Operating proof sits below</div>
+
+<nav class="lab" aria-label="Lab">
+  <a href="?static">Static</a><a href="./">Live</a>
+</nav>
+
+<script type="module" src="../../../../components/global-navigation/mez-global-navigation.js"></script>
+<script type="module" src="../../../../components/product-feature-bento/mez-product-feature-bento.js?v=0.1.1"></script>
+</body>
+</html>

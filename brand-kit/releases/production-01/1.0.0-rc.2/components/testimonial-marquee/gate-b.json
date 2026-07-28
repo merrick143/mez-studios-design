@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r01",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Codex design-critique",
+  "verdict": "pass",
+  "score": 66,
+  "maximum": 75,
+  "productionAuthority": false,
+  "blockingReasons": [],
+  "scores": {
+    "hierarchy": {
+      "score": 4,
+      "weight": 2,
+      "reason": "The workbench creates one dominant proof statement and gives the rail a clear reading start without adding competing card headlines."
+    },
+    "composition": {
+      "score": 4,
+      "weight": 2,
+      "reason": "The open rail uses controlled item widths, structural separators and a visible next-item cue. Compact recomposition removes the narrow-column failure."
+    },
+    "pacing": {
+      "score": 4,
+      "weight": 1,
+      "reason": "Quote length, portrait pause and the control row create deliberate reading rhythm; the page does not add ornamental sections."
+    },
+    "typography": {
+      "score": 4,
+      "weight": 1,
+      "reason": "One sans family and a narrow role hierarchy keep emphasis on supplied testimony. Quote-only does not introduce a new display style."
+    },
+    "productTruth": {
+      "score": 5,
+      "weight": 2,
+      "reason": "All eight live testimonials are present, seven real prepared clips render through CMP-05 and Daniel's absent clip is represented honestly."
+    },
+    "distinctiveness": {
+      "score": 4,
+      "weight": 2,
+      "reason": "Live halftone people in a borderless editorial proof rail are recognisably Mez without gradients, glass, card stacks or template chrome."
+    },
+    "narrative": {
+      "score": 4,
+      "weight": 1,
+      "reason": "The workbench moves from real operator proof to measured implementation facts, then ends with the open human gate."
+    },
+    "conversionClarity": {
+      "score": 4,
+      "weight": 1,
+      "reason": "This component has no conversion CTA by design; the interaction intent is nevertheless explicit through named controls, status and scroll instruction."
+    },
+    "emotionalResonance": {
+      "score": 4,
+      "weight": 1,
+      "reason": "Moving human portraits and unedited operator language create warmth without manufactured proof theatre."
+    },
+    "craft": {
+      "score": 4,
+      "weight": 1,
+      "reason": "Focus, keyboard endpoints, source resolution, quote-only state, reduced motion and offscreen idling are resolved as one coherent contract."
+    },
+    "originality": {
+      "score": 4,
+      "weight": 1,
+      "reason": "The candidate rejects the expected endless marquee and glossy testimonial-card pattern in favour of an evidence-led, user-driven reading rail."
+    }
+  },
+  "namedTests": {
+    "T1StripTest": {
+      "result": "pass",
+      "method": "The rendered surface was inspected in its native monochrome state. It contains no gradient, glow, texture or colour dependency; greyscale neutralisation does not change hierarchy.",
+      "evidence": "The workbench remains legible through scale, spacing, hairlines and type alone."
+    },
+    "T2ComponentRepetitionTest": {
+      "result": "pass",
+      "method": "Adjacent workbench sections and repeated item anatomy were inspected at desktop and compact widths.",
+      "evidence": "The testimonial proof rail, measurement table and editorial gate note use different composition families. Repeated testimonial items share only the minimal semantic carrier required for a replaceable future card."
+    },
+    "T3MotionComparisonTest": {
+      "result": "pass",
+      "method": "Two visible portrait crops were captured 1,250 ms apart and compared at an 8-level RGB threshold; track scrollLeft was independently sampled without commands.",
+      "evidence": "5,685 of 41,000 portrait pixels changed (13.87%) while uncommanded track drift remained 0 px. Motion adds human presence; it does not move the reading rail."
+    },
+    "T4RealContentTest": {
+      "result": "pass",
+      "method": "The workbench used the live AI OS quotes, names and handles with the seven prepared repository portrait clips; no placeholder content was substituted.",
+      "evidence": "Long and short quotes, seven portraits and Daniel's real quote-only state all remained coherent from 320 through 1440."
+    }
+  },
+  "canonScan": {
+    "result": "pass",
+    "notes": "No mesh gradient, indigo-violet palette, glass treatment, ambient shadow, backdrop blur, generic dashboard shell or AI-style decorative filler appears in the candidate."
+  },
+  "humanGate": {
+    "state": "open",
+    "question": "Does Olli want to promote this deliberately minimal proof rail before supplying his future testimonial-card anatomy?"
+  },
+  "outputStatus": "candidate"
+}

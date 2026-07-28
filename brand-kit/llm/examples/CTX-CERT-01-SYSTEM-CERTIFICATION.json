@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-CERT-01-SYSTEM-CERTIFICATION",
+  "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
+  "generatedAt": "2026-07-28T13:06:40Z",
+  "systemVersion": "1.0.0-rc.2+approved-current-scope-unreleased",
+  "sourceState": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-foundations-expressions",
+    "commit": "2d9bcdebd1a931f3925adf7f3d5aa6edc0483368",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "b89db5fcdbb8c4cc8419a98206791c3e65ac9691e763cdf8e840dc094dfadf31", "role": "canonical", "required": true, "reason": "Current control-plane status and authority boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "5c9b988decfabcd45a084cf5fd106d36924c2650d9affb0825847dea52e7b8b2", "role": "canonical", "required": true, "reason": "Current programme gaps and consumer boundary."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "7019166652ac984e00576ae257906df4e6ef1bfb88c8cd7d27a56fef7a36ceda", "role": "canonical", "required": true, "reason": "Phase 7 certification and Phase 8 consumer order."},
+    {"path": "brand-kit/docs/consumer-transition-sequence.json", "sha256": "0e4fe5b9fed39c45fd820f8c47611cb0e656a6286065b72bc57d9988d5797d3d", "role": "governance", "required": true, "reason": "Frozen rc.1 and consumer-last sequence."},
+    {"path": "brand-kit/figma-companion/approval.json", "sha256": "c85514527ffa2e98a42e3427cd61db697e57955cc3780ad141cec176d391031c", "role": "evidence", "required": true, "reason": "Approved noncanonical Figma mirror input."},
+    {"path": "brand-kit/product-ui/approval.json", "sha256": "6c4446be503933d3a181ee6a736949402de3439be9a3865661446b8657d7fe53", "role": "evidence", "required": true, "reason": "Approved nonproduction Product UI direction input."},
+    {"path": "brand-kit/releases/production-01/1.0.0-rc.1/manifest.json", "sha256": "c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8", "role": "evidence", "required": true, "reason": "Exact frozen predecessor."},
+    {"path": "brand-kit/certification/certification.source.json", "sha256": "eefcc93c29061d8c26d6d1c72d021f02e89fe70a1efaa69546cee93aec2f8d4e", "role": "governance", "required": true, "reason": "Approved bounded certification contract."},
+    {"path": "brand-kit/certification/approval.json", "sha256": "4c8d920276af762d63598050cd73bdb5c4950b67121a0b667366555b8091884d", "role": "evidence", "required": true, "reason": "Exact H-CERT-01 approval attributed to Olli."},
+    {"path": "brand-kit/releases/production-01/1.0.0-rc.2/manifest.json", "sha256": "129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9", "role": "evidence", "required": true, "reason": "Exact later candidate presented at H-CERT-01."}
+  ],
+  "decisions": [
+    {"id": "DEC-FOUNDATION-RELEASE-001", "status": "approved", "productionEffect": "Supplies canonical portable foundations without widening release authority."},
+    {"id": "DEC-GOLDEN-HOMEPAGE-001", "status": "approved-unreleased", "productionEffect": "Supplies the canonical golden visual reference without deployment authority."},
+    {"id": "DEC-HALFTONE-PORTRAIT-COMPONENT-001", "status": "approved", "productionEffect": "Supplies canonical CMP-05 with its exact motion boundary."},
+    {"id": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001", "status": "approved", "productionEffect": "Supplies canonical CMP-06 with its exact drift and fixture boundary."}
+  ],
+  "artifacts": [],
+  "consumers": ["CON-MEZ-SYSTEMS-WEB-001"],
+  "knownConflicts": [
+    {"id": "CERT-CLAUDE-AUTH", "summary": "The installed Claude CLI is not logged in, so fresh same-prompt Claude transfer is unmeasured.", "executionEffect": "constrain"},
+    {"id": "CERT-AT-SPOKEN", "summary": "Exact spoken assistive-technology sessions remain unmeasured.", "executionEffect": "constrain"},
+    {"id": "CERT-CONSUMER-UNREGISTERED", "summary": "CON-MEZ-SYSTEMS-WEB-001 has no exact repository registration.", "executionEffect": "stop"}
+  ],
+  "stopConditions": [
+    "Do not mutate the frozen rc.1 bytes.",
+    "Do not hide a benchmark, accessibility or portability limitation.",
+    "Do not certify the nine deferred channel families.",
+    "Do not enter, publish or deploy a consumer before H-CERT-01 and PORT-04."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/llm/tasks/TASK-CERT-01-SYSTEM-CERTIFICATION.json",
+      "brand-kit/certification/review.json"
+    ],
+    "omitByDefault": ["brand-kit/history/", "play-orb/", "consumer repositories"]
+  },
+  "humanNotes": ["Olli instructed the programme to begin CERT-01 after approving the Product UI foundation."]
+}

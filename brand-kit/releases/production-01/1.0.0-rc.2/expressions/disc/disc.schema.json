@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/disc-contract-1.0.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "expressionId", "version", "status", "productionAuthority", "candidateGateId", "candidateRevision", "decisionIds", "geometry", "wings", "scaleBands", "allocation", "surfaces", "channels", "accessibility", "dependencies", "products", "testViewports"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "expressionId": {"const": "mz.systems.expression.disc"},
+    "version": {"const": "1.0.0"},
+    "status": {"const": "canonical"},
+    "productionAuthority": {"const": true},
+    "candidateGateId": {"const": "H-EXP-01-DISC-PROOF"},
+    "candidateRevision": {"const": "disc-contract-01"},
+    "decisionIds": {"type": "array", "minItems": 7, "items": {"type": "string"}, "uniqueItems": true},
+    "geometry": {"type": "object", "required": ["shape", "aspectRatio", "edge", "overflow", "border", "shadow", "insetTile", "halo", "glow", "sphereShading"]},
+    "wings": {"type": "object", "required": ["assetPath", "sha256", "colour", "widthRatio", "alignment", "minimumMarkedDiscPx", "policy"]},
+    "scaleBands": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "required": ["id", "minimumPx", "maximumPx", "state", "wings", "role", "policy"]}},
+    "allocation": {"type": "object", "required": ["staticDefault", "maximumLivePerViewport", "liveRequirements", "staticRequired", "interaction", "fallback"]},
+    "surfaces": {"type": "object", "required": ["light", "dark", "card", "family", "failure"]},
+    "channels": {"type": "object", "required": ["websiteFocal", "websiteRepeated", "productUI", "email", "social", "openGraph", "documentation", "slides", "print"]},
+    "accessibility": {"type": "object", "required": ["semanticRole", "reducedMotion", "forcedColours", "contrast", "responsive"]},
+    "dependencies": {"type": "object", "required": ["foundationManifest", "renderer", "productRegistry", "gradientRegistry"]},
+    "products": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "required": ["productId", "publicName", "gradientId", "sourceSha256", "staticTwinPath", "staticTwinSha256"]}},
+    "testViewports": {"const": [320, 375, 430, 768, 1024, 1280, 1440]}
+  }
+}

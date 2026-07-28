@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-FND-03-SPACE-LAYOUT",
+  "taskId": "TASK-FND-03-SPACE-LAYOUT",
+  "generatedAt": "2026-07-21T19:25:15+10:00",
+  "systemVersion": "0.1.0-alpha.1+fnd03-canonical",
+  "sourceState": {"repository": "merrick143/mez-studios-design", "branch": "codex/fnd-01-typography", "commit": "5d6d4bd152db299678b7c1dfa8de50c07deedbeb", "workingTree": "dirty"},
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "3d3a448fed600ef03e7d3a04911cc822a71e199e0839e550094b54b10d0e4807", "role": "canonical", "required": true, "reason": "Active programme and next-task boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "ecd4d0cb1cba7795d1a5c4f3f61bb8ca9f79eebc48ea0adc1297037800de8047", "role": "canonical", "required": true, "reason": "Live foundation state and next action."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "1bf3389a5d35731a4e54ec22b6fcdcbc100da53fafb048122ab8ed0c1f6effaa", "role": "canonical", "required": true, "reason": "FND-03 completion and FND-04 programme sequence."},
+    {"path": "brand-kit/governance/decisions.json", "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587", "role": "governance", "required": true, "reason": "Immutable migration decisions and protected authority boundaries."},
+    {"path": "brand-kit/foundations/typography/dist/package.json", "sha256": "c5c741bd0b6194610b350e9e4734aa2d591606c5657bb5601cbe603a627f6ecc", "role": "canonical", "required": true, "reason": "Approved typography dependency."},
+    {"path": "brand-kit/foundations/colour/dist/package.json", "sha256": "183c2acccaeb95737f77b9a5cc77644be03b95054fe6260ee339d68b4afa420b", "role": "canonical", "required": true, "reason": "Approved colour dependency."},
+    {"path": "brand-kit/gradient-library/approval.json", "sha256": "18598eb18a880e58df4f39a17849013726e05353e238c4989d2bb3613be36fc4", "role": "governance", "required": true, "reason": "Protected product-expression authority that remains outside the spatial gate."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-03-SPACE-LAYOUT.json", "sha256": "9b346375fb55c4c7a1630e4c387c97d10e722e135347f76943ae8167e0020739", "role": "governance", "required": true, "reason": "Completed bounded task, checks, exclusions and human gate."},
+    {"path": "brand-kit/foundations/space-layout/space-layout.source.json", "sha256": "31713581e7b2568cb785b51ab39e9cebcf800e88151a3641e23c35ab2cc95851", "role": "canonical", "required": true, "reason": "Canonical source for rhythm, widths, profiles, density and relationship rules."},
+    {"path": "brand-kit/foundations/space-layout/review.json", "sha256": "de97c4ef20cb9cc078363ca6ab25b03c44d5d5803e3c7e6af21dd162875aea03", "role": "governance", "required": true, "reason": "Immutable approval record for spatial-lock-01."},
+    {"path": "brand-kit/foundations/space-layout/dist/manifest.json", "sha256": "8914ee15f3639a8d73e9ba658b5cb1f6aa09efd05e8baeec862625788bab86d2", "role": "mirror", "required": true, "reason": "Generated canonical integrity record."},
+    {"path": "brand-kit/foundations/space-layout/dist/responsive-contracts.json", "sha256": "43b4e9bb11191618b6bee9e0e2dda8d53a68f745293a82050c1e94b99d6cc6ae", "role": "mirror", "required": true, "reason": "Generated machine-readable responsive and relationship contract."},
+    {"path": "brand-kit/workbench/foundations/space-layout/index.html", "sha256": "6759c785d1f1fc9ae8e3abfe6c6056cb698790f3f3f1e60a95a0ef598e371d4c", "role": "fixture", "required": true, "reason": "Canonical rhythm, width, profile, source-order, density, alignment, channel and approval proof."}
+  ],
+  "decisions": [
+    {"id": "DEC-TYPE-FOUNDATION-001", "status": "approved", "productionEffect": "The candidate consumes canonical typography without changing it."},
+    {"id": "DEC-COLOUR-FOUNDATION-001", "status": "approved", "productionEffect": "The candidate consumes canonical colour and surface roles without changing them."},
+    {"id": "DEC-SPACE-LAYOUT-FOUNDATION-001", "status": "approved", "productionEffect": "Spatial-lock-01 is canonical for spacing, content widths, responsive profiles, density and relationship rules."},
+    {"id": "DEC-MIGRATION-SEQUENCE-001", "status": "approved", "productionEffect": "Foundation work remains bounded to the canonical post-cutover control plane."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id": "CONFLICT-FND-03-LEGACY-CONTAINER", "summary": "Historical guidance prescribed one 1160px container, while approved proofs used 1160px, 1240px and 1280px widths with six different cutoffs.", "executionEffect": "inform"},
+    {"id": "CONFLICT-FND-03-GEOMETRY", "summary": "FND-04 retains authority over radius, border, depth and final control implementation.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-FND-03-RELEASE", "summary": "The active 0.1.0-alpha.1 release is an immutable migration snapshot and must not be rewritten for this candidate.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": [
+    "Do not change canonical typography or colour values.",
+    "Do not create private component breakpoints or unnamed content widths.",
+    "Do not hide overflow, remove facts or use CSS ordering to repair source order.",
+    "Do not change canonical FND-03 values without a new bounded human decision or rewrite the active migration release."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/llm/tasks/TASK-FND-03-SPACE-LAYOUT.json"],
+    "omitByDefault": ["brand-kit/history/", "brand-kit/source-pack/", "brand-kit/releases/0.1.0-alpha.1/assets/", "play-orb/"]
+  },
+  "humanNotes": ["Olli approved spatial-lock-01 through H-FND-03-SPATIAL-PROOF at 2026-07-21T09:25:15.000Z with the instruction to lock it in."]
+}

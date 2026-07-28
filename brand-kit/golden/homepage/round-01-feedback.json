@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r01",
+  "verdict": "round-feedback",
+  "note": "",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "For the cards component in Hero, I was visualizing something much more like the animated cards fanned, like one of the variants that has the overlays and stuff like that in animated versions. Fanning them out and having them layered. While still center-aligned, you have one card in the middle. The two cards on the left and the two cards on the right are coming out in a kind of fan, going downwards, looking really good, with animated versions."
+    },
+    {
+      "id": "GH-S02",
+      "title": "The problem",
+      "verdict": "revise",
+      "feedback": "Okay the problem section, that's not our font bro. It's just big amounts of text."
+    },
+    {
+      "id": "GH-S03",
+      "title": "The Mez Systems principle",
+      "verdict": "revise",
+      "feedback": "This section is probably the most important and requires the best visual. What you've done doesn't really fit the vibe we want. I like the simplicity of it. I think the execution is just wrong."
+    },
+    {
+      "id": "GH-S04",
+      "title": "Why Mez Systems",
+      "verdict": "revise",
+      "feedback": "This section is similar advice to the section above.\n\nThis section is probably the most important and requires the best visual. What you've done doesn't really fit the vibe we want. I like the simplicity of it. I think the execution is just wrong."
+    },
+    {
+      "id": "GH-S05",
+      "title": "Available now: AI OS",
+      "verdict": "revise",
+      "feedback": "I think this needs to be improved and show a different version of the product, like one of the other variants we have, but probably the animated version."
+    },
+    {
+      "id": "GH-S06",
+      "title": "The Mez Systems ecosystem",
+      "verdict": "revise",
+      "feedback": "Same with this. I think we just need to rethink how we present the products."
+    },
+    {
+      "id": "GH-S07",
+      "title": "Proof from the first Mez System",
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "GH-S08",
+      "title": "Final route",
+      "verdict": "revise",
+      "feedback": ""
+    },
+    {
+      "id": "GH-S09",
+      "title": "Footer",
+      "verdict": "keep",
+      "feedback": ""
+    }
+  ],
+  "productionAuthority": false
+}

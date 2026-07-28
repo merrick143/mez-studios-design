@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r24-s06-lab1",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S06 AI OS ten-variant exploration lab",
+    "desktop and compact responsive states",
+    "static MZ-G13 material and canonical Wings"
+  ],
+  "score": {
+    "weighted": 67,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacing": 4,
+      "typography": 5,
+      "productTruth": 5,
+      "distinctiveness": 4,
+      "narrative": 4,
+      "conversion": 4,
+      "emotionalImpact": 4,
+      "craft": 4,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "All ten directions retain authored hierarchy without relying on the MZ-G13 field: a compact identity event, a causal orbit or ribbon, and two outcome groups. The strongest cluster is V01, V03, V06, V08 and V09."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The lab changes composition families across balanced bento, rail, orbit-first, strip, unified canvas, editorial bands, rooms, centred mechanism, ribbon and dense minimal directions. It does not present ten spacing tweaks of one card grid."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "The exploration claims no motion and mounts no WebGL cores. Every variant uses the exact static MZ-G13 twin, avoiding ten simultaneous motion events."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "The lab uses canonical AI OS naming, the exact static MZ-G13 product material and canonical Wings. Feature language is compressed from the current section rather than replaced with fabricated capability claims."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "All seven widths pass geometry checks with no body overflow. Every variant was visually inspected at 1280px and 390px; cards stack in source order, the orbit remains legible and all actions retain a minimum 44px height."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 0
+  },
+  "findings": [],
+  "noFindingBasis": "The lab was checked for generic equal-card repetition, excessive copy, oversized product-card allocation, nested bento cards, invented capabilities, noncanonical material, glow, glass, shadows, perspective, uncontrolled motion, horizontal overflow and weak mobile ordering. It would fail for any of those conditions or if the ten directions collapsed into the same composition family.",
+  "recommendation": {
+    "strongestInitialCluster": ["V01", "V03", "V06", "V08", "V09"],
+    "mostExperimental": "V05",
+    "selectionAuthority": "Olli"
+  },
+  "outputStatus": "research",
+  "readyForOlliReview": true
+}

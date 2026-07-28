@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-FND-04-GEOMETRY-CONTROLS",
+  "receiptId": "RCP-FND-04-GEOMETRY-CONTROLS",
+  "evaluatedAt": "2026-07-21T19:49:34+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators"},
+  "contractChecks": [
+    {"id": "SOURCE-AND-GENERATION", "status": "pass", "evidence": "One schema-validated source deterministically generates tokens, controls, contracts and a portable manifest."},
+    {"id": "APPROVED-DIRECTION", "status": "pass", "evidence": "12px control radius, 40/48/52 scale, solid-outline-text hierarchy, micro-lift, directional icons, dark inversion and mobile hierarchy are preserved."},
+    {"id": "STATE-COMPLETENESS", "status": "pass", "evidence": "All required action, form, choice, error, destructive, accessibility and responsive states are explicit."},
+    {"id": "DEPTH-RESTRAINT", "status": "pass", "evidence": "Flat is default; contact, raised and overlay depth have bounded roles; glow, glass and ambient card shadow are refused."},
+    {"id": "AUTHORITY-SEPARATION", "status": "pass", "evidence": "Canonical typography, colour, space-layout, gradients and migration release remain unchanged."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "Olli approved control-lock-01 and DEC-GEOMETRY-CONTROLS-FOUNDATION-001 records the canonical result."}
+  ],
+  "qualityDimensions": [
+    {"id": "geometry-coherence", "score": 5, "maximum": 5, "evidence": "Eight roles move from precision to containment without making every object a pill."},
+    {"id": "interaction-clarity", "score": 5, "maximum": 5, "evidence": "Hierarchy and state changes remain stable across actions, forms, dark surfaces and mobile."},
+    {"id": "restraint", "score": 5, "maximum": 5, "evidence": "Borders carry ordinary structure and depth communicates only contact or detachment."},
+    {"id": "accessibility", "score": 5, "maximum": 5, "evidence": "Focus, messages, names, targets, forced colour and reduced motion are governed."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "Candidate status, dependencies, expression boundary, gate and refusal rules are explicit."},
+    {"id": "human-taste", "score": 5, "maximum": 5, "evidence": "Olli's approve verdict closes the bounded control-finish gate without requested changes."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["No canonical typography, colour, space-layout, gradient, product-expression, homepage, Figma, consumer or active-release content was changed."]
+}

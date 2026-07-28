@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "fixtureId": "FIX-UI-01-SYSTEM-PROOF",
+  "scopeLabel": "Design-system control-plane review fixture",
+  "notProductionProductData": true,
+  "generatedAt": "2026-07-28",
+  "records": [
+    {"id":"product-registry","name":"Product registry","type":"Registry","status":"canonical","updated":"2026-07-21","source":"registry/products.json","detail":"Five literal product identities, stable IDs and MZ-G13, MZ-G12, MZ-G06, MZ-G15 and MZ-G20 assignments resolve through one canonical registry."},
+    {"id":"foundations","name":"Foundation release","type":"Foundation","status":"canonical","updated":"2026-07-22","source":"releases/foundations/dist/release.source.json","detail":"Typography, colour, space-layout and geometry-controls resolve through one deterministic release boundary."},
+    {"id":"figma","name":"Figma companion","type":"Authoring mirror","status":"approved-companion","updated":"2026-07-28","source":"figma-companion/approval.json","detail":"Repository-backed companion with 24 total component sets, including 18 functional sets and 105 functional variants. It carries no independent production authority."},
+    {"id":"navigation","name":"Global navigation","type":"Runtime component","status":"canonical","updated":"2026-07-23","source":"components/global-navigation/global-navigation.source.json","detail":"Canonical 1.0.0 navigation with a bounded five-live-core exception and complete compact access."},
+    {"id":"portrait","name":"Halftone portrait","type":"Runtime component","status":"canonical","updated":"2026-07-27","source":"components/halftone-portrait/halftone-portrait.source.json","detail":"Canonical 1.0.0 live luminance halftone with a bounded multi-portrait motion policy."},
+    {"id":"testimonials","name":"Testimonial marquee","type":"Runtime component","status":"canonical","updated":"2026-07-28","source":"components/testimonial-marquee/testimonial-marquee.source.json","detail":"Canonical 1.0.0 testimonial track with seven portrait-backed records and a bounded continuous-drift exception."},
+    {"id":"product-ui","name":"Product UI foundation","type":"Approved foundation","status":"approved","updated":"2026-07-28","source":"product-ui/product-ui-foundation.source.json","detail":"The approved operational-ledger foundation direction. It remains review evidence with no canonical or production authority."}
+  ],
+  "distribution": [
+    {"status":"canonical","label":"Canonical","count":5},
+    {"status":"approved-companion","label":"Approved companion","count":1},
+    {"status":"approved","label":"Approved foundation","count":1}
+  ],
+  "registrySummary": {"products":5,"live":1,"comingSoon":4},
+  "figmaSummary": {"totalComponentSets":24,"functionalComponentSets":18,"functionalVariants":105}
+}

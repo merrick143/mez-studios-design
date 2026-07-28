@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageId": "mz.systems.package.geometry-controls",
+  "version": "1.0.0",
+  "scope": "geometry-border-depth-controls-foundation",
+  "foundationId": "mz.systems.foundation.geometry-controls",
+  "status": "canonical",
+  "decisionIds": [
+    "DEC-TYPE-FOUNDATION-001",
+    "DEC-COLOUR-FOUNDATION-001",
+    "DEC-SPACE-LAYOUT-FOUNDATION-001",
+    "DEC-CONTROL-001",
+    "DEC-GEOMETRY-CONTROLS-FOUNDATION-001",
+    "DEC-MIGRATION-SEQUENCE-001"
+  ],
+  "reviewGateId": "H-FND-04-CONTROL-PROOF",
+  "candidateRevision": "control-lock-01",
+  "productionReadyForScope": true,
+  "entrypoints": {
+    "tokensCss": "tokens.css",
+    "controlsCss": "controls.css",
+    "tokens": "tokens.json",
+    "contracts": "control-contracts.json",
+    "source": "geometry-controls.source.json",
+    "review": "review.json"
+  },
+  "dependencies": {
+    "typography": "mz.systems.package.typography@1.0.0",
+    "colour": "mz.systems.package.colour@1.0.0",
+    "spaceLayout": "mz.systems.package.space-layout@1.0.0"
+  },
+  "notes": [
+    "Canonical for the bounded geometry, depth and controls scope approved through H-FND-04-CONTROL-PROOF.",
+    "Product expressions, homepage, consumers, Figma and release data are not included."
+  ]
+}

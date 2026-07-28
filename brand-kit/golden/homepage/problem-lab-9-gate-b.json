@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-problem-lab-9",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S02 complete problem-section replacement lab",
+    "ten distinct pain narratives and visual systems",
+    "standalone focus views for direct comparison",
+    "responsive review from 320px to 1440px"
+  ],
+  "variantScores": {
+    "A": {
+      "name": "Decision drift",
+      "weighted": 68,
+      "maximum": 75,
+      "assessment": "A highly legible causal story: one complete decision visibly degrades into contradictory records. It makes the pain concrete without depending on tool logos or unsupported statistics."
+    },
+    "B": {
+      "name": "The handoff that eats the brief",
+      "weighted": 61,
+      "maximum": 75,
+      "assessment": "The disappearing fields communicate loss immediately and the dark AI endpoint lands well. Four similar cards make the mobile sequence longer and more repetitive than the strongest directions."
+    },
+    "C": {
+      "name": "The work before the work",
+      "weighted": 66,
+      "maximum": 75,
+      "assessment": "A persuasive contrast between the tiny requested job and the reconstruction required to begin. The sticky desktop composition and linear mobile reflow both preserve the argument clearly."
+    },
+    "D": {
+      "name": "One change, six loose ends",
+      "weighted": 63,
+      "maximum": 75,
+      "assessment": "The authored light-dark split feels deliberate and the stale downstream records turn a vague integration problem into visible operational damage. Its mobile composition is intentionally tall."
+    },
+    "E": {
+      "name": "Everyone has a piece",
+      "weighted": 58,
+      "maximum": 75,
+      "assessment": "The fragmented role-based story is clear, but the evidence mosaic is the closest direction to a familiar bento pattern and therefore carries the least distinctive visual mechanism in the set."
+    },
+    "F": {
+      "name": "Decision autopsy",
+      "weighted": 69,
+      "maximum": 75,
+      "assessment": "The strongest editorial object in the lab. The intact answer versus missing judgement creates an immediate forensic tension and expresses why AI cannot recover context with unusual precision."
+    },
+    "G": {
+      "name": "The context reset",
+      "weighted": 65,
+      "maximum": 75,
+      "assessment": "The progressive thinning from business context to a generic AI prompt is easy to understand and product-relevant. It is strong proof, though visually adjacent to the handoff direction."
+    },
+    "H": {
+      "name": "Four tools, four truths",
+      "weighted": 62,
+      "maximum": 75,
+      "assessment": "The contradiction ledger is the fastest direction to scan on desktop. On phones the explicit cross-tool comparison requires an intentional horizontal pan, which preserves truth but weakens first-glance completeness."
+    },
+    "I": {
+      "name": "Attention fracture",
+      "weighted": 64,
+      "maximum": 75,
+      "assessment": "The displaced work path creates a memorable visual rhythm and reads cleanly without animation. The centred desktop treatment is less editorially forceful than the forensic and decision-led leaders."
+    },
+    "J": {
+      "name": "Exit without memory",
+      "weighted": 67,
+      "maximum": 75,
+      "assessment": "A strong and ownable before-after silhouette that separates portable files from non-portable operating memory. It broadens the pain beyond daily friction into structural lock-in without overclaiming."
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "The directions remain recognisable without their headlines: branching decision record, degrading handoff, pre-work rail, change ripple, role fragments, forensic ledger, compressed brief, truth table, fractured path and memory export."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "This is an alternative-section comparison rather than a proposed ten-section sequence. Each candidate changes the causal argument, information hierarchy and visual protagonist; the scorecard separately flags the two closest families and the generic mosaic risk."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "No motion is required or claimed. Every narrative and relationship is present in static HTML and remains complete with JavaScript disabled; JavaScript only adds review navigation state and optional focus mode."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "The lab uses representative operational scenarios rather than fabricated performance statistics, testimonials or product screenshots. The review index labels the entire surface as research with no production authority."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "True device-metric geometry checks found document and body scroll widths equal to the viewport at all seven targets. All ten candidates were visually inspected at 1280px and 390px. Direction H contains a deliberate internal scroll region on compact screens; the page itself does not overflow."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 3,
+    "method": "Rendered every standalone focus view at desktop and compact widths, captured the review index at 375px and 1440px, checked seven viewport geometries, ran JavaScript syntax and diff checks, scanned for gradients, pure black, rogue fonts, shadows, blur, literal radii and fabricated SVG, and passed verify_workbench.py."
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "variant": "E",
+      "finding": "The role-fragment mosaic is the closest concept to a generic bento composition.",
+      "smallestFix": "Prefer it only if the distributed-role story matters more than visual distinctiveness; otherwise compare A, F or J first."
+    },
+    {
+      "severity": "minor",
+      "variant": "H",
+      "finding": "The full cross-tool ledger requires horizontal panning on compact screens.",
+      "smallestFix": "If H is selected, design a dedicated stacked mobile truth comparison before promotion."
+    },
+    {
+      "severity": "minor",
+      "variant": "B",
+      "finding": "Four similarly shaped handoff cards create the longest repeated mobile sequence.",
+      "smallestFix": "If B is selected, compress the two middle handoffs into one transitional loss state."
+    }
+  ],
+  "recommendation": {
+    "preferred": "F",
+    "reason": "Decision autopsy makes the deepest pain legible in one object: the answer survives while the judgement AI needs disappears.",
+    "alternate": "A is the strongest operational cause-and-effect direction; J is the strongest strategic memory and lock-in direction.",
+    "selectionAuthority": "Olli"
+  },
+  "outputStatus": "research",
+  "readyForOlliReview": true
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FND-02-COLOUR-SURFACES",
+  "title": "Define and prove colour and surface semantics",
+  "phase": 1,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Create a canonical semantic colour and surface system that works across light, dark, email, document and print contexts while keeping approved product gradients as identity objects rather than decoration.",
+  "scope": {
+    "included": [
+      "semantic neutrals, surfaces, text, borders, feedback, focus and disabled roles",
+      "light and dark behaviours plus email-safe, document-safe and print-safe mappings",
+      "contrast, state, forced-colour and failure fixtures",
+      "generated tokens, schema, guidance and a bounded human surface-character proof"
+    ],
+    "excluded": [
+      "changing approved source gradients or Living Core rendering",
+      "product-expression compositions",
+      "golden homepage composition",
+      "production Figma library"
+    ]
+  },
+  "dependencies": ["TASK-FND-01-TYPOGRAPHY", "DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-GRADIENT-LIBRARY-001"],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/governance/decisions.json",
+      "brand-kit/foundations/typography/dist/package.json",
+      "brand-kit/gradient-library/approval.json"
+    ],
+    "decisionIds": ["DEC-TYPE-FOUNDATION-001", "DEC-COLOUR-FOUNDATION-001", "DEC-GRADIENT-LIBRARY-001"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/foundations/colour/", "acceptance": ["one semantic source generates channel-safe tokens", "contrast and state rules are mechanically verifiable", "gradient authority remains separate and unchanged"]},
+    {"path": "brand-kit/workbench/foundations/colour/", "acceptance": ["light, dark, email, document, print and failure fixtures are visible", "the proof isolates monochrome and surface character", "human verdict can be recorded without changing unrelated foundations"]}
+  ],
+  "verification": [
+    {"id": "FND-02-SCHEMA", "method": "schema", "passCondition": "source, generated tokens and task records validate"},
+    {"id": "FND-02-CONTRAST", "method": "command", "passCondition": "required text, control, feedback and focus pairings meet the declared contrast contract"},
+    {"id": "FND-02-CHANNELS", "method": "visual", "passCondition": "light, dark, email, document and print fixtures preserve hierarchy and state meaning"},
+    {"id": "FND-02-HUMAN", "method": "human", "passCondition": "Olli approves the monochrome and surface character"}
+  ],
+  "humanGate": {"required": true, "gateId": "H-FND-02-SURFACE-PROOF", "approver": "Olli", "approvalQuestion": "Should final-lock-02 be canonical: F8F8F8 canvas, inherited Mez identity, neutral routine feedback, contained dark and explicit channel mappings?"},
+  "stopConditions": [
+    "a semantic role cannot meet its declared contrast or state requirement",
+    "the work changes approved source-gradient or Living Core authority",
+    "channel mappings require silent colour substitutions",
+    "the proof combines product-expression or homepage decisions with the foundation gate"
+  ],
+  "notes": [
+    "The read-only audit preserved the historical light-monochrome ladder, constrained dark to contained inverse rooms, and treated blue and status hues as functional signals only.",
+    "The canonical final-lock-02 foundation contains 39 primitives, 43 semantic roles across five explicit modes, 85 passing contrast checks and a self-contained generated package.",
+    "Mez Systems inherits the parent F8F8F8 canvas and 2E2E2E Wings; it adds no separate corporate hue. Routine feedback stays neutral and reserves tint for critical emphasis.",
+    "Olli approved H-FND-02-SURFACE-PROOF at 2026-07-21T08:19:31.000Z; DEC-COLOUR-FOUNDATION-001 and brand-kit/foundations/colour/review.json make final-lock-02 canonical.",
+    "Gradient registry, Living Core palettes, product expressions and the active migration release remain unchanged."
+  ]
+}

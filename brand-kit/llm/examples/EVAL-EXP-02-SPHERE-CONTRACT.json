@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-EXP-02-SPHERE-CONTRACT",
+  "receiptId": "RCP-EXP-02-SPHERE-CONTRACT",
+  "evaluatedAt": "2026-07-21T23:49:34+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators and in-app browser proof"},
+  "contractChecks": [
+    {"id": "DEPTH-BOUNDARY", "status": "pass", "evidence": "Approved Deep Mineral sphere shading is the only identity variable added; external glow, CSS shadow and new renderer work are forbidden."},
+    {"id": "DISC-CONTINUITY", "status": "pass", "evidence": "Perfect circle, hard edge, white Wings at 39% and MZ-G13 colour remain unchanged from canonical disc 1.0.0."},
+    {"id": "FOCAL-ALLOCATION", "status": "pass", "evidence": "One live sphere is allowed only for an earned focal product; repeated and compact contexts resolve to the disc."},
+    {"id": "RESPONSIVE-AND-FALLBACK", "status": "pass", "evidence": "Seven viewport checks, forced static and disabled WebGL preserve 1:1 geometry, fixed Wings, exact colour and zero overflow."},
+    {"id": "AUTHORITY-BOUNDARY", "status": "pass", "evidence": "Candidate source, review, package and manifest all keep productionAuthority false."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "Olli approved sphere-contract-01 and DEC-SPHERE-EXPRESSION-001 records canonical 1.0.0."}
+  ],
+  "qualityDimensions": [
+    {"id": "decision-clarity", "score": 5, "maximum": 5, "evidence": "The first screen says exactly what is being approved and explicitly excludes typography, copy, colour, disc and homepage composition."},
+    {"id": "identity-continuity", "score": 5, "maximum": 5, "evidence": "Depth is isolated as the only new variable over the same core and fixed mark."},
+    {"id": "attention-discipline", "score": 5, "maximum": 5, "evidence": "One-live maximum, 360px floor and compact disc substitution keep the sphere rare."},
+    {"id": "fallback-honesty", "score": 5, "maximum": 5, "evidence": "The proof distinguishes exact source colour from parametric depth instead of claiming an exact static sphere."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "Immutable dependencies are hash-protected and promotion is blocked by the named human gate."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["Machine, visual and human review are complete. Sphere expression 1.0.0 is canonical for its declared scope and EXP-03 is active."]
+}

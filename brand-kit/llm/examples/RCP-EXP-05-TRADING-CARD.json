@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-EXP-05-TRADING-CARD",
+  "taskId": "TASK-EXP-05-TRADING-CARD",
+  "contextBundleId": "CTX-EXP-05-TRADING-CARD",
+  "agent": {"kind":"llm","name":"Codex","model":"GPT-5"},
+  "startedAt": "2026-07-22T22:55:17Z",
+  "finishedAt": "2026-07-22T23:02:31Z",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path":"brand-kit/expressions/trading-card/","action":"created","sha256":null,"reason":"Canonical source, schema, three round receipts, approval, deterministic builder, verifier and portable package."},
+    {"path":"brand-kit/workbench/expressions/trading-card/","action":"created","sha256":null,"reason":"Locked canonical proof preserving all 23 unanimous keeps and one-live-core behaviour."},
+    {"path":"brand-kit/llm/tasks/TASK-EXP-05-TRADING-CARD.json","action":"created","sha256":"a695f730e481951447065dd5848422014ecfeaefafb1690acf96313e8c11714e","reason":"Completed bounded task and closed human gate."},
+    {"path":"brand-kit/START-HERE.md","action":"modified","sha256":"fd44f6079ee5ac31ff1a91a1c8a11a63ffa3929e2b1fc8d42190a8565122cff0","reason":"Canonical EXP-05 status and EXP-07 handoff."},
+    {"path":"brand-kit/docs/CURRENT-STATE.md","action":"modified","sha256":"73db09de4e7baafab19912a75fede408872c0b73164a4540a1efd3d555c9de3f","reason":"Trading Card moved from active candidate to canonical complete."},
+    {"path":"brand-kit/docs/ROADMAP.md","action":"modified","sha256":"5ace76fc0c4bc6b08baebeff091eb4524c7665dbfc4fff1978a43fc96d05ea30","reason":"EXP-05 closed and EXP-07 marked next."}
+  ],
+  "decisionsApplied": [
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+    "DEC-WINGS-MARK-EXPRESSION-001",
+    "DEC-GRADIENT-LIBRARY-001",
+    "DEC-LIVING-CORE-FINISH-001",
+    "DEC-MOTION-002",
+    "DEC-TRADING-CARD-EXPRESSION-001"
+  ],
+  "tests": [
+    {"id":"EXP-05-CONTRACT","status":"pass","evidence":"Schema, approval, exact receipt hash, 23 IDs, lineage, prohibitions, dependencies and deterministic package validate."},
+    {"id":"EXP-05-MOBILE","status":"pass","evidence":"At the mobile viewport the page renders 23 kept specimens, 69 disabled verdict controls, one live core and zero overflow or failures."},
+    {"id":"EXP-05-DESKTOP","status":"pass","evidence":"At the desktop viewport the page renders 23 kept specimens, one live core and zero overflow, failures, warnings or errors."},
+    {"id":"EXP-05-PORTABILITY","status":"pass","evidence":"Knowledge portability, LLM contracts, workbench, gradient library, product architecture, authority and migration release validators pass."},
+    {"id":"EXP-05-HUMAN","status":"pass","evidence":"Olli kept all 23 Round 03 specimens; H-EXP-05-TRADING-CARD-PROOF is approved."}
+  ],
+  "artifactsProduced": ["Canonical Trading Card 01 contract 1.0.0","Deterministic canonical package","Locked 23-specimen responsive proof","Exact three-round feedback lineage"],
+  "assumptions": ["The user's all-keep Round 03 receipt is the final expression-family approval signal, consistent with prior Product Card gate closeouts."],
+  "exceptions": ["The approval does not authorize channel policy, golden-homepage selection, production commerce logic, Figma or consumer migration."],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired":true,"gateId":"H-EXP-05-TRADING-CARD-PROOF","status":"approved"},
+  "nextAction": "Begin a bounded EXP-07 static-versus-animated decision-matrix task across web, email, ads, social, video, documents, icons and OG."
+}

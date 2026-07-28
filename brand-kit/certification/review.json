@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
+  "gateId": "H-CERT-01-SYSTEM-CERTIFICATION",
+  "status": "approved",
+  "machineVerdict": "pass-with-warnings",
+  "summary": "The explicitly agreed current Mez Systems scope passes authority, accessibility, portability, onboarding, release-governance and named-model artifact certification. A deterministic isolated 1.0.0-rc.2 candidate adds the approved Figma mirror and non-production Product UI foundation without changing frozen rc.1 or certifying deferred channels.",
+  "releaseCandidate": {
+    "name": "@mez-systems/design-system-web",
+    "version": "1.0.0-rc.2",
+    "path": "brand-kit/releases/production-01/1.0.0-rc.2/",
+    "artifactCount": 351,
+    "contentSha256": "b5fe5cb5985270987799d28dbd2c596868de0504f84ae1312818c3ac2387fdd5",
+    "manifestSha256": "129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9",
+    "approximateSize": "20 MiB",
+    "status": "approved-candidate-unreleased",
+    "productionAuthority": false,
+    "published": false,
+    "deployed": false,
+    "consumerIntegrated": false
+  },
+  "frozenPredecessor": {
+    "version": "1.0.0-rc.1",
+    "manifestSha256": "c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8",
+    "result": "unchanged"
+  },
+  "proof": {
+    "coreValidation": {
+      "result": "pass",
+      "method": "Ran all seven AGENT-GUIDE core validators from the project .venv.",
+      "resultDetail": "7 of 7 passed."
+    },
+    "currentScopeContracts": {
+      "result": "pass",
+      "method": "Ran foundation, expression, component, Golden Homepage, Figma, Product UI, rc.1 and rc.2 validators.",
+      "resultDetail": "All 25 selected current-scope validators passed."
+    },
+    "deterministicAssembly": {
+      "result": "pass",
+      "method": "Built the repository output and two independent temporary rc.2 roots, then compared complete manifest bytes.",
+      "resultDetail": "All three produced 351 artifacts, content SHA-256 b5fe5cb5985270987799d28dbd2c596868de0504f84ae1312818c3ac2387fdd5 and manifest SHA-256 129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9."
+    },
+    "isolatedVerification": {
+      "result": "pass",
+      "method": "Ran the verifier from a temporary package-only copy with an empty environment, isolated Python mode and no dependency installation or network step.",
+      "resultDetail": "The rc.1 baseline contract, new manifest, Figma mirror, Product UI and certification boundaries passed."
+    },
+    "modelBenchmark": {
+      "result": "pass-with-auth-limitation",
+      "method": "Schema-replayed named GPT-5 and Claude Opus 4.8 repository receipts across seven output classes; ran the same bounded authority and anti-example cases in the current GPT-5.6 Codex context.",
+      "resultDetail": "GPT-5.6 Codex passed 2 of 2 controlled cases. Historical GPT-5 and Claude Opus 4.8 receipts pass the model-neutral schemas. The installed Claude CLI was not logged in, so a fresh same-prompt Claude result is unmeasured."
+    },
+    "scopeBoundary": {
+      "result": "pass",
+      "method": "Verified explicit certified, bounded, consumer-owned and deferred lists against task and approval records.",
+      "resultDetail": "Nine deferred channel families remain named and uncertified; Figma and Product UI retain noncanonical and nonproduction status."
+    }
+  },
+  "knownGaps": [
+    "The installed Claude CLI is not authenticated. Claude Opus 4.8 is represented by real repository receipts and schema replay, but the fresh same-prompt transfer case is not measured.",
+    "No exact spoken VoiceOver or NVDA session was recorded for the Product UI workbench or rc.2 package.",
+    "Real consumer routing, authentication, persistence, provider logic, commerce, analytics, performance, update and rollback remain PORT-04 work.",
+    "The Product UI foundation uses repository fixture evidence and is not a real AI OS workflow.",
+    "Third-party-mark legal review, testimonial freshness and continuing consent operations remain consumer-owned.",
+    "The nine deferred channel families are deliberately outside this certification and remain future work."
+  ],
+  "humanDecision": {
+    "approver": "Olli",
+    "status": "approved",
+    "approvedAt": "2026-07-28",
+    "humanEvidence": "approve",
+    "question": "Approve this exact certification record and @mez-systems/design-system-web@1.0.0-rc.2 manifest for final named-consumer transition?",
+    "approvalWouldAuthorise": [
+      "Close TASK-CERT-01-SYSTEM-CERTIFICATION for the explicitly agreed current scope.",
+      "Treat the exact rc.2 manifest as the approved later candidate supplied to PORT-04.",
+      "Make PORT-04 eligible to become ready only after CON-MEZ-SYSTEMS-WEB-001 has one exact repository registration."
+    ],
+    "approvalWouldNotAuthorise": [
+      "Publishing the package or Figma library.",
+      "Deploying a website or assigning production version 1.0.0.",
+      "Changing canonical design decisions, Product UI authority or deferred channel status.",
+      "Entering any consumer repository before its exact registration and PORT-04 execution."
+    ]
+  },
+  "outputStatus": ["approved", "candidate", "generated", "unreleased"],
+  "canonicalAuthority": false,
+  "productionAuthority": false
+}

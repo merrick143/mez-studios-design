@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "taskId": "TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES",
+  "generatedAt": "2026-07-28T13:34:23+10:00",
+  "systemVersion": "1.0.0+components-canonical-unreleased",
+  "sourceState": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/brand-kit-foundations-expressions",
+    "commit": "2d9bcdebd1a931f3925adf7f3d5aa6edc0483368",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {
+      "path": "brand-kit/START-HERE.md",
+      "sha256": "eb9a3c6b9b685f6a912f14e96cbc92347143f330e309ffaeb1e4f4d438936822",
+      "role": "canonical",
+      "required": true,
+      "reason": "Current control-plane routing after the component gate."
+    },
+    {
+      "path": "brand-kit/docs/CURRENT-STATE.md",
+      "sha256": "26c1925c6d72b0dc4d72607cc04faf9b4a94018f031f6e5670b75ada76ebf359",
+      "role": "canonical",
+      "required": true,
+      "reason": "Canonical component and current release boundary."
+    },
+    {
+      "path": "brand-kit/docs/ROADMAP.md",
+      "sha256": "067c10cddd74a5bed2bf4fb77a2ce958f649f5bff34aaf541f827fde6a1e5e79",
+      "role": "canonical",
+      "required": true,
+      "reason": "Phase 4 routing from completed PORT-02 to ready PORT-03."
+    },
+    {
+      "path": "brand-kit/governance/decisions.json",
+      "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587",
+      "role": "governance",
+      "required": true,
+      "reason": "Hash-locked 2026-07-21 cutover ledger retained byte-identical."
+    },
+    {
+      "path": "brand-kit/governance/post-cutover-decisions.json",
+      "sha256": "9e3313fdd4fac1f9dd02a03d4870f228381faa9f245d76a121828342b1ec9ced",
+      "role": "governance",
+      "required": true,
+      "reason": "Three prior approvals plus two component promotion decisions."
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/candidate-promotion-packet/human-decision.json",
+      "sha256": "e94312ea4a829feb53ffed5adb1652747450fbe20bc51cea86bed8b843d93efe",
+      "role": "governance",
+      "required": true,
+      "reason": "Exact six-part Olli approval evidence and bounded policy decisions."
+    },
+    {
+      "path": "brand-kit/components/halftone-portrait/approval.json",
+      "sha256": "f79a5ecdd9dd05907ca59207d72becf0d0d1556e760ead43310d685e9822dfc6",
+      "role": "governance",
+      "required": true,
+      "reason": "Separate CMP-05 promotion source."
+    },
+    {
+      "path": "brand-kit/components/testimonial-marquee/approval.json",
+      "sha256": "f913472d0a303de6eb590d8ac721910c9a3e255f379fe5e528d737674c1e03a0",
+      "role": "governance",
+      "required": true,
+      "reason": "Separate CMP-06 promotion source."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY.json",
+      "sha256": "fdf61bf1c62f5d1d4eee81b43df762ca4923b2c38d8c0771f6233870fb11efd2",
+      "role": "governance",
+      "required": true,
+      "reason": "Next bounded task created from the closed gate."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "status": "approved",
+      "productionEffect": "CMP-05 1.0.0 is a canonical release-candidate input within its bounded component scope."
+    },
+    {
+      "id": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
+      "status": "approved",
+      "productionEffect": "CMP-06 1.0.0 is a canonical release-candidate input with frozen follower evidence and bounded drift."
+    },
+    {
+      "id": "DEC-WEBSITE-MOTION-SYSTEM-001",
+      "status": "approved-unchanged",
+      "productionEffect": "The general no-autoplay canon is unchanged; only the two recorded component exceptions apply."
+    }
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {
+      "id": "CONFLICT-PORT-02-PROOF-MEDIA",
+      "summary": "The four operating-proof originals remain unredacted evidence-only media.",
+      "executionEffect": "stop"
+    },
+    {
+      "id": "CONFLICT-PORT-02-CONSUMER-EVIDENCE",
+      "summary": "Exact spoken VoiceOver, physical-pointer timing and device profiling remain named-consumer obligations.",
+      "executionEffect": "constrain"
+    }
+  ],
+  "stopConditions": [
+    "Do not widen either component motion exception or Website Motion 1.0.0.",
+    "Do not publish, deploy or assign production version 1.0.0 from the component gate.",
+    "Do not copy raw operating-proof media or enter a consumer repository.",
+    "Do not change the exact locked component visual or JavaScript bytes while recording promotion."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/llm/tasks/TASK-PORT-02-HOMEPAGE-DEPENDENCY-GATES.json"
+    ],
+    "omitByDefault": [
+      "brand-kit/history/",
+      "brand-kit/workbench/golden/homepage/problem-lab-9/",
+      "play-orb/"
+    ]
+  },
+  "humanNotes": [
+    "Olli approved all six listed decisions on 2026-07-28 and explicitly kept dated follower snapshots."
+  ]
+}

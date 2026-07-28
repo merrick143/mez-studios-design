@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r06",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-23",
+  "note": "Olli reviewed the Round 06 rebuild in Chrome and gave section-level direction. The hero family should read like a spreading deck of cards: AI OS up front and centre on top, two cards fanning out each side with outward rotation, pushed in so they overlap, curving downwards. The hero keeps one action only, labelled 'Explore the Systems'; the outlined second button felt white and unnecessary. The problem section reads as an overwhelming wall of text and must calm down. The principle instrument should name the actual major tools you can plug in rather than generic categories. The built-on-ourselves visual and the operating-proof cards must be rebuilt as whole new components with better, not vibe-coded, card design. The AI OS product card needs a different design with much larger Wings and name while keeping the animated material. The four coming-system cards need stronger designs. Testimonials should be rebuilt better. The final route is fine for now and the footer keeps its keep. Olli explicitly asked for this feedback to be captured as part of the process.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Fan the cards more, like almost spreading a deck of cards. AI OS sits up front and centre, on top. Context Engine (inner) and Claude Code OS (outer) come out to the left, tilted anti-clockwise. AI Ads System (inner) and Organic Content OS (outer) come out to the right, tilted clockwise a little. Push the cards in a bit more so they overlap, and rotate them so the family feels like it is curving downwards. Replace the two buttons with one action labelled 'Explore the Systems'; 'See what we're building' and its white outlined treatment go."
+    },
+    {
+      "id": "GH-S02",
+      "title": "The problem",
+      "verdict": "revise",
+      "feedback": "The visuals feel like looking at a bunch of text; there is a lot going on and it is very overwhelming. Rebuild it calmer and more visual."
+    },
+    {
+      "id": "GH-S03",
+      "title": "The Mez Systems principle",
+      "verdict": "revise",
+      "feedback": "Better if the interchangeable layer shows the actual major tools you can plug into: Claude, ChatGPT, Gemini, Hermes, OpenClaw, Perplexity, Manus. Potentially better with real logos; we're getting there."
+    },
+    {
+      "id": "GH-S04",
+      "title": "Why Mez Systems",
+      "verdict": "revise",
+      "feedback": "The built-on-ourselves-first visual sucks; rebuild a whole new component. The operating proof also needs a whole new component with better card design, not vibe-coded."
+    },
+    {
+      "id": "GH-S05",
+      "title": "Available now: AI OS",
+      "verdict": "revise",
+      "feedback": "Use a different card design for the AI OS product object. The Wings and the name are way too small. Keeping the animated material is right; rethink it as a whole new single-product identity card."
+    },
+    {
+      "id": "GH-S06",
+      "title": "The Mez Systems ecosystem",
+      "verdict": "revise",
+      "feedback": "The four coming-system cards can be better; stronger card designs for the family."
+    },
+    {
+      "id": "GH-S07",
+      "title": "Proof from the first Mez System",
+      "verdict": "revise",
+      "feedback": "Rebuild the testimonial section better."
+    },
+    {
+      "id": "GH-S08",
+      "title": "Final route",
+      "verdict": "keep",
+      "feedback": "Fine for now."
+    },
+    {
+      "id": "GH-S09",
+      "title": "Footer",
+      "verdict": "keep",
+      "feedback": "Unchanged keep from Round 01."
+    }
+  ],
+  "copyAmendments": [
+    {
+      "scope": "GH-S01 hero actions",
+      "from": ["Explore the AI OS", "See what we're building"],
+      "to": ["Explore the Systems"],
+      "authorisedBy": "Olli",
+      "recordedAt": "2026-07-23",
+      "formalCopyRelockPending": true,
+      "note": "Chat-review amendment by the copy owner; homepage-copy.md 1.0.0 remains the canonical lock until formally re-approved, and the divergence is limited to the hero action row."
+    }
+  ],
+  "integrationIdentityIntake": {
+    "requestedTools": ["Claude", "ChatGPT", "Gemini", "Hermes", "OpenClaw", "Perplexity", "Manus"],
+    "interimTreatment": "quiet monochrome wordmark chips",
+    "pendingAssets": "verified and licensed logo marks require a governed asset intake before real logos can ship"
+  },
+  "productionAuthority": false
+}

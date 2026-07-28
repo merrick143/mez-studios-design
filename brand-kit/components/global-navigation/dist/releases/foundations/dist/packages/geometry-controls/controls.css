@@ -1,0 +1,73 @@
+/* Generated Mez control primitives. Load canonical typography, colour, space-layout, then tokens.css first. */
+.mz-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mz-control-icon-gap);
+  min-height: var(--mz-control-default-height);
+  padding-inline: var(--mz-control-default-padding-inline);
+  border: var(--mz-border-width-hairline) solid transparent;
+  border-radius: var(--mz-radius-control);
+  font: var(--mz-type-ui-control-weight) var(--mz-type-ui-control-size)/var(--mz-type-ui-control-leading) var(--mz-font-body);
+  letter-spacing: var(--mz-type-ui-control-tracking);
+  text-decoration: none;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: transform var(--mz-motion-default) var(--mz-motion-control-ease), box-shadow var(--mz-motion-default) var(--mz-motion-control-ease), background-color var(--mz-motion-fast) linear, border-color var(--mz-motion-fast) linear, color var(--mz-motion-fast) linear;
+}
+.mz-control[data-variant="primary"] { color: var(--mz-action-primary-foreground); background: var(--mz-action-primary-background); box-shadow: var(--mz-depth-inset-highlight); }
+.mz-control[data-variant="secondary"] { color: var(--mz-action-secondary-foreground); background: var(--mz-action-secondary-background); border-color: var(--mz-action-secondary-border); }
+.mz-control[data-variant="tertiary"] { min-height: 36px; padding-inline: 2px; color: var(--mz-text-primary); background: transparent; border-radius: var(--mz-radius-fine); }
+.mz-control[data-variant="destructive"] { color: var(--mz-colour-neutral-0); background: var(--mz-feedback-danger-text); }
+[data-mz-mode="dark"] .mz-control[data-variant="primary"], .mz-control[data-variant="inverse-primary"] { color: var(--mz-colour-neutral-950); background: var(--mz-colour-neutral-0); }
+[data-mz-mode="dark"] .mz-control[data-variant="secondary"], .mz-control[data-variant="inverse-secondary"] { color: var(--mz-text-inverse); background: transparent; border-color: var(--mz-border-inverse); }
+[data-mz-mode="dark"] .mz-control[data-variant="tertiary"], .mz-control[data-variant="inverse-tertiary"] { color: var(--mz-text-inverse); background: transparent; }
+.mz-control[data-size="compact"] { min-height: var(--mz-control-compact-height); padding-inline: var(--mz-control-compact-padding-inline); font-size: 13px; }
+.mz-control[data-size="prominent"] { min-height: var(--mz-control-prominent-height); padding-inline: var(--mz-control-prominent-padding-inline); }
+.mz-control[data-full] { width: 100%; }
+.mz-control svg { width: var(--mz-control-icon-size); height: var(--mz-control-icon-size); flex: none; transition: transform var(--mz-motion-default) var(--mz-motion-control-ease); }
+.mz-control:focus-visible, .mz-field:focus-visible, .mz-choice input:focus-visible + span, .mz-switch input:focus-visible + span { outline: var(--mz-focus-width) solid var(--mz-focus-ring); outline-offset: var(--mz-focus-offset); }
+.mz-control:active { transform: translateY(0); box-shadow: none; }
+.mz-control:disabled, .mz-control[aria-disabled="true"] { color: var(--mz-disabled-text); background: var(--mz-disabled-surface); border-color: var(--mz-disabled-border); cursor: not-allowed; box-shadow: none; transform: none; }
+.mz-control[data-loading="true"] { pointer-events: none; }
+.mz-control[data-loading="true"] .mz-control__label { visibility: hidden; }
+.mz-control__spinner { position: absolute; display: none; width: 18px; height: 18px; border: 2px solid currentColor; border-right-color: transparent; border-radius: var(--mz-radius-full); animation: mz-spin 720ms linear infinite; }
+.mz-control[data-loading="true"] .mz-control__spinner { display: block; }
+.mz-icon-control { width: var(--mz-icon-control-size); min-width: var(--mz-icon-control-size); padding: 0; }
+.mz-icon-control[data-size="compact"] { width: var(--mz-icon-control-compact-size); min-width: var(--mz-icon-control-compact-size); }
+
+.mz-field-group { display: grid; gap: var(--mz-field-label-gap); }
+.mz-field-label { color: var(--mz-text-primary); font: var(--mz-type-ui-label-weight) var(--mz-type-ui-label-size)/var(--mz-type-ui-label-leading) var(--mz-font-body); letter-spacing: var(--mz-type-ui-label-tracking); text-transform: uppercase; }
+.mz-field { width: 100%; min-height: var(--mz-field-height); padding: 0 var(--mz-field-padding-inline); border: var(--mz-border-width-hairline) solid var(--mz-border-strong); border-radius: var(--mz-radius-control); color: var(--mz-text-primary); background: var(--mz-surface-base); font: var(--mz-type-body-default-weight) var(--mz-type-body-default-size)/var(--mz-type-body-default-leading) var(--mz-font-body); }
+textarea.mz-field { min-height: var(--mz-field-textarea-min-height); padding-block: 12px; resize: vertical; }
+.mz-field:hover:not(:disabled) { border-color: var(--mz-text-primary); }
+.mz-field:disabled { color: var(--mz-disabled-text); background: var(--mz-disabled-surface); border-color: var(--mz-disabled-border); }
+.mz-field[aria-invalid="true"] { border-width: var(--mz-border-width-emphasis); border-color: var(--mz-feedback-danger-border); }
+.mz-field-message { display: flex; gap: var(--mz-field-message-gap); color: var(--mz-text-muted); font: var(--mz-type-caption-weight) var(--mz-type-caption-size)/var(--mz-type-caption-leading) var(--mz-font-body); }
+.mz-field-message[data-state="error"] { color: var(--mz-feedback-danger-text); }
+
+.mz-choice, .mz-switch { position: relative; display: inline-flex; align-items: center; min-height: 48px; gap: 12px; cursor: pointer; }
+.mz-choice input, .mz-switch input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.mz-choice__mark { display: grid; width: var(--mz-field-choice-size); height: var(--mz-field-choice-size); place-items: center; border: var(--mz-border-width-hairline) solid var(--mz-border-strong); border-radius: var(--mz-radius-fine); background: var(--mz-surface-base); }
+.mz-choice input[type="radio"] + .mz-choice__mark { border-radius: var(--mz-radius-full); }
+.mz-choice input:checked + .mz-choice__mark { border-color: var(--mz-action-primary-background); color: var(--mz-action-primary-foreground); background: var(--mz-action-primary-background); }
+.mz-choice input:checked + .mz-choice__mark::after { width: 8px; height: 8px; border-radius: inherit; background: currentColor; content: ""; }
+.mz-switch__track { position: relative; width: var(--mz-field-switch-width); height: var(--mz-field-switch-height); border: var(--mz-border-width-hairline) solid var(--mz-border-strong); border-radius: var(--mz-radius-full); background: var(--mz-surface-recessed); transition: background var(--mz-motion-fast) linear; }
+.mz-switch__track::after { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: var(--mz-radius-full); background: var(--mz-text-muted); content: ""; transition: transform var(--mz-motion-default) var(--mz-motion-control-ease); }
+.mz-switch input:checked + .mz-switch__track { background: var(--mz-action-primary-background); }
+.mz-switch input:checked + .mz-switch__track::after { background: var(--mz-action-primary-foreground); transform: translateX(20px); }
+
+@media (hover: hover) {
+  .mz-control:not(:disabled):not([aria-disabled="true"]):not([data-variant="tertiary"]):not([data-variant="inverse-tertiary"]):hover { transform: translateY(var(--mz-control-hover-lift)); box-shadow: var(--mz-depth-contact), var(--mz-depth-inset-highlight); }
+  .mz-control:hover svg[data-directional] { transform: translateX(var(--mz-control-icon-travel)); }
+  .mz-control[data-variant="tertiary"]:hover, .mz-control[data-variant="inverse-tertiary"]:hover { text-decoration: underline; text-underline-offset: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mz-control, .mz-control svg, .mz-switch__track::after { transition-duration: .001ms; transform: none !important; }
+  .mz-control__spinner { animation-duration: 1.4s; }
+}
+@media (forced-colors: active) {
+  .mz-control, .mz-field, .mz-choice__mark, .mz-switch__track { forced-color-adjust: auto; }
+}
+@keyframes mz-spin { to { transform: rotate(360deg); } }

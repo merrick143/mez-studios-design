@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "receiptId": "RCP-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "evaluatedAt": "2026-07-28T06:52:45Z",
+  "evaluator": {
+    "kind": "hybrid",
+    "name": "Olli, Codex and deterministic validators"
+  },
+  "contractChecks": [
+    {
+      "id": "DETERMINISTIC-PACKAGE",
+      "status": "pass",
+      "evidence": "Three assemblies produced the same 312-artifact content hash and byte-identical manifest."
+    },
+    {
+      "id": "NO-HIDDEN-DEPENDENCY",
+      "status": "pass",
+      "evidence": "The isolated package resolved every runtime design import and asset package-locally with no network or canonical-checkout dependency."
+    },
+    {
+      "id": "PROOF-SAFETY",
+      "status": "pass",
+      "evidence": "Only four separate exact-byte-approved redacted derivatives entered the candidate; originals and absolute source paths remain excluded."
+    },
+    {
+      "id": "RESPONSIVE-ACCESSIBILITY",
+      "status": "pass",
+      "evidence": "Responsive, keyboard, focus, accessibility-tree, motion, offscreen and fallback evidence passed across the declared package surface."
+    },
+    {
+      "id": "HUMAN-GATE",
+      "status": "pass",
+      "evidence": "Olli approved the exact manifest-identified package for named-consumer proof."
+    },
+    {
+      "id": "RELEASE-BOUNDARY",
+      "status": "pass",
+      "evidence": "The approval record explicitly withholds package publication, deployment and production version 1.0.0."
+    }
+  ],
+  "qualityDimensions": [
+    {
+      "id": "integrity",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "Every included artifact is hashed and three builds are reproducible."
+    },
+    {
+      "id": "portability",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "The package verifier passes from an isolated copy without network or source-checkout access."
+    },
+    {
+      "id": "design-quality",
+      "score": 4.53,
+      "maximum": 5,
+      "evidence": "The exact candidate passed Gate B at 68/75 with no findings."
+    },
+    {
+      "id": "evidence-honesty",
+      "score": 5,
+      "maximum": 5,
+      "evidence": "Exact measurements, approved media hashes and remaining consumer obligations are recorded without claiming deployment readiness."
+    },
+    {
+      "id": "production-readiness",
+      "score": 3,
+      "maximum": 5,
+      "evidence": "The candidate is ready for a registered consumer, but real-consumer proof, publication and deployment decisions remain."
+    }
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": [
+    "PORT-03 is complete. Consumer registration blocks PORT-04 but is not a failure of the approved release-candidate assembly.",
+    "Output status is approved candidate, generated and unreleased; it is not canonical production version 1.0.0."
+  ]
+}

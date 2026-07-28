@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r02",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Olli",
+  "verdict": "revise",
+  "productionAuthority": false,
+  "feedback": [
+    "Remove Daniel Leung because no approved video portrait exists for him.",
+    "Change the track from user-driven only to continuous auto-scroll.",
+    "Reject the Round 01 boxed, tall presentation.",
+    "Make the testimonial units wider and vertically shallower.",
+    "Build five meaningfully different workbench versions for comparison.",
+    "Include an Instagram-like profile treatment with follower counts and verified state."
+  ],
+  "motionDecisionException": {
+    "status": "approved-bounded",
+    "approvedBy": "Olli",
+    "approvedAt": "2026-07-28",
+    "scope": "CMP-06 Testimonial Marquee only",
+    "summary": "Olli explicitly requested continuous auto-scroll after reviewing the user-driven Round 01 candidate. This is a bounded exception to DEC-WEBSITE-MOTION-SYSTEM-001. It does not change the general carousel rule. The exception requires a visible pause control, pause on hover and focus, offscreen idling and a complete static reduced-motion state."
+  },
+  "contentDecision": {
+    "danielLeung": "remove",
+    "reason": "No approved video portrait exists.",
+    "remainingTestimonials": 7
+  },
+  "humanGate": "Five Round 02 presentation families must return for Olli's keep, revise or kill decision."
+}

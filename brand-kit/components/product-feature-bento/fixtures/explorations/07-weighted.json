@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "mechanism-map",
+  "label": "Size is the roadmap",
+  "columns": 12,
+  "generativeRule": "Cell area follows how much of each block is systematised. Binary today because the real weighting is Olli's to supply.",
+  "copyProvenance": "Block names, the four system mappings and the product cell all resolve from registry/products.json. Blocks with no system carry no claim. Nothing is authored.",
+  "cells": [
+    {
+      "job": "integration",
+      "label": "Advertising",
+      "productSlug": "ai-ads-system",
+      "span": 4,
+      "rows": 2
+    },
+    {
+      "job": "integration",
+      "label": "Organic content",
+      "productSlug": "organic-content-os",
+      "span": 4,
+      "rows": 2
+    },
+    {
+      "job": "integration",
+      "label": "Software work",
+      "productSlug": "claude-code-os",
+      "span": 4,
+      "rows": 2
+    },
+    {
+      "job": "integration",
+      "label": "Business context",
+      "productSlug": "context-engine",
+      "span": 4,
+      "rows": 2
+    },
+    {
+      "job": "workflow",
+      "label": "Sales",
+      "span": 2,
+      "rows": 2
+    },
+    {
+      "job": "workflow",
+      "label": "Finance",
+      "span": 2,
+      "rows": 2
+    },
+    {
+      "job": "workflow",
+      "label": "Client delivery",
+      "span": 2,
+      "rows": 2
+    },
+    {
+      "job": "workflow",
+      "label": "Design",
+      "span": 2,
+      "rows": 2
+    },
+    {
+      "job": "product",
+      "productSlug": "aios",
+      "surface": "material",
+      "focal": true,
+      "span": 12
+    }
+  ]
+}

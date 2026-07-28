@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-FND-05-FOUNDATION-RELEASE",
+  "taskId": "TASK-FND-05-FOUNDATION-RELEASE",
+  "releaseId": "mz.systems.release.foundations",
+  "candidateRevision": "foundation-release-01",
+  "candidateStatus": "review-candidate",
+  "verdict": "approve",
+  "note": "Great, lock it in. Let's proceed.",
+  "reviewedAt": "2026-07-21T11:14:07.000Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-FOUNDATION-RELEASE-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true
+}

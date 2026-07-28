@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Problem Section Lab 6 (the stack, varied)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-dark-soft: #2e2e2e; --page-dark-softer: #3b3b38;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1;
+  --page-muted: #666662; --page-dark-muted: #b8b8b1; --page-dark-body: #cfcfc9;
+  --step: clamp(14px, 2.6vw, 38px);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* ---------------------------------------------------------------- lab shell */
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 10px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-top nav a:hover { background: rgba(248,248,248,.1); }
+.lab-note {
+  padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: var(--page-dark-body);
+  font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3;
+}
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; color: var(--page-ink);
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--page-muted);
+}
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 62ch; line-height: 1.5; }
+
+/* ------------------------------------------------------- shared section chassis */
+.pf { background: var(--page-paper); color: var(--page-ink); }
+.pf-inner {
+  max-width: 1180px; margin-inline: auto;
+  padding-inline: clamp(20px,5vw,64px);
+  padding-block: clamp(72px,9vw,124px);
+  display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr);
+  gap: clamp(36px,5.5vw,80px); align-items: center;
+}
+.pf-eyebrow {
+  margin: 0; font-family: var(--mz-font-technical); font-size: 12px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted);
+}
+.pf-title {
+  margin: 18px 0 0; font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(32px,4.2vw,56px); line-height: .99; letter-spacing: -.042em;
+}
+.pf-title .quiet { color: var(--page-line-strong); display: block; }
+.pf-lead {
+  margin: 24px 0 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5;
+  color: var(--page-muted); max-width: 44ch;
+}
+.pf-turn {
+  margin: 34px 0 0; font-family: var(--mz-font-display); font-weight: 650;
+  font-size: clamp(18px,2vw,25px); line-height: 1.18; letter-spacing: -.024em;
+  max-width: 28ch; color: var(--page-ink);
+}
+@media (max-width: 900px) { .pf-inner { grid-template-columns: 1fr; gap: 44px; } }
+
+/* --------------------------------------------------------- shared step anatomy */
+/* Treads sit 4px apart so consecutive offsets read as one staircase rather than
+   as rows that happen to be indented. */
+.st { display: grid; gap: 4px; }
+.st-row {
+  position: relative; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 17px 22px; border-radius: var(--mz-radius-container);
+  border: 1px solid var(--page-line);
+}
+.st-role {
+  font-family: var(--mz-font-display); font-weight: 640; font-size: 15.5px; letter-spacing: -.018em;
+}
+.st-note { font-size: 13px; color: var(--page-muted); margin-left: auto; text-align: right; }
+.st-you { background: var(--page-white); border-color: var(--page-line-strong); }
+.st-layer { background: var(--page-dark); border-color: var(--page-dark); color: var(--page-paper); }
+.st-layer .st-role { color: var(--page-paper); font-weight: 600; }
+.st-layer .st-note { color: var(--page-dark-muted); }
+/* Progressive offset. Each tread steps one unit further from the business. */
+.st-1 { margin-left: calc(var(--step) * 1); }
+.st-2 { margin-left: calc(var(--step) * 2); }
+.st-3 { margin-left: calc(var(--step) * 3); }
+.st-4 { margin-left: calc(var(--step) * 4); }
+.st-cap {
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-line-strong);
+}
+@media (max-width: 620px) {
+  :root { --step: 10px; }
+  .st-note { margin-left: 0; text-align: left; width: 100%; }
+}
+
+/* ======================================================== A · STEPS, OPEN END */
+/* No destination. The staircase simply keeps going past the last tread, and the
+   hairline running off the edge is what stands in for the intelligence. */
+.a-open { position: relative; margin-left: calc(var(--step) * 5); padding-top: 14px; }
+.a-open-rule { height: 1px; background: var(--page-line-mid); }
+.a-open-label {
+  display: block; padding-top: 10px;
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-line-strong);
+}
+
+/* =================================================== B · STEPS, DESTINATION LINE */
+/* The intelligence is an edge, not a block: a labelled rule the staircase is
+   walking towards. */
+.b-dest { margin-top: 14px; border-top: 1px solid var(--page-ink); padding-top: 12px; display: flex;
+  align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.b-dest b {
+  font-family: var(--mz-font-display); font-weight: 650; font-size: 15.5px; letter-spacing: -.02em;
+}
+.b-dest span { font-size: 13px; color: var(--page-muted); margin-left: auto; text-align: right; }
+
+/* ====================================================== C · STEPS, WEIGHT RAMP */
+/* One variable changed against A: each tread carries more weight than the one
+   above it, so the pile visibly gets heavier as it moves away from you. */
+.c-1 { background: var(--page-dark-softer); border-color: var(--page-dark-softer); }
+.c-2 { background: var(--page-dark-soft); border-color: var(--page-dark-soft); }
+.c-3 { background: var(--page-dark-raised); border-color: var(--page-dark-raised); }
+.c-4 { background: var(--page-dark); border-color: var(--page-dark); }
+
+/* ========================================================= D · STEPS, PILING UP */
+/* Direction reversed. The business is underneath and every layer is stacked on
+   top of it, so the same anatomy argues burial instead of distance. */
+.d-stack { display: grid; gap: 4px; }
+.d-stack .st-you { margin-left: calc(var(--step) * 4); }
+
+/* ===================================================== E · STEPS WITH A MEASURE */
+/* On a stepped stack the honest measure is the horizontal distance travelled,
+   not a vertical one, so the bracket spans exactly the four step widths the
+   treads moved. It measures something real rather than decorating the margin. */
+.e-span { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
+.e-bracket {
+  position: relative; width: calc(var(--step) * 4); min-width: 56px; height: 9px; flex: none;
+  border-left: 1px solid var(--page-line-strong);
+  border-right: 1px solid var(--page-line-strong);
+  border-bottom: 1px solid var(--page-line-strong);
+}
+.e-readout {
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted);
+}
+
+/* =========================================== F · FLUSH CONTROL, NO INTELLIGENCE */
+/* The control. V1 geometry with no stepping and no intelligence block, so the
+   stepping in A to E can be judged against its absence. */
+.f-stack { display: grid; gap: 6px; }
+.f-stack .st-row { margin-left: 0; }
+.f-bracket { position: relative; padding-left: 44px; display: grid; gap: 6px; }
+.f-measure {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 24px;
+  border-left: 1px solid var(--page-line-strong);
+  border-top: 1px solid var(--page-line-strong);
+  border-bottom: 1px solid var(--page-line-strong);
+  border-radius: var(--mz-radius-compact) 0 0 var(--mz-radius-compact);
+}
+.f-measure span {
+  position: absolute; left: -6px; top: 50%; transform: translate(-100%, -50%);
+  writing-mode: vertical-rl; rotate: 180deg;
+  font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted); white-space: nowrap;
+}
+@media (max-width: 620px) { .f-bracket { padding-left: 28px; } .f-measure { width: 14px; } }
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Problem Section · Lab 6 · the stack, varied</strong>
+  <nav>
+    <a href="#a">A open end</a><a href="#b">B destination</a><a href="#c">C weight</a>
+    <a href="#d">D piling up</a><a href="#e">E measure</a><a href="#f">F control</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>Six variations on V1, not six new ideas.</b> The stack is the champion, so the anatomy stays
+  fixed and two dimensions vary: how the treads step, and what happens where the intelligence block
+  used to be. A drops it for an open edge, B turns it into a labelled line, C changes weight instead
+  of adding anything, D reverses the direction so the layers pile onto you, E adds an accumulating
+  measure, and F is the control with no stepping and no intelligence at all. Still monochrome, still
+  no motion.
+</div>
+
+<!-- ============================================================ A · OPEN END -->
+<article class="lab-item" id="a">
+  <header class="lab-label">
+    <span class="lab-num">A</span>
+    <span class="lab-name">Steps, open end</span>
+    <span class="lab-rule">Intelligence · removed</span>
+    <span class="lab-rat">The staircase steps away from you and simply keeps going. No destination block, just a hairline running off past the last tread. The intelligence is out there somewhere and the section does not need to draw it.</span>
+  </header>
+  <section class="pf" aria-label="The problem, as steps with an open end">
+    <div class="pf-inner">
+      <div>
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+        <p class="pf-turn">Every step is one more thing between you and the work.</p>
+      </div>
+
+      <div class="st">
+        <div class="st-row st-you">
+          <span class="st-role">Your business</span>
+          <span class="st-note">Everything you already know</span>
+        </div>
+        <div class="st-row st-layer st-1">
+          <span class="st-role">Another subscription</span>
+          <span class="st-note">Their price, their renewal</span>
+        </div>
+        <div class="st-row st-layer st-2">
+          <span class="st-role">Another interface</span>
+          <span class="st-note">Their window, their layout</span>
+        </div>
+        <div class="st-row st-layer st-3">
+          <span class="st-role">Another app</span>
+          <span class="st-note">Knows nothing about the rest</span>
+        </div>
+        <div class="st-row st-layer st-4">
+          <span class="st-role">Another credit system</span>
+          <span class="st-note">Their limits, their rate</span>
+        </div>
+
+        <div class="a-open">
+          <div class="a-open-rule"></div>
+          <span class="a-open-label">And it keeps going</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ========================================================= B · DESTINATION -->
+<article class="lab-item" id="b">
+  <header class="lab-label">
+    <span class="lab-num">B</span>
+    <span class="lab-name">Steps, destination line</span>
+    <span class="lab-rule">Intelligence · a line, not a block</span>
+    <span class="lab-rat">Same staircase, but the thing you are walking towards is stated as an edge rather than given a card of its own. It keeps the point without giving the intelligence equal billing with the middlemen.</span>
+  </header>
+  <section class="pf" aria-label="The problem, as steps toward a line">
+    <div class="pf-inner">
+      <div>
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+        <p class="pf-turn">You are not buying intelligence. You are renting the distance to it.</p>
+      </div>
+
+      <div class="st">
+        <div class="st-row st-you">
+          <span class="st-role">Your business</span>
+          <span class="st-note">Everything you already know</span>
+        </div>
+        <div class="st-row st-layer st-1">
+          <span class="st-role">Another subscription</span>
+          <span class="st-note">Their price, their renewal</span>
+        </div>
+        <div class="st-row st-layer st-2">
+          <span class="st-role">Another interface</span>
+          <span class="st-note">Their window, their layout</span>
+        </div>
+        <div class="st-row st-layer st-3">
+          <span class="st-role">Another app</span>
+          <span class="st-note">Knows nothing about the rest</span>
+        </div>
+        <div class="st-row st-layer st-4">
+          <span class="st-role">Another credit system</span>
+          <span class="st-note">Their limits, their rate</span>
+        </div>
+
+        <div class="b-dest">
+          <b>The intelligence</b>
+          <span>Already reachable directly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================== C · WEIGHT -->
+<article class="lab-item" id="c">
+  <header class="lab-label">
+    <span class="lab-num">C</span>
+    <span class="lab-name">Steps, weight ramp</span>
+    <span class="lab-rule">Intelligence · removed</span>
+    <span class="lab-rat">One variable changed against A. Nothing is added: each tread simply carries more weight than the one above it, so the pile gets heavier as it goes. The ramp does the work the removed block used to do.</span>
+  </header>
+  <section class="pf" aria-label="The problem, as steps that gain weight">
+    <div class="pf-inner">
+      <div>
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+        <p class="pf-turn">Each one is heavier than the last, and none of them is yours.</p>
+      </div>
+
+      <div class="st">
+        <div class="st-row st-you">
+          <span class="st-role">Your business</span>
+          <span class="st-note">Everything you already know</span>
+        </div>
+        <div class="st-row st-layer c-1 st-1">
+          <span class="st-role">Another subscription</span>
+          <span class="st-note">Their price, their renewal</span>
+        </div>
+        <div class="st-row st-layer c-2 st-2">
+          <span class="st-role">Another interface</span>
+          <span class="st-note">Their window, their layout</span>
+        </div>
+        <div class="st-row st-layer c-3 st-3">
+          <span class="st-role">Another app</span>
+          <span class="st-note">Knows nothing about the rest</span>
+        </div>
+        <div class="st-row st-layer c-4 st-4">
+          <span class="st-role">Another credit system</span>
+          <span class="st-note">Their limits, their rate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== D · PILING UP -->
+<article class="lab-item" id="d">
+  <header class="lab-label">
+    <span class="lab-num">D</span>
+    <span class="lab-name">Steps, piling up</span>
+    <span class="lab-rule">Direction · reversed</span>
+    <span class="lab-rat">The same anatomy read the other way. Your business is underneath and every layer is stacked on top of it, so the argument becomes burial rather than distance. Worth seeing next to A because the components are identical and the meaning is not.</span>
+  </header>
+  <section class="pf" aria-label="The problem, as layers piling up">
+    <div class="pf-inner">
+      <div>
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+        <p class="pf-turn">The business ends up underneath the tools that were supposed to run it.</p>
+      </div>
+
+      <div class="d-stack">
+        <div class="st-row st-layer">
+          <span class="st-role">Another credit system</span>
+          <span class="st-note">Their limits, their rate</span>
+        </div>
+        <div class="st-row st-layer st-1">
+          <span class="st-role">Another app</span>
+          <span class="st-note">Knows nothing about the rest</span>
+        </div>
+        <div class="st-row st-layer st-2">
+          <span class="st-role">Another interface</span>
+          <span class="st-note">Their window, their layout</span>
+        </div>
+        <div class="st-row st-layer st-3">
+          <span class="st-role">Another subscription</span>
+          <span class="st-note">Their price, their renewal</span>
+        </div>
+        <div class="st-row st-you">
+          <span class="st-role">Your business</span>
+          <span class="st-note">Somewhere at the bottom of all of it</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================= E · MEASURE -->
+<article class="lab-item" id="e">
+  <header class="lab-label">
+    <span class="lab-num">E</span>
+    <span class="lab-name">Steps with a measure</span>
+    <span class="lab-rule">Intelligence · removed, distance counted</span>
+    <span class="lab-rat">A, with a measure running down the side that ticks once per layer crossed. The count is the second read: it does nothing decorative and it says the one thing the treads cannot say on their own.</span>
+  </header>
+  <section class="pf" aria-label="The problem, as measured steps">
+    <div class="pf-inner">
+      <div>
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+        <p class="pf-turn">Four layers of someone else's product, before any work gets done.</p>
+      </div>
+
+      <div>
+        <div class="st">
+          <div class="st-row st-you">
+            <span class="st-role">Your business</span>
+            <span class="st-note">Everything you already know</span>
+          </div>
+          <div class="st-row st-layer st-1">
+            <span class="st-role">Another subscription</span>
+            <span class="st-note">Their price, their renewal</span>
+          </div>
+          <div class="st-row st-layer st-2">
+            <span class="st-role">Another interface</span>
+            <span class="st-note">Their window, their layout</span>
+          </div>
+          <div class="st-row st-layer st-3">
+            <span class="st-role">Another app</span>
+            <span class="st-note">Knows nothing about the rest</span>
+          </div>
+          <div class="st-row st-layer st-4">
+            <span class="st-role">Another credit system</span>
+            <span class="st-note">Their limits, their rate</span>
+          </div>
+        </div>
+
+        <div class="e-span">
+          <div class="e-bracket" aria-hidden="true"></div>
+          <span class="e-readout">Four layers of distance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================= F · CONTROL -->
+<article class="lab-item" id="f">
+  <header class="lab-label">
+    <span class="lab-num">F</span>
+    <span class="lab-name">Flush control</span>
+    <span class="lab-rule">No stepping · no intelligence</span>
+    <span class="lab-rat">The control. V1's flush geometry with the intelligence block removed and the bracket kept, so the stepping in A to E can be judged against its absence rather than assumed to be an improvement.</span>
+  </header>
+  <section class="pf" aria-label="The problem, flush">
+    <div class="pf-inner">
+      <div>
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+        <p class="pf-turn">You are not buying intelligence. You are renting the distance to it.</p>
+      </div>
+
+      <div class="f-stack">
+        <div class="st-row st-you">
+          <span class="st-role">Your business</span>
+          <span class="st-note">Everything you already know</span>
+        </div>
+
+        <div class="f-bracket">
+          <div class="f-measure"><span>Not yours</span></div>
+          <div class="st-row st-layer">
+            <span class="st-role">Another subscription</span>
+            <span class="st-note">Their price, their renewal</span>
+          </div>
+          <div class="st-row st-layer">
+            <span class="st-role">Another interface</span>
+            <span class="st-note">Their window, their layout</span>
+          </div>
+          <div class="st-row st-layer">
+            <span class="st-role">Another app</span>
+            <span class="st-note">Knows nothing about the rest</span>
+          </div>
+          <div class="st-row st-layer">
+            <span class="st-role">Another credit system</span>
+            <span class="st-note">Their limits, their rate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+</body>
+</html>

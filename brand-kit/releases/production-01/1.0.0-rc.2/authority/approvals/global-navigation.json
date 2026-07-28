@@ -1,0 +1,18 @@
+{
+  "schemaVersion":"1.0.0",
+  "gateId":"H-CMP-01-GLOBAL-NAVIGATION-PROOF",
+  "taskId":"TASK-CMP-01-GLOBAL-NAVIGATION",
+  "componentId":"mz.systems.component.global-navigation",
+  "candidateRevision":"global-navigation-01-r04",
+  "candidateStatus":"review-candidate",
+  "verdict":"approve",
+  "note":"Round 04 approved. Lock the quiet Living Registry with its layered compact family cue, smoother footer-free disclosure, five automatically animated spheres and bounded light surface, then proceed to the golden homepage.",
+  "reviewedAt":"2026-07-23T03:10:31Z",
+  "approver":"Olli",
+  "submittedProductionAuthority":false,
+  "decisionId":"DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+  "resultingStatus":"canonical",
+  "programmeStatus":"complete",
+  "authorityScope":"The Registry family, compact five-circle cue, primary dark and bounded light surfaces, footer-free disclosure, five-sphere navigation-only motion exception, responsive sheet, accessibility behaviour, static fallbacks and consumer-owned navigation events are canonical. Real routes, analytics, golden-homepage composition, authenticated application shell, Figma and consumer integration remain outside this decision.",
+  "productionAuthority":true
+}

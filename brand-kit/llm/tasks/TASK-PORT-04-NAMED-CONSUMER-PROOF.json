@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+  "title": "Prove the release candidate in the registered Mez Systems web consumer",
+  "phase": 8,
+  "status": "ready",
+  "owner": "consumer-integration-agent",
+  "objective": "After the Figma companion, priority Product UI scope and whole-system certification are complete, register one exact repository as CON-MEZ-SYSTEMS-WEB-001, integrate the later approved immutable candidate without copied design values, and prove real-consumer installation, accessibility, performance, update, rollback and version visibility before any production release or deployment decision.",
+  "scope": {
+    "included": [
+      "register one exact repository path and remote identity for CON-MEZ-SYSTEMS-WEB-001",
+      "install or vendor the later CERT-01-approved immutable package through one versioned package boundary",
+      "map consumer-owned routes, analytics, SEO, consent and live content into the package interfaces",
+      "prove package name, version and manifest visibility in the running consumer",
+      "prove keyboard, focus, screen-reader output, reduced motion, no-WebGL, missing-media and physical-pointer behaviour in the consumer",
+      "profile CPU, memory, battery-sensitive motion and video behaviour on named target devices",
+      "prove an immutable update and rollback without copying design values or reverting consumer-owned content",
+      "present the exact consumer revision and evidence at a human gate"
+    ],
+    "excluded": [
+      "publishing @mez-systems/design-system-web or assigning version 1.0.0",
+      "deploying the consumer before the PORT-04 human gate",
+      "changing canonical design, component, content-boundary or motion decisions",
+      "copying token, component, renderer or identity source into the consumer",
+      "treating frozen testimonial examples as live content truth",
+      "assuming third-party mark permission without consumer legal and attribution confirmation"
+    ]
+  },
+  "dependencies": [
+    "TASK-FIG-01-FIGMA-COMPANION",
+    "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION",
+    "TASK-CERT-01-SYSTEM-CERTIFICATION",
+    "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/releases/production-01-plan/release-plan.source.json",
+      "brand-kit/governance/consumer-register.json",
+      "brand-kit/releases/production-01-plan/release-candidate-approval.json",
+      "brand-kit/releases/production-01-plan/port-03-verification.json",
+      "later immutable candidate and manifest approved by H-CERT-01-SYSTEM-CERTIFICATION",
+      "registered consumer record for CON-MEZ-SYSTEMS-WEB-001"
+    ],
+    "decisionIds": [
+      "DEC-FOUNDATION-RELEASE-001",
+      "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+      "DEC-GOLDEN-HOMEPAGE-001",
+      "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+      "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+    ],
+    "artifactIds": [],
+    "consumerIds": [
+      "CON-MEZ-SYSTEMS-WEB-001"
+    ]
+  },
+  "deliverables": [
+    {
+      "path": "registered consumer repository for CON-MEZ-SYSTEMS-WEB-001",
+      "acceptance": [
+        "one immutable package boundary supplies every design-system value and runtime asset",
+        "the live diagnostic exposes package name, version and manifest hash",
+        "consumer-owned routes, analytics, SEO, consent and current content remain outside design-system authority",
+        "the consumer test suite proves accessibility, fallbacks, named-device performance, update and rollback",
+        "no publish, production version assignment or deployment occurs before the human gate"
+      ]
+    },
+    {
+      "path": "brand-kit/releases/production-01-plan/consumer-proof/",
+      "acceptance": [
+        "the registered repository and exact consumer revision are recorded",
+        "every required check records method, device or browser, result and evidence",
+        "previous, candidate and rollback manifest hashes are explicit",
+        "known gaps and the final human decision remain honest"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "PORT-04-CONSUMER-REGISTRATION",
+      "method": "command",
+      "passCondition": "the exact local checkout, GitHub remote, default branch and approved rc.2 manifest resolve through CON-MEZ-SYSTEMS-WEB-001 without authorising consumer mutation or deployment"
+    },
+    {
+      "id": "PORT-04-CONSUMER-BOUNDARY",
+      "method": "command",
+      "passCondition": "the consumer resolves one immutable package version and contains no copied canonical design value or cross-repository runtime import"
+    },
+    {
+      "id": "PORT-04-VERSION-UPDATE-ROLLBACK",
+      "method": "command",
+      "passCondition": "version visibility, an immutable update and restoration of the last known-good manifest pass without reverting consumer-owned content"
+    },
+    {
+      "id": "PORT-04-ACCESSIBILITY-FALLBACKS",
+      "method": "manual-inspection",
+      "passCondition": "keyboard, visible focus, spoken screen-reader output, reduced motion, no-WebGL and missing-media states preserve complete meaning in the real consumer"
+    },
+    {
+      "id": "PORT-04-NAMED-DEVICE-PERFORMANCE",
+      "method": "manual-inspection",
+      "passCondition": "physical hover and motion recovery behave as specified and named target devices record acceptable CPU, memory, video and battery-sensitive behaviour"
+    },
+    {
+      "id": "PORT-04-HUMAN",
+      "method": "human",
+      "passCondition": "Olli accepts, revises or rejects the exact registered-consumer proof before production release or deployment"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-PORT-04-NAMED-CONSUMER-PROOF",
+    "approver": "Olli",
+    "approvalQuestion": "Does the exact registered consumer revision prove the later CERT-01-approved package boundary, accessibility, performance, version visibility, update and rollback well enough to prepare a separate production release and deployment decision?"
+  },
+  "stopConditions": [
+    "the registered local checkout, GitHub remote or default branch no longer matches CON-MEZ-SYSTEMS-WEB-001",
+    "FIG-01, UI-01 or CERT-01 is incomplete",
+    "the candidate manifest differs from the later manifest approved at H-CERT-01-SYSTEM-CERTIFICATION",
+    "integration requires copied design values or a runtime import from the canonical checkout",
+    "a consumer-owned route, consent, analytics, SEO or content decision is guessed rather than supplied",
+    "third-party mark permission or testimonial freshness is represented as current without consumer evidence",
+    "the work would publish, deploy or assign production version 1.0.0 before the human gate"
+  ],
+  "notes": [
+    "PORT-03 is complete and rc.1 remains an approved frozen portability milestone.",
+    "SEQ-CONSUMER-LAST-001 makes this the final transition after Figma, the agreed current release scope and whole-system certification.",
+    "FIG-01, UI-01 and CERT-01 are complete, exact 1.0.0-rc.2 is approved, and Olli registered mezcorp-studio/ceos-notion-landingpage as CON-MEZ-SYSTEMS-WEB-001 on 29 July 2026.",
+    "The first consumer action is a read-only forensic audit from a fresh branch or worktree based on fetched origin/main; registration itself grants no mutation or deployment authority.",
+    "A successful PORT-04 proof still precedes a separate production release and deployment decision."
+  ]
+}

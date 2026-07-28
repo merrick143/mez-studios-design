@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Principle Lab 6 (the business holds it)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1;
+  --page-muted: #666662; --page-dark-muted: #b8b8b1;
+  --material: url("../../../../gradient-library/assets/static/mz-g13.webp");
+  --card: 900px;
+  --r: var(--mz-radius-container);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* lab shell */
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a { padding: 4px 9px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px; color: var(--page-paper); text-decoration: none; }
+.lab-note { padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: #cfcfc9; font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3; }
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding: 14px clamp(16px,4vw,40px); background: var(--page-white); border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50; }
+.lab-num { font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em; padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; }
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule { font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-muted); }
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 58ch; line-height: 1.5; }
+.lab-live { font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 9px; border-radius: 9999px; border: 1px solid var(--page-line-strong); color: var(--page-muted); }
+.lab-live[data-live="on"] { border-color: var(--page-ink); color: var(--page-ink); }
+
+/* section chassis */
+.pr { background: var(--page-paper); color: var(--page-ink); }
+.pr-inner { max-width: 1180px; margin-inline: auto; padding-inline: clamp(20px,5vw,64px); padding-block: clamp(72px,9vw,112px); }
+.pr-head { text-align: center; margin-inline: auto; max-width: 62ch; }
+.pr-eyebrow { margin: 0; font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted); }
+.pr-title { margin: 18px auto 0; font-family: var(--mz-font-display); font-weight: 660; font-size: clamp(30px,3.6vw,50px); line-height: 1.02; letter-spacing: -.04em; max-inline-size: 22ch; color: var(--page-ink); }
+.pr-title span { display: block; }
+.pr-lead { margin: 20px auto 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5; color: var(--page-muted); max-inline-size: 52ch; }
+.stack { margin: clamp(42px,5vw,68px) auto 0; max-width: var(--card); }
+.kicker { font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--page-muted); margin: 0; text-align: center; }
+.kicker--dark { color: var(--page-dark-muted); }
+
+/* marks */
+.mk { display: block; height: 21px; width: auto; filter: grayscale(1) brightness(0); opacity: .7; flex: none; }
+.mk[alt="Gemini"] { height: 24px; }
+.mk[alt="Mistral"] { height: 18px; }
+.mk[alt="Perplexity"], .mk[alt="ChatGPT"] { height: 22px; }
+.on-dark .mk { filter: grayscale(1) brightness(0) invert(1); opacity: .8; }
+
+/* The AI systems churn, so they move. The tools are chosen and kept, so they do
+   not. One moving row plus the living material is the whole motion budget. */
+/* min-width: 0 is load-bearing. A grid child defaults to min-width: auto, which
+   sizes to its content, so the max-content track escapes the clip and pushes the
+   page into horizontal scroll on mobile. */
+.biz > *, .win > *, .nest > *, .nest__inner > *, .sand > *, .stack > * { min-width: 0; }
+.marquee {
+  position: relative; overflow: hidden; min-width: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+.marquee__track { display: flex; align-items: center; gap: clamp(34px,4.5vw,60px); width: max-content; will-change: transform; animation: mq 44s linear infinite; }
+@keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; width: 100%; flex-wrap: wrap; justify-content: center; gap: 20px 30px; }
+  .marquee { -webkit-mask-image: none; mask-image: none; }
+}
+[data-motion="static"] .marquee__track { animation: none; width: 100%; flex-wrap: wrap; justify-content: center; gap: 20px 30px; }
+[data-motion="static"] .marquee { -webkit-mask-image: none; mask-image: none; }
+
+.tools { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 18px clamp(24px,3.4vw,44px); }
+.tools .mk { height: 19px; opacity: .58; }
+
+/* the layer */
+.layer {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 132px; display: grid; place-items: center; text-align: center;
+  padding: 24px clamp(20px,3.4vw,36px);
+  background: #101010 center / cover no-repeat var(--material);
+  border-radius: var(--r);
+}
+.layer::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: rgba(7,7,7,.46); }
+.layer canvas { z-index: 0; }
+.layer__lockup { position: relative; z-index: 2; display: grid; justify-items: center; gap: 9px; }
+.layer__wings { width: 23px; height: 23px; filter: brightness(0) invert(1); }
+.layer__name { font-family: var(--mz-font-display); font-weight: 640; font-size: clamp(17px,1.8vw,21px); letter-spacing: -.022em; color: #fff; }
+.layer__note { font-size: 13px; color: rgba(255,255,255,.76); max-width: 46ch; }
+
+/* the business shell, shared by every variant */
+.biz {
+  background: var(--page-dark); border-radius: var(--mz-radius-panel);
+  padding: 16px; display: grid; gap: 14px;
+}
+.biz__head { display: flex; align-items: baseline; justify-content: center; gap: 12px; flex-wrap: wrap; padding: 8px 6px 0; }
+.biz__name { font-family: var(--mz-font-display); font-weight: 640; font-size: 17px; letter-spacing: -.022em; color: var(--page-paper); }
+.biz__note { font-size: 13px; color: var(--page-dark-muted); }
+.biz__band { border-radius: var(--mz-radius-compact); padding: 16px; }
+.biz__band--quiet { background: var(--page-dark-recessed); }
+.biz__foot { padding: 2px 6px 8px; }
+
+/* B · sandwich: one object, seams only */
+.sand { border-radius: var(--mz-radius-panel); overflow: hidden; background: var(--page-dark); }
+.sand__band { padding: 20px 22px; background: var(--page-dark-recessed); }
+.sand__band + .layer, .layer + .sand__band { border-radius: 0; }
+.sand .layer { border-radius: 0; }
+.sand__base { padding: 20px 22px; display: grid; justify-items: center; gap: 6px; text-align: center; border-top: 1px solid rgba(248,248,248,.14); }
+.sand__base b { font-family: var(--mz-font-display); font-weight: 640; font-size: 17px; letter-spacing: -.022em; color: var(--page-paper); }
+.sand__base span { font-size: 13px; color: var(--page-dark-muted); }
+
+/* C · window: business plate with the material inset as a window */
+.win { background: var(--page-dark); border-radius: var(--mz-radius-panel); padding: clamp(18px,2.4vw,26px); display: grid; gap: 16px; }
+.win__label { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 0 2px; }
+.win__label b { font-family: var(--mz-font-display); font-weight: 640; font-size: 17px; letter-spacing: -.022em; color: var(--page-paper); }
+.win .layer { border-radius: var(--mz-radius-compact); }
+
+/* E · nested frames */
+.nest { border: 1px solid var(--page-line-strong); border-radius: var(--mz-radius-frame); padding: 16px; display: grid; gap: 14px; }
+.nest__tag { display: flex; align-items: baseline; justify-content: center; gap: 10px; flex-wrap: wrap; padding-top: 4px; }
+.nest__tag b { font-family: var(--mz-font-display); font-weight: 640; font-size: 16px; letter-spacing: -.022em; }
+.nest__inner { background: var(--page-dark); border-radius: var(--mz-radius-panel); padding: 16px; display: grid; gap: 14px; }
+
+@media (max-width: 620px) {
+  :root { --card: 100%; }
+  .layer { min-height: 122px; }
+}
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Principle Lab 6 · the business holds it</strong>
+  <nav>
+    <a href="#v1">A enclosure</a><a href="#v2">B sandwich</a><a href="#v3">C window</a>
+    <a href="#v4">D two rails</a><a href="#v5">E nested frames</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>Built on C and D: the business holds the thing, rather than sitting beside it.</b> Two tiers of
+  marks now. The <b>systems you run on</b> churn, so they marquee. The <b>tools you already use</b>
+  are chosen and kept, so they sit still, which is the whole motion budget alongside the living
+  material. Lovable, v0 and the rest of the supplementary set are out of the systems row.
+  <b>Character.AI and Seedance are excluded permanently</b>: the registry now records a
+  <code>form</code> field and both ship a horizontal wordmark under the mark.svg filename, which
+  wrecks a row of symbols. Claude Code has no mark of its own so Claude stands for it, and Manus is
+  raster-only. Add <code>?static</code> to stop everything.
+</div>
+
+<!-- ============================================================== A · ENCLOSURE -->
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">A</span><span class="lab-name">Enclosure</span>
+    <span class="lab-rule">Everything inside your business</span>
+    <span class="lab-live" data-live-badge="v1">Core idle</span>
+    <span class="lab-rat">The business is the outer container and all three tiers live inside it: the systems it calls, the layer it owns, the tools it already runs. Ownership is the frame rather than a label.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <div class="biz on-dark">
+          <div class="biz__head">
+            <span class="biz__name">Your business</span>
+            <span class="biz__note">Context, workflows, decisions, history</span>
+          </div>
+          <div class="biz__band biz__band--quiet">
+            <p class="kicker kicker--dark" style="margin-bottom:12px">Intelligence · swap freely</p>
+            <div class="marquee"><div class="marquee__track" data-marquee></div></div>
+          </div>
+          <div class="layer" data-live-anchor="v1" data-gradient-id="MZ-G13">
+            <div class="layer__lockup">
+              <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+              <span class="layer__name">The Mez Systems layer</span>
+              <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+            </div>
+          </div>
+          <div class="biz__band biz__band--quiet">
+            <p class="kicker kicker--dark" style="margin-bottom:12px">Tools you already run</p>
+            <div class="tools" data-tools></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =============================================================== B · SANDWICH -->
+<article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">B</span><span class="lab-name">Sandwich</span>
+    <span class="lab-rule">One object, seams only</span>
+    <span class="lab-live" data-live-badge="v2">Core idle</span>
+    <span class="lab-rat">Three bands fused into a single manufactured object with hairline seams and no gaps. Systems on top, material through the middle, business and its tools at the base.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <div class="sand on-dark">
+          <div class="sand__band">
+            <p class="kicker kicker--dark" style="margin-bottom:12px">Intelligence · swap freely</p>
+            <div class="marquee"><div class="marquee__track" data-marquee></div></div>
+          </div>
+          <div class="layer" data-live-anchor="v2" data-gradient-id="MZ-G13">
+            <div class="layer__lockup">
+              <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+              <span class="layer__name">The Mez Systems layer</span>
+              <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+            </div>
+          </div>
+          <div class="sand__base">
+            <b>Your business</b>
+            <span>Context, workflows, decisions, history</span>
+            <div class="tools" data-tools style="margin-top:12px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ================================================================= C · WINDOW -->
+<article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">C</span><span class="lab-name">Window</span>
+    <span class="lab-rule">Material inset into the business</span>
+    <span class="lab-live" data-live-badge="v3">Core idle</span>
+    <span class="lab-rat">The business is a solid plate with the layer inset into it like a window, so the material is held by the business rather than stacked next to it. The systems and tools sit inside the same plate, above and below.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <div class="win on-dark">
+          <div class="win__label">
+            <b>Your business</b>
+            <span class="kicker kicker--dark">Context · workflows · decisions · history</span>
+          </div>
+          <div class="marquee"><div class="marquee__track" data-marquee></div></div>
+          <div class="layer" data-live-anchor="v3" data-gradient-id="MZ-G13">
+            <div class="layer__lockup">
+              <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+              <span class="layer__name">The Mez Systems layer</span>
+              <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+            </div>
+          </div>
+          <div class="tools" data-tools></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================== D · TWO RAILS -->
+<article class="lab-item" id="v4">
+  <header class="lab-label">
+    <span class="lab-num">D</span><span class="lab-name">Two rails</span>
+    <span class="lab-rule">Systems in, tools out</span>
+    <span class="lab-live" data-live-badge="v4">Core idle</span>
+    <span class="lab-rat">The layer is the middle of a sequence: intelligence enters from the rail above, the business and its tools sit on the rail below. The material is the join, not a band that happens to be between two others.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <p class="kicker" style="margin-bottom:12px">Intelligence · swap freely</p>
+        <div class="marquee" style="margin-bottom:20px"><div class="marquee__track" data-marquee></div></div>
+
+        <div class="layer" data-live-anchor="v4" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+          </div>
+        </div>
+
+        <div class="biz on-dark" style="margin-top:12px">
+          <div class="biz__head">
+            <span class="biz__name">Your business</span>
+            <span class="biz__note">Context, workflows, decisions, history</span>
+          </div>
+          <div class="biz__band biz__band--quiet">
+            <p class="kicker kicker--dark" style="margin-bottom:12px">Tools you already run</p>
+            <div class="tools" data-tools></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== E · NESTED FRAMES -->
+<article class="lab-item" id="v5">
+  <header class="lab-label">
+    <span class="lab-num">E</span><span class="lab-name">Nested frames</span>
+    <span class="lab-rule">Business outside, layer inside</span>
+    <span class="lab-live" data-live-badge="v5">Core idle</span>
+    <span class="lab-rat">A light outer frame is the business and a charcoal inner frame is what it owns, with the material at the centre. Two containments rather than a stack, so "own the layer around it" is read from the geometry.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+      <div class="stack">
+        <div class="nest">
+          <div class="nest__tag">
+            <b>Your business</b>
+            <span class="kicker">Context · workflows · decisions · history</span>
+          </div>
+          <div class="nest__inner on-dark">
+            <div class="marquee"><div class="marquee__track" data-marquee></div></div>
+            <div class="layer" data-live-anchor="v5" data-gradient-id="MZ-G13">
+              <div class="layer__lockup">
+                <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+                <span class="layer__name">The Mez Systems layer</span>
+                <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+              </div>
+            </div>
+          </div>
+          <div class="tools" data-tools></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="module" src="./core.js"></script>
+</body>
+</html>

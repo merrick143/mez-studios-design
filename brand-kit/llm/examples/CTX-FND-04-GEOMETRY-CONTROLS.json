@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-FND-04-GEOMETRY-CONTROLS",
+  "taskId": "TASK-FND-04-GEOMETRY-CONTROLS",
+  "generatedAt": "2026-07-21T19:49:34+10:00",
+  "systemVersion": "0.1.0-alpha.1+fnd04-canonical",
+  "sourceState": {"repository": "merrick143/mez-studios-design", "branch": "codex/fnd-01-typography", "commit": "5d6d4bd152db299678b7c1dfa8de50c07deedbeb", "workingTree": "dirty"},
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "c2e322754f0c81ee02acee3a4d7a7da2184362b7973f953f7a9505fc69c386a0", "role": "canonical", "required": true, "reason": "Active programme and next-task boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "0db11a95a9446aa04127e0643293f95566a598fa0e02a69e18790d6c1e5e52fe", "role": "canonical", "required": true, "reason": "Live foundation state and next action."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "df777cf1d1f7d14502b75efa0c6621304db3e3fc590099f04aed9571cdc14eed", "role": "canonical", "required": true, "reason": "FND-04 completion and FND-05 sequence."},
+    {"path": "brand-kit/governance/decisions.json", "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587", "role": "governance", "required": true, "reason": "Approved quiet-pressure direction and protected boundaries."},
+    {"path": "brand-kit/foundations/typography/dist/package.json", "sha256": "c5c741bd0b6194610b350e9e4734aa2d591606c5657bb5601cbe603a627f6ecc", "role": "canonical", "required": true, "reason": "Canonical typography dependency."},
+    {"path": "brand-kit/foundations/colour/dist/package.json", "sha256": "183c2acccaeb95737f77b9a5cc77644be03b95054fe6260ee339d68b4afa420b", "role": "canonical", "required": true, "reason": "Canonical colour dependency."},
+    {"path": "brand-kit/foundations/space-layout/dist/package.json", "sha256": "d25d584b61d73685d6c186744bf4a7b175a20ddd1e986de1c1138da9cc68d2fb", "role": "canonical", "required": true, "reason": "Canonical spatial dependency."},
+    {"path": "brand-kit/gradient-library/approval.json", "sha256": "18598eb18a880e58df4f39a17849013726e05353e238c4989d2bb3613be36fc4", "role": "governance", "required": true, "reason": "Protected product-expression authority."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-04-GEOMETRY-CONTROLS.json", "sha256": "66bb3bd28bc66cc8d99d72b488e4008b81fedc03d7cc07a595d9dbfa64d3bec3", "role": "governance", "required": true, "reason": "Completed bounded task, checks and human gate."},
+    {"path": "brand-kit/foundations/geometry-controls/geometry-controls.source.json", "sha256": "701397c2c5ca1ece9642d5cd66f647e646469dc55f8e5b01fcd491598a876dde", "role": "canonical", "required": true, "reason": "Canonical source for geometry, depth, state, field and accessibility contracts."},
+    {"path": "brand-kit/foundations/geometry-controls/review.json", "sha256": "e1d09d46ad028fa60166bcb07ee05206a392a9faab06fd18dcd00e709bf9802a", "role": "governance", "required": true, "reason": "Immutable approval record for control-lock-01."},
+    {"path": "brand-kit/foundations/geometry-controls/dist/manifest.json", "sha256": "efb2342e7bab143913c84f509348b07a8ecc8cd01cef5e4fdf8aae17693272d8", "role": "mirror", "required": true, "reason": "Generated canonical integrity record."},
+    {"path": "brand-kit/workbench/foundations/geometry-controls/index.html", "sha256": "2df33bc577f2d0863698e47490633b1fd0b913892ec759237f68dbc1f4757e26", "role": "fixture", "required": true, "reason": "Canonical shape, depth, state, field, dark, mobile, accessibility and approval proof."}
+  ],
+  "decisions": [
+    {"id": "DEC-CONTROL-001", "status": "approved", "productionEffect": "The candidate implements the approved quiet-pressure direction without treating the calibration plate as production authority."},
+    {"id": "DEC-TYPE-FOUNDATION-001", "status": "approved", "productionEffect": "Canonical control labels and roles are consumed unchanged."},
+    {"id": "DEC-COLOUR-FOUNDATION-001", "status": "approved", "productionEffect": "Canonical surfaces, focus, feedback and disabled roles are consumed unchanged."},
+    {"id": "DEC-SPACE-LAYOUT-FOUNDATION-001", "status": "approved", "productionEffect": "Canonical spacing, density and responsive profiles are consumed unchanged."},
+    {"id": "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "status": "approved", "productionEffect": "Control-lock-01 is canonical for geometry, depth, focus, fields and controls."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id": "CONFLICT-FND-04-EXPERIMENTAL-GEOMETRY", "summary": "Research and workbench proofs contain unrelated 8–40px radii and ambient shadow treatments.", "executionEffect": "inform"},
+    {"id": "CONFLICT-FND-04-EXPRESSION", "summary": "Living Core and product-object depth remains protected expression authority, not generic control decoration.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-FND-04-RELEASE", "summary": "The active migration release is immutable and separate from this candidate.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": ["Do not change canonical typography, colour or spatial values.", "Do not use glow, glass or gradients as generic control decoration.", "Do not omit focus, loading, disabled, error, destructive, forced-colour, reduced-motion or mobile behaviour.", "Do not change canonical FND-04 values without a new bounded decision or rewrite the active migration release."],
+  "contextBudget": {"strategy": "bounded", "requiredFirst": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/llm/tasks/TASK-FND-04-GEOMETRY-CONTROLS.json"], "omitByDefault": ["brand-kit/history/", "brand-kit/source-pack/", "brand-kit/releases/0.1.0-alpha.1/assets/", "play-orb/"]},
+  "humanNotes": ["Olli approved control-lock-01 through H-FND-04-CONTROL-PROOF at 2026-07-21T09:49:34.352Z."]
+}

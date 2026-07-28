@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-CHAN-01-FIRST-RELEASE-CHANNEL-SYSTEMS",
+  "title": "Build the remaining Mez Systems channel systems",
+  "phase": 6,
+  "status": "blocked",
+  "owner": "design-system-agent-plus-Olli",
+  "objective": "Extend the approved canonical engine into the named non-web channel systems with bounded contracts, golden examples, anti-examples and human gates before whole-system certification.",
+  "scope": {
+    "included": [
+      "paid advertising",
+      "organic social",
+      "email",
+      "presentations and reports",
+      "product UI and data visualisation where required",
+      "motion and video",
+      "OG, icon, print and environmental outputs",
+      "channel-specific accessibility, static and production boundaries"
+    ],
+    "excluded": [
+      "changing canonical foundations or product identity without a new decision",
+      "consumer website ingestion or deployment",
+      "certifying unbuilt channels",
+      "using Figma as independent authority"
+    ]
+  },
+  "dependencies": [
+    "TASK-FIG-01-FIGMA-COMPANION"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/docs/consumer-transition-sequence.json",
+      "brand-kit/figma-companion/"
+    ],
+    "decisionIds": [],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/channels/",
+      "acceptance": [
+        "each named channel has a bounded contract, golden examples, anti-examples, verifier and human decision",
+        "channel rules inherit canonical foundations and identity without copied or conflicting values",
+        "production, accessibility and static-equivalence boundaries are explicit"
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "id": "CHAN-01-COVERAGE",
+      "method": "command",
+      "passCondition": "every named channel has the required contract, evidence, verifier and status"
+    },
+    {
+      "id": "CHAN-01-HUMAN",
+      "method": "human",
+      "passCondition": "Olli approves each bounded channel family before certification"
+    }
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-CHAN-01-CHANNEL-SYSTEMS",
+    "approver": "Olli",
+    "approvalQuestion": "Do the bounded channel systems extend the Mez design ethos without fragmenting the canonical engine?"
+  },
+  "stopConditions": [
+    "TASK-FIG-01-FIGMA-COMPANION is incomplete",
+    "a channel invents conflicting foundation or identity values",
+    "consumer repository work or deployment is required",
+    "a channel is labelled complete without visual and mechanical proof"
+  ],
+  "notes": [
+    "This is a programme-level task. Individual channel tasks must be bounded before implementation.",
+    "FIG-01 closed through H-FIG-02-FIGMA-COMPANION-APPROVAL on 28 July 2026; this channel programme was then priority-deferred by Olli.",
+    "SEQ-PRODUCT-UI-FIRST-001 records Olli's 28 July 2026 direction to defer the named non-product channels as low priority. They remain future work and retain their human gates.",
+    "Product UI and data visualisation moved into the bounded TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION task and no longer waits on the deferred channel programme."
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-FIG-01-FIGMA-COMPANION",
+  "phase": 4,
+  "status": "complete",
+  "completedAt": "2026-07-28T10:43:11Z",
+  "fileKey": "QxZT3FJ8BDXOZfBQDt0qPW",
+  "authority": {
+    "figmaRole": "companion-mirror",
+    "productionAuthority": false,
+    "historicalFileMutated": false,
+    "frozenReleaseMutated": false,
+    "runtimeBehaviourRemainsRepositoryOwned": true,
+    "contentRemainsFixtureOrConsumerOwned": true
+  },
+  "pages": [
+    {"name":"20 · Discovery & Evidence","pageId":"43:2","componentSets":6,"visualInspection":"pass"},
+    {"name":"21 · Commerce","pageId":"44:2","componentSets":8,"visualInspection":"pass"},
+    {"name":"22 · Conversion","pageId":"45:2","componentSets":1,"visualInspection":"pass"},
+    {"name":"23 · Runtime Components","pageId":"47:2","componentSets":3,"visualInspection":"pass"}
+  ],
+  "componentSets": {
+    "ProductDiscoveryCard": {"id":"43:64","variants":7,"propertyCount":6},
+    "ProductFeatureCard": {"id":"43:113","variants":6,"propertyCount":6},
+    "ProductProofCard": {"id":"43:170","variants":7,"propertyCount":6},
+    "ProductFeatureBento": {"id":"43:207","variants":4,"propertyCount":6},
+    "ProductPricingCard": {"id":"44:71","variants":8,"propertyCount":7},
+    "ProductPlanComparison": {"id":"44:136","variants":4,"propertyCount":7},
+    "ProductCheckoutSummary": {"id":"44:233","variants":6,"propertyCount":7},
+    "ProductBundleOffer": {"id":"44:294","variants":6,"propertyCount":7},
+    "ProductBundleBuilder": {"id":"44:400","variants":5,"propertyCount":7},
+    "ProductUpsellRow": {"id":"44:441","variants":5,"propertyCount":7},
+    "ProductMobileStickySummary": {"id":"44:477","variants":5,"propertyCount":7},
+    "ProductFamilyMatrix": {"id":"43:288","variants":5,"propertyCount":6},
+    "ProductMenuItem": {"id":"43:324","variants":5,"propertyCount":6},
+    "ProductFooterCTA": {"id":"45:38","variants":5,"propertyCount":6},
+    "ProductPurchaseConfirmation": {"id":"44:523","variants":5,"propertyCount":7},
+    "Global Navigation": {"id":"47:452","variants":14,"propertyCount":5},
+    "Halftone Portrait": {"id":"47:470","variants":4,"propertyCount":3},
+    "Testimonial Marquee": {"id":"47:659","variants":4,"propertyCount":7}
+  },
+  "componentSummary": {
+    "componentSets": 18,
+    "variants": 105,
+    "canonicalPhaseBContracts": 15,
+    "runtimeStaticTwinContracts": 3,
+    "allExpectedVariantCountsPass": true,
+    "allSetsExposeComponentProperties": true
+  },
+  "runtimeStaticTwins": {
+    "Global Navigation": {
+      "variants": "Surface Dark/Light × seven canonical states",
+      "boundary": "Static state representation only. Expanded five-live-sphere allocation, focus management, disclosure semantics and responsive switching execute in repository code."
+    },
+    "Halftone Portrait": {
+      "variants": ["allocated-first-frame", "always-first-frame", "reduced-motion-static", "media-failure"],
+      "source": "brand-kit/components/testimonial-marquee/fixtures/media/kayvon-ai-matte.mp4",
+      "treatment": "grid-step 4; max-radius 1.8; dot #212121; background #ffffff; contrast 1.3; brightness -0.03",
+      "boundary": "A deterministic first-frame twin is shown. Video, canvas rendering, visibility idling and motion allocation execute in repository code."
+    },
+    "Testimonial Marquee": {
+      "variants": "Moving/Reduced Static × Wide/Compact",
+      "fixture": "brand-kit/components/testimonial-marquee/fixtures/ai-os-testimonials.json",
+      "boundary": "The moving variant is labelled as a static twin of the approved 24 px/s drift. Autoscroll, manual-scroll resume, focus/hover pausing, source order and reduced-motion completeness execute in repository code."
+    }
+  },
+  "contentTruth": {
+    "sampleRecordId": "kayvon-jafarzadeh",
+    "name": "Kayvon Jafarzadeh",
+    "username": "@kayvon.ai",
+    "followers": "472K followers",
+    "verified": true,
+    "quote": "I had ChatGPT, Claude, Perplexity, Notion AI, and about 10 random tools bookmarked. Still felt scattered. This made the problem obvious: I didn't need better prompts. I needed better context.",
+    "method": "Exact values read from the approved repository fixture; the earlier placeholder identity, quote and follower count were removed before review."
+  },
+  "detachAudit": {
+    "method": "Created one instance from the default variant of every Phase 4 component set through the Figma Plugin API, detached it, compared width, height and direct child count, then removed the temporary detached frame.",
+    "setsTested": 18,
+    "variantsInventoried": 105,
+    "passed": 18,
+    "failed": 0
+  },
+  "visualInspection": {
+    "method": "Rendered and read the Discovery, Bento, Pricing, Checkout, Footer, Navigation, Halftone and Marquee component-set frames. Re-rendered every corrected frame after repair.",
+    "result": "pass",
+    "repairs": [
+      "Removed ProductFooterCTA title, copy and action collision.",
+      "Removed mobile-sheet desktop-link overlap in Global Navigation.",
+      "Paired Global Navigation dark and light surfaces by state.",
+      "Corrected proportional nested Halftone sizing inside the Testimonial Marquee.",
+      "Reduced Halftone Portrait to a composable square static twin instead of a documented card.",
+      "Recomposed ProductFeatureBento as full-height and full-width splits without inset-card chrome.",
+      "Replaced fabricated testimonial sample content with the exact approved Kayvon fixture."
+    ],
+    "responsiveEvidence": {
+      "method": "Inspected explicit Wide and Compact component variants and their detached geometry in Figma.",
+      "result": "pass",
+      "limitation": "Figma is a static authoring companion, so repository browser widths and runtime reflow remain code-owned evidence rather than a Figma execution claim."
+    }
+  },
+  "liveAudit": {
+    "method": "Figma Plugin API whole-file traversal after final repairs, plus exact Phase 4 set/property and detach audit",
+    "pages": 14,
+    "nodes": 2505,
+    "components": 134,
+    "componentSets": 24,
+    "instances": 247,
+    "textNodes": 1182,
+    "missingFontTextNodes": 0,
+    "temporaryUploadNodes": 0
+  },
+  "phase4TagAudit": {
+    "method": "Figma Plugin API traversal before the final in-place copy and bento corrections",
+    "taggedNodes": 101,
+    "note": "The final corrections mutated existing Phase 4 nodes and removed only untagged temporary upload or inset-decoration nodes; this count was not re-read because the host runtime does not expose private plugin-data key enumeration."
+  },
+  "knownGaps": [
+    "Figma cannot execute runtime motion, keyboard, focus, screen-reader, visibility-idling or reduced-motion behaviour; its static twins and annotations point back to repository contracts.",
+    "The Testimonial Marquee component set uses one real fixture record as the editable property default across its capacity examples; the runtime fixture, not Figma, owns the complete seven-person content set.",
+    "Commerce prices and offer copy are explicitly illustrative authoring content and do not claim production commerce truth.",
+    "Code Connect is deliberately deferred until Olli approves the completed companion structure."
+  ],
+  "next": "H-FIG-02-FIGMA-COMPANION-APPROVAL"
+}

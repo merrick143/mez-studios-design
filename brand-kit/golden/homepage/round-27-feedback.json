@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r27",
+  "verdict": "revision-requested",
+  "recordedAt": "2026-07-27",
+  "productionAuthority": false,
+  "note": "Olli removed the ecosystem rule coda and its bottom AI OS action, then requested a new FAQ section before the footer.",
+  "section": {
+    "id": "GH-S09",
+    "title": "Frequently asked questions",
+    "locked": false,
+    "provisional": true
+  },
+  "requested": {
+    "remove": [
+      "Different systems. Same rule.",
+      "Every Mez System is:",
+      "the five-item ecosystem rule list",
+      "the bottom Explore the AI OS action"
+    ],
+    "add": "A dedicated FAQ section between the selected ecosystem rail and the footer."
+  },
+  "implemented": {
+    "composition": "A quiet two-column editorial FAQ with a concise left introduction and six native disclosure rows on the right.",
+    "interaction": "Accessible details and summary elements; answers work without JavaScript and the plus indicator becomes a minus when open.",
+    "copyBoundary": "Answers use only claims already established by the locked homepage copy and canonical product roster."
+  },
+  "outputStatus": "candidate"
+}

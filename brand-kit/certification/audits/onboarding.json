@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "auditId": "CERT-ONBOARDING-01",
+  "status": "pass-with-runtime-auth-limitation",
+  "method": "Test that a fresh operator can resolve authority, task sequence, skills, validations, output receipts and stop conditions from repository entrypoints without chat history; replay existing GPT-5 and Claude Opus 4.8 receipts through the model-neutral schemas.",
+  "entrypoints": [
+    "AGENTS.md",
+    "brand-kit/AGENT-GUIDE.md",
+    "brand-kit/START-HERE.md",
+    "brand-kit/docs/CURRENT-STATE.md",
+    "brand-kit/docs/ROADMAP.md",
+    "brand-kit/llm/README.md"
+  ],
+  "results": [
+    "The required reading order reaches current authority and task routing before historical context.",
+    "Claude Code and Codex discovery adapters resolve the same repository-owned skill sources.",
+    "Task, context, receipt and evaluation schemas validate named-model work without model-specific fields.",
+    "CERT-01 and PORT-04 state, scope and stop conditions are recoverable without conversation history.",
+    "The benchmark prompt requires no repository tools or hidden context."
+  ],
+  "limitation": "A fresh controlled Claude Opus run could not be executed because the installed Claude CLI is not authenticated. Existing repository evidence from Claude Opus 4.8 was schema-replayed; the controlled same-prompt transfer result is recorded only for GPT-5.6 Codex.",
+  "hiddenContextFailures": [],
+  "productionAuthority": false
+}

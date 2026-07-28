@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.testimonial-marquee",
+  "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
+  "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
+  "candidateRevision": "testimonial-marquee-01-r03",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Olli",
+  "verdict": "revise",
+  "productionAuthority": false,
+  "feedback": [
+    "Add the existing curated profile image for every included operator.",
+    "Render profile identity as Name, Username and Followers in a compact vertical stack.",
+    "Remove all outbound Instagram links.",
+    "Resume auto-scroll quickly after manual scrolling instead of waiting five seconds.",
+    "Remove Previous, Next and Pause controls plus the visible auto-scroll status line.",
+    "Apply hover and focus pause to the testimonial phase rather than individual buttons.",
+    "On mobile, keep the animated square and profile identity in the top row and place the quote across the full row beneath them.",
+    "Remove the homepage section rules, center its introduction and increase its vertical breathing room.",
+    "Change the homepage copy to Running on Mez Systems and Proof from the operating system."
+  ],
+  "motionDecisionException": {
+    "status": "approved-bounded-revision",
+    "approvedBy": "Olli",
+    "approvedAt": "2026-07-28",
+    "scope": "CMP-06 Testimonial Marquee only",
+    "summary": "The Round 02 continuous-autoscroll exception remains bounded to CMP-06. Round 03 removes visible carousel controls at Olli's direction and instead requires phase-level hover and focus pause, native manual scrolling, recovery 900 milliseconds after the final manual gesture, offscreen idling and a complete static reduced-motion state. This does not alter DEC-WEBSITE-MOTION-SYSTEM-001."
+  },
+  "contentDecision": {
+    "profileImages": "Use local crops of the existing curated Mez testimonial profile images.",
+    "instagramLinks": "Do not render them.",
+    "profileOrder": ["Name", "Username", "Followers"]
+  },
+  "humanGate": "Return the refined Round 03 workbench and Golden Homepage composition for final review."
+}

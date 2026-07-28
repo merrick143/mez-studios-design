@@ -1,0 +1,67 @@
+/* TASK-CMP-05 · Halftone Portrait
+ *
+ * Box, aspect and fallback surface only. Every dot is drawn on the canvas by
+ * the element, so there is almost nothing to style here, and that is the point:
+ * the look is a render contract, not a stylesheet a consumer can drift.
+ *
+ * Colours resolve from foundations tokens with literal fallbacks so the
+ * component still renders correctly when dropped into a host that has not
+ * loaded the foundation CSS.
+ */
+
+mez-halftone-portrait {
+  --halftone-plate: var(--mz-colour-neutral-0, #ffffff);
+  --halftone-line: var(--mz-colour-neutral-200, #dadad6);
+  --halftone-muted: var(--mz-colour-neutral-550, #666662);
+  --halftone-radius: var(--mz-radius-panel-24, 24px);
+
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--halftone-radius);
+  background: var(--halftone-plate);
+}
+
+/* The source is decode-only. It is never shown, but it must stay in the layout
+   and undisplayed rather than display:none, because a display:none video is
+   not guaranteed to decode frames in every browser. */
+mez-halftone-portrait .mz-halftone__source {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+mez-halftone-portrait .mz-halftone__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* A portrait whose source failed still occupies its box and says why, rather
+   than collapsing the layout around it. */
+mez-halftone-portrait[data-failure]::after {
+  content: attr(data-failure);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--mz-space-16, 16px);
+  border: 1px solid var(--halftone-line);
+  border-radius: inherit;
+  background: var(--halftone-plate);
+  color: var(--halftone-muted);
+  font: var(--mz-type-body-s, 400 13px/1.5 system-ui, sans-serif);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Nothing to disable: the element never animates under reduced motion, and
+     the static frame it paints is the complete image. This block exists so the
+     intent is visible to anyone auditing the stylesheet for a motion escape. */
+  mez-halftone-portrait {
+    --halftone-motion: none;
+  }
+}

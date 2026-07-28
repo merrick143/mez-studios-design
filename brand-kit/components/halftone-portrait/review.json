@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.halftone-portrait",
+  "pantryId": null,
+  "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF",
+  "taskId": "TASK-CMP-05-HALFTONE-PORTRAIT",
+  "candidateRevision": "halftone-portrait-01-r01",
+  "verdict": "approved",
+  "productionAuthority": true,
+  "decisionId": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+  "recordedAt": "2026-07-27",
+  "requestedBy": "Olli",
+  "summary": "First candidate of the Halftone Portrait. Ported from the working React implementation built on the testimonial surface in the mezcorp repository, where the treatment was tuned against seven real clips and locked by Olli on 2026-07-27. Only the animated portrait is in scope. The testimonial card was explicitly excluded at Olli's request because he intends to design a better one.",
+  "provenance": {
+    "origin": "mezcorp_claude_code/departments/design/projects/testimonial-slider",
+    "originComponents": "HalftoneCanvas.jsx and HalftoneVideo.jsx, React",
+    "lockedTreatment": "HOUSE_EFFECT, locked by Olli 2026-07-27",
+    "mediaPreparation": "pipeline/matte_clips.py in the originating repository",
+    "portChanges": [
+      "React component became a dependency-free custom element.",
+      "Live MediaPipe segmentation was removed entirely and replaced by a matted source. This deletes an 11MB wasm runtime, a 244KB model and a per-frame neural network from every consumer.",
+      "Added the one-live-instance motion allocation required by Website Motion 1.0.0. The React original animated every instance on the page at once.",
+      "Added a complete reduced-motion static frame. The React original had no reduced-motion path and would animate regardless."
+    ]
+  },
+  "whatWasProven": [
+    {
+      "claim": "The matted source reproduces the locked look with no runtime model",
+      "method": "Matted seven approved clips offline, then rendered the fixture at the locked attribute values in the workbench",
+      "result": "Renders. Zero frames failed segmentation across all seven clips (991 frames). Side-by-side comparison against the React original is still a human judgement, not a measurement."
+    },
+    {
+      "claim": "Exactly one instance animates under the default allocated policy",
+      "method": "Workbench mounts seven portraits and samples data-motion every 500ms while scrolling",
+      "result": "PASS. Allocated pool peak 1 across 791 samples with 7 allocated portraits on the page, measured alongside 6 always-on portraits."
+    },
+    {
+      "claim": "Reduced motion paints a complete image rather than a blank box",
+      "method": "Loaded the workbench with ?static and counted live instances, playing videos and inked canvases",
+      "result": "PASS. 0 live, 0 videos playing, every portrait static, and the six real portraits carry full ink."
+    },
+    {
+      "claim": "A missing source keeps the box and states the reason",
+      "method": "Workbench and fixture both mount a deliberately broken source",
+      "result": "PASS. data-failure='source unavailable', the box keeps its size, the reason renders, mez-halftone-failure dispatched."
+    },
+    {
+      "claim": "No network calls and no model at runtime",
+      "method": "verify_halftone_portrait_contract.py asserts against the JavaScript, not the documentation",
+      "result": "PASS. No fetch, XMLHttpRequest, importScripts, remote import, mediapipe, tflite or onnx reference exists in the element."
+    },
+    {
+      "claim": "Multiple always-on portraits animate together and idle off screen",
+      "method": "Workbench marquee row of six with motion-policy=always. Counted live instances and playing videos while visible, then scrolled the row fully out of a 420px viewport and counted again.",
+      "result": "PASS. 6/6 live and 7 videos playing while visible. After scrolling away: 0 live, 0 videos playing, 0 live-while-off-screen. The allocated pool peaked at 1 throughout, so the default budget was never breached by the exception."
+    },
+    {
+      "claim": "The candidate remains complete and overflow-free across every declared viewport.",
+      "method": "In-app Browser render, visual inspection and geometry measurement at 320, 360, 375, 390, 430, 768, 920, 1024, 1280 and 1440 CSS pixels; recorded in responsive-evidence.json.",
+      "result": "PASS. All ten measurements had 0px document overflow, the portrait remained square from 257px through its 320px cap, the locked proof recomposed from one to two columns, and the allocated pool stayed at one live instance."
+    },
+    {
+      "claim": "The exact candidate passed Gate B without a blocking visual or product-truth regression.",
+      "method": "design-critique skill, all required responsive captures, four named tests and anti-slop canon sweep.",
+      "result": "PASS. 67/75 with no blocking reason. T3 measured 36.64% of the live portrait changing over 1.04 video-seconds while the adjacent static portrait changed 0%."
+    }
+  ],
+  "knownGaps": [
+    "invert is degraded by the baked matte. With the subject composited over a light plate, inverting dots the plate rather than the subject, so the 'inverted' treatment that worked under live segmentation cannot be reproduced. The locked treatment does not use invert, so this is a limitation rather than a defect. An alpha-channel matte would restore it at the cost of format support."
+  ],
+  "humanDecisionsRequired": [],
+  "gateB": {
+    "record": "brand-kit/components/halftone-portrait/gate-b.json",
+    "score": 67,
+    "maximum": 75,
+    "verdict": "pass-candidate",
+    "blockingReasonCount": 0,
+    "method": "Rendered inspection across every declared viewport, the four named tests and the anti-slop canon sweep."
+  },
+  "responsiveEvidence": "brand-kit/components/halftone-portrait/responsive-evidence.json",
+  "authorityScope": "Canonical component authority granted by Olli on 2026-07-28 under DEC-HALFTONE-PORTRAIT-COMPONENT-001. It covers the dependency-free custom element, locked treatment and documented render, accessibility and motion contracts. It does not authorize media preparation, consent operations, testimonial content or surrounding composition. The component remains outside the Phase B product-and-commerce pantry.",
+  "approval": "brand-kit/components/halftone-portrait/approval.json",
+  "resolvedSinceFirstDraft": [
+    {
+      "question": "Whether a marquee may animate more than one portrait at once",
+      "answer": "Approved by Olli on 2026-07-27. Recorded as motionDecisionException in the source contract and implemented as motion-policy=\"always\". The default policy is unchanged.",
+      "decidedBy": "Olli"
+    },
+    {
+      "question": "Whether the fixture likenesses may ship in the repository",
+      "answer": "Consent confirmed by Olli on 2026-07-27. The subjects are people he knows personally and who agreed to appear. Recorded in fixtures/media/PROVENANCE.md.",
+      "decidedBy": "Olli"
+    }
+  ]
+}

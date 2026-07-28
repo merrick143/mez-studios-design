@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.halftone-portrait",
+  "taskId": "TASK-CMP-05-HALFTONE-PORTRAIT",
+  "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF",
+  "candidateRevision": "halftone-portrait-01-r01",
+  "recordedAt": "2026-07-28",
+  "reviewer": "Codex in-app Browser",
+  "method": "Rendered the live workbench at every source-contract viewport plus the 920px Gate B width. At each width, measured document overflow, the primary host box, locked-treatment column count and the live allocated-instance count; visually inspected captures at every Gate B width and the three additional declared widths.",
+  "declaredViewports": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440],
+  "gateBViewports": [320, 375, 390, 768, 920, 1280, 1440],
+  "results": [
+    {"viewport": 320, "clientWidth": 305, "pageOverflowPx": 0, "primarySizePx": [257, 257], "lockedColumns": 1, "allocatedLive": 1},
+    {"viewport": 360, "clientWidth": 345, "pageOverflowPx": 0, "primarySizePx": [297, 297], "lockedColumns": 1, "allocatedLive": 1},
+    {"viewport": 375, "clientWidth": 360, "pageOverflowPx": 0, "primarySizePx": [312, 312], "lockedColumns": 1, "allocatedLive": 1},
+    {"viewport": 390, "clientWidth": 375, "pageOverflowPx": 0, "primarySizePx": [320, 320], "lockedColumns": 1, "allocatedLive": 1},
+    {"viewport": 430, "clientWidth": 415, "pageOverflowPx": 0, "primarySizePx": [320, 320], "lockedColumns": 1, "allocatedLive": 1},
+    {"viewport": 768, "clientWidth": 753, "pageOverflowPx": 0, "primarySizePx": [320, 320], "lockedColumns": 2, "allocatedLive": 1},
+    {"viewport": 920, "clientWidth": 905, "pageOverflowPx": 0, "primarySizePx": [320, 320], "lockedColumns": 2, "allocatedLive": 1},
+    {"viewport": 1024, "clientWidth": 1009, "pageOverflowPx": 0, "primarySizePx": [320, 320], "lockedColumns": 2, "allocatedLive": 1},
+    {"viewport": 1280, "clientWidth": 1265, "pageOverflowPx": 0, "primarySizePx": [320, 320], "lockedColumns": 2, "allocatedLive": 1},
+    {"viewport": 1440, "clientWidth": 1425, "pageOverflowPx": 0, "primarySizePx": [320, 320], "lockedColumns": 2, "allocatedLive": 1}
+  ],
+  "result": "PASS. The portrait remained square, no viewport produced document overflow, the locked proof recomposed from one to two columns without clipping, and the default allocation never exceeded one live instance.",
+  "productionAuthority": false,
+  "outputStatus": "candidate-evidence"
+}

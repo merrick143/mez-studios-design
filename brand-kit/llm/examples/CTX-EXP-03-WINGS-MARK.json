@@ -1,0 +1,29 @@
+{
+  "schemaVersion":"1.0.0","bundleId":"CTX-EXP-03-WINGS-MARK","taskId":"TASK-EXP-03-WINGS-MARK","generatedAt":"2026-07-21T23:49:34+10:00","systemVersion":"1.0.0+wings-mark-candidate",
+  "sourceState":{"repository":"merrick143/mez-studios-design","branch":"codex/fnd-01-typography","commit":"5d6d4bd152db299678b7c1dfa8de50c07deedbeb","workingTree":"dirty"},
+  "files":[
+    {"path":"brand-kit/START-HERE.md","sha256":"4b101d5e096670f6bcad5d8edb59c3d9df94dfdf290ab8d38bd8fd84977a98f6","role":"canonical","required":true,"reason":"Canonical sphere status and active Wings gate."},
+    {"path":"brand-kit/docs/CURRENT-STATE.md","sha256":"97d505e0c089b080f596da471338ceed313a8445d1060e4019f183a201cf8a86","role":"canonical","required":true,"reason":"Live mark candidate boundary."},
+    {"path":"brand-kit/docs/ROADMAP.md","sha256":"374e941d214fa79ba3164611a1caec678ef26c4c8ed3d165fccbf1eac3bb2eba","role":"canonical","required":true,"reason":"EXP-03 review state and later boundaries."},
+    {"path":"brand-kit/llm/tasks/TASK-EXP-03-WINGS-MARK.json","sha256":"10d9fc0eb5ed430c8b580cc90a6cfbf3ffa8f3ab57978235e5008d34d5c6cdcf","role":"governance","required":true,"reason":"Bounded task and gate."},
+    {"path":"brand-kit/expressions/wings-mark/wings-mark.source.json","sha256":"9ff35dc3814f18c3c974f8b2be9578450f8f5496091e63c7fcf07f4090305ecd","role":"fixture","required":true,"reason":"Schema-backed mark hierarchy candidate."},
+    {"path":"brand-kit/expressions/wings-mark/dist/manifest.json","sha256":"9c42226db120701b2cdf6dd209622cbb07ae98e3ca8780f4fb2789c6272e2aaa","role":"mirror","required":true,"reason":"Deterministic candidate integrity."},
+    {"path":"brand-kit/workbench/expressions/wings-mark/index.html","sha256":"2a936b50eb72b08160badbcb66e4a3b365f4aec01c921137d7e7c6def164a9a2","role":"fixture","required":true,"reason":"Focused four-role human proof."},
+    {"path":"brand-kit/source-pack/design-system-export/assets/wings.svg","sha256":"e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33","role":"canonical","required":true,"reason":"Exact two-path mark authority."},
+    {"path":"brand-kit/expressions/sphere/sphere.source.json","sha256":"a59d663a5cae4cb54b596f6e8b34835e0f3a376e999f9fb83e26bebeab264dca","role":"canonical","required":true,"reason":"Canonical sphere Wings usage inherited unchanged."},
+    {"path":"brand-kit/releases/foundations/dist/manifest.json","sha256":"2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639","role":"canonical","required":true,"reason":"Canonical type and colour foundation."}
+  ],
+  "decisions":[
+    {"id":"DEC-SPHERE-EXPRESSION-001","status":"approved","productionEffect":"Fixed white Wings and rare focal allocation are inherited."},
+    {"id":"DEC-DISC-EXPRESSION-001","status":"approved","productionEffect":"39% white product-core mark is inherited."},
+    {"id":"DEC-COLOUR-FOUNDATION-001","status":"approved","productionEffect":"#2E2E2E and white own ordinary marks; no corporate hue is added."},
+    {"id":"DEC-TYPE-FOUNDATION-001","status":"approved","productionEffect":"Inter supplies the live Mez Systems label."},
+    {"id":"DEC-GRADIENT-LIBRARY-001","status":"approved","productionEffect":"One gradient Wings mask may be studied without new palette data."},
+    {"id":"DEC-MOTION-002","status":"approved","productionEffect":"At most one exceptional gradient Wings runtime may animate."}
+  ],
+  "artifacts":[],"consumers":[],
+  "knownConflicts":[{"id":"CONFLICT-EXP-03-INK","summary":"Archive guidance used #0D0D0D while the canonical colour foundation specifies #2E2E2E for Wings.","executionEffect":"constrain"},{"id":"CONFLICT-EXP-03-VARIANTS","summary":"Archive app-icon, roundel, monoline and keyline variants never passed the current human gate.","executionEffect":"constrain"}],
+  "stopConditions":["Do not redraw the Wings or add a corporate hue.","Do not make gradient Wings the ordinary holdco or product mark.","Do not promote parked icon or channel variants.","Do not expand into cards, homepage, Figma or consumers."],
+  "contextBudget":{"strategy":"bounded","requiredFirst":["brand-kit/START-HERE.md","brand-kit/docs/CURRENT-STATE.md","brand-kit/llm/tasks/TASK-EXP-03-WINGS-MARK.json"],"omitByDefault":["brand-kit/history/","consumer repositories","Figma"]},
+  "humanNotes":["Olli approved canonical sphere 1.0.0 and asked to proceed. wings-mark-01 is the next independent decision and has no production authority."]
+}

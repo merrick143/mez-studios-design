@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r24-s06-lab1",
+  "verdict": "exploration-request",
+  "recordedAt": "2026-07-27",
+  "productionAuthority": false,
+  "section": {
+    "id": "GH-S06",
+    "title": "Available now: AI OS",
+    "status": "open"
+  },
+  "humanDirection": [
+    "Create ten different variants of the section.",
+    "Keep the bento direction in play.",
+    "Make the AI OS product card smaller because the current card uses unnecessary space.",
+    "Preserve the How it works visual as a strong direction.",
+    "Reduce text because most visitors will not read the current amount.",
+    "Improve the Features card or split it into two different cards."
+  ],
+  "implementationBoundary": {
+    "lab": "brand-kit/workbench/golden/homepage/s06-ai-os-lab/",
+    "homepageChanged": false,
+    "currentSectionPreserved": true,
+    "selectionRequiredBeforeLanding": true
+  },
+  "outputStatus": "research"
+}

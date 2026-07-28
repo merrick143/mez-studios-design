@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.typography",
+  "status": "canonical",
+  "decisionIds": [
+    "DEC-TYPE-001",
+    "DEC-TYPE-FOUNDATION-001",
+    "DEC-MIGRATION-SEQUENCE-001"
+  ],
+  "portableRoot": ".",
+  "productionReadyForScope": true,
+  "generated": [
+    "tokens.css",
+    "tokens.json",
+    "package.json"
+  ],
+  "artifactCount": 22,
+  "artifacts": [
+    {
+      "path": "fonts/geist/Geist-Variable.ttf",
+      "bytes": 169056,
+      "sha256": "cdcc4815cbf5f9882fa74e48f8ab410a0495781a58ff7316570f664e7e987753"
+    },
+    {
+      "path": "fonts/geist/Geist-Variable.woff2",
+      "bytes": 69652,
+      "sha256": "a369fcf5628ea2aa4e1b9e2ec6a5b3624e365bda588e1f0f2f12b564f728fbb8"
+    },
+    {
+      "path": "fonts/geist/OFL.txt",
+      "bytes": 4383,
+      "sha256": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90"
+    },
+    {
+      "path": "fonts/ibm-plex-mono/IBMPlexMono-Regular.ttf",
+      "bytes": 173052,
+      "sha256": "7c6fbddca4b700be918f5f6183d9bd4464fa427fe435f0b480d77fe2bb8c5a43"
+    },
+    {
+      "path": "fonts/ibm-plex-mono/IBMPlexMono-Regular.woff2",
+      "bytes": 49248,
+      "sha256": "ba204497f16b6d334cee9d1e963a831b73e3a56e1d6300a8489d18df7214b350"
+    },
+    {
+      "path": "fonts/ibm-plex-mono/OFL.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "path": "fonts/instrument-serif/InstrumentSerif-Italic.ttf",
+      "bytes": 71592,
+      "sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385"
+    },
+    {
+      "path": "fonts/instrument-serif/InstrumentSerif-Italic.woff2",
+      "bytes": 28096,
+      "sha256": "4f7aacc18d491dea8778bbc591db87b9455625899ed5f913957e7fd82604c294"
+    },
+    {
+      "path": "fonts/instrument-serif/InstrumentSerif-Regular.ttf",
+      "bytes": 70012,
+      "sha256": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88"
+    },
+    {
+      "path": "fonts/instrument-serif/InstrumentSerif-Regular.woff2",
+      "bytes": 27440,
+      "sha256": "ca21b99b0d6b88a0dc34cebfe48104611e5c7f8f92746bed26c37aa470174322"
+    },
+    {
+      "path": "fonts/instrument-serif/OFL.txt",
+      "bytes": 4405,
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521"
+    },
+    {
+      "path": "fonts/inter/Inter-Variable-Italic.ttf",
+      "bytes": 910252,
+      "sha256": "d6f1f6a172d9e588438db9f986fd5cfad7b30f644374080a8a9d4d91e344586f"
+    },
+    {
+      "path": "fonts/inter/Inter-Variable-Italic.woff2",
+      "bytes": 387976,
+      "sha256": "e564f652916db6c139570fefb9524a77c4d48f30c92928de9db19b6b5c7a262a"
+    },
+    {
+      "path": "fonts/inter/Inter-Variable.ttf",
+      "bytes": 879708,
+      "sha256": "4989b125924991b90d05b2d16e0e388c48f7d5bb8b30539bbf9c755278d0ccaf"
+    },
+    {
+      "path": "fonts/inter/Inter-Variable.woff2",
+      "bytes": 352240,
+      "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3"
+    },
+    {
+      "path": "fonts/inter/OFL.txt",
+      "bytes": 4380,
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "path": "package.json",
+      "bytes": 629,
+      "sha256": "c5c741bd0b6194610b350e9e4734aa2d591606c5657bb5601cbe603a627f6ecc"
+    },
+    {
+      "path": "review.json",
+      "bytes": 452,
+      "sha256": "78cf1de497f47e59739f5aab67d1ac04ef6752a8adfcb5a0f46e2ae33bf2d7ee"
+    },
+    {
+      "path": "tokens.css",
+      "bytes": 11248,
+      "sha256": "edcf2eeb036f8745c21e6e4a93a42fb8d38cc9f1a75ba08053d2e2a0a73dc7c9"
+    },
+    {
+      "path": "tokens.json",
+      "bytes": 10965,
+      "sha256": "53998a935e3aafaf93d6fe055b031163391ae5582cfe3921f680a00ad2b95d85"
+    },
+    {
+      "path": "typography.schema.json",
+      "bytes": 4366,
+      "sha256": "d1c85bfca8e27d0b5f830ec8daa3c4f0aad230050e0ad1711172a36f753194d4"
+    },
+    {
+      "path": "typography.source.json",
+      "bytes": 9395,
+      "sha256": "5bf905645d94084a9caa51a02e4f9e5173ecdd38e7ea414b509591a86cc98285"
+    }
+  ]
+}

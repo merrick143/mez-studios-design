@@ -6,3 +6,6 @@ __pycache__/
 node_modules/
 brand-kit/workspace/*
 !brand-kit/workspace/.gitkeep
+
+# Agent tooling artefacts, not project work
+.playwright-mcp/

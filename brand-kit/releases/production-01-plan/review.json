@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-01-RELEASE-BOUNDARY",
+  "planId": "mz.systems.release.production-01-plan",
+  "verdict": "pass-with-blocking-prerequisites",
+  "recordedAt": "2026-07-28T11:01:07+10:00",
+  "reviewer": "Codex plus deterministic verifier",
+  "humanGateRequired": false,
+  "productionAuthority": false,
+  "generatedRelease": false,
+  "outputStatus": "release-plan",
+  "whatWasProven": [
+    {
+      "claim": "Every Golden Homepage release-copy unit has one authority class and one owning follow-up.",
+      "method": "Schema validation plus dependency-ID, class-set, source-path and follow-up assertions in verify_release_boundary.py; current HTML/CSS/JavaScript imports are traced against the inventory.",
+      "result": "PASS. Twenty-one release-copy or external ownership units are classified across all five required authority classes with unique IDs and follow-up ownership."
+    },
+    {
+      "claim": "CMP-05 and CMP-06 enter the plan only through separate recorded approvals.",
+      "method": "Verifier reads both live source contracts and the release plan.",
+      "result": "PASS. Both exact candidate revisions are canonical under separate Olli approval records and decision IDs; both are release-eligible inputs to PORT-03."
+    },
+    {
+      "claim": "Raw operating-proof media cannot enter the release through this plan.",
+      "method": "Verifier validates the proof payload schema/example, compares all four provenance hashes and rejects any release-eligible record without a reviewed redacted derivative.",
+      "result": "PASS. The example contains no original paths, original bytes, derivative paths, derivative hashes or approval and is explicitly publicReleaseEligible false."
+    },
+    {
+      "claim": "Clean install, version visibility, update and rollback have executable acceptance conditions.",
+      "method": "Schema and semantic verifier assertions against the package entrypoints, required groups, declared viewports, clean-copy method and versioning clauses.",
+      "result": "PASS. The plan requires a package-only temporary copy, no checkout or network dependency, deterministic integrity, eight viewports, accessibility/fallback checks, visible version/hash and immutable rollback."
+    },
+    {
+      "claim": "The future consumer boundary is named without changing a consumer repository.",
+      "method": "Plan inspection and Git diff scope.",
+      "result": "PASS. CON-MEZ-SYSTEMS-WEB-001 is named, its repository remains null pending registration, cross-repository runtime imports are forbidden and no consumer repository was read or modified."
+    },
+    {
+      "claim": "Current decision authority drift is visible rather than laundered into a production plan.",
+      "method": "PORT-02 compared the immutable cutover ledger, the three signed supporting records and the new post-cutover supplement; the release-boundary verifier rechecks the IDs, base-ledger path and source paths.",
+      "result": "PASS. The cutover ledger retains its exact activated hash. The supplement indexes the three prior approvals plus DEC-HALFTONE-PORTRAIT-COMPONENT-001 and DEC-TESTIMONIAL-MARQUEE-COMPONENT-001, each pointing to its bounded Olli approval record."
+    }
+  ],
+  "knownGaps": [
+    "No production release has been assembled or copied into isolation; that is TASK-PORT-03 work.",
+    "No operating-proof derivative has been redacted or visually approved; the current four screenshots remain evidence-only.",
+    "CMP-06 retains explicitly accepted VoiceOver, physical-pointer and device-performance follow-ups for the named consumer; follower counts are frozen dated evidence.",
+    "The named production-web consumer has no registered repository or consumer proof yet.",
+    "Third-party mark packaging still requires a bounded legal/attribution inclusion decision; the current registry is reference-only with productionAuthority false."
+  ],
+  "humanDecisionsRequired": [
+    "Approve the exact redacted operating-proof derivative bytes before public release."
+  ],
+  "authorityScope": "Agent-owned release boundary only. It creates no component decision, production authority, generated release, deployment or consumer authority."
+}

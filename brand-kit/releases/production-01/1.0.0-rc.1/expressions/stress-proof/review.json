@@ -1,0 +1,17 @@
+{
+  "schemaVersion":"1.0.0",
+  "gateId":"H-EXP-08-EXPRESSION-STRESS-PROOF",
+  "taskId":"TASK-EXP-08-EXPRESSION-STRESS-PROOF",
+  "candidateRevision":"expression-stress-01-r01",
+  "proofId":"mz.systems.expression.stress-proof",
+  "candidateStatus":"review-candidate",
+  "verdict":"approve",
+  "note":"Olli approved the bounded EXP-08 certification and instructed the programme to proceed. Approval covers six suites and fourteen representative stress scenarios without reopening approved visual, component or motion grammar.",
+  "reviewedAt":"2026-07-23T01:32:07Z",
+  "approver":"Olli",
+  "decisionId":"DEC-EXPRESSION-STRESS-CERTIFICATION-001",
+  "resultingStatus":"canonical",
+  "programmeStatus":"complete",
+  "authorityScope":"Canonical authority certifies the repository expression suite for the named reflow, content, fallback, accessibility, recovery and one-live-core invariants only. Real provider logic, payment processing, production data, consumer-framework integration, global-navigation anatomy and golden-homepage composition remain outside this decision.",
+  "productionAuthority":true
+}

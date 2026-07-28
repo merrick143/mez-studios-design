@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "foundationId": "mz.systems.foundation.space-layout",
+  "status": "canonical",
+  "contentRoles": {
+    "reading": {
+      "width": "reading",
+      "purpose": "Long-form prose, decision copy and focused explanation"
+    },
+    "standard": {
+      "width": "standard",
+      "purpose": "Default page sections, comparisons and two-column work"
+    },
+    "wide": {
+      "width": "wide",
+      "purpose": "Dense ledgers, product families and spatial proofs that earn more columns"
+    }
+  },
+  "relationships": {
+    "split": {
+      "compact": [
+        1
+      ],
+      "medium": [
+        1
+      ],
+      "expanded": [
+        7,
+        5
+      ],
+      "wide": [
+        7,
+        5
+      ]
+    },
+    "readingAside": {
+      "compact": [
+        1
+      ],
+      "medium": [
+        1
+      ],
+      "expanded": [
+        8,
+        4
+      ],
+      "wide": [
+        8,
+        4
+      ]
+    },
+    "equalFamily": {
+      "compact": [
+        1
+      ],
+      "medium": [
+        2
+      ],
+      "expanded": [
+        3
+      ],
+      "wide": [
+        5
+      ]
+    },
+    "evidenceLedger": {
+      "compact": [
+        1
+      ],
+      "medium": [
+        2
+      ],
+      "expanded": [
+        3
+      ],
+      "wide": [
+        3
+      ]
+    }
+  },
+  "policies": {
+    "baseRhythm": "All governed spacing values are integer multiples of the four-pixel base unit; optical exceptions belong to a named future component contract.",
+    "contentWidth": "Choose reading, standard or wide from the information relationship. A page may move between named widths; it must not invent a fourth container.",
+    "responsive": "Recompose relationships at named profiles in source order. Viewport width triggers a profile, but content type determines the resulting layout.",
+    "density": "Calm, standard and operational modes retain the same facts while changing adjacency, padding and evidence concentration for receiver intent.",
+    "equalGeometry": "Use equal geometry for comparable siblings such as a product family or plan set; do not equalise unlike content merely to make a grid look tidy.",
+    "alignmentBreak": "A deliberate break may emphasise one dominant object or transition, but reading order, container return and the reason for the break must remain explicit.",
+    "contentSafety": "Copy expands before type shrinks. No supported viewport may require page-level horizontal scrolling, clipping, content reordering or hidden essential evidence.",
+    "channels": "Marketing, email, documents and dense interfaces share the spacing source while choosing different content widths and density modes. Cross-channel consistency does not mean identical composition."
+  },
+  "testViewports": [
+    320,
+    375,
+    430,
+    768,
+    1024,
+    1280,
+    1440
+  ]
+}

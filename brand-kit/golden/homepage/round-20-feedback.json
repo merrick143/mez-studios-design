@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r20",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-26",
+  "note": "GH-S03 rebuilt as the concentric orbit and landed in the page. Selected by Olli from principle-lab-8 variant A after eight principle labs. GH-S02's staircase from round 19 is unchanged.",
+  "sections": [
+    {
+      "id": "GH-S03",
+      "title": "The Mez Systems principle",
+      "verdict": "direction-selected",
+      "feedback": "Lock in A. Concentric: outer ring the business connections, inner ring the harnesses, product disc at the centre cycling through all five gradients."
+    }
+  ],
+  "design": {
+    "composition": "Three radii of one object rather than three stacked bands. Business connections hold the outer ring turning one way, harnesses the inner turning the other, and the product core sits still at the centre of both.",
+    "twoRegisters": "A harness is a system the business is run from: named context, 25px, high opacity. A connection is a tool the business already uses: 17px, half opacity. The gap between the treatments is what says a harness is not a plugin.",
+    "productCycle": "The core shows every product in the registry in turn. renderer.setCore() swaps a mounted surface's gradient without a second WebGL context but the swap is a hard cut, so the transition rides the exact static twins: fade the next product's twin in over the live canvas, swap underneath it, fade the twin back out. The element's CSS background follows so the no-WebGL fallback lands on the same product.",
+    "coreShape": "Mounted as a canonical disc expression rather than a circle invented for the section.",
+    "greyPrefix": "Removed, matching the correction Olli asked for in S02. head-quiet is now unused across the whole page."
+  },
+  "marksPolicy": {
+    "source": "brand-kit/assets/third-party-marks/registry.json",
+    "rule": "Only entries recorded as form:symbol may sit in a ring of peers.",
+    "excluded": {
+      "wordmarks": ["character-ai", "seedance"],
+      "filledAppIcon": ["manus"],
+      "noMarkInRegistry": ["slack", "linear", "hubspot", "klaviyo", "1password", "google-drive", "google-calendar", "shadcn", "mcp", "claude-code", "hermes", "openclaw"]
+    },
+    "note": "Claude stands for Claude Code, which has no third-party mark of its own. Nothing is drawn or invented."
+  },
+  "regressionsCausedAndRepaired": [
+    {
+      "what": "Replacing the GH-S03 CSS block deleted the shared authored-split-card family, which GH-S04 still consumes, and the principle thesis styles.",
+      "severity": "cardinal: an unrequested change that damaged a shared treatment",
+      "recovery": "Not recoverable. brand-kit/workbench/golden/ is untracked, so there was no git history to restore from. Both were rebuilt to the canonical grammar rather than restored, and verify_homepage_round20.py now guards every part of the family against a second loss.",
+      "verified": "S04 renders again: two columns, radius 24, charcoal viz half #171715, four chips, monochrome badge."
+    }
+  ],
+  "openRisks": [
+    "brand-kit/workbench/golden/ is not under version control. A destructive edit there has no undo. Worth committing before the next structural change.",
+    "Pre-existing em dashes remain in the authored copy of S03's thesis, S04 and S06, which breaks CPY-05. Left alone rather than rewriting approved copy in sections this round did not own."
+  ],
+  "validations": [
+    {"check": "verify_portability.py", "result": "pass"},
+    {"check": "verify_llm_contracts.py", "result": "pass"},
+    {"check": "verify_workbench.py", "result": "pass"},
+    {"check": "verify_library.py", "result": "pass"},
+    {"check": "verify_architecture.py", "result": "pass"},
+    {"check": "verify_authority.py", "result": "pass"},
+    {"check": "verify_release.py", "result": "pass"},
+    {"check": "verify_homepage_round19.py", "result": "pass"},
+    {"check": "verify_homepage_round20.py", "result": "pass"},
+    {"check": "one canvas, one data-mz-core, disc core square at 161x161", "result": "pass"},
+    {"check": "product cycle observed across all five registry gradients", "result": "pass"},
+    {"check": "horizontal reflow 390 and 1440", "result": "pass, no body overflow"}
+  ],
+  "outputStatus": "candidate",
+  "productionAuthority": false
+}

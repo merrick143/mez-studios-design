@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mez Global Navigation — static HTML fixture</title>
+    <link rel="stylesheet" href="../../../releases/foundations/dist/index.css" />
+    <link rel="stylesheet" href="../mez-global-navigation.css" />
+  </head>
+  <body>
+    <mez-global-navigation home-href="/" systems-href="/systems/" about-href="/about/"></mez-global-navigation>
+    <script type="module" src="../mez-global-navigation.js"></script>
+    <script>
+      document.addEventListener("mez-product-navigate", event => {
+        // The authorised consumer maps event.detail.slug to its real route.
+        console.info("Product navigation requested", event.detail);
+      });
+    </script>
+  </body>
+</html>

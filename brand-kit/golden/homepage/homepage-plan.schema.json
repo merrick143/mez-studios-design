@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/homepage-plan.schema.json",
+  "title": "Mez Systems golden homepage implementation plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "planId",
+    "version",
+    "status",
+    "productionAuthority",
+    "taskId",
+    "gateId",
+    "copyDecisionId",
+    "title",
+    "objective",
+    "narrative",
+    "sections",
+    "hero",
+    "motionAllocation",
+    "responsive",
+    "evidence",
+    "consumerBoundary",
+    "implementationRounds",
+    "prohibited",
+    "humanGate"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "planId": {"const": "mz.systems.golden.homepage.plan"},
+    "version": {"const": "0.1.0-plan"},
+    "status": {"const": "implementation-plan"},
+    "productionAuthority": {"const": false},
+    "taskId": {"const": "TASK-GOLD-01-GOLDEN-HOMEPAGE"},
+    "gateId": {"const": "H-GOLD-01-HOMEPAGE-PROOF"},
+    "copyDecisionId": {"const": "DEC-GOLDEN-HOMEPAGE-COPY-001"},
+    "title": {"type": "string", "minLength": 10},
+    "objective": {"type": "string", "minLength": 100},
+    "narrative": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "sections": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "contentId", "title", "job", "mode", "lineage", "motion"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^GH-S(0[0-9])$"},
+          "contentId": {"type": ["string", "null"]},
+          "title": {"type": "string"},
+          "job": {"type": "string", "minLength": 20},
+          "mode": {"type": "string"},
+          "lineage": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "motion": {"type": "string", "minLength": 10}
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["productCount", "productOrderSource", "desktopExpression", "mobileExpressions", "cardExpression", "cardContent", "cardActions", "cardDescription", "wingsPlacement", "liveStaticCompositionEquivalent", "mobileMayReduceProductCount", "mobileMayRequireSwipeForDiscovery", "maximumLivePageCores", "motionLegibleAtRest", "restSpeed", "hoverSpeed", "materialDriftSeconds", "liveProducts", "staticFallbackProducts"],
+      "properties": {
+        "productCount": {"const": 5},
+        "productOrderSource": {"const": "brand-kit/registry/products.json"},
+        "desktopExpression": {"const": "TC-D05"},
+        "mobileExpressions": {"const": ["TC-D08", "TC-P08"]},
+        "cardExpression": {"const": "QC04"},
+        "cardContent": {"const": ["wings", "publicName", "extendedName"]},
+        "cardActions": {"const": false},
+        "cardDescription": {"const": false},
+        "wingsPlacement": {"const": "bottom-left"},
+        "liveStaticCompositionEquivalent": {"const": true},
+        "mobileMayReduceProductCount": {"const": false},
+        "mobileMayRequireSwipeForDiscovery": {"const": false},
+        "maximumLivePageCores": {"const": 5},
+        "motionLegibleAtRest": {"const": true},
+        "restSpeed": {"const": 3.2},
+        "hoverSpeed": {"const": 4},
+        "materialDriftSeconds": {"const": 6.4},
+        "liveProducts": {"const": ["aios", "context-engine", "ai-ads-system", "claude-code-os", "organic-content-os"]},
+        "staticFallbackProducts": {"const": ["aios", "context-engine", "ai-ads-system", "claude-code-os", "organic-content-os"]}
+      }
+    },
+    "motionAllocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximumLivePageCores", "ordinaryMaximumLivePageCores", "heroMotionDecisionId", "expandedNavigationLiveCores", "expandedNavigationSuppressesPageMotion", "priority", "staticFallbackRequired", "manualAnimateControl"],
+      "properties": {
+        "maximumLivePageCores": {"const": 5},
+        "ordinaryMaximumLivePageCores": {"const": 1},
+        "heroMotionDecisionId": {"const": "DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001"},
+        "expandedNavigationLiveCores": {"const": 5},
+        "expandedNavigationSuppressesPageMotion": {"const": true},
+        "priority": {"const": ["GH-S00", "GH-S01", "GH-S05", "GH-S08"]},
+        "staticFallbackRequired": {"const": true},
+        "manualAnimateControl": {"const": false}
+      }
+    },
+    "responsive": {"type": "object"},
+    "evidence": {"type": "object"},
+    "consumerBoundary": {
+      "type": "object",
+      "required": ["designAuthorityRepository", "designAuthorityPath", "consumerRepository", "consumerMustBeRegisteredBeforeIntegration", "runtimeCrossRepositoryImportAllowed", "absolutePathsAllowedInRelease", "consumerOwns", "designPackageOwns"],
+      "properties": {
+        "designAuthorityRepository": {"const": "merrick143/mez-studios-design"},
+        "designAuthorityPath": {"const": "brand-kit/"},
+        "consumerRepository": {"type": "null"},
+        "consumerMustBeRegisteredBeforeIntegration": {"const": true},
+        "runtimeCrossRepositoryImportAllowed": {"const": false},
+        "absolutePathsAllowedInRelease": {"const": false},
+        "consumerOwns": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+        "designPackageOwns": {"type": "array", "minItems": 6, "items": {"type": "string"}}
+      }
+    },
+    "implementationRounds": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "prohibited": {"type": "array", "minItems": 10, "items": {"type": "string"}, "uniqueItems": true},
+    "humanGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "approver", "question"],
+      "properties": {
+        "required": {"const": true},
+        "approver": {"const": "Olli"},
+        "question": {"type": "string", "minLength": 80}
+      }
+    }
+  }
+}

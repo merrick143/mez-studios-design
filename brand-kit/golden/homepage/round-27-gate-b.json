@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r27",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-27",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S09 FAQ section introduced between ecosystem and footer",
+    "GH-S07 rule coda and bottom AI OS action removed",
+    "native disclosure interaction and responsive reflow",
+    "FAQ claim and product-name truth"
+  ],
+  "score": {
+    "weighted": 62,
+    "maximum": 75,
+    "verdict": "pass",
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 4,
+      "typography": 4,
+      "productTruthAndProof": 5,
+      "distinctiveness": 3,
+      "narrative": 4,
+      "conversionClarity": 4,
+      "emotionalImpact": 3,
+      "craft": 4,
+      "originality": 3
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "The FAQ is intentionally monochrome, so identity comes from the 1160px editorial split, technical indices, exact type hierarchy, measured rules and restrained disclosure marks rather than gradient decoration. It remains consistent with the Mez page when material is absent."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The FAQ introduces an editorial disclosure composition after the open product-object rail and before the compact dark footer. It does not repeat the preceding product grid, earlier sticky screenshot proof or testimonial rail."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "Native details and summary controls open the requested answer without JavaScript. The plus resolves to a minus through a 220ms transform only; the reduced-motion query removes that transition and meaning remains complete."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "The answers use the canonical product names, established Notion operating-layer description, approved model examples and existing founder-operator audience claim. No pricing, availability date, performance claim or unsupported feature was invented."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "No horizontal overflow was observed. The 1160px split becomes one column at 820px; all six summaries retain full-width touch targets and expanded answers remain readable from 320px through 1440px."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 0,
+    "method": "Rendered closed and open FAQ states at desktop and compact widths, checked all seven required viewports, inspected source order, verified native disclosure behaviour, removed-content absence, reduced-motion fallback, product names and claim boundaries. The gate would fail on restored coda copy, a bottom CTA, card-per-answer styling, horizontal overflow, hidden answers without JavaScript or invented product claims."
+  },
+  "findings": [],
+  "recommendation": {
+    "result": "keep-for-review",
+    "reason": "The FAQ gives the page a quieter and more useful close than the deleted rule list, while the native disclosure pattern keeps six answers scannable without introducing another visual chassis."
+  },
+  "outputStatus": "candidate",
+  "readyForOlliReview": true
+}

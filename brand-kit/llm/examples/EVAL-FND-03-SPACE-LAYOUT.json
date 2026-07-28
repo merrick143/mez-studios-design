@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-FND-03-SPACE-LAYOUT",
+  "receiptId": "RCP-FND-03-SPACE-LAYOUT",
+  "evaluatedAt": "2026-07-21T19:25:15+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators"},
+  "contractChecks": [
+    {"id": "SOURCE-AND-GENERATION", "status": "pass", "evidence": "One schema-validated source deterministically generates CSS, JSON, responsive contracts and a portable candidate manifest."},
+    {"id": "SPATIAL-CONTRACT", "status": "pass", "evidence": "Sixteen four-pixel steps, three content roles, four coordinated profiles and three receiver-led density modes validate mechanically."},
+    {"id": "RELATIONSHIP-RULES", "status": "pass", "evidence": "Source order, equal comparison, reading-aside, split and evidence-ledger rules are explicit; an intentional break must state emphasis and return to the grid."},
+    {"id": "RESPONSIVE-AND-STRESS", "status": "pass", "evidence": "The seven-viewport matrix, long-copy toggle, density transitions and channel fixtures retain content, order and hierarchy."},
+    {"id": "AUTHORITY-SEPARATION", "status": "pass", "evidence": "Canonical typography and colour are unchanged; geometry, product expression and the migration release remain outside this task."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "Olli approved spatial-lock-01 through H-FND-03-SPATIAL-PROOF and DEC-SPACE-LAYOUT-FOUNDATION-001 records the canonical result."}
+  ],
+  "qualityDimensions": [
+    {"id": "rhythm-coherence", "score": 5, "maximum": 5, "evidence": "Fine adjacency through major section movement resolves to one sixteen-step four-pixel scale."},
+    {"id": "responsive-clarity", "score": 5, "maximum": 5, "evidence": "Compact, medium, expanded and wide profiles change grid, gutter and section rhythm as coordinated states."},
+    {"id": "receiver-led-density", "score": 5, "maximum": 5, "evidence": "Calm, standard and operational modes change inspection time while retaining the same facts and actions."},
+    {"id": "channel-usefulness", "score": 5, "maximum": 5, "evidence": "Marketing, email, document and operational fixtures combine shared semantic contracts without forcing identical screenshots."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "Candidate status, dependency protection, FND-04 boundary, gate and refusal rules are explicit."},
+    {"id": "human-taste", "score": 5, "maximum": 5, "evidence": "Olli's approve verdict closes the bounded spatial-character gate and locks spatial-lock-01 without requested changes."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["No canonical typography, colour, gradient, Living Core, product-expression, control-finish, homepage, Figma, consumer or active-release content was changed."]
+}

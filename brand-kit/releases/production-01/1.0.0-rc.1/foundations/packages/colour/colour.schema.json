@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/colour-foundation.schema.json",
+  "title": "Mez Systems colour foundation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "foundationId", "status", "decisionIds", "candidateGateId", "candidateRevision", "primitives", "modes", "contrastPairs", "policies", "testViewports"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "foundationId": {"const": "mz.systems.foundation.colour"},
+    "status": {"enum": ["review-candidate", "canonical"]},
+    "decisionIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^DEC-[A-Z0-9-]+$"}},
+    "candidateGateId": {"const": "H-FND-02-SURFACE-PROOF"},
+    "candidateRevision": {"const": "final-lock-02"},
+    "primitives": {"type": "object", "minProperties": 20, "additionalProperties": {"type": "string", "pattern": "^#[0-9A-F]{6}$"}},
+    "modes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["light", "dark", "email", "document", "print"],
+      "properties": {
+        "light": {"$ref": "#/$defs/mode"}, "dark": {"$ref": "#/$defs/mode"}, "email": {"$ref": "#/$defs/mode"}, "document": {"$ref": "#/$defs/mode"}, "print": {"$ref": "#/$defs/mode"}
+      }
+    },
+    "contrastPairs": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/pair"}},
+    "policies": {"type": "object", "additionalProperties": false, "required": ["gradient", "functionalColour", "dark", "email", "document", "print", "forcedColours"], "properties": {"gradient": {"type": "string", "minLength": 20}, "functionalColour": {"type": "string", "minLength": 20}, "dark": {"type": "string", "minLength": 20}, "email": {"type": "string", "minLength": 20}, "document": {"type": "string", "minLength": 20}, "print": {"type": "string", "minLength": 20}, "forcedColours": {"type": "string", "minLength": 20}}},
+    "testViewports": {"type": "array", "const": [320, 375, 768, 1280, 1440]}
+  },
+  "$defs": {
+    "mode": {"type": "object", "additionalProperties": false, "required": ["purpose", "roles"], "properties": {"purpose": {"type": "string", "minLength": 10}, "roles": {"type": "object", "minProperties": 30, "additionalProperties": {"type": "string", "pattern": "^[a-z]+\\.[a-z0-9]+$"}}}},
+    "pair": {"type": "object", "additionalProperties": false, "required": ["id", "foreground", "background", "minimum"], "properties": {"id": {"type": "string"}, "foreground": {"type": "string"}, "background": {"type": "string"}, "minimum": {"type": "number", "minimum": 3, "maximum": 21}}}
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "payloadId": "mz.systems.operating-proof.production-01",
+  "status": "redaction-pending",
+  "publicReleaseEligible": false,
+  "sourceProvenance": {
+    "repositoryRecord": "brand-kit/workbench/golden/homepage/assets/operating-proof/provenance.json",
+    "originalPathsIncluded": false,
+    "originalBytesIncluded": false
+  },
+  "records": [
+    {
+      "id": "proof-command",
+      "role": "command",
+      "originalSha256": "97f576860ab1151ef1379ed1bfcf7e44ccd7da5c7376e773f3091eb6326c6f59",
+      "redactedAsset": null,
+      "redactedSha256": null,
+      "alt": null,
+      "redactionMethods": [],
+      "publicReleaseEligible": false
+    },
+    {
+      "id": "proof-context-backbone",
+      "role": "context-backbone",
+      "originalSha256": "6e34b55413ed333ab7230227e705a6bb4642f0b5e61ef6bb47fbf76467f14e73",
+      "redactedAsset": null,
+      "redactedSha256": null,
+      "alt": null,
+      "redactionMethods": [],
+      "publicReleaseEligible": false
+    },
+    {
+      "id": "proof-structured-documentation",
+      "role": "structured-documentation",
+      "originalSha256": "069b7d76fe274801c6e3208b8f28c2277536854b872b050c0d01272a8b4e70d8",
+      "redactedAsset": null,
+      "redactedSha256": null,
+      "alt": null,
+      "redactionMethods": [],
+      "publicReleaseEligible": false
+    },
+    {
+      "id": "proof-working-application",
+      "role": "working-application",
+      "originalSha256": "af217f1949122469004055050389da7a10169a267dc2de057cd4fde2ef2937e8",
+      "redactedAsset": null,
+      "redactedSha256": null,
+      "alt": null,
+      "redactionMethods": [],
+      "publicReleaseEligible": false
+    }
+  ],
+  "review": null
+}

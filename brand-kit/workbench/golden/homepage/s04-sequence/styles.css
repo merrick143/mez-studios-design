@@ -1,0 +1,109 @@
+/* GH-S04 · the sequence, refined.
+   Structure is fixed: caption, title, one sub-body line, the graphic, one
+   sentence. Only the line treatment varies between the four. */
+
+:root {
+  --ink: var(--mz-colour-neutral-950, #0d0d0d);
+  --paper: var(--mz-colour-neutral-25, #f8f8f8);
+  --white: var(--mz-colour-neutral-0, #fff);
+  --dark: var(--mz-colour-neutral-900, #171715);
+  --dark-2: var(--mz-colour-neutral-850, #1b1b19);
+  --line: var(--mz-colour-neutral-200, #dadad6);
+  --line-strong: var(--mz-colour-neutral-400, #8a8a84);
+  --muted: var(--mz-colour-neutral-550, #666662);
+
+  /* One value drives the disc and the rule that runs through it, so the line can
+     never sit off the disc centre however the disc is resized. */
+  /* Locked: the small disc. The terminus is the last step of the sequence,
+     not a destination that outweighs the four before it. */
+  --disc: clamp(40px, 3.6vw, 44px);
+  --dot: clamp(9px, 0.95vw, 11px);
+  --rule: 1px;
+  --gap: clamp(12px, 2vw, 28px);
+  --fade: 1600ms;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--mz-font-body); }
+
+/* lab chrome */
+.top { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 11px clamp(16px,4vw,40px); background: var(--dark); color: var(--paper); font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.top nav { display: flex; gap: 5px; margin-left: auto; }
+.top nav a { padding: 4px 9px; border: 1px solid rgb(248 248 248 / .3); border-radius: 9999px; color: inherit; text-decoration: none; }
+.note { padding: 16px clamp(16px,4vw,40px); background: var(--dark-2); color: #cfcfc9; font-size: 13.5px; line-height: 1.6; }
+.note b { color: var(--paper); font-weight: 600; }
+.note p { margin: 0 0 8px; max-width: 104ch; } .note p:last-child { margin: 0; }
+.mark { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; padding: 12px clamp(16px,4vw,40px); background: var(--white); border-block: 1px solid var(--line); position: sticky; top: 40px; z-index: 50; }
+.mark b { font-family: var(--mz-font-display); font-size: 16px; letter-spacing: -.01em; }
+.mark span { font-size: 13px; color: var(--muted); max-width: 80ch; line-height: 1.5; }
+
+/* ------------------------------------------------------------------ section
+   1010px: mz-core caps its shared framebuffer at 2048 device pixels with dpr
+   clamped to 2, so material past 1024 CSS pixels shows a seam. */
+.v { padding-block: clamp(84px,10vw,132px); }
+.shell { max-width: 1010px; margin-inline: auto; padding-inline: clamp(20px,5vw,40px); }
+
+.head { text-align: center; }
+.eyebrow { margin: 0; font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.title { margin: 18px auto 0; font-family: var(--mz-font-display); font-weight: 660; font-size: clamp(30px,3.5vw,48px); line-height: 1.05; letter-spacing: -.04em; max-inline-size: 20ch; }
+.lead { margin: 18px auto 0; font-size: clamp(15.5px,1.55vw,18px); line-height: 1.55; color: var(--muted); max-inline-size: 54ch; }
+.graphic { margin-top: clamp(52px,6.5vw,86px); }
+.close { margin: clamp(46px,5.5vw,72px) auto 0; text-align: center; font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(17px,1.7vw,21px); line-height: 1.35; letter-spacing: -.02em; max-inline-size: 44ch; }
+
+/* ----------------------------------------------------------------- sequence
+   Five equal columns, five identical material discs on one baseline. Package is
+   the only one that is alive; it is otherwise the same object as the other four,
+   which is what stops it breaking the row. */
+.sq { position: relative; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: var(--gap); margin: 0; padding: 0; }
+.sq li { position: relative; display: grid; gap: 6px; align-content: start; justify-items: start; }
+
+/* Every item opens with a marker row of one fixed height, so a small dot and a
+   large disc leave their labels on the same baseline. Sizing the markers alone
+   would stagger the text under them. */
+.sq__marker { display: grid; align-items: center; justify-items: start; height: var(--disc); margin-bottom: clamp(16px,2vw,24px); }
+
+/* The connector runs at the marker-row centre, from this dot's centre to the
+   next one's, which is exactly one column plus one gap away. */
+.sq li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--disc) / 2 - var(--rule) / 2);
+  left: calc(var(--dot) / 2);
+  width: calc(100% + var(--gap));
+  height: var(--rule);
+  background: var(--line-strong);
+}
+
+/* The connector into the last item has to reach the disc centre, not the dot
+   centre, or it stops 27px short and dies against the disc edge. */
+.sq li:nth-last-child(2)::before {
+  width: calc(100% + var(--gap) - (var(--dot) / 2) + (var(--disc) / 2));
+}
+
+/* Four little charcoal dots. Process, not product: no material, no weight. */
+.sq__dot { position: relative; z-index: 2; width: var(--dot); height: var(--dot); border-radius: 50%; background: var(--dark); }
+
+/* The one that ships. Larger, and the only material in the section.
+   Grid stacking, not absolute positioning: mount() writes position:relative onto
+   its host inline, which would override position:absolute and collapse the layer
+   to nothing. Grid cells stack without needing position at all. */
+.sq__disc--live { position: relative; z-index: 2; display: grid; width: var(--disc); height: var(--disc); border-radius: 50%; overflow: hidden; isolation: isolate; background: var(--dark); }
+.sq__core { grid-area: 1 / 1; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; transition: opacity var(--fade) cubic-bezier(.4,0,.2,1); }
+.sq__core canvas { border-radius: 50%; }
+
+.sq strong { font-family: var(--mz-font-display); font-weight: 600; font-size: clamp(16px,1.7vw,20px); letter-spacing: -.022em; }
+.sq span { font-size: clamp(12.5px,1.3vw,14px); line-height: 1.5; color: var(--muted); }
+
+/* ------------------------------------------------------------------ narrow */
+@media (max-width: 860px) {
+  .sq { grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(22px,4vw,32px); }
+  .sq li:not(:last-child)::before { content: none; }
+}
+@media (max-width: 520px) {
+  .sq { grid-template-columns: minmax(0,1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sq__disc--live canvas { display: none !important; }
+  .sq__core { transition-duration: .001ms; }
+}

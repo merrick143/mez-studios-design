@@ -1,0 +1,27 @@
+{
+  "schemaVersion":"1.0.0",
+  "evaluationId":"EVAL-CMP-01-GLOBAL-NAVIGATION",
+  "receiptId":"RCP-CMP-01-GLOBAL-NAVIGATION",
+  "evaluatedAt":"2026-07-23T03:18:05Z",
+  "evaluator":{"kind":"hybrid","name":"Olli plus Codex deterministic validators and browser proof"},
+  "contractChecks":[
+    {"id":"SCOPE","status":"pass","evidence":"One Registry family and one bounded surface option are promoted; the other four research variants remain evidence."},
+    {"id":"INHERITANCE","status":"pass","evidence":"Canonical products, assignments, Wings, foundations, renderer, Product Card 02 and Website Motion remain immutable."},
+    {"id":"INTERACTION","status":"pass","evidence":"Disclosure, selected state, product events, Escape, focus restoration and keyboard movement remain implemented without visible instructional footer copy."},
+    {"id":"MOTION-FALLBACK","status":"pass","evidence":"Round 04 uses a smooth 520ms eased shell expansion and restrained stagger while automatically mounting five spherical canvases; the compact preview and no-WebGL/static expanded states use canonical static twins with zero canvases."},
+    {"id":"RESPONSIVE","status":"pass","evidence":"The compact 320px fixture shows five layered product circles and the expanded fixture is a vertical five-product sheet; both have zero horizontal overflow."},
+    {"id":"PORTABILITY","status":"pass","evidence":"The deterministic 1.0.0 release contains its canonical data, foundations, renderer, assets, component code and consumer fixtures."},
+    {"id":"HUMAN-GATE","status":"pass","evidence":"Olli approved Round 04; H-CMP-01-GLOBAL-NAVIGATION-PROOF is closed by DEC-GLOBAL-NAVIGATION-COMPONENT-001."}
+  ],
+  "qualityDimensions":[
+    {"id":"design-fidelity","score":5,"maximum":5,"evidence":"The component applies the approved quiet, rounded, public-name-first and deliberate-Wings product grammar; the footer-free registry and calmer disclosure strengthen that restraint."},
+    {"id":"accessibility","score":5,"maximum":5,"evidence":"Keyboard order, focus visibility, focus restoration, state semantics, close methods and mobile targets are present."},
+    {"id":"motion-discipline","score":5,"maximum":5,"evidence":"All five spheres move automatically as requested, hover only changes field speed and every state has exact static equivalence."},
+    {"id":"portability","score":5,"maximum":5,"evidence":"The canonical release is deterministic and includes framework-neutral plus React consumption examples."},
+    {"id":"governance","score":5,"maximum":5,"evidence":"Contract, schema, release package, task, receipt, evaluation and human decision agree."}
+  ],
+  "blockers":[],
+  "verdict":"pass",
+  "humanReviewRequired":false,
+  "notes":["Global Navigation 1.0.0 is canonical with the approved smoother footer-free registry, compact five-circle family cue and bounded five-live-sphere exception.","TASK-GOLD-01-GOLDEN-HOMEPAGE is ready next."]
+}

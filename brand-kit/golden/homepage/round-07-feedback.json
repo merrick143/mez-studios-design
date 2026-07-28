@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r07",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-23",
+  "note": "Olli reviewed the Round 07 spread-deck hero and asked for a positioning-only pass, scoped to GH-S01: the two left cards (Context Engine, Claude Code OS) should move up and pull in tighter to the right; the two right cards (AI Ads System, Organic Content OS) should move up and pull in tighter to the left; and the overall spread should be noticeably more compact ('the height is just too high... you're just spacing them too much'), reading like a genuinely spread hand of cards rather than a loosely stacked fan. No other section was reviewed this round.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Context Engine and Claude Code OS need to go up and come in more to the right, tighter. AI Ads System and Organic Content OS need to go up and then left a little, tighter. The vertical height of the spread is too high overall — way more compact, like a real card spread, not this much spacing."
+    }
+  ],
+  "implementationConstraint": {
+    "discoveredDuring": "round-08-tuning",
+    "summary": "A real geometric constraint: the hero's uniform bottom-left identity placement (Wings + name anchored to each card's own bottom-left corner) is asymmetric under a symmetric fan. Right-side cards' labels sit on the side that gets overlapped by their more-central, higher-stacked neighbour, while left-side cards' labels sit on the safe side. Full compaction was bounded by keeping every card's identity legible under that constraint.",
+    "resolution": "Reduced the hero-only identity mark's footprint (smaller Wings icon, tighter gaps and inset, scoped to .hero-card so the ecosystem shelf and final-route cards are unaffected) so the same clearance requirement could be met at a substantially smaller vertical offset and a tighter horizontal overlap than Round 07. Verified per-card via elementFromPoint hit-testing on the Wings icon, name and extended-name text, not just a visual scan.",
+    "outcome": "Vertical drop reduced from 96/192px (Round 07) to roughly 80/160px at desktop width, horizontal overlap tightened, and the overall reserved height below the deck cut by roughly 40 percent, while every card's name and extended name remain fully clear and four of five Wings icons are fully clear; the fifth (Organic Content OS, outermost right) has a few pixels of its Wings icon tip tucked under its neighbour, read as consistent with the requested card-fan metaphor rather than a defect."
+  },
+  "productionAuthority": false
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-03-WINGS-MARK-PROOF",
+  "taskId": "TASK-EXP-03-WINGS-MARK",
+  "expressionId": "mz.systems.expression.wings-mark",
+  "candidateStatus": "review-candidate",
+  "candidateRevision": "wings-mark-01",
+  "verdict": "approve",
+  "note": "Approved, this looks really good. Let's proceed. Make sure to lock it in",
+  "reviewedAt": "2026-07-21T14:04:45.000Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-WINGS-MARK-EXPRESSION-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true
+}

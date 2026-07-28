@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "auditId": "CERT-PORTABILITY-01",
+  "status": "pass",
+  "method": "Preserve the approved rc.1 manifest, copy it into a separate rc.2 root, overlay only bounded Figma, Product UI and certification inputs, regenerate a complete content manifest, rebuild in separate temporary roots and run package-local verifiers with an isolated Python environment.",
+  "frozenMilestone": {
+    "version": "1.0.0-rc.1",
+    "manifestSha256": "c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8",
+    "mutationAllowed": false
+  },
+  "laterCandidate": {
+    "version": "1.0.0-rc.2",
+    "status": "approved-candidate-unreleased",
+    "productionAuthority": false,
+    "verificationRecord": "brand-kit/certification/review.json"
+  },
+  "requirements": [
+    "No package runtime dependency may leave the package or call the network.",
+    "Every non-manifest byte must have a size and SHA-256 row.",
+    "Two independent temporary builds must match the repository output byte-for-byte.",
+    "The Product UI fixture and Figma mirror must preserve their nonproduction and noncanonical boundaries.",
+    "Publication, deployment and consumer integration remain outside the package."
+  ],
+  "humanGate": {
+    "gateId": "H-CERT-01-SYSTEM-CERTIFICATION",
+    "status": "approved",
+    "approvedBy": "Olli",
+    "approvedAt": "2026-07-28"
+  },
+  "knownGaps": [
+    "The real consumer install, update and rollback proof is deliberately deferred to PORT-04."
+  ]
+}

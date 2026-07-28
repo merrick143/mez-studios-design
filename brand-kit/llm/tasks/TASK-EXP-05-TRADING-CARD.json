@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-EXP-05-TRADING-CARD",
+  "title": "Define the Mez Systems Trading Card and full-field expression",
+  "phase": 2,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Define what a Mez Systems trading card means, prove one adaptable full-field product-object language across single cards, information backs, decks, packs and realistic website placements, and separate useful product architecture from decorative collector styling.",
+  "scope": {
+    "included": [
+      "portrait trading-card master and bounded square or landscape full-field adaptations",
+      "front-face identity hierarchy and information-back hierarchy",
+      "single, pair, stack, fan, pack and five-product family relationships",
+      "static and automatic Living Core twins with one live allocation per viewport",
+      "light, off-white and contained-charcoal rooms",
+      "desktop and mobile marketing placements",
+      "atomic keep, revise, kill and written feedback for every specimen and family",
+      "new trading-card human gate"
+    ],
+    "excluded": [
+      "restoring Product Card 02 System Editions",
+      "rarity, scarcity, numbered runs, founder foil, archive codes or fake statistics",
+      "new product names, gradients, Wings geometry or Living Core palettes",
+      "commerce pricing, checkout logic or payment-provider integration",
+      "golden homepage selection",
+      "production consumer migration, Figma or channel packs"
+    ]
+  },
+  "dependencies": [
+    "TASK-EXP-04-PRODUCT-CARD",
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+    "DEC-WINGS-MARK-EXPRESSION-001",
+    "DEC-GRADIENT-LIBRARY-001",
+    "DEC-LIVING-CORE-FINISH-001",
+    "DEC-GEOMETRY-CONTROLS-FOUNDATION-001"
+  ],
+  "inputs": {
+    "requiredFiles": [
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/CURRENT-STATE.md",
+      "brand-kit/docs/ROADMAP.md",
+      "brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md",
+      "brand-kit/expressions/product-card/product-card.source.json",
+      "brand-kit/expressions/product-card/round-10-feedback.json",
+      "brand-kit/expressions/trading-card/round-01-feedback.json",
+      "brand-kit/expressions/trading-card/round-02-feedback.json",
+      "brand-kit/registry/products.json",
+      "brand-kit/releases/foundations/dist/",
+      "brand-kit/source-pack/design-system-export/assets/wings.svg",
+      "brand-kit/source-pack/design-system-export/mz-core.js"
+    ],
+    "decisionIds": [
+      "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+      "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+      "DEC-WINGS-MARK-EXPRESSION-001",
+      "DEC-GRADIENT-LIBRARY-001",
+      "DEC-LIVING-CORE-FINISH-001",
+      "DEC-GEOMETRY-CONTROLS-FOUNDATION-001"
+    ],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {
+      "path": "brand-kit/expressions/trading-card/",
+      "acceptance": [
+        "one schema-validated canonical contract defines meaning, anatomy, formats, motion, stacks, omissions and the closed human gate",
+        "all canonical dependencies remain immutable",
+        "canonical 1.0.0 and bounded production authority remain explicit"
+      ]
+    },
+    {
+      "path": "brand-kit/workbench/expressions/trading-card/",
+      "acceptance": [
+        "twenty-three approved specimens preserve 22 champions and rebuild only TC-P06 as named in the Round 02 receipt",
+        "TC-F06 and TC-P04 are absent alongside all earlier killed directions",
+        "static and automatic twins are directly comparable while only one core moves",
+        "the locked workbench preserves the 23 unanimous keeps and canonical approval record",
+        "the workbench clearly distinguishes the approved Trading Card expression from the killed Product Card editions"
+      ]
+    }
+  ],
+  "verification": [
+    {"id": "EXP-05-SCOPE", "method": "command", "passCondition": "exactly 23 approved specimens render across 4 faces, 4 backs, 8 decks and 7 placements"},
+    {"id": "EXP-05-LINEAGE", "method": "command", "passCondition": "the immutable Round 02 receipt records 22 keep, 1 revise and 2 kill; every champion and the single rebuild are present and both killed directions are absent"},
+    {"id": "EXP-05-INHERITANCE", "method": "command", "passCondition": "canonical products, Wings, foundations, Product Card visual grammar and Living Core assets remain unchanged and attributable"},
+    {"id": "EXP-05-MOTION", "method": "visual", "passCondition": "the focal full-field material is alive by default, repeated objects are static and reduced-motion or WebGL failure preserves exact static twins"},
+    {"id": "EXP-05-MEANING", "method": "human", "passCondition": "the card feels like a useful Mez product object rather than fake collectible styling or a generic SaaS card"},
+    {"id": "EXP-05-RESPONSIVE", "method": "visual", "passCondition": "portrait cards, decks and placements remain legible without horizontal page overflow at 320 through 1440 pixels"},
+    {"id": "EXP-05-HUMAN", "method": "human", "passCondition": "Olli kept all 23 Round 03 specimens; H-EXP-05-TRADING-CARD-PROOF is closed by DEC-TRADING-CARD-EXPRESSION-001"}
+  ],
+  "humanGate": {
+    "required": true,
+    "gateId": "H-EXP-05-TRADING-CARD-PROOF",
+    "approver": "Olli",
+    "approvalQuestion": "Which card faces, information backs, decks and real placements make the full-field product object feel distinctly Mez, useful and worthy of promotion?"
+  },
+  "stopConditions": [
+    "a candidate reintroduces numbered editions, founder foil, rarity ladders or fake archive language",
+    "a candidate mutates canonical product identity, Wings, gradient assignment, renderer or foundations",
+    "multiple Living Cores animate simultaneously",
+    "a stack becomes decorative overlap without a product relationship",
+    "the task expands into pricing, checkout, golden homepage, Figma, channels or consumer migration",
+    "candidate work is presented as canonical before the human gate"
+  ],
+  "notes": [
+    "The historical full-bleed 3:4 card and FUT teardown are evidence only. Their fake collector and rarity mechanics are not authority.",
+    "Round 01 deliberately separated front identity, useful information backs, product relationships and real placements so feedback identified what the expression is for.",
+    "Round 02 applied the exact 13 keep, 12 revise and 5 kill Round 01 receipt without widening the programme.",
+    "Round 03 applies the exact 22 keep, 1 revise and 2 kill Round 02 receipt; TC-F06 and TC-P04 are removed and TC-P06 alone is rebuilt with an explicit five-position deck.",
+    "Olli kept all 23 Round 03 specimens. review.json and round-03-feedback.json preserve the approval; canonical Trading Card 01 version 1.0.0 closes EXP-05."
+  ]
+}

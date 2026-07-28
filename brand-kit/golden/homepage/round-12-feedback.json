@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r12",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-23",
+  "note": "Olli asked to move the side cards up more and tuck them in more -- a further compaction of the spreading-deck hero, the same direction as Rounds 08 and 10. Unlike those rounds this one is no longer bounded by full name legibility: in Round 11 Olli explicitly authorised partial occlusion on the cards tucked behind their neighbours (round-10-feedback.json constraintSupersession), so the fan can compact tighter than the earlier rounds could without violating a hard requirement.",
+  "sections": [
+    {
+      "id": "GH-S01",
+      "title": "Hero",
+      "verdict": "revise",
+      "feedback": "Move the two left and two right cards up more and tuck them in more."
+    }
+  ],
+  "implementationNote": {
+    "summary": "Reduced the per-depth vertical step and increased the horizontal overlap. Per-card translateY step went from clamp(36px, 4.2vw, 60px) to clamp(22px, 2.6vw, 38px) -- at 1440px the side cards' vertical drop dropped from 60/120px to 37/75px, so they sit visibly higher. Horizontal overlap went from clamp(-58px, -4vw, -38px) to clamp(-74px, -5.2vw, -52px), tucking the cards further toward centre. The reserved padding below the deck was reduced from clamp(70px, 8vw, 112px) to clamp(48px, 5.4vw, 84px) to match the shorter fan.",
+    "occlusionState": "The two inner side cards (Context Engine, AI Ads System) now have their centred marks substantially covered by the central AI OS card; their Wings peek above and their names are partially clipped. This is within the occlusion Olli authorised in Round 11 and reads as an intentional hand-of-cards overlap. The outer cards (Claude Code OS, Organic Content OS) retain more of their centred marks.",
+    "unchanged": "Card rotation (5.5deg per slot), the centred identity treatment, the canonical card outline token, motion, and every other section are unchanged. Zero horizontal overflow; five live hero canvases; mobile 2-up grid resets transforms and is unaffected."
+  },
+  "productionAuthority": false
+}

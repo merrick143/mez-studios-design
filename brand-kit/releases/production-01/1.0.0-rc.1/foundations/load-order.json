@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseId": "mz.systems.release.foundations",
+  "entrypoint": "index.css",
+  "order": [
+    "packages/typography/tokens.css",
+    "packages/colour/tokens.css",
+    "packages/space-layout/tokens.css",
+    "packages/geometry-controls/tokens.css",
+    "packages/geometry-controls/controls.css"
+  ],
+  "reason": "Typography defines fonts and type roles; colour defines semantic channels; space-layout defines responsive geometry; geometry tokens define shape and motion; controls consume every preceding layer."
+}

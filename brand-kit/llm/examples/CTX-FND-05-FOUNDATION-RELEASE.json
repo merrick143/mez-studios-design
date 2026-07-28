@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-FND-05-FOUNDATION-RELEASE",
+  "taskId": "TASK-FND-05-FOUNDATION-RELEASE",
+  "generatedAt": "2026-07-21T21:33:08+10:00",
+  "systemVersion": "1.0.0+foundation-canonical",
+  "sourceState": {"repository": "merrick143/mez-studios-design", "branch": "codex/fnd-01-typography", "commit": "5d6d4bd152db299678b7c1dfa8de50c07deedbeb", "workingTree": "dirty"},
+  "files": [
+    {"path": "brand-kit/START-HERE.md", "sha256": "a3bca4f2d1b37b0508a3c7e248653e8ec18e9b0b60d5c88c48523b5987611e46", "role": "canonical", "required": true, "reason": "Canonical foundation release and active EXP-01 boundary."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "sha256": "c8b068bca6e8b7c1f0d973d0185d31fb96cc7a2b901d20d4c678256d293ec521", "role": "canonical", "required": true, "reason": "Live canonical release status and next expression gate."},
+    {"path": "brand-kit/docs/ROADMAP.md", "sha256": "b13176ef82b4e5e790eb9c7e75edc80b3bf9f5adc6e7874928b0deba6f3010ba", "role": "canonical", "required": true, "reason": "FND-05 exit and Phase 2 activation."},
+    {"path": "brand-kit/governance/decisions.json", "sha256": "9e6efb323924416e7225714f6901a50e1662285ffdb559c2bad6dcc2bc84d587", "role": "governance", "required": true, "reason": "Immutable cutover decision ledger; post-cutover foundation release approval is recorded in its own review record."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-05-FOUNDATION-RELEASE.json", "sha256": "25d28505770705887dbeb3f5d78ced7d01bf4d75fb48cd0ca9e3ecc21952b59b", "role": "governance", "required": true, "reason": "Completed bounded release task."},
+    {"path": "brand-kit/foundations/typography/dist/package.json", "sha256": "c5c741bd0b6194610b350e9e4734aa2d591606c5657bb5601cbe603a627f6ecc", "role": "canonical", "required": true, "reason": "Canonical typography package identity and entrypoints."},
+    {"path": "brand-kit/foundations/colour/dist/package.json", "sha256": "183c2acccaeb95737f77b9a5cc77644be03b95054fe6260ee339d68b4afa420b", "role": "canonical", "required": true, "reason": "Canonical colour package identity and entrypoints."},
+    {"path": "brand-kit/foundations/space-layout/dist/package.json", "sha256": "d25d584b61d73685d6c186744bf4a7b175a20ddd1e986de1c1138da9cc68d2fb", "role": "canonical", "required": true, "reason": "Canonical space-layout package identity and entrypoints."},
+    {"path": "brand-kit/foundations/geometry-controls/dist/package.json", "sha256": "204bcddc03a7b9694d62025a503c12342f23fe27841675fa45da4d6767073ce9", "role": "canonical", "required": true, "reason": "Canonical geometry-controls package identity, dependencies and entrypoints."},
+    {"path": "brand-kit/releases/foundations/release.source.json", "sha256": "fa4bc64cac98b00b47d5a854a40071e66a6eb1286ed3050ceff7d4187d3c0e97", "role": "canonical", "required": true, "reason": "Canonical version, hashes, order, policies, decision and bounded production authority."},
+    {"path": "brand-kit/releases/foundations/review.json", "sha256": "cdce187f30978b43aeafbec07b949b536ed5c9688ca41f994d7bcba0e599b3e1", "role": "governance", "required": true, "reason": "Approved bounded human gate record."},
+    {"path": "brand-kit/releases/foundations/dist/manifest.json", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639", "role": "mirror", "required": true, "reason": "Generated canonical integrity manifest for 57 artifacts."},
+    {"path": "brand-kit/workbench/foundations/release/index.html", "sha256": "49b2fa2c9e06ed2036c5ec73063cf8893b167043292ceebdd91c970cb8c48e79", "role": "fixture", "required": true, "reason": "Isolated canonical release proof and permanent approval record."}
+  ],
+  "decisions": [
+    {"id": "DEC-TYPE-FOUNDATION-001", "status": "approved", "productionEffect": "Canonical typography distribution is copied unchanged."},
+    {"id": "DEC-COLOUR-FOUNDATION-001", "status": "approved", "productionEffect": "Canonical colour distribution is copied unchanged."},
+    {"id": "DEC-SPACE-LAYOUT-FOUNDATION-001", "status": "approved", "productionEffect": "Canonical space-layout distribution is copied unchanged."},
+    {"id": "DEC-GEOMETRY-CONTROLS-FOUNDATION-001", "status": "approved", "productionEffect": "Canonical geometry-controls distribution is copied unchanged and loaded after its dependencies."},
+    {"id": "DEC-MIGRATION-SEQUENCE-001", "status": "approved", "productionEffect": "Migration identity release 0.1.0-alpha.1 remains immutable and distinct."},
+    {"id": "DEC-FOUNDATION-RELEASE-001", "status": "approved", "productionEffect": "Foundation release 1.0.0 is canonical for its four-package scope."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id": "CONFLICT-FND-05-IDENTITY-RELEASE", "summary": "The active migration identity release and the foundation candidate serve different scopes.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-FND-05-CONSUMER", "summary": "No production consumer is named or authorised by this task.", "executionEffect": "constrain"},
+    {"id": "CONFLICT-FND-05-EXPRESSION", "summary": "Gradients, product objects, homepage composition and Figma remain outside the release.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": ["Do not change any canonical source package or approval record.", "Do not flatten package directories or drop fonts, licences, manifests or entrypoints.", "Do not claim unified production authority before H-FND-05-FOUNDATION-RELEASE.", "Do not infer consumer migration, product-expression, homepage or Figma authority from this candidate."],
+  "contextBudget": {"strategy": "bounded", "requiredFirst": ["brand-kit/START-HERE.md", "brand-kit/docs/CURRENT-STATE.md", "brand-kit/docs/ROADMAP.md", "brand-kit/llm/tasks/TASK-FND-05-FOUNDATION-RELEASE.json"], "omitByDefault": ["brand-kit/history/", "brand-kit/source-pack/", "brand-kit/releases/0.1.0-alpha.1/assets/", "play-orb/"]},
+  "humanNotes": ["Olli approved foundation-release-01 through H-FND-05-FOUNDATION-RELEASE on 21 July 2026. DEC-FOUNDATION-RELEASE-001 records the canonical bounded result."]
+}

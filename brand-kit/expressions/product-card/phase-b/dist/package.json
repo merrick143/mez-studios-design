@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/product-functional-components",
+  "version": "1.0.0",
+  "status": "canonical-functional-component-system",
+  "candidateRevision": "product-card-02-phase-b-pb2-r04",
+  "reviewGateId": "H-EXP-04B-CARD-FUNCTIONAL-PROOF",
+  "productionAuthority": true,
+  "entrypoints": {
+    "contract": "product-component-pantry.source.json",
+    "schema": "product-component-pantry.schema.json",
+    "round01Feedback": "round-01-feedback.json",
+    "round02Feedback": "round-02-feedback.json",
+    "round03Feedback": "round-03-feedback.json",
+    "round04Feedback": "round-04-feedback.json",
+    "review": "review.json",
+    "guidance": "README.md"
+  },
+  "inventory": {
+    "components": 15,
+    "patterns": 13,
+    "journeys": 6,
+    "phaseAVisualInputs": 32,
+    "phaseARound04Candidates": 0,
+    "round02FunctionalSpecimens": 48,
+    "round03FunctionalCandidates": 47,
+    "round03Verdicts": {
+      "keep": 11,
+      "revise": 35,
+      "kill": 1
+    },
+    "round04FunctionalCandidates": 46,
+    "killedSpecimens": 2,
+    "reviewSpecimens": 46
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r28",
+  "verdict": "gate-b",
+  "reviewer": "Codex",
+  "reviewedAt": "2026-07-28",
+  "productionAuthority": false,
+  "scope": [
+    "GH-S01 hero copy hierarchy and compact five-card flare",
+    "GH-S03 compact orbit, core and lockup sizing",
+    "GH-S04 mobile vertical process guide",
+    "desktop preservation and 320-to-1440 responsive reflow"
+  ],
+  "score": {
+    "weighted": 68,
+    "maximum": 75,
+    "verdict": "pass",
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 4,
+      "typography": 4,
+      "productTruthAndProof": 5,
+      "distinctiveness": 4,
+      "narrative": 4,
+      "conversionClarity": 5,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    }
+  },
+  "tests": {
+    "T1Distinctiveness": {
+      "result": "pass",
+      "evidence": "At 375 and 1280 with product colour removed, the five-card flare remains an authored Mez family object, the principle remains a concentric owned-layer architecture diagram, and Build-to-Package remains a directional workflow. The compositions do not depend on gradients for identity."
+    },
+    "T2Repetition": {
+      "result": "pass",
+      "evidence": "The three revised regions use different families: product family flare, architecture diagram, then workflow sequence. The mobile process changes direction without becoming another centred object, and the 320-to-1440 skeleton sweep preserves that separation."
+    },
+    "T3MotionTruth": {
+      "result": "pass",
+      "evidence": "The approved hero exception mounted five intrinsically sized live cores and no page core outside the hero. Instrumented WebGL recorded 1,400 draw calls during the comparison window; two hero element screenshots 2.2 seconds apart changed 11.78 percent of pixels. Reduced motion kept exact static twins with the same geometry."
+    },
+    "T4ProductTruth": {
+      "result": "pass",
+      "evidence": "The flare continues to render all five canonical registry products and assignments. The principle uses the canonical Mez Systems Wings at the SVG's native 340:241 aspect ratio, with the wordmark removed at compact widths so the mark stays legible; the process ends in the real AI OS material rather than a placeholder."
+    }
+  },
+  "responsiveReview": {
+    "widths": [320, 375, 390, 768, 920, 1280, 1440],
+    "result": "pass",
+    "evidence": "Every viewport kept all five hero cards, one H1, one subtitle and one action with no horizontal body overflow. The principle orbit resolves to 272px at 320 and 300px at 375 and 390; its corrected 26% core resolves to 70.72px and 78px, with a 28px-wide undistorted Wings mark. The process is a left vertical guide through 768 and the original five-column horizontal sequence from 920 upward."
+  },
+  "canonSweep": {
+    "result": "pass",
+    "criticalFindings": 0,
+    "majorFindings": 0,
+    "minorFindings": 0,
+    "method": "Read the normal and material-stripped renders at compact and desktop widths, checked the canon in ID order, verified copy count, body overflow, real marks, static twins, live draw calls, pixel delta, responsive geometry and desktop preservation. The centred hero hierarchy is the existing DEC-HERO-001 and provisional V01 exception, not a new generic centred-stack treatment."
+  },
+  "findings": [],
+  "recommendation": {
+    "result": "keep-for-review",
+    "reason": "The mobile page now preserves the same three arguments as desktop at the right scale: one direct hero claim over the product family, a contained owned-layer orbit, and a process whose direction visibly changes from left-to-right to top-to-bottom."
+  },
+  "outputStatus": "candidate",
+  "readyForOlliReview": true
+}

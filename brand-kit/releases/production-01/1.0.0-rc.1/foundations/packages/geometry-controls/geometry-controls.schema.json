@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/geometry-controls-source-1.0.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "foundationId", "status", "decisionIds", "candidateGateId", "candidateRevision", "radii", "borders", "depth", "motion", "focus", "controlScale", "iconControl", "variants", "stateContracts", "fields", "policies", "testViewports"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "foundationId": {"const": "mz.systems.foundation.geometry-controls"},
+    "status": {"enum": ["review-candidate", "canonical"]},
+    "decisionIds": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"type": "string", "pattern": "^DEC-[A-Z0-9-]+$"}},
+    "candidateGateId": {"const": "H-FND-04-CONTROL-PROOF"},
+    "candidateRevision": {"type": "string", "minLength": 1},
+    "radii": {"type": "object", "required": ["none", "fine", "compact", "control", "container", "panel", "frame", "full"], "additionalProperties": {"type": "integer", "minimum": 0}},
+    "borders": {"type": "object", "required": ["hairline", "emphasis", "focus"], "additionalProperties": {"type": "integer", "minimum": 1}},
+    "depth": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string"}},
+    "motion": {"type": "object", "required": ["durationFast", "durationDefault", "easeControl", "hoverLift", "activePress", "iconTravel"], "additionalProperties": true},
+    "focus": {"type": "object", "required": ["width", "offset", "role"], "additionalProperties": true},
+    "controlScale": {"type": "object", "required": ["compact", "default", "prominent"], "additionalProperties": {"type": "object", "required": ["height", "paddingInline", "labelRole", "use"], "additionalProperties": true}},
+    "iconControl": {"type": "object", "required": ["defaultSize", "compactSize", "iconSize", "minimumTouchTarget", "iconGap"], "additionalProperties": true},
+    "variants": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "object", "required": ["surface", "foreground", "border", "hierarchy"], "additionalProperties": true}},
+    "stateContracts": {"type": "object", "minProperties": 8, "additionalProperties": {"type": "object", "required": ["requirements"], "properties": {"requirements": {"type": "array", "minItems": 2, "items": {"type": "string"}}}, "additionalProperties": false}},
+    "fields": {"type": "object", "required": ["height", "textareaMinHeight", "paddingInline", "choiceSize", "switchWidth", "switchHeight", "labelGap", "messageGap"], "additionalProperties": {"type": "integer", "minimum": 1}},
+    "policies": {"type": "object", "minProperties": 10, "additionalProperties": {"type": "string", "minLength": 20}},
+    "testViewports": {"type": "array", "const": [320, 375, 430, 768, 1024, 1280, 1440]}
+  }
+}

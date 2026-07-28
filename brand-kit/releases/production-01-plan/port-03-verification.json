@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "gateId": "H-PORT-03-PRODUCTION-RELEASE-CANDIDATE",
+  "recordedAt": "2026-07-28",
+  "status": "complete",
+  "productionAuthority": false,
+  "package": {
+    "name": "@mez-systems/design-system-web",
+    "version": "1.0.0-rc.1",
+    "path": "brand-kit/releases/production-01/1.0.0-rc.1/",
+    "artifactCount": 312,
+    "contentSha256": "5be57efb5e48cba8ac2bdc98445852fbaf6e2decfea1546e3b7ad0eac8d7f26c",
+    "manifestSha256": "c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8",
+    "approximateSize": "19 MiB",
+    "published": false,
+    "deployed": false,
+    "consumerIntegrated": false
+  },
+  "deterministicAssembly": {
+    "result": "pass",
+    "method": "Built the repository output plus two separate clean temporary outputs and compared manifest bytes.",
+    "resultDetail": "All three assemblies produced content SHA-256 5be57efb5e48cba8ac2bdc98445852fbaf6e2decfea1546e3b7ad0eac8d7f26c and manifest SHA-256 c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8."
+  },
+  "isolatedVerification": {
+    "result": "pass",
+    "method": "Copied only the package to a temporary directory and ran both package verifier entrypoints with an empty environment, isolated Python mode and no installed dependency or network step.",
+    "resultDetail": "312 artifacts matched their hashes; all runtime design imports and assets resolved within the package; approved proof and dated testimonial boundaries passed."
+  },
+  "responsiveEvidence": [
+    {"width": 320, "bodyOverflowPx": -7, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"},
+    {"width": 375, "bodyOverflowPx": -13, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"},
+    {"width": 390, "bodyOverflowPx": -14, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"},
+    {"width": 430, "bodyOverflowPx": -15, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"},
+    {"width": 768, "bodyOverflowPx": -15, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"},
+    {"width": 920, "bodyOverflowPx": -15, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"},
+    {"width": 1024, "bodyOverflowPx": -15, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"},
+    {"width": 1280, "bodyOverflowPx": -15, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"},
+    {"width": 1440, "bodyOverflowPx": -15, "h1": 1, "heroProducts": 5, "testimonials": 7, "sections": 9, "result": "pass"}
+  ],
+  "interactionEvidence": {
+    "navigation": "Opening moved focus to the close control, exposed five product buttons and mounted five approved navigation cores; Escape closed the panel, restored inert and returned focus to the trigger with zero navigation cores remaining.",
+    "testimonialKeyboard": "ArrowRight moved scrollLeft from 449 to 867, announced Testimonial 2 of 7: antonije mirkovic, paused the rail and exposed a solid 3px focus outline.",
+    "manualRecovery": "A native horizontal scroll paused the rail at scrollLeft 1797; after leaving the interaction phase and the 900ms window, state returned to running and advanced 9px in 350ms.",
+    "offscreen": "With the testimonial rail fully above the viewport, autoState was paused, live portraits were 0 and playing videos were 0.",
+    "screenReaderStructure": "Browser accessibility snapshot exposed a named navigation, one main landmark, one H1, a named testimonial carousel region, ordered list items labelled 1 through 7, named portrait images, verified-account image labels, blockquotes and a footer.",
+    "missingMedia": "One deliberately absent portrait produced a visible and spoken source unavailable state while the marquee retained all seven list items, identity, follower snapshot and quote content.",
+    "noWebGL": "The ?no-webgl route rendered five product cards, six static product materials, seven testimonials and all nine sections with zero Living Core canvases and no core failure.",
+    "staticComplete": "The deterministic static branch rendered zero clone tracks, seven primary list items, zero playing videos, zero Living Core canvases and the live status All 7 testimonials are shown as a complete list."
+  },
+  "operatingProof": {
+    "status": "redacted-approved",
+    "approvedBy": "Olli",
+    "approvedAt": "2026-07-28T05:56:58Z",
+    "exactDerivativeBytesInspected": true,
+    "hashes": {
+      "command.png": "f1d6c36b1e464895401c61588a0894b13eccb8b8ca8d840e192ead846bd5f1ed",
+      "backend.png": "2b9f40fcb5c9e6c2c3b0142930ffeccbbd5b1e563a765d181693e18da591ab4d",
+      "docs.png": "e57729900aee5b7eba3e13c36846f2487a519d954fd503c01fc84e3e4469c0fc",
+      "ad-system.png": "02279977b6a6a40de066d71e7fba75edad66a5a3f2d50268fe0b0c05e51b5b8f"
+    }
+  },
+  "validationSummary": {
+    "repositoryCoreVerifiers": "7 of 7 pass",
+    "taskSpecificVerifiers": "PORT-01, PORT-02, CMP-05, CMP-06, Golden Homepage canonical, Golden Homepage Round 28 and package verifier pass",
+    "gateB": "pass at 68 of 75 with no blocking, critical, major or minor finding"
+  },
+  "knownGaps": [
+    "Exact spoken VoiceOver phrasing remains assigned to named-consumer proof by the approved CMP-06 decision.",
+    "Physical-pointer hover timing and device CPU, memory and battery profiling remain assigned to named-consumer proof by the approved CMP-06 decision.",
+    "The in-app browser did not expose operating-system reduced-motion emulation. The byte-identical canonical components already carry approved reduced-motion proof; PORT-03 additionally rendered the package-local static branch reached by the same forceStatic predicate and verified the prefers-reduced-motion source tokens.",
+    "The sixteen third-party marks remain explicitly non-Mez reference assets and require named-consumer legal and attribution confirmation before deployment.",
+    "The dated testimonial example is not live content truth. A named consumer owns wording, follower freshness, replacement media and continuing consent operations.",
+    "Routes, analytics, SEO, live availability, publishing, deployment, update and rollback in a registered consumer remain PORT-04 work."
+  ],
+  "humanGate": {
+    "status": "approved",
+    "approvedBy": "Olli",
+    "approvedAt": "2026-07-28T06:52:45Z",
+    "evidence": "brand-kit/releases/production-01-plan/release-candidate-approval.json"
+  },
+  "nextActionAtClosure": "Register the exact repository for CON-MEZ-SYSTEMS-WEB-001, then execute TASK-PORT-04-NAMED-CONSUMER-PROOF.",
+  "subsequentNextAction": "Preserve rc.1 byte-for-byte; close H-FIG-01-FIGMA-COMPANION-SCOPE, then complete Figma, channels and whole-system certification before final PORT-04 consumer transition."
+}

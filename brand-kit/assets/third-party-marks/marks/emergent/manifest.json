@@ -1,0 +1,44 @@
+{
+  "slug": "emergent",
+  "name": "Emergent",
+  "domain": "emergent.sh",
+  "website": "https://emergent.sh",
+  "colours": {
+    "primary": "#000000",
+    "all": [
+      {
+        "hex": "#000000",
+        "role": "brand",
+        "source": "curated"
+      }
+    ]
+  },
+  "fonts": [],
+  "logos": {
+    "mark": {
+      "svg": null,
+      "png": "logos/mark.png",
+      "light": null,
+      "dark": null,
+      "raster": [
+        "logos/raster/mark-256.png",
+        "logos/raster/mark-512.png",
+        "logos/raster/mark-1024.png"
+      ]
+    },
+    "app_icon": {
+      "png": "logos/app-icon.png",
+      "source": "s2-favicon",
+      "raster": [
+        "logos/raster/app-icon-256.png",
+        "logos/raster/app-icon-512.png",
+        "logos/raster/app-icon-1024.png"
+      ]
+    },
+    "primary": "logos/mark.png"
+  },
+  "socials": {},
+  "tier_fetched": "A",
+  "fetched_at": "2026-07-24T07:10:29Z",
+  "last_refreshed": "2026-07-24T07:10:29Z"
+}

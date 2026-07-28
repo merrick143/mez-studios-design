@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "evidence-mosaic",
+  "label": "What the studio has built and shipped",
+  "columns": 12,
+  "copyProvenance": "Every figure is derivable from registry/products.json. The three caption lines are authored for this fixture and are listed in review.json as awaiting Olli's sign-off.",
+  "cells": [
+    { "job": "metric", "figure": "5", "detail": "Systems built inside Mez Studios to solve our own operating problems.", "span": 5, "rows": 2 },
+    { "job": "metric", "figure": "1", "detail": "Proven enough to package and install today.", "span": 3 },
+    { "job": "metric", "figure": "5", "detail": "Stages every system passes before it becomes a Mez System.", "span": 3 },
+    { "job": "product", "productSlug": "aios", "surface": "material", "focal": true, "span": 4, "rows": 2 }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/testimonial-marquee-1.0.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "componentId", "pantryId", "version", "status", "productionAuthority", "gateId",
+    "candidateRevision", "taskId", "decisionIds", "title", "selectedFamily", "thesis", "anatomy",
+    "contentModel", "mediaEligibility", "motionDecisionException", "motion", "presentations", "keyboard",
+    "responsive", "states", "events", "prohibited", "dependencies", "testViewports", "approval",
+    "openQuestions", "outOfScope"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "componentId": {"const": "mz.systems.component.testimonial-marquee"},
+    "pantryId": {"type": "null"},
+    "version": {"const": "1.0.0"},
+    "status": {"const": "canonical"},
+    "productionAuthority": {"const": true},
+    "gateId": {"const": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF"},
+    "candidateRevision": {"const": "testimonial-marquee-01-r04"},
+    "taskId": {"const": "TASK-CMP-06-TESTIMONIAL-MARQUEE"},
+    "decisionIds": {"const": ["DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"]},
+    "title": {"const": "Testimonial Marquee"},
+    "selectedFamily": {"const": "testimonial-proof"},
+    "thesis": {"type": "string", "minLength": 400},
+    "anatomy": {"type": "array", "minItems": 12, "items": {"type": "string"}},
+    "contentModel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required", "optional", "portraitRequired", "socialRequired", "sourceOwnership", "socialBoundary", "mediaResolution", "sourceBoundary"],
+      "properties": {
+        "required": {"const": ["id", "quote", "name", "handle", "portrait", "social"]},
+        "optional": {"const": []},
+        "portraitRequired": {"const": ["src", "label"]},
+        "socialRequired": {"const": ["platform", "followers", "verified", "profileImage", "evidence"]},
+        "sourceOwnership": {"type": "string", "minLength": 50},
+        "socialBoundary": {"type": "string", "minLength": 60},
+        "mediaResolution": {"type": "string", "minLength": 30},
+        "sourceBoundary": {"type": "string", "minLength": 50}
+      }
+    },
+    "mediaEligibility": {
+      "type": "object", "additionalProperties": false,
+      "required": ["portraitRequired", "missingPortraitPolicy", "excludedFixtureId", "rationale"],
+      "properties": {
+        "portraitRequired": {"const": true},
+        "missingPortraitPolicy": {"type": "string", "minLength": 80},
+        "excludedFixtureId": {"const": "daniel-leung"},
+        "rationale": {"type": "string", "minLength": 80}
+      }
+    },
+    "motionDecisionException": {
+      "type": "object", "additionalProperties": false,
+      "required": ["decision", "approvedBy", "approvedAt", "scope", "record", "canonRelationship", "requiredSafeguards"],
+      "properties": {
+        "decision": {"const": "approved-bounded"},
+        "approvedBy": {"const": "Olli"},
+        "approvedAt": {"const": "2026-07-28"},
+        "scope": {"const": "CMP-06 continuous testimonial-track drift only"},
+        "record": {"const": "brand-kit/components/testimonial-marquee/round-03-feedback.json"},
+        "canonRelationship": {"type": "string", "minLength": 100},
+        "requiredSafeguards": {"type": "array", "minItems": 6, "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "motion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["trackPolicy", "autoplay", "continuousDrift", "scrollHijacking", "speedPxPerSecond", "interactionPauseMilliseconds", "trackImplementation", "pausePolicy", "portraitPolicy", "portraitDecisionException", "offscreen", "reduced"],
+      "properties": {
+        "trackPolicy": {"const": "continuous-auto-scroll-bounded-exception"},
+        "autoplay": {"const": true},
+        "continuousDrift": {"const": true},
+        "scrollHijacking": {"const": false},
+        "speedPxPerSecond": {"const": 24},
+        "interactionPauseMilliseconds": {"const": 900},
+        "trackImplementation": {"type": "string", "minLength": 100},
+        "pausePolicy": {"type": "string", "minLength": 80},
+        "portraitPolicy": {"type": "string", "pattern": "motion-policy"},
+        "portraitDecisionException": {"type": "string", "pattern": "halftone-portrait\\.source\\.json#motionDecisionException$"},
+        "offscreen": {"type": "string", "minLength": 70},
+        "reduced": {"type": "string", "minLength": 80}
+      }
+    },
+    "presentations": {
+      "type": "object", "additionalProperties": false,
+      "required": ["available", "recommended", "selected", "boundary"],
+      "properties": {
+        "available": {"const": ["profile-strip", "portrait-window", "social-caption", "quote-first", "proof-ledger"]},
+        "recommended": {"const": "social-caption"},
+        "selected": {"const": "social-caption"},
+        "boundary": {"type": "string", "minLength": 70}
+      }
+    },
+    "keyboard": {
+      "type": "object", "additionalProperties": false,
+      "required": ["focusOwner", "ArrowLeft", "ArrowRight", "Home", "End", "Tab", "screenReader"],
+      "properties": {
+        "focusOwner": {"type": "string", "minLength": 50},
+        "ArrowLeft": {"type": "string"}, "ArrowRight": {"type": "string"}, "Home": {"type": "string"}, "End": {"type": "string"}, "Tab": {"type": "string"},
+        "screenReader": {"type": "string", "minLength": 120}
+      }
+    },
+    "responsive": {
+      "type": "object", "additionalProperties": false,
+      "required": ["moving", "compact", "reducedMotion", "sourceOrder"],
+      "properties": {
+        "moving": {"type": "string"}, "compact": {"type": "string"}, "reducedMotion": {"type": "string"}, "sourceOrder": {"type": "string"}
+      }
+    },
+    "states": {"type": "array", "minItems": 12, "items": {"type": "string"}, "uniqueItems": true},
+    "events": {"const": ["mez-testimonial-ready", "mez-testimonial-change", "mez-testimonial-interaction", "mez-testimonial-motion-change", "mez-testimonial-failure"]},
+    "prohibited": {"type": "array", "minItems": 16, "items": {"type": "string"}, "uniqueItems": true},
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["foundations", "halftonePortrait", "fixture", "motionAuthority", "pantry", "designAuthority"],
+      "properties": {
+        "foundations": {"type": "string"},
+        "halftonePortrait": {"const": "brand-kit/components/halftone-portrait"},
+        "fixture": {"const": "brand-kit/components/testimonial-marquee/fixtures/ai-os-testimonials.json"},
+        "motionAuthority": {"const": "DEC-WEBSITE-MOTION-SYSTEM-001"},
+        "pantry": {"type": "string"},
+        "designAuthority": {"const": "brand-kit/design-authority/"}
+      }
+    },
+    "testViewports": {"const": [320, 375, 390, 768, 920, 1280, 1440]},
+    "approval": {
+      "type": "object", "additionalProperties": false,
+      "required": ["review", "promotionRecord", "decisionId", "approvedAt", "approvedBy", "approvedPresentation", "lockRecord", "followerPolicy", "state"],
+      "properties": {
+        "review": {"const": "brand-kit/components/testimonial-marquee/review.json"},
+        "promotionRecord": {"const": "brand-kit/components/testimonial-marquee/approval.json"},
+        "decisionId": {"const": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"},
+        "approvedAt": {"const": "2026-07-28"},
+        "approvedBy": {"const": "Olli"},
+        "approvedPresentation": {"const": "social-caption"},
+        "lockRecord": {"const": "brand-kit/components/testimonial-marquee/round-04-lock.json"},
+        "followerPolicy": {"const": "frozen-evidence"},
+        "state": {"const": "canonical"}
+      }
+    },
+    "openQuestions": {"type": "array", "minItems": 0, "items": {"type": "string"}},
+    "outOfScope": {"type": "array", "minItems": 7, "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-FND-02-COLOUR-SURFACES",
+  "receiptId": "RCP-FND-02-COLOUR-SURFACES",
+  "evaluatedAt": "2026-07-21T18:24:36+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators"},
+  "contractChecks": [
+    {"id": "SOURCE-AND-GENERATION", "status": "pass", "evidence": "One schema-validated source deterministically generates CSS, JSON, channel mappings, contrast evidence and a portable manifest."},
+    {"id": "SEMANTIC-PARITY", "status": "pass", "evidence": "All five modes expose the same forty-three semantic roles with resolved primitive references."},
+    {"id": "CONTRAST", "status": "pass", "evidence": "All eighty-five declared foreground/background pairings meet or exceed their thresholds."},
+    {"id": "AUTHORITY-SEPARATION", "status": "pass", "evidence": "Product gradients and Living Core palettes remain protected identity data, not semantic colour primitives."},
+    {"id": "RESPONSIVE-AND-CHANNELS", "status": "pass", "evidence": "The viewport matrix, channel fixtures and grayscale simulation preserve hierarchy without overflow."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "Olli approved final-lock-02 through H-FND-02-SURFACE-PROOF and DEC-COLOUR-FOUNDATION-001 records the canonical result."}
+  ],
+  "qualityDimensions": [
+    {"id": "monochrome-character", "score": 5, "maximum": 5, "evidence": "The historical near-white ladder is preserved while surface jobs and strong boundaries become explicit."},
+    {"id": "semantic-clarity", "score": 5, "maximum": 5, "evidence": "Forty-three stable roles separate parent-brand identity, surfaces, ink, borders, actions, focus, neutral feedback, emphasis feedback and disabled states."},
+    {"id": "channel-robustness", "score": 5, "maximum": 5, "evidence": "Email, document, print, forced-colour and contained-dark behaviour are declared rather than inferred."},
+    {"id": "accessibility", "score": 5, "maximum": 5, "evidence": "Contrast, non-colour state cues, focus, grayscale and responsive reflow have explicit evidence."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "Candidate status, gradient separation, gate, release boundary and refusal rules are explicit."},
+    {"id": "human-taste", "score": 5, "maximum": 5, "evidence": "Olli's approve verdict closes the bounded surface-character gate and locks final-lock-02 without requested changes."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["No gradient, Living Core, product-expression, spacing, geometry, homepage, Figma, consumer or active-release content was changed."]
+}

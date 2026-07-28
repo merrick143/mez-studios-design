@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION",
+  "gateId": "H-UI-01-PRODUCT-UI-FOUNDATION",
+  "systemId": "mz.systems.product-ui.foundation",
+  "candidateRevision": "product-ui-foundation-01-r01",
+  "verdict": "approved",
+  "approvedAt": "2026-07-28",
+  "approvedBy": "Olli",
+  "humanEvidence": [
+    "approved"
+  ],
+  "approvedScope": [
+    "The operational-ledger family as the shared Product UI foundation direction.",
+    "The application shell, bounded Ledger, Registry, Components and Release views, command search and contextual inspector.",
+    "Compact, comfortable and presentation densities; ready, loading, empty, error, stale, partial and no-permission states.",
+    "The responsive table-to-labelled-record recomposition and accessible status-distribution pattern.",
+    "Use of repository-backed fixtures when real product evidence is unavailable, with the fixture boundary kept explicit."
+  ],
+  "evidence": {
+    "sourceContract": "brand-kit/product-ui/product-ui-foundation.source.json",
+    "review": "brand-kit/product-ui/review.json",
+    "gateB": "brand-kit/product-ui/round-01-gate-b.json",
+    "verifier": "brand-kit/product-ui/verify_product_ui_contract.py",
+    "workbench": "brand-kit/workbench/product-ui/"
+  },
+  "authorises": [
+    "Close TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION.",
+    "Treat product-ui-foundation-01-r01 as the approved non-production Product UI foundation direction.",
+    "Use the approved grammar as an input to whole-system certification.",
+    "Expand the grammar into a separate evidence-backed product-workflow task when real redacted product evidence is available."
+  ],
+  "doesNotAuthorise": [
+    "Canonical or production Product UI authority.",
+    "Representing this design-system control-plane fixture as a real AI OS or customer screen.",
+    "Inventing customers, product workflows, usage, revenue, performance or business metrics.",
+    "Publishing a package, deploying a website, entering a consumer repository or assigning production version 1.0.0.",
+    "Marking deferred channel systems complete or certified."
+  ],
+  "resultingStatus": "approved-foundation-direction",
+  "productionAuthority": false,
+  "canonicalAuthority": false,
+  "decisionId": null,
+  "nextTask": "TASK-CERT-01-SYSTEM-CERTIFICATION"
+}

@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Problem Section Lab 7 (steps, diagnosed)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-dark-soft: #2e2e2e; --page-dark-softer: #3b3b38;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1;
+  --page-muted: #666662; --page-dark-muted: #b8b8b1; --page-dark-body: #cfcfc9;
+  --step: clamp(14px, 2.8vw, 44px);
+  --tread-radius: var(--mz-radius-compact);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* ---------------------------------------------------------------- lab shell */
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 10px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-top nav a:hover { background: rgba(248,248,248,.1); }
+.lab-note {
+  padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: var(--page-dark-body);
+  font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3;
+}
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px; color: var(--page-ink);
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--page-muted);
+}
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 62ch; line-height: 1.5; }
+
+/* ------------------------------------------------------------ section chassis */
+.pf { background: var(--page-paper); color: var(--page-ink); }
+.pf-inner {
+  max-width: 1180px; margin-inline: auto;
+  padding-inline: clamp(20px,5vw,64px);
+  padding-block: clamp(72px,9vw,124px);
+}
+/* Head is a title and one paragraph. Nothing else lives here.
+   The measure is set per role: a single cap in body characters squeezes a 62px
+   display line into four short lines. */
+.pf-head { max-width: none; }
+.pf-eyebrow {
+  margin: 0; font-family: var(--mz-font-technical); font-size: 12px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted);
+}
+.pf-title {
+  margin: 18px 0 0; font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(34px,4.6vw,62px); line-height: .99; letter-spacing: -.042em;
+  max-inline-size: 16ch;
+}
+.pf-title .quiet { color: var(--page-line-strong); display: block; }
+.pf-lead {
+  margin: 22px 0 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5;
+  color: var(--page-muted); max-inline-size: 46ch;
+}
+.pf-stage { margin-top: clamp(48px,6vw,84px); }
+
+/* Two-column chassis, used only by the layout control. */
+.pf-split {
+  display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr);
+  gap: clamp(36px,5.5vw,80px); align-items: center;
+}
+.pf-split .pf-head { max-width: none; }
+.pf-split .pf-stage { margin-top: 0; }
+@media (max-width: 900px) { .pf-split { grid-template-columns: 1fr; gap: 44px; } }
+
+/* --------------------------------------------------------- shared step anatomy */
+.st { display: grid; gap: 4px; }
+.st-row {
+  position: relative; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 18px 22px; border-radius: var(--tread-radius);
+  border: 1px solid var(--page-line);
+}
+.st-role {
+  font-family: var(--mz-font-display); font-weight: 640; font-size: 16px; letter-spacing: -.02em;
+}
+.st-note { font-size: 13px; color: var(--page-muted); margin-left: auto; text-align: right; }
+.st-you { background: var(--page-white); border-color: var(--page-line-strong); }
+.st-layer { background: var(--page-dark); border-color: var(--page-dark); color: var(--page-paper); }
+.st-layer .st-role { color: var(--page-paper); font-weight: 600; }
+.st-layer .st-note { color: var(--page-dark-muted); }
+
+/* Weight ramp. Each tread is heavier than the one above it. */
+.w-1 { background: var(--page-dark-softer); border-color: var(--page-dark-softer); }
+.w-2 { background: var(--page-dark-soft); border-color: var(--page-dark-soft); }
+.w-3 { background: var(--page-dark-raised); border-color: var(--page-dark-raised); }
+.w-4 { background: var(--page-dark); border-color: var(--page-dark); }
+
+/* Equal-width treads that offset sideways: a true staircase. Width is reduced by
+   the total travel so the last tread finishes flush with the container. */
+.st--offset .st-row { width: calc(100% - (var(--step) * 4)); }
+.st--offset .o-1 { margin-left: calc(var(--step) * 1); }
+.st--offset .o-2 { margin-left: calc(var(--step) * 2); }
+.st--offset .o-3 { margin-left: calc(var(--step) * 3); }
+.st--offset .o-4 { margin-left: calc(var(--step) * 4); }
+
+/* Narrowing treads: left edge steps in, right edge stays put. */
+.st--narrow .o-1 { margin-left: calc(var(--step) * 1); }
+.st--narrow .o-2 { margin-left: calc(var(--step) * 2); }
+.st--narrow .o-3 { margin-left: calc(var(--step) * 3); }
+.st--narrow .o-4 { margin-left: calc(var(--step) * 4); }
+
+/* Radius probes. */
+.st--r16 { --tread-radius: var(--mz-radius-container); }
+.st--r8  { --tread-radius: var(--mz-radius-compact); }
+.st--r4  { --tread-radius: var(--mz-radius-fine); }
+
+/* Outlined treads: weight carried by border tone instead of fill. */
+.st--outline .st-row { background: var(--page-paper); color: var(--page-ink); }
+.st--outline .st-row .st-role { color: var(--page-ink); }
+.st--outline .st-row .st-note { color: var(--page-muted); }
+.st--outline .st-you { background: var(--page-white); border-color: var(--page-ink); }
+.st--outline .w-1 { border-color: var(--page-line); }
+.st--outline .w-2 { border-color: var(--page-line-mid); }
+.st--outline .w-3 { border-color: var(--page-line-strong); }
+.st--outline .w-4 { border-color: var(--page-body); }
+
+@media (max-width: 620px) {
+  :root { --step: 10px; }
+  .st-note { margin-left: 0; text-align: left; width: 100%; }
+  .st--offset .st-row { width: calc(100% - (var(--step) * 4)); }
+}
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Problem Section · Lab 7 · steps, diagnosed</strong>
+  <nav>
+    <a href="#a">A baseline</a><a href="#b">B notes</a><a href="#c">C two-column</a>
+    <a href="#d">D narrowing</a><a href="#e">E radius 4</a><a href="#f">F outlined</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>A diagnostic set, not six new ideas.</b> Copy is now locked to the canonical section text and
+  is byte-identical in all six: eyebrow, title, one paragraph. The weight ramp you liked is in every
+  variant. Each variant changes exactly one thing, so whatever is off about the steps can be named:
+  A is the baseline at radius 8 with equal-width treads and no notes; B adds the notes back; C puts
+  the baseline back into the old two-column layout; D narrows the treads instead of offsetting them;
+  E drops the radius to 4; F carries the weight on the border instead of the fill.
+  "Another credit system" is now "Another login". No intelligence block anywhere.
+</div>
+
+<!-- ============================================================ A · BASELINE -->
+<article class="lab-item" id="a">
+  <header class="lab-label">
+    <span class="lab-num">A</span>
+    <span class="lab-name">Baseline</span>
+    <span class="lab-rule">Full width · radius 8 · offset · no notes</span>
+    <span class="lab-rat">Head sits at the top as a title and one paragraph, and the staircase runs wide beneath it as the protagonist. Treads are equal width and step sideways, so they read as strata rather than as a tapering shape.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner">
+      <div class="pf-head">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+      </div>
+
+      <div class="pf-stage">
+        <div class="st st--offset st--r8">
+          <div class="st-row st-you"><span class="st-role">Your business</span></div>
+          <div class="st-row st-layer w-1 o-1"><span class="st-role">Another subscription</span></div>
+          <div class="st-row st-layer w-2 o-2"><span class="st-role">Another interface</span></div>
+          <div class="st-row st-layer w-3 o-3"><span class="st-role">Another app</span></div>
+          <div class="st-row st-layer w-4 o-4"><span class="st-role">Another login</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =============================================================== B · NOTES -->
+<article class="lab-item" id="b">
+  <header class="lab-label">
+    <span class="lab-num">B</span>
+    <span class="lab-name">Baseline plus notes</span>
+    <span class="lab-rule">A · with the tread notes back</span>
+    <span class="lab-rat">Identical to A with one change: each tread carries its short note again. Worth seeing directly against A now that the left column is lean, because the notes may be what was making the section feel wordy rather than the head.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner">
+      <div class="pf-head">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+      </div>
+
+      <div class="pf-stage">
+        <div class="st st--offset st--r8">
+          <div class="st-row st-you">
+            <span class="st-role">Your business</span>
+            <span class="st-note">Everything you already know</span>
+          </div>
+          <div class="st-row st-layer w-1 o-1">
+            <span class="st-role">Another subscription</span>
+            <span class="st-note">Their price, their renewal</span>
+          </div>
+          <div class="st-row st-layer w-2 o-2">
+            <span class="st-role">Another interface</span>
+            <span class="st-note">Their window, their layout</span>
+          </div>
+          <div class="st-row st-layer w-3 o-3">
+            <span class="st-role">Another app</span>
+            <span class="st-note">Knows nothing about the rest</span>
+          </div>
+          <div class="st-row st-layer w-4 o-4">
+            <span class="st-role">Another login</span>
+            <span class="st-note">One more thing to keep</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ========================================================== C · TWO-COLUMN -->
+<article class="lab-item" id="c">
+  <header class="lab-label">
+    <span class="lab-num">C</span>
+    <span class="lab-name">Two-column control</span>
+    <span class="lab-rule">A · in the old split layout</span>
+    <span class="lab-rat">The same baseline steps put back into the two-column layout, so the layout question is separated from the step question. If A reads better than C, the layout was the problem. If they read the same, it was the treads.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner pf-split">
+      <div class="pf-head">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+      </div>
+
+      <div class="pf-stage">
+        <div class="st st--offset st--r8">
+          <div class="st-row st-you"><span class="st-role">Your business</span></div>
+          <div class="st-row st-layer w-1 o-1"><span class="st-role">Another subscription</span></div>
+          <div class="st-row st-layer w-2 o-2"><span class="st-role">Another interface</span></div>
+          <div class="st-row st-layer w-3 o-3"><span class="st-role">Another app</span></div>
+          <div class="st-row st-layer w-4 o-4"><span class="st-role">Another login</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- =========================================================== D · NARROWING -->
+<article class="lab-item" id="d">
+  <header class="lab-label">
+    <span class="lab-num">D</span>
+    <span class="lab-name">Narrowing treads</span>
+    <span class="lab-rule">A · left edge steps in, right edge fixed</span>
+    <span class="lab-rat">The alignment probe, and the behaviour lab 6 actually had. Each tread is shorter than the one above it instead of being the same width offset sideways, so the stack tapers. Isolates whether the taper was part of what felt wrong.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner">
+      <div class="pf-head">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+      </div>
+
+      <div class="pf-stage">
+        <div class="st st--narrow st--r8">
+          <div class="st-row st-you"><span class="st-role">Your business</span></div>
+          <div class="st-row st-layer w-1 o-1"><span class="st-role">Another subscription</span></div>
+          <div class="st-row st-layer w-2 o-2"><span class="st-role">Another interface</span></div>
+          <div class="st-row st-layer w-3 o-3"><span class="st-role">Another app</span></div>
+          <div class="st-row st-layer w-4 o-4"><span class="st-role">Another login</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================ E · RADIUS 4 -->
+<article class="lab-item" id="e">
+  <header class="lab-label">
+    <span class="lab-num">E</span>
+    <span class="lab-name">Radius 4</span>
+    <span class="lab-rule">A · tightest rounded corner on the scale</span>
+    <span class="lab-rat">The rounding probe. Same as A with the tread radius dropped from 8 to 4, the tightest the geometry scale allows. A short row at radius 16 reads as a soft chip, and this is how far the other way the system permits.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner">
+      <div class="pf-head">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+      </div>
+
+      <div class="pf-stage">
+        <div class="st st--offset st--r4">
+          <div class="st-row st-you"><span class="st-role">Your business</span></div>
+          <div class="st-row st-layer w-1 o-1"><span class="st-role">Another subscription</span></div>
+          <div class="st-row st-layer w-2 o-2"><span class="st-role">Another interface</span></div>
+          <div class="st-row st-layer w-3 o-3"><span class="st-role">Another app</span></div>
+          <div class="st-row st-layer w-4 o-4"><span class="st-role">Another login</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================= F · OUTLINE -->
+<article class="lab-item" id="f">
+  <header class="lab-label">
+    <span class="lab-num">F</span>
+    <span class="lab-name">Outlined treads</span>
+    <span class="lab-rule">A · weight on the border, not the fill</span>
+    <span class="lab-rat">The colour probe. Same ramp, carried by border tone on a paper fill instead of by four charcoal blocks. Tests whether the heaviness of the dark fills is what was off, while keeping the progression you liked.</span>
+  </header>
+  <section class="pf" aria-label="The problem">
+    <div class="pf-inner">
+      <div class="pf-head">
+        <p class="pf-eyebrow">The problem</p>
+        <h2 class="pf-title"><span class="quiet">Too many tools.</span> Too many middlemen.</h2>
+        <p class="pf-lead">The models keep improving. The tools keep changing. The business keeps explaining itself from the beginning.</p>
+      </div>
+
+      <div class="pf-stage">
+        <div class="st st--offset st--r8 st--outline">
+          <div class="st-row st-you"><span class="st-role">Your business</span></div>
+          <div class="st-row st-layer w-1 o-1"><span class="st-role">Another subscription</span></div>
+          <div class="st-row st-layer w-2 o-2"><span class="st-role">Another interface</span></div>
+          <div class="st-row st-layer w-3 o-3"><span class="st-role">Another app</span></div>
+          <div class="st-row st-layer w-4 o-4"><span class="st-role">Another login</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+</body>
+</html>

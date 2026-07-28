@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r17",
+  "verdict": "round-feedback",
+  "recordedAt": "2026-07-25",
+  "note": "GH-S02 direction exploration after the four unrecorded lab rounds of 24 July. Olli reviewed problem-lab-5 (six structural rules, all monochrome, all still) and selected V1 the stack as the direction. problem-lab-6 is the bounded variation set around that champion. No page code changed; both labs are exploration surfaces.",
+  "sections": [
+    {
+      "id": "GH-S02",
+      "title": "The problem",
+      "verdict": "direction-selected",
+      "feedback": "I like V1, the stack. Maybe we can do this as steps, almost like it goes: Your business, Another subscription, Another interface, Another app. Have them kind of go progressively, step up. I don't know about having a whole block for the intelligence, I don't know if that makes sense. Let's just make variations of this one."
+    }
+  ],
+  "priorContext": {
+    "constraint": "Structure is the visual. Olli, 25 July: 'it just visually has to show the different parts of it. It doesn't have to be some crazy diagram. It can be just the words in boxes, but in our style. The objective is to convey the point in a good way, in a minimalistic way. There's no need for crazy motion.'",
+    "referenceStudy": "brand-kit/references/authored-section-devices/design-language.md",
+    "unrecordedRounds": "The four problem-lab rounds of 24 July 2026 were rejected with no feedback record written. Their verbatim rejections were recovered from session transcript ff39ea05 and are analysed in brand-kit/design-authority/FEEDBACK-DISCIPLINE.md."
+  },
+  "labs": [
+    {
+      "path": "brand-kit/workbench/golden/homepage/problem-lab-5/index.html",
+      "status": "reviewed",
+      "note": "Six structural rules: stack, nesting, ledger, gap, three plates, repetition. V1 selected. Agent assessment recorded V2 nesting as the weakest and unrescuable at token-scale concentric radii.",
+      "variants": ["V1 stack", "V2 nesting", "V3 ledger", "V4 gap", "V5 three plates", "V6 repetition"]
+    },
+    {
+      "path": "brand-kit/workbench/golden/homepage/problem-lab-6/index.html",
+      "status": "awaiting-review",
+      "note": "Champion variation set. Anatomy held fixed; two dimensions varied: how the treads step, and what replaces the intelligence block.",
+      "variants": [
+        {"id": "A", "name": "Steps, open end", "varies": "intelligence removed, hairline runs off past the last tread"},
+        {"id": "B", "name": "Steps, destination line", "varies": "intelligence as a labelled edge rather than a card"},
+        {"id": "C", "name": "Steps, weight ramp", "varies": "treads gain weight downward, nothing added"},
+        {"id": "D", "name": "Steps, piling up", "varies": "direction reversed, business buried at the bottom"},
+        {"id": "E", "name": "Steps with a measure", "varies": "horizontal bracket measuring the distance travelled"},
+        {"id": "F", "name": "Flush control", "varies": "no stepping, no intelligence, bracket retained"}
+      ]
+    }
+  ],
+  "decisions": {
+    "monochrome": "All variants are monochrome. Using mz-g13 to stand for the generic model layer would break COL-10, since material must trace to a product. Holding colour back until Mez appears is also the stronger narrative. Reversible on the champion if Olli disagrees.",
+    "motion": "Every variant is a still. No data-mz-core is mounted in either lab, so MOT-01 is not engaged. Core allocation is a decision for the champion once it lands in the page."
+  },
+  "validations": [
+    {"check": "verify_portability.py", "result": "pass"},
+    {"check": "verify_llm_contracts.py", "result": "pass"},
+    {"check": "verify_workbench.py", "result": "pass"},
+    {"check": "verify_authority.py", "result": "pass"},
+    {"check": "horizontal reflow 320 / 390 / 1440", "result": "pass, no body overflow"},
+    {"check": "anti-slop canon sweep", "result": "clean: no http://, no em dash, no pure black, no box-shadow, no backdrop-filter, no keyframes"}
+  ],
+  "outputStatus": "research",
+  "productionAuthority": false
+}

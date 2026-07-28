@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0",
+  "variant": "product-comparison",
+  "label": "The Mez Systems registry",
+  "columns": 12,
+  "source": "registry",
+  "copyProvenance": "Entirely registry-driven. Nothing counts to five, so adding or removing a product reflows the bento with no change here.",
+  "registryTemplate": {
+    "live": { "surface": "material", "focal": true, "span": 6, "rows": 4 },
+    "coming": { "surface": "paper", "span": 3, "rows": 2 }
+  }
+}

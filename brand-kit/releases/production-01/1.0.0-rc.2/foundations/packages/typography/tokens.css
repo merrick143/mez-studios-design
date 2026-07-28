@@ -1,0 +1,304 @@
+/* Generated from typography.source.json. Do not hand-edit. */
+
+@font-face {
+  font-family: "Mez Geist";
+  src: url("./fonts/geist/Geist-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mez Inter";
+  src: url("./fonts/inter/Inter-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mez Inter";
+  src: url("./fonts/inter/Inter-Variable-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mez Instrument Serif";
+  src: url("./fonts/instrument-serif/InstrumentSerif-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mez Instrument Serif";
+  src: url("./fonts/instrument-serif/InstrumentSerif-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mez IBM Plex Mono";
+  src: url("./fonts/ibm-plex-mono/IBMPlexMono-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --mz-font-display: "Mez Geist", "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mz-font-body: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mz-font-editorial: "Mez Instrument Serif", Georgia, "Times New Roman", serif;
+  --mz-font-technical: "Mez IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --mz-type-display-hero-size: clamp(50px, 8vw, 112px);
+  --mz-type-display-hero-weight: 700;
+  --mz-type-display-hero-leading: 0.91;
+  --mz-type-display-hero-tracking: -0.064em;
+  --mz-type-display-section-size: clamp(36px, 5.8vw, 76px);
+  --mz-type-display-section-weight: 680;
+  --mz-type-display-section-leading: 0.98;
+  --mz-type-display-section-tracking: -0.052em;
+  --mz-type-display-title-size: clamp(32px, 4.2vw, 56px);
+  --mz-type-display-title-weight: 670;
+  --mz-type-display-title-leading: 1;
+  --mz-type-display-title-tracking: -0.044em;
+  --mz-type-heading-section-size: clamp(26px, 2.7vw, 34px);
+  --mz-type-heading-section-weight: 650;
+  --mz-type-heading-section-leading: 1.14;
+  --mz-type-heading-section-tracking: -0.028em;
+  --mz-type-heading-subsection-size: clamp(20px, 2vw, 24px);
+  --mz-type-heading-subsection-weight: 640;
+  --mz-type-heading-subsection-leading: 1.24;
+  --mz-type-heading-subsection-tracking: -0.02em;
+  --mz-type-body-lead-size: clamp(18px, 1.65vw, 21px);
+  --mz-type-body-lead-weight: 420;
+  --mz-type-body-lead-leading: 1.5;
+  --mz-type-body-lead-tracking: -0.018em;
+  --mz-type-body-default-size: clamp(16px, 1.2vw, 17px);
+  --mz-type-body-default-weight: 400;
+  --mz-type-body-default-leading: 1.56;
+  --mz-type-body-default-tracking: -0.011em;
+  --mz-type-body-compact-size: 14px;
+  --mz-type-body-compact-weight: 420;
+  --mz-type-body-compact-leading: 1.46;
+  --mz-type-body-compact-tracking: -0.006em;
+  --mz-type-ui-control-size: 14px;
+  --mz-type-ui-control-weight: 650;
+  --mz-type-ui-control-leading: 1;
+  --mz-type-ui-control-tracking: -0.012em;
+  --mz-type-ui-label-size: 11px;
+  --mz-type-ui-label-weight: 680;
+  --mz-type-ui-label-leading: 1.2;
+  --mz-type-ui-label-tracking: 0.09em;
+  --mz-type-caption-size: 12px;
+  --mz-type-caption-weight: 450;
+  --mz-type-caption-leading: 1.42;
+  --mz-type-caption-tracking: -0.002em;
+  --mz-type-technical-size: 13px;
+  --mz-type-technical-weight: 400;
+  --mz-type-technical-leading: 1.46;
+  --mz-type-technical-tracking: 0em;
+  --mz-type-numeric-display-size: clamp(34px, 4.2vw, 58px);
+  --mz-type-numeric-display-weight: 660;
+  --mz-type-numeric-display-leading: 0.98;
+  --mz-type-numeric-display-tracking: -0.042em;
+  --mz-type-numeric-tabular-size: 14px;
+  --mz-type-numeric-tabular-weight: 560;
+  --mz-type-numeric-tabular-leading: 1.35;
+  --mz-type-numeric-tabular-tracking: -0.008em;
+  --mz-type-editorial-accent-size: clamp(28px, 3.8vw, 52px);
+  --mz-type-editorial-accent-weight: 400;
+  --mz-type-editorial-accent-leading: 1.02;
+  --mz-type-editorial-accent-tracking: -0.018em;
+}
+
+.mz-type-display-hero {
+  font-family: "Mez Geist", "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-display-hero-size);
+  font-style: normal;
+  font-weight: var(--mz-type-display-hero-weight);
+  line-height: var(--mz-type-display-hero-leading);
+  letter-spacing: var(--mz-type-display-hero-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 12ch;
+}
+
+.mz-type-display-section {
+  font-family: "Mez Geist", "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-display-section-size);
+  font-style: normal;
+  font-weight: var(--mz-type-display-section-weight);
+  line-height: var(--mz-type-display-section-leading);
+  letter-spacing: var(--mz-type-display-section-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 15ch;
+}
+
+.mz-type-display-title {
+  font-family: "Mez Geist", "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-display-title-size);
+  font-style: normal;
+  font-weight: var(--mz-type-display-title-weight);
+  line-height: var(--mz-type-display-title-leading);
+  letter-spacing: var(--mz-type-display-title-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 19ch;
+}
+
+.mz-type-heading-section {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-heading-section-size);
+  font-style: normal;
+  font-weight: var(--mz-type-heading-section-weight);
+  line-height: var(--mz-type-heading-section-leading);
+  letter-spacing: var(--mz-type-heading-section-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 28ch;
+}
+
+.mz-type-heading-subsection {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-heading-subsection-size);
+  font-style: normal;
+  font-weight: var(--mz-type-heading-subsection-weight);
+  line-height: var(--mz-type-heading-subsection-leading);
+  letter-spacing: var(--mz-type-heading-subsection-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 34ch;
+}
+
+.mz-type-body-lead {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-body-lead-size);
+  font-style: normal;
+  font-weight: var(--mz-type-body-lead-weight);
+  line-height: var(--mz-type-body-lead-leading);
+  letter-spacing: var(--mz-type-body-lead-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 42ch;
+}
+
+.mz-type-body-default {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-body-default-size);
+  font-style: normal;
+  font-weight: var(--mz-type-body-default-weight);
+  line-height: var(--mz-type-body-default-leading);
+  letter-spacing: var(--mz-type-body-default-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 66ch;
+}
+
+.mz-type-body-compact {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-body-compact-size);
+  font-style: normal;
+  font-weight: var(--mz-type-body-compact-weight);
+  line-height: var(--mz-type-body-compact-leading);
+  letter-spacing: var(--mz-type-body-compact-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 72ch;
+}
+
+.mz-type-ui-control {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-ui-control-size);
+  font-style: normal;
+  font-weight: var(--mz-type-ui-control-weight);
+  line-height: var(--mz-type-ui-control-leading);
+  letter-spacing: var(--mz-type-ui-control-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+}
+
+.mz-type-ui-label {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-ui-label-size);
+  font-style: normal;
+  font-weight: var(--mz-type-ui-label-weight);
+  line-height: var(--mz-type-ui-label-leading);
+  letter-spacing: var(--mz-type-ui-label-tracking);
+  font-feature-settings: "kern" 1;
+  text-wrap: pretty;
+  text-transform: uppercase;
+}
+
+.mz-type-caption {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-caption-size);
+  font-style: normal;
+  font-weight: var(--mz-type-caption-weight);
+  line-height: var(--mz-type-caption-leading);
+  letter-spacing: var(--mz-type-caption-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 72ch;
+}
+
+.mz-type-technical {
+  font-family: "Mez IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: var(--mz-type-technical-size);
+  font-style: normal;
+  font-weight: var(--mz-type-technical-weight);
+  line-height: var(--mz-type-technical-leading);
+  letter-spacing: var(--mz-type-technical-tracking);
+  font-feature-settings: "zero" 1, "tnum" 1;
+  text-wrap: pretty;
+  max-inline-size: 80ch;
+}
+
+.mz-type-numeric-display {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-numeric-display-size);
+  font-style: normal;
+  font-weight: var(--mz-type-numeric-display-weight);
+  line-height: var(--mz-type-numeric-display-leading);
+  letter-spacing: var(--mz-type-numeric-display-tracking);
+  font-feature-settings: "tnum" 1, "ss01" 1, "cv05" 1, "cv08" 1;
+  text-wrap: pretty;
+}
+
+.mz-type-numeric-tabular {
+  font-family: "Mez Inter", Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--mz-type-numeric-tabular-size);
+  font-style: normal;
+  font-weight: var(--mz-type-numeric-tabular-weight);
+  line-height: var(--mz-type-numeric-tabular-leading);
+  letter-spacing: var(--mz-type-numeric-tabular-tracking);
+  font-feature-settings: "tnum" 1, "zero" 1, "cv05" 1, "cv08" 1;
+  text-wrap: pretty;
+}
+
+.mz-type-editorial-accent {
+  font-family: "Mez Instrument Serif", Georgia, "Times New Roman", serif;
+  font-size: var(--mz-type-editorial-accent-size);
+  font-style: italic;
+  font-weight: var(--mz-type-editorial-accent-weight);
+  line-height: var(--mz-type-editorial-accent-leading);
+  letter-spacing: var(--mz-type-editorial-accent-tracking);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: pretty;
+  max-inline-size: 22ch;
+}
+
+.mz-type-truncate {
+  min-inline-size: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mz-type-numeric {
+  font-variant-numeric: tabular-nums slashed-zero;
+}

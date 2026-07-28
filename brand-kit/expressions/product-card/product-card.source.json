@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0.0",
+  "expressionId": "mz.systems.expression.product-card",
+  "version": "1.0.0",
+  "status": "canonical-visual-grammar",
+  "productionAuthority": true,
+  "candidateGateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
+  "candidateRevision": "product-card-02-phase-a-r10",
+  "programme": {
+    "name": "Product Card 02",
+    "sequenceRule": "Lock one product-expression language and its bounded treatments before implementing the functional component family.",
+    "phaseA": {"name": "Visual Architecture", "status": "complete", "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION"},
+    "phaseB": {"name": "Website Component System", "status": "ready-to-start", "gateId": "H-EXP-04B-CARD-FUNCTIONAL-PROOF"}
+  },
+  "supersedes": [
+    {"candidateRevision": "product-card-01", "reason": "Rejected as an under-designed generic chassis."},
+    {"candidateRevision": "product-commerce-family-r01", "reason": "Superseded because function was attempted before the visual architecture was locked."},
+    {"candidateRevision": "product-card-02-phase-a-r01", "reason": "Rejected because ten isolated art-card treatments obscured the actual website component, included unexplained concepts and presented groupings weakly."},
+    {"candidateRevision": "product-card-02-phase-a-r02", "reason": "Rejected on 22 July 2026: the four-treatment round read as generic, over-decorated and vibe-coded rather than a designed website system."},
+    {"candidateRevision": "product-card-02-phase-a-r03", "reason": "Rejected on 22 July 2026: the eleven-direction round still read as vibe-coded card design. The rebuild brief redirected Phase A to the play-orb and atlas expression lineage — one material, many treatments, variants per treatment, rarity as finish, pills that share the disc language."},
+    {"candidateRevision": "product-card-02-phase-a-r04", "reason": "Rejected on 22 July 2026: the expression system still forced the disc, offered too few genuinely different landing and edition compositions, and showed too little believable website context. Round 05 expanded the selection surface to fifty specimens."},
+    {"candidateRevision": "product-card-02-phase-a-r05", "reason": "Round feedback on 22 July 2026: progressing but still materially below the standard of a world-leading software company. Range improved, but the work read as disconnected component exercises rather than a professional product system. Kept signals were L01, L04, L10, C03, U01 and U02; round 06 converged them into three coherent worlds."},
+    {"candidateRevision": "product-card-02-phase-a-r06", "reason": "Rejected on 22 July 2026 because the invented Monolith, Signal and Instrument worlds abandoned approved rounded geometry, obscured the established Mez expression vocabulary and made animation opt-in behind a button. S02 family discovery was the only kept signal; S03 was killed and nine studies were marked revise."},
+    {"candidateRevision": "product-card-02-phase-a-r07", "reason": "Round feedback on 22 July 2026 established Round 07 as the strongest direction so far and requested controlled refinement rather than a reset. PC01 Full-field footer, PC02 Portrait object and SC04 Bundle offer were kept; PC03, PC04, PC05 and ED04 were killed. Round 08 preserves the champions, removes internal IDs and decorative numbers, and varies mark placement, hierarchy, proportion, action and footer integration."},
+    {"candidateRevision": "product-card-02-phase-a-r08", "reason": "Round feedback on 22 July 2026 converged the system: twenty specimens were kept, sixteen were killed, thirteen were marked revise and IC01 remained unreviewed. Round 09 removed every killed path, preserved the surviving anatomy and implemented only the requested revisions."},
+    {"candidateRevision": "product-card-02-phase-a-r09", "reason": "Round feedback on 22 July 2026 kept fourteen candidates, revised eighteen and killed all four System Editions. Round 10 removes the edition family and applies one product-first naming hierarchy, filled-action rule and requested Wings scale across the thirty-two survivors; FN01 receives a measured fan spread."}
+  ],
+  "designThesis": "Round 10 is the approved Product Card 02 visual grammar, built only from Round 09 survivors and confirmed by 32 keep verdicts. It spans landing plates, two reusable product-card anatomies, bounded bundle relationships and believable website sections. All four System Editions are removed. Every product-led card puts the canonical public product name first, the canonical extended system name second and supporting copy third. Landing plates, product cards and product heroes use consistent filled actions; Wings scale and placement follow their compositional job. Static and automatic Deep Mineral twins remain visible together with only one dominant live surface. Phase B inherits this grammar and adds functional components without reopening Phase A.",
+  "cardArchitecture": {
+    "name": "Rounded Mez Card Grammar",
+    "widthRange": [240, 1440],
+    "ratio": "contextual: compact row through immersive hero",
+    "fixedSlots": ["public product name", "extended system name", "one-sentence job", "availability", "filled action"],
+    "variableMedia": ["material field", "material spine", "material crop", "material object", "territory proof fragment", "capsule", "pack cover"],
+    "familyRule": "Every product preserves canonical content and material identity inside one rounded grammar. Public product name always precedes the extended system name. Plates, discs, squircles, capsules and stacks are selectable expressions rather than mandatory decoration. Sibling cards preserve equal geometry and product count remains data-driven."
+  },
+  "sharedContent": {
+    "source": "brand-kit/registry/products.json",
+    "rule": "Every expression renders the canonical registry at runtime; no expression receives bespoke copy, and no layout assumes a fixed product count.",
+    "actionByAvailability": {"live": "Explore the product", "coming-soon": "Join waitlist"}
+  },
+  "postures": [
+    {"id": "P1", "name": "Monogram", "treatment": "Canonical Wings geometry masking the exact material", "job": "Identity moments, favicon and logo lockups", "rule": "The recorded rare gradient-Wings exception; never an everyday card decoration.", "minimum": "24px"},
+    {"id": "P2", "name": "Disc", "treatment": "Circular mask, hard edge, white Wings at 0.39 width", "job": "App icon, rails, compact product identity", "rule": "The canonical compact product object. Below 48px the Wings are dropped and a name must sit beside the disc.", "minimum": "24px utility · 48px marked"},
+    {"id": "P3", "name": "Capsule", "treatment": "The disc carried inside a full-round chip with the product name", "job": "Selectors, dense lists, inline references, navigation", "rule": "The capsule is the disc's pocket form — the same material language, never a different one.", "minimum": "28px row height"},
+    {"id": "P4", "name": "Plate", "treatment": "Rounded-rectangle field filled edge to edge", "job": "Landing surfaces, feature media, focal moments", "rule": "The only posture eligible for the single live Living Core per viewport.", "minimum": "160px"},
+    {"id": "P5", "name": "Edition card", "treatment": "Deferred collectible research outside the active Product Card 02 grammar", "job": "Future EXP-05 trading-card research only", "rule": "All Round 09 edition candidates were killed. This posture cannot render in Round 10 and requires a separate future programme decision.", "minimum": "not active"}
+  ],
+  "expressions": [
+    {"id": "F1", "name": "Landing Plates", "role": "first-impression", "placement": "Product landing and hero media", "thesis": "Fourteen surviving quiet, centred-split, immersive, dark-launch and framed plates use public-name-first hierarchy and one filled-action rule; Wings grow only on the requested specimens.", "motion": "automatic-focal-surface", "variants": ["QC01","QC02","QC03","QC04","ES02","ES04","IC01","IC02","IC03","HL01","HL02","HL04","QF01","QF03"], "failure": "A plate fails when extended names lead, outline/text actions return, a killed direction returns or multiple live surfaces appear."},
+    {"id": "F2", "name": "Product Cards", "role": "repeatable-discovery", "placement": "Product shelves, navigation and feature rails", "thesis": "Full-field-footer and portrait anatomy remain. Both use larger Wings, public-name-first hierarchy and filled actions while the dark version preserves one continuous charcoal chassis.", "motion": "automatic-isolated-demo-repeated-family-static", "variants": ["FC01","FC02","PO01","PO02"], "failure": "A product family fails when the extended name leads, actions become inconsistent, killed capsule anatomy returns or siblings drift in geometry."},
+    {"id": "F3", "name": "Bundles and Packs", "role": "product-relationship", "placement": "Suite offers, package builders and commerce storytelling", "thesis": "Two stacks, one measured fan and two boxes remain, joined by a single light product card. FN01 uses smaller cards, even separation and no copy collision.", "motion": "automatic-lead-only", "variants": ["ST01","ST02","SG01","FN01","BX01","BX02"], "failure": "A bundle fails when the fan collides with copy, cards merge without legible separation, killed grid/rail paths return or every object competes."},
+    {"id": "F4", "name": "Website Sections", "role": "context-proof", "placement": "Real product hero, family shelf, explainer and bundle offer", "thesis": "Three product heroes use larger Wings, public-name-first hierarchy and filled actions; the kept shelves, centred explainer and bundle offers remain unchanged.", "motion": "automatic-one-section-focus", "variants": ["SH01","SH02","SH03","FS01","FS02","EX02","BO01","BO02"], "failure": "A section fails when the extended system name leads, hero actions diverge, a card becomes an isolated art object or generic bento replaces page hierarchy."}
+  ],
+  "territories": {
+    "rule": "Each product owns a dominant object and proof primitive inside the shared chassis, so the family stays distinct in monochrome. Unknown or future products inherit the default primitive until a territory is assigned.",
+    "assignments": {
+      "aios": {"primitive": "run-steps", "object": "An orchestrated run", "evidence": "Capture, decide and execute as visible steps with states."},
+      "context-engine": {"primitive": "context-graph", "object": "A context graph", "evidence": "Sources joined into one structure the system can read."},
+      "ai-ads-system": {"primitive": "campaign-tiles", "object": "A campaign set", "evidence": "Variants and one moving result metric."},
+      "claude-code-os": {"primitive": "command-run", "object": "A working session", "evidence": "A command, a diff and a verified result."},
+      "organic-content-os": {"primitive": "cadence-strip", "object": "A publishing cadence", "evidence": "A week of scheduled work with states."}
+    },
+    "default": {"primitive": "run-steps", "object": "A system run", "evidence": "Input, action and result as visible steps."}
+  },
+  "agentRecommendation": {
+    "base": "BO01 remains the section champion inside the approved Round 10 bounded grammar",
+    "reason": "Round 10 received 32 keep verdicts and closes Phase A. Its product-first hierarchy, filled-action rule, rounded geometry, bounded Wings placement and one-live-core allocation are now inherited constraints for Phase B.",
+    "challengers": [
+      {"direction": "QC / IC / HL landing survivors", "case": "They received repeated keep verdicts across quiet, immersive and dark launch placements and now carry the exact mark and action refinements requested."},
+      {"direction": "FC / PO card survivors", "case": "Full-field footer and portrait are the only reusable card anatomies still justified by human review."},
+      {"direction": "BO01 with SH03 and FS02", "case": "The champion offer, requested centred hero and kept charcoal shelf form the strongest complete website language."}
+    ],
+    "boundedRoles": [
+      {"direction": "Restrained capsule", "use": "shared utility primitive for dense identity and selectors"},
+      {"direction": "System edition", "use": "removed from Product Card 02; any future collectible work belongs to EXP-05 and requires a fresh decision"},
+      {"direction": "Suite and bundle", "use": "relationship grammar for products sold or explained together"}
+    ],
+    "rejected": [
+      {"direction": "R03 window card, pedestal card and sphere panel", "reason": "Rejected by review on 22 July 2026 as vibe-coded card design; superseded by the play-orb lineage."},
+      {"direction": "Monogram as a card treatment", "reason": "Gradient Wings stay the recorded rare identity exception; they are not an everyday card decoration."},
+      {"direction": "Sphere as a repeated card posture", "reason": "The sphere remains a rare focal state; repeated cards use a static disc or rounded plate fallback."},
+      {"direction": "Monolith, Signal and Instrument worlds", "reason": "Rejected in Round 06 because they overrode approved geometry and obscured the established Mez expression vocabulary."}
+    ]
+  },
+  "surfaceStrategy": {
+    "calmShelf": "White raised cards on the canonical F8 canvas; the material carries the only colour.",
+    "focalContrast": "Charcoal #2E2E2E objects on light fields; white objects on charcoal rooms.",
+    "darkIntegration": "Dark rooms use #171715, recessed #1B1B19 and raised #252523 — never pure black.",
+    "rule": "Light and dark are designed as complementary modes; contrast follows the component's job."
+  },
+  "coreAllocation": {
+    "maximumLivePerViewport": 1,
+    "liveAllowed": ["one focal material surface, automatically moved to the dominant visible animated pane"],
+    "staticRequired": ["all non-focal repeated objects", "every capsule", "bundle contents other than one focal cover", "multi-card shelves", "reduced motion", "renderer failure"],
+    "fallback": "exact static twin without layout shift",
+    "finish": "Deep Mineral only, per DEC-LIVING-CORE-FINISH-001"
+  },
+  "editions": {"active": false, "disposition": "removed-from-product-card-02-round-10", "owner": "Future EXP-05 research only; no Product Card 02 production authority."},
+  "phaseBScope": {
+    "status": "ready-to-start",
+    "startsAfter": "Satisfied: H-EXP-04A-CARD-VISUAL-DIRECTION approved the Round 10 bounded visual grammar on 22 July 2026",
+    "websiteComponents": ["ProductDiscoveryCard", "ProductFeatureCard", "ProductPricingCard", "ProductCheckoutSummary", "ProductBundleOffer", "ProductUpsellRow", "ProductMobileStickySummary"],
+    "websiteFlows": ["product discovery", "comparison and selection", "pricing", "checkout", "bundle purchase", "upsell and cross-sell", "post-purchase"],
+    "states": ["default", "hover", "focus", "selected", "loading", "disabled", "unavailable", "error", "success"],
+    "contracts": ["responsive anatomy", "content slots", "interaction ownership", "commerce data", "accessibility", "motion allocation", "API boundary"]
+  },
+  "accessibility": {
+    "selection": "Selected cards use text and an emphasis outline, not colour alone.",
+    "focus": "Canonical three-pixel focus ring with three-pixel offset.",
+    "motion": "Reduced motion and renderer failure use the exact static twin without layout shift.",
+    "sourceOrder": "Mobile compositions preserve the desktop information order.",
+    "interaction": "Every interactive specimen is keyboard operable; hover alone never carries meaning."
+  },
+  "dependencies": {
+    "foundationManifest": {"path": "brand-kit/releases/foundations/dist/manifest.json", "sha256": "2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639"},
+    "canonicalDisc": {"path": "brand-kit/expressions/disc/disc.source.json", "sha256": "ad9e2bacc842d465424c505ab7a4acbb3267c13d21c6e14eaa90a0cdef31719a"},
+    "canonicalWingsMark": {"path": "brand-kit/expressions/wings-mark/wings-mark.source.json", "sha256": "4e7b0660e50516428594813b5419328cdaf5368a66ee4793c9492a593eeea8a1"},
+    "renderer": {"path": "brand-kit/source-pack/design-system-export/mz-core.js", "sha256": "7538046908405d0a450f63fd5b1a1ca6c0d98054397e78059917f284e58b609d"},
+    "productRegistry": {"path": "brand-kit/registry/products.json", "sha256": "665f09ac409c431af7a66a844795ae29f89c7c93a879f5dbfc3de201830bfb0b"}
+  },
+  "reviewSurface": {
+    "route": "brand-kit/workbench/expressions/product-card/",
+    "sections": ["cover", "reset-brief", "landing-plates", "product-cards", "bundles-packs", "website-sections", "motion-rules", "review-drawer"],
+    "feedbackCapture": ["per-family note", "per-specimen verdict", "per-specimen note", "leading-family choice", "global direction note"],
+    "persistence": "The workbench remains a permanent regression proof. The exact Round 10 all-keep receipt is packaged with the approved contract."
+  },
+  "testViewports": [320, 375, 430, 768, 1024, 1280, 1440]
+}

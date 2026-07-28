@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "candidateRevision": "golden-homepage-01-r24",
+  "verdict": "direction-selected",
+  "recordedAt": "2026-07-27",
+  "note": "Olli accepted GH-S05 as good enough for now and asked to lock the current direction before moving to the next section. He explicitly noted that it is not perfect.",
+  "section": {
+    "id": "GH-S05",
+    "title": "Operating proof",
+    "locked": true,
+    "provisional": true
+  },
+  "selected": {
+    "composition": "Two-register sticky proof with a concise section thesis on the left and real operating evidence on the right.",
+    "evidenceRegister": "Three titles and four screenshots only: Command surface, Context layer and System in use.",
+    "contextPair": "MEZ Backend and Mez Studios Docs use identical full-width frames and native aspect treatment.",
+    "visibleGovernanceCopy": false
+  },
+  "preserveUntilReopened": [
+    "the equal-size Context pair",
+    "the title-only evidence register",
+    "the four byte-verified supplied screenshots",
+    "the absence of customer-facing redaction-status copy"
+  ],
+  "nextSection": {
+    "id": "GH-S06",
+    "title": "Available now: AI OS",
+    "status": "open"
+  },
+  "openRisks": [
+    "Public screenshot redaction remains pending internally.",
+    "The whole-page human gate remains open.",
+    "This provisional section lock can be reopened by explicit human direction."
+  ],
+  "outputStatus": "candidate",
+  "productionAuthority": false
+}

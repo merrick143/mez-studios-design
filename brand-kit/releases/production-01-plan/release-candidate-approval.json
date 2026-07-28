@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY",
+  "gateId": "H-PORT-03-PRODUCTION-RELEASE-CANDIDATE",
+  "candidateRevision": "@mez-systems/design-system-web@1.0.0-rc.1",
+  "verdict": "approved-for-named-consumer-proof",
+  "approvedAt": "2026-07-28T06:52:45Z",
+  "approvedBy": "Olli",
+  "humanEvidence": [
+    "Okay let's do it. I approve."
+  ],
+  "exactPackage": {
+    "path": "brand-kit/releases/production-01/1.0.0-rc.1/",
+    "artifactCount": 312,
+    "contentSha256": "5be57efb5e48cba8ac2bdc98445852fbaf6e2decfea1546e3b7ad0eac8d7f26c",
+    "manifestSha256": "c9b5074b79c3f13450b7d826e938b31deda129fc5992ac70b4bafea90e5c4df8"
+  },
+  "exactRedactedProof": {
+    "status": "approved",
+    "approvedAt": "2026-07-28T05:56:58Z",
+    "payload": "brand-kit/releases/production-01-plan/operating-proof-review/payload.json"
+  },
+  "authorisedNextScope": [
+    "Register CON-MEZ-SYSTEMS-WEB-001 to one exact repository.",
+    "Install the immutable 1.0.0-rc.1 candidate in that consumer without copying design values.",
+    "Prove version visibility, update, rollback, accessibility, fallbacks and named-device performance before any deployment decision."
+  ],
+  "notAuthorised": [
+    "Publishing the package.",
+    "Deploying a website.",
+    "Assigning production version 1.0.0.",
+    "Changing canonical component, homepage or motion decisions."
+  ],
+  "resultingStatus": "approved-candidate-unreleased",
+  "productionAuthority": false,
+  "nextTaskAtApproval": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+  "subsequentSequence": {
+    "recordedAt": "2026-07-28T07:43:14Z",
+    "record": "brand-kit/docs/consumer-transition-sequence.json",
+    "currentNextTask": "TASK-FIG-01-FIGMA-COMPANION",
+    "effect": "The approval remains valid and the exact rc.1 bytes remain frozen, but consumer ingestion is deferred until Figma, channels and whole-system certification produce a later approved candidate."
+  }
+}

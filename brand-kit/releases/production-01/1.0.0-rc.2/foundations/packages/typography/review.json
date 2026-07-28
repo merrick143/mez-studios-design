@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-FND-01-TYPE-PROOF",
+  "taskId": "TASK-FND-01-TYPOGRAPHY",
+  "foundationId": "mz.systems.foundation.typography",
+  "candidateStatus": "review-candidate",
+  "verdict": "approve",
+  "note": "",
+  "reviewedAt": "2026-07-21T06:25:17.661Z",
+  "approver": "Olli",
+  "submittedProductionAuthority": false,
+  "decisionId": "DEC-TYPE-FOUNDATION-001",
+  "resultingStatus": "canonical",
+  "productionAuthority": true
+}

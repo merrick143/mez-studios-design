@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "evaluationId": "EVAL-EXP-01-DISC-CONTRACT",
+  "receiptId": "RCP-EXP-01-DISC-CONTRACT",
+  "evaluatedAt": "2026-07-21T23:32:29+10:00",
+  "evaluator": {"kind": "hybrid", "name": "Codex plus deterministic validators and in-app browser proof"},
+  "contractChecks": [
+    {"id": "GEOMETRY-AND-MARK", "status": "pass", "evidence": "Hard circular geometry, no decorative chassis effects, canonical white Wings, 0.39 ratio and 48px marked minimum are explicit and verified."},
+    {"id": "SOURCE-TRUTH", "status": "pass", "evidence": "Source master, exact static twin and parametric runtime are labelled separately; protected hashes match all five approved cores."},
+    {"id": "ATTENTION-ALLOCATION", "status": "pass", "evidence": "One browser-mounted live focal object and static repeated family make motion allocation observable and enforceable."},
+    {"id": "RESPONSIVE-AND-FAILURE", "status": "pass", "evidence": "Four representative viewports, reduced-motion mode and disabled-WebGL mode retain circle geometry, exact fallback and zero horizontal overflow."},
+    {"id": "AUTHORITY-BOUNDARY", "status": "pass", "evidence": "Canonical package authority is true for the bounded disc scope while sphere, cards, homepage, Figma and consumers remain excluded."},
+    {"id": "HUMAN-GATE", "status": "pass", "evidence": "After the approval scope was explained explicitly, Olli approved all stated disc rules; DEC-DISC-EXPRESSION-001 records canonical 1.0.0."}
+  ],
+  "qualityDimensions": [
+    {"id": "identity-precision", "score": 5, "maximum": 5, "evidence": "One fixed silhouette and mark ratio create recognisable product geometry without generic icon tiles or glow."},
+    {"id": "family-coherence", "score": 5, "maximum": 5, "evidence": "Five equal static cores differ only through already approved gradient and literal copy."},
+    {"id": "attention-discipline", "score": 5, "maximum": 5, "evidence": "One live focal allowance prevents competing gradient motion and makes the static state intentional."},
+    {"id": "portability", "score": 5, "maximum": 5, "evidence": "Exact twins, explicit channel states and failure behaviour do not depend on WebGL for recognition."},
+    {"id": "governance", "score": 5, "maximum": 5, "evidence": "Immutable inputs are hash-protected and the candidate claims no production, consumer or adjacent-expression authority."}
+  ],
+  "blockers": [],
+  "verdict": "pass",
+  "humanReviewRequired": false,
+  "notes": ["Machine, visual and informed human review are complete. The proof typography was corrected to canonical Geist and Inter. Disc expression 1.0.0 is canonical for its declared scope and EXP-02 is at review candidate."]
+}

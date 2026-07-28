@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentSystemId": "mz.systems.components.product-commerce",
+  "status": "active-review-candidate",
+  "productionAuthority": false,
+  "artifactCount": 7,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 3122,
+      "sha256": "7b5e6b13aaa10062f4d6ef13b1c39693a18e946c72cc591fc7209cb12a7ec068"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1011,
+      "sha256": "a142f0e31a2f9979eea9b6438b1f4f08def4fa266a93c9925cd61b630930c70b"
+    },
+    {
+      "path": "product-component-pantry.schema.json",
+      "bytes": 10108,
+      "sha256": "335312223dd6b3c78411908654dec68adacca592c322fb467c19b2d2186bd12e"
+    },
+    {
+      "path": "product-component-pantry.source.json",
+      "bytes": 42596,
+      "sha256": "dcf34ad2dd1db3dd97e3309b2292b0592fb665b89bf856c6e01692688b5ac399"
+    },
+    {
+      "path": "round-01-feedback.json",
+      "bytes": 7845,
+      "sha256": "858dca76ab4e3fcaabcc5a4ca3996f7ce3a4a2654681e9085220bd6d784be9b1"
+    },
+    {
+      "path": "round-02-feedback.json",
+      "bytes": 26374,
+      "sha256": "86f8e5fd02514ec2a55d81eecfb08e91946f66ddcaa667a379b87c5d584b182f"
+    },
+    {
+      "path": "round-03-feedback.json",
+      "bytes": 12697,
+      "sha256": "0ebc1bc12d4a41d0ec66aed163f130aa625db9615e09e24479f52fed1c7d566c"
+    }
+  ]
+}

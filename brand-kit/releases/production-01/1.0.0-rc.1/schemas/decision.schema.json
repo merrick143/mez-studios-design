@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/decision.schema.json",
+  "title": "Mez Systems decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "status", "scope", "summary", "approvedAt", "approvedBy", "source"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^DEC-[A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"enum": ["approved", "superseded", "rejected", "deferred"]},
+    "scope": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "approvedAt": {"type": "string", "format": "date"},
+    "approvedBy": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "minLength": 1}
+  }
+}

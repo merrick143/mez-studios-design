@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "benchmarkId": "CERT-MM-REPLAY-01",
+  "method": "Validate named-model repository receipts against the same model-neutral context, receipt and evaluation schemas, then inspect their authority boundaries and hidden-context reporting.",
+  "models": [
+    {
+      "name": "GPT-5",
+      "evidence": [
+        "brand-kit/llm/examples/RCP-FND-05-FOUNDATION-RELEASE.json",
+        "brand-kit/llm/examples/RCP-EXP-08-EXPRESSION-STRESS-PROOF.json",
+        "brand-kit/llm/examples/RCP-CMP-01-GLOBAL-NAVIGATION.json",
+        "brand-kit/llm/examples/RCP-PORT-03-PRODUCTION-RELEASE-ASSEMBLY.json",
+        "brand-kit/llm/examples/RCP-FIG-01-FIGMA-COMPANION.json"
+      ],
+      "outputClasses": ["foundation", "stress-proof", "component", "release", "design-mirror"],
+      "result": "pass"
+    },
+    {
+      "name": "Claude Opus 4.8",
+      "evidence": [
+        "brand-kit/llm/examples/RCP-GOLD-01-GOLDEN-HOMEPAGE.json",
+        "brand-kit/llm/examples/EVAL-GOLD-01-GOLDEN-HOMEPAGE.json"
+      ],
+      "outputClasses": ["golden-visual", "design-evaluation"],
+      "result": "pass"
+    }
+  ],
+  "result": "pass-with-limitation",
+  "limitation": "Historical work is not a controlled same-prompt comparison. The separate transfer benchmark supplies the controlled authority and anti-example cases; neither benchmark predicts creative quality in an unseen consumer workflow."
+}

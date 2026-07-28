@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/product-functional-components-candidate-0.1.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "componentSystemId", "version", "status", "productionAuthority", "gateId", "candidateRevision", "taskId", "title", "thesis", "inherits", "evidence", "specimenContract", "layers", "semanticModels", "internalPrimitives", "components", "patterns", "journeys", "variantAxes", "stateDimensions", "responsive", "motion", "reviewProgramme", "validation", "exclusions", "workbench"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "componentSystemId": {"const": "mz.systems.components.product-commerce"},
+    "version": {"const": "0.1.0"},
+    "status": {"const": "active-review-candidate"},
+    "productionAuthority": {"const": false},
+    "gateId": {"const": "H-EXP-04B-CARD-FUNCTIONAL-PROOF"},
+    "candidateRevision": {"const": "product-card-02-phase-b-pb2-r04"},
+    "taskId": {"const": "TASK-EXP-04-PRODUCT-CARD"},
+    "title": {"type": "string", "minLength": 10},
+    "thesis": {"type": "string", "minLength": 240},
+    "inherits": {"type": "object", "minProperties": 5},
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["round01Feedback", "round02Feedback", "round03Feedback"],
+      "properties": {
+        "round01Feedback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256"],
+          "properties": {
+            "path": {"const": "brand-kit/expressions/product-card/phase-b/round-01-feedback.json"},
+            "sha256": {"const": "858dca76ab4e3fcaabcc5a4ca3996f7ce3a4a2654681e9085220bd6d784be9b1"}
+          }
+        },
+        "round02Feedback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256"],
+          "properties": {
+            "path": {"const": "brand-kit/expressions/product-card/phase-b/round-02-feedback.json"},
+            "sha256": {"const": "86f8e5fd02514ec2a55d81eecfb08e91946f66ddcaa667a379b87c5d584b182f"}
+          }
+        },
+        "round03Feedback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256"],
+          "properties": {
+            "path": {"const": "brand-kit/expressions/product-card/phase-b/round-03-feedback.json"},
+            "sha256": {"const": "0ebc1bc12d4a41d0ec66aed163f130aa625db9615e09e24479f52fed1c7d566c"}
+          }
+        }
+      }
+    },
+    "specimenContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["totalCount", "phaseAVisualInputs", "functionalSpecimens", "requiredWorkbenchModules"],
+      "properties": {
+        "totalCount": {"const": 46},
+        "phaseAVisualInputs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["count", "role", "round04CandidateCount", "sourceReceipt", "sourceIds", "staticByRule", "authorityEffect"],
+          "properties": {
+            "count": {"const": 32},
+            "role": {"const": "approved-visual-inputs"},
+            "round04CandidateCount": {"const": 0},
+            "sourceReceipt": {"const": "brand-kit/expressions/product-card/round-10-feedback.json"},
+            "sourceIds": {"type": "array", "minItems": 32, "maxItems": 32, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z]{2}[0-9]{2}$"}},
+            "staticByRule": {"const": ["FS01", "FS02"]},
+            "authorityEffect": {"type": "string", "minLength": 120}
+          }
+        },
+        "functionalSpecimens": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["round02Count", "round03Count", "count", "groups", "survivorIds", "killedIds", "round03VerdictCounts", "round03KeepIds", "round03ReviseIds", "round04Treatment", "lineageModule", "lineageRule"],
+          "properties": {
+            "round02Count": {"const": 48},
+            "round03Count": {"const": 47},
+            "count": {"const": 46},
+            "groups": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["prefix", "count"],
+                "properties": {"prefix": {"type": "string", "pattern": "^B-(DS|FT|PR|CK|BU|MB)$"}, "count": {"type": "integer", "minimum": 4, "maximum": 10}}
+              }
+            },
+            "survivorIds": {"type": "array", "minItems": 46, "maxItems": 46, "uniqueItems": true, "items": {"type": "string", "pattern": "^B-(DS|FT|PR|CK|BU|MB)[0-9]{2}$"}},
+            "killedIds": {"const": ["B-FT04", "B-FT06"]},
+            "round03VerdictCounts": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["keep", "revise", "kill"],
+              "properties": {"keep": {"const": 11}, "revise": {"const": 35}, "kill": {"const": 1}}
+            },
+            "round03KeepIds": {"type": "array", "minItems": 11, "maxItems": 11, "uniqueItems": true, "items": {"type": "string", "pattern": "^B-(DS|FT|PR|CK|BU|MB)[0-9]{2}$"}},
+            "round03ReviseIds": {"type": "array", "minItems": 35, "maxItems": 35, "uniqueItems": true, "items": {"type": "string", "pattern": "^B-(DS|FT|PR|CK|BU|MB)[0-9]{2}$"}},
+            "round04Treatment": {"type": "string", "minLength": 120},
+            "lineageModule": {"const": "brand-kit/workbench/expressions/product-card/phase-b/phase-a-lineage.js"},
+            "lineageRule": {"type": "string", "minLength": 40}
+          }
+        },
+        "requiredWorkbenchModules": {"const": ["phase-a-lineage.js"]}
+      }
+    },
+    "layers": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "required": ["id", "name", "authority", "purpose"]}},
+    "semanticModels": {"type": "array", "minItems": 13, "items": {"type": "object", "required": ["name", "authority", "purpose"]}},
+    "internalPrimitives": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string"}},
+    "components": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "shelf", "role", "anatomy", "variants", "stateDimensions", "receivers", "dataModels", "events", "accessibility", "motion", "prohibited"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^PC2-B-C[0-9]{2}$"},
+          "name": {"type": "string"},
+          "shelf": {"type": "string"},
+          "role": {"type": "string", "minLength": 20},
+          "anatomy": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+          "variants": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+          "stateDimensions": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"enum": ["interaction", "choice", "availability", "async", "commerce"]}},
+          "receivers": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["compact", "medium", "expanded", "wide"]}},
+          "dataModels": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+          "events": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+          "accessibility": {"type": "string", "minLength": 40},
+          "motion": {"type": "string", "minLength": 10},
+          "prohibited": {"type": "array", "minItems": 2, "items": {"type": "string"}}
+        }
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "shelf", "role", "componentIds", "variants", "proofRequirement", "responsive", "prohibited"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^PC2-B-P[0-9]{2}$"},
+          "name": {"type": "string"},
+          "shelf": {"type": "string"},
+          "role": {"type": "string"},
+          "componentIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^PC2-B-C[0-9]{2}$"}},
+          "variants": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+          "proofRequirement": {"type": "string"},
+          "responsive": {"type": "string"},
+          "prohibited": {"type": "array", "minItems": 2, "items": {"type": "string"}}
+        }
+      }
+    },
+    "journeys": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "scenario", "steps", "fixtureAuthority"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^PC2-B-J[0-9]{2}$"},
+          "name": {"type": "string"},
+          "scenario": {"type": "string"},
+          "steps": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+          "fixtureAuthority": {"type": "string"}
+        }
+      }
+    },
+    "variantAxes": {"type": "object", "required": ["offerTypes", "availability", "productCounts", "surfaces", "density", "media", "contentStress"]},
+    "stateDimensions": {"type": "object", "required": ["interaction", "choice", "availability", "async", "commerce"]},
+    "responsive": {"type": "object", "required": ["viewports", "containers", "receiverProfiles", "rules"]},
+    "motion": {"type": "object", "required": ["maximumLivePerViewport", "eligible", "static", "fallback", "prohibited"]},
+    "reviewProgramme": {"type": "object", "required": ["currentRound", "rounds", "feedbackReceipts", "feedbackCapture", "convergenceRules"]},
+    "validation": {"type": "object", "required": ["required", "designRubric"]},
+    "exclusions": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "workbench": {"type": "object", "required": ["route", "mode", "note"]}
+  }
+}

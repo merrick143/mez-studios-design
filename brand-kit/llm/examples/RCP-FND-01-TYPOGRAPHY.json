@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-FND-01-TYPOGRAPHY",
+  "taskId": "TASK-FND-01-TYPOGRAPHY",
+  "contextBundleId": "CTX-FND-01-TYPOGRAPHY",
+  "agent": {"kind": "llm", "name": "Codex", "model": "GPT-5"},
+  "startedAt": "2026-07-21T15:40:00+10:00",
+  "finishedAt": "2026-07-21T16:32:28+10:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/foundations/typography/", "action": "created", "sha256": null, "reason": "Licensed font package, canonical candidate source, schema, generator, validator and generated portable tokens."},
+    {"path": "brand-kit/foundations/typography/typography.source.json", "action": "created", "sha256": "5bf905645d94084a9caa51a02e4f9e5173ecdd38e7ea414b509591a86cc98285", "reason": "Canonical source for 15 semantic roles and cross-channel behaviour."},
+    {"path": "brand-kit/foundations/typography/review.json", "action": "created", "sha256": "78cf1de497f47e59739f5aab67d1ac04ef6752a8adfcb5a0f46e2ae33bf2d7ee", "reason": "Immutable human approval record."},
+    {"path": "brand-kit/foundations/typography/dist/manifest.json", "action": "generated", "sha256": "b96dab0d582580fe0753438c3889f7c37a5ed5ca7ab4509b1a067eae144bd513", "reason": "Integrity receipt for the self-contained typography package."},
+    {"path": "brand-kit/foundations/typography/dist/package.json", "action": "generated", "sha256": "c5c741bd0b6194610b350e9e4734aa2d591606c5657bb5601cbe603a627f6ecc", "reason": "Portable package metadata and bounded production scope."},
+    {"path": "brand-kit/workbench/foundations/typography/index.html", "action": "created", "sha256": "b484c5f6d7e93a5636107f16e9671f3b9c1f0035f44d9a42cbcde8af44c0e7ec", "reason": "Canonical cross-channel regression proof and approval surface."},
+    {"path": "brand-kit/workbench/foundations/typography/styles.css", "action": "created", "sha256": "0aa0f71bc701fe191a2f7346cfb3c69acbd301ff8f3e57f30089d2bef918867b", "reason": "Responsive proof layout from 320px through wide desktop."},
+    {"path": "brand-kit/workbench/foundations/typography/review.js", "action": "created", "sha256": "55a70288d842701c19d13c547c9472b5e02d6989152acf1d6a4141b42846349d", "reason": "Fallback, expansion and accessible approval-record interactions."},
+    {"path": "brand-kit/llm/tasks/TASK-FND-01-TYPOGRAPHY.json", "action": "modified", "sha256": "3a960bba54fc5590025a29c391d3b081968a1258a98ff07ce85f4b1a5dd6bb5f", "reason": "Task completed after the human gate passed."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "action": "modified", "sha256": "c3644f52a92cea2f410db4786c4938cec7963bdb05fd9dff29e7770512c324b3", "reason": "Live status advances to FND-02."},
+    {"path": "brand-kit/docs/ROADMAP.md", "action": "modified", "sha256": "78e2ff8ce40a401fbe2fe7974967c3cc3a45ff6beed23f0bfb63be5f96bef941", "reason": "FND-01 is complete and FND-02 is next."}
+  ],
+  "decisionsApplied": ["DEC-TYPE-001", "DEC-TYPE-FOUNDATION-001", "DEC-MIGRATION-SEQUENCE-001"],
+  "tests": [
+    {"id": "FND-01-SCHEMA", "status": "pass", "evidence": "Draft 2020-12 source validation, role parity, six font faces and deterministic generation pass."},
+    {"id": "FND-01-FONTS", "status": "pass", "evidence": "Geist 1.7.2, Inter 4.1, Instrument Serif source 65c0ef2 and IBM Plex Mono 2.5.0 include WOFF2, authoring files, source refs, hashes and OFL notices."},
+    {"id": "FND-01-RESPONSIVE", "status": "pass", "evidence": "Browser proof passes 320, 375, 768, 1280 and 1440 with no page overflow, including 130 percent copy plus fallback mode."},
+    {"id": "FND-01-ACCESSIBILITY", "status": "pass", "evidence": "Body minimum is 16px; focus is visible; review drawer exposes name and state; Escape closes and restores focus; reduced-motion removes drawer transitions."},
+    {"id": "FND-01-CONSOLE", "status": "pass", "evidence": "All four families report loaded and browser console contains no warnings or errors."},
+    {"id": "FND-01-HUMAN", "status": "pass", "evidence": "Olli approved H-FND-01-TYPE-PROOF at 2026-07-21T06:25:17.661Z with no requested changes."}
+  ],
+  "artifactsProduced": [
+    "Licensed self-hosted web and design-authoring font package",
+    "Fifteen-role generated CSS and DTCG-shaped JSON token package",
+    "Deterministic self-contained typography package and artifact manifest",
+    "Responsive cross-channel canonical regression proof"
+  ],
+  "assumptions": ["The active whole-system migration release remains immutable; the approved typography output is published as a bounded portable slice until FND-05."],
+  "exceptions": [],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-FND-01-TYPE-PROOF", "status": "approved"},
+  "nextAction": "Begin TASK-FND-02-COLOUR-SURFACES with a read-only audit of current colour evidence and token conflicts."
+}

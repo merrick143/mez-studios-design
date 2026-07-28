@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/halftone-portrait-1.0.0.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "componentId",
+    "pantryId",
+    "version",
+    "status",
+    "productionAuthority",
+    "gateId",
+    "candidateRevision",
+    "taskId",
+    "decisionIds",
+    "title",
+    "thesis",
+    "anatomy",
+    "states",
+    "renderContract",
+    "motion",
+    "mediaContract",
+    "attributes",
+    "lockedTreatment",
+    "prohibited",
+    "events",
+    "testViewports",
+    "outOfScope",
+    "motionDecisionException",
+    "approval",
+    "openQuestions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "componentId": {
+      "const": "mz.systems.component.halftone-portrait"
+    },
+    "pantryId": {
+      "type": "null"
+    },
+    "version": {
+      "const": "1.0.0"
+    },
+    "status": {
+      "const": "canonical"
+    },
+    "productionAuthority": {
+      "const": true
+    },
+    "gateId": {
+      "const": "H-CMP-05-HALFTONE-PORTRAIT-PROOF"
+    },
+    "candidateRevision": {
+      "const": "halftone-portrait-01-r01"
+    },
+    "taskId": {
+      "const": "TASK-CMP-05-HALFTONE-PORTRAIT"
+    },
+    "decisionIds": {
+      "const": [
+        "DEC-HALFTONE-PORTRAIT-COMPONENT-001"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "thesis": {
+      "type": "string",
+      "minLength": 120
+    },
+    "anatomy": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "string"
+      }
+    },
+    "states": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      },
+      "contains": {
+        "enum": [
+          "reduced-motion",
+          "static"
+        ]
+      }
+    },
+    "renderContract": {
+      "type": "object",
+      "required": [
+        "luminance",
+        "autoLevels",
+        "tone",
+        "sampling",
+        "devicePixelRatio",
+        "path"
+      ]
+    },
+    "motion": {
+      "type": "object",
+      "required": [
+        "defaultPolicy",
+        "maximumLiveInstancesDefault",
+        "default",
+        "repeated",
+        "reduced",
+        "failure",
+        "autoplayRefused",
+        "offscreen"
+      ],
+      "properties": {
+        "defaultPolicy": {
+          "const": "allocated"
+        },
+        "maximumLiveInstancesDefault": {
+          "const": 1
+        }
+      }
+    },
+    "mediaContract": {
+      "type": "object",
+      "required": [
+        "preparation",
+        "rationale",
+        "expected",
+        "componentNeverDoes"
+      ],
+      "properties": {
+        "componentNeverDoes": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "attributes": {
+      "type": "array",
+      "minItems": 13,
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "lockedTreatment": {
+      "type": "object",
+      "required": [
+        "recordedAt",
+        "recordedBy",
+        "note",
+        "values"
+      ],
+      "properties": {
+        "recordedBy": {
+          "const": "Olli"
+        },
+        "values": {
+          "type": "object"
+        }
+      }
+    },
+    "prohibited": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "testViewports": {
+      "const": [
+        320,
+        360,
+        375,
+        390,
+        430,
+        768,
+        1024,
+        1280,
+        1440
+      ]
+    },
+    "openQuestions": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "string"
+      }
+    },
+    "outOfScope": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "motionDecisionException": {
+      "type": "object",
+      "required": [
+        "status",
+        "requestedBy",
+        "requestedAt",
+        "attribute",
+        "summary"
+      ],
+      "properties": {
+        "status": {
+          "const": "approved-bounded"
+        },
+        "requestedBy": {
+          "const": "Olli"
+        },
+        "requestedAt": {
+          "type": "string"
+        },
+        "attribute": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 180
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record",
+        "decisionId",
+        "approvedAt",
+        "approvedBy",
+        "state"
+      ],
+      "properties": {
+        "record": {
+          "const": "brand-kit/components/halftone-portrait/approval.json"
+        },
+        "decisionId": {
+          "const": "DEC-HALFTONE-PORTRAIT-COMPONENT-001"
+        },
+        "approvedAt": {
+          "const": "2026-07-28"
+        },
+        "approvedBy": {
+          "const": "Olli"
+        },
+        "state": {
+          "const": "canonical"
+        }
+      }
+    }
+  }
+}

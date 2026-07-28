@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
+  "taskId": "TASK-EXP-04-PRODUCT-CARD",
+  "candidateRevision": "product-card-02-phase-a-r07",
+  "verdict": "round-feedback",
+  "leadingFamily": "undecided",
+  "note": "",
+  "sections": [
+    {"id":"landing","title":"Landing Plates","feedback":""},
+    {"id":"cards","title":"Product Cards","feedback":""},
+    {"id":"editions","title":"System Editions","feedback":""},
+    {"id":"bundles","title":"Bundles and Packs","feedback":""},
+    {"id":"sections","title":"Website Sections","feedback":""}
+  ],
+  "specimens": [
+    {"id":"LP01","title":"Quiet centre","family":"landing","verdict":"revise","feedback":"Okay, this is really good. I just love to come up with different variants of this specific one, like:\n- Positioning of elements: where do the m-wings go? Why not put the m-wings above it?\n- Removing the O1 AI operating system, or maybe having an operating system somewhere else.\n- I don't know about the O1 part and the /.\n- Potentially different types of buttons on it as well.\n- Different sizing of the m-wings, like the kind of variations I want to say of this.\n- Thinking of whether there are different variations where you could maybe add more elements or change something as well, or different sizing, like showing this as vertically oriented or horizontally oriented."},
+    {"id":"LP02","title":"Editorial split","family":"landing","verdict":"revise","feedback":"Same direction as LP01: explore M-Wings placement and scale, remove numbered product labels and slashes, vary descriptor placement and button treatment, and test vertical and horizontal proportions."},
+    {"id":"LP03","title":"Immersive crop","family":"landing","verdict":"revise","feedback":"Same direction as LP01: explore M-Wings placement and scale, remove numbered product labels and slashes, vary descriptor placement and button treatment, and test vertical and horizontal proportions."},
+    {"id":"LP04","title":"Rounded object","family":"landing","verdict":"revise","feedback":"Remove the rounded nested object and put the Wings directly in the centre. Remove the numbered label and use only the product name, descriptor and button."},
+    {"id":"LP05","title":"Horizontal launch","family":"landing","verdict":"revise","feedback":"This is really good and the dark variant is liked. Build variants with Wings centred and larger as well as top-right. Remove the product number."},
+    {"id":"LP06","title":"Quiet frame","family":"landing","verdict":"revise","feedback":"Same direction as LP01: explore M-Wings placement and scale, remove numbered product labels and slashes, vary descriptor placement and button treatment, and test vertical and horizontal proportions."},
+    {"id":"PC01","title":"Full-field footer","family":"cards","verdict":"keep","feedback":""},
+    {"id":"PC02","title":"Portrait object","family":"cards","verdict":"keep","feedback":""},
+    {"id":"PC03","title":"Split identity","family":"cards","verdict":"kill","feedback":""},
+    {"id":"PC04","title":"Proof sequence","family":"cards","verdict":"kill","feedback":""},
+    {"id":"PC05","title":"Type led","family":"cards","verdict":"kill","feedback":""},
+    {"id":"PC06","title":"Capsule rail","family":"cards","verdict":"revise","feedback":"Rethink the capsule because the pill does not currently contain meaningful information. Rebuild how the capsule is used."},
+    {"id":"ED01","title":"Minimal edition","family":"editions","verdict":"revise","feedback":"The layout and layering need significant refinement. Remove the internal MZ-G13 label and the top-left edition number because neither is relevant to the customer."},
+    {"id":"ED02","title":"Archive keyline","family":"editions","verdict":"revise","feedback":"The layout and layering need significant refinement. Remove the internal gradient ID and the top-left edition number."},
+    {"id":"ED03","title":"Founder frame","family":"editions","verdict":"revise","feedback":"Remove internal gradient IDs and decorative numbers. Keep exploring the dark background but rethink the Founder colour and finish treatment."},
+    {"id":"ED04","title":"Paper sleeve","family":"editions","verdict":"kill","feedback":""},
+    {"id":"ED05","title":"Side spine","family":"editions","verdict":"revise","feedback":"This is cool. Test it horizontally with a middle spine or band and different text. Remove the internal MZ-G20 label and top-left number."},
+    {"id":"PK01","title":"Offset stack","family":"bundles","verdict":"revise","feedback":"Test squared bottom-left and bottom-right corners so the media blends into the footer. Build centred and top-right Wings versions, plus other bounded placements. Test a dark footer and more useful footer copy."},
+    {"id":"PK02","title":"Fan deck","family":"bundles","verdict":"revise","feedback":"Test squared bottom-left and bottom-right corners so the media blends into the footer. Build centred and top-right Wings versions, plus other bounded placements. Test a dark footer and more useful footer copy."},
+    {"id":"PK03","title":"Boxed suite","family":"bundles","verdict":"revise","feedback":""},
+    {"id":"PK04","title":"Grid bundle","family":"bundles","verdict":"revise","feedback":""},
+    {"id":"PK05","title":"Hero plus rail","family":"bundles","verdict":"revise","feedback":""},
+    {"id":"SC01","title":"Single product hero","family":"sections","verdict":"revise","feedback":""},
+    {"id":"SC02","title":"Product family shelf","family":"sections","verdict":"revise","feedback":""},
+    {"id":"SC03","title":"Product explainer","family":"sections","verdict":"revise","feedback":"Remove the sphere/circle. Place the Wings directly on the Living Core background."},
+    {"id":"SC04","title":"Bundle offer","family":"sections","verdict":"keep","feedback":"This is really good and is one of the strongest designs in the round."}
+  ],
+  "agentInterpretation": {
+    "roundSignal": "Round 07 is the strongest round so far and establishes the correct underlying language. The next round is refinement and controlled variation, not another conceptual reset.",
+    "champions": ["PC01 Full-field footer", "PC02 Portrait object", "SC04 Bundle offer"],
+    "removed": ["PC03 Split identity", "PC04 Proof sequence", "PC05 Type led", "ED04 Paper sleeve", "nested rounded object in LP04", "sphere inside SC03"],
+    "systemChanges": ["remove customer-facing gradient IDs", "remove decorative product and edition numbers", "vary Wings placement and scale", "test button and descriptor treatments", "make capsules carry useful product information", "test squared lower media corners with integrated footers", "retain automatic focal animation"]
+  },
+  "productionAuthority": false
+}

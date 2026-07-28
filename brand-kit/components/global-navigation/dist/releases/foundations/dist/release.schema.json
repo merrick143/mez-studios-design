@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design.mez.systems/schemas/foundation-release-1.0.0.json",
+  "title": "Mez Systems foundation release source",
+  "type": "object",
+  "required": ["schemaVersion", "releaseId", "version", "status", "candidateRevision", "candidateGateId", "taskId", "productionAuthority", "decisionIds", "packages", "loadOrder", "testViewports", "policies"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "releaseId": {"const": "mz.systems.release.foundations"},
+    "version": {"const": "1.0.0"},
+    "status": {"const": "canonical"},
+    "candidateRevision": {"const": "foundation-release-01"},
+    "candidateGateId": {"const": "H-FND-05-FOUNDATION-RELEASE"},
+    "taskId": {"const": "TASK-FND-05-FOUNDATION-RELEASE"},
+    "productionAuthority": {"const": true},
+    "decisionIds": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string"}},
+    "packages": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["key", "packageId", "foundationId", "version", "reviewGateId", "packageSha256", "manifestSha256"],
+        "properties": {
+          "key": {"enum": ["typography", "colour", "space-layout", "geometry-controls"]},
+          "packageId": {"type": "string"},
+          "foundationId": {"type": "string"},
+          "version": {"const": "1.0.0"},
+          "reviewGateId": {"type": "string"},
+          "packageSha256": {"pattern": "^[a-f0-9]{64}$"},
+          "manifestSha256": {"pattern": "^[a-f0-9]{64}$"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "loadOrder": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+    "testViewports": {"const": [320, 375, 430, 768, 1024, 1280, 1440]},
+    "policies": {
+      "type": "object",
+      "required": ["immutability", "loading", "portability", "authority", "accessibility", "boundary"],
+      "additionalProperties": {"type": "string", "minLength": 20}
+    }
+  },
+  "additionalProperties": false
+}

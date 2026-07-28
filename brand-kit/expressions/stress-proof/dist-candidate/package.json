@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "@mez-systems/expression-stress-proof",
+  "version": "0.1.0-candidate",
+  "status": "review-candidate",
+  "candidateRevision": "expression-stress-01-r01",
+  "reviewGateId": "H-EXP-08-EXPRESSION-STRESS-PROOF",
+  "scenarioCount": 14,
+  "suiteCount": 6,
+  "productionAuthority": false,
+  "entrypoints": {
+    "contract": "expression-stress.source.json",
+    "schema": "expression-stress.schema.json",
+    "review": "review.json",
+    "guidance": "README.md"
+  }
+}

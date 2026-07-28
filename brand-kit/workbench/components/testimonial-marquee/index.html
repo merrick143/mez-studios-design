@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Workbench · Testimonial Marquee · Round 04 lock</title>
+<link rel="stylesheet" href="../../../releases/foundations/dist/index.css" />
+<link rel="stylesheet" href="../../../components/testimonial-marquee/mez-testimonial-marquee.css?v=1.0.0" />
+<link rel="stylesheet" href="./styles.css?v=1.0.0" />
+</head>
+<body>
+<header class="wb-head">
+  <p class="wb-kicker">TASK-CMP-06 · Round 04 · social caption locked</p>
+  <h1>Five ways to let real proof move.</h1>
+  <p class="wb-lede">
+    Seven video-backed operators. Live halftone portraits, their curated profile
+    images, vertically stacked account facts and one slow continuous rail. No
+    card box, carousel controls or outbound social links.
+  </p>
+  <nav class="wb-actions" aria-label="Workbench modes">
+    <a href="?static">Force static</a>
+    <a href="./">Auto-scroll</a>
+    <a href="../../../components/testimonial-marquee/fixtures/static-html.html">Raw fixture</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wb-variants" aria-labelledby="variants-title">
+    <div class="wb-section-intro">
+      <p class="wb-kicker">Presentation comparison</p>
+      <h2 id="variants-title">Same evidence. Five different hierarchies.</h2>
+      <p>
+        These are composition choices, not skins. Profile, person, caption,
+        quote and proof each take a turn as the first read.
+      </p>
+    </div>
+
+    <article class="wb-variant" data-variant="profile-strip">
+      <header class="wb-variant__head">
+        <div><p class="wb-kicker">Profile strip</p><h3>The claim, signed by the account.</h3></div>
+        <p>Instagram identity behaves like the source line beneath an editorial pull quote.</p>
+      </header>
+      <mez-testimonial-marquee
+        presentation="profile-strip"
+        src="../../../components/testimonial-marquee/fixtures/ai-os-testimonials.json"
+        label="Profile strip testimonial presentation"
+      ><p><a href="https://mez.systems/ai-os">Read the source testimonials.</a></p></mez-testimonial-marquee>
+    </article>
+
+    <article class="wb-variant" data-variant="portrait-window">
+      <header class="wb-variant__head">
+        <div><p class="wb-kicker">Portrait window</p><h3>The person is unmistakably first.</h3></div>
+        <p>A larger halftone window carries the human presence while the quote stays broad and shallow.</p>
+      </header>
+      <mez-testimonial-marquee
+        presentation="portrait-window"
+        src="../../../components/testimonial-marquee/fixtures/ai-os-testimonials.json"
+        label="Portrait window testimonial presentation"
+      ><p><a href="https://mez.systems/ai-os">Read the source testimonials.</a></p></mez-testimonial-marquee>
+    </article>
+
+    <article class="wb-variant wb-variant--recommended" data-variant="social-caption">
+      <header class="wb-variant__head">
+        <div>
+          <p class="wb-kicker">Social caption · recommended</p>
+          <h3>Instagram rhythm without an Instagram clone.</h3>
+        </div>
+        <p>The familiar account line frames the testimonial while Mez typography and halftone material stay in control.</p>
+      </header>
+      <mez-testimonial-marquee
+        id="primary-marquee"
+        presentation="social-caption"
+        src="../../../components/testimonial-marquee/fixtures/ai-os-testimonials.json"
+        label="Social caption testimonial presentation"
+      ><p><a href="https://mez.systems/ai-os">Read the source testimonials.</a></p></mez-testimonial-marquee>
+    </article>
+
+    <article class="wb-variant" data-variant="quote-first">
+      <header class="wb-variant__head">
+        <div><p class="wb-kicker">Quote first</p><h3>The evidence leads. The face signs it.</h3></div>
+        <p>The portrait shifts to the far edge so longer lines read as one uninterrupted claim.</p>
+      </header>
+      <mez-testimonial-marquee
+        presentation="quote-first"
+        src="../../../components/testimonial-marquee/fixtures/ai-os-testimonials.json"
+        label="Quote first testimonial presentation"
+      ><p><a href="https://mez.systems/ai-os">Read the source testimonials.</a></p></mez-testimonial-marquee>
+    </article>
+
+    <article class="wb-variant" data-variant="proof-ledger">
+      <header class="wb-variant__head">
+        <div><p class="wb-kicker">Proof ledger</p><h3>Quote and reach on parallel axes.</h3></div>
+        <p>A single structural rule turns each moving item into a compact evidence record, not a card.</p>
+      </header>
+      <mez-testimonial-marquee
+        presentation="proof-ledger"
+        src="../../../components/testimonial-marquee/fixtures/ai-os-testimonials.json"
+        label="Proof ledger testimonial presentation"
+      ><p><a href="https://mez.systems/ai-os">Read the source testimonials.</a></p></mez-testimonial-marquee>
+    </article>
+  </section>
+
+  <section class="wb-audit" aria-labelledby="audit-title">
+    <div>
+      <p class="wb-kicker">Measured contract</p>
+      <h2 id="audit-title">Movement with a stop condition.</h2>
+      <p>
+        The workbench samples every rail. Running instances must advance;
+        hovered, focused and offscreen instances must hold. After manual input,
+        drift must resume in under one second.
+      </p>
+    </div>
+    <output id="motion-readout" class="wb-readout" aria-live="polite">Waiting for fixtures…</output>
+  </section>
+
+  <section class="wb-decision" aria-labelledby="decision-title">
+    <p class="wb-kicker">Open human gate</p>
+    <h2 id="decision-title">Choose the hierarchy, not the decoration.</h2>
+    <p>
+      Social caption is the current recommendation because it gives Instagram
+      provenance a familiar rhythm without making the section look pasted in
+      from another product. None of the five has production authority.
+    </p>
+  </section>
+</main>
+
+<script type="module" src="../../../components/testimonial-marquee/mez-testimonial-marquee.js?v=1.0.0"></script>
+<script type="module" src="./testimonial-marquee-workbench.js?v=1.0.0"></script>
+</body>
+</html>

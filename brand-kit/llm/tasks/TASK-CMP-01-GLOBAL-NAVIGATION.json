@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-CMP-01-GLOBAL-NAVIGATION",
+  "title": "Build the Mez Systems global navigation and Explore menu",
+  "phase": 3,
+  "status": "complete",
+  "owner": "design-system-agent",
+  "objective": "Maintain the canonical Global Navigation 1.0.0 promoted from the mez-explore-menu research: one compact parent bar, one expanded five-product Living Registry, complete accessibility and responsive behaviour, canonical product data and a portable component release.",
+  "scope": {
+    "included": ["navigation information architecture","compact and expanded anatomy","five-circle family stack inside the Explore trigger","footer-free five-product Explore state","one selected product state","calm eased disclosure and restrained item entrance","desktop and mobile compositions","keyboard navigation","Escape and outside-click close","focus restoration","scroll and overlay behaviour","real destinations supplied by an authorised consumer","exact static gradient twins","five automatically animated spherical Living Cores while expanded","hover speed response","reduced motion","WebGL failure","component packaging","static HTML and primary-framework fixtures"],
+    "excluded": ["reopening EXP-07 motion laws","inventing product names or assignments","golden homepage layout beyond the navigation host slot","account or authenticated application shell","payment or commerce logic","Figma authority","using 21st.dev as design authority","promoting all five research variants"]
+  },
+  "dependencies": ["TASK-EXP-07-CHANNEL-MOTION","TASK-EXP-08-EXPRESSION-STRESS-PROOF","DEC-WEBSITE-MOTION-SYSTEM-001","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-FOUNDATION-RELEASE-001","DEC-PRODUCT-ARCHITECTURE-001","DEC-MOTION-002"],
+  "inputs": {
+    "requiredFiles": ["brand-kit/START-HERE.md","brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md","brand-kit/docs/PHASE-B-COMPONENT-PANTRY.md","brand-kit/expressions/channel-motion/channel-motion.source.json","brand-kit/expressions/channel-motion/round-03-feedback.json","brand-kit/registry/products.json","explore-menu/README.md","explore-menu/explore-menu.js","explore-menu/explore-menu.css","explore-menu/index.html","explore-menu/showcase.js"],
+    "decisionIds": ["DEC-WEBSITE-MOTION-SYSTEM-001","DEC-PRODUCT-COMPONENT-SYSTEM-001","DEC-FOUNDATION-RELEASE-001","DEC-PRODUCT-ARCHITECTURE-001","DEC-MOTION-002"],
+    "artifactIds": [],
+    "consumerIds": []
+  },
+  "deliverables": [
+    {"path":"brand-kit/components/global-navigation/","acceptance":["one canonical navigation contract owns semantics, anatomy, variants, sizes, states, content limits, responsive behaviour, accessibility, motion, events and prohibited uses","the approved direction consumes canonical products and foundations without copied identity values","all five spherical Living Cores animate automatically while the expanded registry is visible and hover only changes field speed","reduced-motion and runtime-failure modes preserve five exact static circular twins","research-only variants remain evidence rather than parallel production components"]},
+    {"path":"brand-kit/workbench/components/global-navigation/","acceptance":["compact, expanded, selected, keyboard, mobile, reduced-motion and failure states remain reviewable as a locked proof","realistic long product names and mixed lifecycle states fit","the component has zero horizontal page overflow from 320 through 1440 pixels"]},
+    {"path":"brand-kit/releases/components/global-navigation/1.0.0/","acceptance":["the approved component installs without the canonical checkout","static HTML and the primary consumer framework share one versioned behavioural contract","component CSS and code expose no hidden copied product, token or gradient values"]}
+  ],
+  "verification": [
+    {"id":"CMP-01-INHERITANCE","method":"command","passCondition":"products, assignments, Wings, foundations, Living Core renderer and EXP-07 motion rules remain immutable"},
+    {"id":"CMP-01-A11Y","method":"visual","passCondition":"keyboard order, focus visibility, Escape, outside click, focus restoration, landmark semantics and touch targets pass"},
+    {"id":"CMP-01-MOTION","method":"visual","passCondition":"all five spherical Living Cores move automatically while expanded; hover only changes field speed; the menu transition is user-triggered, interruptible and equivalent under reduced motion"},
+    {"id":"CMP-01-RESPONSIVE","method":"visual","passCondition":"compact and expanded states recompose without overflow at every named viewport"},
+    {"id":"CMP-01-CONSUMER","method":"command","passCondition":"a clean fixture consumes the packaged component without source-repository access"},
+    {"id":"CMP-01-HUMAN","method":"human","passCondition":"Olli approves one primary navigation family and its bounded variants"}
+  ],
+  "humanGate": {"required":true,"gateId":"H-CMP-01-GLOBAL-NAVIGATION-PROOF","approver":"Olli","approvalQuestion":"Does this five-sphere Living Registry feel unmistakably Mez, make the family easy to understand and remain controlled enough to frame every website?"},
+  "stopConditions": ["any of the five product spheres waits for hover before animating","the task promotes multiple visual experiments as parallel production components","navigation destinations are fabricated without consumer authority","the five-live-sphere exception is silently applied outside the bounded expanded navigation","the task expands into the golden homepage, authenticated application shell, Figma or consumer migration","research code is described as canonical before the human gate"],
+  "notes": ["The existing dependency-free <mez-explore-menu> remains substantial research evidence, not an independent source of truth.","Global Navigation 1.0.0 canonically promotes the quiet Living Registry family; Signal, Aperture, Gallery and Console remain research evidence.","Round 02 followed Olli's explicit request for all five materials to animate automatically and use sphere geometry.","Round 03 added a layered stack of five static product circles to the compact Explore systems trigger.","Round 04 removed the instructional footer and replaced the faster disclosure with a calm eased shell expansion and restrained five-item entrance.","Olli approved Round 04 on 23 July 2026 through DEC-GLOBAL-NAVIGATION-COMPONENT-001.","The five-live-sphere exception is canonical only inside the bounded expanded navigation and does not rewrite DEC-WEBSITE-MOTION-SYSTEM-001 elsewhere."]
+}

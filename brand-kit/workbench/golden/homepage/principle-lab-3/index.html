@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f8f8" />
+<title>Mez Systems · Principle Lab 3 (three tiers, centred card)</title>
+<link rel="stylesheet" href="../../../../releases/foundations/dist/index.css" />
+<style>
+:root {
+  --page-ink: #0d0d0d; --page-body: #2e2e2e;
+  --page-dark: #171715; --page-dark-recessed: #1b1b19; --page-dark-raised: #252523;
+  --page-paper: #f8f8f8; --page-white: #ffffff; --page-recessed: #f6f5f4;
+  --page-line: #dadad6; --page-line-soft: #e7e5e1; --page-line-strong: #8a8a84;
+  --page-line-mid: #b8b8b1;
+  --page-muted: #666662; --page-dark-muted: #b8b8b1;
+  --material: url("../../../../gradient-library/assets/static/mz-g13.webp");
+  --card: 880px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9e8e6; color: var(--page-ink); font-family: var(--mz-font-body); }
+
+/* ---------------------------------------------------------------- lab shell */
+.lab-top {
+  position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px;
+  padding: 12px clamp(16px,4vw,40px); background: var(--page-dark); color: var(--page-paper);
+  font-family: var(--mz-font-technical); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,248,248,.14); flex-wrap: wrap;
+}
+.lab-top strong { font-weight: 600; letter-spacing: .12em; }
+.lab-top nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.lab-top nav a {
+  padding: 4px 10px; border: 1px solid rgba(248,248,248,.28); border-radius: 9999px;
+  color: var(--page-paper); text-decoration: none;
+}
+.lab-note {
+  padding: 18px clamp(16px,4vw,40px); background: var(--page-dark-recessed); color: #cfcfc9;
+  font-size: 13.5px; line-height: 1.55; border-bottom: 8px solid #d7d6d3;
+}
+.lab-note b { color: var(--page-paper); font-weight: 600; }
+.lab-item { border-bottom: 8px solid #d7d6d3; }
+.lab-label {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 14px clamp(16px,4vw,40px); background: var(--page-white);
+  border-bottom: 1px solid var(--page-line); position: sticky; top: 45px; z-index: 50;
+}
+.lab-num {
+  font-family: var(--mz-font-technical); font-weight: 600; font-size: 12px; letter-spacing: .1em;
+  padding: 4px 10px; border: 1px solid var(--page-ink); border-radius: 9999px;
+}
+.lab-name { font-family: var(--mz-font-display); font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.lab-rule {
+  font-family: var(--mz-font-technical); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--page-muted);
+}
+.lab-rat { font-size: 13px; color: var(--page-muted); max-width: 60ch; line-height: 1.5; }
+.lab-live {
+  font-family: var(--mz-font-technical); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 9999px; border: 1px solid var(--page-line-strong); color: var(--page-muted);
+}
+.lab-live[data-live="on"] { border-color: var(--page-ink); color: var(--page-ink); }
+
+/* ------------------------------------------------------------ section chassis */
+.pr { background: var(--page-paper); color: var(--page-ink); }
+.pr-inner {
+  max-width: 1180px; margin-inline: auto;
+  padding-inline: clamp(20px,5vw,64px);
+  padding-block: clamp(72px,9vw,116px);
+}
+.pr-head { text-align: center; margin-inline: auto; max-width: 62ch; }
+.pr-eyebrow {
+  margin: 0; font-family: var(--mz-font-technical); font-size: 12px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--page-muted);
+}
+.pr-title {
+  margin: 18px auto 0; font-family: var(--mz-font-display); font-weight: 660;
+  font-size: clamp(30px,3.6vw,50px); line-height: 1.02; letter-spacing: -.04em;
+  max-inline-size: 22ch; color: var(--page-ink);
+}
+.pr-title span { display: block; }
+.pr-lead {
+  margin: 20px auto 0; font-size: clamp(16px,1.6vw,19px); line-height: 1.5;
+  color: var(--page-muted); max-inline-size: 52ch;
+}
+/* The whole stack is brought in from the container and centred, so the three
+   tiers share one column and read as a single object. */
+.stack { margin: clamp(42px,5vw,68px) auto 0; max-width: var(--card); }
+
+/* --------------------------------------------------------------- shared parts */
+.mk { display: block; height: 22px; width: auto; filter: grayscale(1) brightness(0); opacity: .74; }
+.mk[alt="Gemini"] { height: 25px; }
+.mk[alt="Mistral"] { height: 19px; }
+.mk[alt="Perplexity"] { height: 23px; }
+.mk[alt="OpenAI"] { height: 23px; }
+.kicker {
+  font-family: var(--mz-font-technical); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--page-muted); margin: 0; text-align: center;
+}
+
+/* --- the models tier -------------------------------------------------------
+   Connector hairlines join every mark to the layer, so "they all plug into the
+   same thing" is structural rather than described. */
+.models { display: flex; justify-content: space-evenly; align-items: center; gap: 12px; flex-wrap: wrap; }
+.model { display: grid; justify-items: center; gap: 12px; }
+.model i { display: block; width: 1px; height: 26px; background: var(--page-line-mid); }
+.models--above .model { grid-template-areas: "m" "l"; }
+.models--below .model i { order: -1; }
+
+/* --- the owned layer -------------------------------------------------------
+   The AI OS product surface, so it carries product material. Intrinsically
+   sized, because a Living Core must never mount on an empty positioning layer.
+   The exact static twin sits behind the canvas for reduced motion and no-WebGL. */
+.layer {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 136px; display: grid; place-items: center; text-align: center;
+  padding: 26px clamp(22px,4vw,40px);
+  background: #101010 center / cover no-repeat var(--material);
+  border-radius: var(--mz-radius-panel);
+}
+/* Flat scrim, not a gradient: the content is centred now, so an even tint is
+   what keeps it legible without picking a side. Legibility, not decoration. */
+.layer::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: rgba(7,7,7,.46);
+}
+.layer canvas { z-index: 0; }
+.layer__lockup { position: relative; z-index: 2; display: grid; justify-items: center; gap: 10px; }
+.layer__wings { width: 24px; height: 24px; filter: brightness(0) invert(1); }
+.layer__name {
+  font-family: var(--mz-font-display); font-weight: 640; font-size: clamp(18px,1.9vw,22px);
+  letter-spacing: -.022em; color: #ffffff;
+}
+.layer__note { font-size: 13.5px; color: rgba(255,255,255,.76); max-width: 46ch; }
+
+/* --- the business tier ----------------------------------------------------- */
+/* Same radius as the layer: stacked siblings in one column reading as one
+   object should not carry two different corner treatments. */
+.biz {
+  border: 1px solid var(--page-ink); border-radius: var(--mz-radius-panel);
+  background: var(--page-white); padding: 20px 24px;
+  display: grid; justify-items: center; gap: 6px; text-align: center;
+}
+.biz b { font-family: var(--mz-font-display); font-weight: 640; font-size: 17px; letter-spacing: -.022em; }
+.biz span { font-size: 13px; color: var(--page-muted); }
+
+.gap-s { height: 0; }
+@media (max-width: 620px) {
+  :root { --card: 100%; }
+  .layer { min-height: 124px; }
+  .models { gap: 18px 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="lab-top">
+  <strong>Principle Lab 3 · three tiers</strong>
+  <nav>
+    <a href="#v1">A business on top</a><a href="#v2">B models on top</a><a href="#v3">C two tiers</a>
+  </nav>
+</div>
+
+<div class="lab-note">
+  <b>Built off number 4, narrowed and centred.</b> The card is brought in to 880px, everything inside
+  it is centre-aligned, and the connector hairlines are kept. The open question is the tier order.
+  <b>A</b> puts your business on top, the Mez layer beneath it and the models underneath that, which
+  is the order you described and the one that reads correctly: the layer carries the business and
+  reaches down to whatever model it needs. <b>B</b> keeps number 4's orientation with the models
+  above. <b>C</b> drops the separate business plate and names the business inside the layer instead.
+  One core across all three, allocated to whichever is in view. Add <code>?static</code> for the
+  still state.
+</div>
+
+<!-- ======================================================= A · BUSINESS ON TOP -->
+<article class="lab-item" id="v1">
+  <header class="lab-label">
+    <span class="lab-num">A</span><span class="lab-name">Business on top</span>
+    <span class="lab-rule">Business · layer · models</span>
+    <span class="lab-live" data-live-badge="v1">Core idle</span>
+    <span class="lab-rat">Your order. The business rests on the owned layer, and the layer reaches down into whichever models it needs. Reading downward is reading toward the commodity, which is the argument.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+
+      <div class="stack">
+        <div class="biz">
+          <b>Your business</b>
+          <span>Context, workflows, decisions, history</span>
+        </div>
+
+        <div class="models models--below" style="margin-top:0">
+          <span class="model"><i></i></span>
+        </div>
+
+        <div class="layer" data-live-anchor="v1" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+          </div>
+        </div>
+
+        <div class="models models--below" style="margin-top:0">
+          <span class="model"><i></i><img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" /></span>
+          <span class="model"><i></i><img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" /></span>
+          <span class="model"><i></i><img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" /></span>
+          <span class="model"><i></i><img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" /></span>
+          <span class="model"><i></i><img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" /></span>
+        </div>
+        <p class="kicker" style="margin-top:16px">Rented · interchangeable</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ========================================================= B · MODELS ON TOP -->
+<article class="lab-item" id="v2">
+  <header class="lab-label">
+    <span class="lab-num">B</span><span class="lab-name">Models on top</span>
+    <span class="lab-rule">Models · layer · business</span>
+    <span class="lab-live" data-live-badge="v2">Core idle</span>
+    <span class="lab-rat">Number 4's orientation kept, with the business added underneath. Worth seeing beside A, because the same three tiers in the opposite order say something different about which one is serving which.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+
+      <div class="stack">
+        <p class="kicker" style="margin-bottom:16px">Rented · interchangeable</p>
+        <div class="models models--above">
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" /><i></i></span>
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" /><i></i></span>
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" /><i></i></span>
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" /><i></i></span>
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" /></span>
+        </div>
+
+        <div class="layer" data-live-anchor="v2" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">The Mez Systems layer</span>
+            <span class="layer__note">Owns the context and calls whatever model fits the job</span>
+          </div>
+        </div>
+
+        <div class="models models--below" style="margin-top:0">
+          <span class="model"><i></i></span>
+        </div>
+
+        <div class="biz">
+          <b>Your business</b>
+          <span>Context, workflows, decisions, history</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================== C · TWO TIERS -->
+<article class="lab-item" id="v3">
+  <header class="lab-label">
+    <span class="lab-num">C</span><span class="lab-name">Two tiers</span>
+    <span class="lab-rule">Business named inside the layer</span>
+    <span class="lab-live" data-live-badge="v3">Core idle</span>
+    <span class="lab-rat">The simplest resolution. There is no separate business plate: the layer says whose business it runs, so the section has one object and one row instead of three stacked bands.</span>
+  </header>
+  <section class="pr">
+    <div class="pr-inner">
+      <div class="pr-head">
+        <p class="pr-eyebrow">The Mez Systems principle</p>
+        <h2 class="pr-title"><span>Use the best intelligence.</span> Own the layer around it.</h2>
+        <p class="pr-lead">Use the model, harness or tool that fits the job, and change it the moment something better arrives. What stays is the business memory underneath it.</p>
+      </div>
+
+      <div class="stack">
+        <p class="kicker" style="margin-bottom:16px">Rented · interchangeable</p>
+        <div class="models models--above">
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/openai/logos/mark.svg" alt="OpenAI" /><i></i></span>
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/claude/logos/mark.svg" alt="Claude" /><i></i></span>
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/gemini/logos/mark.svg" alt="Gemini" /><i></i></span>
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/mistral/logos/mark.svg" alt="Mistral" /><i></i></span>
+          <span class="model"><img class="mk" src="../../../../assets/third-party-marks/marks/perplexity/logos/mark.svg" alt="Perplexity" /></span>
+        </div>
+
+        <div class="layer" data-live-anchor="v3" data-gradient-id="MZ-G13">
+          <div class="layer__lockup">
+            <img class="layer__wings" src="../../../../source-pack/design-system-export/assets/wings.svg" alt="" />
+            <span class="layer__name">Your business operating layer</span>
+            <span class="layer__note">Context, workflows, decisions and history, owned by you and unchanged when the model changes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<script type="module" src="./core.js"></script>
+</body>
+</html>

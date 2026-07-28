@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-EXP-07-CHANNEL-MOTION",
+  "taskId": "TASK-EXP-07-CHANNEL-MOTION",
+  "generatedAt": "2026-07-23T00:55:00Z",
+  "systemVersion": "1.0.0+website-motion-canonical",
+  "sourceState": {"repository":"merrick143/mez-studios-design","branch":"codex/brand-kit-foundations-expressions","commit":"7c2141cc0e8effd4578a29ea4ceeb79136b2c740","workingTree":"dirty"},
+  "files": [
+    {"path":"brand-kit/START-HERE.md","sha256":"cefed2b01304b6cf737ca260b8e2652edccbed635c53ba890c87d6aec35f6e2b","role":"canonical","required":true,"reason":"Canonical entrypoint, closed EXP-07 gate and next-task sequence."},
+    {"path":"brand-kit/docs/CURRENT-STATE.md","sha256":"41aca367edf0135c94649a9a5530466160efbfa0de1602fccfa79ee7c28f7b03","role":"canonical","required":true,"reason":"Live programme state and bounded website-motion authority."},
+    {"path":"brand-kit/docs/ROADMAP.md","sha256":"a7ecb78d78a017e91340fa9e181f4c245263cd27a4e8012f4c9311c431611655","role":"canonical","required":true,"reason":"EXP-07 closeout, EXP-08 sequence and planned CMP-01 placement."},
+    {"path":"brand-kit/llm/tasks/TASK-EXP-07-CHANNEL-MOTION.json","sha256":"3ecf01e3e08e8225ba94fc555fc4d32a8538d02c834b15c6a06b84749ce0d574","role":"governance","required":true,"reason":"Completed bounded motion task and closed human gate."},
+    {"path":"brand-kit/llm/tasks/TASK-CMP-01-GLOBAL-NAVIGATION.json","sha256":"6f1dd2a13b5da4d40bf01888ba35f2887a4fbe98e4681dfc55f8edae68fb541e","role":"governance","required":true,"reason":"Explicit future owner for the deferred menu component."},
+    {"path":"brand-kit/expressions/channel-motion/channel-motion.source.json","sha256":"f04a82f58f4283862014844dcd3911e6986d035076d784ab83638d9ed842d17d","role":"canonical","required":true,"reason":"Canonical seven-specimen website-motion contract."},
+    {"path":"brand-kit/expressions/channel-motion/round-02-feedback.json","sha256":"8dd05fa5e15686dda0d0c1d73ae56bf9a1a5bc6574016f8dec98a292903d1c90","role":"evidence","required":true,"reason":"Scope correction that removed channel-production motion."},
+    {"path":"brand-kit/expressions/channel-motion/round-03-feedback.json","sha256":"c9cc026ab200f52c69393d6c48111b61f5b5393efc33127a17e088df68a13cce","role":"evidence","required":true,"reason":"Exact seven-keep and one-deferral human disposition."},
+    {"path":"brand-kit/expressions/channel-motion/review.json","sha256":"7fa91e1b609b6320436bb03bbb6bd658b8f583a345850a0e3f0f71da3339ecab","role":"canonical","required":true,"reason":"Closed human gate, decision and authority boundary."},
+    {"path":"brand-kit/expressions/channel-motion/channel-motion.schema.json","sha256":"f655d7b9ae42498fb1cc5fc6b57eefd2e7184a20ef049065f801ff0209155f1d","role":"governance","required":true,"reason":"Machine-verifiable canonical and deferral boundary."},
+    {"path":"brand-kit/expressions/channel-motion/dist/manifest.json","sha256":"e6728ec3b490c20685fa32bf108f3f045bde17f9a6de800d955c683a6880f076","role":"mirror","required":true,"reason":"Deterministic canonical package integrity."},
+    {"path":"brand-kit/workbench/expressions/channel-motion/index.html","sha256":"4b309a9baad3b8bc54b69facb1db22d3ea9a6dc036f19d5168a325be434a9be2","role":"fixture","required":true,"reason":"Locked seven-specimen approval proof and menu deferral."},
+    {"path":"brand-kit/workbench/expressions/channel-motion/channel-motion.js","sha256":"76572041a66498b93a0dd2e08c4b9e1c846cf908cdbcd8801194160747dea545","role":"fixture","required":true,"reason":"Approved interactions and one-event allocation."},
+    {"path":"brand-kit/workbench/expressions/channel-motion/styles.css","sha256":"fc7ed813cc40b4062d170b7fcc28a88531f7f56886826eb99e1fff850ea2a5c4","role":"fixture","required":true,"reason":"Responsive approved proof styling."},
+    {"path":"explore-menu/explore-menu.js","sha256":"e585d475cef1981849878ef85e9e854e5dd8691a01e74b454a418c74131b11cc","role":"evidence","required":true,"reason":"Research implementation deferred to CMP-01 rather than promoted under EXP-07."},
+    {"path":"explore-menu/explore-menu.css","sha256":"fedc92d6ec6fe96520e3fea230ba157f87f831858d508818a176a45134988b90","role":"evidence","required":true,"reason":"Research visual and responsive implementation deferred to CMP-01."},
+    {"path":"brand-kit/releases/foundations/dist/manifest.json","sha256":"2dd58325f4c04d59b7db50011f42ed5a782e4b722182d2089a546ed896d5e639","role":"canonical","required":true,"reason":"Inherited canonical foundations remain immutable."},
+    {"path":"brand-kit/source-pack/design-system-export/assets/wings.svg","sha256":"e6475e216a77a39dda11a634e9cae18e54fff7f5386252f56344492d4d358a33","role":"canonical","required":true,"reason":"Exact immutable Wings identity asset."}
+  ],
+  "decisions": [
+    {"id":"DEC-MOTION-002","status":"approved","productionEffect":"Continuous product motion stays inside one approved Living Core; Wings, type and layout stay fixed."},
+    {"id":"DEC-PRODUCT-COMPONENT-SYSTEM-001","status":"approved","productionEffect":"Approved product-aware component anatomy remains inherited and distinct from motion policy."},
+    {"id":"DEC-WEBSITE-MOTION-SYSTEM-001","status":"approved","productionEffect":"Seven restrained motion specimens are canonical 1.0.0; the global-navigation component is deferred to CMP-01."}
+  ],
+  "artifacts": [],
+  "consumers": [],
+  "knownConflicts": [
+    {"id":"CONFLICT-EXP-07-DECORATIVE-MOTION","summary":"Historical references sometimes treat animation as ambient polish rather than restrained focal material or state response.","executionEffect":"constrain"},
+    {"id":"CONFLICT-EXP-07-MENU-OWNERSHIP","summary":"The Round 03 menu specimen is insufficient to approve a full navigation component, while the separate explore-menu research implementation already contains substantial useful work.","executionEffect":"constrain"},
+    {"id":"CONFLICT-EXP-07-MULTI-CORE","summary":"The research Explore menu mounts five discs, but the canonical system allows at most one focal live core in a viewport.","executionEffect":"inform"}
+  ],
+  "stopConditions": [
+    "Do not mutate an approved expression, product, gradient, foundation, renderer or Wings asset.",
+    "Do not run more than one expressive motion event in the viewport.",
+    "Do not let motion carry meaning absent from the complete static or immediate state.",
+    "Do not autoplay carousels, hijack scroll, add decorative parallax or animate every section.",
+    "Do not expand Website Motion 1.0.0 into email, advertising, social, film, Figma or motion-graphics production.",
+    "Do not describe explore-menu research code as canonical before H-CMP-01-GLOBAL-NAVIGATION-PROOF."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": ["brand-kit/START-HERE.md","brand-kit/docs/CURRENT-STATE.md","brand-kit/expressions/channel-motion/channel-motion.source.json","brand-kit/expressions/channel-motion/review.json"],
+    "omitByDefault": ["brand-kit/history/","consumer repositories","Figma","email/advertising/social/film production","complete channel packs"]
+  },
+  "humanNotes": ["Olli approved seven Round 03 specimens and asked to close EXP-07.","MOT-W02 is explicitly deferred to TASK-CMP-01-GLOBAL-NAVIGATION and is neither approved nor killed.","The existing dependency-free mez-explore-menu remains research evidence and the starting point for the later component task."]
+}

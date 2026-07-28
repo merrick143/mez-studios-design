@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/homepage-copy.schema.json",
+  "title": "Mez Systems canonical homepage copy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "contentId",
+    "version",
+    "status",
+    "productionAuthority",
+    "taskId",
+    "decisionId",
+    "source",
+    "review",
+    "sectionOrder",
+    "primaryAction",
+    "secondaryAction",
+    "claimBoundaries"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "contentId": {"const": "mz.systems.copy.homepage"},
+    "version": {"const": "1.0.0"},
+    "status": {"const": "canonical"},
+    "productionAuthority": {"const": true},
+    "taskId": {"const": "TASK-GOLD-01-GOLDEN-HOMEPAGE"},
+    "decisionId": {"const": "DEC-GOLDEN-HOMEPAGE-COPY-001"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"const": "brand-kit/golden/homepage/homepage-copy.md"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"const": "brand-kit/golden/homepage/homepage-copy.review.json"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "sectionOrder": {
+      "const": [
+        "hero",
+        "problem",
+        "principle",
+        "why-mez-systems",
+        "available-now",
+        "ecosystem",
+        "proof",
+        "final-route"
+      ]
+    },
+    "primaryAction": {"const": "Explore the AI OS"},
+    "secondaryAction": {"const": "See what we’re building"},
+    "claimBoundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["testimonials", "screens", "availability", "visualNotes"],
+      "properties": {
+        "testimonials": {"type": "string", "minLength": 60},
+        "screens": {"type": "string", "minLength": 60},
+        "availability": {"type": "string", "minLength": 30},
+        "visualNotes": {"type": "string", "minLength": 60}
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@ This is the tool-neutral operating contract for humans, Claude Code, Codex, and 
 - Canonical path: `brand-kit/`.
 - Current machine authority: `brand-kit/authority/current.json`.
 - Immutable migration activation record: `brand-kit/authority/authority.json`.
-- Approved decisions: `brand-kit/governance/decisions.json`.
+- Approved decisions: the hash-locked cutover ledger at `brand-kit/governance/decisions.json` plus the current supplement at `brand-kit/governance/post-cutover-decisions.json`.
 - Canonical identity data: `brand-kit/registry/`.
 - Generated releases: `brand-kit/releases/`.
 - Research, historical imports, Figma, consumer websites, and `play-orb/` are evidence or consumers. They cannot create brand truth.
@@ -21,9 +21,28 @@ For any new task under `brand-kit/`, read in this order:
 2. `brand-kit/docs/CURRENT-STATE.md`.
 3. `brand-kit/docs/ROADMAP.md`.
 4. `brand-kit/governance/decisions.json`.
-5. The documentation and skill relevant to the requested task.
+5. `brand-kit/governance/post-cutover-decisions.json`.
+6. The documentation and skill relevant to the requested task.
 
 Read `brand-kit/docs/END-TO-END-ROADMAP.md` when planning a phase, changing programme sequencing, or judging whether the system is end to end.
+
+For any task that produces or judges a **visual**, additionally read `brand-kit/design-authority/` before generating. The canon is a constraint on what you make, not a filter on what you made.
+
+## Design authority
+
+`brand-kit/` can prove a build is correct. It cannot prove a build is good, and a mediocre build passes every verifier. `brand-kit/design-authority/` closes that gap:
+
+- `ANTI-SLOP-CANON.md`: cited defect IDs. Objectively wrong, no taste involved. Read before generating.
+- `CRAFT.md`: positive craft. Composition families, pacing, hierarchy, depth, motion allocation, words.
+- `GATE-B-DESIGN-EXCELLENCE.md`: the scored eleven-dimension review with four blocking tests.
+- `FEEDBACK-DISCIPLINE.md`: the round protocol, and how to read Olli's feedback without correcting on the wrong axis.
+
+Supporting material:
+
+- `brand-kit/references/`: outside design studied through the abstraction ladder. Ethos only, never components, never values.
+- `brand-kit/assets/third-party-marks/`: real third-party logos, resolved through `registry.json`. The only sanctioned source; never invent or draw a brand mark.
+
+Two rules override an agent's instinct to skip this. **Look at the render before judging anything**, including your own work. And **ideate in plain sentences before building** when a surface has been rejected before.
 
 ## Working rules
 
@@ -79,3 +98,15 @@ The canonical skill source is `brand-kit/skills/`. Tool discovery locations are 
 - Claude Code: `.claude/skills/`.
 
 Never edit a discovery symlink as if it were an independent skill. Change the canonical folder and validate both discovery paths.
+
+Current skills:
+
+- `codex-made-it`: build and validate the Living Core gradient system.
+- `design-critique`: Gate B. Score a surface for design excellence before Olli sees it.
+- `reference-ingest`: turn a design Olli likes into a reusable Mez principle.
+
+Claude Code additionally has the `design-critic` subagent at `.claude/agents/design-critic.md`, which carries the same authority and reads the same files.
+
+## Mechanical validation is not design validation
+
+Run the seven verifiers, then run `design-critique`. Green verifiers on rejected work is the normal case, not the exception: Product Card rounds 01 to 06 passed compliance and were rejected as vibe-coded. Reporting "all checks pass" about a surface you have not looked at is a failure of this contract.

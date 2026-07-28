@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "candidateRevision": "golden-homepage-01-r24",
+  "providedBy": "Olli",
+  "providedAt": "2026-07-27",
+  "productionAuthority": false,
+  "publicRedactionStatus": "pending",
+  "assets": [
+    {
+      "file": "command.png",
+      "source": "/Users/olivermerrick/Desktop/Screenshot 2026-07-27 at 11.39.30 am.png",
+      "sha256": "97f576860ab1151ef1379ed1bfcf7e44ccd7da5c7376e773f3091eb6326c6f59",
+      "role": "command"
+    },
+    {
+      "file": "backend.png",
+      "source": "/Users/olivermerrick/Desktop/Screenshot 2026-07-27 at 11.40.24 am.png",
+      "sha256": "6e34b55413ed333ab7230227e705a6bb4642f0b5e61ef6bb47fbf76467f14e73",
+      "role": "context-backbone"
+    },
+    {
+      "file": "docs.png",
+      "source": "/Users/olivermerrick/Desktop/Screenshot 2026-07-27 at 11.39.47 am.png",
+      "sha256": "069b7d76fe274801c6e3208b8f28c2277536854b872b050c0d01272a8b4e70d8",
+      "role": "structured-documentation"
+    },
+    {
+      "file": "ad-system.png",
+      "source": "/Users/olivermerrick/Desktop/Screenshot 2026-07-27 at 11.40.47 am.png",
+      "sha256": "af217f1949122469004055050389da7a10169a267dc2de057cd4fde2ef2937e8",
+      "role": "working-application"
+    }
+  ]
+}

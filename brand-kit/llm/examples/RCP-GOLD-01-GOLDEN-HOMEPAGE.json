@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-GOLD-01-GOLDEN-HOMEPAGE",
+  "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
+  "contextBundleId": "CTX-GOLD-01-GOLDEN-HOMEPAGE",
+  "agent": {
+    "kind": "llm",
+    "name": "Claude Code",
+    "model": "Claude Opus 4.8"
+  },
+  "startedAt": "2026-07-24T12:00:00Z",
+  "finishedAt": "2026-07-24T18:00:00Z",
+  "outcome": "partial",
+  "filesChanged": [
+    {
+      "path": "brand-kit/workbench/golden/homepage/index.html",
+      "action": "modified",
+      "sha256": "a973291bb33fc8c8f0331214f0e1c19c589ea437fef2e25c2c4f9a3ce1b5fabe",
+      "reason": "Reinvented S02 (fragmentation split card), S03 (interchangeable-intelligence swap-slot split card; rented-brand logos removed), S04 (operating-loop split card), S05 (honest 'Evidence pending' redacted screens), S06 (Wings centred + orbital 'How it works' and 2x2 'Features' bottom pair) and S07 (Wings + name + Coming soon; waitlist removed); Round 17 identifiers and 0.17.0 cache-bust."
+    },
+    {
+      "path": "brand-kit/workbench/golden/homepage/styles.css",
+      "action": "modified",
+      "sha256": "f593aa2d80d376bc2efb56c8bfac8373350085a11802ad2f32137ffa64593f9e",
+      "reason": "Added the shared .split-card family + per-section visuals (frag-field, intel swap-slots, method-loop, op-screen redacted screens, aios orbital + divided 2x2 index), centred the AI OS Wings, and removed the container max-width from the family headers (.problem-head/.principle-head/.why-head/.op-head) so they left-align with their cards -- fixing the reintroduced title-indent bug."
+    },
+    {
+      "path": "brand-kit/workbench/golden/homepage/homepage.js",
+      "action": "modified",
+      "sha256": "24ef0b8ff70ab6e03d499b5b60190d3cefa8f4274dd0a782e5f64caf2b7f7455",
+      "reason": "Removed the S03 intelligence-swap/instrument JS (S03 is now a static diagram, no brand logos); Round 17 candidate identifiers in the review export (candidateRevision + download filename)."
+    },
+    {
+      "path": "brand-kit/golden/homepage/homepage.source.json",
+      "action": "modified",
+      "sha256": "81e3a7fa9a0f8d25c4184ebb49d2255045c77b65ef850d9ad4fded07972ef04c",
+      "reason": "version 0.17.0-candidate, candidateRevision golden-homepage-01-r17; the ten-section contract, one-ordinary-live-core motion and honest proof states are unchanged."
+    },
+    {
+      "path": "brand-kit/golden/homepage/review.json",
+      "action": "modified",
+      "sha256": "6ada026b1402f870e216d8fb35fd0b55164887b6634e8a3c7bee354eb67766e0",
+      "reason": "candidateRevision golden-homepage-01-r17; the provisional GH-S01 hero lock carries forward (verdict pending, non-production)."
+    },
+    {
+      "path": "brand-kit/golden/homepage/verify_homepage_round17.py",
+      "action": "created",
+      "sha256": "2e1793692065b6e0eecde12ab7ec53140f949ccc5b3b67fb26515636f8306688",
+      "reason": "Active mechanical proof: the split-card family across S02/S03/S04, the S03 rented-brand logo removal, the S05 op-screen rebuild, the S06 centred Wings + orbital/2x2 bottom pair, the S07 simplification, the family header-alignment fix, and the carried-forward locked hero / canonical motion / honest-state guards."
+    },
+    {
+      "path": "brand-kit/golden/homepage/round-16-section-review-feedback.json",
+      "action": "created",
+      "sha256": "8af27076f370fcb409b9a41ea83a8e5f9487f9ece5ca9f960618a4a6de0248ef",
+      "reason": "Olli's section review that drove Round 17 (S02/S03/S04 restart-from-scratch, S05 revise, S06 Wings + bottom cards, S07 simplify), captured verbatim."
+    },
+    {
+      "path": "brand-kit/docs/CURRENT-STATE.md",
+      "action": "modified",
+      "sha256": "5abbe5cb9c88ac0fdbbc0e059998c917e9b22303d532dbf4fc39fb513490689b",
+      "reason": "Appended the Rounds 16-17 reinvention (split-card family, S05 rebuild, S06 Wings + bottom pair, S07 simplification, header fix)."
+    },
+    {
+      "path": "brand-kit/docs/ROADMAP.md",
+      "action": "modified",
+      "sha256": "3675a6cc8a5922f9099e6f859bda618aefce9e92cacfb5449e7e07874ed8e1d4",
+      "reason": "Golden homepage active candidate advanced to Round 17 with the reinvention summary; verify_homepage_round17.py active."
+    },
+    {
+      "path": "brand-kit/docs/HANDOFF.md",
+      "action": "modified",
+      "sha256": "1a8ebf734ee8f6f17b7858c51bb7a47ea84a2ce291d20b44b26f0c0407d36f3a",
+      "reason": "Continuation pointer advanced to Round 17 (verify_homepage_round17.py active)."
+    },
+    {
+      "path": "brand-kit/START-HERE.md",
+      "action": "modified",
+      "sha256": "904cc913cf2bf80246e24a117efa6c3ca860f66d776392690de4a29865e38885",
+      "reason": "Status line + Golden Homepage entry + review link advanced to Round 17."
+    },
+    {
+      "path": "brand-kit/data/status.json",
+      "action": "modified",
+      "sha256": "da17463ce71c40da3380a53c6f5510f5c688445e5c6e461a9461c7895ce389ea",
+      "reason": "golden-homepage status -> round-17-review-candidate with the reinvention summary."
+    },
+    {
+      "path": "brand-kit/index.html",
+      "action": "modified",
+      "sha256": "dcd95abda358c04c1134fd31bda67aa81c59639cd4e4dd1c55a4e3d3293284bf",
+      "reason": "Workbench index card describes the Round 17 candidate."
+    },
+    {
+      "path": "brand-kit/llm/tasks/TASK-GOLD-01-GOLDEN-HOMEPAGE.json",
+      "action": "modified",
+      "sha256": "aa83397946c83161167d2e4850312571bc4ab2cb6ef9e26cd6e6ccfebbe23527",
+      "reason": "Registered round-16-section-review-feedback.json as an input and added the Rounds 16-17 note; active proof is verify_homepage_round17.py."
+    },
+    {
+      "path": "brand-kit/llm/examples/CTX-GOLD-01-GOLDEN-HOMEPAGE.json",
+      "action": "modified",
+      "sha256": "d10949ad37f616fafe8aaec8b7bc67d8f95dc559fd1ffa047204198580cd126a",
+      "reason": "Re-pinned every context-bundle hash from disk and advanced systemVersion to golden-homepage-round-17."
+    },
+    {
+      "path": "brand-kit/llm/examples/EVAL-GOLD-01-GOLDEN-HOMEPAGE.json",
+      "action": "modified",
+      "sha256": "853c969bdcbbafa0d263d7647e2730c23aab2196d2a748532af4562c3c3cc7bf",
+      "reason": "Round 17 evaluation: scope, instruction-fidelity, structural-integrity, hero-unchanged, claim-state and governance all pass; verdict pass, human gate still required."
+    }
+  ],
+  "decisionsApplied": [
+    "DEC-HERO-001",
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-PRODUCT-ARCHITECTURE-001",
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-PRODUCT-COMPONENT-SYSTEM-001",
+    "DEC-TRADING-CARD-EXPRESSION-001",
+    "DEC-WEBSITE-MOTION-SYSTEM-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-COPY-001",
+    "DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001"
+  ],
+  "tests": [
+    {
+      "id": "GOLD-01-ROUND-17",
+      "status": "pass",
+      "evidence": "verify_homepage_round17.py passes: the shared split-card family across S02/S03/S04, the S03 rented-brand logo removal, the S05 op-screen rebuild, the S06 centred Wings + orbital/2x2 bottom pair, the S07 simplification, the family header-alignment fix, and the carried-forward locked hero geometry, centred identity, outline token, no-overlay-fork guard and canonical motion."
+    },
+    {
+      "id": "GOLD-01-HERO-UNCHANGED",
+      "status": "pass",
+      "evidence": "The hero (GH-S01) markup and geometry are byte-unchanged from the locked V01; only the reviewed sections S02-S07 and the shared family header rules changed."
+    },
+    {
+      "id": "GOLD-01-NO-BRAND-LOGOS",
+      "status": "pass",
+      "evidence": "data-intelligence, principle-logo and ownership-instrument are absent from the workbench HTML; S03 shows interchangeable intelligence as abstract swap-slots with no brand marks, real or invented."
+    },
+    {
+      "id": "GOLD-01-INHERITANCE",
+      "status": "pass",
+      "evidence": "verify_workbench.py, verify_portability.py, verify_library.py, verify_architecture.py, verify_authority.py and verify_release.py all pass; foundations, products, expressions, Global Navigation and Website Motion are untouched."
+    },
+    {
+      "id": "GOLD-01-CONTRACTS",
+      "status": "pass",
+      "evidence": "verify_llm_contracts.py passes: the updated task, context bundle, receipt and evaluation validate against their schemas."
+    },
+    {
+      "id": "GOLD-01-HUMAN",
+      "status": "not-run",
+      "evidence": "H-GOLD-01-HOMEPAGE-PROOF remains open. Round 17 reinvented S02-S07; S08 proof and S09 final route were not touched this round and the whole-page gate stays pending."
+    }
+  ],
+  "artifactsProduced": [
+    "Round 16 section-review feedback record (drove Round 17)",
+    "Round 17 authored-split-card reinvention across S02-S07 (six sections) and its mechanical verifier",
+    "S05 Operating proof given its first real styling (honest 'Evidence pending' screens)",
+    "Docs, status and the four LLM records advanced in lockstep with re-pinned hashes"
+  ],
+  "assumptions": [
+    "'rebuild each section however you think in the mez systems style but use those attached as inspo' grants creative latitude bounded by the established Mez ethos; the reference screenshots inform composition, not literal styling (no non-canonical green, no ambient shadow/glow).",
+    "S05 'Operating proof' was marked revise with blank feedback; it had also shipped unstyled, so it was rebuilt into honest 'Evidence pending' screens as an agent call."
+  ],
+  "exceptions": [
+    "The locked V01 hero was not touched; verify_homepage_round17.py guards its geometry and treatments as carried-forward.",
+    "Rounds 05-15 verifiers are retained as historical lineage evidence; verify_homepage_round17.py is the active gate.",
+    "S05 redacted screens stay honest evidence-intake placeholders and testimonial publication stays blocked until redaction and consent/provenance are verified."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {
+    "gateRequired": true,
+    "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
+    "status": "pending"
+  },
+  "nextAction": "Olli reviews the Round 17 reinvention (S02-S07). Remaining: his verdicts on the reinvented sections, plus the S05 evidence redaction and testimonial consent/provenance before any publication. The whole-page gate stays open."
+}
