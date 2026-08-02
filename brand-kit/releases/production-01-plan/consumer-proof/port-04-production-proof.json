@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "proofId": "PORT-04-PRODUCTION-CONSUMER-PROOF-2026-08-02",
+  "taskId": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+  "gateId": "H-PORT-04-NAMED-CONSUMER-PROOF",
+  "consumerId": "CON-MEZ-SYSTEMS-WEB-001",
+  "status": "deployed-approved-named-consumer",
+  "approvedBy": "Olli",
+  "approvedAt": "2026-08-02",
+  "consumer": {
+    "repository": "https://github.com/mezcorp-studio/ceos-notion-landingpage.git",
+    "defaultBranch": "main",
+    "mergeCommit": "626580ab18624702912cad82c2c681ddb8f16cb2",
+    "integrationTip": "9d56d90e84b2280478b7fc5aa505e9ed9832cdca",
+    "pullRequest": "https://github.com/mezcorp-studio/ceos-notion-landingpage/pull/28",
+    "productionUrl": "https://mez.systems/"
+  },
+  "designInput": {
+    "repository": "https://github.com/merrick143/mez-studios-design.git",
+    "commit": "0b07254636470e7da6cda174a34d49073d800f52",
+    "releasePath": "brand-kit/releases/production-01/1.0.0-rc.2",
+    "package": "@mez-systems/design-system-web",
+    "version": "1.0.0-rc.2",
+    "manifestSha256": "129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9"
+  },
+  "integrationBoundary": {
+    "method": "vendored immutable consumer adapter with recorded provenance and deterministic generation",
+    "runtimeCrossRepositoryImport": false,
+    "publishedPackageDependency": false,
+    "globalDesignSystemCssImport": false,
+    "styleShell": ".mz-site",
+    "consumerOwned": [
+      "routes and redirects",
+      "SEO and structured data",
+      "analytics and attribution",
+      "testimonial content and consent records",
+      "pricing and product configuration",
+      "Stripe, checkout, fulfilment and deployment"
+    ]
+  },
+  "integratedSurfaces": [
+    "Mez Systems company homepage at /",
+    "canonical AI OS product page at /ai-os",
+    "ten AI OS variants",
+    "Agency Supply with its bounded product identity preserved",
+    "contact, privacy, terms and refund-policy support surfaces",
+    "404 fallback",
+    "consumer-owned checkout presentation shell"
+  ],
+  "protectedContracts": [
+    "AI OS variant canonical and noindex behaviour",
+    "AI OS eight-testimonial review data and structured data",
+    "first-touch attribution and analytics event contracts",
+    "Stripe prices, product IDs, API routes, success, cancellation and fulfilment handoffs",
+    "consumer-owned testimonial wording, provenance and consent operations"
+  ],
+  "validation": {
+    "automated": "Consumer tests, lint, typecheck, production SSG build and ten Mez integration verifiers passed from production main on 2026-08-02. Lint retained three known Fast Refresh warnings and introduced no errors.",
+    "responsive": "Approved rendered evidence covers 320 through 1440 pixels, keyboard focus, reduced motion, text scaling and overflow checks for the integrated slices.",
+    "commerce": "Checkout protected-file and CSS-isolation verifiers passed; provider, API, analytics, attribution and post-purchase seams remained consumer-owned.",
+    "productionSmoke": "Olli completed the live base checkout as a zero-total order with an existing 100 percent discount code on 2026-08-02. The code value is deliberately not stored in this repository."
+  },
+  "knownGaps": [
+    "The live order bump remains hidden because LIVE_STRIPE_PRICE_PROMPT_VAULT is not configured, so its live transaction path was not exercised.",
+    "The rc.2 candidate remains unpublished and must not be called production version 1.0.0.",
+    "Future design-system changes require a new immutable version and a separate consumer pull request; the frozen rc.2 source must not be edited."
+  ],
+  "authority": {
+    "consumerDeploymentIsProduction": true,
+    "candidateProductionAuthority": false,
+    "packagePublished": false,
+    "productionVersionAssigned": false,
+    "canonicalDesignRepository": "merrick143/mez-studios-design@main:brand-kit"
+  }
+}

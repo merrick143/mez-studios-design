@@ -63,13 +63,14 @@ ctx = load(BRAND_KIT / "llm/examples/CTX-CERT-01-SYSTEM-CERTIFICATION.json")
 
 expect(task.get("status") == "complete", "CERT-01 must be complete after H-CERT-01 approval")
 expect(task.get("humanGate", {}).get("gateId") == "H-CERT-01-SYSTEM-CERTIFICATION", "CERT-01 gate mismatch")
-expect(port.get("status") in {"blocked", "ready"}, "PORT-04 has an invalid post-certification state")
-if port.get("status") == "ready":
+expect(port.get("status") in {"blocked", "ready", "complete"}, "PORT-04 has an invalid post-certification state")
+if port.get("status") in {"ready", "complete"}:
     consumer_registry = load(BRAND_KIT / "governance/consumer-register.json")
     registered_consumers = consumer_registry.get("consumers", [])
     registered_consumer = registered_consumers[0] if len(registered_consumers) == 1 else {}
     expect(registered_consumer.get("id") == "CON-MEZ-SYSTEMS-WEB-001", "ready PORT-04 lacks exact consumer registration")
-    expect(registered_consumer.get("state") == "registered-not-integrated", "ready PORT-04 incorrectly claims consumer integration")
+    expected_consumer_state = "integrated-production" if port.get("status") == "complete" else "registered-not-integrated"
+    expect(registered_consumer.get("state") == expected_consumer_state, "PORT-04 consumer lifecycle state is inconsistent")
 expect(channel.get("status") == "blocked" and any("priority-deferred" in note for note in channel.get("notes", [])), "deferred channel task status drifted")
 expect(ui.get("canonicalAuthority") is False and ui.get("productionAuthority") is False, "Product UI authority widened")
 expect(ui.get("decisionId") is None, "Product UI approval invented a decision ID")
@@ -165,5 +166,5 @@ print("- all seven core and 25 selected current-scope validators are recorded as
 print("- exact deterministic rc.2 contains 351 artifacts and preserves frozen rc.1")
 print("- GPT-5.6 controlled transfer and GPT-5/Claude Opus contract replay pass")
 print("- fresh Claude transfer, exact spoken AT and real-consumer proof remain named gaps")
-print("- H-CERT-01 is approved; exact consumer registration makes PORT-04 ready for read-only audit")
+print("- H-CERT-01 remains approved; the exact registered consumer has since completed PORT-04")
 print("- deferred channels, publication, deployment and production remain unauthorised")

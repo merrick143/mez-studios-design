@@ -5,7 +5,7 @@
   "canonicalRepositoryTransferred": true,
   "cutoverId": "CUTOVER-2026-07-21-01",
   "activeRelease": "0.1.0-alpha.1",
-  "nextTask": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+  "nextTask": "TEAM-OPERATIONS-AND-VERSIONED-FOLLOW-UPS",
   "sections": [
     {"id": "gradient-library", "name": "Complete gradient library", "status": "canonical", "summary": "All source colours, animation and expressions are approved. 33 unique cores are active; ten duplicate IDs remain compatibility aliases."},
     {"id": "core", "name": "Living Core", "status": "canonical", "summary": "Deep Mineral is the selected finish. Exact PNG sources remain colour authority and source palettes are unchanged."},
@@ -21,8 +21,8 @@
     {"id": "product-ui-data", "name": "Product UI and data visualisation", "status": "approved-foundation-direction", "summary": "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION is complete. Olli approved the repository-backed operational-ledger foundation through H-UI-01 after its contract, responsive/interaction proof and 67/75 Gate B pass. It has no canonical or production authority."},
     {"id": "certification", "name": "Whole-system certification", "status": "approved-current-scope", "summary": "TASK-CERT-01-SYSTEM-CERTIFICATION is complete through H-CERT-01 for the explicitly agreed current scope. Exact 1.0.0-rc.2 is approved for final named-consumer proof; deferred channels remain uncertified."},
     {"id": "channel-systems", "name": "Remaining channel systems", "status": "priority-deferred", "summary": "Olli deferred shared channel rules, organic, paid, email, presentations, reports/documents, motion/video, OG/icons and print/environmental as low priority. They remain future work and are not certified."},
-    {"id": "consumer-transition", "name": "Named consumer transition", "status": "ready-read-only-audit", "summary": "CON-MEZ-SYSTEMS-WEB-001 resolves to mezcorp-studio/ceos-notion-landingpage. PORT-04 is ready and begins with a read-only audit; consumer mutation and deployment remain unauthorised."},
-    {"id": "release", "name": "Portable release", "status": "approved-candidate-unreleased", "summary": "0.1.0-alpha.1 remains the immutable identity snapshot and 1.0.0-rc.1 remains an approved frozen milestone. Exact deterministic 1.0.0-rc.2 is approved at H-CERT-01 for final PORT-04 consumer proof. Deferred channels are outside the certification scope. No production release or deployment exists."},
+    {"id": "consumer-transition", "name": "Named consumer transition", "status": "deployed-approved", "summary": "CON-MEZ-SYSTEMS-WEB-001 is integrated and live at https://mez.systems/ from consumer merge commit 626580ab. PORT-04 is complete and human-approved; the consumer remains separate from design-system authority."},
+    {"id": "release", "name": "Portable release", "status": "approved-candidate-consumed-unpublished", "summary": "0.1.0-alpha.1 remains the immutable identity snapshot and 1.0.0-rc.1 remains an approved frozen milestone. Exact deterministic 1.0.0-rc.2 supplied the immutable source input for the live named consumer, but it is not a published package, production 1.0.0 or independent deployment authority."},
     {"id": "knowledge", "name": "Knowledge and LLM portability", "status": "canonical", "summary": "The full roadmap, 104-file Markdown history, Phase 2 research, machine contracts and one shared Claude Code/Codex skill source are present and validated."},
     {"id": "migration", "name": "Repository migration", "status": "complete", "summary": "CUTOVER-2026-07-21-01 transferred rank-one authority here. Knowledge transfer is complete and main:brand-kit is the ordinary working authority."}
   ]

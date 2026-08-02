@@ -151,8 +151,8 @@ def main() -> int:
         or consumer.get("registrationRecord") != "brand-kit/governance/consumer-register.json"
         or consumer.get("registrationRequiredBeforeIntegration") is not False
         or consumer.get("runtimeCrossRepositoryImportAllowed") is not False
-        or registered.get("state") != "registered-not-integrated"
-        or registered.get("authorityBoundary", {}).get("consumerMutationAuthorised") is not False
+        or registered.get("state") not in {"registered-not-integrated", "integrated-production"}
+        or registered.get("productionIntegration", {}).get("runtimeCrossRepositoryImport") is not False
     ):
         failures.append("named consumer registration or pre-integration boundary is invalid")
 

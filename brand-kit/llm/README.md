@@ -40,7 +40,7 @@ This folder contains model-neutral machine contracts for bounded tasks, context 
 - `tasks/TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION.json`: complete through `H-UI-01-PRODUCT-UI-FOUNDATION`. It establishes an approved non-production Product UI and accessible data foundation without inventing production product evidence.
 - `tasks/TASK-CHAN-01-FIRST-RELEASE-CHANNEL-SYSTEMS.json`: priority-deferred. The named low-priority channel families retain future contracts and gates and are not implied complete.
 - `tasks/TASK-CERT-01-SYSTEM-CERTIFICATION.json` plus its context, completed receipt and evaluation: complete through `H-CERT-01`. Exact deterministic `1.0.0-rc.2` is approved for final named-consumer proof; deferred channel families remain named as uncertified.
-- `tasks/TASK-PORT-04-NAMED-CONSUMER-PROOF.json`: the final transition task. Figma, UI-01 and CERT-01 are complete, exact `1.0.0-rc.2` is approved, and `mezcorp-studio/ceos-notion-landingpage` is registered as `CON-MEZ-SYSTEMS-WEB-001`. PORT-04 is ready and begins with a read-only consumer audit.
+- `tasks/TASK-PORT-04-NAMED-CONSUMER-PROOF.json`: the completed final transition task. Exact `1.0.0-rc.2` supplied the immutable adapter input to the live `mezcorp-studio/ceos-notion-landingpage` consumer. The package remains unpublished and the consumer remains outside design authority.
 
 The older phase examples remain useful schema fixtures but may contain historical Mezcorp paths. They do not override `brand-kit/START-HERE.md`, `brand-kit/docs/CURRENT-STATE.md`, or canonical authority.
 

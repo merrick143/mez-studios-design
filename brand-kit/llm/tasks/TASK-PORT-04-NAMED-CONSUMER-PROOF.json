@@ -3,7 +3,7 @@
   "taskId": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
   "title": "Prove the release candidate in the registered Mez Systems web consumer",
   "phase": 8,
-  "status": "ready",
+  "status": "complete",
   "owner": "consumer-integration-agent",
   "objective": "After the Figma companion, priority Product UI scope and whole-system certification are complete, register one exact repository as CON-MEZ-SYSTEMS-WEB-001, integrate the later approved immutable candidate without copied design values, and prove real-consumer installation, accessibility, performance, update, rollback and version visibility before any production release or deployment decision.",
   "scope": {
@@ -134,7 +134,9 @@
     "PORT-03 is complete and rc.1 remains an approved frozen portability milestone.",
     "SEQ-CONSUMER-LAST-001 makes this the final transition after Figma, the agreed current release scope and whole-system certification.",
     "FIG-01, UI-01 and CERT-01 are complete, exact 1.0.0-rc.2 is approved, and Olli registered mezcorp-studio/ceos-notion-landingpage as CON-MEZ-SYSTEMS-WEB-001 on 29 July 2026.",
-    "The first consumer action is a read-only forensic audit from a fresh branch or worktree based on fetched origin/main; registration itself grants no mutation or deployment authority.",
-    "A successful PORT-04 proof still precedes a separate production release and deployment decision."
+    "The first consumer action was a read-only forensic audit from a fresh worktree based on fetched origin/main; registration itself granted no mutation or deployment authority.",
+    "Olli approved the bounded integration slices, root cutover, canonical AI OS, variants, Agency Supply preservation, support and legal foundations, 404 and checkout shell before the consumer was merged and deployed.",
+    "The production consumer uses a vendored immutable adapter scoped beneath .mz-site. This closes the named-consumer proof without publishing @mez-systems/design-system-web, assigning production version 1.0.0 or making the consumer a second design authority.",
+    "The exact production record is brand-kit/releases/production-01-plan/consumer-proof/port-04-production-proof.json."
   ]
 }
