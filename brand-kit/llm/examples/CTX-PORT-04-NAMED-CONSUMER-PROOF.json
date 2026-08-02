@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-PORT-04-NAMED-CONSUMER-PROOF",
+  "taskId": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+  "generatedAt": "2026-08-02T12:34:18Z",
+  "systemVersion": "1.0.0-rc.2+live-named-consumer-unpublished",
+  "sourceState": {
+    "repository": "merrick143/mez-studios-design",
+    "branch": "codex/consumer-production-handoff",
+    "commit": "0b07254636470e7da6cda174a34d49073d800f52",
+    "workingTree": "dirty"
+  },
+  "files": [
+    {"path": "brand-kit/authority/current.json", "sha256": "832a87e10856eea3af321cd237e911a4bd01689071f94bfa241dadfba0d22fba", "role": "governance", "required": true, "reason": "Continuing canonical repository authority."},
+    {"path": "brand-kit/releases/production-01/1.0.0-rc.2/manifest.json", "sha256": "129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9", "role": "evidence", "required": true, "reason": "Exact immutable candidate consumed by the named website adapter."},
+    {"path": "brand-kit/governance/consumer-register.json", "sha256": "c3f6930b8607f8638f7cb1ace629f51877f21f7a380fe922788350d48f714235", "role": "governance", "required": true, "reason": "Current consumer identity and production integration state."},
+    {"path": "brand-kit/releases/production-01-plan/consumer-proof/port-04-production-proof.json", "sha256": "213bd516fb5aba5912c67be051eaa94d90491d46e2e5152ce324a19244c2cad0", "role": "evidence", "required": true, "reason": "Exact consumer revision, deployment boundary and known gaps."}
+  ],
+  "decisions": [
+    {"id": "DEC-FOUNDATION-RELEASE-001", "status": "approved", "productionEffect": "Supplies canonical foundations through the immutable consumer adapter."},
+    {"id": "DEC-GLOBAL-NAVIGATION-COMPONENT-001", "status": "approved", "productionEffect": "Supplies the shared consumer navigation contract and bounded motion exception."},
+    {"id": "DEC-GOLDEN-HOMEPAGE-001", "status": "approved", "productionEffect": "Supplies the approved company-home composition without publishing the package."},
+    {"id": "DEC-HALFTONE-PORTRAIT-COMPONENT-001", "status": "approved", "productionEffect": "Supplies the canonical portrait presentation boundary."},
+    {"id": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001", "status": "approved", "productionEffect": "Supplies the canonical presentation while testimonial truth remains consumer-owned."}
+  ],
+  "artifacts": [],
+  "consumers": ["CON-MEZ-SYSTEMS-WEB-001"],
+  "knownConflicts": [
+    {"id": "PORT-04-ORDER-BUMP-ENV", "summary": "LIVE_STRIPE_PRICE_PROMPT_VAULT is not configured, so the optional production order bump is hidden and its live transaction path is untested.", "executionEffect": "constrain"},
+    {"id": "PORT-04-PACKAGE-STATUS", "summary": "The live consumer uses rc.2 source inputs, but the package remains unpublished and is not production version 1.0.0.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": [
+    "Do not edit the frozen rc.2 release.",
+    "Do not make the consumer a second design authority.",
+    "Do not publish or assign production version 1.0.0 without a separate gate.",
+    "Do not expose the order bump before its live Price ID and transaction path are separately verified."
+  ],
+  "contextBudget": {
+    "strategy": "bounded",
+    "requiredFirst": [
+      "brand-kit/AGENT-GUIDE.md",
+      "brand-kit/START-HERE.md",
+      "brand-kit/docs/PRODUCTION-CONSUMER-HANDOFF.md",
+      "brand-kit/releases/production-01-plan/consumer-proof/port-04-production-proof.json"
+    ],
+    "omitByDefault": ["brand-kit/history/", "historical consumer worktrees", "generated browser evidence"]
+  },
+  "humanNotes": ["Olli approved the integrated homepage, canonical AI OS, variants, Agency Supply preservation, support/legal surfaces, 404 and checkout presentation before production deployment."]
+}

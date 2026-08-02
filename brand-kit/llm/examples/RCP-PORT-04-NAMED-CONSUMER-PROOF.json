@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-PORT-04-NAMED-CONSUMER-PROOF",
+  "taskId": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+  "contextBundleId": "CTX-PORT-04-NAMED-CONSUMER-PROOF",
+  "agent": {"kind": "hybrid", "name": "Codex and Olli", "model": "GPT-5.6"},
+  "startedAt": "2026-07-29T00:00:00Z",
+  "finishedAt": "2026-08-02T12:34:18Z",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/releases/production-01-plan/consumer-proof/", "action": "created", "sha256": null, "reason": "Exact production consumer proof and verifier."},
+    {"path": "brand-kit/governance/consumer-register.json", "action": "modified", "sha256": null, "reason": "Advance the registered consumer from audit-ready to deployed and approved."},
+    {"path": "brand-kit/llm/tasks/TASK-PORT-04-NAMED-CONSUMER-PROOF.json", "action": "modified", "sha256": null, "reason": "Close the completed named-consumer transition."},
+    {"path": "brand-kit/docs/PRODUCTION-CONSUMER-HANDOFF.md", "action": "created", "sha256": null, "reason": "Give the team one operational boundary and update path across both repositories."},
+    {"path": "brand-kit/START-HERE.md", "action": "modified", "sha256": null, "reason": "Expose the live consumer state without widening package authority."},
+    {"path": "brand-kit/docs/", "action": "modified", "sha256": null, "reason": "Synchronise current state, roadmap and handoff documentation."}
+  ],
+  "decisionsApplied": [
+    "DEC-FOUNDATION-RELEASE-001",
+    "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
+    "DEC-GOLDEN-HOMEPAGE-001",
+    "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
+    "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001"
+  ],
+  "tests": [
+    {"id": "PORT-04-CONSUMER-SUITE", "status": "pass", "evidence": "Nine Vitest files and 111 tests passed from production main; lint had zero errors and three known Fast Refresh warnings; typecheck and production SSG build passed."},
+    {"id": "PORT-04-CONSUMER-VERIFIERS", "status": "pass", "evidence": "All ten Mez consumer verifiers passed, including root SSG, navigation, AI OS, variants, Agency Supply, support/legal, 404 and checkout isolation."},
+    {"id": "PORT-04-CSS-BOUNDARY", "status": "pass", "evidence": "The adapter verifier proved deterministic generated CSS and .mz-site isolation; checkout verification proved 21 protected files and provider seams unchanged."},
+    {"id": "PORT-04-PRODUCTION-SMOKE", "status": "pass", "evidence": "Olli completed the live base checkout as a zero-total order with an existing 100 percent discount code."},
+    {"id": "PORT-04-ORDER-BUMP-LIVE", "status": "not-run", "evidence": "The optional live Price ID is unconfigured and the bump remains hidden."},
+    {"id": "PORT-04-HUMAN", "status": "pass", "evidence": "Olli approved each bounded consumer slice and the final checkout presentation before production handoff."}
+  ],
+  "artifactsProduced": [
+    "Live Mez Systems named consumer",
+    "Immutable rc.2 consumer adapter",
+    "Production consumer proof record",
+    "Two-repository team handoff"
+  ],
+  "assumptions": [],
+  "exceptions": [
+    "The live order bump transaction path remains untested while LIVE_STRIPE_PRICE_PROMPT_VAULT is absent.",
+    "Three pre-existing Fast Refresh lint warnings remain visible; there are no lint errors.",
+    "The candidate remains unpublished and is not production version 1.0.0."
+  ],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-PORT-04-NAMED-CONSUMER-PROOF", "status": "approved"},
+  "nextAction": "Operate the live consumer from its normal main checkout and create new immutable design versions plus separate consumer pull requests for future changes."
+}

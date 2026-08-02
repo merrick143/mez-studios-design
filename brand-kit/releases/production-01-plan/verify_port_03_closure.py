@@ -59,7 +59,7 @@ expect(payload.get("review", {}).get("reviewedBy") == "Olli", "redacted proof re
 expect(verification.get("status") == "complete", "PORT-03 verification is not complete")
 expect(verification.get("humanGate", {}).get("status") == "approved", "PORT-03 verification gate is not approved")
 expect(task_03.get("status") == "complete", "TASK-PORT-03 is not complete")
-expect(task_04.get("status") in {"blocked", "ready"}, "TASK-PORT-04 has an invalid pre-integration state")
+expect(task_04.get("status") in {"blocked", "ready", "complete"}, "TASK-PORT-04 has an invalid lifecycle state")
 expect(task_04.get("inputs", {}).get("consumerIds") == ["CON-MEZ-SYSTEMS-WEB-001"], "TASK-PORT-04 has the wrong named consumer")
 expect(fig_task.get("status") in {"awaiting-human", "complete"}, "TASK-FIG-01 has an invalid state")
 expect(sequence.get("frozenMilestone", {}).get("manifestSha256") == manifest_sha, "consumer-last sequence changed the approved rc.1 bytes")
@@ -74,7 +74,9 @@ else:
     records = registry.get("consumers", [])
     registered = records[0] if len(records) == 1 else {}
     expect(consumer.get("repository") == registered.get("repository"), "registered consumer identity drifted")
-    expect(task_04.get("status") == "ready", "registered PORT-04 must be ready, not integrated")
+    expect(task_04.get("status") in {"ready", "complete"}, "registered PORT-04 has an invalid lifecycle state")
+    if task_04.get("status") == "complete":
+        expect(registered.get("state") == "integrated-production", "complete PORT-04 lacks the production integration record")
 followups = {item.get("taskId"): item.get("status") for item in release_plan.get("followUps", [])}
 expect(followups.get("TASK-PORT-03-PRODUCTION-RELEASE-ASSEMBLY") == "complete", "release plan does not close PORT-03")
 expect(followups.get("TASK-PORT-04-NAMED-CONSUMER-PROOF") in {"deferred-until-system-ready-and-consumer-registration", "ready-for-read-only-consumer-audit"}, "release plan has the wrong PORT-04 state")

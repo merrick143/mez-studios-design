@@ -136,8 +136,9 @@ Figma mirrors the system. It does not own independent values.
 
 ## Phase 8: final consumer transition
 
-- `PORT-04` Named consumer proof — ready. Olli registered `mezcorp-studio/ceos-notion-landingpage` as `CON-MEZ-SYSTEMS-WEB-001` on 29 July 2026. Begin with a read-only forensic audit from fetched `origin/main`; do not modify, publish or deploy the consumer before its protected routes, redirects, SEO, analytics, attribution, commerce, pricing, product configuration, consent, testimonial content and structured-data contracts are mapped.
-- Prove accessibility, named-device performance, version visibility, update and rollback in that real consumer before any separate publication or deployment decision.
+- `PORT-04` Named consumer proof — complete. Olli registered `mezcorp-studio/ceos-notion-landingpage` as `CON-MEZ-SYSTEMS-WEB-001`, accepted the bounded H0/H1 and H3 proofs, approved the root cutover and later migration slices, and approved the final checkout presentation before the consumer was merged and deployed.
+- The production consumer is live at `https://mez.systems/` from merge commit `626580ab18624702912cad82c2c681ddb8f16cb2`. It uses a vendored immutable rc.2 adapter, route-scoped `.mz-site` CSS and no runtime design-repository dependency. The exact proof and operational boundary are recorded in `docs/PRODUCTION-CONSUMER-HANDOFF.md` and `releases/production-01-plan/consumer-proof/port-04-production-proof.json`.
+- Completion does not publish the package, assign production version `1.0.0` or certify deferred channel families. Future design changes require a new immutable version and a separate consumer pull request.
 
 ## Task rule
 

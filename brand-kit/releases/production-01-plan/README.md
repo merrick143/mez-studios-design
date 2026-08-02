@@ -43,7 +43,7 @@ is the only operating-proof media copied into the candidate.
 
 ## Consumer interface
 
-The final consumer is `CON-MEZ-SYSTEMS-WEB-001`, named **Mez Systems production web** and registered as `https://github.com/mezcorp-studio/ceos-notion-landingpage.git`. Its confirmed local checkout is recorded in `brand-kit/governance/consumer-register.json`. `TASK-PORT-04-NAMED-CONSUMER-PROOF` is ready and begins with a read-only audit. The consumer owns routes, analytics, SEO deployment, live availability, testimonial data freshness, consent operations and application logic. It receives a versioned package and may not copy values or become an independent source of design truth.
+The final consumer is `CON-MEZ-SYSTEMS-WEB-001`, named **Mez Systems production web** and registered as `https://github.com/mezcorp-studio/ceos-notion-landingpage.git`. Its confirmed local checkout is recorded in `brand-kit/governance/consumer-register.json`. `TASK-PORT-04-NAMED-CONSUMER-PROOF` is complete and the consumer is live at `https://mez.systems/` from merge commit `626580ab`. The consumer owns routes, analytics, SEO deployment, live availability, testimonial data freshness, consent operations and application logic. It consumes an immutable versioned adapter and may not become an independent source of design truth. See `brand-kit/docs/PRODUCTION-CONSUMER-HANDOFF.md`.
 
 ## Required evidence before assembly can become a release
 

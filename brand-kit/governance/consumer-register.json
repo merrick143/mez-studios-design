@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-07-29",
+  "updatedAt": "2026-08-02",
   "consumers": [
     {
       "id": "CON-MEZ-SYSTEMS-WEB-001",
@@ -13,8 +13,8 @@
         "defaultBranch": "main"
       },
       "localCheckout": "/Users/olivermerrick/Desktop/mez-studios/landing-pages/apps/ceos-notion-landingpage",
-      "state": "registered-not-integrated",
-      "migrationState": "ready-for-read-only-audit",
+      "state": "integrated-production",
+      "migrationState": "deployed-and-human-approved",
       "designSystemCandidate": {
         "name": "@mez-systems/design-system-web",
         "version": "1.0.0-rc.2",
@@ -23,8 +23,21 @@
       "authorityBoundary": {
         "designSystemOwns": "versioned design values, runtime assets and approved component contracts",
         "consumerOwns": "routes, redirects, SEO, analytics, attribution, pricing, product configuration, consent, testimonial content and structured data, commerce, deployment and application behaviour",
-        "consumerMutationAuthorised": false,
-        "productionDeploymentAuthorised": false
+        "consumerMutationAuthorised": true,
+        "productionDeploymentAuthorised": true
+      },
+      "productionIntegration": {
+        "taskId": "TASK-PORT-04-NAMED-CONSUMER-PROOF",
+        "gateId": "H-PORT-04-NAMED-CONSUMER-PROOF",
+        "sourceDesignCommit": "0b07254636470e7da6cda174a34d49073d800f52",
+        "consumerMergeCommit": "626580ab18624702912cad82c2c681ddb8f16cb2",
+        "productionUrl": "https://mez.systems/",
+        "deployedAt": "2026-08-02",
+        "approvedBy": "Olli",
+        "proofRecord": "brand-kit/releases/production-01-plan/consumer-proof/port-04-production-proof.json",
+        "runtimeCrossRepositoryImport": false,
+        "publishedPackageDependency": false,
+        "candidateProductionAuthority": false
       },
       "humanConfirmation": {
         "approver": "Olli",

@@ -1,12 +1,12 @@
 # Mez Systems current state
 
-Updated: 29 July 2026
+Updated: 2 August 2026
 
 ## Blunt status
 
 The repository migration and identity kernel are complete. The end-to-end design system is not complete.
 
-The canonical engine now includes the approved foundations, bounded expression suite, Global Navigation and the first Golden Homepage. The repository-backed Figma companion is approved as an authoring mirror. The exact `1.0.0-rc.1` package is an approved frozen portability milestone. Whole-system certification is complete for the explicitly agreed current scope through `H-CERT-01`, and exact deterministic `1.0.0-rc.2` is approved for final named-consumer proof. Final consumer integration remains unproven and the deferred channel families remain intentionally uncertified.
+The canonical engine now includes the approved foundations, bounded expression suite, Global Navigation and the first Golden Homepage. The repository-backed Figma companion is approved as an authoring mirror. The exact `1.0.0-rc.1` package is an approved frozen portability milestone. Whole-system certification is complete for the explicitly agreed current scope through `H-CERT-01`, and exact deterministic `1.0.0-rc.2` supplied the immutable input to the completed named-consumer proof. The registered consumer is live at `https://mez.systems/` from merge commit `626580ab`; deferred channel families remain intentionally uncertified.
 
 ## Complete and canonical
 
@@ -46,8 +46,8 @@ The canonical engine now includes the approved foundations, bounded expression s
 ## Explicitly incomplete
 
 - The nine priority-deferred channel families, including email, ads, video and document expression contracts.
-- Proof of the registered named consumer using approved `1.0.0-rc.2`; deferred channels remain explicitly outside certification.
-- Final named production-consumer proof using that later approved candidate.
+- Publication of `@mez-systems/design-system-web` or assignment of production version `1.0.0`; live consumer use does not imply either action.
+- Live order-bump transaction proof while `LIVE_STRIPE_PRICE_PROMPT_VAULT` remains unconfigured and the offer remains hidden.
 - Production Figma library and Code Connect.
 - Fresh same-prompt Claude transfer evidence; historical Claude Opus 4.8 receipts pass the common contract, but the installed CLI is not authenticated.
 
@@ -59,7 +59,7 @@ The ordinary working authority is `merrick143/mez-studios-design` on `main`, pat
 
 The two temporary migration worktrees have been removed. The normal working checkout is the repository root; portable documentation and commands remain repository-relative.
 
-The website repository is the final future consumer. It is not part of the design-system authoring environment and must not be changed until Figma, the agreed Product UI scope and whole-system certification are complete and the consumer-proof phase names it explicitly.
+The website repository is the live named consumer. It remains outside the design-system authoring environment and cannot create canonical design values. Future changes require a new immutable design-system version and a separately reviewed consumer pull request.
 
 ## Current gate
 
@@ -73,7 +73,7 @@ The website repository is the final future consumer. It is not part of the desig
 
 `TASK-FIG-01-FIGMA-COMPANION` is complete. Olli first approved the read-only Phase 0 scope and five conflict resolutions, then approved the completed companion through `H-FIG-02-FIGMA-COMPANION-APPROVAL` on 28 July 2026. The historical `HU0GVaDhatjWrKCiSg3wlU` file remains unchanged; the approved repository-backed companion is `QxZT3FJ8BDXOZfBQDt0qPW`. It contains eight variable collections, 255 variables, fifteen semantic text styles, five depth styles, six identity/expression sets and eighteen functional sets with 105 variants. All eighteen default functional variants detach cleanly, the final whole-file audit found zero missing fonts, and Gate B passed at 67/75 after visual and content-truth repairs. This is authoring-mirror approval only: Figma cannot create canonical values, no library was published, Code Connect implementation remains a bounded follow-up and no production authority was created.
 
-`SEQ-PRODUCT-UI-FIRST-001` records Olli's 28 July 2026 priority change. `TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION` is complete: Olli approved its evidence-backed operational-ledger foundation through `H-UI-01-PRODUCT-UI-FOUNDATION` after the bounded contract, 320–1440 responsive/interaction proof and 67/75 Gate B pass. This is an approved non-production direction, not canonical Product UI and not a real AI OS screen. The shared channel rules, organic social, paid advertising, email, presentations, reports/documents, motion/video, OG/icons and print/environmental work remain deferred as low priority, not approved or cancelled. `TASK-CERT-01-SYSTEM-CERTIFICATION` is complete through `H-CERT-01-SYSTEM-CERTIFICATION`: all seven core and twenty-five selected scope validators passed, three builds produced the same 351-artifact `1.0.0-rc.2` manifest, and an empty-environment isolated run passed. Olli accepted the visible limitations and approved exact manifest SHA-256 `129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9` for final named-consumer proof. On 29 July 2026 Olli registered `https://github.com/mezcorp-studio/ceos-notion-landingpage.git` and its confirmed local checkout as `CON-MEZ-SYSTEMS-WEB-001`. `TASK-PORT-04-NAMED-CONSUMER-PROOF` is ready; its first action is a read-only forensic audit from fetched `origin/main`, and no consumer mutation or deployment is yet authorised.
+`SEQ-PRODUCT-UI-FIRST-001` records Olli's 28 July 2026 priority change. `TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION` is complete: Olli approved its evidence-backed operational-ledger foundation through `H-UI-01-PRODUCT-UI-FOUNDATION` after the bounded contract, 320–1440 responsive/interaction proof and 67/75 Gate B pass. This is an approved non-production direction, not canonical Product UI and not a real AI OS screen. The shared channel rules, organic social, paid advertising, email, presentations, reports/documents, motion/video, OG/icons and print/environmental work remain deferred as low priority, not approved or cancelled. `TASK-CERT-01-SYSTEM-CERTIFICATION` is complete through `H-CERT-01-SYSTEM-CERTIFICATION`: all seven core and twenty-five selected scope validators passed, three builds produced the same 351-artifact `1.0.0-rc.2` manifest, and an empty-environment isolated run passed. Olli accepted the visible limitations and approved exact manifest SHA-256 `129e0faab15173633987fe7c0c66bde982978f850c18b9689412968b718aa2e9` for final named-consumer proof. `TASK-PORT-04-NAMED-CONSUMER-PROOF` is now complete. The consumer is live at `https://mez.systems/` from merge commit `626580ab`, uses a vendored immutable adapter scoped beneath `.mz-site`, and preserves consumer ownership of routing, SEO, analytics, attribution, content truth and commerce. See `docs/PRODUCTION-CONSUMER-HANDOFF.md`.
 
 The hero keeps all five products on desktop and mobile as vertical `QC04 Quiet · portrait locked` landing cards. `DEC-GOLDEN-HOMEPAGE-HERO-MOTION-001` gives that hero a bounded five-live-core allocation while active; the page returns to one live core outside the hero. The expanded Global Navigation retains its separate bounded five-live-sphere exception and suppresses every page core while open.
 
