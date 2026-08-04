@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mez Systems Design · Console</title>
+    <link rel="icon" href="../../favicon.svg" />
+    <link rel="stylesheet" href="../releases/foundations/dist/index.css" />
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <a class="skip" href="#panel">Skip to content</a>
+
+    <header class="topbar">
+      <a class="brand" href="#/dashboard">
+        <img src="../../favicon.svg" alt="" width="22" height="22" />
+        <span class="brand__name">Mez Systems Design</span>
+      </a>
+
+      <div class="topbar__search">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search the system…"
+          autocomplete="off"
+          aria-label="Search the design system"
+        />
+        <div id="results" class="results" role="listbox" aria-label="Search results" hidden></div>
+      </div>
+
+      <div class="topbar__meta">
+        <span class="rel" id="rel-chip"></span>
+        <button class="ghost" type="button" id="legend-open">Status key</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="Design system"></nav>
+      <main class="panel" id="panel" tabindex="-1"></main>
+    </div>
+
+    <div class="legend" id="legend" hidden>
+      <div class="legend__card" role="dialog" aria-modal="true" aria-labelledby="legend-title">
+        <div class="legend__head">
+          <h2 id="legend-title">What the states mean</h2>
+          <button class="ghost" type="button" id="legend-close" aria-label="Close">✕</button>
+        </div>
+        <dl id="legend-body"></dl>
+        <p class="legend__foot">
+          Every state here is read from the governance records at load. If a badge disagrees with
+          <code>governance/decisions.json</code>, the record wins and the item is flagged.
+        </p>
+      </div>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
