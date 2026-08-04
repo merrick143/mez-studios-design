@@ -4,6 +4,8 @@
  * claims to be; the governance records are the authority. On load we reconcile
  * the two and surface any disagreement instead of silently trusting the map. */
 
+import { PANELS } from './panels.js';
+
 const $ = (sel, root = document) => root.querySelector(sel);
 const esc = (value) =>
   String(value ?? '').replace(
@@ -441,7 +443,12 @@ function renderItem(item) {
     ${decisionPanel(item)}
 
     ${
-      item.href
+      PANELS[item.id]
+        ? `<div class="actions">
+             <a class="btn btn--quiet" href="${esc(item.href)}" target="_blank" rel="noopener">Open original page ↗</a>
+           </div>
+           <div id="native" class="native"><p class="card__note">Loading source…</p></div>`
+        : item.href
         ? `<div class="actions">
              <a class="btn" href="${esc(item.href)}" target="_blank" rel="noopener">Open full page ↗</a>
              ${(item.secondary ?? [])
@@ -471,6 +478,30 @@ function renderItem(item) {
   });
 
   wireDecision(item);
+  renderNativePanel(item);
+}
+
+/* Foundations render natively from their *.source.json — the same file the
+ * build scripts compile. Everything else stays framed on purpose: expressions
+ * and components are live rendered artifacts, and reproducing them here would
+ * mean maintaining a second copy of the thing the system already owns. */
+async function renderNativePanel(item) {
+  const panel = PANELS[item.id];
+  const mount = $('#native');
+  if (!panel || !mount) return;
+
+  const source = await loadJson(panel.source);
+  if (!source) {
+    mount.innerHTML = `<div class="flag">Could not load <code>${esc(panel.source)}</code>.</div>`;
+    return;
+  }
+
+  mount.innerHTML = panel.render(source);
+  mount.insertAdjacentHTML(
+    'beforeend',
+    `<p class="card__note src">Rendered live from <code>${esc(panel.source.replace(/^\.\.\//, 'brand-kit/'))}</code> —
+     the same source the build script reads, so this panel cannot drift from the tokens.</p>`,
+  );
 }
 
 /* ── Recording a decision ────────────────────────────────────── */
