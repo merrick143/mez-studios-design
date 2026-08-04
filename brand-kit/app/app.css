@@ -662,6 +662,128 @@ body {
 .barkey i[data-tone="info"] { background: var(--tone-info-ink); }
 .barkey i[data-tone="idle"] { background: var(--mz-colour-neutral-300); }
 
+/* Decision form */
+
+.decide {
+  display: grid;
+  gap: 16px;
+}
+
+.decide__row {
+  display: grid;
+  gap: 8px;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.choice {
+  padding: 8px 14px;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 999px;
+  color: var(--mz-text-secondary);
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.choice:hover {
+  background: var(--mz-surface-recessed);
+}
+
+.choice[aria-checked="true"] {
+  font-weight: 620;
+}
+
+.choice[aria-checked="true"][data-tone="go"] {
+  border-color: var(--tone-go-ink);
+  color: var(--tone-go-ink);
+  background: var(--tone-go-bg);
+}
+
+.choice[aria-checked="true"][data-tone="wait"] {
+  border-color: var(--tone-wait-ink);
+  color: var(--tone-wait-ink);
+  background: var(--tone-wait-bg);
+}
+
+.choice[aria-checked="true"][data-tone="alert"] {
+  border-color: var(--tone-alert-ink);
+  color: var(--tone-alert-ink);
+  background: var(--tone-alert-bg);
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 8px;
+  color: inherit;
+  background: var(--mz-surface-recessed);
+  font: inherit;
+  font-size: 13px;
+  resize: vertical;
+}
+
+.field input.mono {
+  font-family: var(--mz-font-technical, monospace);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--mz-colour-blue-500);
+  outline-offset: 1px;
+}
+
+.field small {
+  color: var(--mz-text-muted);
+  font-size: 11px;
+}
+
+.field small code,
+.card__note code {
+  font-family: var(--mz-font-technical, monospace);
+  font-size: 11px;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.out {
+  margin-top: 14px;
+}
+
+.outpath {
+  margin: 0 0 6px;
+  color: var(--mz-text-muted);
+}
+
+.out pre {
+  max-height: 260px;
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 8px;
+  background: var(--mz-surface-recessed);
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
 /* Legend dialog */
 
 .legend {

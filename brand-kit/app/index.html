@@ -53,6 +53,8 @@
       </div>
     </div>
 
-    <script src="./app.js" type="module"></script>
+    <!-- Browsers cache ES modules aggressively; the query is bumped on change
+         so a plain reload always picks the current build up during development. -->
+    <script src="./app.js?v=2" type="module"></script>
   </body>
 </html>

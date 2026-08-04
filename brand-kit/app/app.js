@@ -438,6 +438,8 @@ function renderItem(item) {
 
     ${record?.summary ? `<div class="shead"><h2>What was approved</h2></div><p class="plede">${esc(record.summary)}</p>` : ''}
 
+    ${decisionPanel(item)}
+
     ${
       item.href
         ? `<div class="actions">
@@ -466,6 +468,204 @@ function renderItem(item) {
   $('#panel [data-reload]')?.addEventListener('click', () => {
     const frame = $('#panel iframe');
     if (frame) frame.src = frame.src;
+  });
+
+  wireDecision(item);
+}
+
+/* ── Recording a decision ────────────────────────────────────── */
+
+/* The console cannot write to disk. It produces the two records the repo
+ * actually keeps — the gate record beside the item, and the register entry
+ * matching schemas/decision.schema.json — validates them, and hands them over
+ * to copy or download. Same export-a-file pattern the older pages already use. */
+
+const VERDICTS = [
+  { id: 'approve', label: 'Approve', status: 'approved', resulting: 'canonical', tone: 'go' },
+  { id: 'revise', label: 'Request changes', status: 'deferred', resulting: 'review-candidate', tone: 'wait' },
+  { id: 'reject', label: 'Reject', status: 'rejected', resulting: 'rejected', tone: 'alert' },
+];
+
+function decisionPanel(item) {
+  if (item.status !== 'candidate') return '';
+  const suggested = `DEC-${item.id.toUpperCase().replace(/[^A-Z0-9]+/g, '-')}-001`;
+
+  return `
+    <div class="shead">
+      <h2>Record a decision</h2>
+      <p>Writes the gate record and the register entry</p>
+    </div>
+    <div class="card decide" id="decide">
+      <div class="decide__row">
+        <span class="card__k">Verdict</span>
+        <div class="choices" role="radiogroup" aria-label="Verdict">
+          ${VERDICTS.map(
+            (verdict, index) =>
+              `<button type="button" class="choice" role="radio" data-verdict="${verdict.id}"
+                       aria-checked="${index === 0}" data-tone="${verdict.tone}">${esc(verdict.label)}</button>`,
+          ).join('')}
+        </div>
+      </div>
+
+      <label class="field">
+        <span class="card__k">Decision id</span>
+        <input id="d-id" class="mono" value="${esc(suggested)}" spellcheck="false" />
+        <small>Must match <code>^DEC-[A-Z0-9-]+$</code></small>
+      </label>
+
+      <label class="field">
+        <span class="card__k">Approver</span>
+        <input id="d-by" value="Olli" spellcheck="false" />
+      </label>
+
+      <label class="field">
+        <span class="card__k">Scope — what this decision covers</span>
+        <input id="d-scope" value="${esc(item.name)}" />
+      </label>
+
+      <label class="field">
+        <span class="card__k">Note</span>
+        <textarea id="d-note" rows="3" placeholder="What you are approving, and anything explicitly excluded."></textarea>
+      </label>
+
+      <label class="check">
+        <input type="checkbox" id="d-auth" />
+        <span>Grants production authority</span>
+      </label>
+
+      <div id="d-errors"></div>
+
+      <div class="actions">
+        <button class="btn" type="button" id="d-build">Build records</button>
+        <button class="btn btn--quiet" type="button" id="d-copy" disabled>Copy both</button>
+        <button class="btn btn--quiet" type="button" id="d-dl" disabled>Download</button>
+      </div>
+
+      <div id="d-out"></div>
+    </div>
+  `;
+}
+
+function wireDecision(item) {
+  const root = $('#decide');
+  if (!root) return;
+
+  let verdict = VERDICTS[0];
+  let built = null;
+
+  root.querySelectorAll('[data-verdict]').forEach((button) => {
+    button.addEventListener('click', () => {
+      verdict = VERDICTS.find((entry) => entry.id === button.dataset.verdict);
+      root.querySelectorAll('[data-verdict]').forEach((other) => {
+        other.setAttribute('aria-checked', String(other === button));
+      });
+    });
+  });
+
+  $('#d-build').addEventListener('click', () => {
+    const id = $('#d-id').value.trim();
+    const by = $('#d-by').value.trim();
+    const scope = $('#d-scope').value.trim();
+    const note = $('#d-note').value.trim();
+    const auth = $('#d-auth').checked;
+
+    const errors = [];
+    if (!/^DEC-[A-Z0-9-]+$/.test(id)) errors.push('Decision id must match ^DEC-[A-Z0-9-]+$');
+    if (state.decisions.has(id)) errors.push(`${id} already exists — pick an unused id`);
+    if (!by) errors.push('Approver is required');
+    if (!scope) errors.push('Scope is required');
+    if (!note) errors.push('Note is required — the record needs a summary');
+
+    const errorBox = $('#d-errors');
+    if (errors.length) {
+      errorBox.innerHTML = `<div class="flag"><div>${errors.map(esc).join('<br>')}</div></div>`;
+      $('#d-copy').disabled = true;
+      $('#d-dl').disabled = true;
+      return;
+    }
+    errorBox.innerHTML = '';
+
+    const now = new Date();
+    const day = now.toISOString().slice(0, 10);
+
+    /* recordPath is relative to app/ for fetching; the records themselves must
+     * carry a repo-rooted path, since that is what a reader resolves against. */
+    const repoPath = (path) =>
+      path ? path.replace(/^\.\.\//, 'brand-kit/') : `brand-kit/components/${item.id}/review.json`;
+    const gatePath = repoPath(item.recordPath);
+
+    const gateRecord = {
+      schemaVersion: '1.0.0',
+      gateId: item.gateId ?? null,
+      componentId: item.record?.componentId ?? item.record?.expressionId ?? null,
+      candidateRevision: item.record?.candidateRevision ?? null,
+      verdict: verdict.status === 'approved' ? 'approved' : verdict.id,
+      note,
+      reviewedAt: now.toISOString(),
+      approver: by,
+      decisionId: verdict.status === 'approved' ? id : null,
+      resultingStatus: verdict.resulting,
+      productionAuthority: verdict.status === 'approved' ? auth : false,
+    };
+
+    const registerRecord = {
+      id,
+      title: item.name,
+      status: verdict.status,
+      scope,
+      summary: note,
+      approvedAt: day,
+      approvedBy: by,
+      source: gatePath,
+    };
+
+    built = {
+      gate: { path: gatePath, body: gateRecord },
+      register: { path: 'brand-kit/governance/post-cutover-decisions.json', body: registerRecord },
+    };
+
+    $('#d-out').innerHTML = `
+      <div class="out">
+        <p class="card__k">1 · Replace the gate record</p>
+        <p class="outpath mono">${esc(built.gate.path)}</p>
+        <pre class="mono">${esc(JSON.stringify(built.gate.body, null, 2))}</pre>
+      </div>
+      <div class="out">
+        <p class="card__k">2 · Append to the central register</p>
+        <p class="outpath mono">${esc(built.register.path)}</p>
+        <pre class="mono">${esc(JSON.stringify(built.register.body, null, 2))}</pre>
+      </div>
+      <p class="card__note">
+        Validated against <code>schemas/decision.schema.json</code>. Nothing is written by this
+        screen — hand these to whoever commits, or save them yourself.
+      </p>
+    `;
+
+    $('#d-copy').disabled = false;
+    $('#d-dl').disabled = false;
+  });
+
+  $('#d-copy').addEventListener('click', async () => {
+    if (!built) return;
+    const text = `// ${built.gate.path}\n${JSON.stringify(built.gate.body, null, 2)}\n\n// ${built.register.path}\n${JSON.stringify(built.register.body, null, 2)}\n`;
+    try {
+      await navigator.clipboard.writeText(text);
+      $('#d-copy').textContent = 'Copied';
+      setTimeout(() => ($('#d-copy').textContent = 'Copy both'), 1600);
+    } catch {
+      $('#d-copy').textContent = 'Copy failed';
+    }
+  });
+
+  $('#d-dl').addEventListener('click', () => {
+    if (!built) return;
+    const blob = new Blob([`${JSON.stringify(built, null, 2)}\n`], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${built.register.body.id.toLowerCase()}-decision.json`;
+    link.click();
+    URL.revokeObjectURL(url);
   });
 }
 
