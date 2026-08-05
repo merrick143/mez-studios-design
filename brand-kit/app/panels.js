@@ -1,9 +1,13 @@
-/* Native foundation panels.
+/* Native console panels.
  *
- * These render straight from the same *.source.json that build_*.py compiles
- * into dist/. That is the whole point of converting them: the panel and the
- * tokens cannot disagree, because they are the same file. Nothing here
- * restates a value by hand. */
+ * Principle: the approved page IS the page. For every item that has a crafted
+ * workbench/golden page, the console embeds that page's real <main> and real
+ * stylesheet at runtime — fetched from the canonical file, never copied, never
+ * iframed. Scripts are stripped and replaced by the console's own canonical
+ * mounts: the shared Living Core renderer and the real custom-element modules.
+ * The console adds evidence on top (live contrast verification, source notes);
+ * it never redraws an approved surface in its own hand.
+ */
 
 const esc = (value) =>
   String(value ?? '').replace(
@@ -11,22 +15,138 @@ const esc = (value) =>
     (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char],
   );
 
-/* ── Colour ──────────────────────────────────────────────────── */
+const shead = (title, note = '') =>
+  `<div class="shead"><h2>${esc(title)}</h2><p>${esc(note)}</p></div>`;
+
+/* ── Canonical runtime mounts ────────────────────────────────── */
+
+let cataloguePromise = null;
+const catalogue = () =>
+  (cataloguePromise ??= fetch('../gradient-library/catalogue.json').then((r) => r.json()));
+
+async function mountCores(container) {
+  if (!container.querySelector('[data-mz-core], .gx[data-p]')) return;
+  try {
+    const [{ mountLivingCores }, cat] = await Promise.all([
+      import('../source-pack/design-system-export/mz-core.js'),
+      catalogue(),
+    ]);
+    /* staticBaseUrl resolves against mz-core.js itself, not this page. */
+    const result = await mountLivingCores(container, {
+      catalogue: cat,
+      staticBaseUrl: '../../gradient-library/assets/static/',
+      forceStatic: matchMedia('(prefers-reduced-motion: reduce)').matches,
+    });
+    container.dataset.coreMode = result.mode;
+  } catch (error) {
+    container.dataset.coreMode = 'static';
+    console.error('[console] Living Core mount failed; static twins retained.', error);
+  }
+}
+
+const injectedCss = new Set();
+function injectCss(href) {
+  if (injectedCss.has(href)) return;
+  injectedCss.add(href);
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = href;
+  document.head.appendChild(link);
+}
+
+/* ── Embedding the original page ─────────────────────────────── */
+
+/* Fetches a page stylesheet, absolutises its url() references, then rewrites
+ * every selector under a scope attribute so the page's styles apply to the
+ * embedded copy and nothing else in the console. */
+const scopedCssDone = new Set();
+async function injectScopedCss(cssUrl, scope) {
+  const key = `${scope}::${cssUrl}`;
+  if (scopedCssDone.has(key)) return;
+  scopedCssDone.add(key);
+
+  const response = await fetch(cssUrl);
+  if (!response.ok) return;
+  let text = await response.text();
+  text = text.replace(
+    /url\(\s*(['"]?)(?![a-z]+:|\/|#|data:)([^'")]+)\1\s*\)/gi,
+    (_, __, path) => `url(${new URL(path, cssUrl).href})`,
+  );
+
+  const sheet = new CSSStyleSheet();
+  try {
+    sheet.replaceSync(text);
+  } catch {
+    return;
+  }
+
+  const prefix = (selectorText) =>
+    selectorText
+      .split(',')
+      .map((selector) => {
+        const trimmed = selector.trim();
+        if (/^(html|body)\b/i.test(trimmed)) return trimmed.replace(/^(html|body)/i, scope);
+        return `${scope} ${trimmed}`;
+      })
+      .join(', ');
+
+  const serialise = (rules) => {
+    let out = '';
+    for (const rule of rules) {
+      if (rule.type === CSSRule.STYLE_RULE) {
+        out += `${prefix(rule.selectorText)}{${rule.style.cssText}}\n`;
+      } else if (rule.type === CSSRule.MEDIA_RULE) {
+        out += `@media ${rule.conditionText}{${serialise(rule.cssRules)}}\n`;
+      } else if (rule.type === CSSRule.SUPPORTS_RULE) {
+        out += `@supports ${rule.conditionText}{${serialise(rule.cssRules)}}\n`;
+      } else {
+        out += `${rule.cssText}\n`; /* keyframes, font-face — safe unscoped */
+      }
+    }
+    return out;
+  };
+
+  const style = document.createElement('style');
+  style.dataset.scopedFor = key;
+  style.textContent = serialise(sheet.cssRules);
+  document.head.appendChild(style);
+}
+
+async function embedOriginal(pageDir, scopeId, container) {
+  const base = new URL(pageDir, location.href);
+  const response = await fetch(new URL('index.html', base));
+  if (!response.ok) throw new Error(`fetch ${base} → ${response.status}`);
+  const doc = new DOMParser().parseFromString(await response.text(), 'text/html');
+  const main = doc.querySelector('main') ?? doc.body;
+
+  main.querySelectorAll('script').forEach((node) => node.remove());
+  for (const el of main.querySelectorAll('[src], [href], [poster]')) {
+    for (const attr of ['src', 'href', 'poster']) {
+      const value = el.getAttribute(attr);
+      if (!value || value.startsWith('#') || /^[a-z]+:/i.test(value)) continue;
+      el.setAttribute(attr, new URL(value, base).href);
+    }
+  }
+
+  const host = document.createElement('div');
+  host.className = 'orig';
+  host.dataset.origPage = scopeId;
+  host.dataset.mzMode = 'light';
+  host.innerHTML = main.innerHTML;
+  container.appendChild(host);
+
+  await injectScopedCss(new URL('styles.css', base).href, `[data-orig-page="${scopeId}"]`);
+  return host;
+}
+
+/* ── Colour: live contrast verification (console value-add) ──── */
 
 const hexToRgb = (hex) => {
   const clean = String(hex).replace('#', '');
-  const full =
-    clean.length === 3
-      ? clean
-          .split('')
-          .map((char) => char + char)
-          .join('')
-      : clean;
+  const full = clean.length === 3 ? clean.split('').map((c) => c + c).join('') : clean;
   return [0, 2, 4].map((offset) => parseInt(full.slice(offset, offset + 2), 16));
 };
 
-/* WCAG 2.1 relative luminance + contrast ratio. Used to actually verify the
- * declared contrast pairs rather than trusting the recorded minimum. */
 const luminance = (hex) => {
   const [r, g, b] = hexToRgb(hex).map((channel) => {
     const value = channel / 255;
@@ -40,65 +160,9 @@ const contrast = (a, b) => {
   return (high + 0.05) / (low + 0.05);
 };
 
-function colourPanel(source) {
+function colourExtras(source) {
   const primitives = source.primitives ?? {};
   const resolve = (ref) => primitives[ref] ?? ref;
-
-  const families = {};
-  for (const [key, hex] of Object.entries(primitives)) {
-    const family = key.split('.')[0];
-    (families[family] ??= []).push([key, hex]);
-  }
-
-  const swatches = Object.entries(families)
-    .map(
-      ([family, entries]) => `
-        <div class="fam">
-          <p class="card__k">${esc(family)}</p>
-          <div class="swatches">
-            ${entries
-              .map(
-                ([key, hex]) => `
-              <div class="sw">
-                <span class="sw__chip" style="background:${esc(hex)}"></span>
-                <span class="sw__name">${esc(key.split('.').slice(1).join('.'))}</span>
-                <span class="sw__hex mono">${esc(hex)}</span>
-              </div>`,
-              )
-              .join('')}
-          </div>
-        </div>`,
-    )
-    .join('');
-
-  const modes = Object.entries(source.modes ?? {})
-    .map(([modeId, mode]) => {
-      const roles = Object.entries(mode.roles ?? {});
-      return `
-        <details class="mode"${modeId === 'light' ? ' open' : ''}>
-          <summary>
-            <span class="mode__name">${esc(modeId)}</span>
-            <span class="mode__purpose">${esc(mode.purpose ?? '')}</span>
-            <span class="mode__count">${roles.length} roles</span>
-          </summary>
-          <div class="roles">
-            ${roles
-              .map(([role, ref]) => {
-                const hex = resolve(ref);
-                return `<div class="role">
-                          <span class="sw__chip sw__chip--sm" style="background:${esc(hex)}"></span>
-                          <span class="role__name mono">${esc(role)}</span>
-                          <span class="role__ref">${esc(ref)}</span>
-                          <span class="sw__hex mono">${esc(hex)}</span>
-                        </div>`;
-              })
-              .join('')}
-          </div>
-        </details>`;
-    })
-    .join('');
-
-  /* Verify every declared pair against the light-mode resolution. */
   const lightRoles = source.modes?.light?.roles ?? {};
   const pairs = (source.contrastPairs ?? []).map((pair) => {
     const fg = resolve(lightRoles[pair.foreground] ?? pair.foreground);
@@ -109,15 +173,11 @@ function colourPanel(source) {
   const failures = pairs.filter((pair) => !pair.pass);
 
   return `
-    <div class="shead">
-      <h2>Contrast verification</h2>
-      <p>${pairs.length} declared pairs, recomputed live</p>
-    </div>
+    ${shead('Live contrast verification', `${pairs.length} declared pairs, recomputed from the source file at load`)}
     ${
       failures.length
         ? `<div class="flag"><strong>${failures.length} pair(s) below the declared minimum.</strong></div>`
-        : `<p class="plede">All ${pairs.length} pairs meet their declared minimum. Ratios below are computed
-           from the source file at load, not copied from the record.</p>`
+        : `<p class="plede">All ${pairs.length} pairs meet their declared minimum. If a token edit ever broke one, this section would go red on load.</p>`
     }
     <div class="pairs">
       ${pairs
@@ -127,129 +187,7 @@ function colourPanel(source) {
           <span class="pair__demo" style="background:${esc(pair.bg)};color:${esc(pair.fg)}">Aa</span>
           <span class="pair__id mono">${esc(pair.id)}</span>
           <span class="pair__ratio mono">${pair.ratio.toFixed(2)}:1</span>
-          <span class="badge" data-tone="${pair.pass ? 'go' : 'alert'}">
-            ${pair.pass ? 'pass' : 'fail'} · min ${esc(pair.minimum)}
-          </span>
-        </div>`,
-        )
-        .join('')}
-    </div>
-
-    <div class="shead">
-      <h2>Primitives</h2>
-      <p>${Object.keys(primitives).length} values · the only place a raw hex is allowed</p>
-    </div>
-    ${swatches}
-
-    <div class="shead">
-      <h2>Modes</h2>
-      <p>${Object.keys(source.modes ?? {}).length} modes · roles resolve to primitives</p>
-    </div>
-    ${modes}
-  `;
-}
-
-/* ── Typography ──────────────────────────────────────────────── */
-
-function typographyPanel(source) {
-  const families = Object.entries(source.families ?? {})
-    .map(
-      ([id, family]) => `
-      <div class="card">
-        <p class="card__title"><span>${esc(family.name)}</span><span class="mono">${esc(id)}</span></p>
-        <p class="card__note">${esc(family.role ?? '')}</p>
-        <dl class="meta">
-          <dt>CSS family</dt><dd class="mono">${esc(family.cssFamily)}</dd>
-          ${family.version ? `<dt>Version</dt><dd class="mono">${esc(family.version)}</dd>` : ''}
-          ${family.sourceUrl ? `<dt>Source</dt><dd><a href="${esc(family.sourceUrl)}" target="_blank" rel="noopener">${esc(family.sourceUrl)}</a></dd>` : ''}
-        </dl>
-      </div>`,
-    )
-    .join('');
-
-  const roles = Object.entries(source.roles ?? {})
-    .map(([id, role]) => {
-      const family = source.families?.[role.family];
-      const size = role.size ?? {};
-      const clamp =
-        size.minPx && size.maxPx
-          ? `clamp(${size.minPx}px, ${size.preferredVw}vw, ${size.maxPx}px)`
-          : `${size.minPx ?? 16}px`;
-      const style = [
-        `font-family:"${family?.cssFamily ?? 'inherit'}",${family?.fallback ?? 'sans-serif'}`,
-        `font-size:${clamp}`,
-        `font-weight:${role.weight ?? 400}`,
-        `line-height:${role.lineHeight ?? 1.4}`,
-        `letter-spacing:${role.trackingEm ?? 0}em`,
-        role.case && role.case !== 'none' ? `text-transform:${role.case}` : '',
-        role.maxWidth ? `max-width:${role.maxWidth}` : '',
-      ]
-        .filter(Boolean)
-        .join(';');
-
-      return `
-        <div class="spec">
-          <div class="spec__head">
-            <span class="mono">${esc(id)}</span>
-            <span class="spec__meta mono">${esc(role.family)} · ${esc(role.weight)} · ${size.minPx ?? '—'}–${size.maxPx ?? '—'}px · ${esc(role.trackingEm ?? 0)}em</span>
-          </div>
-          <p class="spec__demo" style="${esc(style)}">${esc(role.usage ?? 'The quick brown fox')}</p>
-        </div>`;
-    })
-    .join('');
-
-  return `
-    <div class="shead">
-      <h2>Families</h2>
-      <p>${Object.keys(source.families ?? {}).length} licensed families</p>
-    </div>
-    <div class="grid" data-cols="2">${families}</div>
-
-    <div class="shead">
-      <h2>Roles</h2>
-      <p>${Object.keys(source.roles ?? {}).length} roles · rendered at their real values</p>
-    </div>
-    ${roles}
-  `;
-}
-
-/* ── Space & layout ──────────────────────────────────────────── */
-
-function spacePanel(source) {
-  const steps = Object.entries(source.space ?? {});
-  const widths = Object.entries(source.contentWidths ?? {});
-  const maxWidth = Math.max(...widths.map(([, value]) => Number(value) || 0), 1);
-
-  return `
-    <div class="shead">
-      <h2>Scale</h2>
-      <p>Base unit ${esc(source.baseUnit)}px · ${steps.length} steps, drawn at true size</p>
-    </div>
-    <div class="scale">
-      ${steps
-        .map(
-          ([step, value]) => `
-        <div class="step">
-          <span class="step__id mono">${esc(step)}</span>
-          <span class="step__bar" style="width:${Number(value)}px"></span>
-          <span class="step__px mono">${esc(value)}px</span>
-        </div>`,
-        )
-        .join('')}
-    </div>
-
-    <div class="shead">
-      <h2>Content widths</h2>
-      <p>${widths.length} widths · shown in proportion</p>
-    </div>
-    <div class="widths">
-      ${widths
-        .map(
-          ([id, value]) => `
-        <div class="wrow">
-          <span class="step__id mono">${esc(id)}</span>
-          <span class="wrow__bar" style="width:${((Number(value) / maxWidth) * 100).toFixed(1)}%"></span>
-          <span class="step__px mono">${esc(value)}px</span>
+          <span class="badge" data-tone="${pair.pass ? 'go' : 'alert'}">${pair.pass ? 'pass' : 'fail'} · min ${esc(pair.minimum)}</span>
         </div>`,
         )
         .join('')}
@@ -257,75 +195,100 @@ function spacePanel(source) {
   `;
 }
 
-/* ── Geometry & controls ─────────────────────────────────────── */
+/* ── Panel registry ──────────────────────────────────────────── */
 
-function geometryPanel(source) {
-  const radii = Object.entries(source.radii ?? {});
-  const borders = Object.entries(source.borders ?? {});
-  const depth = Object.entries(source.depth ?? {});
-
-  return `
-    <div class="shead">
-      <h2>Radii</h2>
-      <p>${radii.length} named radii, drawn at true value</p>
-    </div>
-    <div class="grid" data-cols="4">
-      ${radii
-        .map(
-          ([id, value]) => `
-        <div class="geo">
-          <span class="geo__box" style="border-radius:${Number(value) > 100 ? '9999px' : `${value}px`}"></span>
-          <span class="geo__id">${esc(id)}</span>
-          <span class="step__px mono">${esc(value)}px</span>
-        </div>`,
-        )
-        .join('')}
-    </div>
-
-    <div class="shead">
-      <h2>Borders</h2>
-      <p>${borders.length} structural widths</p>
-    </div>
-    <div class="grid" data-cols="3">
-      ${borders
-        .map(
-          ([id, value]) => `
-        <div class="geo">
-          <span class="geo__box" style="border-width:${esc(value)}px;border-radius:12px"></span>
-          <span class="geo__id">${esc(id)}</span>
-          <span class="step__px mono">${esc(value)}px</span>
-        </div>`,
-        )
-        .join('')}
-    </div>
-
-    <div class="shead">
-      <h2>Depth</h2>
-      <p>${depth.length} levels · the real shadow, not a description</p>
-    </div>
-    <div class="grid" data-cols="3">
-      ${depth
-        .map(
-          ([id, value]) => `
-        <div class="geo">
-          <span class="geo__box geo__box--plain" style="box-shadow:${esc(value)}"></span>
-          <span class="geo__id">${esc(id)}</span>
-          <span class="step__px mono geo__shadow">${esc(value)}</span>
-        </div>`,
-        )
-        .join('')}
-    </div>
-  `;
-}
-
-/* ── Registry ────────────────────────────────────────────────── */
-
+/* page: the original crafted page embedded as-is.
+ * source + extras: console-owned evidence appended below the original.
+ * modules/css: canonical element modules the embedded markup needs. */
 export const PANELS = {
-  colour: { source: '../foundations/colour/colour.source.json', render: colourPanel },
-  typography: { source: '../foundations/typography/typography.source.json', render: typographyPanel },
-  'space-layout': { source: '../foundations/space-layout/space-layout.source.json', render: spacePanel },
-  'geometry-controls': {
-    source: '../foundations/geometry-controls/geometry-controls.source.json',
-    render: geometryPanel,
+  colour: {
+    page: '../workbench/foundations/colour/',
+    source: '../foundations/colour/colour.source.json',
+    extras: colourExtras,
+  },
+  typography: { page: '../workbench/foundations/typography/' },
+  'space-layout': { page: '../workbench/foundations/space-layout/' },
+  'geometry-controls': { page: '../workbench/foundations/geometry-controls/' },
+  'foundation-release': { page: '../workbench/foundations/release/' },
+  disc: { page: '../workbench/expressions/disc/' },
+  sphere: { page: '../workbench/expressions/sphere/' },
+  'wings-mark': { page: '../workbench/expressions/wings-mark/' },
+  'product-card': { page: '../workbench/expressions/product-card/' },
+  'trading-card': { page: '../workbench/expressions/trading-card/' },
+  'channel-motion': { page: '../workbench/expressions/channel-motion/' },
+  'stress-proof': { page: '../workbench/expressions/stress-proof/' },
+  'global-navigation': {
+    page: '../workbench/components/global-navigation/',
+    modules: ['../components/global-navigation/mez-global-navigation.js'],
+    css: ['../components/global-navigation/mez-global-navigation.css'],
+  },
+  'halftone-portrait': {
+    page: '../workbench/components/halftone-portrait/',
+    modules: ['../components/halftone-portrait/mez-halftone-portrait.js'],
+    css: ['../components/halftone-portrait/mez-halftone-portrait.css'],
+  },
+  'testimonial-marquee': {
+    page: '../workbench/components/testimonial-marquee/',
+    modules: ['../components/testimonial-marquee/mez-testimonial-marquee.js'],
+    css: ['../components/testimonial-marquee/mez-testimonial-marquee.css'],
+  },
+  'golden-homepage': {
+    page: '../workbench/golden/homepage/',
+    css: [
+      '../components/global-navigation/mez-global-navigation.css',
+      '../components/testimonial-marquee/mez-testimonial-marquee.css',
+      '../components/halftone-portrait/mez-halftone-portrait.css',
+    ],
+    modules: [
+      '../components/global-navigation/mez-global-navigation.js',
+      '../components/testimonial-marquee/mez-testimonial-marquee.js',
+      '../components/halftone-portrait/mez-halftone-portrait.js',
+    ],
   },
 };
+
+async function loadJson(path) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(String(response.status));
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
+/* Orchestrates a full native panel into `mount`. Called by app.js. */
+export async function renderPanel(id, mount) {
+  const panel = PANELS[id];
+  if (!panel) return;
+  mount.innerHTML = '<p class="card__note">Loading the canonical page…</p>';
+
+  try {
+    for (const href of panel.css ?? []) injectCss(href);
+    await Promise.all((panel.modules ?? []).map((module) => import(module)));
+
+    mount.innerHTML = '';
+    if (panel.page) {
+      await embedOriginal(panel.page, id, mount);
+    }
+    if (panel.source && panel.extras) {
+      const source = await loadJson(panel.source);
+      if (source) {
+        const extras = document.createElement('div');
+        extras.innerHTML = panel.extras(source);
+        mount.appendChild(extras);
+      }
+    }
+
+    const note = document.createElement('p');
+    note.className = 'card__note src';
+    note.innerHTML = panel.page
+      ? `This is the canonical page at <code>${esc(panel.page.replace(/^\.\.\//, 'brand-kit/'))}</code>, embedded live — same markup, same stylesheet, scripts replaced by the console's canonical mounts.`
+      : `Rendered live from <code>${esc((panel.source ?? '').replace(/^\.\.\//, 'brand-kit/'))}</code>.`;
+    mount.appendChild(note);
+
+    await mountCores(mount);
+  } catch (error) {
+    mount.innerHTML = `<div class="flag">Could not embed the canonical page: ${esc(error.message)}</div>`;
+  }
+}

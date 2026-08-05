@@ -1137,3 +1137,251 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ── Production shell additions (v4) ─────────────────────────── */
+
+.navtoggle {
+  display: none;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.gen-note {
+  margin: 26px 10px 0;
+  color: var(--mz-text-muted);
+  font-size: 10.5px;
+}
+
+.zone__empty {
+  margin: 2px 10px 6px;
+  color: var(--mz-text-muted);
+  font-size: 12px;
+}
+
+.pillrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 14px;
+}
+
+.pillhead {
+  margin: 14px 0 6px;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.log__row--bands {
+  grid-template-columns: 88px minmax(0, 1fr) auto;
+}
+
+.band-range {
+  color: var(--mz-text-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* Live stages */
+
+.stage {
+  margin: 0 0 26px;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--mz-surface-base);
+}
+
+.stage__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--mz-border-default);
+  color: var(--mz-text-muted);
+  font-size: 11.5px;
+}
+
+.stage__note {
+  padding: 0 16px 14px;
+}
+
+.corerow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(14px, 3vw, 34px);
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(22px, 4vw, 44px);
+}
+
+.corefig {
+  display: grid;
+  gap: 9px;
+  justify-items: center;
+  margin: 0;
+}
+
+.corefig figcaption {
+  display: grid;
+  justify-items: center;
+  gap: 1px;
+  font-size: 11.5px;
+  font-weight: 580;
+  text-align: center;
+}
+
+.corefig figcaption .mono {
+  color: var(--mz-text-muted);
+  font-size: 9.5px;
+}
+
+.core {
+  position: relative;
+  display: grid;
+  width: clamp(84px, 9vw, 120px);
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #151a38;
+  isolation: isolate;
+}
+
+.core--lg {
+  width: clamp(220px, 30vw, 360px);
+}
+
+.core .wings {
+  position: relative;
+  z-index: 3;
+  width: 39%;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+}
+
+.core__twin {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.core canvas {
+  position: absolute !important;
+  z-index: 1;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+}
+
+/* Component stages */
+
+.navstage {
+  position: relative;
+  min-height: 620px;
+  padding: 18px;
+  background: var(--mz-surface-recessed);
+}
+
+/* The canonical navigation positions itself fixed; contain it to the stage. */
+.navstage mez-global-navigation {
+  position: relative !important;
+  top: 0 !important;
+  left: 50% !important;
+}
+
+.portraitrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 26px;
+}
+
+.portraitrow mez-halftone-portrait {
+  width: min(320px, 44%);
+}
+
+.stage mez-testimonial-marquee {
+  display: block;
+  padding: 18px 0;
+}
+
+.wingpair {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.wingchip {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 10px;
+}
+
+.wingchip img {
+  width: 26px;
+}
+
+@media (max-width: 900px) {
+  .navtoggle {
+    display: inline-flex;
+  }
+
+  .topbar {
+    grid-template-columns: auto auto 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  body.nav-open .sidebar {
+    display: block;
+    position: fixed;
+    z-index: 60;
+    top: var(--shell-topbar);
+    left: 0;
+    width: min(320px, 84vw);
+    height: calc(100vh - var(--shell-topbar));
+    border-right: 1px solid var(--mz-border-default);
+    background: var(--mz-surface-base);
+    box-shadow: 0 30px 60px -30px rgb(13 13 13 / 40%);
+  }
+
+  .corerow {
+    gap: 14px;
+  }
+}
+
+/* Embedded original pages */
+
+.orig {
+  margin: 8px 0 26px;
+}
+
+/* Canonical navigation inside an embedded page positions itself fixed against
+ * the viewport; contain it to the embed so it cannot overlay the console. */
+.orig mez-global-navigation {
+  position: relative !important;
+  top: 0 !important;
+  left: 50% !important;
+  z-index: 5 !important;
+}
+
+.orig .mz-nav-scrim {
+  display: none !important;
+}

@@ -1,9 +1,6 @@
 {
-  "schemaVersion": "0.3.0",
-  "generated": true,
-  "generatedAt": "2026-08-05T23:58:14+00:00",
-  "generator": "brand-kit/app/build_registry.py",
-  "recordsScanned": 21,
+  "schemaVersion": "0.2.0",
+  "note": "Navigation + item map for the console. Decision ids and record paths point at the real governance evidence. The app loads every recordPath at runtime and reconciles it against what this file claims; disagreements are surfaced, not hidden.",
   "system": {
     "name": "Mez Systems Design",
     "currentRelease": "1.0.0-rc.2",
@@ -12,6 +9,11 @@
     "frozenMilestone": "1.0.0-rc.1",
     "productionVersionAssigned": false
   },
+  "governanceNote": "Approval evidence lives in three different shapes: the central governance/*.json registers, per-item review.json files, and per-item approval.json files. The console reads all three.",
+  "centralRegisters": [
+    "../governance/decisions.json",
+    "../governance/post-cutover-decisions.json"
+  ],
   "statuses": {
     "canonical": {
       "label": "Canonical",
@@ -39,12 +41,11 @@
       "meaning": "Superseded or historical. Kept as evidence."
     }
   },
-  "drift": [],
   "zones": [
     {
       "id": "review",
       "label": "Review",
-      "hint": "Built, and waiting on a human decision. Assembled automatically from disk records.",
+      "hint": "Built, and waiting on a human decision",
       "groups": [
         {
           "id": "queue",
@@ -54,13 +55,8 @@
               "id": "product-feature-bento",
               "name": "Product feature bento",
               "status": "candidate",
-              "summary": "Component CMP-04. Built, has an assigned human gate, and its record reads awaiting-human-review. No decision id issued yet.",
-              "record": {
-                "gateId": "H-CMP-04-PRODUCT-FEATURE-BENTO-PROOF",
-                "verdict": "awaiting-human-review",
-                "_source": "components/product-feature-bento/review.json"
-              },
-              "statusSource": "components/product-feature-bento/review.json",
+              "gateId": "H-CMP-04-PRODUCT-FEATURE-BENTO-PROOF",
+              "recordPath": "../components/product-feature-bento/review.json",
               "href": "../components/product-feature-bento/fixtures/",
               "secondary": [
                 {
@@ -68,7 +64,7 @@
                   "href": "../components/product-feature-bento/fixtures/explorations/"
                 }
               ],
-              "gateId": "H-CMP-04-PRODUCT-FEATURE-BENTO-PROOF",
+              "summary": "Component CMP-04. Built, has an assigned human gate, and its record reads awaiting-human-review. No decision id issued yet.",
               "flag": "This was reachable only from three archived homepage lab folders. It did not appear on the old brand-kit index at all."
             }
           ]
@@ -93,21 +89,7 @@
               "gateId": "H-FND-02-SURFACE-PROOF",
               "recordPath": "../foundations/colour/review.json",
               "href": "../workbench/foundations/colour/",
-              "summary": "F8 canvas, inherited Mez identity, restrained feedback and five explicit modes. 85 contrast checks.",
-              "record": {
-                "gateId": "H-FND-02-SURFACE-PROOF",
-                "taskId": "TASK-FND-02-COLOUR-SURFACES",
-                "verdict": "approve",
-                "decisionId": "DEC-COLOUR-FOUNDATION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-21T08:19:31.000Z",
-                "candidateRevision": "final-lock-02",
-                "productionAuthority": true,
-                "note": "Okay I approve. Let's proceed. Make sure to lock that in.",
-                "_source": "foundations/colour/review.json"
-              },
-              "statusSource": "foundations/colour/review.json"
+              "summary": "F8 canvas, inherited Mez identity, restrained feedback and five explicit modes. 85 contrast checks."
             },
             {
               "id": "typography",
@@ -118,20 +100,7 @@
               "gateId": "H-FND-01-TYPOGRAPHY-PROOF",
               "recordPath": "../foundations/typography/review.json",
               "href": "../workbench/foundations/typography/",
-              "summary": "Geist, Inter, Instrument Serif and IBM Plex Mono across 15 approved roles.",
-              "record": {
-                "gateId": "H-FND-01-TYPE-PROOF",
-                "taskId": "TASK-FND-01-TYPOGRAPHY",
-                "verdict": "approve",
-                "decisionId": "DEC-TYPE-FOUNDATION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-21T06:25:17.661Z",
-                "productionAuthority": true,
-                "note": "",
-                "_source": "foundations/typography/review.json"
-              },
-              "statusSource": "foundations/typography/review.json"
+              "summary": "Geist, Inter, Instrument Serif and IBM Plex Mono across 15 approved roles."
             },
             {
               "id": "space-layout",
@@ -142,21 +111,7 @@
               "gateId": "H-FND-03-SPATIAL-PROOF",
               "recordPath": "../foundations/space-layout/review.json",
               "href": "../workbench/foundations/space-layout/",
-              "summary": "Four-pixel rhythm, three content widths, four responsive profiles, three densities.",
-              "record": {
-                "gateId": "H-FND-03-SPATIAL-PROOF",
-                "taskId": "TASK-FND-03-SPACE-LAYOUT",
-                "verdict": "approve",
-                "decisionId": "DEC-SPACE-LAYOUT-FOUNDATION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-21T09:25:15.000Z",
-                "candidateRevision": "spatial-lock-01",
-                "productionAuthority": true,
-                "note": "okay i trust you lets lock it in",
-                "_source": "foundations/space-layout/review.json"
-              },
-              "statusSource": "foundations/space-layout/review.json"
+              "summary": "Four-pixel rhythm, three content widths, four responsive profiles, three densities."
             },
             {
               "id": "geometry-controls",
@@ -167,21 +122,7 @@
               "gateId": "H-FND-04-CONTROL-PROOF",
               "recordPath": "../foundations/geometry-controls/review.json",
               "href": "../workbench/foundations/geometry-controls/",
-              "summary": "Eight radii, three border widths, bounded depth, seven variants, eight state contracts.",
-              "record": {
-                "gateId": "H-FND-04-CONTROL-PROOF",
-                "taskId": "TASK-FND-04-GEOMETRY-CONTROLS",
-                "verdict": "approve",
-                "decisionId": "DEC-GEOMETRY-CONTROLS-FOUNDATION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-21T09:49:34.352Z",
-                "candidateRevision": "control-lock-01",
-                "productionAuthority": true,
-                "note": "",
-                "_source": "foundations/geometry-controls/review.json"
-              },
-              "statusSource": "foundations/geometry-controls/review.json"
+              "summary": "Eight radii, three border widths, bounded depth, seven variants, eight state contracts."
             },
             {
               "id": "foundation-release",
@@ -190,8 +131,7 @@
               "version": "1.0.0",
               "decisionId": "DEC-FOUNDATION-RELEASE-001",
               "href": "../workbench/foundations/release/",
-              "summary": "One ordered entrypoint, 57 integrity-tracked artifacts, local fonts and licences.",
-              "statusSource": "declared"
+              "summary": "One ordered entrypoint, 57 integrity-tracked artifacts, local fonts and licences."
             }
           ]
         },
@@ -208,21 +148,7 @@
               "gateId": "H-EXP-01-DISC-PROOF",
               "recordPath": "../expressions/disc/review.json",
               "href": "../workbench/expressions/disc/",
-              "summary": "Hard circle, 39% Wings, 48px marked minimum, five scale bands, one-live allocation.",
-              "record": {
-                "gateId": "H-EXP-01-DISC-PROOF",
-                "taskId": "TASK-EXP-01-DISC-CONTRACT",
-                "verdict": "approve",
-                "decisionId": "DEC-DISC-EXPRESSION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-21T13:32:29.000Z",
-                "candidateRevision": "disc-contract-01",
-                "productionAuthority": true,
-                "note": "Okay yeah so I approve all that. If you can lock it in then let's proceed.",
-                "_source": "expressions/disc/review.json"
-              },
-              "statusSource": "expressions/disc/review.json"
+              "summary": "Hard circle, 39% Wings, 48px marked minimum, five scale bands, one-live allocation."
             },
             {
               "id": "sphere",
@@ -233,21 +159,7 @@
               "gateId": "H-EXP-02-SPHERE-PROOF",
               "recordPath": "../expressions/sphere/review.json",
               "href": "../workbench/expressions/sphere/",
-              "summary": "Approved renderer depth plus focal scale and crop rules over the canonical disc.",
-              "record": {
-                "gateId": "H-EXP-02-SPHERE-PROOF",
-                "taskId": "TASK-EXP-02-SPHERE-CONTRACT",
-                "verdict": "approve",
-                "decisionId": "DEC-SPHERE-EXPRESSION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-21T13:49:34.000Z",
-                "candidateRevision": "sphere-contract-01",
-                "productionAuthority": true,
-                "note": "Perfect. I approve. Let's proceed.",
-                "_source": "expressions/sphere/review.json"
-              },
-              "statusSource": "expressions/sphere/review.json"
+              "summary": "Approved renderer depth plus focal scale and crop rules over the canonical disc."
             },
             {
               "id": "wings-mark",
@@ -258,21 +170,7 @@
               "gateId": "H-EXP-03-WINGS-MARK-PROOF",
               "recordPath": "../expressions/wings-mark/review.json",
               "href": "../workbench/expressions/wings-mark/",
-              "summary": "Holdco lockup, standalone mark, white product mark, rare gradient-mask expression.",
-              "record": {
-                "gateId": "H-EXP-03-WINGS-MARK-PROOF",
-                "taskId": "TASK-EXP-03-WINGS-MARK",
-                "verdict": "approve",
-                "decisionId": "DEC-WINGS-MARK-EXPRESSION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-21T14:04:45.000Z",
-                "candidateRevision": "wings-mark-01",
-                "productionAuthority": true,
-                "note": "Approved, this looks really good. Let's proceed. Make sure to lock it in",
-                "_source": "expressions/wings-mark/review.json"
-              },
-              "statusSource": "expressions/wings-mark/review.json"
+              "summary": "Holdco lockup, standalone mark, white product mark, rare gradient-mask expression."
             },
             {
               "id": "product-card",
@@ -295,21 +193,7 @@
               ],
               "aliases": [
                 "product-card-phase-b"
-              ],
-              "record": {
-                "gateId": "H-EXP-04A-CARD-VISUAL-DIRECTION",
-                "taskId": "TASK-EXP-04-PRODUCT-CARD",
-                "verdict": "approve",
-                "decisionId": "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
-                "resultingStatus": "canonical-visual-grammar",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-22T07:51:56.000Z",
-                "candidateRevision": "product-card-02-phase-a-r10",
-                "productionAuthority": true,
-                "note": "Round 10 is really, really good. All 32 surviving specimens are kept. Close Phase A, preserve the ten-round taste and decision trail as design-system guidance, and proceed to Phase B without reopening the visual grammar.",
-                "_source": "expressions/product-card/review.json"
-              },
-              "statusSource": "expressions/product-card/review.json"
+              ]
             },
             {
               "id": "trading-card",
@@ -320,21 +204,7 @@
               "gateId": "H-EXP-05-TRADING-CARD-PROOF",
               "recordPath": "../expressions/trading-card/review.json",
               "href": "../workbench/expressions/trading-card/",
-              "summary": "23 approved faces, information backs, decks, packs and seven website placements.",
-              "record": {
-                "gateId": "H-EXP-05-TRADING-CARD-PROOF",
-                "taskId": "TASK-EXP-05-TRADING-CARD",
-                "verdict": "approve",
-                "decisionId": "DEC-TRADING-CARD-EXPRESSION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-22T22:55:17Z",
-                "candidateRevision": "trading-card-01-r03",
-                "productionAuthority": true,
-                "note": "Round 03 received 23 unanimous keeps. Lock the surviving Trading Card expression, close EXP-05 and proceed without restoring any killed direction.",
-                "_source": "expressions/trading-card/review.json"
-              },
-              "statusSource": "expressions/trading-card/review.json"
+              "summary": "23 approved faces, information backs, decks, packs and seven website placements."
             },
             {
               "id": "channel-motion",
@@ -345,21 +215,7 @@
               "gateId": "H-EXP-07-CHANNEL-MOTION-PROOF",
               "recordPath": "../expressions/channel-motion/review.json",
               "href": "../workbench/expressions/channel-motion/",
-              "summary": "Three restraint laws, four calm component behaviours. Approved with MOT-W02 deferred to the navigation task.",
-              "record": {
-                "gateId": "H-EXP-07-CHANNEL-MOTION-PROOF",
-                "taskId": "TASK-EXP-07-CHANNEL-MOTION",
-                "verdict": "approve-with-deferral",
-                "decisionId": "DEC-WEBSITE-MOTION-SYSTEM-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-23T00:49:47Z",
-                "candidateRevision": "channel-motion-matrix-01-r03",
-                "productionAuthority": true,
-                "note": "Seven Round 03 specimens are approved as the complete bounded website-motion grammar. MOT-W02 is not a failed direction: its illustrative menu is removed from EXP-07 and deferred to TASK-CMP-01-GLOBAL-NAVIGATION, which will treat the existing mez-explore-menu Web Component as research evidence.",
-                "_source": "expressions/channel-motion/review.json"
-              },
-              "statusSource": "expressions/channel-motion/review.json"
+              "summary": "Three restraint laws, four calm component behaviours. Approved with MOT-W02 deferred to the navigation task."
             },
             {
               "id": "stress-proof",
@@ -370,21 +226,7 @@
               "gateId": "H-EXP-08-EXPRESSION-STRESS-PROOF",
               "recordPath": "../expressions/stress-proof/review.json",
               "href": "../workbench/expressions/stress-proof/",
-              "summary": "Six adversarial suites, 14 fixtures: reflow, 200/400% text, RTL, reduced motion, no-WebGL.",
-              "record": {
-                "gateId": "H-EXP-08-EXPRESSION-STRESS-PROOF",
-                "taskId": "TASK-EXP-08-EXPRESSION-STRESS-PROOF",
-                "verdict": "approve",
-                "decisionId": "DEC-EXPRESSION-STRESS-CERTIFICATION-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-23T01:32:07Z",
-                "candidateRevision": "expression-stress-01-r01",
-                "productionAuthority": true,
-                "note": "Olli approved the bounded EXP-08 certification and instructed the programme to proceed. Approval covers six suites and fourteen representative stress scenarios without reopening approved visual, component or motion grammar.",
-                "_source": "expressions/stress-proof/review.json"
-              },
-              "statusSource": "expressions/stress-proof/review.json"
+              "summary": "Six adversarial suites, 14 fixtures: reflow, 200/400% text, RTL, reduced motion, no-WebGL."
             }
           ]
         },
@@ -407,21 +249,7 @@
                   "href": "../workbench/components/global-navigation/mobile-proof.html"
                 }
               ],
-              "summary": "Quiet Living Registry. Five layered static circles in the compact control, five animated spheres on disclosure.",
-              "record": {
-                "gateId": "H-CMP-01-GLOBAL-NAVIGATION-PROOF",
-                "taskId": "TASK-CMP-01-GLOBAL-NAVIGATION",
-                "verdict": "approve",
-                "decisionId": "DEC-GLOBAL-NAVIGATION-COMPONENT-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-23T03:10:31Z",
-                "candidateRevision": "global-navigation-01-r04",
-                "productionAuthority": true,
-                "note": "Round 04 approved. Lock the quiet Living Registry with its layered compact family cue, smoother footer-free disclosure, five automatically animated spheres and bounded light surface, then proceed to the golden homepage.",
-                "_source": "components/global-navigation/review.json"
-              },
-              "statusSource": "components/global-navigation/review.json"
+              "summary": "Quiet Living Registry. Five layered static circles in the compact control, five animated spheres on disclosure."
             },
             {
               "id": "halftone-portrait",
@@ -432,20 +260,7 @@
               "recordPath": "../components/halftone-portrait/approval.json",
               "href": "../workbench/components/halftone-portrait/",
               "summary": "Default one-live allocation, locked treatment, bounded opt-in multi-portrait exception.",
-              "flag": "Canonical, but was not linked from the old brand-kit index.",
-              "record": {
-                "gateId": "H-CMP-05-HALFTONE-PORTRAIT-PROOF",
-                "taskId": "TASK-CMP-05-HALFTONE-PORTRAIT",
-                "verdict": "approved",
-                "decisionId": "DEC-HALFTONE-PORTRAIT-COMPONENT-001",
-                "resultingStatus": "canonical",
-                "approvedBy": "Olli",
-                "approvedAt": "2026-07-28",
-                "candidateRevision": "halftone-portrait-01-r01",
-                "productionAuthority": true,
-                "_source": "components/halftone-portrait/approval.json"
-              },
-              "statusSource": "components/halftone-portrait/approval.json"
+              "flag": "Canonical, but was not linked from the old brand-kit index."
             },
             {
               "id": "testimonial-marquee",
@@ -456,20 +271,7 @@
               "recordPath": "../components/testimonial-marquee/approval.json",
               "href": "../workbench/components/testimonial-marquee/",
               "summary": "Locked social-caption rail, seven-video fixture policy, frozen dated follower evidence.",
-              "flag": "Canonical, but was not linked from the old brand-kit index.",
-              "record": {
-                "gateId": "H-CMP-06-TESTIMONIAL-MARQUEE-PROOF",
-                "taskId": "TASK-CMP-06-TESTIMONIAL-MARQUEE",
-                "verdict": "approved",
-                "decisionId": "DEC-TESTIMONIAL-MARQUEE-COMPONENT-001",
-                "resultingStatus": "canonical",
-                "approvedBy": "Olli",
-                "approvedAt": "2026-07-28",
-                "candidateRevision": "testimonial-marquee-01-r04",
-                "productionAuthority": true,
-                "_source": "components/testimonial-marquee/approval.json"
-              },
-              "statusSource": "components/testimonial-marquee/approval.json"
+              "flag": "Canonical, but was not linked from the old brand-kit index."
             }
           ]
         },
@@ -490,8 +292,7 @@
                   "href": "../gradient-library/calibration/depth-light-01/"
                 }
               ],
-              "summary": "33 active cores from 43 source IDs. One deterministic extraction pipeline, one motion chassis.",
-              "statusSource": "declared"
+              "summary": "33 active cores from 43 source IDs. One deterministic extraction pipeline, one motion chassis."
             },
             {
               "id": "product-architecture",
@@ -500,8 +301,7 @@
               "version": "1.0.0",
               "decisionId": "DEC-PRODUCT-ARCHITECTURE-001",
               "href": "../product-architecture/",
-              "summary": "Five literal products, stable machine IDs, source-backed gradient assignments.",
-              "statusSource": "declared"
+              "summary": "Five literal products, stable machine IDs, source-backed gradient assignments."
             },
             {
               "id": "living-core-finish",
@@ -510,8 +310,7 @@
               "version": "1.0.0",
               "decisionId": "DEC-LIVING-CORE-FINISH-001",
               "href": "../../play-orb/",
-              "summary": "Deep Mineral depth-and-light finish. One WebGL engine, exact static twins as fallback.",
-              "statusSource": "declared"
+              "summary": "Deep Mineral depth-and-light finish. One WebGL engine, exact static twins as fallback."
             }
           ]
         }
@@ -545,20 +344,7 @@
               "gateB": {
                 "score": 68,
                 "max": 75
-              },
-              "record": {
-                "gateId": "H-GOLD-01-HOMEPAGE-PROOF",
-                "taskId": "TASK-GOLD-01-GOLDEN-HOMEPAGE",
-                "verdict": "approved",
-                "decisionId": "DEC-GOLDEN-HOMEPAGE-001",
-                "resultingStatus": "canonical",
-                "approver": "Olli",
-                "reviewedAt": "2026-07-28",
-                "candidateRevision": "golden-homepage-01-r28",
-                "productionAuthority": false,
-                "_source": "golden/homepage/review.json"
-              },
-              "statusSource": "golden/homepage/review.json"
+              }
             }
           ]
         }
@@ -583,8 +369,7 @@
               "gateB": {
                 "score": 67,
                 "max": 75
-              },
-              "statusSource": "declared"
+              }
             },
             {
               "id": "product-ui",
@@ -597,19 +382,7 @@
               "gateB": {
                 "score": 67,
                 "max": 75
-              },
-              "record": {
-                "gateId": "H-UI-01-PRODUCT-UI-FOUNDATION",
-                "taskId": "TASK-UI-01-PRODUCT-UI-DATA-VISUALISATION",
-                "verdict": "approved",
-                "resultingStatus": "approved-foundation-direction",
-                "approvedBy": "Olli",
-                "approvedAt": "2026-07-28",
-                "candidateRevision": "product-ui-foundation-01-r01",
-                "productionAuthority": false,
-                "_source": "product-ui/approval.json"
-              },
-              "statusSource": "product-ui/approval.json"
+              }
             }
           ]
         }
@@ -628,56 +401,47 @@
             {
               "id": "chan-shared",
               "name": "Shared channel rules",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             },
             {
               "id": "chan-paid",
               "name": "Paid advertising",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             },
             {
               "id": "chan-social",
               "name": "Organic social",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             },
             {
               "id": "chan-email",
               "name": "Email",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             },
             {
               "id": "chan-presentations",
               "name": "Presentations",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             },
             {
               "id": "chan-documents",
               "name": "Reports & documents",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             },
             {
               "id": "chan-motion",
               "name": "Motion & video",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             },
             {
               "id": "chan-og",
               "name": "OG, icons & link previews",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             },
             {
               "id": "chan-print",
               "name": "Print & environmental",
-              "status": "deferred",
-              "statusSource": "declared"
+              "status": "deferred"
             }
           ]
         }
@@ -697,8 +461,7 @@
               "name": "Play Orb benchmark",
               "status": "archived",
               "href": "../../play-orb/",
-              "summary": "Protected Claude Code benchmark. 53 live surfaces. Never modified \u2014 the original deployed reference.",
-              "statusSource": "declared"
+              "summary": "Protected Claude Code benchmark. 53 live surfaces. Never modified \u2014 the original deployed reference."
             },
             {
               "id": "homepage-labs",
@@ -706,8 +469,7 @@
               "status": "archived",
               "href": "../workbench/golden/homepage/",
               "summary": "23 discarded section iterations: hero, principle (8), problem (9), why (3), s04 (6), s06, s07.",
-              "count": 23,
-              "statusSource": "declared"
+              "count": 23
             },
             {
               "id": "research-plates",
@@ -725,40 +487,35 @@
                   "label": "Homepage studio",
                   "href": "../research/phase-2/homepage-studio/"
                 }
-              ],
-              "statusSource": "declared"
+              ]
             },
             {
               "id": "release-rc1",
               "name": "Release 1.0.0-rc.1",
               "status": "archived",
               "href": "../releases/production-01/1.0.0-rc.1/",
-              "summary": "Frozen portability milestone. Superseded as consumer input by rc.2, deliberately preserved.",
-              "statusSource": "declared"
+              "summary": "Frozen portability milestone. Superseded as consumer input by rc.2, deliberately preserved."
             },
             {
               "id": "release-alpha",
               "name": "Identity release 0.1.0-alpha.1",
               "status": "archived",
               "href": "../releases/0.1.0-alpha.1/",
-              "summary": "Migration identity snapshot. The stable identity kernel, not the foundation-complete release.",
-              "statusSource": "declared"
+              "summary": "Migration identity snapshot. The stable identity kernel, not the foundation-complete release."
             },
             {
               "id": "explore-menu",
               "name": "Explore menu study",
               "status": "archived",
               "href": "../../explore-menu/",
-              "summary": "Interaction study 01. Became the canonical Global Navigation.",
-              "statusSource": "declared"
+              "summary": "Interaction study 01. Became the canonical Global Navigation."
             },
             {
               "id": "legacy-workbench-index",
               "name": "Original workbench index",
               "status": "archived",
               "href": "../",
-              "summary": "The previous brand-kit entry page this console replaces. Kept intact as evidence and fallback.",
-              "statusSource": "declared"
+              "summary": "The previous brand-kit entry page this console replaces. Kept intact as evidence and fallback."
             }
           ]
         }
