@@ -387,25 +387,31 @@ function renderItem(item) {
 
     ${item.flag ? `<div class="flag">${esc(item.flag)}</div>` : ''}
 
-    <dl class="meta">
-      <dt>State</dt><dd>${esc(statusLabel(item.status))} — ${esc(state.registry.statuses[item.status]?.meaning ?? '')}</dd>
-      ${item.version ? `<dt>Version</dt><dd class="mono">${esc(item.version)}</dd>` : ''}
-      ${record.decisionId || item.decisionId ? `<dt>Decision</dt><dd class="mono">${esc(record.decisionId ?? item.decisionId)}</dd>` : ''}
-      ${record.gateId || item.gateId ? `<dt>Human gate</dt><dd class="mono">${esc(record.gateId ?? item.gateId)}</dd>` : ''}
-      ${approvedAt ? `<dt>Decided</dt><dd>${esc(String(approvedAt).slice(0, 10))}${approver ? ` by ${esc(approver)}` : ''}</dd>` : ''}
-      ${record.verdict ? `<dt>Verdict</dt><dd>${esc(record.verdict)}</dd>` : ''}
-      ${item.statusSource ? `<dt>Evidence</dt><dd class="mono">${esc(item.statusSource)}</dd>` : ''}
-      ${item.gateB ? `<dt>Gate B</dt><dd>${item.gateB.score}/${item.gateB.max} — passed</dd>` : ''}
-      ${item.count ? `<dt>Contains</dt><dd>${item.count} items</dd>` : ''}
-    </dl>
-
-    ${record.note ? `${shead('Recorded note')}<p class="plede">“${esc(record.note)}”</p>` : ''}
-    ${central?.summary ? `${shead('What was approved')}<p class="plede">${esc(central.summary)}</p>` : ''}
+    <!-- Compact evidence strip: the crafted page below is the point of the
+         screen; the paper trail stays one glance (and one click) away. -->
+    <details class="evd">
+      <summary>
+        ${record.decisionId || item.decisionId ? `<span class="evchip mono">${esc(record.decisionId ?? item.decisionId)}</span>` : ''}
+        ${approvedAt ? `<span class="evchip">${esc(String(approvedAt).slice(0, 10))}${approver ? ` · ${esc(approver)}` : ''}</span>` : ''}
+        ${record.verdict ? `<span class="evchip">${esc(record.verdict)}</span>` : ''}
+        ${item.version ? `<span class="evchip mono">v${esc(item.version)}</span>` : ''}
+        ${item.gateB ? `<span class="evchip">Gate B ${item.gateB.score}/${item.gateB.max}</span>` : ''}
+        <span class="evd__more">Full record</span>
+      </summary>
+      <dl class="meta">
+        <dt>State</dt><dd>${esc(statusLabel(item.status))} — ${esc(state.registry.statuses[item.status]?.meaning ?? '')}</dd>
+        ${record.gateId || item.gateId ? `<dt>Human gate</dt><dd class="mono">${esc(record.gateId ?? item.gateId)}</dd>` : ''}
+        ${item.statusSource ? `<dt>Evidence</dt><dd class="mono">${esc(item.statusSource)}</dd>` : ''}
+        ${item.count ? `<dt>Contains</dt><dd>${item.count} items</dd>` : ''}
+      </dl>
+      ${record.note ? `<p class="plede evd__note">Recorded note: “${esc(record.note)}”</p>` : ''}
+      ${central?.summary ? `<p class="plede evd__note">Approved: ${esc(central.summary)}</p>` : ''}
+    </details>
 
     ${
       item.href || (item.secondary ?? []).length
         ? `<div class="actions">
-             ${item.href ? `<a class="btn ${native ? 'btn--quiet' : ''}" href="${esc(item.href)}" target="_blank" rel="noopener">Open ${native ? 'original page' : 'full page'} ↗</a>` : ''}
+             ${item.href ? `<a class="btn" href="${esc(item.href)}" target="_blank" rel="noopener">Open visual page ↗</a>` : ''}
              ${(item.secondary ?? [])
                .map((link) => `<a class="btn btn--quiet" href="${esc(link.href)}" target="_blank" rel="noopener">${esc(link.label)} ↗</a>`)
                .join('')}

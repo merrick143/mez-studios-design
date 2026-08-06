@@ -1385,3 +1385,56 @@ body {
 .orig .mz-nav-scrim {
   display: none !important;
 }
+
+/* Compact evidence strip on item pages */
+
+.evd {
+  margin: 0 0 18px;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 10px;
+  background: var(--mz-surface-base);
+}
+
+.evd summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.evd summary::-webkit-details-marker {
+  display: none;
+}
+
+.evchip {
+  padding: 3px 9px;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 999px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.evd__more {
+  margin-left: auto;
+  color: var(--mz-text-muted);
+  font-size: 11.5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.evd[open] .evd__more {
+  text-decoration: none;
+}
+
+.evd > .meta,
+.evd > .evd__note {
+  padding: 4px 14px 12px;
+  margin: 0;
+}
+
+.evd > .evd__note {
+  font-size: 13px;
+}
