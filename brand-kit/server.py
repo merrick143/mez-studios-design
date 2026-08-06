@@ -29,6 +29,15 @@ ID_PATTERN = re.compile(r"^MZ-G\d{2,3}$")
 SLUG_PATTERN = re.compile(r"^[a-z0-9-]+$")
 MAX_REQUEST = 18 * 1024 * 1024
 
+# Console gate decisions (brand-kit/app/). Unlike the workspace endpoints
+# above, this one intentionally writes canonical governance evidence: the
+# item's own gate record and the central register. That is the whole point of
+# one-click approve; it is only reachable from this local server.
+CENTRAL_REGISTER = HERE / "governance" / "post-cutover-decisions.json"
+REGISTRY_BUILDER = HERE / "app" / "build_registry.py"
+DEC_PATTERN = re.compile(r"^DEC-[A-Z0-9-]+$")
+GATE_RECORD_NAMES = {"review.json", "approval.json"}
+
 
 def read_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -116,6 +125,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
                 return
             if self.path == "/api/product-architecture-decisions":
                 self.record_product_architecture_decision()
+                return
+            if self.path == "/api/gate-decisions":
+                self.record_gate_decision()
                 return
             self.json_response({"error": "Unknown endpoint"}, HTTPStatus.NOT_FOUND)
         except (ValueError, json.JSONDecodeError) as error:
@@ -244,6 +256,96 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
         LIBRARY_DECISIONS.mkdir(parents=True, exist_ok=True)
         write_json(LIBRARY_DECISIONS / f"{product_context}--{gradient_id.lower()}.json", decision)
         self.json_response({"ok": True, "decision": decision})
+
+    def record_gate_decision(self) -> None:
+        """One-click decision from the console (brand-kit/app/).
+
+        Merges the verdict onto the item's own gate record, appends the
+        central register on approval, then regenerates the console registry —
+        the same three steps the manual copy/commit flow performs by hand.
+        """
+        payload = self.read_request_json()
+        record_rel = str(payload.get("recordPath", "")).strip().lstrip("/")
+        verdict = str(payload.get("verdict", "")).strip().lower()
+        decision_id = str(payload.get("decisionId", "")).strip()
+        approver = str(payload.get("approver", "")).strip()
+        scope = str(payload.get("scope", "")).strip()
+        note = str(payload.get("note", "")).strip()
+        title = str(payload.get("title", "")).strip()
+        production_authority = bool(payload.get("productionAuthority"))
+
+        if verdict not in {"approve", "revise", "reject"}:
+            raise ValueError("Verdict must be approve, revise or reject")
+        if not approver or not note or not scope or not title:
+            raise ValueError("Approver, scope, note and title are all required")
+
+        record_path = (HERE / record_rel).resolve()
+        if HERE.resolve() not in record_path.parents:
+            raise ValueError("Record path must live inside brand-kit/")
+        if record_path.name not in GATE_RECORD_NAMES:
+            raise ValueError("Record path must be a review.json or approval.json")
+        if not record_path.is_file():
+            raise ValueError("Gate record does not exist")
+
+        register = read_json(CENTRAL_REGISTER)
+        if verdict == "approve":
+            if not DEC_PATTERN.fullmatch(decision_id):
+                raise ValueError("Decision id must match DEC-[A-Z0-9-]+")
+            if any(entry["id"] == decision_id for entry in register.get("decisions", [])):
+                raise ValueError(f"{decision_id} already exists in the central register")
+
+        now = datetime.now(timezone.utc)
+        record = read_json(record_path)
+        record.update(
+            {
+                "verdict": "approved" if verdict == "approve" else verdict,
+                "note": note,
+                "reviewedAt": now.isoformat(),
+                "approver": approver,
+                "decisionId": decision_id if verdict == "approve" else None,
+                "resultingStatus": {
+                    "approve": "canonical",
+                    "revise": "review-candidate",
+                    "reject": "rejected",
+                }[verdict],
+                "productionAuthority": production_authority if verdict == "approve" else False,
+            }
+        )
+        write_json(record_path, record)
+
+        register_entry = None
+        if verdict == "approve":
+            register_entry = {
+                "id": decision_id,
+                "title": title,
+                "status": "approved",
+                "scope": scope,
+                "summary": note,
+                "approvedAt": now.date().isoformat(),
+                "approvedBy": approver,
+                "source": f"brand-kit/{record_path.relative_to(HERE)}",
+            }
+            register.setdefault("decisions", []).append(register_entry)
+            write_json(CENTRAL_REGISTER, register)
+
+        registry_regenerated = False
+        if REGISTRY_BUILDER.is_file():
+            subprocess.run(
+                [sys.executable, str(REGISTRY_BUILDER)],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            registry_regenerated = True
+
+        self.json_response(
+            {
+                "ok": True,
+                "record": record,
+                "register": register_entry,
+                "registryRegenerated": registry_regenerated,
+            }
+        )
 
     def record_finish_decision(self) -> None:
         payload = self.read_request_json()

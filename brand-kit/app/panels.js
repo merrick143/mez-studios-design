@@ -232,6 +232,25 @@ function colourPanel(source) {
   `;
 }
 
+/* The approved specimen phrases from the canonical typography proof page —
+ * the roles must read as the system, not as lorem or usage notes. */
+const SPECIMENS = {
+  'display.hero': 'AI-native systems.',
+  'display.section': 'The work compounds.',
+  'display.title': 'Context Engine',
+  'heading.section': 'The intelligence is rented. The operating layer is yours.',
+  'heading.subsection': 'What changes after installation',
+  'body.lead': 'A complete operating system for making AI useful across your company.',
+  'body.default':
+    'Your context stays legible, your workflows stay consistent and each improvement becomes part of the operating layer.',
+  'body.compact': 'Last verified 09:42 AEST by the canonical release validator.',
+  'ui.control': 'Explore the AI OS',
+  'ui.label': 'Operating principle',
+  'numeric.display': '$99',
+  'numeric.tabular': '01  03:42  98.6%',
+  'editorial.accent': 'The system remembers.',
+};
+
 function typographyPanel(source) {
   const families = Object.entries(source.families ?? {})
     .map(
@@ -276,7 +295,8 @@ function typographyPanel(source) {
             <span class="mono">${esc(id)}</span>
             <span class="spec__meta mono">${esc(role.family)} · ${esc(role.weight)} · ${size.minPx ?? '—'}–${size.maxPx ?? '—'}px · ${esc(role.trackingEm ?? 0)}em</span>
           </div>
-          <p class="spec__demo" style="${esc(style)}">${esc(role.usage ?? 'The quick brown fox')}</p>
+          <p class="spec__demo" style="${esc(style)}">${esc(SPECIMENS[id] ?? role.usage ?? 'The quick brown fox')}</p>
+          ${role.usage ? `<p class="spec__usage">${esc(role.usage)}</p>` : ''}
         </div>`;
     })
     .join('');

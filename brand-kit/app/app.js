@@ -19,6 +19,9 @@ const state = {
   decisions: new Map(),
   consumers: [],
   flat: [],
+  /* true when served by brand-kit/server.py, which exposes the local write
+   * API — decisions become one click instead of copy-and-commit. */
+  api: false,
 };
 
 /* ── Load ────────────────────────────────────────────────────── */
@@ -33,22 +36,18 @@ async function loadJson(path, fallback = null) {
   }
 }
 
-async function boot() {
+async function loadAll() {
   const [registry, pre, post, consumers] = await Promise.all([
-    loadJson('./registry.json'),
+    loadJson(`./registry.json?t=${Date.now()}`),
     loadJson('../governance/decisions.json', { decisions: [] }),
-    loadJson('../governance/post-cutover-decisions.json', { decisions: [] }),
+    loadJson(`../governance/post-cutover-decisions.json?t=${Date.now()}`, { decisions: [] }),
     loadJson('../governance/consumer-register.json', { consumers: [] }),
   ]);
-
-  if (!registry) {
-    $('#panel').innerHTML =
-      '<div class="flag">Could not load <code>registry.json</code>. Serve over HTTP and run <code>python3 brand-kit/app/build_registry.py</code>.</div>';
-    return;
-  }
+  if (!registry) return false;
 
   state.registry = registry;
   state.consumers = consumers?.consumers ?? [];
+  state.decisions = new Map();
   for (const record of [...(pre?.decisions ?? []), ...(post?.decisions ?? [])]) {
     state.decisions.set(record.id, record);
   }
@@ -61,8 +60,34 @@ async function boot() {
       }
     }
   }
+  return true;
+}
+
+async function boot() {
+  const ok = await loadAll();
+  if (!ok) {
+    $('#panel').innerHTML =
+      '<div class="flag">Could not load <code>registry.json</code>. Serve over HTTP and run <code>python3 brand-kit/app/build_registry.py</code>.</div>';
+    return;
+  }
+
+  /* Probe for the local write API (present when served by server.py). */
+  try {
+    const probe = await fetch('/api/candidates');
+    state.api = probe.ok && (await probe.json())?.localApi === true;
+  } catch {
+    state.api = false;
+  }
 
   renderChrome();
+  renderSidebar();
+  route();
+}
+
+/* After a one-click decision the server has already rewritten the record,
+ * the register and registry.json — re-read everything and re-render. */
+async function refreshAfterDecision() {
+  await loadAll();
   renderSidebar();
   route();
 }
@@ -420,7 +445,16 @@ function renderItem(item) {
     }
 
     ${native ? '<div id="native" class="native"><p class="card__note">Loading source…</p></div>' : ''}
-    ${!native && !item.href ? '<div class="empty"><h3>Not built yet</h3><p>This is deferred work. It keeps a future contract and a human gate, but nothing has been produced.</p></div>' : ''}
+    ${!native && !item.href && item.status !== 'candidate' ? '<div class="empty"><h3>Not built yet</h3><p>This is deferred work. It keeps a future contract and a human gate, but nothing has been produced.</p></div>' : ''}
+
+    ${
+      item.status === 'candidate' && item.href
+        ? `<div class="stage stage--candidate">
+             <div class="stage__bar"><span>What you are approving · the candidate's own fixture page, live</span><span class="mono">${esc(item.record?.gateId ?? item.gateId ?? '')}</span></div>
+             <iframe class="candframe" src="${esc(item.href)}" title="${esc(item.name)} candidate preview" loading="lazy"></iframe>
+           </div>`
+        : ''
+    }
 
     ${item.status === 'candidate' ? decisionPanel(item) : ''}
   `;
@@ -597,14 +631,22 @@ function decisionPanel(item) {
       <label class="check"><input type="checkbox" id="d-auth" /><span>Grants production authority</span></label>
       <div id="d-errors"></div>
       <div class="actions">
-        <button class="btn" type="button" id="d-build">Build records</button>
+        ${state.api ? '<button class="btn" type="button" id="d-write">Record decision & write to repo</button>' : ''}
+        <button class="btn ${state.api ? 'btn--quiet' : ''}" type="button" id="d-build">Build records</button>
         <button class="btn btn--quiet" type="button" id="d-copy" disabled>Copy both</button>
         <button class="btn btn--quiet" type="button" id="d-dl" disabled>Download</button>
       </div>
       <div id="d-out"></div>
-      <p class="card__note">After committing the records, run
-        <span class="mono">python3 brand-kit/app/build_registry.py</span> and reload — the queue
-        updates itself.</p>
+      ${
+        state.api
+          ? `<p class="card__note">One click: writes the gate record, appends the central register on
+             approval, and regenerates the registry. Review the diff and commit when you're happy —
+             nothing is pushed for you.</p>`
+          : `<p class="card__note">Read-only server — Build records gives you both files to commit by
+             hand. For one-click writes, run <span class="mono">python3 brand-kit/server.py --port 8914</span>
+             and open the console there. Then run
+             <span class="mono">python3 brand-kit/app/build_registry.py</span> and reload.</p>`
+      }
     </div>
   `;
 }
@@ -625,28 +667,75 @@ function wireDecision(item) {
     });
   });
 
-  $('#d-build').addEventListener('click', () => {
-    const id = $('#d-id').value.trim();
-    const by = $('#d-by').value.trim();
-    const scope = $('#d-scope').value.trim();
-    const note = $('#d-note').value.trim();
-    const auth = $('#d-auth').checked;
-
+  /* Shared validation for both the build-files path and the one-click path.
+   * Non-approve verdicts don't mint a decision id, so the id rules only
+   * apply when approving. */
+  const collect = () => {
+    const values = {
+      id: $('#d-id').value.trim(),
+      by: $('#d-by').value.trim(),
+      scope: $('#d-scope').value.trim(),
+      note: $('#d-note').value.trim(),
+      auth: $('#d-auth').checked,
+    };
     const errors = [];
-    if (!/^DEC-[A-Z0-9-]+$/.test(id)) errors.push('Decision id must match ^DEC-[A-Z0-9-]+$');
-    if (state.decisions.has(id)) errors.push(`${id} already exists — pick an unused id`);
-    if (!by) errors.push('Approver is required');
-    if (!scope) errors.push('Scope is required');
-    if (!note) errors.push('Note is required — the record needs a summary');
+    if (verdict.id === 'approve') {
+      if (!/^DEC-[A-Z0-9-]+$/.test(values.id)) errors.push('Decision id must match ^DEC-[A-Z0-9-]+$');
+      if (state.decisions.has(values.id)) errors.push(`${values.id} already exists — pick an unused id`);
+    }
+    if (!values.by) errors.push('Approver is required');
+    if (!values.scope) errors.push('Scope is required');
+    if (!values.note) errors.push('Note is required — the record needs a summary');
 
     const errorBox = $('#d-errors');
     if (errors.length) {
       errorBox.innerHTML = `<div class="flag"><div>${errors.map(esc).join('<br>')}</div></div>`;
       $('#d-copy').disabled = true;
       $('#d-dl').disabled = true;
-      return;
+      return null;
     }
     errorBox.innerHTML = '';
+    return values;
+  };
+
+  $('#d-write')?.addEventListener('click', async () => {
+    const values = collect();
+    if (!values) return;
+    const button = $('#d-write');
+    button.disabled = true;
+    button.textContent = 'Writing…';
+    try {
+      const response = await fetch('/api/gate-decisions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          recordPath: item.record?._source ?? item.recordPath?.replace(/^\.\.\//, '') ?? `components/${item.id}/review.json`,
+          verdict: verdict.id,
+          decisionId: values.id,
+          approver: values.by,
+          scope: values.scope,
+          note: values.note,
+          title: item.name,
+          productionAuthority: values.auth,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error(result.error ?? `HTTP ${response.status}`);
+      $('#d-out').innerHTML = `<div class="flag flag--ok"><strong>Recorded.</strong>
+        Gate record updated${result.register ? `, ${esc(result.register.id)} appended to the central register` : ''}${result.registryRegenerated ? ', registry regenerated' : ''}.
+        Review the git diff and commit when ready.</div>`;
+      setTimeout(refreshAfterDecision, 1400);
+    } catch (error) {
+      button.disabled = false;
+      button.textContent = 'Record decision & write to repo';
+      $('#d-errors').innerHTML = `<div class="flag">Write failed: ${esc(error.message)}</div>`;
+    }
+  });
+
+  $('#d-build').addEventListener('click', () => {
+    const values = collect();
+    if (!values) return;
+    const { id, by, scope, note, auth } = values;
 
     const now = new Date();
     const day = now.toISOString().slice(0, 10);
