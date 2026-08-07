@@ -1680,3 +1680,146 @@ body {
     gap: 2px;
   }
 }
+
+/* ── Visual specimens (v12) ──────────────────────────────────── */
+
+.bandrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 3vw, 40px);
+  align-items: flex-end;
+  padding: clamp(24px, 4vw, 44px);
+}
+
+.bandfig {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  margin: 0;
+}
+
+.bandfig figcaption {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  max-width: 140px;
+  text-align: center;
+}
+
+.bandfig__id {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.bandfig__px {
+  color: var(--mz-text-muted);
+  font-size: 10px;
+}
+
+.bandfig__role {
+  color: var(--mz-text-muted);
+  font-size: 10.5px;
+  line-height: 1.3;
+}
+
+/* Trading-card specimens use the canonical .tc-* stylesheet; these rules
+ * only lay them out inside the console stage. */
+.cardrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 3vw, 32px);
+  justify-content: center;
+  padding: clamp(24px, 4vw, 40px);
+}
+
+/* The canonical .tc-card sizes itself with min(100%, 260px); give the figure
+ * a definite width so that percentage has something real to resolve against,
+ * otherwise the flex item collapses to its content. */
+.cardfig {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  margin: 0;
+  width: min(260px, 76vw);
+  flex: 0 0 auto;
+}
+
+.cardfig figcaption {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  font-size: 12px;
+  font-weight: 560;
+  text-align: center;
+}
+
+.cardfig figcaption .mono {
+  color: var(--mz-text-muted);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+/* Product cards: the calm shelf grammar */
+.pcrow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  padding: clamp(22px, 3.5vw, 36px);
+}
+
+.pcard {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 20px;
+  background: var(--mz-surface-base);
+  box-shadow: 0 12px 30px -22px rgb(13 13 13 / 34%);
+}
+
+.pcard__material {
+  position: relative;
+  display: grid;
+  aspect-ratio: 16 / 10;
+  place-items: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.pcard__material .wings {
+  width: 38px;
+  filter: brightness(0) invert(1);
+}
+
+.pcard__body {
+  display: grid;
+  gap: 5px;
+  padding: 16px 18px 18px;
+}
+
+.pcard__name {
+  margin: 0;
+  font-family: var(--mz-font-display, "Mez Geist", system-ui, sans-serif);
+  font-size: 19px;
+  font-weight: 640;
+  letter-spacing: -0.028em;
+}
+
+.pcard__fn {
+  margin: 0;
+  color: var(--mz-text-muted);
+  font-family: var(--mz-font-technical, monospace);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pcard__action {
+  margin-top: 10px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: var(--mz-text-inverse);
+  background: var(--mz-surface-inverse);
+  font-size: 12px;
+  font-weight: 580;
+  text-align: center;
+}

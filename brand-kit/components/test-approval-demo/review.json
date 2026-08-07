@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "componentId": "mz.systems.component.test-approval-demo",
+  "gateId": "H-TEST-01-APPROVAL-FLOW-DEMO",
+  "taskId": "TASK-TEST-01-APPROVAL-FLOW",
+  "candidateRevision": "test-approval-demo-01-r01",
+  "verdict": "awaiting-human-review",
+  "productionAuthority": false,
+  "decisionId": null,
+  "recordedAt": "2026-08-07",
+  "requestedBy": "Archie",
+  "isTestFixture": true,
+  "summary": "THROWAWAY TEST CANDIDATE. Exists only to exercise the console approval flow end to end. It is not a real component, carries no design authority, and must be deleted once the flow has been tested.",
+  "whatWasProven": [
+    {
+      "claim": "The generator picks up a brand-new record with no overlay entry",
+      "method": "Created this folder and ran build_registry.py",
+      "result": "Appeared in the Review queue automatically"
+    },
+    {
+      "claim": "The console renders a candidate's fixture page inline",
+      "method": "fixtures/index.html served in the what-you-are-approving frame",
+      "result": "Pending your review"
+    }
+  ],
+  "notYetProven": [
+    "Whether the one-click write correctly updates this record and the central register.",
+    "That is the thing you are about to test."
+  ],
+  "humanDecisionsRequired": [
+    "Approve, request changes or reject — any verdict exercises the flow.",
+    "Then delete this folder and the register entry it creates."
+  ],
+  "outputStatus": "candidate"
+}

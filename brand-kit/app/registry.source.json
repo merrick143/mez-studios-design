@@ -66,6 +66,16 @@
               ],
               "summary": "Component CMP-04. Built, has an assigned human gate, and its record reads awaiting-human-review. No decision id issued yet.",
               "flag": "This was reachable only from three archived homepage lab folders. It did not appear on the old brand-kit index at all."
+            },
+            {
+              "id": "test-approval-demo",
+              "name": "Test approval demo",
+              "status": "candidate",
+              "gateId": "H-TEST-01-APPROVAL-FLOW-DEMO",
+              "recordPath": "../components/test-approval-demo/review.json",
+              "href": "../components/test-approval-demo/fixtures/",
+              "summary": "Throwaway fixture for exercising the approval flow end to end. Not a real component, no design authority. Delete once tested.",
+              "flag": "TEST FIXTURE \u2014 safe to approve, reject or revise. Delete brand-kit/components/test-approval-demo/ and its register entry afterwards."
             }
           ]
         }

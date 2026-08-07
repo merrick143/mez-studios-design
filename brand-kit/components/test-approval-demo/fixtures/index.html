@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test approval demo · fixture</title>
+    <link rel="stylesheet" href="../../../releases/foundations/dist/index.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 40px 28px 56px;
+        color: var(--mz-text-primary);
+        background: var(--mz-canvas);
+        font-family: var(--mz-font-body);
+      }
+      .wrap { max-width: 720px; margin: 0 auto; }
+      .banner {
+        display: flex; align-items: center; gap: 10px;
+        margin: 0 0 28px; padding: 10px 14px;
+        border: 1px solid var(--mz-colour-amber-500);
+        border-radius: 10px;
+        color: var(--mz-colour-amber-750);
+        background: var(--mz-colour-amber-50);
+        font: 600 12px/1.4 var(--mz-font-technical);
+        letter-spacing: .04em; text-transform: uppercase;
+      }
+      h1 {
+        margin: 0 0 10px;
+        font: 660 clamp(30px, 5vw, 46px)/1.02 var(--mz-font-display);
+        letter-spacing: -.04em;
+      }
+      .lede { margin: 0 0 32px; max-width: 54ch; color: var(--mz-text-muted); font-size: 15px; }
+      .row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+      .swatch {
+        display: grid; gap: 8px; place-items: center;
+        width: 128px; padding: 20px 12px 14px;
+        border: 1px solid var(--mz-border-default);
+        border-radius: var(--mz-radius-container, 16px);
+        background: var(--mz-surface-base);
+      }
+      .dot { width: 52px; height: 52px; border-radius: 50%; }
+      .label { font: 620 11px/1 var(--mz-font-technical); letter-spacing: .06em; text-transform: uppercase; }
+      .value { color: var(--mz-text-muted); font: 400 10px/1 var(--mz-font-technical); }
+      .steps { margin: 0; padding-left: 20px; display: grid; gap: 9px; font-size: 14px; }
+      .steps code {
+        padding: 1px 5px; border-radius: 4px;
+        background: var(--mz-surface-recessed);
+        font: 400 12px/1.4 var(--mz-font-technical);
+      }
+      h2 {
+        margin: 34px 0 12px; padding-bottom: 8px;
+        border-bottom: 1px solid var(--mz-border-default);
+        font: 640 15px/1.2 var(--mz-font-display); letter-spacing: -.02em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="banner">⚠ Throwaway test fixture · delete after testing</p>
+
+      <h1>Approval flow demo</h1>
+      <p class="lede">
+        This is not a real component. It exists so the console's decision flow can be
+        exercised end to end against a record that nobody minds changing. The swatches
+        below are drawn from the canonical colour foundation, so this page proves the
+        fixture frame renders real tokens.
+      </p>
+
+      <div class="row">
+        <div class="swatch">
+          <span class="dot" style="background: var(--mz-colour-green-700)"></span>
+          <span class="label">Approve</span><span class="value">green.700</span>
+        </div>
+        <div class="swatch">
+          <span class="dot" style="background: var(--mz-colour-amber-500)"></span>
+          <span class="label">Revise</span><span class="value">amber.500</span>
+        </div>
+        <div class="swatch">
+          <span class="dot" style="background: var(--mz-colour-red-700)"></span>
+          <span class="label">Reject</span><span class="value">red.700</span>
+        </div>
+        <div class="swatch">
+          <span class="dot" style="background: var(--mz-colour-neutral-300)"></span>
+          <span class="label">Deferred</span><span class="value">neutral.300</span>
+        </div>
+      </div>
+
+      <h2>What to do</h2>
+      <ol class="steps">
+        <li>Pick any verdict — all three exercise the same write path.</li>
+        <li>Leave the suggested decision id, or change it. Approving requires one; the other verdicts do not.</li>
+        <li>Write a note. It is required, and it lands in both the gate record and the register.</li>
+        <li>Click <strong>Record decision &amp; write to repo</strong>.</li>
+        <li>Watch this item leave the Review queue on its own — the registry regenerates itself.</li>
+        <li>Check <code>git diff</code> to see exactly what changed.</li>
+      </ol>
+
+      <h2>Cleanup</h2>
+      <ol class="steps">
+        <li>Delete <code>brand-kit/components/test-approval-demo/</code></li>
+        <li>Remove the entry it added to <code>brand-kit/governance/post-cutover-decisions.json</code></li>
+        <li>Re-run <code>python3 brand-kit/app/build_registry.py</code></li>
+      </ol>
+    </div>
+  </body>
+</html>

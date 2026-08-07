@@ -87,6 +87,106 @@ const bandsTable = (bands) => `
       .join('')}
   </div>`;
 
+/* ── Visual specimens ────────────────────────────────────────── */
+
+/* Draws the expression at each declared scale band, at its real minimum
+ * size, so the bands are something you can see rather than read. Wings are
+ * omitted below the marked minimum exactly as the contract requires. */
+const scaleBandRow = (bands, shape, markedMinimum = 48) => {
+  if (!bands?.length) return '';
+  return `
+    ${shead('Scale bands, drawn', `${bands.length} bands at their real minimum size`)}
+    <div class="stage">
+      <div class="stage__bar"><span>Exact static twins · Wings omitted below ${markedMinimum}px, per the contract</span><span class="mono">MZ-G13</span></div>
+      <div class="bandrow">
+        ${bands
+          .map((band) => {
+            const size = Math.min(Number(band.minimumPx) || 48, 168);
+            const marked = size >= markedMinimum;
+            return `
+              <figure class="bandfig">
+                <span class="core core--${shape}" style="width:${size}px">
+                  <img class="core__twin" src="${STATIC_TWIN('MZ-G13')}" alt="">
+                  ${marked ? `<img class="wings" src="${WINGS}" alt="">` : ''}
+                </span>
+                <figcaption>
+                  <span class="bandfig__id mono">${esc(band.id)}</span>
+                  <span class="bandfig__px mono">${esc(band.minimumPx)}px${band.maximumPx ? `–${esc(band.maximumPx)}` : '+'}</span>
+                  <span class="bandfig__role">${esc(band.role ?? '')}</span>
+                </figcaption>
+              </figure>`;
+          })
+          .join('')}
+      </div>
+    </div>`;
+};
+
+/* Card specimens are generated against the canonical workbench stylesheet —
+ * the real design, with thin markup following its documented class grammar.
+ * Only a representative handful; the complete approved set stays on the
+ * visual page, which is why every card panel links out to it. */
+const tradingCardSpecimens = (products) => {
+  const faces = [
+    { variant: 'anchored', title: 'Anchored identity', index: 0 },
+    { variant: 'centred', title: 'Centred identity', index: 1 },
+    { variant: 'corner', title: 'Corner identity', index: 4 },
+  ];
+  return `
+    ${shead('Card faces, drawn', '3 of the 23 approved specimens · the full set is on the visual page')}
+    <div class="stage" data-card-stage>
+      <div class="stage__bar"><span>Canonical trading-card stylesheet · exact static materials</span><span class="mono">TC-F01 · F02 · F05</span></div>
+      <div class="cardrow">
+        ${faces
+          .map(({ variant, title, index }) => {
+            const product = products[index] ?? products[0];
+            return `
+              <figure class="cardfig">
+                <div class="tc-card tc-face face--${esc(variant)}" style="background-image:url('${STATIC_TWIN(product.gradientId)}');background-size:cover;background-position:center">
+                  <div class="tc-identity">
+                    <img class="tc-wings" src="${WINGS}" alt="">
+                    <p class="tc-name">${esc(product.publicName)}</p>
+                    <span class="tc-function">${esc(product.function ?? '')}</span>
+                  </div>
+                </div>
+                <figcaption>${esc(title)}<span class="mono">face--${esc(variant)}</span></figcaption>
+              </figure>`;
+          })
+          .join('')}
+      </div>
+    </div>`;
+};
+
+const productCardSpecimens = (products) => `
+  ${shead('Product cards, drawn', 'The calm shelf: white card, one material, name-first hierarchy')}
+  <div class="stage">
+    <div class="stage__bar"><span>Canonical grammar · one material per card, filled action</span><span class="mono">registry-driven</span></div>
+    <div class="pcrow">
+      ${products
+        .slice(0, 3)
+        .map(
+          (product) => `
+        <article class="pcard">
+          <span class="pcard__material" style="background-image:url('${STATIC_TWIN(product.gradientId)}')">
+            <img class="wings" src="${WINGS}" alt="">
+          </span>
+          <div class="pcard__body">
+            <h4 class="pcard__name">${esc(product.publicName)}</h4>
+            <p class="pcard__fn">${esc(product.function ?? '')}</p>
+            <span class="pcard__action">Explore ${esc(product.publicName)}</span>
+          </div>
+        </article>`,
+        )
+        .join('')}
+    </div>
+  </div>`;
+
+let productsPromise = null;
+const productRegistry = () =>
+  (productsPromise ??= fetch('../registry/products.json')
+    .then((r) => r.json())
+    .then((d) => d.products ?? [])
+    .catch(() => []));
+
 /* ── Generic contract renderers ──────────────────────────────── */
 
 const sentence = (key) =>
@@ -509,7 +609,8 @@ function discPanel(source) {
     ${contractRows(source.geometry)}
     ${shead('Wings', 'Exact asset, exact ratio')}
     ${contractRows(source.wings)}
-    ${shead('Scale bands', `${(source.scaleBands ?? []).length} bands · what the disc may do at each size`)}
+    ${scaleBandRow(source.scaleBands, 'disc', source.wings?.minimumMarkedDiscPx ?? 48)}
+    ${shead('Scale bands, specified', `${(source.scaleBands ?? []).length} bands · what the disc may do at each size`)}
     ${bandsTable(source.scaleBands ?? [])}
     ${allocationBlock(source.allocation)}
     ${section('Surfaces', 'Where a disc may sit, per mode', source.surfaces)}
@@ -558,7 +659,8 @@ function spherePanel(source) {
         .join('')}
     </div>
     <p class="card__note">${esc(finish.policy ?? '')}</p>
-    ${shead('Scale bands', `${(source.scaleBands ?? []).length} bands · crop rules by size`)}
+    ${scaleBandRow(source.scaleBands, 'sphere', 48)}
+    ${shead('Scale bands, specified', `${(source.scaleBands ?? []).length} bands · crop rules by size`)}
     ${bandsTable(source.scaleBands ?? [])}
     ${section('Allocation', 'The one-live law', source.allocation)}
     ${section('Fallback', 'What replaces the sphere, and when', source.fallback)}
@@ -611,9 +713,11 @@ function wingsPanel(source) {
   `;
 }
 
-function productCardPanel(source) {
+async function productCardPanel(source) {
   const arch = source.cardArchitecture ?? {};
+  const products = await productRegistry();
   return `
+    ${products.length ? productCardSpecimens(products) : ''}
     ${shead('Design thesis', '')}
     <p class="plede">${esc(source.designThesis ?? '')}</p>
     ${shead('Card architecture', esc(arch.name ?? ''))}
@@ -662,9 +766,11 @@ function productCardPanel(source) {
   `;
 }
 
-function tradingCardPanel(source) {
+async function tradingCardPanel(source) {
   const anatomy = source.anatomy ?? {};
+  const products = await productRegistry();
   return `
+    ${products.length ? tradingCardSpecimens(products) : ''}
     ${shead('Thesis', '')}
     <p class="plede">${esc(source.thesis ?? '')}</p>
     ${shead('Meaning', 'What each configuration is for')}
@@ -831,7 +937,11 @@ export const PANELS = {
   sphere: { source: '../expressions/sphere/sphere.source.json', render: spherePanel, cores: true },
   'wings-mark': { source: '../expressions/wings-mark/wings-mark.source.json', render: wingsPanel },
   'product-card': { source: '../expressions/product-card/product-card.source.json', render: productCardPanel },
-  'trading-card': { source: '../expressions/trading-card/trading-card.source.json', render: tradingCardPanel },
+  'trading-card': {
+    source: '../expressions/trading-card/trading-card.source.json',
+    render: tradingCardPanel,
+    css: ['../workbench/expressions/trading-card/styles.css'],
+  },
   'channel-motion': { source: '../expressions/channel-motion/channel-motion.source.json', render: channelMotionPanel },
   'stress-proof': { source: '../expressions/stress-proof/expression-stress.source.json', render: stressPanel },
   'global-navigation': { source: '../components/global-navigation/global-navigation.source.json', render: globalNavigationPanel },
@@ -856,13 +966,18 @@ export async function renderPanel(id, mount) {
   if (!panel) return;
   mount.innerHTML = '<p class="card__note">Loading source…</p>';
 
+  /* Canonical stylesheets a panel's specimens depend on, loaded before render
+   * so the markup is styled by the real design rather than by the console. */
+  for (const href of panel.css ?? []) injectCss(href);
+
   const source = await loadJson(panel.source);
   if (!source) {
     mount.innerHTML = `<div class="flag">Could not load <code>${esc(panel.source)}</code>.</div>`;
     return;
   }
 
-  mount.innerHTML = panel.render(source);
+  /* Some panels load extra canonical data (the product registry) and are async. */
+  mount.innerHTML = await panel.render(source);
   mount.insertAdjacentHTML(
     'beforeend',
     `<p class="card__note src">Rendered live from <code>${esc(panel.source.replace(/^\.\.\//, 'brand-kit/'))}</code> —

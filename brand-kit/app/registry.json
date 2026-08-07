@@ -1,9 +1,9 @@
 {
   "schemaVersion": "0.3.0",
   "generated": true,
-  "generatedAt": "2026-08-06T22:44:14+00:00",
+  "generatedAt": "2026-08-07T04:46:30+00:00",
   "generator": "brand-kit/app/build_registry.py",
-  "recordsScanned": 21,
+  "recordsScanned": 22,
   "system": {
     "name": "Mez Systems Design",
     "currentRelease": "1.0.0-rc.2",
@@ -70,6 +70,22 @@
               ],
               "gateId": "H-CMP-04-PRODUCT-FEATURE-BENTO-PROOF",
               "flag": "This was reachable only from three archived homepage lab folders. It did not appear on the old brand-kit index at all."
+            },
+            {
+              "id": "test-approval-demo",
+              "name": "Test approval demo",
+              "status": "candidate",
+              "summary": "Throwaway fixture for exercising the approval flow end to end. Not a real component, no design authority. Delete once tested.",
+              "record": {
+                "gateId": "H-TEST-01-APPROVAL-FLOW-DEMO",
+                "taskId": "TASK-TEST-01-APPROVAL-FLOW",
+                "verdict": "awaiting-human-review",
+                "_source": "components/test-approval-demo/review.json"
+              },
+              "statusSource": "components/test-approval-demo/review.json",
+              "href": "../components/test-approval-demo/fixtures/",
+              "gateId": "H-TEST-01-APPROVAL-FLOW-DEMO",
+              "flag": "TEST FIXTURE \u2014 safe to approve, reject or revise. Delete brand-kit/components/test-approval-demo/ and its register entry afterwards."
             }
           ]
         }
