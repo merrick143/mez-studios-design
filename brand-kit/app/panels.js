@@ -93,6 +93,170 @@ const bandsTable = (bands) => `
       .join('')}
   </div>`;
 
+/* ── Cloning specimens from the canonical pages ──────────────── */
+
+/* The canonical proof pages build their specimens with their own
+ * controllers. Rather than re-implement those builders here — which is how
+ * a second, drifting copy of the design gets created — we load the real page
+ * in a hidden same-origin frame, let its own code run, then adopt the
+ * finished nodes. The console never draws the specimen; it borrows it. */
+
+const scopedCssDone = new Set();
+
+/* Rewrites a stylesheet so its rules only apply beneath `scope`, and makes
+ * its relative url()s absolute (they would otherwise resolve against this
+ * document once the rules are re-hosted here). */
+async function injectScopedCss(cssUrl, scope) {
+  const key = `${scope}::${cssUrl}`;
+  if (scopedCssDone.has(key)) return;
+  scopedCssDone.add(key);
+
+  const response = await fetch(cssUrl);
+  if (!response.ok) return;
+  let text = await response.text();
+  text = text.replace(
+    /url\(\s*(['"]?)(?![a-z]+:|\/|#|data:)([^'")]+)\1\s*\)/gi,
+    (_, __, path) => `url("${new URL(path, cssUrl).href}")`,
+  );
+
+  const sheet = new CSSStyleSheet();
+  try {
+    sheet.replaceSync(text);
+  } catch {
+    return;
+  }
+
+  const prefix = (selectorText) =>
+    selectorText
+      .split(',')
+      .map((selector) => {
+        const trimmed = selector.trim();
+        return /^(html|body)\b/i.test(trimmed)
+          ? trimmed.replace(/^(html|body)/i, scope)
+          : `${scope} ${trimmed}`;
+      })
+      .join(', ');
+
+  const serialise = (rules) => {
+    let out = '';
+    for (const rule of rules) {
+      if (rule.type === CSSRule.STYLE_RULE) out += `${prefix(rule.selectorText)}{${rule.style.cssText}}\n`;
+      else if (rule.type === CSSRule.MEDIA_RULE) out += `@media ${rule.conditionText}{${serialise(rule.cssRules)}}\n`;
+      else if (rule.type === CSSRule.SUPPORTS_RULE) out += `@supports ${rule.conditionText}{${serialise(rule.cssRules)}}\n`;
+      else out += `${rule.cssText}\n`; /* keyframes, font-face — safe unscoped */
+    }
+    return out;
+  };
+
+  const style = document.createElement('style');
+  style.dataset.scopedFor = key;
+  style.textContent = serialise(sheet.cssRules);
+  document.head.appendChild(style);
+}
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/* Loads `pageUrl` off-screen, waits for its controller to produce `selector`,
+ * and returns adopted clones. `?static` is appended so the hidden frame uses
+ * exact static twins instead of spinning up a WebGL context we would throw
+ * away. */
+async function cloneFromPage(pageUrl, selector, { expect = 1, strip = [], timeout = 12000 } = {}) {
+  const frame = document.createElement('iframe');
+  frame.setAttribute('aria-hidden', 'true');
+  frame.setAttribute('tabindex', '-1');
+  frame.style.cssText =
+    'position:absolute;left:-99999px;top:0;width:1280px;height:900px;border:0;visibility:hidden;';
+  const url = new URL(pageUrl, document.baseURI);
+  url.searchParams.set('static', '');
+  frame.src = url.href;
+  document.body.appendChild(frame);
+
+  try {
+    await new Promise((resolve, reject) => {
+      frame.addEventListener('load', resolve, { once: true });
+      frame.addEventListener('error', () => reject(new Error('frame failed')), { once: true });
+      setTimeout(() => reject(new Error('frame load timed out')), timeout);
+    });
+
+    const doc = frame.contentDocument;
+    if (!doc) throw new Error('frame document unavailable');
+
+    const deadline = Date.now() + timeout;
+    let nodes = [];
+    while (Date.now() < deadline) {
+      nodes = [...doc.querySelectorAll(selector)];
+      if (nodes.length >= expect) break;
+      await wait(120);
+    }
+    if (!nodes.length) throw new Error(`no nodes matched ${selector}`);
+
+    /* Adopted nodes carry URLs written relative to the source page. Once they
+     * live in this document they would re-resolve against /brand-kit/app/ and
+     * break, so every relative reference is absolutised against the frame. */
+    const base = frame.contentWindow.location.href;
+    const absolutise = (clone) => {
+      for (const el of [clone, ...clone.querySelectorAll('*')]) {
+        for (const attr of ['src', 'href', 'poster']) {
+          const value = el.getAttribute?.(attr);
+          if (value && !/^([a-z]+:|\/\/|#|data:)/i.test(value)) {
+            el.setAttribute(attr, new URL(value, base).href);
+          }
+        }
+        const style = el.getAttribute?.('style');
+        if (style?.includes('url(')) {
+          el.setAttribute(
+            'style',
+            style.replace(
+              /url\(\s*(['"]?)(?!([a-z]+:|\/\/|#|data:))([^'")]+)\1\s*\)/gi,
+              (_, quote, __, path) => `url("${new URL(path, base).href}")`,
+            ),
+          );
+        }
+      }
+      return clone;
+    };
+
+    return nodes.map((node) => {
+      const clone = absolutise(document.importNode(node, true));
+      for (const sel of strip) clone.querySelectorAll(sel).forEach((el) => el.remove());
+      return clone;
+    });
+  } finally {
+    frame.remove();
+  }
+}
+
+/* Renders cloned specimens into `mount` under a private style scope. */
+async function mountClonedSpecimens(mount, { page, css, selector, expect, strip, scope, heading, note }) {
+  const holder = document.createElement('div');
+  holder.className = 'specimens';
+  holder.dataset.specScope = scope;
+  holder.innerHTML = `<p class="card__note">Loading the canonical specimens…</p>`;
+  mount.appendChild(holder);
+
+  try {
+    const [clones] = await Promise.all([
+      cloneFromPage(page, selector, { expect, strip }),
+      injectScopedCss(new URL(css, document.baseURI).href, `[data-spec-scope="${scope}"]`),
+    ]);
+
+    holder.innerHTML = '';
+    holder.insertAdjacentHTML(
+      'beforebegin',
+      `<div class="shead"><h2>${esc(heading)}</h2><p>${esc(
+        note ?? `${clones.length} specimens, built by the canonical page`,
+      )}</p></div>`,
+    );
+    for (const clone of clones) holder.appendChild(clone);
+    return clones.length;
+  } catch (error) {
+    holder.innerHTML = `<div class="flag">Could not load the canonical specimens: ${esc(
+      error.message,
+    )}. The visual page still has them.</div>`;
+    return 0;
+  }
+}
+
 /* ── Visual specimens ────────────────────────────────────────── */
 
 /* Draws the expression at each declared scale band, at its real minimum
@@ -793,9 +957,8 @@ async function productCardPanel(source) {
 
 async function tradingCardPanel(source) {
   const anatomy = source.anatomy ?? {};
-  const products = await productRegistry();
   return `
-    ${products.length ? tradingCardSpecimens(products) : ''}
+    <div data-clone-specimens></div>
     ${shead('Thesis', '')}
     <p class="plede">${esc(source.thesis ?? '')}</p>
     ${shead('Meaning', 'What each configuration is for')}
@@ -965,7 +1128,18 @@ export const PANELS = {
   'trading-card': {
     source: '../expressions/trading-card/trading-card.source.json',
     render: tradingCardPanel,
-    css: ['../workbench/expressions/trading-card/styles.css'],
+    clone: {
+      page: '../workbench/expressions/trading-card/',
+      css: '../workbench/expressions/trading-card/styles.css',
+      selector: '[data-specimen-id]',
+      expect: 23,
+      scope: 'trading-card',
+      heading: 'Every approved specimen',
+      note: 'All 23, built by the canonical page itself and adopted here — not redrawn',
+      /* The workbench's own review controls belong to its approval flow, not
+       * to this console, which has its own. */
+      strip: ['[data-verdict]', '.specimen-feedback', '.specimen-verdicts'],
+    },
   },
   'channel-motion': { source: '../expressions/channel-motion/channel-motion.source.json', render: channelMotionPanel },
   'stress-proof': { source: '../expressions/stress-proof/expression-stress.source.json', render: stressPanel },
@@ -1008,6 +1182,13 @@ export async function renderPanel(id, mount) {
     `<p class="card__note src">Rendered live from <code>${esc(panel.source.replace(/^\.\.\//, 'brand-kit/'))}</code> —
      the same contract the build and verify scripts read, so this reference cannot drift from the system.</p>`,
   );
+
+  /* Specimens cloned from the canonical page, dropped into the placeholder
+   * the panel left for them. */
+  if (panel.clone) {
+    const slot = mount.querySelector('[data-clone-specimens]');
+    if (slot) await mountClonedSpecimens(slot, panel.clone);
+  }
 
   try {
     if (panel.render.mount) await panel.render.mount(mount);

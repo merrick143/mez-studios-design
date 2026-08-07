@@ -5,7 +5,7 @@
  * markup. The console is a pure renderer: it never invents a status, and it
  * shows the generator's drift notes instead of hiding them. */
 
-import { PANELS, renderPanel } from './panels.js?v=16';
+import { PANELS, renderPanel } from './panels.js?v=18';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const esc = (value) =>

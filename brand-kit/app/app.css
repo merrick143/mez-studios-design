@@ -1823,3 +1823,48 @@ body {
   font-weight: 580;
   text-align: center;
 }
+
+/* ── Cloned canonical specimens (v17) ────────────────────────── */
+
+.specimens {
+  display: grid;
+  gap: 20px;
+  margin: 0 0 24px;
+}
+
+/* Cloned nodes arrive with the canonical page's own layout; contain them so
+ * absolutely-positioned children cannot escape into the console chrome. */
+.specimens [data-specimen-id] {
+  position: relative;
+  padding: 20px;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--mz-surface-base);
+}
+
+.specimens .specimen-head {
+  margin-bottom: 14px;
+}
+
+.specimens .specimen-id {
+  color: var(--mz-text-muted);
+  font-family: var(--mz-font-technical, monospace);
+  font-size: 10.5px;
+  letter-spacing: .08em;
+}
+
+.specimens h3 {
+  margin: 4px 0 2px;
+  font-family: var(--mz-font-display, "Mez Geist", system-ui, sans-serif);
+  font-size: 17px;
+  font-weight: 640;
+  letter-spacing: -.026em;
+}
+
+.specimens .specimen-head p {
+  margin: 0;
+  max-width: 68ch;
+  color: var(--mz-text-muted);
+  font-size: 12.5px;
+}
