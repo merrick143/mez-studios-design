@@ -19,6 +19,12 @@ const esc = (value) =>
 
 const WINGS = '../source-pack/design-system-export/assets/wings.svg';
 const STATIC_TWIN = (id) => `../gradient-library/assets/static/${String(id).toLowerCase()}.webp`;
+
+/* A relative url() inside a custom property is resolved against the
+ * stylesheet that consumes the var(), not against this document — so any
+ * value handed to canonical CSS must be absolute. */
+const STATIC_TWIN_ABS = (id) =>
+  new URL(`../gradient-library/assets/static/${String(id).toLowerCase()}.webp`, document.baseURI).href;
 const PRODUCT_CORES = [
   ['MZ-G13', 'AI OS'],
   ['MZ-G12', 'Context Engine'],
@@ -125,30 +131,49 @@ const scaleBandRow = (bands, shape, markedMinimum = 48) => {
  * the real design, with thin markup following its documented class grammar.
  * Only a representative handful; the complete approved set stays on the
  * visual page, which is why every card panel links out to it. */
+/* Mirrors faceCard()/productIdentity() in the canonical trading-card
+ * controller exactly: a positioned .tc-field carrying the material through
+ * the --field custom property, then .tc-identity. Getting this structure
+ * wrong is what broke the first attempt — the material must be its own
+ * layer, not a background on the card. */
+const tcFace = (product, variant) => {
+  const identity = (opts = {}) => `
+    <div class="tc-identity">
+      ${opts.wings === false ? '' : `<img class="tc-wings${opts.large ? ' is-large' : ''}" src="${WINGS}" alt="">`}
+      <h4 class="tc-name">${esc(product.publicName)}</h4>
+      <span class="tc-function">${esc(product.function ?? '')}</span>
+      ${opts.summary && product.summary ? `<p class="tc-summary">${esc(product.summary)}</p>` : ''}
+    </div>`;
+
+  const field = `<div class="tc-field" style="--field:url('${STATIC_TWIN_ABS(product.gradientId)}')" data-gradient-id="${esc(product.gradientId)}"></div>`;
+  const cornerWings = `<img class="tc-corner-wings" src="${WINGS}" alt="">`;
+
+  const body =
+    variant === 'corner'
+      ? field + cornerWings + identity({ wings: false, summary: true })
+      : field + identity({ large: true });
+
+  return `<article class="tc-card tc-face face--${esc(variant)}">${body}</article>`;
+};
+
 const tradingCardSpecimens = (products) => {
   const faces = [
-    { variant: 'anchored', title: 'Anchored identity', index: 0 },
-    { variant: 'centred', title: 'Centred identity', index: 1 },
-    { variant: 'corner', title: 'Corner identity', index: 4 },
+    { variant: 'anchored', title: 'Anchored identity', id: 'TC-F01', index: 0 },
+    { variant: 'centred', title: 'Centred identity', id: 'TC-F02', index: 1 },
+    { variant: 'corner', title: 'Corner identity', id: 'TC-F05', index: 4 },
   ];
   return `
-    ${shead('Card faces, drawn', '3 of the 23 approved specimens · the full set is on the visual page')}
+    ${shead('Card faces, drawn', '3 of the 23 approved specimens · every face, back, deck and placement is on the visual page')}
     <div class="stage" data-card-stage>
-      <div class="stage__bar"><span>Canonical trading-card stylesheet · exact static materials</span><span class="mono">TC-F01 · F02 · F05</span></div>
+      <div class="stage__bar"><span>Canonical trading-card stylesheet and markup · exact static materials</span><span class="mono">TC-F01 · F02 · F05</span></div>
       <div class="cardrow">
         ${faces
-          .map(({ variant, title, index }) => {
+          .map(({ variant, title, id, index }) => {
             const product = products[index] ?? products[0];
             return `
               <figure class="cardfig">
-                <div class="tc-card tc-face face--${esc(variant)}" style="background-image:url('${STATIC_TWIN(product.gradientId)}');background-size:cover;background-position:center">
-                  <div class="tc-identity">
-                    <img class="tc-wings" src="${WINGS}" alt="">
-                    <p class="tc-name">${esc(product.publicName)}</p>
-                    <span class="tc-function">${esc(product.function ?? '')}</span>
-                  </div>
-                </div>
-                <figcaption>${esc(title)}<span class="mono">face--${esc(variant)}</span></figcaption>
+                ${tcFace(product, variant)}
+                <figcaption>${esc(title)}<span class="mono">${esc(id)} · face--${esc(variant)}</span></figcaption>
               </figure>`;
           })
           .join('')}
