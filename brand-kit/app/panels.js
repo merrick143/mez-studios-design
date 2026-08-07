@@ -87,6 +87,114 @@ const bandsTable = (bands) => `
       .join('')}
   </div>`;
 
+/* ── Generic contract renderers ──────────────────────────────── */
+
+const sentence = (key) =>
+  String(key)
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .replace(/^./, (c) => c.toUpperCase());
+
+/* Renders any nested contract object as readable rows: strings inline,
+ * arrays as pills, nested objects as an indented sub-list. */
+const contractRows = (object) =>
+  `<dl class="meta">${Object.entries(object ?? {})
+    .map(([key, value]) => {
+      if (value === null || value === undefined || value === '') return '';
+      let rendered;
+      if (Array.isArray(value)) {
+        rendered = value.every((v) => typeof v !== 'object')
+          ? `<div class="pillrow pillrow--tight">${value.map((v) => `<span class="chip">${esc(v)}</span>`).join('')}</div>`
+          : `<div class="pillrow pillrow--tight">${value.map((v) => `<span class="chip">${esc(v.title ?? v.id ?? JSON.stringify(v))}</span>`).join('')}</div>`;
+      } else if (typeof value === 'object') {
+        rendered = `<div class="subrows">${Object.entries(value)
+          .map(
+            ([k, v]) =>
+              `<div class="subrow"><span class="subrow__k mono">${esc(k)}</span><span>${
+                Array.isArray(v) ? esc(v.join(' · ')) : esc(String(v))
+              }</span></div>`,
+          )
+          .join('')}</div>`;
+      } else if (typeof value === 'boolean') {
+        rendered = value ? 'yes' : 'no';
+      } else {
+        rendered = esc(String(value));
+      }
+      return `<dt>${esc(sentence(key))}</dt><dd>${rendered}</dd>`;
+    })
+    .join('')}</dl>`;
+
+/* A rule list — the allowed/forbidden/prohibited/inherits sets that carry
+ * most of the actual law in these contracts. */
+const ruleList = (title, items, tone = 'idle') =>
+  items?.length
+    ? `${shead(title, `${items.length} rules`)}
+       <ul class="rules" data-tone="${tone}">
+         ${items.map((item) => `<li>${esc(item)}</li>`).join('')}
+       </ul>`
+    : '';
+
+/* Specimen / scenario tables — the itemised proof lists. */
+const specimenTable = (items, families) => {
+  const byFamily = {};
+  for (const item of items) (byFamily[item.family ?? item.suite ?? 'all'] ??= []).push(item);
+  return Object.entries(byFamily)
+    .map(([familyId, group]) => {
+      const family = (families ?? []).find((f) => f.id === familyId);
+      return `
+        ${family ? shead(family.title, `${group.length} · ${family.job ?? ''}`) : shead(sentence(familyId), `${group.length} specimens`)}
+        <div class="log">
+          ${group
+            .map(
+              (item) => `<div class="log__row log__row--bands">
+                <span class="mono">${esc(item.id)}</span>
+                <span class="log__title">${esc(item.title)}${
+                  item.automatedChecks
+                    ? `<span class="log__id">${esc(item.automatedChecks.join(' · '))}</span>`
+                    : item.variant
+                    ? `<span class="log__id">variant · ${esc(item.variant)}</span>`
+                    : item.pattern
+                    ? `<span class="log__id">pattern · ${esc(item.pattern)}</span>`
+                    : ''
+                }</span>
+                <span class="mono band-range">${esc(item.fixture ?? item.variant ?? '')}</span>
+              </div>`,
+            )
+            .join('')}
+        </div>`;
+    })
+    .join('');
+};
+
+const viewportChips = (viewports) =>
+  viewports?.length
+    ? `${shead('Test viewports', `${viewports.length} widths certified`)}
+       <div class="pillrow">${viewports.map((v) => `<span class="chip mono">${esc(v)}px</span>`).join('')}</div>`
+    : '';
+
+/* Dependencies carry integrity hashes — useful, but collapsed by default. */
+const dependencyBlock = (dependencies) =>
+  dependencies && Object.keys(dependencies).length
+    ? `<details class="deps">
+         <summary><span>Dependencies &amp; integrity</span><span class="mono">${Object.keys(dependencies).length} pinned</span></summary>
+         <div class="log">
+           ${Object.entries(dependencies)
+             .map(([name, dep]) => {
+               const path = typeof dep === 'object' ? dep.path ?? '' : String(dep);
+               const sha = typeof dep === 'object' ? dep.sha256 ?? '' : '';
+               return `<div class="log__row log__row--bands">
+                 <span class="mono">${esc(name)}</span>
+                 <span class="log__title mono dep__path">${esc(path)}</span>
+                 <span class="mono band-range">${sha ? `${esc(sha.slice(0, 12))}…` : ''}</span>
+               </div>`;
+             })
+             .join('')}
+         </div>
+       </details>`
+    : '';
+
+const section = (title, note, object) =>
+  object && Object.keys(object).length ? `${shead(title, note)}${contractRows(object)}` : '';
+
 const allocationBlock = (allocation) =>
   allocation
     ? `${shead('Allocation', 'The one-live law')}
@@ -398,17 +506,32 @@ function discPanel(source) {
   return `
     ${productCoreRow('disc')}
     ${shead('Geometry', 'The circle is the whole contract')}
-    ${kv(Object.entries(source.geometry ?? {}).map(([k, v]) => [k, esc(String(v))]))}
+    ${contractRows(source.geometry)}
     ${shead('Wings', 'Exact asset, exact ratio')}
-    ${kv([
-      ['Width ratio', esc(source.wings?.widthRatio)],
-      ['Colour', esc(source.wings?.colour), true],
-      ['Minimum marked disc', `${esc(source.wings?.minimumMarkedDiscPx)}px`],
-      ['Asset SHA-256', esc(String(source.wings?.sha256 ?? '').slice(0, 24)) + '…', true],
-    ])}
-    ${shead('Scale bands', `${(source.scaleBands ?? []).length} bands`)}
+    ${contractRows(source.wings)}
+    ${shead('Scale bands', `${(source.scaleBands ?? []).length} bands · what the disc may do at each size`)}
     ${bandsTable(source.scaleBands ?? [])}
     ${allocationBlock(source.allocation)}
+    ${section('Surfaces', 'Where a disc may sit, per mode', source.surfaces)}
+    ${section('Channels', `${Object.keys(source.channels ?? {}).length} channel policies`, source.channels)}
+    ${section('Accessibility', 'Non-negotiable', source.accessibility)}
+    ${
+      source.products?.length
+        ? `${shead('Products', `${source.products.length} canonical assignments`)}
+           <div class="grid" data-cols="3">
+             ${source.products
+               .map(
+                 (product) => `<div class="card">
+                   <p class="card__title"><span>${esc(product.publicName)}</span><span class="mono">${esc(product.gradientId)}</span></p>
+                   <p class="card__note mono">${esc(product.productId)}</p>
+                 </div>`,
+               )
+               .join('')}
+           </div>`
+        : ''
+    }
+    ${viewportChips(source.testViewports)}
+    ${dependencyBlock(source.dependencies)}
   `;
 }
 
@@ -435,16 +558,24 @@ function spherePanel(source) {
         .join('')}
     </div>
     <p class="card__note">${esc(finish.policy ?? '')}</p>
-    ${shead('Scale bands', `${(source.scaleBands ?? []).length} bands`)}
+    ${shead('Scale bands', `${(source.scaleBands ?? []).length} bands · crop rules by size`)}
     ${bandsTable(source.scaleBands ?? [])}
-    ${allocationBlock(source.allocation)}
+    ${section('Allocation', 'The one-live law', source.allocation)}
+    ${section('Fallback', 'What replaces the sphere, and when', source.fallback)}
+    ${section('Surfaces', 'Placement per surface', source.surfaces)}
+    ${section('Wings', 'Exact asset, exact ratio', source.wings)}
+    ${section('Accessibility', 'Non-negotiable', source.accessibility)}
+    ${section('Proof product', 'The product this contract was proven against', source.proofProduct)}
+    ${viewportChips(source.testViewports)}
+    ${dependencyBlock(source.dependencies)}
   `;
 }
 
 function wingsPanel(source) {
   const roles = source.roles ?? [];
   return `
-    ${shead('Roles', `${roles.length} approved mark roles`)}
+    ${source.recommendation ? `${shead('Recommendation', 'The whole position in one paragraph')}<p class="plede">${esc(source.recommendation)}</p>` : ''}
+    ${shead('Roles', `${roles.length} approved mark roles · each shown on both surfaces`)}
     <div class="grid" data-cols="2">
       ${roles
         .map(
@@ -465,12 +596,18 @@ function wingsPanel(source) {
         )
         .join('')}
     </div>
-    ${shead('Lockup', '')}
-    ${kv(Object.entries(source.lockup ?? {}).map(([k, v]) => [k, esc(String(v))]))}
-    ${shead('Gradient-mask exception', 'Rare by design')}
-    ${kv([['Max live per viewport', esc(source.gradientMask?.maximumLivePerViewport)]])}
+    ${section('Geometry', 'The exact asset', source.geometry)}
+    ${section('Lockup', 'Mark plus wordmark', source.lockup)}
+    ${section('Space & scale', 'Clear space and minimum sizes', source.spaceAndScale)}
+    ${section('Colour', 'No second corporate hue', source.colour)}
+    ${shead('Gradient-mask exception', 'Rare by design · one per viewport')}
+    ${contractRows({ maximumLivePerViewport: source.gradientMask?.maximumLivePerViewport, fallback: source.gradientMask?.fallback })}
     ${source.gradientMask?.allowed ? `<p class="card__k pillhead">Allowed</p>${pills(source.gradientMask.allowed, 'go')}` : ''}
     ${source.gradientMask?.forbidden ? `<p class="card__k pillhead">Forbidden</p>${pills(source.gradientMask.forbidden, 'alert')}` : ''}
+    ${section('Responsive & export', 'Screen, print and export behaviour', source.responsiveAndExport)}
+    ${ruleList('Parked treatments', source.parked, 'idle')}
+    ${viewportChips(source.testViewports)}
+    ${dependencyBlock(source.dependencies)}
   `;
 }
 
@@ -498,6 +635,30 @@ function productCardPanel(source) {
         )
         .join('')}
     </div>
+    ${
+      source.expressions?.length
+        ? `${shead('Expression families', `${source.expressions.length} approved families`)}
+           <div class="grid" data-cols="2">
+             ${source.expressions
+               .map(
+                 (expression) => `<div class="card">
+                   <p class="card__title"><span>${esc(expression.name)}</span><span class="mono">${esc(expression.id)}</span></p>
+                   <p class="card__note"><strong>${esc(expression.role ?? '')}</strong> · ${esc(expression.placement ?? '')}</p>
+                   <p class="card__note">${esc(expression.thesis ?? '')}</p>
+                 </div>`,
+               )
+               .join('')}
+           </div>`
+        : ''
+    }
+    ${section('Core allocation', 'One live material per viewport', source.coreAllocation)}
+    ${section('Surface strategy', 'Where colour is allowed to happen', source.surfaceStrategy)}
+    ${section('Territories', 'How products stay distinct inside one chassis', source.territories)}
+    ${section('Shared content', 'Everything reads from the registry at runtime', source.sharedContent)}
+    ${section('Accessibility', 'Non-negotiable', source.accessibility)}
+    ${section('Phase B scope', 'The functional component system', source.phaseBScope)}
+    ${viewportChips(source.testViewports)}
+    ${dependencyBlock(source.dependencies)}
   `;
 }
 
@@ -510,39 +671,29 @@ function tradingCardPanel(source) {
     ${kv(Object.entries(source.meaning ?? {}).map(([k, v]) => [k, esc(String(v))]))}
     ${shead('Anatomy', '')}
     ${kv(Object.entries(anatomy).map(([k, v]) => [k, esc(Array.isArray(v) ? v.join(', ') : String(v))]))}
-    ${shead('Motion', 'One live front field at most')}
-    ${kv([
-      ['Max live per viewport', esc(source.motion?.maximumLivePerViewport)],
-      ['Eligible', esc(source.motion?.eligible)],
-    ])}
-    ${source.motion?.static ? `<p class="card__k pillhead">Always static</p>${pills(source.motion.static)}` : ''}
+    ${ruleList('Inherits from the product card', source.inherits, 'go')}
+    ${specimenTable(source.specimens ?? [], source.families)}
+    ${section('Motion', 'One live front field at most', source.motion)}
+    ${ruleList('Prohibited', source.prohibited, 'alert')}
+    ${section('Round lineage', 'How this revision was reached', source.roundLineage)}
+    ${viewportChips(source.testViewports)}
+    ${dependencyBlock(source.dependencies)}
   `;
 }
 
 function channelMotionPanel(source) {
-  const specimensByFamily = {};
-  for (const specimen of source.specimens ?? []) {
-    (specimensByFamily[specimen.family] ??= []).push(specimen);
-  }
   return `
     ${shead('Thesis', '')}
     <p class="plede">${esc(source.thesis ?? '')}</p>
-    ${(source.families ?? [])
-      .map(
-        (family) => `
-      ${shead(family.title, family.job)}
-      <div class="grid" data-cols="2">
-        ${(specimensByFamily[family.id] ?? [])
-          .map(
-            (specimen) => `<div class="card">
-              <p class="card__title"><span>${esc(specimen.title)}</span><span class="mono">${esc(specimen.id)}</span></p>
-              <p class="card__note">pattern · ${esc(specimen.pattern)}</p>
-            </div>`,
-          )
-          .join('')}
-      </div>`,
-      )
-      .join('')}
+    ${section('Decision model', 'How a motion event earns its place', source.decisionModel)}
+    ${specimenTable(source.specimens ?? [], source.families)}
+    ${section('Reduced motion', 'What happens when motion is refused', source.reducedMotion)}
+    ${section('Export contract', 'Motion may never carry sole meaning', source.exportContract)}
+    ${section('Scope', 'What this system covers', source.scope)}
+    ${ruleList('Prohibited', source.prohibited, 'alert')}
+    ${section('Deferral', 'Deliberately left open', source.deferral)}
+    ${viewportChips(source.testViewports)}
+    ${dependencyBlock(source.dependencies)}
   `;
 }
 
@@ -565,6 +716,10 @@ function stressPanel(source) {
         )
         .join('')}
     </div>
+    ${specimenTable(source.scenarios ?? [], source.suites)}
+    ${section('Acceptance', 'What counts as passing', source.acceptance)}
+    ${section('Authority boundary', 'What this proof may and may not certify', source.authorityBoundary)}
+    ${dependencyBlock(source.dependencies)}
   `;
 }
 

@@ -1563,3 +1563,120 @@ body {
   color: var(--tone-go-ink);
   background: var(--tone-go-bg);
 }
+
+/* ── Full-contract expression sections (v10) ─────────────────── */
+
+.chip {
+  padding: 3px 9px;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 6px;
+  background: var(--mz-surface-base);
+  font-size: 11.5px;
+}
+
+.pillrow--tight {
+  margin: 0;
+  gap: 5px;
+}
+
+.subrows {
+  display: grid;
+  gap: 5px;
+}
+
+.subrow {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--mz-border-default);
+  font-size: 12.5px;
+}
+
+.subrow:last-child {
+  border-bottom: 0;
+}
+
+.subrow__k {
+  color: var(--mz-text-muted);
+  font-size: 11px;
+}
+
+.rules {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rules li {
+  position: relative;
+  padding: 10px 14px 10px 34px;
+  border-bottom: 1px solid var(--mz-border-default);
+  background: var(--mz-surface-base);
+  font-size: 13px;
+}
+
+.rules li:last-child {
+  border-bottom: 0;
+}
+
+.rules li::before {
+  position: absolute;
+  left: 14px;
+  content: "·";
+  font-weight: 700;
+}
+
+.rules[data-tone="alert"] li::before {
+  color: var(--tone-alert-ink);
+  content: "×";
+}
+
+.rules[data-tone="go"] li::before {
+  color: var(--tone-go-ink);
+  content: "✓";
+}
+
+.deps {
+  margin: 34px 0 0;
+  border: 1px solid var(--mz-border-default);
+  border-radius: 10px;
+  background: var(--mz-surface-base);
+}
+
+.deps summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 14px;
+  color: var(--mz-text-muted);
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.deps .log {
+  border: 0;
+  border-top: 1px solid var(--mz-border-default);
+  border-radius: 0;
+}
+
+.dep__path {
+  overflow: hidden;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .subrow {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
