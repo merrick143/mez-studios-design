@@ -259,6 +259,7 @@ section { margin-bottom: 74px; scroll-margin-top: 70px; }
 }
 .badge--on { border-color: rgba(20,120,70,.35); background: #f1faf4; color: #1c6b45; }
 .badge--off { border-color: rgba(11,11,11,.14); color: var(--text3); }
+.badge--fixed { border-color: rgba(20,120,70,.3); background: #f4fbf7; color: #1c6b45; }
 .flatrow p { margin: 0; font-size: 13px; color: var(--text2); max-width: 56ch; }
 .flatrow code { font-family: var(--mono); font-size: 12px; }
 
@@ -352,9 +353,31 @@ footer {
            their own product's gradient stops rather than inventing a new mark.</p>
       </div>
       <div class="flatrow flatrow--stack">
+        <p style="max-width:none"><strong>All three public properties ship the
+           same <code>favicon.ico</code></strong> — verified byte-identical,
+           both in the repos and as served live. It is the only icon that ever
+           reaches a browser tab.</p>
+        <div class="icons">
+          <figure class="icon">
+            <span class="swatch"><img src="./live/favicon-ico-256.png" alt="mez.systems favicon.ico"></span>
+            <figcaption>mez.systems<br><span class="badge badge--on">In the tab</span></figcaption>
+          </figure>
+          <figure class="icon">
+            <span class="swatch"><img src="./live/mezcorp-favicon-ico-256.png" alt="mezcorp.co favicon.ico"></span>
+            <figcaption>mezcorp.co<br><span class="badge badge--on">In the tab</span></figcaption>
+          </figure>
+          <figure class="icon">
+            <span class="swatch"><img src="./live/mez-studio-apple-touch.png" alt="mez.studio favicon"></span>
+            <figcaption>mez.studio<br><span class="badge badge--on">In the tab</span></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="flatrow flatrow--stack">
         <p style="max-width:none"><strong>mez.systems</strong> — three files in
-           the landing repo's <code>public/</code>. Only the first is what you
-           see in a browser tab.</p>
+           the landing repo's <code>public/</code>. Since the fix, all three
+           carry the same artwork, so it no longer matters which one a browser
+           reaches for.</p>
         <div class="icons">
           <figure class="icon">
             <span class="swatch"><img src="./live/favicon-ico-256.png" alt="favicon.ico"></span>
@@ -362,35 +385,34 @@ footer {
           </figure>
           <figure class="icon">
             <span class="swatch"><img src="./live/apple-touch-icon.png" alt="apple-touch-icon.png"></span>
-            <figcaption><code>apple-touch-icon.png</code><br><span class="badge">iOS home screen only</span></figcaption>
+            <figcaption><code>apple-touch-icon.png</code><br><span class="badge">iOS home screen</span></figcaption>
           </figure>
           <figure class="icon">
             <span class="swatch"><img src="./live/favicon.png" alt="favicon.png"></span>
-            <figcaption><code>favicon.png</code><br><span class="badge badge--off">Declared, not shown</span></figcaption>
+            <figcaption><code>favicon.png</code><br><span class="badge badge--fixed">Now matches</span></figcaption>
           </figure>
         </div>
       </div>
-      <div class="flatrow" style="border-color:rgba(180,90,20,.3);background:#fffaf4">
-        <p style="max-width:none"><strong>Worth knowing:</strong>
+      <div class="flatrow" style="border-color:rgba(20,120,70,.28);background:#f4fbf7">
+        <p style="max-width:none"><strong>Fixed:</strong>
+           <code>favicon.png</code> used to be the inverse of the other two —
+           white wings on full-bleed black. It never showed, because
            <code>favicon.ico</code> is declared first with
-           <code>sizes="any"</code>, so that is the one browsers actually show
-           in the tab — dark wings on white. <code>favicon.png</code> is its
-           inverse and carries no
-           <code>media="(prefers-color-scheme: dark)"</code>, so it is not a
-           dark-mode pair; it is just inconsistent. If a browser ever prefers
-           it, the tab icon flips appearance.</p>
+           <code>sizes="any"</code> and wins the tab, and it carried no
+           <code>media="(prefers-color-scheme: dark)"</code>, so it was not a
+           dark-mode counterpart either. It has been replaced with the 256px
+           frame taken straight out of <code>favicon.ico</code>, so the two are
+           identical by construction. It is now redundant rather than wrong,
+           and could be dropped along with its <code>&lt;link&gt;</code>.</p>
       </div>
+
       <div class="flatrow">
-        <span class="swatch"><img src="./live/mez-studio-apple-touch.png" alt="mez.studio icon"></span>
-        <p><strong>mez.studio</strong> — <code>favicon.ico</code> (6 sizes) +
-           <code>apple-touch-icon.png</code> (180). The studio property, on the
-           same dark-wings-on-white treatment as mez.systems.</p>
-      </div>
-      <div class="flatrow">
-        <span class="dark"><img src="./live/mezcorp-icon-light.svg" alt="mezcorp.co icon"></span>
-        <p><strong>mezcorp.co</strong> — <code>/brand/icon-light.svg</code> +
-           a 6-size <code>favicon.ico</code>. The agency mark, separate from
-           the Mez Systems product identity by design.</p>
+        <span class="swatch"><img src="./live/mezcorp-icon-light.svg" alt="mezcorp.co brand mark"></span>
+        <p><strong>mezcorp.co, in-page marks</strong> —
+           <code>/brand/icon-light.svg</code> and <code>icon-dark.svg</code>.
+           These are page assets, not favicons: the site preloads the light one
+           for its own header. Its tab icon is the shared
+           <code>favicon.ico</code> above.</p>
       </div>
     </div>
   </section>
