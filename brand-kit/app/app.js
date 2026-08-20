@@ -5,7 +5,7 @@
  * markup. The console is a pure renderer: it never invents a status, and it
  * shows the generator's drift notes instead of hiding them. */
 
-import { PANELS, renderPanel } from './panels.js?v=18';
+import { PANELS, renderPanel } from './panels.js?v=28';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const esc = (value) =>
@@ -407,7 +407,10 @@ function renderItem(item) {
 
   $('#panel').innerHTML = `
     <p class="crumbs">${esc(item.zoneLabel)} · ${esc(item.groupLabel)}</p>
-    <h1 class="ptitle">${esc(item.name)} ${badge(item.status)}</h1>
+    <div class="phead">
+      <h1 class="ptitle">${esc(item.name)} ${badge(item.status)}</h1>
+      ${item.href ? `<a class="btn btn--quiet phead__action" href="${esc(item.href)}" target="_blank" rel="noopener">View isolated page ↗</a>` : ''}
+    </div>
     <p class="plede">${esc(item.summary ?? '')}</p>
 
     ${item.flag ? `<div class="flag">${esc(item.flag)}</div>` : ''}
@@ -434,9 +437,8 @@ function renderItem(item) {
     </details>
 
     ${
-      item.href || (item.secondary ?? []).length
+      (item.secondary ?? []).length
         ? `<div class="actions">
-             ${item.href ? `<a class="btn" href="${esc(item.href)}" target="_blank" rel="noopener">Open visual page ↗</a>` : ''}
              ${(item.secondary ?? [])
                .map((link) => `<a class="btn btn--quiet" href="${esc(link.href)}" target="_blank" rel="noopener">${esc(link.label)} ↗</a>`)
                .join('')}

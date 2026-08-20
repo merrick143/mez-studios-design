@@ -226,6 +226,159 @@ async function cloneFromPage(pageUrl, selector, { expect = 1, strip = [], timeou
   }
 }
 
+/* ── Seamless same-origin frame ──────────────────────────────── */
+
+/* Embeds a canonical proof page as itself: its own markup, stylesheet and
+ * scripts all run untouched, so nothing can lose its ancestor context (the
+ * failure mode that broke cloned specimens). Because the frame is
+ * same-origin, the console erases the seams from outside: it hides the
+ * page's own chrome and review UI, kills inner scrolling, and continuously
+ * sizes the frame to the page's real height so it reads as one page. */
+/* The proof pages share one review-apparatus vocabulary; hiding it is the
+ * same operation everywhere. Verdict rings are neutralised rather than
+ * hidden so the specimens themselves stay visible. */
+const FRAME_HIDE = [
+  '.topbar',
+  '.review-panel',
+  '.review-scrim',
+  '.review-trigger',
+  '.review-counts',
+  '[data-open-review]',
+  '.export-button',
+  '.specimen-verdicts',
+  '.specimen-feedback',
+  '.family-feedback',
+  '.review-summary',
+];
+const FRAME_CSS =
+  '.specimen[data-selected-verdict] { box-shadow: none !important; opacity: 1 !important; }';
+/* Frames measure their own height, so a hero sized in viewport units feeds
+ * back on itself (1vh = 1% of frame height -> hero grows -> frame grows).
+ * Pages with viewport-filling heroes pin them to the height they were
+ * reviewed at instead: a ~900px browser minus the page topbar. */
+const proofFrame = (page, extraCss = '') => ({
+  page,
+  hide: FRAME_HIDE,
+  css: FRAME_CSS + extraCss,
+});
+
+/* True while a framed panel's contract fold is being rendered: the fold sits
+ * collapsed beneath the live canonical page, so its hand-drawn stages must
+ * not claim WebGL cores of their own — static twins throughout. */
+let framedMode = false;
+
+function seamlessFrame(pageUrl, { hide = [], css = '', designWidth = 1440 } = {}) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'frameembed';
+  wrapper.innerHTML = '<p class="card__note frameembed__loading">Loading the canonical page…</p>';
+
+  const frame = document.createElement('iframe');
+  frame.className = 'frameembed__frame';
+  frame.title = 'Canonical proof page';
+  frame.setAttribute('scrolling', 'no');
+  /* The proof was designed and reviewed at full-page width; a frame that is
+   * merely "as wide as the console panel" lands in different responsive
+   * breakpoints and reflows the layout into something never approved.
+   *
+   * The scaling must NOT be a CSS transform on the frame: a transform
+   * promotes the frame to one composited layer sized width × full page
+   * height — 400MB of GPU texture on the tallest proofs — which blows the
+   * GPU budget and blanks the whole tab. Instead the frame stays at the
+   * panel's natural width and a `zoom` is applied to the page's root
+   * INSIDE the frame. Zoom scales at layout time (tiled, no mega-layer),
+   * and because it enlarges the effective CSS viewport, media queries
+   * still evaluate at the canonical design width. */
+  frame.style.width = '100%';
+  frame.src = new URL(pageUrl, document.baseURI).href;
+
+  frame.addEventListener('load', () => {
+    try {
+    const doc = frame.contentDocument;
+    if (!doc) {
+      wrapper.querySelector('.frameembed__loading').textContent =
+        'Could not reach the canonical page.';
+      return;
+    }
+    frame.dataset.loaded = '1';
+
+    const style = doc.createElement('style');
+    style.textContent = `
+      html { scroll-behavior: auto !important; overflow: hidden !important; }
+      body { margin: 0 !important; }
+      ${hide.map((selector) => `${selector} { display: none !important; }`).join('\n')}
+      ${css}
+    `;
+    doc.head.appendChild(style);
+
+    const zoomStyle = doc.createElement('style');
+    doc.head.appendChild(zoomStyle);
+
+    /* Deliberately not requestAnimationFrame: embedded panes can throttle rAF
+     * to nothing, and a pending-flag guard then starves every later attempt.
+     * A plain trailing debounce works everywhere. */
+    let pending = 0;
+    let zoom = 1;
+    const sync = () => {
+      pending = 0;
+      const width = wrapper.clientWidth;
+      if (width > 0) {
+        const next = Math.min(1, width / designWidth);
+        if (Math.abs(next - zoom) > 0.001 || !zoomStyle.textContent) {
+          zoom = next;
+          zoomStyle.textContent = `html { zoom: ${zoom}; }`;
+        }
+      }
+      /* With zoom applied, the root's border-box rect is already in frame
+       * pixels — exactly the height the frame element must claim. */
+      const rect = doc.documentElement.getBoundingClientRect();
+      const height = Math.max(rect.height, doc.body?.getBoundingClientRect().height ?? 0);
+      frame.dataset.lastSync = String(Math.round(height));
+      if (height > 0 && Math.abs(frame.clientHeight - height) > 2) {
+        frame.style.height = `${Math.ceil(height)}px`;
+      }
+    };
+    const schedule = () => {
+      if (pending) return;
+      pending = setTimeout(sync, 60);
+    };
+    sync();
+
+    try {
+      new ResizeObserver(schedule).observe(wrapper);
+    } catch {
+      /* timed syncs still apply */
+    }
+    const onResize = () => {
+      if (!frame.isConnected) {
+        removeEventListener('resize', onResize);
+        return;
+      }
+      schedule();
+    };
+    addEventListener('resize', onResize);
+
+    schedule();
+    /* Late layout shifts: fonts, images, canvases, the page's own JS. */
+    [300, 900, 2000, 4000].forEach((ms) => setTimeout(schedule, ms));
+    try {
+      new ResizeObserver(schedule).observe(doc.documentElement);
+      if (doc.body) new ResizeObserver(schedule).observe(doc.body);
+    } catch {
+      /* very old engines: the timed syncs above still apply */
+    }
+    doc.addEventListener('load', schedule, true);
+
+    wrapper.querySelector('.frameembed__loading')?.remove();
+    } catch (error) {
+      frame.dataset.loadError = String(error?.message ?? error);
+      console.error('[console] seamless frame setup failed', error);
+    }
+  });
+
+  wrapper.appendChild(frame);
+  return wrapper;
+}
+
 /* Renders cloned specimens into `mount` under a private style scope. */
 async function mountClonedSpecimens(mount, { page, css, selector, expect, strip, scope, heading, note }) {
   const holder = document.createElement('div');
@@ -499,17 +652,21 @@ const allocationBlock = (allocation) =>
  * panel itself documents. */
 const productCoreRow = (shape) => `
   <div class="stage" data-live-stage>
-    <div class="stage__bar"><span>Live reference · canonical renderer · one live core, four exact static twins</span><span class="mono" data-stage-mode></span></div>
+    <div class="stage__bar"><span>${
+      framedMode
+        ? 'Reference row · exact static twins (the live page above owns motion)'
+        : 'Live reference · canonical renderer · one live core, four exact static twins'
+    }</span><span class="mono" data-stage-mode></span></div>
     <div class="corerow">
       ${PRODUCT_CORES.map(
         ([id, name], index) => `
         <figure class="corefig">
           ${
-            index === 0
+            index === 0 && !framedMode
               ? `<span class="core core--${shape}" data-mz-core="${id}" data-shape="${shape}"><img class="wings" src="${WINGS}" alt=""></span>`
               : `<span class="core core--${shape}"><img class="core__twin" src="${STATIC_TWIN(id)}" alt=""><img class="wings" src="${WINGS}" alt=""></span>`
           }
-          <figcaption>${esc(name)}<span class="mono">${id}${index === 0 ? ' · live' : ' · static twin'}</span></figcaption>
+          <figcaption>${esc(name)}<span class="mono">${id}${index === 0 && !framedMode ? ' · live' : ' · static twin'}</span></figcaption>
         </figure>`,
       ).join('')}
     </div>
@@ -832,8 +989,12 @@ function spherePanel(source) {
       <div class="stage__bar"><span>Live reference · Deep Mineral sphere · canonical renderer</span><span class="mono" data-stage-mode></span></div>
       <div class="corerow">
         <figure class="corefig">
-          <span class="core core--sphere core--lg" data-mz-core="MZ-G13" data-shape="sphere"><img class="wings" src="${WINGS}" alt=""></span>
-          <figcaption>AI OS<span class="mono">MZ-G13 · live</span></figcaption>
+          ${
+            framedMode
+              ? `<span class="core core--sphere core--lg"><img class="core__twin" src="${STATIC_TWIN('MZ-G13')}" alt=""><img class="wings" src="${WINGS}" alt=""></span>`
+              : `<span class="core core--sphere core--lg" data-mz-core="MZ-G13" data-shape="sphere"><img class="wings" src="${WINGS}" alt=""></span>`
+          }
+          <figcaption>AI OS<span class="mono">MZ-G13 · ${framedMode ? 'static twin' : 'live'}</span></figcaption>
         </figure>
       </div>
     </div>
@@ -958,7 +1119,6 @@ async function productCardPanel(source) {
 async function tradingCardPanel(source) {
   const anatomy = source.anatomy ?? {};
   return `
-    <div data-clone-specimens></div>
     ${shead('Thesis', '')}
     <p class="plede">${esc(source.thesis ?? '')}</p>
     ${shead('Meaning', 'What each configuration is for')}
@@ -1121,28 +1281,60 @@ export const PANELS = {
   typography: { source: '../foundations/typography/typography.source.json', render: typographyPanel },
   'space-layout': { source: '../foundations/space-layout/space-layout.source.json', render: spacePanel },
   'geometry-controls': { source: '../foundations/geometry-controls/geometry-controls.source.json', render: geometryPanel },
-  disc: { source: '../expressions/disc/disc.source.json', render: discPanel, cores: true },
-  sphere: { source: '../expressions/sphere/sphere.source.json', render: spherePanel, cores: true },
-  'wings-mark': { source: '../expressions/wings-mark/wings-mark.source.json', render: wingsPanel },
-  'product-card': { source: '../expressions/product-card/product-card.source.json', render: productCardPanel },
+  disc: {
+    source: '../expressions/disc/disc.source.json',
+    render: discPanel,
+    frame: proofFrame('../workbench/expressions/disc/', ' .hero { min-height: 828px !important; }'),
+  },
+  sphere: {
+    source: '../expressions/sphere/sphere.source.json',
+    render: spherePanel,
+    frame: proofFrame('../workbench/expressions/sphere/', ' .intro { min-height: 828px !important; }'),
+  },
+  'wings-mark': {
+    source: '../expressions/wings-mark/wings-mark.source.json',
+    render: wingsPanel,
+    frame: proofFrame('../workbench/expressions/wings-mark/', ' .hero { min-height: 828px !important; }'),
+  },
+  'product-card': {
+    source: '../expressions/product-card/product-card.source.json',
+    render: productCardPanel,
+    frame: proofFrame('../workbench/expressions/product-card/'),
+  },
   'trading-card': {
     source: '../expressions/trading-card/trading-card.source.json',
     render: tradingCardPanel,
-    clone: {
+    /* Visual-first pilot: the canonical proof page runs inside a seamless
+     * same-origin frame. Its own review chrome is hidden — this console has
+     * its own decision flow. */
+    frame: {
       page: '../workbench/expressions/trading-card/',
-      css: '../workbench/expressions/trading-card/styles.css',
-      selector: '[data-specimen-id]',
-      expect: 23,
-      scope: 'trading-card',
-      heading: 'Every approved specimen',
-      note: 'All 23, built by the canonical page itself and adopted here — not redrawn',
-      /* The workbench's own review controls belong to its approval flow, not
-       * to this console, which has its own. */
-      strip: ['[data-verdict]', '.specimen-feedback', '.specimen-verdicts'],
+      hide: [
+        '.topbar',
+        '.review-panel',
+        '.review-scrim',
+        '.review-trigger',
+        '.export-button',
+        '.specimen-verdicts',
+        '.specimen-feedback',
+        '.family-feedback',
+        '.review-summary',
+      ],
+      /* The keep/revise/kill verdict rings are review apparatus too — the
+       * Round 03 outcome already lives in the console's evidence strip. */
+      css: '.specimen[data-selected-verdict] { box-shadow: none !important; opacity: 1 !important; }',
     },
   },
-  'channel-motion': { source: '../expressions/channel-motion/channel-motion.source.json', render: channelMotionPanel },
-  'stress-proof': { source: '../expressions/stress-proof/expression-stress.source.json', render: stressPanel },
+  'channel-motion': {
+    source: '../expressions/channel-motion/channel-motion.source.json',
+    render: channelMotionPanel,
+    frame: proofFrame('../workbench/expressions/channel-motion/', ' .cover { min-height: 832px !important; } .cover-law { top: 63px !important; }'),
+  },
+  'stress-proof': {
+    source: '../expressions/stress-proof/expression-stress.source.json',
+    render: stressPanel,
+    frame: proofFrame('../workbench/expressions/stress-proof/'),
+  },
   'global-navigation': { source: '../components/global-navigation/global-navigation.source.json', render: globalNavigationPanel },
   'halftone-portrait': { source: '../components/halftone-portrait/halftone-portrait.source.json', render: halftonePanel },
   'testimonial-marquee': { source: '../components/testimonial-marquee/testimonial-marquee.source.json', render: marqueePanel },
@@ -1176,7 +1368,31 @@ export async function renderPanel(id, mount) {
   }
 
   /* Some panels load extra canonical data (the product registry) and are async. */
-  mount.innerHTML = await panel.render(source);
+  framedMode = Boolean(panel.frame);
+  const contractHtml = await panel.render(source);
+  framedMode = false;
+
+  if (panel.frame) {
+    /* Visual-first: the canonical proof page IS the page. The contract stays
+     * available, folded beneath it. */
+    mount.innerHTML = '';
+    mount.appendChild(seamlessFrame(panel.frame.page, panel.frame));
+    mount.insertAdjacentHTML(
+      'beforeend',
+      `<details class="contractfold">
+         <summary><span>Full contract &amp; law</span><span class="mono">${esc(
+           panel.source.replace(/^\.\.\//, 'brand-kit/'),
+         )}</span></summary>
+         <div class="contractfold__body">${contractHtml}</div>
+       </details>
+       <p class="card__note src">The page above is the canonical proof at
+       <code>${esc(panel.frame.page.replace(/^\.\.\//, 'brand-kit/'))}</code>, running its own code —
+       it cannot drift from the system because it is the system.</p>`,
+    );
+    return;
+  }
+
+  mount.innerHTML = contractHtml;
   mount.insertAdjacentHTML(
     'beforeend',
     `<p class="card__note src">Rendered live from <code>${esc(panel.source.replace(/^\.\.\//, 'brand-kit/'))}</code> —

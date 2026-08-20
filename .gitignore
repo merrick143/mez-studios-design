@@ -9,3 +9,4 @@ brand-kit/workspace/*
 
 # Agent tooling artefacts, not project work
 .playwright-mcp/
+.claude/launch.json
