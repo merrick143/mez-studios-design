@@ -524,8 +524,8 @@
               "id": "legacy-workbench-index",
               "name": "Original workbench index",
               "status": "archived",
-              "href": "../",
-              "summary": "The previous brand-kit entry page this console replaces. Kept intact as evidence and fallback."
+              "href": "../legacy.html",
+              "summary": "The original workbench dashboard this console replaced at /brand-kit/. Preserved unchanged as evidence and fallback."
             }
           ]
         }

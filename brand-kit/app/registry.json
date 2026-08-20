@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.3.0",
   "generated": true,
-  "generatedAt": "2026-08-20T03:13:57+00:00",
+  "generatedAt": "2026-08-20T04:41:13+00:00",
   "generator": "brand-kit/app/build_registry.py",
   "recordsScanned": 22,
   "system": {
@@ -772,8 +772,8 @@
               "id": "legacy-workbench-index",
               "name": "Original workbench index",
               "status": "archived",
-              "href": "../",
-              "summary": "The previous brand-kit entry page this console replaces. Kept intact as evidence and fallback.",
+              "href": "../legacy.html",
+              "summary": "The original workbench dashboard this console replaced at /brand-kit/. Preserved unchanged as evidence and fallback.",
               "statusSource": "declared"
             }
           ]

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Legacy workbench preview</title>
+    <!-- Compact tile for the landing page card: the original workbench's
+         charcoal identity, not the squeezed full dashboard. -->
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid;
+        place-items: center;
+        background: #171715;
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      }
+      .tile { display: grid; gap: 16px; justify-items: center; }
+      .tile img {
+        width: clamp(52px, 14vw, 76px);
+        filter: brightness(0) invert(1);
+      }
+      .caption {
+        color: #aaa9a4;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tile">
+      <img src="./source-pack/design-system-export/assets/wings.svg" alt="" />
+      <span class="caption">LEGACY WORKBENCH · CUTOVER 2026-07-21</span>
+    </div>
+  </body>
+</html>
