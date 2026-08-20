@@ -242,6 +242,9 @@ section { margin-bottom: 74px; scroll-margin-top: 70px; }
     #e6e6e4;
 }
 .flatrow .swatch img { display: block; width: 52px; height: 52px; }
+/* A white mark needs a dark ground to be legible, the same way its own
+   colour scheme would supply one. */
+.flatrow .swatch--dark { background: #171715; border-color: rgba(11,11,11,.3); }
 
 .flatrow--stack { flex-direction: column; align-items: flex-start; gap: 16px; }
 .icons { display: flex; flex-wrap: wrap; gap: 26px; }
@@ -400,19 +403,35 @@ footer {
            <code>favicon.ico</code> is declared first with
            <code>sizes="any"</code> and wins the tab, and it carried no
            <code>media="(prefers-color-scheme: dark)"</code>, so it was not a
-           dark-mode counterpart either. It has been replaced with the 256px
-           frame taken straight out of <code>favicon.ico</code>, so the two are
-           identical by construction. It is now redundant rather than wrong,
-           and could be dropped along with its <code>&lt;link&gt;</code>.</p>
+           dark-mode counterpart either — unlike mezcorp.co below, which pairs
+           its icons properly. It has been replaced with the 256px frame taken
+           straight out of <code>favicon.ico</code>, so the two are identical by
+           construction. It is now redundant rather than wrong, and could be
+           dropped along with its <code>&lt;link&gt;</code> — or rebuilt as a
+           real dark-mode variant the way mezcorp.co does it.</p>
       </div>
 
-      <div class="flatrow">
-        <span class="swatch"><img src="./live/mezcorp-icon-light.svg" alt="mezcorp.co brand mark"></span>
-        <p><strong>mezcorp.co, in-page marks</strong> —
-           <code>/brand/icon-light.svg</code> and <code>icon-dark.svg</code>.
-           These are page assets, not favicons: the site preloads the light one
-           for its own header. Its tab icon is the shared
-           <code>favicon.ico</code> above.</p>
+      <div class="flatrow flatrow--stack">
+        <p style="max-width:none"><strong>mezcorp.co adds a theme-aware pair</strong>
+           on top of the shared <code>favicon.ico</code>. Two SVGs are declared
+           as icons with a <code>media</code> attribute, so the tab icon follows
+           the reader's colour scheme. The names describe the mode they serve,
+           not their own colour: <code>icon-light</code> is the dark mark shown
+           in light mode.</p>
+        <div class="icons">
+          <figure class="icon">
+            <span class="swatch"><img src="./live/mezcorp-icon-light.svg" alt="icon-light.svg"></span>
+            <figcaption><code>icon-light.svg</code><br><span class="badge">prefers-color-scheme: light</span></figcaption>
+          </figure>
+          <figure class="icon">
+            <span class="swatch swatch--dark"><img src="./live/mezcorp-icon-dark.svg" alt="icon-dark.svg"></span>
+            <figcaption><code>icon-dark.svg</code><br><span class="badge">prefers-color-scheme: dark</span></figcaption>
+          </figure>
+        </div>
+        <p style="max-width:none;font-size:12.5px;color:var(--text3)">
+           <code>icon-light.svg</code> doubles as the header logo in the site's
+           nav. mez.systems has no equivalent pair — its tab icon is the same
+           in both schemes.</p>
       </div>
     </div>
   </section>
