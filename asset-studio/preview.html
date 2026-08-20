@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asset Studio preview</title>
+    <!-- Compact tile for the landing page card: a miniature OG frame, since
+         the studio's whole point is fixed-size social canvases. -->
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid;
+        place-items: center;
+        background: #f8f8f8;
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      }
+      .tile { display: grid; gap: 14px; justify-items: center; }
+      .mini {
+        position: relative;
+        width: clamp(120px, 46vw, 168px);
+        aspect-ratio: 1200 / 630;
+        border-radius: 8px;
+        background: #171715;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgb(13 13 13 / 25%);
+      }
+      .mini .bars { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); display: grid; gap: 5px; }
+      .mini .bars span { display: block; height: 4px; border-radius: 2px; background: #f4f4f2; }
+      .mini .bars span:nth-child(1) { width: 22px; opacity: 0.4; }
+      .mini .bars span:nth-child(2) { width: 52px; height: 7px; }
+      .mini .bars span:nth-child(3) { width: 38px; opacity: 0.55; }
+      .mini .core {
+        position: absolute;
+        top: 50%; right: -18px;
+        transform: translateY(-50%);
+        width: 56%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: url('../brand-kit/gradient-library/assets/static/mz-g13.webp') center / cover;
+      }
+      .mini .core img {
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 38%;
+        transform: translate(-50%, -50%);
+        filter: brightness(0) invert(1);
+      }
+      .caption { color: #666662; font-size: 10px; letter-spacing: 0.14em; }
+    </style>
+  </head>
+  <body>
+    <div class="tile">
+      <div class="mini">
+        <div class="bars"><span></span><span></span><span></span></div>
+        <span class="core"><img src="../brand-kit/source-pack/design-system-export/assets/wings.svg" alt="" /></span>
+      </div>
+      <span class="caption">SOCIAL · BANNERS · AVATARS</span>
+    </div>
+  </body>
+</html>

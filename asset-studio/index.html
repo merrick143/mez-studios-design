@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mez Systems · Asset Studio</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="description" content="Live templates for Mez social graphics: sharing images and profile banners, generated from the canonical identity assets.">
+
+<style>
+/* ==========================================================================
+   ASSET STUDIO
+   Every asset is a live HTML canvas at exact pixel size. The cards below are
+   those canvases scaled down; export = open full size and capture.
+   Same house rules as everything else: light monochrome chrome, colour only
+   through the product gradients inside the work.
+   ========================================================================== */
+
+:root {
+  --page:  #f9f9f9;
+  --card:  #ffffff;
+  --text:  #0b0b0b;
+  --text2: #2e2e2e;
+  --text3: #8a8a8a;
+  --hairline: rgba(11, 11, 11, 0.08);
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.wrap { max-width: 1160px; margin: 0 auto; padding: 72px 40px 120px; }
+
+/* ---- masthead ---- */
+
+.crumb {
+  display: inline-flex;
+  gap: 8px;
+  margin-bottom: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text3);
+  text-decoration: none;
+}
+.crumb:hover { color: var(--text2); }
+
+h1 {
+  margin: 0 0 14px;
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.026em;
+  line-height: 1.05;
+}
+.lede { margin: 0 0 10px; max-width: 640px; font-size: 16.5px; color: var(--text2); }
+.lede-note { margin: 0; max-width: 640px; font-size: 13.5px; color: var(--text3); }
+
+/* ---- section nav ---- */
+
+.secnav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 40px -8px 44px;
+  padding: 10px 8px;
+  background: color-mix(in srgb, var(--page) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+.secnav a {
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text2);
+  text-decoration: none;
+}
+.secnav a:hover { background: rgba(11,11,11,0.05); }
+
+/* ---- sections ---- */
+
+section { margin-bottom: 74px; scroll-margin-top: 70px; }
+
+.sechead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--hairline);
+}
+.sechead h2 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+.sechead span { font-size: 12px; color: var(--text3); font-family: var(--mono); }
+.secdesc { margin: 0 0 26px; max-width: 640px; font-size: 13.5px; color: var(--text3); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+.grid--wide { grid-template-columns: 1fr; max-width: 860px; }
+
+/* ---- asset card ---- */
+
+.asset {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(11,11,11,.04), 0 10px 24px -18px rgba(11,11,11,.12);
+}
+
+/* Scaled live preview: the iframe is laid out at the canvas's real pixel
+   size, then scaled to fit the card. Small artboards, so transform is safe. */
+.asset__stage {
+  position: relative;
+  background:
+    conic-gradient(rgba(11,11,11,.04) 0 25%, transparent 0 50%,
+                   rgba(11,11,11,.04) 0 75%, transparent 0) 0 0 / 22px 22px;
+  border-bottom: 1px solid var(--hairline);
+  overflow: hidden;
+}
+.asset__stage iframe {
+  position: absolute;
+  top: 0; left: 0;
+  border: 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+.asset__body { padding: 16px 18px 18px; }
+.asset__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.asset__name { margin: 0; font-size: 15.5px; font-weight: 650; letter-spacing: -0.01em; }
+.asset__dims { font-family: var(--mono); font-size: 11.5px; color: var(--text3); white-space: nowrap; }
+.asset__use { margin: 6px 0 12px; font-size: 12.5px; color: var(--text3); }
+.asset__file {
+  margin: 7px 0 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text2);
+  word-break: break-word;
+}
+/* One image can answer to several tags, so its uses are a list. */
+.asset__uses { margin: 7px 0 12px; padding: 0; list-style: none; }
+.asset__uses li {
+  position: relative;
+  padding-left: 13px;
+  font-size: 12.5px;
+  color: var(--text3);
+}
+.asset__uses li::before {
+  content: "";
+  position: absolute;
+  left: 2px; top: 8px;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+}
+.asset__note {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: var(--text3);
+  font-style: italic;
+}
+
+.asset--missing { border-style: dashed; background: transparent; }
+.asset__empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+.asset__open {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text2);
+}
+.asset__open:hover { background: rgba(11,11,11,0.05); }
+
+/* ---- static asset row (favicons) ---- */
+
+.flatrow {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 20px 22px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+}
+.flatrow img { width: 56px; height: auto; }
+.flatrow .dark { background: #171715; padding: 12px; border-radius: 12px; }
+/* Icons that are themselves a white square are invisible against white
+   paper, so every swatch sits on a neutral checker. */
+.flatrow .swatch {
+  flex: none;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--hairline);
+  background:
+    conic-gradient(rgba(11,11,11,.10) 0 25%, transparent 0 50%,
+                   rgba(11,11,11,.10) 0 75%, transparent 0) 0 0 / 14px 14px,
+    #e6e6e4;
+}
+.flatrow .swatch img { display: block; width: 52px; height: 52px; }
+
+.flatrow--stack { flex-direction: column; align-items: flex-start; gap: 16px; }
+.icons { display: flex; flex-wrap: wrap; gap: 26px; }
+.icon { margin: 0; display: flex; align-items: center; gap: 12px; }
+.icon figcaption { font-size: 11.5px; line-height: 1.7; color: var(--text3); }
+.icon code { font-family: var(--mono); font-size: 11.5px; color: var(--text2); }
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.badge--on { border-color: rgba(20,120,70,.35); background: #f1faf4; color: #1c6b45; }
+.badge--off { border-color: rgba(11,11,11,.14); color: var(--text3); }
+.flatrow p { margin: 0; font-size: 13px; color: var(--text2); max-width: 56ch; }
+.flatrow code { font-family: var(--mono); font-size: 12px; }
+
+/* ---- how-to ---- */
+
+.howto {
+  max-width: 860px;
+  padding: 26px 30px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+}
+.howto h3 { margin: 0 0 10px; font-size: 15px; font-weight: 650; }
+.howto ol { margin: 0 0 18px; padding-left: 20px; color: var(--text2); font-size: 14px; }
+.howto li { margin-bottom: 6px; }
+.howto table { border-collapse: collapse; font-size: 13px; width: 100%; }
+.howto th, .howto td { text-align: left; padding: 7px 14px 7px 0; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+.howto th { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); font-weight: 600; }
+.howto code { font-family: var(--mono); font-size: 12px; background: rgba(11,11,11,0.05); padding: 1px 5px; border-radius: 5px; }
+
+footer {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline);
+  font-size: 12px;
+  color: var(--text3);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header>
+    <a class="crumb" href="/">Mez Studios · Design</a>
+    <h1>Asset Studio</h1>
+    <p class="lede">Social graphics for Mez — sharing images and profile
+       banners — generated live from the canonical identity: the wings, the
+       locked product gradients, the type.</p>
+    <p class="lede-note">Every card below is a real page at exact pixel size,
+       not a mockup. Change the identity assets and every asset here updates
+       itself. Export is a capture of the full-size page.</p>
+  </header>
+
+  <nav class="secnav" aria-label="Asset sections">
+    <a href="#live">Live today</a>
+    <a href="#social">Social sharing</a>
+    <a href="#banners">Banners</a>
+    <a href="#favicons">Favicons</a>
+    <a href="#howto">Templates &amp; export</a>
+  </nav>
+
+  <section id="live">
+    <div class="sechead"><h2>Live today</h2><span>production</span></div>
+    <p class="secdesc">What the three public properties ship right now — one
+       card per distinct image, listing every tag it answers to. mez.systems
+       images are read from the landing repo; mezcorp.co and mez.studio are
+       snapshots of the deployed sites.</p>
+    <div class="grid" data-assets="live"></div>
+  </section>
+
+  <section id="social">
+    <div class="sechead"><h2>Social sharing</h2><span>1200 × 630</span></div>
+    <p class="secdesc">Open Graph / link-preview images. One per product plus
+       the company master. Site-specific images stay owned by their sites;
+       these are the shared canvases they start from.</p>
+    <div class="grid" data-assets="social"></div>
+  </section>
+
+  <section id="banners">
+    <div class="sechead"><h2>Banners</h2><span>1584 × 396 · 1500 × 500</span></div>
+    <p class="secdesc">Profile headers. Content sits right of centre because
+       LinkedIn overlaps the profile photo on the banner's bottom-left.</p>
+    <div class="grid grid--wide" data-assets="banners"></div>
+  </section>
+
+  <section id="favicons">
+    <div class="sechead"><h2>Favicons</h2><span>SVG</span></div>
+    <p class="secdesc">Favicons are per-site and already static — the shader
+       can't run in a browser tab icon. What each property ships today:</p>
+    <div style="display:grid;gap:14px">
+      <div class="flatrow">
+        <span class="dark"><img src="/favicon.svg" alt="Design site favicon"></span>
+        <p><strong>This site</strong> — <code>/favicon.svg</code>: the wings
+           filled with MZ-G13 flattened to a linear ramp. The canonical
+           starting point: new sites copy this file and swap the ramp for
+           their own product's gradient stops rather than inventing a new mark.</p>
+      </div>
+      <div class="flatrow flatrow--stack">
+        <p style="max-width:none"><strong>mez.systems</strong> — three files in
+           the landing repo's <code>public/</code>. Only the first is what you
+           see in a browser tab.</p>
+        <div class="icons">
+          <figure class="icon">
+            <span class="swatch"><img src="./live/favicon-ico-256.png" alt="favicon.ico"></span>
+            <figcaption><code>favicon.ico</code><br><span class="badge badge--on">In the tab</span></figcaption>
+          </figure>
+          <figure class="icon">
+            <span class="swatch"><img src="./live/apple-touch-icon.png" alt="apple-touch-icon.png"></span>
+            <figcaption><code>apple-touch-icon.png</code><br><span class="badge">iOS home screen only</span></figcaption>
+          </figure>
+          <figure class="icon">
+            <span class="swatch"><img src="./live/favicon.png" alt="favicon.png"></span>
+            <figcaption><code>favicon.png</code><br><span class="badge badge--off">Declared, not shown</span></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="flatrow" style="border-color:rgba(180,90,20,.3);background:#fffaf4">
+        <p style="max-width:none"><strong>Worth knowing:</strong>
+           <code>favicon.ico</code> is declared first with
+           <code>sizes="any"</code>, so that is the one browsers actually show
+           in the tab — dark wings on white. <code>favicon.png</code> is its
+           inverse and carries no
+           <code>media="(prefers-color-scheme: dark)"</code>, so it is not a
+           dark-mode pair; it is just inconsistent. If a browser ever prefers
+           it, the tab icon flips appearance.</p>
+      </div>
+      <div class="flatrow">
+        <span class="swatch"><img src="./live/mez-studio-apple-touch.png" alt="mez.studio icon"></span>
+        <p><strong>mez.studio</strong> — <code>favicon.ico</code> (6 sizes) +
+           <code>apple-touch-icon.png</code> (180). The studio property, on the
+           same dark-wings-on-white treatment as mez.systems.</p>
+      </div>
+      <div class="flatrow">
+        <span class="dark"><img src="./live/mezcorp-icon-light.svg" alt="mezcorp.co icon"></span>
+        <p><strong>mezcorp.co</strong> — <code>/brand/icon-light.svg</code> +
+           a 6-size <code>favicon.ico</code>. The agency mark, separate from
+           the Mez Systems product identity by design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="howto">
+    <div class="sechead"><h2>Templates &amp; export</h2><span>3 canvases</span></div>
+    <p class="secdesc">Three canvases drive every template above:
+       <code>og.html</code> (sharing images), <code>statement.html</code>
+       (the running Mez Studios banner) and <code>banner.html</code>
+       (product-identity banners).</p>
+    <div class="howto">
+      <h3>Making a new graphic</h3>
+      <ol>
+        <li>Pick a canvas and open it full size — every card's <strong>Open canvas</strong> button.</li>
+        <li>Retitle it from the URL: the canvases are templates driven by query params (below).</li>
+        <li>Capture at 100% zoom — browser devtools "capture node screenshot" on the
+            <code>.canvas</code> element gives an exact-pixel PNG.</li>
+      </ol>
+      <table>
+        <tr><th>Param</th><th>Values</th><th>Does</th></tr>
+        <tr><td><code>product</code></td><td><code>mez</code> · <code>aios</code> · <code>context-engine</code> · <code>ai-ads-system</code> · <code>claude-code-os</code> · <code>organic-content-os</code></td><td>Sets the name, kicker and locked gradient</td></tr>
+        <tr><td><code>title</code> / <code>sub</code></td><td>any text</td><td>Overrides the headline / adds a subline (og)</td></tr>
+        <tr><td><code>g</code></td><td><code>mz-g01</code>…<code>mz-g52</code></td><td>One-off gradient override for campaign graphics</td></tr>
+        <tr><td><code>preset</code></td><td><code>linkedin</code> · <code>x</code></td><td>Banner dimensions</td></tr>
+        <tr><td><code>line</code></td><td>any text</td><td>Statement banner headline</td></tr>
+        <tr><td><code>wordmark</code></td><td><code>Mez Studios</code> · <code>Mez Systems</code></td><td>Statement banner lockup label</td></tr>
+        <tr><td><code>theme</code></td><td><code>light</code> · <code>dark</code></td><td>Flips paper / charcoal background</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <span>Gradients and wings read live from the brand kit's canonical assets.</span>
+    <a href="/brand-kit/">Brand Kit console</a>
+  </footer>
+
+</div>
+
+<script type="module">
+/* Card definitions. href is the live canvas; w/h its artboard size. */
+const CANVAS = './canvas/';
+const ASSETS = {
+  live: [
+    { name: 'mez.systems · homepage', w: 1200, h: 630, img: true,
+      href: './live/og-mez-systems.png',
+      file: 'og-mez-systems.png',
+      uses: ['og:image and twitter:image on /'] },
+    { name: 'mez.systems · everything else', w: 1200, h: 630, img: true,
+      href: './live/og-default.png',
+      file: 'og-default.png',
+      uses: ['og:image and twitter:image on /ai-os', 'The fallback for every other route'] },
+    { name: 'mezcorp.co', w: 1200, h: 630, img: true,
+      href: './live/mezcorp-og.png',
+      file: 'opengraph-image.png = twitter-image.png',
+      uses: ['og:image sitewide', 'twitter:image sitewide'],
+      note: 'Served at two URLs, but the two files are byte-identical.' },
+    { name: 'mez.studio', w: 1200, h: 630, img: true,
+      href: './live/mez-studio-og.png',
+      file: '/brand/og.png',
+      uses: ['og:image sitewide', 'twitter:image sitewide'],
+      note: 'The studio site. A different property from this workbench.' },
+  ],
+  social: [
+    { name: 'Mez Systems', use: 'Company master · mez.systems links', w: 1200, h: 630,
+      href: CANVAS + 'og.html?product=mez&sub=AI%20operating%20systems%20for%20business' },
+    { name: 'AI OS', use: 'Product link previews · live', w: 1200, h: 630,
+      href: CANVAS + 'og.html?product=aios&sub=One%20system%20your%20whole%20business%20runs%20on.' },
+    { name: 'Context Engine', use: 'Product link previews · coming soon', w: 1200, h: 630,
+      href: CANVAS + 'og.html?product=context-engine' },
+    { name: 'AI Ads System', use: 'Product link previews · coming soon', w: 1200, h: 630,
+      href: CANVAS + 'og.html?product=ai-ads-system' },
+    { name: 'Claude Code OS', use: 'Product link previews · coming soon', w: 1200, h: 630,
+      href: CANVAS + 'og.html?product=claude-code-os' },
+    { name: 'Organic Content OS', use: 'Product link previews · coming soon', w: 1200, h: 630,
+      href: CANVAS + 'og.html?product=organic-content-os' },
+  ],
+  banners: [
+    { name: 'Mez Studios · running now', use: 'The banner live on LinkedIn today, rebuilt as a template · Figma node 1:5907', w: 1584, h: 396,
+      href: CANVAS + 'statement.html?preset=linkedin' },
+    { name: 'Statement · alternate line', use: 'Same template, headline swapped from the URL', w: 1584, h: 396,
+      href: CANVAS + 'statement.html?preset=linkedin&line=we%20install%20the%20system.' },
+    { name: 'Statement · charcoal', use: 'Dark variant of the same lockup', w: 1584, h: 396,
+      href: CANVAS + 'statement.html?preset=linkedin&theme=dark' },
+    { name: 'Mez Systems · company', use: 'Product-identity header, full family of cores', w: 1584, h: 396,
+      href: CANVAS + 'banner.html?preset=linkedin' },
+    { name: 'Mez Systems · X', use: 'Profile header, taller crop', w: 1500, h: 500,
+      href: CANVAS + 'banner.html?preset=x' },
+    { name: 'Mez Systems · AI OS', use: 'Product-page header, single core', w: 1584, h: 396,
+      href: CANVAS + 'banner.html?preset=linkedin&product=aios' },
+  ],
+};
+
+function card(a) {
+  const el = document.createElement('article');
+  el.className = 'asset';
+  if (a.missing) el.classList.add('asset--missing');
+  const stage = a.missing
+    ? '<div class="asset__empty"><span>No image set</span></div>'
+    : a.img
+    ? '<img src="' + a.href + '" alt="' + a.name + '" loading="lazy" ' +
+        'style="display:block;width:100%;height:100%;object-fit:cover">'
+    : '<iframe src="' + a.href + '" title="' + a.name + '" loading="lazy" scrolling="no" ' +
+        'style="width:' + a.w + 'px;height:' + a.h + 'px"></iframe>';
+
+  /* Where an asset is used is a list, not a sentence: one image often
+     answers to several tags. */
+  const uses = a.uses
+    ? '<ul class="asset__uses">' + a.uses.map(u => '<li>' + u + '</li>').join('') + '</ul>'
+    : '<p class="asset__use">' + a.use + '</p>';
+  const file = a.file ? '<p class="asset__file">' + a.file + '</p>' : '';
+  const note = a.note ? '<p class="asset__note">' + a.note + '</p>' : '';
+  const label = a.missing ? 'Open a canvas for it ↗' : a.img ? 'Open image ↗' : 'Open canvas ↗';
+
+  el.innerHTML =
+    '<div class="asset__stage" style="aspect-ratio:' + a.w + '/' + a.h + '">' + stage + '</div>' +
+    '<div class="asset__body">' +
+      '<div class="asset__row"><h3 class="asset__name">' + a.name + '</h3>' +
+      '<span class="asset__dims">' + a.w + ' × ' + a.h + '</span></div>' +
+      file + uses + note +
+      '<a class="asset__open" href="' + a.href + '" target="_blank" rel="noopener">' + label + '</a>' +
+    '</div>';
+  return el;
+}
+
+for (const [key, list] of Object.entries(ASSETS)) {
+  const grid = document.querySelector('[data-assets="' + key + '"]');
+  list.forEach(a => grid.appendChild(card(a)));
+}
+
+/* Fit each fixed-size iframe to its card by transform scale. */
+function fit() {
+  document.querySelectorAll('.asset__stage').forEach(stage => {
+    const frame = stage.querySelector('iframe');
+    if (!frame) return;
+    const scale = stage.clientWidth / frame.offsetWidth;
+    frame.style.transform = 'scale(' + scale + ')';
+  });
+}
+new ResizeObserver(fit).observe(document.body);
+fit();
+</script>
+</body>
+</html>

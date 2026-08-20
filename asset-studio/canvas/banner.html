@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Banner canvas</title>
+    <!-- Profile banner. Params:
+         ?preset=linkedin (1584×396, default) | x (1500×500)
+         ?product=... | ?g=mz-gNN | ?title=... | ?theme=light
+         Content sits right of centre: on LinkedIn the profile photo overlaps
+         the bottom-left of the banner, so the left third stays quiet. -->
+    <link rel="stylesheet" href="./canvas.css" />
+    <style>
+      .canvas {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        padding-right: 110px;
+      }
+      .ident { display: grid; gap: 14px; justify-items: end; text-align: right; }
+      .kicker { --kicker-size: 19px; }
+      .title { font-size: 58px; }
+
+      .cores { display: flex; }
+      .cores .core {
+        width: 168px;
+        height: 168px;
+        box-shadow: 0 14px 44px rgb(0 0 0 / 45%), 0 0 0 7px var(--charcoal);
+      }
+      .canvas--light .cores .core { box-shadow: 0 14px 44px rgb(11 11 11 / 22%), 0 0 0 7px var(--paper); }
+      .cores .core + .core { margin-left: -38px; }
+    </style>
+  </head>
+  <body>
+    <div class="canvas" id="canvas">
+      <div class="row">
+        <div class="ident">
+          <div class="kicker" id="kicker"></div>
+          <h1 class="title" id="title"></h1>
+        </div>
+        <div class="cores" id="cores"></div>
+      </div>
+    </div>
+    <script type="module">
+      import { params, gradientUrl, applyTheme, allCores, WINGS } from './shared.js';
+      const PRESETS = { linkedin: [1584, 396], x: [1500, 500] };
+      const q = new URLSearchParams(location.search);
+      const [w, h] = PRESETS[q.get('preset')] || PRESETS.linkedin;
+      const canvas = document.getElementById('canvas');
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+
+      const p = params();
+      applyTheme(canvas, p.theme);
+      document.getElementById('kicker').textContent =
+        p.productKey === 'mez' ? 'AI OPERATING SYSTEMS' : p.product.kicker;
+      document.getElementById('title').textContent = p.title || (p.productKey === 'mez' ? 'Mez Systems' : p.product.name);
+
+      /* Mez banner shows the whole product family; a product banner shows
+         its own core alone, larger. */
+      const cores = document.getElementById('cores');
+      const ids = p.productKey === 'mez' ? allCores() : [p.gradient];
+      ids.forEach((id, i) => {
+        const el = document.createElement('span');
+        el.className = 'core';
+        el.style.backgroundImage = 'url("' + gradientUrl(id) + '")';
+        if (i === 0) {
+          const img = document.createElement('img');
+          img.src = WINGS;
+          img.alt = '';
+          el.appendChild(img);
+        }
+        if (ids.length === 1) { el.style.width = el.style.height = '230px'; }
+        cores.appendChild(el);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>OG canvas · 1200×630</title>
+    <!-- Social sharing image. Params:
+         ?product=aios|context-engine|ai-ads-system|claude-code-os|organic-content-os|mez
+         ?title=...  ?sub=...  ?g=mz-gNN  ?theme=light -->
+    <link rel="stylesheet" href="./canvas.css" />
+    <style>
+      .canvas {
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        align-items: center;
+      }
+      .copy {
+        position: relative;
+        z-index: 2;
+        padding-left: 96px;
+        max-width: 760px;
+        display: grid;
+        gap: 26px;
+      }
+      .title { font-size: 88px; }
+      .sub { font-size: 30px; max-width: 20ch; }
+
+      /* The product core, oversized and bleeding off the right edge: the one
+         place colour arrives, so it arrives large. */
+      .core {
+        position: absolute;
+        top: 50%;
+        right: -170px;
+        transform: translateY(-50%);
+        width: 560px;
+        height: 560px;
+        box-shadow: 0 40px 120px rgb(0 0 0 / 45%);
+      }
+      .canvas--light .core { box-shadow: 0 40px 120px rgb(11 11 11 / 25%); }
+
+      .domain {
+        position: absolute;
+        left: 96px;
+        bottom: 52px;
+        font-size: 20px;
+        font-weight: 550;
+        letter-spacing: 0.08em;
+        opacity: 0.45;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvas" id="canvas">
+      <div class="copy">
+        <div class="kicker" id="kicker"></div>
+        <h1 class="title" id="title"></h1>
+        <p class="sub" id="sub"></p>
+      </div>
+      <div class="core" id="core"><img id="wings" alt="" /></div>
+      <span class="domain">mez.systems</span>
+    </div>
+    <script type="module">
+      import { params, gradientUrl, applyTheme, WINGS } from './shared.js';
+      const p = params();
+      applyTheme(document.getElementById('canvas'), p.theme);
+      document.getElementById('kicker').textContent = p.product.kicker;
+      document.getElementById('title').textContent = p.title || p.product.name;
+      const sub = document.getElementById('sub');
+      sub.textContent = p.sub || '';
+      if (!p.sub) sub.remove();
+      const core = document.getElementById('core');
+      core.style.backgroundImage = 'url("' + gradientUrl(p.gradient) + '")';
+      document.getElementById('wings').src = WINGS;
+    </script>
+  </body>
+</html>

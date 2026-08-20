@@ -1,0 +1,81 @@
+/* ==========================================================================
+   ASSET STUDIO · shared canvas base
+   Each canvas is a real HTML page at the exact pixel size of the asset it
+   produces. Nothing here is a screenshot until you take one.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Mez Inter";
+  src: url("../../brand-kit/source-pack/design-system-export/assets/fonts/inter-variable.woff2")
+       format("woff2-variations");
+  font-weight: 100 900;
+  font-display: block;
+}
+
+:root {
+  --charcoal: #171715;
+  --charcoal-2: #1f1f1d;
+  --paper: #f9f9f9;
+  --ink: #0b0b0b;
+  --sans: "Mez Inter", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* The canvas is fixed-size and never responds to the viewport: the file IS
+   the artboard. Dimensions are set per page. */
+.canvas {
+  position: relative;
+  overflow: hidden;
+  background: var(--charcoal);
+  color: #f4f4f2;
+}
+.canvas--light {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Product core: a gradient disc, optionally carrying the wings mark. */
+.core {
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.core img {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 40%;
+  transform: translate(-50%, -50%);
+  filter: brightness(0) invert(1);
+}
+
+.kicker {
+  font-size: var(--kicker-size, 22px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+.sub {
+  margin: 0;
+  font-weight: 450;
+  opacity: 0.62;
+  letter-spacing: -0.005em;
+}

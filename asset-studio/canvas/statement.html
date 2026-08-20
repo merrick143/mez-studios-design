@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Statement banner canvas</title>
+    <!-- The banner Mez Studios runs today, rebuilt as a template.
+         Reference: Figma "LinkedIn Banner - Mez Studios" (node 1:5907), a
+         4:1 frame at 1212×303 — the same ratio as LinkedIn's 1584×396, so
+         this canvas renders it at full spec size.
+         Params: ?line=... | ?wordmark=... | ?preset=linkedin|x | ?theme=dark -->
+    <link rel="stylesheet" href="./canvas.css" />
+    <style>
+      .canvas {
+        /* Every measurement below is the value fitted against the reference
+           banner at 1584 wide, multiplied by --k so the same lockup can be
+           re-cut at other frame sizes (e.g. a 1200×630 sharing image). */
+        --k: 1;
+        --ink: #2e2e2e;
+        background: #f8f8f8;
+        color: var(--ink);
+        display: grid;
+        align-items: center;
+      }
+      .canvas--dark { background: var(--charcoal); --ink: #f4f4f2; }
+
+      .lockup {
+        position: absolute;
+        top: calc(44px * var(--k));
+        left: calc(35px * var(--k));
+        display: flex;
+        align-items: center;
+        gap: calc(12px * var(--k));
+      }
+      .lockup svg {
+        width: calc(29px * var(--k));
+        height: auto; display: block; fill: var(--ink);
+      }
+      /* Type sized off the reference render: 21.5px puts the cap height at
+         exactly the measured 12px (reference space). Inter sets ~9% wider
+         than the font in the Figma frame, which we accept rather than
+         tracking it negatively — Inter is the canonical face. */
+      .lockup span {
+        font-size: calc(21.5px * var(--k));
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      /* 54.2px matches the reference on both axes at once: ink width 407px
+         and ascender-to-descender 40px (reference space). */
+      .line {
+        margin: 0;
+        padding: 0 calc(72px * var(--k)) 0 calc(120px * var(--k));
+        text-align: right;
+        font-size: calc(54.2px * var(--k));
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvas" id="canvas">
+      <div class="lockup">
+        <!-- Wings inline so the mark inherits the ink colour in both themes. -->
+        <svg viewBox="0 0 512 363" aria-hidden="true">
+          <path d="M45,0L105.89,0A45,45 0 0 1 146.58,25.78L239.69,222.87A45,45 0 0 1 244,242.09L244,316A45,45 0 0 1 199,361L45,361A45,45 0 0 1 0,316L0,45A45,45 0 0 1 45,0Z"/>
+          <path d="M466,0L405.11,0A45,45 0 0 0 364.42,25.78L271.31,222.87A45,45 0 0 0 267,242.09L267,316A45,45 0 0 0 312,361L466,361A45,45 0 0 0 511,316L511,45A45,45 0 0 0 466,0Z"/>
+        </svg>
+        <span id="wordmark"></span>
+      </div>
+      <p class="line" id="line"></p>
+    </div>
+    <script type="module">
+      /* [width, height, scale] — scale re-cuts the lockup for frames that
+         aren't the 4:1 banner the measurements were fitted to. */
+      const PRESETS = {
+        linkedin: [1584, 396, 1],
+        x:        [1500, 500, 1],
+        og:       [1200, 630, 1.3],
+      };
+      const q = new URLSearchParams(location.search);
+      const [w, h, k] = PRESETS[q.get('preset')] || PRESETS.linkedin;
+      const canvas = document.getElementById('canvas');
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      canvas.style.setProperty('--k', k);
+      if (q.get('theme') === 'dark') canvas.classList.add('canvas--dark');
+      document.getElementById('wordmark').textContent = q.get('wordmark') || 'Mez Studios';
+      document.getElementById('line').textContent = q.get('line') || 'we are the case study.';
+    </script>
+  </body>
+</html>
