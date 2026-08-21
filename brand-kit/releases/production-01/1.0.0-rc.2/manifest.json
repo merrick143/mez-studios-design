@@ -6,7 +6,7 @@
   "productionAuthority": false,
   "taskId": "TASK-CERT-01-SYSTEM-CERTIFICATION",
   "gateId": "H-CERT-01-SYSTEM-CERTIFICATION",
-  "contentSha256": "b5fe5cb5985270987799d28dbd2c596868de0504f84ae1312818c3ac2387fdd5",
+  "contentSha256": "1598ee7355c2291fd0e6799366bb66d6f0312df941d05975e996b5ed64d8b0b6",
   "hashAlgorithm": "sha256(canonical-json(artifacts))",
   "manifestSelfExcluded": true,
   "artifactCount": 351,
@@ -423,8 +423,8 @@
     },
     {
       "path": "components/testimonial-marquee/mez-testimonial-marquee.js",
-      "bytes": 16861,
-      "sha256": "770e3d6825b43be8b406351b6c45a3c6172a65e8aa07a9ec5c5275fddc38b5ed"
+      "bytes": 18234,
+      "sha256": "4c19ecf1e2f852f7caf9864aff872d92acc134f3e2c0304d4d177c1e5d42de3b"
     },
     {
       "path": "components/testimonial-marquee/review.json",

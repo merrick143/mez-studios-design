@@ -77,6 +77,7 @@ class MezTestimonialMarquee extends HTMLElement {
     this.items = [];
     this.status = null;
     this.abortController = null;
+    this.activeSource = null;
     this.hostObserver = null;
     this.resizeObserver = null;
     this.animationFrame = null;
@@ -126,12 +127,17 @@ class MezTestimonialMarquee extends HTMLElement {
   connectedCallback() {
     this.normalisePresentation();
     this.dataset.motionMode = forceStatic ? "static-complete" : "auto-scroll";
-    this.load();
+    // Fire-and-forget, so it must never reject: nothing here can catch it and
+    // a rejection surfaces as an unhandled promise rejection.
+    this.load().catch(() => {});
   }
 
   disconnectedCallback() {
     this.stopAutoScroll();
     this.abortController?.abort();
+    // Forget the loaded source so reconnecting re-fetches. Without this a
+    // disconnect mid-flight would leave the element permanently empty.
+    this.activeSource = null;
     this.hostObserver?.disconnect();
     this.resizeObserver?.disconnect();
     document.removeEventListener("visibilitychange", this.onVisibilityChange);
@@ -139,8 +145,24 @@ class MezTestimonialMarquee extends HTMLElement {
   }
 
   attributeChangedCallback(name, previous, next) {
-    if (name === "presentation") this.normalisePresentation();
-    if (previous !== next && this.isConnected && name !== "presentation") this.load();
+    if (previous === next) return;
+
+    if (name === "presentation") {
+      this.normalisePresentation();
+      return;
+    }
+
+    // `label` is the carousel's accessible name, not part of the data. It is
+    // applied in place: re-fetching the fixture to change an aria-label
+    // cancelled the in-flight request for nothing, which is where the
+    // AbortError reports came from.
+    if (name === "label") {
+      this.viewport?.setAttribute("aria-label", next || "Testimonials");
+      return;
+    }
+
+    if (name !== "src" || !this.isConnected) return;
+    this.load().catch(() => {});
   }
 
   normalisePresentation() {
@@ -173,6 +195,13 @@ class MezTestimonialMarquee extends HTMLElement {
       return;
     }
 
+    // Coalesce. On upgrade the spec fires attributeChangedCallback for EVERY
+    // observed attribute already present and THEN connectedCallback, so one
+    // element requested the same fixture three times in a single tick, each
+    // call aborting the one before it.
+    if (this.activeSource === source) return;
+    this.activeSource = source;
+
     this.stopAutoScroll();
     this.detachViewportListeners();
     this.abortController?.abort();
@@ -191,7 +220,12 @@ class MezTestimonialMarquee extends HTMLElement {
       if (failure) throw new Error(failure);
       this.render(testimonials, url);
     } catch (error) {
-      if (error?.name !== "AbortError") this.fail(error?.message || "testimonial source unavailable");
+      // An abort is deliberate and the call that aborted us now owns the load,
+      // so it must NOT clear the guard. Any other failure should be retryable.
+      if (error?.name !== "AbortError") {
+        this.activeSource = null;
+        this.fail(error?.message || "testimonial source unavailable");
+      }
     }
   }
 
