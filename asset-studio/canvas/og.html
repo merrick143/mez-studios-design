@@ -3,74 +3,186 @@
   <head>
     <meta charset="utf-8" />
     <title>OG canvas · 1200×630</title>
-    <!-- Social sharing image. Params:
-         ?product=aios|context-engine|ai-ads-system|claude-code-os|organic-content-os|mez
-         ?title=...  ?sub=...  ?g=mz-gNN  ?theme=light -->
+    <!-- Social sharing image, in the house style set by the live
+         og-mez-systems.png: light ground, the wings lockup top-left, a heavy
+         black headline on the left and the product cards fanned on the right.
+         Params:
+         ?product=mez|aios|context-engine|ai-ads-system|claude-code-os|organic-content-os
+         ?title=...  ?sub=...  ?kicker=...  ?art=fan|core|none -->
     <link rel="stylesheet" href="./canvas.css" />
     <style>
       .canvas {
         width: 1200px;
         height: 630px;
-        display: flex;
-        align-items: center;
+        background: #f8f8f8;
+        color: #0b0b0b;
       }
-      .copy {
-        position: relative;
-        z-index: 2;
-        padding-left: 96px;
-        max-width: 760px;
+
+      /* Measured off the reference: 62px left margin, wings 43px wide with a
+         16px gap to a wordmark whose caps stand 14px tall. */
+      .lockup {
+        position: absolute;
+        top: 50px; left: 62px;
+        display: flex; align-items: center; gap: 16px;
+      }
+      .lockup svg { width: 43px; height: auto; display: block; fill: #0b0b0b; }
+      .lockup span {
+        font-size: 19.3px; font-weight: 600;
+        letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap;
+      }
+
+      .copy { position: absolute; left: 62px; top: 141px; width: 560px; }
+
+      .kicker {
+        font-size: 13.8px; font-weight: 600;
+        letter-spacing: 0.10em; text-transform: uppercase;
+        color: #6f706d; opacity: 1;
+      }
+
+      /* 56px on a 58px line — the reference's three lines measure 163px of ink
+         end to end, which only lands with leading this tight. */
+      .title {
+        margin: 22px 0 0;
+        font-size: 60px;
+        line-height: 58px;
+        font-weight: 800;
+        letter-spacing: -0.032em;
+        color: #0b0b0b;
+      }
+
+      .sub {
+        margin: 30px 0 0;
+        font-size: 19px;
+        line-height: 25px;
+        font-weight: 450;
+        letter-spacing: -0.006em;
+        color: #3e3e3e;
+        opacity: 1;
+        max-width: 450px;
+      }
+
+      /* The product fan. The named product sits forward and upright; the rest
+         splay out behind it, so the card that matters reads first. */
+      .fan {
+        position: absolute;
+        left: 596px; top: 96px;
+        width: 560px; height: 460px;
+      }
+      .card {
+        position: absolute;
+        left: 50%; top: 50%;
+        width: 176px; height: 252px;
+        margin: -126px 0 0 -88px;
+        border-radius: 18px;
+        background-position: center; background-size: cover;
+        box-shadow: 0 22px 50px -18px rgb(11 11 11 / 45%);
         display: grid;
-        gap: 26px;
+        align-content: center;
+        justify-items: center;
+        gap: 9px;
+        padding: 0 16px;
+        color: #fff;
+        text-align: center;
       }
-      .title { font-size: 88px; }
-      .sub { font-size: 30px; max-width: 20ch; }
+      .card img { width: 34px; filter: brightness(0) invert(1); }
+      .card b { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+      .card i {
+        font-style: normal;
+        font-size: 8.5px; font-weight: 600;
+        letter-spacing: 0.11em; text-transform: uppercase;
+        opacity: 0.82; line-height: 1.4;
+      }
 
-      /* The product core, oversized and bleeding off the right edge: the one
-         place colour arrives, so it arrives large. */
-      .core {
+      /* A single oversized core, for products with no card art to fan. */
+      .solo {
         position: absolute;
-        top: 50%;
-        right: -170px;
+        top: 50%; right: 34px;
         transform: translateY(-50%);
-        width: 560px;
-        height: 560px;
-        box-shadow: 0 40px 120px rgb(0 0 0 / 45%);
+        width: 392px; height: 392px;
+        border-radius: 50%;
+        background-position: center; background-size: cover;
+        box-shadow: 0 30px 80px -24px rgb(11 11 11 / 45%);
       }
-      .canvas--light .core { box-shadow: 0 40px 120px rgb(11 11 11 / 25%); }
-
-      .domain {
-        position: absolute;
-        left: 96px;
-        bottom: 52px;
-        font-size: 20px;
-        font-weight: 550;
-        letter-spacing: 0.08em;
-        opacity: 0.45;
+      .solo img {
+        position: absolute; top: 50%; left: 50%;
+        width: 38%; transform: translate(-50%,-50%);
+        filter: brightness(0) invert(1);
       }
     </style>
   </head>
   <body>
     <div class="canvas" id="canvas">
+      <div class="lockup">
+        <svg viewBox="0 0 512 363" aria-hidden="true">
+          <path d="M45,0L105.89,0A45,45 0 0 1 146.58,25.78L239.69,222.87A45,45 0 0 1 244,242.09L244,316A45,45 0 0 1 199,361L45,361A45,45 0 0 1 0,316L0,45A45,45 0 0 1 45,0Z"/>
+          <path d="M466,0L405.11,0A45,45 0 0 0 364.42,25.78L271.31,222.87A45,45 0 0 0 267,242.09L267,316A45,45 0 0 0 312,361L466,361A45,45 0 0 0 511,316L511,45A45,45 0 0 0 466,0Z"/>
+        </svg>
+        <span>Mez Systems</span>
+      </div>
+
       <div class="copy">
         <div class="kicker" id="kicker"></div>
         <h1 class="title" id="title"></h1>
         <p class="sub" id="sub"></p>
       </div>
-      <div class="core" id="core"><img id="wings" alt="" /></div>
-      <span class="domain">mez.systems</span>
+
+      <div id="art"></div>
     </div>
+
     <script type="module">
-      import { params, gradientUrl, applyTheme, WINGS } from './shared.js';
+      import { params, gradientUrl, WINGS, PRODUCTS } from './shared.js?v=2';
+
+      const q = new URLSearchParams(location.search);
       const p = params();
-      applyTheme(document.getElementById('canvas'), p.theme);
-      document.getElementById('kicker').textContent = p.product.kicker;
-      document.getElementById('title').textContent = p.title || p.product.name;
+
+      document.getElementById('kicker').textContent = q.get('kicker') || p.product.kicker;
+      document.getElementById('title').textContent = q.get('title') || p.product.headline;
       const sub = document.getElementById('sub');
-      sub.textContent = p.sub || '';
-      if (!p.sub) sub.remove();
-      const core = document.getElementById('core');
-      core.style.backgroundImage = 'url("' + gradientUrl(p.gradient) + '")';
-      document.getElementById('wings').src = WINGS;
+      sub.textContent = q.get('sub') || p.product.summary || '';
+      if (!sub.textContent) sub.remove();
+
+      /* The five cards, in registry order, with the named one pulled forward. */
+      const ORDER = ['claude-code-os', 'context-engine', 'aios', 'ai-ads-system', 'organic-content-os'];
+      const SPLAY = [
+        { x: -196, y: 44, r: -17, s: 0.94 },
+        { x: -100, y: 12, r: -8.5, s: 0.97 },
+        { x: 0, y: -14, r: 0, s: 1 },
+        { x: 100, y: 12, r: 8.5, s: 0.97 },
+        { x: 196, y: 44, r: 17, s: 0.94 },
+      ];
+
+      const art = document.getElementById('art');
+      const mode = q.get('art') || (p.productKey === 'mez' ? 'fan' : 'core');
+
+      if (mode === 'fan') {
+        art.className = 'fan';
+        // Centre the named product when it is one of the five.
+        const focus = ORDER.indexOf(p.productKey);
+        const order = focus < 0 ? ORDER : ORDER.slice();
+        if (focus > -1 && focus !== 2) {
+          const t = order[2]; order[2] = order[focus]; order[focus] = t;
+        }
+        // Paint outward-in so the centre card lands on top.
+        [0, 4, 1, 3, 2].forEach(i => {
+          const key = order[i], meta = PRODUCTS[key], s = SPLAY[i];
+          const el = document.createElement('div');
+          el.className = 'card';
+          el.style.backgroundImage = 'url("' + gradientUrl(meta.gradient) + '")';
+          el.style.transform =
+            'translate(' + s.x + 'px,' + s.y + 'px) rotate(' + s.r + 'deg) scale(' + s.s + ')';
+          el.innerHTML =
+            '<img src="' + WINGS + '" alt="">' +
+            '<b>' + meta.name + '</b>' +
+            '<i>' + (meta.fn || '') + '</i>';
+          art.appendChild(el);
+        });
+      } else if (mode === 'core') {
+        art.className = 'solo';
+        art.style.backgroundImage = 'url("' + gradientUrl(p.gradient) + '")';
+        const img = document.createElement('img');
+        img.src = WINGS; img.alt = '';
+        art.appendChild(img);
+      }
     </script>
   </body>
 </html>

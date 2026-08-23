@@ -411,6 +411,33 @@ footer {
            real dark-mode variant the way mezcorp.co does it.</p>
       </div>
 
+      <div class="flatrow flatrow--stack" style="border-color:rgba(20,80,160,.28);background:#f6f9fd">
+        <p style="max-width:none"><strong>Proposed: a per-product favicon for /ai-os</strong>
+           — mez.systems keeps the base mark everywhere, and the product page
+           swaps in its own core. Same tile, same geometry, same wings; only
+           the fill changes, so it still reads as the family. Two takes, both
+           carrying MZ-G13 flattened to a ramp (a tab icon cannot run the
+           shader). Neither is wired up yet.</p>
+        <div class="icons">
+          <figure class="icon">
+            <span class="swatch"><img src="./live/favicon-ico-256.png" alt="base favicon"></span>
+            <figcaption>base<br><span class="badge badge--on">Every other page</span></figcaption>
+          </figure>
+          <figure class="icon">
+            <span class="swatch"><img src="./live/ai-os-favicon-a.svg" alt="AI OS favicon, variant A"></span>
+            <figcaption>A &middot; gradient wings<br><span class="badge">on the white tile</span></figcaption>
+          </figure>
+          <figure class="icon">
+            <span class="swatch"><img src="./live/ai-os-favicon-b.svg" alt="AI OS favicon, variant B"></span>
+            <figcaption>B &middot; white wings<br><span class="badge badge--fixed">Reads better at 16px</span></figcaption>
+          </figure>
+        </div>
+        <p style="max-width:none;font-size:12.5px;color:var(--text3)">
+           B wins on legibility: at tab size A&rsquo;s pale wings sit on white
+           and lose contrast, while B is a solid coloured tile that separates
+           from the base mark at a glance. A is the more conservative choice if
+           the white tile is meant to be invariant across the estate.</p>
+      </div>
       <div class="flatrow flatrow--stack">
         <p style="max-width:none"><strong>mezcorp.co adds a theme-aware pair</strong>
            on top of the shared <code>favicon.ico</code>. Two SVGs are declared
@@ -495,31 +522,29 @@ const ASSETS = {
       note: 'The studio site. A different property from this workbench.' },
   ],
   social: [
-    { name: 'Mez Systems', use: 'Company master · mez.systems links', w: 1200, h: 630,
-      href: CANVAS + 'og.html?product=mez&sub=AI%20operating%20systems%20for%20business' },
-    { name: 'AI OS', use: 'Product link previews · live', w: 1200, h: 630,
-      href: CANVAS + 'og.html?product=aios&sub=One%20system%20your%20whole%20business%20runs%20on.' },
-    { name: 'Context Engine', use: 'Product link previews · coming soon', w: 1200, h: 630,
+    { name: 'Mez Systems', use: 'Company master \u00b7 mez.systems links', w: 1200, h: 630,
+      href: CANVAS + 'og.html?product=mez' },
+    { name: 'AI OS', use: 'Product link previews \u00b7 live', w: 1200, h: 630,
+      href: CANVAS + 'og.html?product=aios' },
+    { name: 'Context Engine', use: 'Product link previews \u00b7 coming soon', w: 1200, h: 630,
       href: CANVAS + 'og.html?product=context-engine' },
-    { name: 'AI Ads System', use: 'Product link previews · coming soon', w: 1200, h: 630,
+    { name: 'AI Ads System', use: 'Product link previews \u00b7 coming soon', w: 1200, h: 630,
       href: CANVAS + 'og.html?product=ai-ads-system' },
-    { name: 'Claude Code OS', use: 'Product link previews · coming soon', w: 1200, h: 630,
+    { name: 'Claude Code OS', use: 'Product link previews \u00b7 coming soon', w: 1200, h: 630,
       href: CANVAS + 'og.html?product=claude-code-os' },
-    { name: 'Organic Content OS', use: 'Product link previews · coming soon', w: 1200, h: 630,
+    { name: 'Organic Content OS', use: 'Product link previews \u00b7 coming soon', w: 1200, h: 630,
       href: CANVAS + 'og.html?product=organic-content-os' },
   ],
   banners: [
-    { name: 'Mez Studios · running now', use: 'The banner live on LinkedIn today, rebuilt as a template · Figma node 1:5907', w: 1584, h: 396,
+    { name: 'Mez Studios \u00b7 running now', use: 'The banner live on LinkedIn today, rebuilt as a template \u00b7 Figma node 1:5907', w: 1584, h: 396,
       href: CANVAS + 'statement.html?preset=linkedin' },
-    { name: 'Statement · alternate line', use: 'Same template, headline swapped from the URL', w: 1584, h: 396,
+    { name: 'Statement \u00b7 alternate line', use: 'Same template, headline swapped from the URL', w: 1584, h: 396,
       href: CANVAS + 'statement.html?preset=linkedin&line=we%20install%20the%20system.' },
-    { name: 'Statement · charcoal', use: 'Dark variant of the same lockup', w: 1584, h: 396,
-      href: CANVAS + 'statement.html?preset=linkedin&theme=dark' },
-    { name: 'Mez Systems · company', use: 'Product-identity header, full family of cores', w: 1584, h: 396,
+    { name: 'Mez Systems \u00b7 product family', use: 'Company header, all five cards fanned', w: 1584, h: 396,
       href: CANVAS + 'banner.html?preset=linkedin' },
-    { name: 'Mez Systems · X', use: 'Profile header, taller crop', w: 1500, h: 500,
+    { name: 'Mez Systems \u00b7 X', use: 'Profile header, taller crop', w: 1500, h: 500,
       href: CANVAS + 'banner.html?preset=x' },
-    { name: 'Mez Systems · AI OS', use: 'Product-page header, single core', w: 1584, h: 396,
+    { name: 'AI OS \u00b7 product', use: 'Single-product header, its own core', w: 1584, h: 396,
       href: CANVAS + 'banner.html?preset=linkedin&product=aios' },
   ],
 };
