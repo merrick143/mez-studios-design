@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "GATE-B-AI-OS-SOCIAL-STATIC",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R06",
+  "candidateRevision": "havstock-ai-os-social-static-r06",
+  "verdict": "gate-b",
+  "outcome": "pass",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Codex design-critique",
+  "productionAuthority": false,
+  "score": {
+    "total": 72,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 5,
+      "typography": 5,
+      "productTruth": 5,
+      "distinctiveness": 5,
+      "narrative": 5,
+      "conversionClarity": 4,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    },
+    "doubleWeighted": [
+      "hierarchy",
+      "composition",
+      "productTruth",
+      "distinctiveness"
+    ]
+  },
+  "namedTests": {
+    "T1GreyscaleAndStripTest": "Pass. The hook, identity label, device or native proof and three outcome cards preserve their reading order without depending on the colour of the glow or AI OS disc.",
+    "T2RepeatingCardTest": "Pass. The outcome cards now repeat one deliberate Notion, AI OS disc, Notion sequence with identical optical slots while the supporting copy and proof source provide the frame-level variation.",
+    "T3HeroMotionTest": "Pass as not applicable. R06 is a static batch and makes no motion claim.",
+    "T4ExistingSystemTest": "Pass. The Notion marks are clones of the existing real asset, the AI OS identity uses the canonical MZ-G13 image with exact Wings, and the three mockups retain their repository-catalogued source images."
+  },
+  "antiSlopSweep": {
+    "outcome": "pass",
+    "notes": [
+      "No arbitrary symbol, emoji, sparkle, arrow or bare-Wings outcome icon remains.",
+      "Inline AI OS is a 34px canonical disc followed by text on a neutral utility pill with one restrained border.",
+      "All 15 outcome icons occupy 48 by 48 optical slots and align to the same card inset.",
+      "The MacBook, Mac Studio and dual-iPhone subjects are fully legible at 1080 by 1350 and no visible proof-card chrome was added.",
+      "No fake payment, booking, member, customer, revenue or activity notification was added."
+    ]
+  },
+  "resolvedFindings": [
+    {
+      "id": "HUMAN-R05-OUTCOME-ICON-SYSTEM",
+      "resolution": "Replaced the mixed icon grammar with a repeated real Notion, MZ-G13 AI OS disc, real Notion identity sequence across all five frames."
+    },
+    {
+      "id": "HUMAN-R05-INLINE-AI-OS",
+      "resolution": "Rebuilt both AI OS labels as a 34px MZ-G13 disc with exact Wings followed by white AI OS text on a neutral solid pill."
+    },
+    {
+      "id": "HUMAN-R05-DEVICE-COMPOSITION",
+      "resolution": "Measured each source PNG alpha bound, recomposed the full canvas against the visible hardware subject and inspected all three final frame renders."
+    }
+  ],
+  "figma": {
+    "fileKey": "k6jJPY2ViCmg4CiZQhwiBF",
+    "pageId": "0:1",
+    "sectionId": "1397:936",
+    "frameIds": [
+      "1397:937",
+      "1397:1014",
+      "1397:1091",
+      "1397:1171",
+      "1397:1251"
+    ],
+    "frameSize": "1080x1350",
+    "export": "PNG 1x",
+    "structuralAudit": "pass: 15 coherent identity icons, two solid AI OS labels, zero legacy outcome glyphs, three subject-bound device geometries and no missing font families",
+    "visualInspection": "pass: final five-frame batch plus all three device variants rendered and inspected at 1080 by 1350"
+  },
+  "unresolvedRisks": [
+    "No screenshot has approved-public status; redaction and explicit human approval remain required before publishing.",
+    "The three supplied device compositions still require line-by-line review of embedded product data.",
+    "Paid advertising remains a priority-deferred and uncertified channel family.",
+    "R06 remains a Playground candidate until Olli records a keep, revise or kill decision."
+  ],
+  "outputStatus": "candidate"
+}

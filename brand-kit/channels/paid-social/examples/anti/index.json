@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "1.0.0", "purpose": "Contrastive fixtures for deterministic and human review. These are failure definitions, not public creative.",
+  "examples": [
+    {"id": "ANTI-PRICE-STALE", "file": "anti-price-stale.json", "expectedFailures": ["missing current product-price verification", "missing current category evidence"]},
+    {"id": "ANTI-FAKE-PROOF", "file": "anti-fake-proof.json", "expectedFailures": ["fabricated interface proof", "unapproved screenshot status", "invented outcome notification"]},
+    {"id": "ANTI-LAYOUT-DRIFT", "file": "anti-layout-drift.json", "expectedFailures": ["wrong canvas ratio", "unapproved headline family", "device card decoration", "headline competition"]}
+  ]
+}

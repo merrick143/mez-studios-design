@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en-AU">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{NAME}} · Living Core candidate</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:32px;background:#F8F8F8;color:#2E2E2E;font-family:system-ui,sans-serif}main{max-width:1100px;margin:auto}h1{font-size:clamp(32px,5vw,56px);letter-spacing:-.044em;line-height:1;margin:32px 0 16px}p{max-width:64ch;line-height:1.5}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}figure{margin:0;background:#fff;padding:24px;border-radius:24px;display:grid;justify-items:center;align-content:center;gap:24px}figure>img{width:min(100%,360px);border-radius:16px}.core{position:relative;width:min(100%,360px);aspect-ratio:1;overflow:hidden;border-radius:50%;background:url('./static.webp') center/cover}.core[data-mz-core-mode=live]{background-image:none}.wings{position:absolute;width:39%;height:auto;top:50%;left:50%;transform:translate(-50%,-50%);filter:brightness(0) invert(1);z-index:2}.core[data-shape=wings] .wings{display:none}figcaption{font-size:14px;color:#666662}select{font:inherit;padding:12px;border:1px solid #DADAD6;border-radius:12px;margin-top:24px;max-width:100%}a{color:inherit}a:focus-visible,select:focus-visible{outline:3px solid #1A56DB;outline-offset:3px}@media(max-width:650px){body{padding:20px}.comparison{grid-template-columns:1fr}}
+</style>
+<main><p>Research candidate · {{ID}}</p><h1>{{NAME}}</h1><p>The source PNG owns the colour. The Living Core approximates it in motion. This candidate has not been promoted or assigned to a product.</p>
+<label for="shape">Expression </label><select id="shape"><option value="sphere">Sphere</option><option value="disc">Disc</option><option value="card">Card</option><option value="pill">Pill</option><option value="wings">Wings</option></select>
+<div class="comparison"><figure><img src="source.png" alt="Source colour composition"><figcaption>Source PNG</figcaption></figure><figure><div class="core" id="core" data-mz-core="{{ID}}" data-shape="sphere"><img class="wings" src="wings.svg" alt=""></div><figcaption id="mode">Static fallback</figcaption></figure></div>
+<p><a href="source.png" download>Download source PNG</a> · <a href="static.webp" download>Download lossless static twin</a> · <a href="candidate.json" download>Download metadata</a></p>
+<noscript><p>JavaScript is required for animation and expression switching. The source and static fallback above remain available.</p></noscript></main>
+<script type="module">
+import {mountLivingCores} from './mz-core.js';
+const core={{CORE}};const node=document.querySelector('#core');const query=new URLSearchParams(location.search);
+const result=await mountLivingCores(document,{catalogue:{cores:{candidate:core}},staticBaseUrl:new URL('./',location.href).href,wingsUrl:new URL('./wings.svg',location.href).href,forceStatic:query.has('static'),disableWebGL:query.has('no-webgl')});
+const updateMode=()=>document.querySelector('#mode').textContent=result.renderer.isStaticMode()?'Exact static fallback':'Living Core · animated approximation';updateMode();matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',updateMode);
+document.querySelector('#shape').addEventListener('change',event=>{const shape=event.target.value;node.style.aspectRatio=shape==='card'?'3/4':shape==='pill'?'3.5':shape==='wings'?'512/363':'1';node.style.borderRadius=['sphere','disc'].includes(shape)?'50%':shape==='pill'?'9999px':shape==='wings'?'0':'24px';node.dataset.shape=shape;result.renderer.setShape(node,['card','pill'].includes(shape)?'rect':shape,shape==='pill'?.5:shape==='card'?.08:0);result.renderer.resize();});
+</script>
+</html>

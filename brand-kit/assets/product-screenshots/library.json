@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "libraryId": "mz.systems.assets.product-screenshots",
+  "taskId": "TASK-CHAN-ADS-PRODUCT-SCREENSHOT-LIBRARY",
+  "status": "intake-ready",
+  "productionAuthority": false,
+  "canonicalRegistry": "../../registry/products.json",
+  "products": [
+    {
+      "productId": "mz.systems.product.aios",
+      "slug": "aios",
+      "publicName": "AI OS",
+      "manifest": "products/aios/manifest.json"
+    },
+    {
+      "productId": "mz.systems.product.context-engine",
+      "slug": "context-engine",
+      "publicName": "Context Engine",
+      "manifest": "products/context-engine/manifest.json"
+    },
+    {
+      "productId": "mz.systems.product.ai-ads-system",
+      "slug": "ai-ads-system",
+      "publicName": "AI Ads System",
+      "manifest": "products/ai-ads-system/manifest.json"
+    },
+    {
+      "productId": "mz.systems.product.claude-code-os",
+      "slug": "claude-code-os",
+      "publicName": "Claude Code OS",
+      "manifest": "products/claude-code-os/manifest.json"
+    },
+    {
+      "productId": "mz.systems.product.organic-content-os",
+      "slug": "organic-content-os",
+      "publicName": "Organic Content OS",
+      "manifest": "products/organic-content-os/manifest.json"
+    }
+  ],
+  "sharedManifest": "shared-operating-system/manifest.json",
+  "referenceCollections": [
+    {
+      "collectionId": "mz.systems.product-screenshots.reference.notion-first-party",
+      "name": "Notion first-party creative",
+      "manifest": "reference-material/notion-first-party/manifest.json",
+      "usageBoundary": "reference-only"
+    }
+  ]
+}

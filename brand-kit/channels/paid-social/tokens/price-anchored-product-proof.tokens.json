@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "formatId": "mz.systems.format.paid-social.price-anchored-product-proof",
+  "source": "approved R07 Figma frames; canonical foundation roles remain inherited",
+  "canvas": {"width": 1080, "height": 1350, "ratio": "4:5", "background": "charcoal"},
+  "safeZone": {"top": 64, "right": 64, "bottom": 48, "left": 64, "unit": "px"},
+  "grid": {"visible": true, "treatment": "light-low-contrast", "rule": "Never stronger than the product proof or body copy."},
+  "headline": {"familyToken": "fontFamily.display", "authoringFamily": "Geist", "style": "Medium", "weight": 500, "sizeRangePx": [65, 82], "lineHeight": 0.96, "trackingEm": -0.045, "lines": 2},
+  "supporting": {"familyToken": "fontFamily.body", "authoringFamily": "Inter", "weightRange": [400, 650]},
+  "productProof": {"regionHeightPx": 700, "nativeCornerRadiusPx": 18, "deviceFrame": {"fill": "none", "stroke": "none", "shadow": "none", "cornerRadius": 0}},
+  "outcomeCard": {"count": 3, "iconSlotPx": 48, "shadow": ["0 8px 18px rgba(0,0,0,0.18)", "0 20px 52px rgba(0,0,0,0.24)"], "rule": "Use a real Notion mark or the canonical AI OS disc; never a generic app-tile glyph."},
+  "glow": {"direction": "downward", "variants": ["cool-cyan-overhead", "warm-amber-upper-left", "violet-upper-right", "neutral-downlight", "dual-blue-cyan-low"], "rule": "Glow is atmospheric and may vary. It must not carry hierarchy or substitute for product identity."}
+}

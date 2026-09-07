@@ -125,6 +125,7 @@ Figma mirrors the system. It does not own independent values.
 ## Phase 6: channel systems
 
 - `UI-01` Product UI and data visualisation — complete. The code-first operational ledger proves the shared shell, real bounded views, accessible data view, complete states, densities and 320–1440 reflow through a repository-backed fixture. Gate B passed at 67/75; Olli approved the non-production foundation direction through `H-UI-01-PRODUCT-UI-FOUNDATION` on 28 July 2026.
+- `CHAN-PAID-01` Static: Price-Anchored Product Proof — complete as a bounded `CRAFT_APPROVED` format. Olli approved the exact AI OS R07 batch through `H-CHAN-PAID-01-FORMAT-PROOF` on 6 August 2026. The standard local pack, five golden examples, three anti-examples, format validator, execution skill, SOP, measurement plan and linked Notion mirrors exist. This does not certify paid social, prove performance, approve raw screenshots for public use or authorise campaign launch.
 - `CHAN-01` Remaining channel systems — priority-deferred by `SEQ-PRODUCT-UI-FIRST-001`. Shared rules, paid advertising, organic social, email, presentations, reports/documents, motion/video, OG/icons and print/environmental retain future contracts and human gates; none are implied complete.
 - Marketing web and commerce remain represented by the canonical components and Golden Homepage; real consumer ingestion is still deferred.
 

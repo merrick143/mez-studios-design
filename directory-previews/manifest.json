@@ -1,0 +1,55 @@
+{
+  "capturedOn": "2026-09-07",
+  "sourceOrigin": "http://127.0.0.1:8914",
+  "sourceBaseCommit": "36bd6bc6eab6942274b209735175a507fd0c55bf",
+  "sourceState": "Local worktree, including preserved pre-existing changes",
+  "method": "Unedited browser viewport captures of the actual pages",
+  "refreshPolicy": "Static previews; recapture when the destination changes materially",
+  "captures": [
+    {
+      "file": "brand-kit.png",
+      "route": "/brand-kit/app/#/item/system/colour",
+      "state": "Colour foundation in the current console",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 67838,
+      "sha256": "45498d26fddbd23a98dabce104a1d8adc5b51a388b040180fb811363339135b8"
+    },
+    {
+      "file": "asset-studio.png",
+      "route": "/asset-studio/#social",
+      "state": "Social-sharing gallery with six product templates",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 81924,
+      "sha256": "32ef151ffdf2d540d794e1b795e982b7cd9096285409b678dd572d990e0d0461"
+    },
+    {
+      "file": "explore-menu.png",
+      "route": "/explore-menu/",
+      "state": "Explore menu expanded through its real control",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 52854,
+      "sha256": "3419591c69431df97b063e142372e45e5d14745c327610c3cb7f69a69f8712ff"
+    },
+    {
+      "file": "play-orb.png",
+      "route": "/play-orb/",
+      "state": "Gradient treatment comparison section",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 63800,
+      "sha256": "5753c856843ad4b3ca644ae2bc71953ce7963815b3e50c4e87bb127c5a004b49"
+    },
+    {
+      "file": "legacy-workbench.png",
+      "route": "/brand-kit/legacy.html#core",
+      "state": "Source comparison in the original workbench",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 78712,
+      "sha256": "6856ae543f6e524e82ab4055d98d460d2561c2adc0f5c72cee5b8f7caf11a132"
+    }
+  ]
+}

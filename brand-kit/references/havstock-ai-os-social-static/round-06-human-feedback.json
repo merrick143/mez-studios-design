@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R06",
+  "candidateRevision": "havstock-ai-os-social-static-r06",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Olli",
+  "outcome": "revise",
+  "productionAuthority": false,
+  "summary": "Keep the corrected R06 visual system and run a new copy round around the reference's decisive price anchor.",
+  "requiredCorrection": [
+    "Study why the reference's expensive-category price followed by the low product price works so well.",
+    "Use the same decision-framing mechanism for the AI OS with verified, current numbers.",
+    "Build the result as a separate new Playground round."
+  ],
+  "nextRevision": "havstock-ai-os-social-static-r07"
+}

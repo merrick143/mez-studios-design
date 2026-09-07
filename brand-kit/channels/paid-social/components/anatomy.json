@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "formatId": "mz.systems.format.paid-social.price-anchored-product-proof",
+  "readingOrder": ["audience pill", "category-cost headline", "lower-price first-step headline", "inline product label and supporting explanation", "truth signals", "real product proof", "three floating outcome cards"],
+  "requiredComponents": [
+    {"id": "audience-pill", "role": "qualify the viewer", "constraint": "Short and optically padded on both sides; never a full sentence."},
+    {"id": "price-anchor-headline", "role": "frame the expensive category and smaller first step", "constraint": "Exactly two deliberate lines in Geist Medium; rewrite instead of shrinking below the approved range."},
+    {"id": "inline-product-label", "role": "name Notion or AI OS inside supporting copy", "constraint": "Use either the real Notion mark plus Notion or the MZ-G13 disc plus AI OS. No gradient pill behind the words."},
+    {"id": "truth-signals", "role": "supply two concise offer facts", "constraint": "Every tick statement must be currently true; ticks use a functional accent that reads above the body copy."},
+    {"id": "product-proof", "role": "make the product tangible", "constraint": "Authentic local screenshot or supplied composition only. Native proof may have a restrained top-corner treatment; device subjects have no enclosing card."},
+    {"id": "outcome-cards", "role": "translate visible capability into three outcomes", "constraint": "Exactly three cards, real Notion or canonical AI OS icons, stronger shadow than the proof surface, no invented notifications or fake revenue events."}
+  ],
+  "variationAxes": {"glow": ["cool", "warm", "violet", "neutral", "dual-low"], "titleMark": ["ai-os-disc-wings", "ai-os-disc", "notion-mark"], "inlineLabel": ["notion", "ai-os-disc-text"], "proof": ["native", "device-composition"]},
+  "lockedAcrossVariants": ["canvas ratio", "headline family and weight", "reading order", "real proof requirement", "three-card count", "grid restraint", "public preflight"]
+}

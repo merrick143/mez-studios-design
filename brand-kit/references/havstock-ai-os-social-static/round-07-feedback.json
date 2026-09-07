@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "GATE-B-AI-OS-SOCIAL-STATIC",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R07",
+  "candidateRevision": "havstock-ai-os-social-static-r07",
+  "verdict": "gate-b",
+  "outcome": "pass",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Codex design-critique",
+  "productionAuthority": false,
+  "score": {
+    "total": 72,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 5,
+      "typography": 5,
+      "productTruth": 5,
+      "distinctiveness": 5,
+      "narrative": 5,
+      "conversionClarity": 5,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 3
+    },
+    "doubleWeighted": [
+      "hierarchy",
+      "composition",
+      "productTruth",
+      "distinctiveness"
+    ]
+  },
+  "namedTests": {
+    "T1GreyscaleAndStripTest": "Pass. The category price, product price, product identity and proof surface retain their order without relying on glow colour or gradient material.",
+    "T2RepeatingCardTest": "Pass by controlled comparison intent. R07 deliberately locks the R06 composition and varies only the price-anchor sentence across five independently addressable frames.",
+    "T3HeroMotionTest": "Pass as not applicable. R07 is a static batch and makes no motion claim.",
+    "T4ExistingSystemTest": "Pass. The `$99` price matches the live AI OS offer, the `$5,000` floor is supported by current public Notion consulting ranges, and every product proof, mark and outcome remains inherited from the audited R06 system."
+  },
+  "antiSlopSweep": {
+    "outcome": "pass",
+    "notes": [
+      "The round does not calculate or display a fabricated percentage saving.",
+      "Four executions use explicit `start with` or `first` language; the labelled comparison does not state feature equivalence.",
+      "No fake payment, booking, member, revenue or customer receipt was added.",
+      "The high originality risk is acknowledged: the price-anchor mechanism comes from the named Havstock reference, while the wording, product proof and identity are Mez-specific.",
+      "All five frames remain legible in the 4096px-wide batch render and at the final 1080 by 1350 frame size."
+    ]
+  },
+  "findings": [
+    {
+      "id": "R07-ORIGINALITY-RISK",
+      "severity": "taste-call",
+      "status": "open",
+      "detail": "R07-01 has the strongest conversion clarity but is also closest to the reference's question-and-imperative syntax. R07-05 is the preferred alternate if greater syntactic distance is required."
+    }
+  ],
+  "figma": {
+    "fileKey": "k6jJPY2ViCmg4CiZQhwiBF",
+    "pageId": "0:1",
+    "sectionId": "1407:936",
+    "frameIds": [
+      "1407:937",
+      "1407:1015",
+      "1407:1093",
+      "1407:1175",
+      "1407:1257"
+    ],
+    "frameSize": "1080x1350",
+    "export": "PNG 1x",
+    "structuralAudit": "pass: five frames, five `$99` anchors, five category anchors, 15 outcome cards, five authentic proof compositions, zero missing headline fonts and zero deleted CTA strings revived",
+    "visualInspection": "pass: complete batch and all five individual frames rendered and inspected at 1080 by 1350"
+  },
+  "champion": {
+    "frameId": "1407:937",
+    "name": "R07-01",
+    "reason": "The category is immediate, the `$99` decision is explicit and `start with` keeps the comparison honest."
+  },
+  "unresolvedRisks": [
+    "The live AI OS price can change and must be revalidated before publishing.",
+    "The consulting range is external category evidence, not a universal market guarantee.",
+    "No screenshot has approved-public status; redaction and explicit human approval remain required.",
+    "Paid advertising remains a priority-deferred and uncertified channel family.",
+    "R07 remains a Playground candidate until Olli records a keep, revise or kill decision."
+  ],
+  "outputStatus": "candidate"
+}

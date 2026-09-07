@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0",
+  "libraryId": "mz.systems.product-screenshots.claude-code-os",
+  "productId": "mz.systems.product.claude-code-os",
+  "productSlug": "claude-code-os",
+  "publicName": "Claude Code OS",
+  "productionAuthority": false,
+  "captures": []
+}

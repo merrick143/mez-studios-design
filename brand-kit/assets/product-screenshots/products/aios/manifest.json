@@ -1,0 +1,1030 @@
+{
+  "schemaVersion": "1.0.0",
+  "libraryId": "mz.systems.product-screenshots.aios",
+  "productId": "mz.systems.product.aios",
+  "productSlug": "aios",
+  "publicName": "AI OS",
+  "productionAuthority": false,
+  "captures": [
+    {
+      "id": "aios-stride-okrs-kpis",
+      "assetClass": "native-capture",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/originals/aios-stride-okrs-kpis.png",
+      "originalFilename": "04 notion template screenshots.png",
+      "sha256": "5a58f6e5bac8f02c14e6b34e75a95fb2d71f05c9deb274c86d71c7648ab9fc79",
+      "width": 1670,
+      "height": 1080,
+      "capturedAt": null,
+      "productPage": "Stride System · 12 Week Strides",
+      "platform": "notion",
+      "pageType": "dashboard",
+      "notionWidth": "full-width",
+      "chrome": "app-only",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "Mez Corp workspace name",
+        "commercial target values",
+        "example operating data"
+      ],
+      "description": "Full-width Stride System view showing OKRs, KPIs and projects.",
+      "proofRole": "Shows strategy, measurement and execution connected on one operating surface.",
+      "alt": "AI OS Stride System with 12-week OKRs, KPI tracking and linked projects.",
+      "cropRecommendations": [
+        {
+          "id": "proof-16x9",
+          "aspectRatio": "16:9",
+          "useCase": "ad-static",
+          "viewTreatment": "near-native",
+          "crop": {
+            "x": 0,
+            "y": 125,
+            "width": 1670,
+            "height": 939
+          },
+          "focalPoint": {
+            "x": 0.45,
+            "y": 0.58
+          },
+          "notes": "Remove most top chrome while retaining the live database structure."
+        },
+        {
+          "id": "square-kpis",
+          "aspectRatio": "1:1",
+          "useCase": "carousel",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 120,
+            "y": 0,
+            "width": 1080,
+            "height": 1080
+          },
+          "focalPoint": {
+            "x": 0.38,
+            "y": 0.55
+          },
+          "notes": "Keep the OKR and KPI relationship; expect the projects section to fall below the crop."
+        }
+      ]
+    },
+    {
+      "id": "aios-stride-projects-archive",
+      "assetClass": "native-capture",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/originals/aios-stride-projects-archive.png",
+      "originalFilename": "05 notion template screenshots.png",
+      "sha256": "b8d7071662411e4fc008ddcccfc808c1b3291c275d6e3953c497a1bf5fc330a6",
+      "width": 1670,
+      "height": 1080,
+      "capturedAt": null,
+      "productPage": "Stride System · Projects",
+      "platform": "notion",
+      "pageType": "database-table",
+      "notionWidth": "full-width",
+      "chrome": "app-only",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "Mez Corp workspace name",
+        "commercial project labels",
+        "example operating dates"
+      ],
+      "description": "Full-width project database linked to the 12-week Stride and its archive.",
+      "proofRole": "Shows projects connected to priorities, progress, tasks and a review archive.",
+      "alt": "AI OS project database with priority, progress, status, tasks, dates and linked OKRs.",
+      "cropRecommendations": [
+        {
+          "id": "proof-16x9",
+          "aspectRatio": "16:9",
+          "useCase": "ad-static",
+          "viewTreatment": "near-native",
+          "crop": {
+            "x": 0,
+            "y": 125,
+            "width": 1670,
+            "height": 939
+          },
+          "focalPoint": {
+            "x": 0.48,
+            "y": 0.4
+          },
+          "notes": "Prioritise the project table; retain enough archive context to show system continuity."
+        }
+      ]
+    },
+    {
+      "id": "aios-weekly-sprint-notion-ai",
+      "assetClass": "native-capture",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/originals/aios-weekly-sprint-notion-ai.png",
+      "originalFilename": "08 notion template screenshots.png",
+      "sha256": "f59abbe2139f33fae3f6e99960aeb8a093c1e22303014394639d49ca1b68c6c6",
+      "width": 1670,
+      "height": 1080,
+      "capturedAt": null,
+      "productPage": "Weekly Sprint Plan",
+      "platform": "notion",
+      "pageType": "workflow",
+      "notionWidth": "centred",
+      "chrome": "app-only",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "user avatar",
+        "named proposal recipient",
+        "weekly output details"
+      ],
+      "description": "Weekly Sprint Plan opened from its database with Notion AI alongside it.",
+      "proofRole": "Shows the AI OS supplying structured business context to a live Notion AI workflow.",
+      "alt": "Weekly Sprint Plan in AI OS with structured properties, review prompts and Notion AI.",
+      "cropRecommendations": [
+        {
+          "id": "proof-16x9",
+          "aspectRatio": "16:9",
+          "useCase": "ad-static",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 0,
+            "y": 100,
+            "width": 1670,
+            "height": 939
+          },
+          "focalPoint": {
+            "x": 0.53,
+            "y": 0.48
+          },
+          "notes": "Preserve the three-part database, page and Notion AI relationship."
+        }
+      ]
+    },
+    {
+      "id": "aios-home-dashboard",
+      "assetClass": "native-capture",
+      "curationTier": "hero",
+      "sourceFile": "products/aios/originals/aios-home-dashboard.png",
+      "originalFilename": "Screenshot 2026-08-06 at 11.13.48 am.png",
+      "sha256": "43792c95b1a77f277aa505bacca94d601e008c912b780e51f48c0f6980e1756d",
+      "width": 3456,
+      "height": 2168,
+      "capturedAt": "2026-08-06T11:13:48+08:00",
+      "productPage": "AI OS Template home",
+      "platform": "notion",
+      "pageType": "system-home",
+      "notionWidth": "full-width",
+      "chrome": "app-only",
+      "privacy": "public-safe-candidate",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "template person names",
+        "example task labels"
+      ],
+      "description": "Wide AI OS home showing quick links, CEO tasks and people on one clean operating view.",
+      "proofRole": "Primary overview proof for the connected AI OS.",
+      "alt": "AI OS home with connected quick links, CEO tasks and people databases.",
+      "cropRecommendations": [
+        {
+          "id": "proof-16x9",
+          "aspectRatio": "16:9",
+          "useCase": "ad-static",
+          "viewTreatment": "near-native",
+          "crop": {
+            "x": 0,
+            "y": 90,
+            "width": 3456,
+            "height": 1944
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.58
+          },
+          "notes": "Best wide proof crop. Retain the AI-native banner, page title and the three connected columns."
+        },
+        {
+          "id": "square-centre",
+          "aspectRatio": "1:1",
+          "useCase": "carousel",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 644,
+            "y": 0,
+            "width": 2168,
+            "height": 2168
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.57
+          },
+          "notes": "Centre the task system while keeping useful portions of quick links and people."
+        },
+        {
+          "id": "portrait-4x5",
+          "aspectRatio": "4:5",
+          "useCase": "ad-static",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 861,
+            "y": 0,
+            "width": 1734,
+            "height": 2168
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.58
+          },
+          "notes": "Focus the task database for a portrait static."
+        },
+        {
+          "id": "story-9x16",
+          "aspectRatio": "9:16",
+          "useCase": "other",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 1118,
+            "y": 0,
+            "width": 1219,
+            "height": 2168
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.58
+          },
+          "notes": "Narrow mobile proof centred on tasks; use only when surrounding copy supplies context."
+        }
+      ]
+    },
+    {
+      "id": "aios-hubs-directory",
+      "assetClass": "native-capture",
+      "curationTier": "hero",
+      "sourceFile": "products/aios/originals/aios-hubs-directory.png",
+      "originalFilename": "Screenshot 2026-08-06 at 11.14.05 am.png",
+      "sha256": "4d8aa5a5547a3440f4b72ac8263a39feeab79da28d9d9aa69971b7ce09629394",
+      "width": 3456,
+      "height": 2174,
+      "capturedAt": "2026-08-06T11:14:05+08:00",
+      "productPage": "HUBs",
+      "platform": "notion",
+      "pageType": "dashboard",
+      "notionWidth": "full-width",
+      "chrome": "app-only",
+      "privacy": "public-safe-candidate",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "template person names",
+        "example client names"
+      ],
+      "description": "Full-width hub directory connecting the Stride System, documentation, content, people, clients and leads.",
+      "proofRole": "Shows business functions organised into one connected AI-ready operating system.",
+      "alt": "AI OS hub directory with operating hubs, people and client databases.",
+      "cropRecommendations": [
+        {
+          "id": "proof-16x9",
+          "aspectRatio": "16:9",
+          "useCase": "ad-static",
+          "viewTreatment": "near-native",
+          "crop": {
+            "x": 0,
+            "y": 100,
+            "width": 3456,
+            "height": 1944
+          },
+          "focalPoint": {
+            "x": 0.42,
+            "y": 0.46
+          },
+          "notes": "Best wide proof crop. Keep the three operating hubs and the people and client sections."
+        },
+        {
+          "id": "square-left",
+          "aspectRatio": "1:1",
+          "useCase": "carousel",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 180,
+            "y": 0,
+            "width": 2174,
+            "height": 2174
+          },
+          "focalPoint": {
+            "x": 0.38,
+            "y": 0.48
+          },
+          "notes": "Prioritise the hub cards and first people records."
+        },
+        {
+          "id": "portrait-4x5",
+          "aspectRatio": "4:5",
+          "useCase": "ad-static",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 300,
+            "y": 0,
+            "width": 1739,
+            "height": 2174
+          },
+          "focalPoint": {
+            "x": 0.35,
+            "y": 0.47
+          },
+          "notes": "Use the left operating spine rather than cutting through the hub cards."
+        },
+        {
+          "id": "story-9x16",
+          "aspectRatio": "9:16",
+          "useCase": "other",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 300,
+            "y": 0,
+            "width": 1223,
+            "height": 2174
+          },
+          "focalPoint": {
+            "x": 0.3,
+            "y": 0.46
+          },
+          "notes": "Narrow proof of the hub stack; pair with an explicit AI OS claim."
+        }
+      ]
+    },
+    {
+      "id": "aios-stride-system",
+      "assetClass": "native-capture",
+      "curationTier": "hero",
+      "sourceFile": "products/aios/originals/aios-stride-system.png",
+      "originalFilename": "Screenshot 2026-08-06 at 11.14.28 am.png",
+      "sha256": "b2f10a2f0d4dd45b1f1eddd71b1320725ac653a2fb780ca70f9baaf97e669730",
+      "width": 3456,
+      "height": 2168,
+      "capturedAt": "2026-08-06T11:14:28+08:00",
+      "productPage": "Stride System",
+      "platform": "notion",
+      "pageType": "workflow",
+      "notionWidth": "full-width",
+      "chrome": "app-only",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "user avatar"
+      ],
+      "description": "Full-width Stride System instructions and current-stride setup.",
+      "proofRole": "Shows the product's 12-week execution method and structured operating prompts.",
+      "alt": "AI OS Stride System with execution purpose, setup instructions and current-stride workflow.",
+      "cropRecommendations": [
+        {
+          "id": "proof-16x9",
+          "aspectRatio": "16:9",
+          "useCase": "ad-static",
+          "viewTreatment": "near-native",
+          "crop": {
+            "x": 0,
+            "y": 160,
+            "width": 3456,
+            "height": 1944
+          },
+          "focalPoint": {
+            "x": 0.45,
+            "y": 0.56
+          },
+          "notes": "Remove most chrome and retain the Stride title, purpose and setup block."
+        },
+        {
+          "id": "square-system",
+          "aspectRatio": "1:1",
+          "useCase": "carousel",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 420,
+            "y": 0,
+            "width": 2168,
+            "height": 2168
+          },
+          "focalPoint": {
+            "x": 0.42,
+            "y": 0.56
+          },
+          "notes": "Keep the large system title and setup instructions."
+        },
+        {
+          "id": "portrait-4x5",
+          "aspectRatio": "4:5",
+          "useCase": "ad-static",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 520,
+            "y": 0,
+            "width": 1734,
+            "height": 2168
+          },
+          "focalPoint": {
+            "x": 0.4,
+            "y": 0.55
+          },
+          "notes": "Focus the method and first-time setup content."
+        },
+        {
+          "id": "story-9x16",
+          "aspectRatio": "9:16",
+          "useCase": "other",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 500,
+            "y": 0,
+            "width": 1219,
+            "height": 2168
+          },
+          "focalPoint": {
+            "x": 0.36,
+            "y": 0.55
+          },
+          "notes": "Use when the surrounding static explains the Stride concept."
+        }
+      ]
+    },
+    {
+      "id": "aios-documentation-hub",
+      "assetClass": "native-capture",
+      "curationTier": "hero",
+      "sourceFile": "products/aios/originals/aios-documentation-hub.png",
+      "originalFilename": "Screenshot 2026-08-06 at 11.14.49 am.png",
+      "sha256": "48b899ab6d671ba11466daaf50c4111cbaf8818a9938c1ba34e81fcc862cbfac",
+      "width": 3456,
+      "height": 2170,
+      "capturedAt": "2026-08-06T11:14:49+08:00",
+      "productPage": "Documentation",
+      "platform": "notion",
+      "pageType": "document",
+      "notionWidth": "centred",
+      "chrome": "app-only",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "user avatar"
+      ],
+      "description": "Centred Documentation hub with the master documentation prompt, context questionnaire and refinement prompts.",
+      "proofRole": "Shows how business context is captured and made usable by Notion AI.",
+      "alt": "AI OS documentation hub with a master prompt, context questionnaire and refinement prompts.",
+      "cropRecommendations": [
+        {
+          "id": "proof-16x9",
+          "aspectRatio": "16:9",
+          "useCase": "ad-static",
+          "viewTreatment": "near-native",
+          "crop": {
+            "x": 0,
+            "y": 150,
+            "width": 3456,
+            "height": 1944
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.56
+          },
+          "notes": "Keep the centred documentation column and enough native page whitespace."
+        },
+        {
+          "id": "square-centre",
+          "aspectRatio": "1:1",
+          "useCase": "carousel",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 644,
+            "y": 0,
+            "width": 2170,
+            "height": 2170
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "notes": "Respect the centred Notion page width; do not crop into an artificial full-width layout."
+        },
+        {
+          "id": "portrait-4x5",
+          "aspectRatio": "4:5",
+          "useCase": "ad-static",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 860,
+            "y": 0,
+            "width": 1736,
+            "height": 2170
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.55
+          },
+          "notes": "Best portrait crop for the master prompt and context questionnaire."
+        },
+        {
+          "id": "story-9x16",
+          "aspectRatio": "9:16",
+          "useCase": "other",
+          "viewTreatment": "native",
+          "crop": {
+            "x": 1118,
+            "y": 0,
+            "width": 1221,
+            "height": 2170
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.56
+          },
+          "notes": "Tight central crop for vertical storytelling."
+        }
+      ]
+    },
+    {
+      "id": "aios-iphone-dual-black-titanium",
+      "assetClass": "supplied-composition",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/compositions/aios-iphone-dual-black-titanium.png",
+      "originalFilename": "Black-Titanium.png",
+      "sha256": "aedcc541d3409484e4ed942326429a28790f4ac88e0fa06efd2ddc64513946f3",
+      "width": 1960,
+      "height": 2607,
+      "capturedAt": null,
+      "productPage": "Dashboard and Processes & SOPs",
+      "platform": "mobile-app",
+      "pageType": "dashboard",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Black titanium dual-iPhone composition showing the Processes & SOPs hub and AI OS home.",
+      "proofRole": "Mobile availability and connected operating views.",
+      "alt": "Two black titanium iPhones showing AI OS process and dashboard pages.",
+      "cropRecommendations": [
+        {
+          "id": "portrait-3x4",
+          "aspectRatio": "3:4",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 2,
+            "y": 0,
+            "width": 1955,
+            "height": 2607
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.52
+          },
+          "notes": "Nearly full-frame portrait crop; retain both devices."
+        }
+      ]
+    },
+    {
+      "id": "aios-iphone-dual-black",
+      "assetClass": "supplied-composition",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/compositions/aios-iphone-dual-black.png",
+      "originalFilename": "Black.png",
+      "sha256": "f4239a6e86177eb5b17de13faa98cc7aa5c2089a1cc895b587656c51b898adbe",
+      "width": 1938,
+      "height": 2559,
+      "capturedAt": null,
+      "productPage": "Dashboard and Processes & SOPs",
+      "platform": "mobile-app",
+      "pageType": "dashboard",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Angled black dual-iPhone composition showing AI OS process and dashboard pages.",
+      "proofRole": "Dynamic mobile product composition.",
+      "alt": "Two angled black iPhones showing AI OS process and dashboard pages.",
+      "cropRecommendations": [
+        {
+          "id": "portrait-3x4",
+          "aspectRatio": "3:4",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 9,
+            "y": 0,
+            "width": 1919,
+            "height": 2559
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Retain both phones and their full silhouettes."
+        }
+      ]
+    },
+    {
+      "id": "aios-macbook-square",
+      "assetClass": "supplied-composition",
+      "curationTier": "hold",
+      "sourceFile": "products/aios/compositions/aios-macbook-square.png",
+      "originalFilename": "Frame 1597880496.png",
+      "sha256": "60e983aa89f68e003e1b398d90a270968b2ca38f763b164ddcf3465a4836684c",
+      "width": 3000,
+      "height": 3000,
+      "capturedAt": null,
+      "productPage": "Notion workspace",
+      "platform": "desktop-app",
+      "pageType": "dashboard",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Small angled MacBook on a square transparent composition.",
+      "proofRole": "Device object for supporting compositions; product detail is too small for primary proof.",
+      "alt": "Angled MacBook showing a small AI OS workspace.",
+      "cropRecommendations": [
+        {
+          "id": "square-full",
+          "aspectRatio": "1:1",
+          "useCase": "presentation",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 3000,
+            "height": 3000
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Preserve the supplied square composition."
+        }
+      ]
+    },
+    {
+      "id": "aios-mac-studio-monitor",
+      "assetClass": "supplied-composition",
+      "curationTier": "hold",
+      "sourceFile": "products/aios/compositions/aios-mac-studio-monitor.png",
+      "originalFilename": "Mac Studio.png",
+      "sha256": "ca1c2e21fa7ade8942198333634a5c95ec34a05259ff3121371793e7a73f44b4",
+      "width": 4000,
+      "height": 3000,
+      "capturedAt": null,
+      "productPage": "Notion workspace",
+      "platform": "desktop-app",
+      "pageType": "dashboard",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data is too dark for reliable review"
+      ],
+      "description": "Dark Mac Studio monitor composition with low product-screen visibility.",
+      "proofRole": "Archive device composition; insufficient UI legibility for current ads.",
+      "alt": "Dark Mac Studio display containing a low-visibility AI OS screen.",
+      "cropRecommendations": [
+        {
+          "id": "landscape-4x3",
+          "aspectRatio": "4:3",
+          "useCase": "presentation",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 4000,
+            "height": 3000
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Preserve only as a source composition."
+        }
+      ]
+    },
+    {
+      "id": "aios-imac-stride",
+      "assetClass": "supplied-composition",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/compositions/aios-imac-stride.png",
+      "originalFilename": "iMac 24 inch.png",
+      "sha256": "4d2d0df2d7c3bbe54c902d4731b568cf957195077ff686ebdaadbb88fa24bfc6",
+      "width": 4000,
+      "height": 3000,
+      "capturedAt": null,
+      "productPage": "Stride System",
+      "platform": "desktop-app",
+      "pageType": "workflow",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Front-facing iMac composition showing the Stride System.",
+      "proofRole": "Desktop device context for the execution system.",
+      "alt": "iMac showing the AI OS Stride System.",
+      "cropRecommendations": [
+        {
+          "id": "landscape-4x3",
+          "aspectRatio": "4:3",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 4000,
+            "height": 3000
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.48
+          },
+          "notes": "Keep the entire iMac and its product screen."
+        }
+      ]
+    },
+    {
+      "id": "aios-iphone-dual",
+      "assetClass": "supplied-composition",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/compositions/aios-iphone-dual.png",
+      "originalFilename": "iPhone 15 Pro.png",
+      "sha256": "9be91f544fd8e357e712485fd3f5a1868f557474a23aaab1f7e3438189aeec7c",
+      "width": 2881,
+      "height": 2378,
+      "capturedAt": null,
+      "productPage": "Dashboard and Processes & SOPs",
+      "platform": "mobile-app",
+      "pageType": "dashboard",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Wide dual-iPhone composition showing AI OS dashboard and process pages.",
+      "proofRole": "Primary supplied mobile composition.",
+      "alt": "Two iPhones showing connected AI OS dashboard and process pages.",
+      "cropRecommendations": [
+        {
+          "id": "free-full",
+          "aspectRatio": "free",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 2881,
+            "height": 2378
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Use the supplied composition without clipping the devices."
+        },
+        {
+          "id": "square-centre",
+          "aspectRatio": "1:1",
+          "useCase": "carousel",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 251,
+            "y": 0,
+            "width": 2378,
+            "height": 2378
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Square crop retaining both phones."
+        }
+      ]
+    },
+    {
+      "id": "aios-iphone-dashboard",
+      "assetClass": "supplied-composition",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/compositions/aios-iphone-dashboard.png",
+      "originalFilename": "iphone-dashboard-page.png",
+      "sha256": "40ef1facde0b7629c1e6b22aaa2182cd86c4b9edbf79bc6157915cb853da06e7",
+      "width": 3000,
+      "height": 2250,
+      "capturedAt": null,
+      "productPage": "AI OS home",
+      "platform": "mobile-app",
+      "pageType": "system-home",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Single angled iPhone composition showing the AI OS home.",
+      "proofRole": "Focused mobile dashboard composition.",
+      "alt": "Angled iPhone showing the AI OS home dashboard.",
+      "cropRecommendations": [
+        {
+          "id": "landscape-4x3",
+          "aspectRatio": "4:3",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 3000,
+            "height": 2250
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Preserve the supplied device framing."
+        }
+      ]
+    },
+    {
+      "id": "aios-iphone-process-sops",
+      "assetClass": "supplied-composition",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/compositions/aios-iphone-process-sops.png",
+      "originalFilename": "iphone-process-and-sops-page.png",
+      "sha256": "a78fc0c52725d757e94f4e6ecfd522a24665157c0b611bd8963faf21522ad9f4",
+      "width": 3000,
+      "height": 2250,
+      "capturedAt": null,
+      "productPage": "Processes & SOPs hub",
+      "platform": "mobile-app",
+      "pageType": "document",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Single angled iPhone composition showing the Processes & SOPs hub.",
+      "proofRole": "Focused mobile process documentation composition.",
+      "alt": "Angled iPhone showing the AI OS Processes and SOPs hub.",
+      "cropRecommendations": [
+        {
+          "id": "landscape-4x3",
+          "aspectRatio": "4:3",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 3000,
+            "height": 2250
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Preserve the supplied device framing."
+        }
+      ]
+    },
+    {
+      "id": "aios-mac-studio-dashboard",
+      "assetClass": "supplied-composition",
+      "curationTier": "hero",
+      "sourceFile": "products/aios/compositions/aios-mac-studio-dashboard.png",
+      "originalFilename": "mac-studio-dashboard-page.png",
+      "sha256": "daf660a7754b248331ef3a8688d74c052a3eff063d13f6c931fb04cdac8ad972",
+      "width": 3000,
+      "height": 2250,
+      "capturedAt": null,
+      "productPage": "AI OS home",
+      "platform": "desktop-app",
+      "pageType": "system-home",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Mac Studio composition showing the branded AI OS home.",
+      "proofRole": "Strong supplied desktop composition when a device object is more useful than native UI.",
+      "alt": "Mac Studio display showing the branded AI OS home dashboard.",
+      "cropRecommendations": [
+        {
+          "id": "landscape-4x3",
+          "aspectRatio": "4:3",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 3000,
+            "height": 2250
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.48
+          },
+          "notes": "Keep the full device; avoid cropping the screen or stand."
+        }
+      ]
+    },
+    {
+      "id": "aios-macbook-process-sops",
+      "assetClass": "supplied-composition",
+      "curationTier": "supporting",
+      "sourceFile": "products/aios/compositions/aios-macbook-process-sops.png",
+      "originalFilename": "macbook-proccess-and-sops-page.png",
+      "sha256": "0317f7f143a485bfb7d888bf793eb29cd68adc583709fac1e2d9a872435d16ca",
+      "width": 3000,
+      "height": 2250,
+      "capturedAt": null,
+      "productPage": "Processes & SOPs hub",
+      "platform": "desktop-app",
+      "pageType": "document",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Angled MacBook composition showing the Processes & SOPs hub.",
+      "proofRole": "Supporting desktop process-documentation composition.",
+      "alt": "Angled MacBook showing the AI OS Processes and SOPs hub.",
+      "cropRecommendations": [
+        {
+          "id": "landscape-4x3",
+          "aspectRatio": "4:3",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 3000,
+            "height": 2250
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Preserve the full supplied composition."
+        }
+      ]
+    },
+    {
+      "id": "aios-macbook-stride",
+      "assetClass": "supplied-composition",
+      "curationTier": "hero",
+      "sourceFile": "products/aios/compositions/aios-macbook-stride.png",
+      "originalFilename": "macbook-stride-page.png",
+      "sha256": "f164f847adb5a15dd5fbc69329ce3d429e72d4b09cd66f7760cadc5a3733c86d",
+      "width": 3000,
+      "height": 2250,
+      "capturedAt": null,
+      "productPage": "Stride System",
+      "platform": "desktop-app",
+      "pageType": "workflow",
+      "notionWidth": "not-applicable",
+      "chrome": "none",
+      "privacy": "redaction-required",
+      "status": "curated",
+      "visibleSensitiveData": [
+        "embedded product data not yet line-by-line reviewed"
+      ],
+      "description": "Angled MacBook composition showing the Stride System.",
+      "proofRole": "Strong supplied execution-system composition when a device object is required.",
+      "alt": "Angled MacBook showing the AI OS Stride System.",
+      "cropRecommendations": [
+        {
+          "id": "landscape-4x3",
+          "aspectRatio": "4:3",
+          "useCase": "ad-static",
+          "viewTreatment": "device-mockup",
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 3000,
+            "height": 2250
+          },
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "notes": "Preserve the device silhouette and visible Stride screen."
+        }
+      ]
+    }
+  ]
+}

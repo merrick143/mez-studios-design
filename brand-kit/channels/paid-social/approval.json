@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "formatId": "mz.systems.format.paid-social.price-anchored-product-proof",
+  "version": "1.0.0",
+  "decisionId": "DEC-PAID-SOCIAL-PRICE-ANCHORED-PROOF-001",
+  "gateId": "H-CHAN-PAID-01-FORMAT-PROOF",
+  "verdict": "approved-for-craft",
+  "outcomeStatus": "CRAFT_APPROVED",
+  "approvedAt": "2026-08-06",
+  "approvedBy": "Olli",
+  "humanQuote": "great these are good",
+  "approvedScope": ["The exact five-frame R07 batch", "The 1080x1350 price-anchored product-proof format grammar", "Geist Medium headlines, restrained grid and glow, real product proof and three-card outcome composition", "R07-01 as champion, R07-05 as alternate and R07-03 as the safer sequencing route"],
+  "productionAuthority": false,
+  "channelCertificationCreated": false,
+  "performanceValidated": false,
+  "publicUseApproval": {"status": "pending-campaign-preflight", "requiredChecks": ["current price", "current comparison evidence", "approved-public screenshot derivative", "destination and offer parity"]},
+  "sourceEvidence": {"figmaSectionId": "1407:936", "gateB": "brand-kit/references/havstock-ai-os-social-static/round-07-feedback.json", "humanFeedback": "brand-kit/references/havstock-ai-os-social-static/round-07-human-feedback.json"}
+}

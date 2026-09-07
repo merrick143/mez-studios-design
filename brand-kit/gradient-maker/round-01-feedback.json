@@ -1,0 +1,104 @@
+{
+  "taskId": "TASK-GRAD-MAKER-01",
+  "round": 1,
+  "date": "2026-09-07",
+  "reviewer": "Codex agent self-review",
+  "verdict": "gate-b",
+  "productionAuthority": false,
+  "status": "Local implementation ready for user review; no identity promotion or release",
+  "authorisation": "User requested improvement of the gradient maker end to end and selected both editable palettes and image upload. No new canonical decision was created.",
+  "authorityInputs": [
+    "brand-kit/AGENT-GUIDE.md",
+    "brand-kit/authority/current.json",
+    "brand-kit/governance/decisions.json",
+    "brand-kit/governance/post-cutover-decisions.json",
+    "brand-kit/registry/gradients.json",
+    "brand-kit/registry/products.json",
+    "brand-kit/gradient-library/README.md",
+    "brand-kit/skills/codex-made-it/SKILL.md",
+    "brand-kit/design-authority/GATE-B-DESIGN-EXCELLENCE.md"
+  ],
+  "filesChanged": [
+    "brand-kit/gradient-maker/engine.py",
+    "brand-kit/gradient-maker/presets.json",
+    "brand-kit/gradient-maker/preview-template.html",
+    "brand-kit/gradient-maker/index.html",
+    "brand-kit/gradient-maker/maker.css",
+    "brand-kit/gradient-maker/maker.js",
+    "brand-kit/gradient-maker/test_engine.py",
+    "brand-kit/gradient-maker/cli.py",
+    "brand-kit/gradient-maker/README.md",
+    "brand-kit/gradient-maker/round-01-feedback.json",
+    "brand-kit/server.py",
+    "brand-kit/gradient-library/index.html",
+    "brand-kit/skills/codex-made-it/SKILL.md"
+  ],
+  "checks": {
+    "backend": {"status": "pass", "command": ".venv/bin/python brand-kit/gradient-maker/test_engine.py", "tests": 11},
+    "javascriptSyntax": "pass: node --check brand-kit/gradient-maker/maker.js",
+    "diffWhitespace": "pass: git diff --check",
+    "foundationTokens": "pass: maker CSS token references resolve against existing foundations",
+    "verify_portability": "pass",
+    "verify_llm_contracts": "pass",
+    "verify_library": "pass",
+    "verify_architecture": "pass",
+    "verify_authority": "pass",
+    "verify_release": "pass: 0.1.0-alpha.1",
+    "verify_workbench": "fail, existing baseline: verifier expects the original comparison workbench in brand-kit/index.html, which now redirects to the console. Its missing comparison core, labels and five-product checks are unrelated to the maker. Not repaired in this task."
+  },
+  "browserChecks": [
+    "Compose: preset, hex edits, spatial position, strength/flow controls and seed remix feed a generated source PNG and the existing extractor.",
+    "Upload: actual browser file selection produced a ready preview from a square PNG. Backend tests cover malformed, flat, non-square, transparent and oversized inputs.",
+    "Save, reload, edit and save produced two immutable candidate versions with lineage; saved versions survived page reload.",
+    "Two saved candidates compared in the dialog. Review form opened, accepted edits and dismissed without recording a human preference. Review persistence and append-only history are covered by backend tests.",
+    "Unreviewed filter returned two candidates; Shortlisted returned the expected empty state.",
+    "Sphere, disc, card, pill and Wings expressions were rendered and visually inspected. Source comparison preserves the full frame without cropping.",
+    "HTTP ZIP export succeeded. All eight immutable file hashes in the extracted package matched its manifest. The package renders using copied local dependencies.",
+    "Portable Wings preview was corrected to remove its source-image background when live; inspected after rebuilding both test candidates. Computed live background-image is none.",
+    "Main preview has one live core and one canvas. No unexpected browser console errors observed.",
+    "Full-page captures at 320, 375, 390, 768, 920, 1280 and 1440 were visually read, with no horizontal overflow. First-viewport captures at 375 and 1440 were also read."
+  ],
+  "designReview": {
+    "assessment": "pass for user review",
+    "weightedScore": 64,
+    "maximum": 75,
+    "scores": {"hierarchy": 5, "composition": 4, "pacingAndDensity": 4, "typography": 4, "productTruth": 5, "distinctiveness": 4, "narrative": 4, "conversionClarity": 4, "emotionalImpact": 4, "craft": 4, "originality": 4},
+    "blockingFindings": [],
+    "T1": "Pass. The light editing rail beside a contained charcoal material stage survives the 1280 and 375 stripped captures. The exact Wings geometry remains centred in the material aperture. The composition carries the source/proof relationship without relying on gradient decoration.",
+    "T2": "Pass. Intro is editorial typography; editor is an authored control/proof split; collection is a compact comparison catalogue. No adjacent sections repeat a composition family. At 920px the editor columns measured 288px/529px; the collection has a separate layout. This is a functional editor rather than a marketing sequence.",
+    "T3": "Pass in browser QA. Actual draw calls increased by 6859 between captures; 50.5 percent of core pixels changed at maximum-channel delta above 8. Exactly one live core. Simulated reduced-motion media query produced zero draws and the exact source pixels as static WebP; the visible layout remained stable. The operating system preference itself was not changed. WebGL-unavailable mode also used the static twin.",
+    "T4": "Pass. The protagonist is the generated source and actual shared Living Core renderer, with real extracted anchors and real local versions. No invented product assignments or placeholder proof.",
+    "resolvedFindings": [
+      "Source comparison initially cropped non-square expression captures; object-fit now contains the full frame.",
+      "Portable Wings initially retained a rectangular source background behind the mask; the template now clears the background in live mode."
+    ],
+    "rationale": "The material is the strongest visual read, controls remain direct and source comparison sits beside the result. Foundation typography and a restrained control/proof split provide a coherent tool surface. This is an agent assessment, not the user's aesthetic approval."
+  },
+  "evidence": {
+    "directory": "brand-kit/workspace/gradient-maker-review/",
+    "responsive": ["320-full.png", "375-full.png", "390-full.png", "768-full.png", "920-full.png", "1280-full.png", "1440-full.png", "375-viewport.png", "1440-viewport.png"],
+    "stripped": ["1280-stripped.png", "375-stripped-full.png"],
+    "motion": ["motion-result.json", "motion-core-1.png", "motion-core-2.png"],
+    "fallback": ["375-reduced-full.png", "reduced-static.webp"],
+    "expressions": ["expression-disc.png", "expression-pill.png", "expression-wings.png", "portable-wings.png"],
+    "captureMethod": "Full-page browser captures were reliable. First-viewport and motion-core proofs were cropped from reliable captures using measured geometry, because viewport screenshots immediately after resizing and the screenshot clip option returned stale or incorrect frames on this machine."
+  },
+  "localSamples": [
+    {"id": "MZ-G53", "slug": "draft-3428b393bbd34c48aaedd066304f6f80", "name": "Emerald & sand exploration", "status": "unreviewed research sample"},
+    {"id": "MZ-G54", "slug": "draft-1bc7d19b80b7473f8105ed0ceca82e55", "name": "Emerald & sand — deeper shade", "status": "unreviewed research sample"}
+  ],
+  "limitations": [
+    "Generation and saving require the local Python server; the static public host cannot run those operations.",
+    "Closing or reloading discards unsaved edits. Saved candidates are local gitignored files and must be exported to move between computers.",
+    "Candidate MZ-G IDs are provisional and must be reconciled at any later authorised import.",
+    "The animated core approximates the source; the PNG and decoded lossless WebP pixels remain exact colour authority.",
+    "The two agent-created test candidates were rebuilt after the portable-template fix. Their original immutable test folders were archived under the evidence directory; no user candidate was overwritten.",
+    "One shared repository verifier remains a documented pre-existing failure."
+  ],
+  "handoff": {
+    "url": "http://127.0.0.1:8915/brand-kit/gradient-maker/",
+    "runtime": "Updated server uses port 8915; parent preview on 8914 was not restarted.",
+    "authority": "Research candidates only. Canonical masters, extractor, renderer, registries and releases were not modified.",
+    "nextAction": "User can create and review local candidates. Import, product assignment and public release require their separate decisions."
+  }
+}

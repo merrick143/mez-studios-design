@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R05",
+  "candidateRevision": "havstock-ai-os-social-static-r05",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Olli",
+  "outcome": "revise",
+  "productionAuthority": false,
+  "summary": "The floating-card icon language, inline AI OS treatment and three device compositions require another full correction round.",
+  "requiredCorrection": [
+    "Replace the inconsistent third-card icons with a deliberate identity-led system whose position, colour and optical size are coherent.",
+    "Render inline AI OS as the product disc followed by text, never as text on a gradient-filled label.",
+    "Rework the device compositions so each supplied hardware mockup is scaled and positioned from its visible subject rather than its transparent canvas.",
+    "Render the new round and inspect the mockup variants before presenting them."
+  ],
+  "nextRevision": "havstock-ai-os-social-static-r06"
+}

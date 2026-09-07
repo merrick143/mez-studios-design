@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC",
+  "candidateRevision": "havstock-ai-os-social-static-r01",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Olli",
+  "outcome": "rejected",
+  "productionAuthority": false,
+  "summary": "The first round read as five square brand slides, not as the reference's landing page compressed into one frame.",
+  "requiredCorrection": [
+    "Use one locked 4:5 layout and vary only the hook across five executions.",
+    "Make the headline a two-line replacement claim with one coloured inline glyph.",
+    "Keep the qualifier, mechanism, access and guarantee proof, CTA, screenshot and outcome layer fixed.",
+    "Let a near-native approved Notion crop occupy the lower half and bleed beyond the bottom and right edges.",
+    "Add two or three elevated outcome cards that explain the real operating surface.",
+    "Use real Mez and Notion assets, approved fonts and canonical colour assignments."
+  ],
+  "supersedesAgentGateB": "round-01-feedback.json",
+  "nextRevision": "havstock-ai-os-social-static-r02"
+}

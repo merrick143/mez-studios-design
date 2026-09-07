@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0", "application": "Figma", "fileKey": "k6jJPY2ViCmg4CiZQhwiBF", "pageId": "0:1", "approvedSectionId": "1407:936", "approvedSectionName": "AI OS Social Static · R07", "canvas": {"width": 1080, "height": 1350},
+  "operation": "Duplicate exactly one approved frame into a new dated section before editing.",
+  "never": ["Edit or detach the approved R07 frames in place.", "Use Figma as the only storage location for a product screenshot.", "Rebuild the Notion mark or AI OS Wings from memory.", "Add a fill, stroke or background-card shadow behind a device composition."],
+  "frameRoutes": [
+    {"frameId": "1407:937", "name": "R07-01", "role": "champion"},
+    {"frameId": "1407:1015", "name": "R07-02", "role": "range"},
+    {"frameId": "1407:1093", "name": "R07-03", "role": "safe"},
+    {"frameId": "1407:1175", "name": "R07-04", "role": "labelled"},
+    {"frameId": "1407:1257", "name": "R07-05", "role": "alternate"}
+  ]
+}

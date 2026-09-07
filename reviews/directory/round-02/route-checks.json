@@ -1,0 +1,78 @@
+{
+  "destinationLinks": 10,
+  "allOpenInNewTab": true,
+  "routes": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/asset-studio/",
+      "status": 200
+    },
+    {
+      "route": "/brand-kit/",
+      "status": 200
+    },
+    {
+      "route": "/brand-kit/gradient-library/",
+      "status": 200
+    },
+    {
+      "route": "/brand-kit/legacy.html",
+      "status": 200
+    },
+    {
+      "route": "/brand-kit/releases/foundations/dist/index.css",
+      "status": 200
+    },
+    {
+      "route": "/brand-kit/source-pack/design-system-export/assets/wings.svg",
+      "status": 200
+    },
+    {
+      "route": "/directory-previews/asset-studio.png",
+      "status": 200
+    },
+    {
+      "route": "/directory-previews/brand-kit.png",
+      "status": 200
+    },
+    {
+      "route": "/directory-previews/explore-menu.png",
+      "status": 200
+    },
+    {
+      "route": "/directory-previews/legacy-workbench.png",
+      "status": 200
+    },
+    {
+      "route": "/directory-previews/play-orb.png",
+      "status": 200
+    },
+    {
+      "route": "/directory.css",
+      "status": 200
+    },
+    {
+      "route": "/explore-menu/",
+      "status": 200
+    },
+    {
+      "route": "/favicon.svg",
+      "status": 200
+    },
+    {
+      "route": "/play-orb/",
+      "status": 200
+    },
+    {
+      "route": "/play-orb/compare.html",
+      "status": 200
+    },
+    {
+      "route": "/play-orb/orbs/MZ-G13.html",
+      "status": 200
+    }
+  ]
+}

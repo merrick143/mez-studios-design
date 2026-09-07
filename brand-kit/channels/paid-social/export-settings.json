@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0",
+  "formatId": "mz.systems.format.paid-social.price-anchored-product-proof",
+  "primary": {"format": "PNG", "scale": 1, "width": 1080, "height": 1350, "colourSpace": "sRGB"},
+  "editableSourceRequired": true,
+  "naming": "{product-slug}-priceproof-{variant}-{yyyy-mm-dd}.png",
+  "checks": ["exact pixel dimensions", "legible at 360px preview width", "no clipped headline or outcome card", "real proof remains readable", "public preflight approved"],
+  "derivatives": {"1:1": "not approved by this format; create a separately reviewed composition", "9:16": "not approved by this format; create a separately reviewed composition"}
+}

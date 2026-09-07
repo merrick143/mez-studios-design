@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "syncedAt": "2026-08-06T15:16:00+08:00",
+  "workspace": {"id": "bae77e3d-02b2-49c0-ac51-5e4adc9727ac", "name": "MEZ Studios"},
+  "format": {
+    "dataSourceId": "6cfa83f1-82fc-4227-aa57-664b9c4bee87",
+    "pageId": "3b47e41b-ed0b-81c0-95bf-c21eff316f35",
+    "url": "https://app.notion.com/p/3b47e41bed0b81c095bfc21eff316f35",
+    "name": "Static: Price-Anchored Product Proof",
+    "namingCode": "PRICEPROOF"
+  },
+  "sop": {
+    "dataSourceId": "50b2542f-7416-42ea-9beb-0102b19c2f82",
+    "pageId": "3b47e41b-ed0b-81e3-ae77-e18a0465d972",
+    "url": "https://app.notion.com/p/3b47e41bed0b81e3ae77e18a0465d972",
+    "name": "Format SOP: Static: Price-Anchored Product Proof"
+  },
+  "verification": {"formatFetchedAfterCreate": true, "sopFetchedAfterCreate": true, "formatSopRelationFetchedAfterUpdate": true},
+  "mediaTransfer": {
+    "status": "not-authorised",
+    "reason": "Current product-proof imagery is not approved for Notion transfer or public use.",
+    "fallback": "Both pages link to the exact Figma R07 section and local source pack."
+  },
+  "authority": "Notion is an operational mirror. The local brand-kit format pack remains the source of truth."
+}

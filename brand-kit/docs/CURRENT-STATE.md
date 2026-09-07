@@ -1,6 +1,6 @@
 # Mez Systems current state
 
-Updated: 2 August 2026
+Updated: 6 August 2026
 
 ## Blunt status
 
@@ -43,9 +43,13 @@ The canonical engine now includes the approved foundations, bounded expression s
 - Equal aligned product-family chassis.
 - Centred five-product homepage opening, including the approved compact mobile flare.
 
+## Bounded channel-format progress
+
+- `Static: Price-Anchored Product Proof` is the first `CRAFT_APPROVED` paid-social format. `DEC-PAID-SOCIAL-PRICE-ANCHORED-PROOF-001` locks the exact five-frame AI OS R07 batch and its bounded 1080 × 1350 grammar: Geist Medium two-line headline, honest category-cost versus smaller-first-step copy, restrained grid and downward glow, authentic product proof, and three floating outcome cards. The local pack, validator, skill, five golden examples, three anti-examples, measurement plan, Figma source route and Notion format/SOP mirrors are complete. Paid social remains uncertified, the format has no outcome evidence, and publishing still requires current price, comparison and approved-public screenshot checks.
+
 ## Explicitly incomplete
 
-- The nine priority-deferred channel families, including email, ads, video and document expression contracts.
+- The priority-deferred channel families, including the rest of paid advertising plus email, video and document expression contracts. One paid-social format is craft-approved; that bounded result does not complete the paid-ad wave.
 - Publication of `@mez-systems/design-system-web` or assignment of production version `1.0.0`; live consumer use does not imply either action.
 - Live order-bump transaction proof while `LIVE_STRIPE_PRICE_PROMPT_VAULT` remains unconfigured and the offer remains hidden.
 - Production Figma library and Code Connect.

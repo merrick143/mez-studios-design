@@ -6,10 +6,12 @@ from __future__ import annotations
 import argparse
 import base64
 import json
+import importlib.util
 import re
 import subprocess
 import sys
 import tempfile
+import threading
 from datetime import datetime, timezone
 from functools import partial
 from http import HTTPStatus
@@ -28,6 +30,8 @@ GENERATOR = HERE / "source-pack" / "living-core" / "candidate.py"
 ID_PATTERN = re.compile(r"^MZ-G\d{2,3}$")
 SLUG_PATTERN = re.compile(r"^[a-z0-9-]+$")
 MAX_REQUEST = 18 * 1024 * 1024
+_gradient_maker = None
+_gradient_maker_lock = threading.Lock()
 
 # Console gate decisions (brand-kit/app/). Unlike the workspace endpoints
 # above, this one intentionally writes canonical governance evidence: the
@@ -92,7 +96,21 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
             raise ValueError("Request is empty or exceeds the 18 MB local limit")
         return json.loads(self.rfile.read(length))
 
+    def gradient_maker_request(self) -> None:
+        # Load once on demand; ordinary previews keep their existing startup path.
+        global _gradient_maker
+        with _gradient_maker_lock:
+            if _gradient_maker is None:
+                spec = importlib.util.spec_from_file_location("mez_gradient_maker", HERE / "gradient-maker/engine.py")
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
+                _gradient_maker = module
+        _gradient_maker.handle_http(self)
+
     def do_GET(self) -> None:
+        if self.path.startswith("/api/gradient-maker/"):
+            self.gradient_maker_request()
+            return
         if self.path == "/api/candidates":
             self.json_response({"localApi": True, "candidates": list_candidates()})
             return
@@ -110,6 +128,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self) -> None:
+        if self.path.startswith("/api/gradient-maker/"):
+            self.gradient_maker_request()
+            return
         try:
             if self.path == "/api/candidates":
                 self.create_candidate()

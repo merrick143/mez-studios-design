@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Price-Anchored Product Static"
+  short_description: "Build verified 4:5 product-proof ads"
+  default_prompt: "Use $build-price-anchored-product-static to build a verified price-anchored product-proof static from the Mez format pack."

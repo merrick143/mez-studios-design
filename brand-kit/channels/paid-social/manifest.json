@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "channelId": "mz.systems.channel.paid-social",
+  "channelStatus": "partial-channel-pack",
+  "certificationStatus": "uncertified",
+  "productionAuthority": false,
+  "format": {
+    "formatId": "mz.systems.format.paid-social.price-anchored-product-proof",
+    "publicName": "Static: Price-Anchored Product Proof",
+    "version": "1.0.0",
+    "status": "CRAFT_APPROVED",
+    "craftAuthority": true,
+    "productionAuthority": false,
+    "decisionId": "DEC-PAID-SOCIAL-PRICE-ANCHORED-PROOF-001",
+    "humanGateId": "H-CHAN-PAID-01-FORMAT-PROOF",
+    "taskId": "TASK-CHAN-PAID-01-PRICE-ANCHORED-PRODUCT-PROOF",
+    "aspectRatio": "4:5",
+    "canvas": {"width": 1080, "height": 1350, "unit": "px"},
+    "editableSource": {
+      "application": "Figma",
+      "fileKey": "k6jJPY2ViCmg4CiZQhwiBF",
+      "pageId": "0:1",
+      "sectionId": "1407:936",
+      "url": "https://www.figma.com/design/k6jJPY2ViCmg4CiZQhwiBF/MEZ-Digital-Products?node-id=1407-936"
+    },
+    "goldenFrameIds": ["1407:937", "1407:1015", "1407:1093", "1407:1175", "1407:1257"],
+    "championFrameId": "1407:937",
+    "alternateFrameId": "1407:1257",
+    "safeFrameId": "1407:1093"
+  },
+  "inherits": [
+    "brand-kit/foundations/typography/",
+    "brand-kit/foundations/colour-surfaces/",
+    "brand-kit/foundations/space-layout/",
+    "brand-kit/foundations/geometry-controls/",
+    "brand-kit/expressions/disc/",
+    "brand-kit/expressions/wings-mark/"
+  ],
+  "publicPreflight": {
+    "required": true,
+    "blockers": [
+      "Revalidate the live product price and destination.",
+      "Revalidate the cited category-cost evidence and comparison wording.",
+      "Use only a screenshot derivative with approved-public status for this campaign."
+    ]
+  },
+  "explicitExclusions": [
+    "Full paid-social channel certification",
+    "Performance or conversion validation",
+    "A universal claim that a template replaces consulting or implementation",
+    "Public-use approval for any raw product screenshot",
+    "Platform upload, campaign launch or media spend"
+  ]
+}

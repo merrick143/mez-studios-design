@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "bundleId": "CTX-CHAN-PAID-01-PRICE-ANCHORED-PRODUCT-PROOF",
+  "taskId": "TASK-CHAN-PAID-01-PRICE-ANCHORED-PRODUCT-PROOF",
+  "generatedAt": "2026-08-06T16:00:00+08:00",
+  "systemVersion": "1.0.0+paid-social-price-proof-craft",
+  "sourceState": {"repository": "merrick143/mez-studios-design", "branch": "main", "commit": "a11b75032063f57ffeedc5c9ca7016911c5cf4bd", "workingTree": "dirty"},
+  "files": [
+    {"path": "brand-kit/AGENT-GUIDE.md", "sha256": "51e26d09e3cafea49f0669b2a3cbd351b581901abd57946cce8732154f435b21", "role": "canonical", "required": true, "reason": "Authority and gate rules."},
+    {"path": "brand-kit/docs/END-TO-END-ROADMAP.md", "sha256": "09c09d6ac9b95a326cf5074f5629889f121ca453d3898027ef7cfcb5398da7b2", "role": "canonical", "required": true, "reason": "Standard channel-pack and outcome-status contract."},
+    {"path": "brand-kit/references/havstock-ai-os-social-static/round-07-feedback.json", "sha256": "e34357b41420cb37f43b2da3eb4a28a378a8ba67a00233a1366a9bf876da8631", "role": "evidence", "required": true, "reason": "Gate B score, exact Figma routes and unresolved risks."},
+    {"path": "brand-kit/assets/product-screenshots/products/aios/manifest.json", "sha256": "36a63bee12758728e047d160e818749725f7d376e27b4beeafe23d3de42c4b05", "role": "evidence", "required": true, "reason": "Authentic AI OS screenshot provenance, crop and privacy states."}
+  ],
+  "decisions": [{"id": "DEC-PAID-SOCIAL-PRICE-ANCHORED-PROOF-001", "status": "approved-for-craft", "productionEffect": "Locks one reusable format and its golden examples without channel certification, performance proof or public publishing authority."}],
+  "artifacts": [], "consumers": [],
+  "knownConflicts": [
+    {"id": "CHAN-01-DEFERRED", "summary": "The full paid-social channel family remains priority-deferred and uncertified.", "executionEffect": "constrain"},
+    {"id": "SCREENSHOT-PUBLIC-GATE", "summary": "No current AI OS screenshot is approved-public.", "executionEffect": "constrain"}
+  ],
+  "stopConditions": ["Do not certify the channel.", "Do not publish without current price, comparison and screenshot approval.", "Do not invent product proof."],
+  "contextBudget": {"strategy": "bounded", "requiredFirst": ["brand-kit/channels/paid-social/AGENTS.md", "brand-kit/channels/paid-social/SOP.md", "brand-kit/channels/paid-social/content-model.schema.json"], "omitByDefault": ["other channel families", "consumer website code", "historical migration archive"]},
+  "humanNotes": ["Olli approved the final batch with: great these are good."]
+}

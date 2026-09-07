@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryId": "mz.systems.channels",
+  "updatedAt": "2026-08-06",
+  "channels": [
+    {
+      "channelId": "mz.systems.channel.paid-social",
+      "path": "brand-kit/channels/paid-social/",
+      "status": "partial-channel-pack",
+      "certificationStatus": "uncertified",
+      "formats": [
+        {"formatId": "mz.systems.format.paid-social.price-anchored-product-proof", "publicName": "Static: Price-Anchored Product Proof", "version": "1.0.0", "outcomeStatus": "CRAFT_APPROVED", "productionAuthority": false}
+      ]
+    }
+  ]
+}

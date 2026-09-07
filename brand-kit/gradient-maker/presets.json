@@ -1,0 +1,11 @@
+{
+  "version": "mesh-source-1",
+  "status": "research-starters",
+  "presets": [
+    {"name":"Mineral blue","colours":["#92E0E6","#3B8BAC","#273A68","#B9D1C8","#14243E"]},
+    {"name":"Emerald & sand","colours":["#A5CCB0","#21796E","#174B4B","#DDCBA1","#182D2B"]},
+    {"name":"Copper & dusk","colours":["#E8C6A4","#BB785F","#6A526C","#B99194","#302B3C"]},
+    {"name":"Slate","colours":["#D6DFDF","#899DA5","#465868","#A7B2AC","#252F3B"]}
+  ],
+  "positions": [[0.16,0.18],[0.78,0.2],[0.85,0.78],[0.25,0.78],[0.5,0.5]]
+}

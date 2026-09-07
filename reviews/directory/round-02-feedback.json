@@ -1,0 +1,103 @@
+{
+  "taskId": "TASK-DIRECTORY-02-PAGE-PREVIEWS",
+  "date": "2026-09-07",
+  "round": 2,
+  "reviewer": "Codex",
+  "verdict": "gate-b",
+  "result": "local candidate with validation limits",
+  "status": "local candidate for human review",
+  "productionAuthority": false,
+  "scope": "Root homepage: actual page previews, new-tab destination links, and a gradient-library action beside Brand Kit.",
+  "filesChanged": [
+    "index.html",
+    "directory.css",
+    "directory-previews/",
+    "reviews/directory/round-02-feedback.json",
+    "reviews/directory/round-02/"
+  ],
+  "authorityPaths": [
+    "brand-kit/AGENT-GUIDE.md",
+    "brand-kit/design-authority/ANTI-SLOP-CANON.md",
+    "brand-kit/design-authority/CRAFT.md",
+    "brand-kit/design-authority/GATE-B-DESIGN-EXCELLENCE.md",
+    "brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md",
+    "brand-kit/releases/foundations/dist/index.css",
+    "brand-kit/source-pack/design-system-export/assets/wings.svg"
+  ],
+  "decisionIds": [
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-FOUNDATION-RELEASE-001"
+  ],
+  "composition": [
+    "Brand Kit: primary authored split with a real console preview.",
+    "Other tools: two-column visual directory, one column on small screens."
+  ],
+  "scopeInterpretation": "A destination gallery is a bounded exception to repetitive marketing-card patterns; its four sibling items are genuinely parallel. Screenshot colours represent existing destination content, not new brand assignments.",
+  "rubric": {
+    "hierarchy": 5,
+    "composition": 4,
+    "pacing": 4,
+    "typography": 4,
+    "productTruth": 5,
+    "distinctiveness": 4,
+    "narrative": 4,
+    "conversion": 5,
+    "emotion": 3,
+    "craft": 4,
+    "originality": 4
+  },
+  "score": 64,
+  "maximum": 75,
+  "namedTests": {
+    "T1": "Structural hierarchy and monochrome page chrome visually inspected. Dedicated greyscale emulation was not performed; embedded source screenshots retain their colours.",
+    "T2": "Pass. Primary authored split, supporting preview directory, quiet footer. Two composition families; the directory uses repeated sibling items deliberately.",
+    "T3": "Not applicable to static screenshot previews. No scripts, iframes, canvases or live cores on the homepage. Reduced-motion CSS disables hover transforms and transitions; no separate media emulation.",
+    "T4": "Pass. Five unedited captures of actual local destinations with source routes and hashes in directory-previews/manifest.json. Legacy and experiment status remain visible in labels and copy."
+  },
+  "validation": {
+    "responsiveWidths": [
+      320,
+      375,
+      390,
+      768,
+      920,
+      1280,
+      1440
+    ],
+    "horizontalOverflow": false,
+    "allImagesLoaded": true,
+    "primaryActionMinimumHeight": 52,
+    "keyboard": "Native anchors and focus-visible styles preserved. Keyboard navigation tested in round 01; full keyboard sequence not repeated after adding previews.",
+    "otherToolsAnchor": "Clicked and visually inspected at 375px.",
+    "localRoutes": "18 unique local link and asset routes returned HTTP 200. Evidence in round-02/route-checks.json.",
+    "javascriptIndependence": "Native HTML content and links with no scripts. No separate disabled-JavaScript emulation.",
+    "visualEvidence": "Hero, gallery and bottom viewport captures inspected at all seven widths. In-app full-page capture had scaling artefacts, so native viewport captures and DOM geometry were used. A Chrome viewport override did not apply to the claimed tab; those mis-sized captures were discarded before repeating all widths in the in-app browser.",
+    "coreChecks": {
+      "portability": "pass",
+      "llmContracts": "pass",
+      "workbench": "existing upstream failure: verifier still expects the old dashboard in brand-kit/index.html",
+      "gradientLibrary": "pass",
+      "productArchitecture": "pass",
+      "authority": "pass",
+      "migrationRelease": "pass"
+    },
+    "gitDiffCheck": "pass",
+    "responsiveEvidence": "reviews/directory/round-02/responsive-checks.json",
+    "destinationLinks": "All 10 destination links have target=_blank and rel=noopener noreferrer. In-page navigation remains native.",
+    "newTabBehaviour": "Clicked See all gradients in Chrome: original homepage remained, separate tab opened /brand-kit/gradient-library/#mz-g01. Read the destination to confirm MZ-G01 was selected."
+  },
+  "resolvedFindings": [
+    "Actual destination captures replace abstract previews.",
+    "Gradient library is directly accessible beside the primary action.",
+    "All destination links open in a new tab with an accessible explanatory note.",
+    "Retained a word space when the mobile layout hides the introductory line break."
+  ],
+  "remainingFindings": [],
+  "limits": [
+    "Static preview captures need refreshing when their destinations change materially.",
+    "Dedicated greyscale emulation and clean full-page captures remain unverified; this record is a local agent assessment, not human approval.",
+    "Existing workbench verifier failure remains outside this edit.",
+    "No public deployment or human design approval."
+  ],
+  "handoffUrl": "http://127.0.0.1:8914/"
+}

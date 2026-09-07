@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "GATE-B-AI-OS-SOCIAL-STATIC",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R05",
+  "candidateRevision": "havstock-ai-os-social-static-r05",
+  "verdict": "gate-b",
+  "outcome": "pass",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Codex design-critique",
+  "productionAuthority": false,
+  "score": {
+    "total": 72,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 5,
+      "typography": 5,
+      "productTruth": 5,
+      "distinctiveness": 5,
+      "narrative": 5,
+      "conversionClarity": 4,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    },
+    "doubleWeighted": [
+      "hierarchy",
+      "composition",
+      "productTruth",
+      "distinctiveness"
+    ]
+  },
+  "namedTests": {
+    "T1GreyscaleAndStripTest": "Pass. The left-anchored two-line hook, inline product identity, product-proof scale and three floating outcomes preserve the hierarchy without relying on the colour of the five glow variants.",
+    "T2RepeatingCardTest": "Pass by comparison-round intent. The five frames share one locked ad grammar while glow, canonical title typography, mark allocation, outcome icon order and proof source are varied deliberately.",
+    "T3HeroMotionTest": "Pass as not applicable. R05 is a static batch and makes no motion claim.",
+    "T4ExistingSystemTest": "Pass. All product images retain repository-catalogued source hashes; the Notion identity is a cloned real mark, the Wings are exact existing vectors and every title font belongs to the canonical Mez typography set."
+  },
+  "antiSlopSweep": {
+    "outcome": "pass",
+    "notes": [
+      "The product surface remains the lower-half protagonist and is legible at the final 1080 by 1350 size.",
+      "Native screenshots retain a bounded proof aperture while supplied device compositions use no visible card fill, stroke or frame chrome.",
+      "The five glow treatments remain low-opacity field support and do not replace typography or product proof as the hierarchy.",
+      "The typography comparison is bounded to Geist, tuned Inter and contextual Instrument Serif.",
+      "No fake payment, booking, member, customer, revenue or activity notification was added."
+    ]
+  },
+  "resolvedFindings": [
+    {
+      "id": "HUMAN-R04-REMOVE-CTA",
+      "resolution": "Removed the Get the AI OS and mez.systems line from all five frames."
+    },
+    {
+      "id": "HUMAN-R04-TICK-ACCENT",
+      "resolution": "Applied a frame-specific accent only to each check glyph while preserving neutral supporting copy."
+    },
+    {
+      "id": "HUMAN-R04-OUTCOME-DEPTH",
+      "resolution": "Rebuilt every outcome card with a contact shadow plus a deeper separation shadow."
+    },
+    {
+      "id": "HUMAN-R04-GLOW-FONT-MARK-VARIANTS",
+      "resolution": "Created five controlled glow treatments, four title typography treatments and three title-mark allocations."
+    },
+    {
+      "id": "HUMAN-R04-DEVICE-CROP",
+      "resolution": "Removed visible device proof-card chrome and scaled each supplied composition against its real aspect ratio for a larger, lower-frame crop."
+    },
+    {
+      "id": "HUMAN-R04-OUTCOME-ICONS",
+      "resolution": "Varied the outcome icon order across the real Notion mark, exact Wings and restrained functional glyph tiles."
+    },
+    {
+      "id": "HUMAN-R04-INLINE-LABEL",
+      "resolution": "Changed standard labels to Notion and built two inverse variants with an MZ-G13 AI OS label plus the real Notion title mark."
+    }
+  ],
+  "figma": {
+    "fileKey": "k6jJPY2ViCmg4CiZQhwiBF",
+    "pageId": "0:1",
+    "sectionId": "1391:936",
+    "frameIds": [
+      "1391:937",
+      "1391:1016",
+      "1391:1095",
+      "1391:1174",
+      "1391:1253"
+    ],
+    "frameSize": "1080x1350",
+    "export": "PNG 1x",
+    "structuralAudit": "pass: zero CTA strings, zero Notion OS strings, zero missing fonts, five valid proof hashes",
+    "visualInspection": "pass: full batch rendered twice and all five individual frame renders inspected"
+  },
+  "unresolvedRisks": [
+    "No screenshot has approved-public status; redaction and explicit human approval remain required before publishing.",
+    "The three supplied device compositions still require line-by-line review of embedded product data.",
+    "Paid advertising remains a priority-deferred and uncertified channel family.",
+    "R05 remains a Playground candidate until Olli records a keep, revise or kill decision."
+  ],
+  "outputStatus": "candidate"
+}

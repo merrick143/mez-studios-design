@@ -1,0 +1,1 @@
+{"fixtureId":"ANTI-PRICE-STALE","invalidState":{"productPriceVerifiedAt":null,"categoryEvidenceUrls":[],"copy":"$10,000 consultant? Replace them with our $99 OS."},"whyItFails":["No current price evidence","No category-cost provenance","Universal substitute claim"],"repair":"Verify both prices from primary or attributable sources and rewrite the product as a smaller first step."}

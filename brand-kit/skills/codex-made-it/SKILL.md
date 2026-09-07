@@ -42,13 +42,27 @@ Never import screenshots, WebP fallbacks, or rendered cores as source masters.
 
 ## Create a research candidate
 
-Use the local workbench:
+Use the local gradient maker for editable palettes and original-image upload:
 
 ```bash
 .venv/bin/python brand-kit/server.py --port 8914
 ```
 
-Open `/brand-kit/`, upload a square source image of at least 512px, and create an unused `MZ-G##` or `MZ-G###` candidate. Generated files remain under the gitignored `brand-kit/workspace/candidates/` directory.
+Open `/brand-kit/gradient-maker/`. Compose a research palette with colour positions, strength, softness, flow and a seed, or upload a square original PNG/JPEG of 512–4096px. Both routes produce a source PNG and use the unchanged extractor and renderer. The maker allocates provisional IDs, retains source/original/recipe evidence, saves immutable versions, and supports comparison, review notes and portable ZIP exports. Output stays under the gitignored `brand-kit/workspace/gradient-maker/` directory.
+
+Read `brand-kit/gradient-maker/README.md` for the API, CLI, reproducibility and validation contract. Run `.venv/bin/python brand-kit/gradient-maker/test_engine.py` after modifying that workflow. Use a separate free port when an existing server belongs to another task.
+
+For agent-driven generation:
+
+```bash
+.venv/bin/python brand-kit/gradient-maker/cli.py \
+  --recipe /absolute/path/to/recipe.json --name "Working candidate name"
+# Or use --source /absolute/path/to/original.png instead of --recipe.
+```
+
+Authored colours are inputs to a source-image recipe; extracted anchors still come only from the resulting PNG. Starter palettes are research, not approved brand colours. Shortlisting is a local preference and never a promotion or product assignment. Reconcile provisional IDs with the current source library before a separately approved import.
+
+The original upload workflow remains at `/brand-kit/legacy.html`; its `source-pack/living-core/candidate.py` outputs use `brand-kit/workspace/candidates/`. Prefer the maker for new work because it retains the source and recipe/original upload.
 
 Candidate generation must not edit `registry/`, `governance/`, `gradient-library/assignments.json`, or a release. Promotion requires an explicit human select/edit/reject record followed by a separate canonical update.
 

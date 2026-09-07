@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "GATE-B-AI-OS-SOCIAL-STATIC",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC",
+  "candidateRevision": "havstock-ai-os-social-static-r01",
+  "verdict": "gate-b",
+  "outcome": "pass",
+  "recordedAt": "2026-08-05",
+  "productionAuthority": false,
+  "score": {
+    "total": 67,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 4,
+      "pacingAndDensity": 4,
+      "typography": 4,
+      "productTruth": 5,
+      "distinctiveness": 4,
+      "narrative": 4,
+      "conversionClarity": 3,
+      "emotionalImpact": 4,
+      "craft": 4,
+      "originality": 4
+    },
+    "doubleWeighted": [
+      "hierarchy",
+      "composition",
+      "productTruth",
+      "distinctiveness"
+    ]
+  },
+  "namedTests": {
+    "T1GreyscaleAndStripTest": "Pass. The claim and proof hierarchy remains legible without relying on the MZ-G13 colour event.",
+    "T2RepeatingCardTest": "Pass. The five candidates use distinct proof structures: attached rail, receipt rail, architecture chain, scope rail and split product panel.",
+    "T3HeroMotionTest": "Pass as not applicable. The requested outputs are static and no motion behaviour is claimed.",
+    "T4ExistingSystemTest": "Pass. The work uses approved redacted Notion screenshots, the real Notion mark, exact Wings and canonical MZ-G13 material."
+  },
+  "resolvedFindings": [
+    {
+      "id": "TYP-11",
+      "candidate": "01",
+      "resolution": "Shortened the descriptor so the headline remains the dominant stop at square-feed size."
+    },
+    {
+      "id": "COL-06",
+      "candidate": "02 and 03",
+      "resolution": "Kept the Notion evidence monochrome so MZ-G13 remains the only colour event."
+    },
+    {
+      "id": "CRAFT-SECOND-READ",
+      "candidate": "03",
+      "resolution": "Separated the architecture chain from the proof frame and removed repeated explanatory copy."
+    },
+    {
+      "id": "CRAFT-HIERARCHY",
+      "candidate": "04",
+      "resolution": "Reduced and repositioned the headline so it clears the scope rail without clipping."
+    },
+    {
+      "id": "CRAFT-PRODUCT-TRUTH",
+      "candidate": "05",
+      "resolution": "Changed the approved operating screenshot to fit so the full Notion surface remains visible beside the AI OS identity panel."
+    }
+  ],
+  "referenceInfluence": "The Havstock source contributed the decisive claim to authentic working surface to restrained payoff sequence. Its price comparison, Claude mark, black grid, orange accent system and floating commercial receipts were deliberately excluded.",
+  "figma": {
+    "fileKey": "k6jJPY2ViCmg4CiZQhwiBF",
+    "pageId": "0:1",
+    "sectionId": "1331:936",
+    "frameIds": [
+      "1331:937",
+      "1331:938",
+      "1331:939",
+      "1331:940",
+      "1331:941"
+    ],
+    "frameSize": "1080x1080",
+    "export": "PNG 1x"
+  },
+  "unresolvedRisks": [
+    "The paid-social channel family remains deferred and uncertified.",
+    "No platform call to action or campaign claim has human approval."
+  ],
+  "outputStatus": "candidate"
+}

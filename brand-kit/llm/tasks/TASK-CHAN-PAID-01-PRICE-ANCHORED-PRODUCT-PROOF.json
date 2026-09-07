@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-CHAN-PAID-01-PRICE-ANCHORED-PRODUCT-PROOF",
+  "title": "Formalise the price-anchored product-proof static format",
+  "phase": 6,
+  "status": "complete",
+  "owner": "design-system-agent-plus-Olli",
+  "objective": "Turn the approved AI OS R07 batch into a reusable local and Notion-backed format with explicit evidence, execution, validation and publishing boundaries.",
+  "scope": {
+    "included": ["one 1080x1350 paid-social static format", "five human-approved golden examples and three anti-examples", "local SOP, validator, skill and Notion mirrors", "campaign-specific price, claim and screenshot preflight"],
+    "excluded": ["full paid-social channel certification", "campaign launch or media spend", "performance validation", "public-use approval for raw screenshots", "new ratios, motion or carousel variants"]
+  },
+  "dependencies": ["TASK-FIG-01-FIGMA-COMPANION"],
+  "inputs": {
+    "requiredFiles": ["brand-kit/references/havstock-ai-os-social-static/round-07-feedback.json", "brand-kit/assets/product-screenshots/products/aios/manifest.json", "brand-kit/docs/END-TO-END-ROADMAP.md"],
+    "decisionIds": ["DEC-PAID-SOCIAL-PRICE-ANCHORED-PROOF-001"], "artifactIds": [], "consumerIds": []
+  },
+  "deliverables": [
+    {"path": "brand-kit/channels/paid-social/", "acceptance": ["standard channel-pack structure exists", "format is CRAFT_APPROVED but channel remains uncertified", "five golden and three anti-examples validate", "public publishing blockers are explicit"]},
+    {"path": "brand-kit/skills/build-price-anchored-product-static/", "acceptance": ["skill is discoverable", "workflow routes to canonical local sources", "validation passes"]},
+    {"path": "Notion Format Library and Mez Studios SOPs", "acceptance": ["format and SOP pages exist", "they cross-link and reference the local source pack", "pages are re-fetched after write"]}
+  ],
+  "verification": [
+    {"id": "CHAN-PAID-01-PACK", "method": "command", "command": ".venv/bin/python brand-kit/channels/paid-social/validator/validate_format.py --mode craft", "passCondition": "format pack, golden examples, boundaries and skill pass"},
+    {"id": "CHAN-PAID-01-VISUAL", "method": "visual", "passCondition": "the approved contact sheet and five individual frames remain the exact human-approved R07 renders"},
+    {"id": "CHAN-PAID-01-HUMAN", "method": "human", "passCondition": "Olli approves the batch for reusable craft reference"}
+  ],
+  "humanGate": {"required": true, "gateId": "H-CHAN-PAID-01-FORMAT-PROOF", "approver": "Olli", "approvalQuestion": "Should the exact R07 batch and its bounded grammar become the first reusable paid-social format?"},
+  "stopConditions": ["the task is presented as full paid-social certification", "a raw screenshot is presented as public-approved", "craft approval is presented as performance validation", "Figma or Notion is treated as independent canonical authority"],
+  "notes": ["This bounded task partially advances CHAN-01 without reopening the programme-level priority deferral for every other channel family."]
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "TASK-CHAN-ADS-PRODUCT-SCREENSHOT-LIBRARY",
+  "intakeId": "mz.systems.product-screenshots.intake.2026-08-06.olli",
+  "recordedAt": "2026-08-06",
+  "source": "brand-kit/assets/product-screenshots/_INBOX-DROP-HERE",
+  "authorityPaths": [
+    "brand-kit/registry/products.json",
+    "brand-kit/assets/product-screenshots/library.json",
+    "brand-kit/assets/product-screenshots/schema/product-screenshot-manifest.schema.json"
+  ],
+  "productionAuthority": false,
+  "outputStatus": "candidate-local-library",
+  "filesReceived": 42,
+  "classification": {
+    "productCaptures": {
+      "total": 18,
+      "nativeCaptures": 7,
+      "suppliedCompositions": 11,
+      "products": {
+        "aios": 18,
+        "context-engine": 0,
+        "ai-ads-system": 0,
+        "claude-code-os": 0,
+        "organic-content-os": 0
+      }
+    },
+    "referenceAssets": {
+      "total": 24,
+      "staticImages": 10,
+      "animatedImages": 4,
+      "videos": 10,
+      "collection": "notion-first-party"
+    }
+  },
+  "curation": {
+    "hero": 6,
+    "supporting": 10,
+    "archive": 0,
+    "hold": 2,
+    "primaryNativeCaptureIds": [
+      "aios-home-dashboard",
+      "aios-hubs-directory",
+      "aios-documentation-hub",
+      "aios-stride-system"
+    ],
+    "primaryCompositionIds": [
+      "aios-mac-studio-dashboard",
+      "aios-macbook-stride",
+      "aios-iphone-dual",
+      "aios-iphone-dual-black-titanium"
+    ]
+  },
+  "privacy": {
+    "approvedPublic": 0,
+    "publicSafeCandidates": 2,
+    "redactionRequired": 16,
+    "note": "Public-safe-candidate is an initial curation state, not publishing approval."
+  },
+  "operations": [
+    "Inventoried every file before moving it.",
+    "Visually reviewed all stills, animated-image first frames and video midpoint frames.",
+    "Preserved every source byte and verified SHA-256 after the move.",
+    "Normalised Mez product filenames while retaining each original filename in metadata.",
+    "Preserved external Notion filenames and marked the collection reference-only.",
+    "Added native, 1:1, 4:5, 9:16, 16:9, 4:3 and 3:4 crop recommendations where useful."
+  ],
+  "validations": [
+    {
+      "command": ".venv/bin/python brand-kit/assets/product-screenshots/scripts/catalogue.py --verify",
+      "result": "pass: 5 products, 18 captures, 24 reference assets"
+    },
+    {
+      "command": ".venv/bin/python brand-kit/assets/product-screenshots/scripts/catalogue.py --scan-inbox",
+      "result": "pass: 0 remaining media files"
+    },
+    {
+      "command": "brand-kit core seven validators",
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "result": "pass"
+    }
+  ],
+  "unresolvedRisks": [
+    "No screenshot has approved-public status; required redaction and human review remain before publishing.",
+    "The Notion reference collection has no verified source URLs or licensing record and remains reference-only.",
+    "The four non-AI-OS product folders are structurally ready but have no captures yet.",
+    "Paid advertising remains a priority-deferred, uncertified channel family."
+  ]
+}

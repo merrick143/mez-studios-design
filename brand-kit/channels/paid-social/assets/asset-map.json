@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "formatId": "mz.systems.format.paid-social.price-anchored-product-proof",
+  "product": {"productId": "mz.systems.product.aios", "publicName": "AI OS", "gradientId": "MZ-G13"},
+  "marks": {"notion": "brand-kit/assets/third-party-marks/marks/notion/logos/mark.svg", "notionLight": "brand-kit/assets/third-party-marks/marks/notion/logos/mark-light.svg", "notionDark": "brand-kit/assets/third-party-marks/marks/notion/logos/mark-dark.svg", "mezWings": "brand-kit/expressions/wings-mark/"},
+  "approvedR07ProofRouting": [
+    {"frame": "R07-01", "frameId": "1407:937", "captureId": "aios-home-dashboard", "assetPath": "brand-kit/assets/product-screenshots/products/aios/originals/aios-home-dashboard.png", "treatment": "native", "privacyStatus": "public-safe-candidate"},
+    {"frame": "R07-02", "frameId": "1407:1015", "captureId": "aios-hubs-directory", "assetPath": "brand-kit/assets/product-screenshots/products/aios/originals/aios-hubs-directory.png", "treatment": "native", "privacyStatus": "public-safe-candidate"},
+    {"frame": "R07-03", "frameId": "1407:1093", "captureId": "aios-macbook-stride", "assetPath": "brand-kit/assets/product-screenshots/products/aios/compositions/aios-macbook-stride.png", "treatment": "device-composition", "privacyStatus": "public-safe-candidate"},
+    {"frame": "R07-04", "frameId": "1407:1175", "captureId": "aios-mac-studio-dashboard", "assetPath": "brand-kit/assets/product-screenshots/products/aios/compositions/aios-mac-studio-dashboard.png", "treatment": "device-composition", "privacyStatus": "public-safe-candidate"},
+    {"frame": "R07-05", "frameId": "1407:1257", "captureId": "aios-iphone-dual", "assetPath": "brand-kit/assets/product-screenshots/products/aios/compositions/aios-iphone-dual.png", "treatment": "device-composition", "privacyStatus": "public-safe-candidate"}
+  ],
+  "publicRule": "No listed proof asset currently has approved-public status. Create and record an approved derivative for each campaign before publishing."
+}

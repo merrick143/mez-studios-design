@@ -1,0 +1,95 @@
+{
+  "taskId": "TASK-DIRECTORY-01-BRAND-KIT-FIRST",
+  "date": "2026-09-07",
+  "round": 1,
+  "reviewer": "Codex",
+  "verdict": "gate-b",
+  "result": "pass",
+  "status": "local candidate for human review",
+  "productionAuthority": false,
+  "scope": "Root homepage directory. Brand Kit is the hero; supporting tools are a compact directory.",
+  "filesChanged": [
+    "index.html",
+    "directory.css",
+    "reviews/directory/round-01-feedback.json"
+  ],
+  "authorityPaths": [
+    "brand-kit/AGENT-GUIDE.md",
+    "brand-kit/design-authority/ANTI-SLOP-CANON.md",
+    "brand-kit/design-authority/CRAFT.md",
+    "brand-kit/design-authority/GATE-B-DESIGN-EXCELLENCE.md",
+    "brand-kit/docs/PRODUCT-CARD-DESIGN-ETHOS.md",
+    "brand-kit/releases/foundations/dist/index.css",
+    "brand-kit/source-pack/design-system-export/assets/wings.svg"
+  ],
+  "decisionIds": [
+    "DEC-PRODUCT-CARD-VISUAL-ARCHITECTURE-001",
+    "DEC-FOUNDATION-RELEASE-001"
+  ],
+  "composition": [
+    "Brand Kit: authored split, sparse identity feature.",
+    "Other tools: editorial narrative arranged as a compact semantic directory."
+  ],
+  "scopeInterpretation": "Two sections fit the requested directory. Full marketing-page section counts do not apply.",
+  "rubric": {
+    "hierarchy": 5,
+    "composition": 4,
+    "pacing": 4,
+    "typography": 4,
+    "productTruth": 5,
+    "distinctiveness": 4,
+    "narrative": 4,
+    "conversion": 5,
+    "emotion": 3,
+    "craft": 4,
+    "originality": 4
+  },
+  "score": 64,
+  "maximum": 75,
+  "namedTests": {
+    "T1": "Pass. The page is already monochrome. Light and charcoal, exact Wings, rounded frame and product-first type carry identity without gradients.",
+    "T2": "Pass. Sparse identity feature, denser directory, quiet footer. No repeated feature-card family.",
+    "T3": "Not applicable to static media. Zero scripts, iframes, canvases or live cores; no animation claim. Reduced-motion CSS removes both hover transforms and transitions. Media emulation was not separately run.",
+    "T4": "Pass. Exact repository Wings and existing destinations. No invented interface, number, product assignment or approval status."
+  },
+  "validation": {
+    "responsiveWidths": [
+      320,
+      375,
+      390,
+      768,
+      920,
+      1280,
+      1440
+    ],
+    "horizontalOverflow": false,
+    "allImagesLoaded": true,
+    "primaryActionMinimumHeight": 52,
+    "keyboard": "Tab reveals skip link and focus ring; Enter focuses main; next Tab reaches the primary action; Enter opens the actual Brand Kit console.",
+    "otherToolsAnchor": "Clicked and visually inspected at 375px.",
+    "localRoutes": "All 12 unique local link and asset URLs returned HTTP 200.",
+    "javascriptIndependence": "Native HTML content and links with no scripts. No separate disabled-JavaScript emulation.",
+    "visualEvidence": "Inspected captures at all seven widths in the task. Full-page capture had scaling and duplicate-strip artefacts; direct viewport screenshots and DOM measurements supplied additional evidence. Desktop hero and mobile directory were visibly inspected.",
+    "coreChecks": {
+      "portability": "pass",
+      "llmContracts": "pass",
+      "workbench": "existing upstream failure: verifier still expects the old dashboard in brand-kit/index.html",
+      "gradientLibrary": "pass",
+      "productArchitecture": "pass",
+      "authority": "pass",
+      "migrationRelease": "pass"
+    },
+    "gitDiffCheck": "pass"
+  },
+  "resolvedFindings": [
+    "Kept spaces where responsive CSS hides line breaks.",
+    "Removed footer caption measure cap.",
+    "Mapped header Wings to canonical charcoal."
+  ],
+  "remainingFindings": [],
+  "limits": [
+    "Existing workbench verifier failure remains outside this edit.",
+    "No public deployment or human design approval."
+  ],
+  "handoffUrl": "http://127.0.0.1:8914/"
+}

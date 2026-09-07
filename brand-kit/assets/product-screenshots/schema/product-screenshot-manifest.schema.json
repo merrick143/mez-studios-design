@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mez.systems/schemas/product-screenshot-manifest.schema.json",
+  "title": "Mez product screenshot manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "libraryId",
+    "productId",
+    "productSlug",
+    "publicName",
+    "productionAuthority",
+    "captures"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "libraryId": { "type": "string", "minLength": 1 },
+    "productId": { "type": ["string", "null"] },
+    "productSlug": { "type": "string", "minLength": 1 },
+    "publicName": { "type": "string", "minLength": 1 },
+    "productionAuthority": { "const": false },
+    "captures": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/capture" }
+    }
+  },
+  "$defs": {
+    "capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "assetClass",
+        "curationTier",
+        "sourceFile",
+        "sha256",
+        "width",
+        "height",
+        "platform",
+        "pageType",
+        "notionWidth",
+        "chrome",
+        "privacy",
+        "status",
+        "visibleSensitiveData",
+        "description",
+        "proofRole",
+        "alt",
+        "cropRecommendations"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$" },
+        "assetClass": { "enum": ["native-capture", "supplied-composition"] },
+        "curationTier": { "enum": ["hero", "supporting", "archive", "hold"] },
+        "sourceFile": { "type": "string", "minLength": 1 },
+        "originalFilename": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "capturedAt": { "type": ["string", "null"], "format": "date-time" },
+        "productPage": { "type": ["string", "null"] },
+        "platform": {
+          "enum": ["notion", "web", "desktop-app", "mobile-app", "other"]
+        },
+        "pageType": {
+          "enum": [
+            "system-home",
+            "dashboard",
+            "database-board",
+            "database-gallery",
+            "database-table",
+            "document",
+            "workflow",
+            "settings",
+            "other"
+          ]
+        },
+        "notionWidth": {
+          "enum": ["full-width", "centred", "not-applicable", "unknown"]
+        },
+        "chrome": {
+          "enum": ["browser-and-app", "app-only", "none", "unknown"]
+        },
+        "privacy": {
+          "enum": ["internal", "redaction-required", "public-safe-candidate", "approved-public"]
+        },
+        "status": { "enum": ["raw", "curated", "redacted", "approved"] },
+        "visibleSensitiveData": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "description": { "type": "string" },
+        "proofRole": { "type": "string" },
+        "alt": { "type": "string" },
+        "cropRecommendations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/crop" }
+        },
+        "figmaProxy": { "$ref": "#/$defs/figmaProxy" }
+      }
+    },
+    "crop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "aspectRatio", "useCase", "viewTreatment", "crop", "focalPoint", "notes"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "aspectRatio": { "enum": ["1:1", "4:5", "9:16", "16:9", "4:3", "3:4", "free"] },
+        "useCase": { "enum": ["ad-static", "website", "carousel", "presentation", "other"] },
+        "viewTreatment": { "enum": ["native", "near-native", "device-mockup"] },
+        "crop": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x", "y", "width", "height"],
+          "properties": {
+            "x": { "type": "integer", "minimum": 0 },
+            "y": { "type": "integer", "minimum": 0 },
+            "width": { "type": "integer", "minimum": 1 },
+            "height": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "focalPoint": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x", "y"],
+          "properties": {
+            "x": { "type": "number", "minimum": 0, "maximum": 1 },
+            "y": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "figmaProxy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relativePath", "width", "height"],
+      "properties": {
+        "relativePath": { "type": "string", "minLength": 1 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "fileKey": { "type": "string" },
+        "nodeId": { "type": "string" },
+        "imageHash": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "GATE-B-AI-OS-SOCIAL-STATIC",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R02",
+  "candidateRevision": "havstock-ai-os-social-static-r02",
+  "verdict": "gate-b",
+  "outcome": "pass",
+  "recordedAt": "2026-08-06",
+  "productionAuthority": false,
+  "score": {
+    "total": 70,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 5,
+      "typography": 4,
+      "productTruth": 5,
+      "distinctiveness": 4,
+      "narrative": 5,
+      "conversionClarity": 5,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    },
+    "doubleWeighted": [
+      "hierarchy",
+      "composition",
+      "productTruth",
+      "distinctiveness"
+    ]
+  },
+  "namedTests": {
+    "T1GreyscaleAndStripTest": "Pass. The burden, replacement, mechanism, proof plane and outcome hierarchy remain legible without relying on the MZ-G13 colour event.",
+    "T2RepeatingCardTest": "Pass by design. The five frames are a controlled hook test of one locked format, not five competing compositions; the three outcome cards have distinct evidence jobs.",
+    "T3HeroMotionTest": "Pass as not applicable. The requested outputs are static and no motion behaviour is claimed.",
+    "T4ExistingSystemTest": "Pass. Every frame uses the approved redacted Backend screenshot, the real Notion mark, exact Wings, canonical MZ-G13 material, Geist and Inter."
+  },
+  "antiSlopSweep": {
+    "outcome": "pass",
+    "notes": [
+      "No decorative grid, pure-black field, fake payment, fake booking, fake member or invented revenue proof was transferred.",
+      "MZ-G13 is the only colour event and remains a bounded product-identity glyph.",
+      "The three genuine overlay artefacts use one elevation cue each and no strokes.",
+      "The approved Notion screenshot stays at near-native scale and is not recreated as vector decoration."
+    ]
+  },
+  "resolvedFindings": [
+    {
+      "id": "HUMAN-R01-FORMAT",
+      "resolution": "Replaced five square directions with one locked 1080 by 1350 layout duplicated five times with hook-only variation."
+    },
+    {
+      "id": "HUMAN-R01-PROOF",
+      "resolution": "Replaced decorative screenshot texture and the building cover with an exact near-native crop of the approved Backend operating surface."
+    },
+    {
+      "id": "HUMAN-R01-OUTCOME",
+      "resolution": "Added three truthful elevated artefacts for connected context, Knowledge OS and the operating layer without inventing commercial receipts."
+    },
+    {
+      "id": "CRAFT-R02-HOOK-03",
+      "resolution": "Shortened the third replacement line to preserve the locked two-line headline and clear the mechanism."
+    }
+  ],
+  "referenceInfluence": "The source contributed the compressed landing-page argument, two-line replacement claim, dominant lower proof plane and layered outcome annotations. Its price comparison, Claude mark, grid, orange palette and commercial receipt claims were excluded.",
+  "figma": {
+    "fileKey": "k6jJPY2ViCmg4CiZQhwiBF",
+    "pageId": "0:1",
+    "sectionId": "1347:938",
+    "frameIds": [
+      "1347:939",
+      "1353:936",
+      "1353:971",
+      "1353:1006",
+      "1353:1041"
+    ],
+    "frameSize": "1080x1350",
+    "export": "PNG 1x",
+    "structuralAudit": "pass"
+  },
+  "unresolvedRisks": [
+    "Paid advertising remains deferred and uncertified.",
+    "The frames remain Playground candidates until Olli gives final human approval."
+  ],
+  "outputStatus": "candidate"
+}

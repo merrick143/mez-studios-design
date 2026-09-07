@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R03",
+  "candidateRevision": "havstock-ai-os-social-static-r03",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Olli",
+  "outcome": "revise",
+  "productionAuthority": false,
+  "summary": "Keep the product screenshot square at the bottom-left, use less rounding at the top-left and replace the current proof with stronger product screenshots managed through a reusable local-first library.",
+  "requiredCorrection": [
+    "Use a smaller radius on the product screenshot's top-left corner only.",
+    "Keep the product screenshot's bottom-left, top-right and bottom-right corners square.",
+    "Use better authentic product screenshots in the next batch.",
+    "Create a canonical local screenshot library for every product, with an inbox, immutable originals, derivatives, crop metadata, Notion width modes and privacy states.",
+    "Use Figma as the composition and review surface, not as the only source of screenshot assets."
+  ],
+  "partialResolution": {
+    "figmaCornerMask": "Applied to all five R03 frames and visually verified.",
+    "screenshotLibrary": "Processed 42 supplied assets into 18 AI OS captures or compositions and 24 reference-only Notion assets, with hashes, privacy states and crop recommendations.",
+    "betterScreenshots": "Resolved in the separate R04 Playground section using two native captures and three supplied device compositions from the curated local library."
+  },
+  "nextRevision": "havstock-ai-os-social-static-r04"
+}

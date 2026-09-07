@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0", "outcomeStatus": "CRAFT_APPROVED", "performanceStatus": "not-tested", "approvedAt": "2026-08-06", "approvedBy": "Olli", "humanQuote": "great these are good",
+  "examples": [
+    {"id": "R07-01", "file": "r07-01-champion.png", "frameId": "1407:937", "role": "champion", "sha256": "4b20d649e85cb27ec5dfc938c3777bda06848207c5f4331fc470f2ade9ae243d"},
+    {"id": "R07-02", "file": "r07-02-range.png", "frameId": "1407:1015", "role": "range", "sha256": "50e2d7f5751d23d77d18395df1efbab18d16182679daffee1e68200b4723117d"},
+    {"id": "R07-03", "file": "r07-03-safe.png", "frameId": "1407:1093", "role": "safe", "sha256": "ba756aec62dd8d8e3d11288955da035b5af0828717f12376d633b0250e32224b"},
+    {"id": "R07-04", "file": "r07-04-labelled.png", "frameId": "1407:1175", "role": "labelled", "sha256": "e35f17802a25f441bfc79310e19b91c9a9e2bb82bd37b3d71901fd57a5a4eba9"},
+    {"id": "R07-05", "file": "r07-05-alternate.png", "frameId": "1407:1257", "role": "alternate", "sha256": "7831814485515055a9c60d86594eb394e43a397e824fa6060b8feb7bc8d0d376"}
+  ],
+  "contactSheet": {"file": "r07-contact-sheet.png", "sha256": "f08a2cafdd466b557bbc166789264b5f250ffde0d63638763000993faddf3342"},
+  "boundary": "Craft approval locks the format grammar and approved reference batch. It is not outcome validation or public-use approval for the embedded screenshots."
+}

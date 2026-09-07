@@ -54,6 +54,16 @@
       "approvedAt": "2026-07-28",
       "approvedBy": "Olli",
       "source": "brand-kit/components/testimonial-marquee/approval.json"
+    },
+    {
+      "id": "DEC-PAID-SOCIAL-PRICE-ANCHORED-PROOF-001",
+      "title": "Craft-approved price-anchored product-proof static format",
+      "status": "approved",
+      "scope": "Exact AI OS R07 five-frame batch and bounded 1080x1350 price-anchored product-proof grammar",
+      "summary": "Promote the human-approved R07 batch to a reusable CRAFT_APPROVED format with Geist Medium headlines, honest category-versus-first-step copy, authentic product proof, restrained grid and glow, and three floating outcome cards. Keep paid-social channel certification, campaign performance, public screenshot clearance and publishing outside this decision.",
+      "approvedAt": "2026-08-06",
+      "approvedBy": "Olli",
+      "source": "brand-kit/channels/paid-social/approval.json"
     }
   ],
   "productionAuthority": false

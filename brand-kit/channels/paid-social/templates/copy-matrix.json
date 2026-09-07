@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "formatId": "mz.systems.format.paid-social.price-anchored-product-proof",
+  "product": "AI OS",
+  "verifiedAt": "2026-08-06",
+  "productPrice": {"amount": 99, "currency": "USD", "billing": "one-time", "sourceUrl": "https://mez.systems/ai-os"},
+  "categoryEvidence": [
+    {"url": "https://iteratum.com/pages/notion-consulting", "observedRange": "$2,500–$6,000", "role": "workspace-build category evidence"},
+    {"url": "https://notionalize.com/blog/notion-consultant-cost", "observedRange": "$5,000–$15,000", "role": "custom Notion OS category evidence"}
+  ],
+  "variants": [
+    {"id": "R07-01", "role": "champion", "line1": "$5,000 Notion consultant?", "line2": "Start with the $99 AI OS.", "frameId": "1407:937"},
+    {"id": "R07-02", "role": "explicit-range", "line1": "$5k–$15k custom Notion OS?", "line2": "Start with ours for $99.", "frameId": "1407:1015"},
+    {"id": "R07-03", "role": "safe", "line1": "Before a $5,000 Notion build...", "line2": "Install the $99 AI OS first.", "frameId": "1407:1093"},
+    {"id": "R07-04", "role": "labelled-comparison", "line1": "Custom Notion OS: $5,000+.", "line2": "AI OS: $99 once.", "frameId": "1407:1175"},
+    {"id": "R07-05", "role": "alternate", "line1": "$5,000 to build your Notion OS?", "line2": "$99 to start with ours.", "frameId": "1407:1257"}
+  ],
+  "mandatoryQualifierRule": "When the product is not a full service substitute, the lower-price line must establish sequence with start with, first or equivalent honest language.",
+  "revalidationRule": "Treat every price and external range in this file as time-bound evidence, not an evergreen fact."
+}

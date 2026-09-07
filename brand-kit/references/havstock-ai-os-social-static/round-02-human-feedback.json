@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R02",
+  "candidateRevision": "havstock-ai-os-social-static-r02",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Olli",
+  "outcome": "revise",
+  "productionAuthority": false,
+  "summary": "Use the real product screenshots already on Playground and rebuild the batch with a tighter qualifier, no guarantee-condition footnote, an inline Notion identity label, a faint grid and a restrained downward top glow.",
+  "requiredCorrection": [
+    "Reuse existing Playground product screenshot assets directly rather than relying on the local redacted Backend crop.",
+    "Delete the complete-setup and refund-policy footnote.",
+    "Make the qualifier container hug its copy with equal right and left spacing.",
+    "Translate the supplied inline Builder OS label into an inline Notion identity label using the real Notion mark.",
+    "Add a light grid background.",
+    "Add a restrained light wash from the top moving downwards.",
+    "Create a separate new batch rather than overwriting R02."
+  ],
+  "nextRevision": "havstock-ai-os-social-static-r03"
+}

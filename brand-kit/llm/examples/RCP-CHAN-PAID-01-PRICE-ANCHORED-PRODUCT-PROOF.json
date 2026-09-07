@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "RCP-CHAN-PAID-01-PRICE-ANCHORED-PRODUCT-PROOF",
+  "taskId": "TASK-CHAN-PAID-01-PRICE-ANCHORED-PRODUCT-PROOF",
+  "contextBundleId": "CTX-CHAN-PAID-01-PRICE-ANCHORED-PRODUCT-PROOF",
+  "agent": {"kind": "hybrid", "name": "Olli and Codex", "model": "GPT-5"},
+  "startedAt": "2026-08-06T14:50:00+08:00",
+  "finishedAt": "2026-08-06T15:20:00+08:00",
+  "outcome": "complete",
+  "filesChanged": [
+    {"path": "brand-kit/channels/paid-social/", "action": "created", "sha256": null, "reason": "Created the bounded standard channel pack for the approved format."},
+    {"path": "brand-kit/channels/registry.json", "action": "created", "sha256": null, "reason": "Registered the partial channel pack and its one approved format for machine routing."},
+    {"path": "brand-kit/skills/build-price-anchored-product-static/", "action": "created", "sha256": null, "reason": "Created the reusable execution workflow and agent interface."},
+    {"path": "brand-kit/references/havstock-ai-os-social-static/round-07-human-feedback.json", "action": "created", "sha256": null, "reason": "Recorded the exact human approval and its bounded effect."},
+    {"path": "brand-kit/governance/post-cutover-decisions.json", "action": "modified", "sha256": null, "reason": "Indexed the bounded craft-format decision without rewriting the cutover ledger."},
+    {"path": "brand-kit/docs/CURRENT-STATE.md", "action": "modified", "sha256": null, "reason": "Recorded one approved format while keeping deferred channels uncertified."},
+    {"path": "brand-kit/START-HERE.md", "action": "modified", "sha256": null, "reason": "Added the approved-format route to repository onboarding without widening channel authority."},
+    {"path": "brand-kit/docs/ROADMAP.md", "action": "modified", "sha256": null, "reason": "Recorded the bounded CHAN-PAID-01 completion under the still-deferred programme."}
+  ],
+  "decisionsApplied": ["DEC-PAID-SOCIAL-PRICE-ANCHORED-PROOF-001"],
+  "tests": [
+    {"id": "CHAN-PAID-01-HUMAN", "status": "pass", "evidence": "Olli said great these are good, then asked for end-to-end local and Notion formalisation."},
+    {"id": "CHAN-PAID-01-GATE-B", "status": "pass", "evidence": "The exact R07 batch passed Gate B at 72/75 with every named test passing."},
+    {"id": "CHAN-PAID-01-PACK", "status": "pass", "evidence": "The format validator checks five exact 1080x1350 golden PNGs, three anti-examples, skill presence, Figma source, typography and authority boundaries."},
+    {"id": "CHAN-PAID-01-PUBLISH", "status": "pass", "evidence": "Publish mode intentionally stops on current price, category evidence and approved-public screenshot requirements."},
+    {"id": "CHAN-PAID-01-NOTION", "status": "pass", "evidence": "The Format Library and SOP entries were created, cross-linked and re-fetched after write."}
+  ],
+  "artifactsProduced": ["Price-Anchored Product Proof format 1.0.0", "Five-frame CRAFT_APPROVED golden set", "Reusable build skill", "Local and Notion SOP mirrors"],
+  "assumptions": ["Olli's direct approval applies to the exact final R07 batch and its bounded format grammar."],
+  "exceptions": ["Paid social remains uncertified.", "No performance result exists.", "Raw screenshots remain outside public-use authority.", "Publishing and campaign launch require separate human authority."],
+  "hiddenContextFailures": [],
+  "humanStatus": {"gateRequired": true, "gateId": "H-CHAN-PAID-01-FORMAT-PROOF", "status": "approved"},
+  "nextAction": "Use the skill for a real campaign brief, complete the named public preflight and register a measured pilot before changing outcome status."
+}

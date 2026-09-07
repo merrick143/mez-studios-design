@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "GATE-B-AI-OS-SOCIAL-STATIC",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R04",
+  "candidateRevision": "havstock-ai-os-social-static-r04",
+  "verdict": "gate-b",
+  "outcome": "pass",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Codex design-critique",
+  "productionAuthority": false,
+  "score": {
+    "total": 70,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 5,
+      "typography": 4,
+      "productTruth": 5,
+      "distinctiveness": 4,
+      "narrative": 5,
+      "conversionClarity": 5,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    },
+    "doubleWeighted": [
+      "hierarchy",
+      "composition",
+      "productTruth",
+      "distinctiveness"
+    ]
+  },
+  "namedTests": {
+    "T1GreyscaleAndStripTest": "Pass. The dark editorial field, exact Wings, left-anchored hierarchy, inline Notion mechanism and clipped proof aperture remain recognisably Mez without relying on the gradient core.",
+    "T2RepeatingCardTest": "Pass by campaign-format intent. The five frames share one locked ad system while the proof alternates between two native operating views, two desktop device objects and one mobile device object.",
+    "T3HeroMotionTest": "Pass as not applicable. R04 is a static batch and makes no motion claim.",
+    "T4ExistingSystemTest": "Pass. Every proof fill resolves to a catalogued local AI OS capture or supplied composition with a verified source hash; no interface, event, metric or logo was fabricated."
+  },
+  "antiSlopSweep": {
+    "outcome": "pass",
+    "notes": [
+      "The product surface is the protagonist in every frame and remains readable at the final 1080 by 1350 size.",
+      "Native UI and supplied device compositions are named separately rather than presented as equivalent source types.",
+      "The faint grid and bounded top wash remain supporting field treatments, not the source of hierarchy.",
+      "Only the top-left proof corner is rounded; every remaining proof corner is square.",
+      "No fake payment, booking, member, customer, revenue or activity notification was added."
+    ]
+  },
+  "resolvedFindings": [
+    {
+      "id": "HUMAN-R03-BETTER-SCREENSHOTS",
+      "resolution": "Replaced the inherited Playground proof with five repository-catalogued assets selected from Olli's completed screenshot dump."
+    },
+    {
+      "id": "HUMAN-R03-PROOF-CORNER",
+      "resolution": "Preserved the 14px top-left-only proof radius across every R04 frame."
+    },
+    {
+      "id": "PROOF-R04-SOURCE-SEPARATION",
+      "resolution": "Separated authentic native captures, supplied device compositions and reference-only Notion campaign material in both the repository and the Figma layer names."
+    }
+  ],
+  "figma": {
+    "fileKey": "k6jJPY2ViCmg4CiZQhwiBF",
+    "pageId": "0:1",
+    "sectionId": "1382:936",
+    "frameIds": [
+      "1382:937",
+      "1382:1016",
+      "1382:1095",
+      "1382:1174",
+      "1382:1253"
+    ],
+    "frameSize": "1080x1350",
+    "export": "PNG 1x",
+    "structuralAudit": "pass",
+    "visualInspection": "pass: full batch and all five individual frame renders inspected"
+  },
+  "unresolvedRisks": [
+    "No screenshot has approved-public status; redaction and explicit human approval remain required before publishing.",
+    "The three supplied device compositions still require line-by-line review of embedded product data.",
+    "Paid advertising remains a priority-deferred and uncertified channel family.",
+    "R04 remains a Playground candidate until Olli records a keep, revise or kill decision."
+  ],
+  "outputStatus": "candidate"
+}

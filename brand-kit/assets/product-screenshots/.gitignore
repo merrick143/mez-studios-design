@@ -1,0 +1,14 @@
+_INBOX-DROP-HERE/*
+!_INBOX-DROP-HERE/README.md
+products/*/originals/*
+!products/*/originals/README.md
+products/*/compositions/*
+!products/*/compositions/README.md
+shared-operating-system/originals/*
+!shared-operating-system/originals/README.md
+shared-operating-system/compositions/*
+!shared-operating-system/compositions/README.md
+reference-material/*/stills/*
+!reference-material/*/stills/README.md
+reference-material/*/motion/*
+!reference-material/*/motion/README.md

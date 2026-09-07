@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "gateId": "GATE-B-AI-OS-SOCIAL-STATIC",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R03",
+  "candidateRevision": "havstock-ai-os-social-static-r03",
+  "verdict": "gate-b",
+  "outcome": "pass",
+  "recordedAt": "2026-08-06",
+  "productionAuthority": false,
+  "score": {
+    "total": 70,
+    "maximum": 75,
+    "dimensions": {
+      "hierarchy": 5,
+      "composition": 5,
+      "pacingAndDensity": 5,
+      "typography": 4,
+      "productTruth": 5,
+      "distinctiveness": 4,
+      "narrative": 5,
+      "conversionClarity": 5,
+      "emotionalImpact": 4,
+      "craft": 5,
+      "originality": 4
+    },
+    "doubleWeighted": [
+      "hierarchy",
+      "composition",
+      "productTruth",
+      "distinctiveness"
+    ]
+  },
+  "namedTests": {
+    "T1GreyscaleAndStripTest": "Pass. The burden, replacement, inline Notion mechanism, real operating proof and truthful annotation hierarchy remain clear without the MZ-G13 colour event.",
+    "T2RepeatingCardTest": "Pass by design. The batch is a locked campaign format; each screenshot and annotation set has a distinct product-proof job while the composition stays controlled.",
+    "T3HeroMotionTest": "Pass as not applicable. The requested outputs are static and no motion behaviour is claimed.",
+    "T4ExistingSystemTest": "Pass. Every frame uses a real existing Playground product screenshot, the sanctioned Notion mark, exact Wings, canonical MZ-G13 material, Geist and Inter."
+  },
+  "antiSlopSweep": {
+    "outcome": "pass",
+    "notes": [
+      "The grid is faint, carries the full top field and does not substitute for hierarchy.",
+      "The top wash is one bounded human-directed exception, not a reusable ambient-glow foundation.",
+      "The Notion label hugs its real mark and copy; it does not copy the source's blue folder or Builder OS wording.",
+      "Only genuine overlay artefacts use shadows, with no additional stroke-based elevation cue.",
+      "No fake payment, booking, member, customer or revenue events were added."
+    ]
+  },
+  "resolvedFindings": [
+    {
+      "id": "HUMAN-R02-REAL-PRODUCT",
+      "resolution": "Replaced the shared local Backend proof crop with five distinct real product screenshots already embedded on Playground."
+    },
+    {
+      "id": "HUMAN-R02-QUALIFIER",
+      "resolution": "Changed the qualifier from a fixed 692px container to true content-hug sizing with equal 16px left and right padding."
+    },
+    {
+      "id": "HUMAN-R02-FOOTNOTE",
+      "resolution": "Removed the complete-setup and refund-policy footnote and its asterisk from every frame."
+    },
+    {
+      "id": "HUMAN-R02-INLINE-LABEL",
+      "resolution": "Added a content-hugging Notion OS label inside the mechanism sentence using the real sanctioned Notion mark."
+    },
+    {
+      "id": "HUMAN-R02-GRID-GLOW",
+      "resolution": "Added one faint 54px grid and one restrained downward top wash to every execution."
+    },
+    {
+      "id": "CRAFT-R03-CROPS",
+      "resolution": "Moved the dashboard, SOP and documentation crops deeper into the real UI so working content dominates over covers and empty headers."
++    },
+    {
+      "id": "HUMAN-R03-PROOF-CORNER",
+      "resolution": "Reduced the product proof mask to a 14px top-left radius with square top-right, bottom-left and bottom-right corners across all five frames."
+    }
+  ],
+  "figma": {
+    "fileKey": "k6jJPY2ViCmg4CiZQhwiBF",
+    "pageId": "0:1",
+    "sectionId": "1361:936",
+    "frameIds": [
+      "1361:937",
+      "1364:936",
+      "1364:1015",
+      "1364:1094",
+      "1364:1173"
+    ],
+    "sourceImageHashes": [
+      "93c5c07aa675fd58a8786e6a522d7c105b8676ab",
+      "b84ea1c1421f7e8639e62c7f85d5851e67ff2bcc",
+      "d89171579dfb15110398f3c359d2dddf19771d5e",
+      "015d4e4ed4129aa8ecb74511c07f2e8824608267",
+      "2bfb39adb3cdcd6b060a2b6abdd2d7ffde1d26ce"
+    ],
+    "frameSize": "1080x1350",
+    "export": "PNG 1x",
+    "structuralAudit": "pass"
+  },
+  "unresolvedRisks": [
++    "Olli requested stronger product screenshots before the next batch; R03 screenshot selection is not final.",
+    "The real working screenshots include visible internal names and operating data; public promotion needs an explicit privacy review.",
+    "The top wash is a candidate-level human direction and does not amend the no-glow canonical foundation.",
+    "Paid advertising remains deferred and uncertified.",
+    "The frames remain Playground candidates until Olli gives final human approval."
+  ],
+  "outputStatus": "candidate"
+}

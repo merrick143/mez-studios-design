@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "taskId": "FIGMA-PLAYGROUND-AI-OS-STATIC-R07",
+  "candidateRevision": "havstock-ai-os-social-static-r07",
+  "recordedAt": "2026-08-06",
+  "reviewer": "Olli",
+  "verdict": "keep-and-formalise",
+  "humanQuote": "great these are good",
+  "approvedFrameIds": ["1407:937", "1407:1015", "1407:1093", "1407:1175", "1407:1257"],
+  "resultingStatus": "CRAFT_APPROVED",
+  "decisionId": "DEC-PAID-SOCIAL-PRICE-ANCHORED-PROOF-001",
+  "gateId": "H-CHAN-PAID-01-FORMAT-PROOF",
+  "scope": "Approve the exact R07 five-frame batch and its bounded 1080x1350 format grammar as a reusable craft reference.",
+  "productionAuthority": false,
+  "performanceValidated": false,
+  "publicUseApproval": false,
+  "notes": ["The user immediately requested end-to-end local and Notion formalisation after approving the batch.", "This approval does not certify all paid advertising or approve raw screenshots for public distribution."]
+}
