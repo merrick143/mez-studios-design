@@ -1,2 +1,4 @@
-# Use exactly the same extractor dependencies on the public function and locally.
--r brand-kit/source-pack/living-core/requirements.txt
+# Keep these pins identical to brand-kit/source-pack/living-core/requirements.txt.
+# Vercel parses this file before resolving nested requirement files.
+numpy==2.3.5
+Pillow==12.2.0

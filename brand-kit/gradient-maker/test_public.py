@@ -27,6 +27,13 @@ def recipe():
 
 
 class PublicTests(unittest.TestCase):
+    def test_hosted_extractor_dependencies_match_canonical_pins(self):
+        def pins(path):
+            return [line.strip() for line in path.read_text().splitlines()
+                    if line.strip() and not line.lstrip().startswith('#')]
+        self.assertEqual(pins(ROOT / 'requirements.txt'),
+                         pins(ROOT / 'brand-kit/source-pack/living-core/requirements.txt'))
+
     def test_public_source_and_core_match_the_local_pipeline(self):
         payload = {'mode': 'compose', 'recipe': recipe()}
         body, content_type = public.generate(payload, 'preview')
