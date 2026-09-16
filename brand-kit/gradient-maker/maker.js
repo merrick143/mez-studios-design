@@ -1,7 +1,11 @@
 import { mountLivingCores } from '../source-pack/design-system-export/mz-core.js';
+import { BrowserDrafts } from './browser-drafts.js';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
+const publicMode = params.has('public') || !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+const browserDrafts = publicMode ? new BrowserDrafts() : null;
+let uploadLimit = publicMode ? 3 * 1024 * 1024 : 12 * 1024 * 1024;
 // Per-page QA modes exercise the shared renderer without changing OS settings.
 if (params.has('qa-strip')) document.documentElement.classList.add('qa-strip');
 if (params.has('qa-reduced')) {
@@ -33,7 +37,11 @@ function element(tag, className, text) {
 }
 
 async function api(action, payload, signal) {
-  const response = await fetch(`/api/gradient-maker/${action}`, {
+  if (publicMode && action === 'candidates') return { candidates: await browserDrafts.list() };
+  if (publicMode && action === 'save') return { candidate: await browserDrafts.save(payload, state.preview) };
+  if (publicMode && action === 'review') return { review: await browserDrafts.review(payload) };
+  const endpoint = publicMode ? `/api/gradient-maker?action=${action}` : `/api/gradient-maker/${action}`;
+  const response = await fetch(endpoint, {
     method: payload === undefined ? 'GET' : 'POST',
     headers: payload === undefined ? {} : { 'Content-Type': 'application/json' },
     body: payload === undefined ? undefined : JSON.stringify(payload),
@@ -41,8 +49,11 @@ async function api(action, payload, signal) {
   });
   let result;
   try { result = await response.json(); }
-  catch { throw new Error('The local maker is unavailable. Open the setup instructions above to start it.'); }
+  catch { throw new Error(publicMode ? 'The maker is temporarily unavailable. Please try again.' : 'The local maker is unavailable. Open the setup instructions above to start it.'); }
   if (!response.ok) throw new Error(result.error || 'The operation could not be completed. Try again.');
+  // Public previews return the source once, within the host payload ceiling.
+  // Saving separately requests its lossless WebP; the live fallback is exact PNG.
+  if (publicMode && action === 'preview') result.staticUrl = result.sourceUrl;
   return result;
 }
 
@@ -62,7 +73,8 @@ function payload() {
     : { mode: 'upload', ...state.upload };
 }
 
-function changed(delay = 450) {
+function changed(delay = publicMode ? 800 : 450) {
+  $('retry-preview').hidden = true;
   state.revision++;
   state.saved = false;
   state.requestId = crypto.randomUUID();
@@ -172,6 +184,7 @@ async function refreshPreview() {
   } catch (error) {
     if (error.name === 'AbortError' || revision !== state.revision) return;
     status(error.message, true);
+    $('retry-preview').hidden = false;
     $('stage-loading').hidden = Boolean(state.preview);
     if (!state.preview) $('stage-loading').textContent = 'Adjust the source to continue.';
     updateSave();
@@ -221,7 +234,7 @@ function useStarter() {
   state.parentSlug = null;
   $('candidate-name').value = `${preset.name} exploration`;
   $('preview-name').textContent = $('candidate-name').value;
-  $('save-context').textContent = 'Saves a local version for review. Your approved library stays unchanged.';
+  $('save-context').textContent = publicMode ? 'Saves a private draft in this browser. Download a package to keep a backup.' : 'Saves a local version for review. Your approved library stays unchanged.';
   drawControls(); changed();
 }
 
@@ -288,7 +301,16 @@ function drawCollection() {
       $('verdict').value = row.review?.verdict || 'shortlist'; $('review-note').value = row.review?.note || '';
       $('review-error').textContent = ''; $('review-dialog').showModal();
     });
-    const download = element('a', '', 'Export package ↓'); download.href = row.exportUrl;
+    const download = element(row.browserDraft ? 'button' : 'a', row.browserDraft ? 'quiet-button' : '', 'Export package ↓');
+    if (row.browserDraft) {
+      download.type = 'button';
+      download.addEventListener('click', async () => {
+        download.disabled = true;
+        try { await browserDrafts.export(row.slug); }
+        catch (error) { status(error.message, true); }
+        finally { download.disabled = false; }
+      });
+    } else download.href = row.exportUrl;
     const preview = element('a', '', 'Open preview ↗'); preview.href = row.previewUrl; preview.target = '_blank'; preview.rel = 'noopener';
     actions.append(load, review, download, preview); item.append(checkbox, image, info, actions); return item;
   }));
@@ -337,9 +359,9 @@ $('maker-form').addEventListener('submit', async (event) => {
     const result = await api('save', request);
     if (revision === state.revision && request.name === $('candidate-name').value) {
       state.saved = true; state.parentSlug = result.candidate.slug;
-      $('save-context').textContent = `${result.candidate.candidateId} saved locally. Edit to create another version.`;
+      $('save-context').textContent = publicMode ? 'Saved in this browser. Edit to create another version.' : `${result.candidate.candidateId} saved locally. Edit to create another version.`;
     }
-    status(`${result.candidate.name} saved as ${result.candidate.candidateId}. It is available in your local collection.`);
+    status(publicMode ? `${result.candidate.name} saved in your private browser collection.` : `${result.candidate.name} saved as ${result.candidate.candidateId}. It is available in your local collection.`);
     await refreshCollection();
   } catch (error) { status(error.message, true); }
   finally { state.saving = false; updateSave(); }
@@ -375,7 +397,7 @@ $('source-upload').addEventListener('change', async (event) => {
   state.upload = null; changed();
   const revision = state.revision;
   try {
-    if (file.size > 12 * 1024 * 1024 || !['image/png', 'image/jpeg'].includes(file.type)) throw new Error('Choose a PNG or JPEG under 12 MB.');
+    if (file.size > uploadLimit || !['image/png', 'image/jpeg'].includes(file.type)) throw new Error(`Choose a PNG or JPEG no larger than ${uploadLimit / 1024 / 1024} MB.`);
     const imageBase64 = await fileData(file);
     if (revision !== state.revision) return;
     state.upload = { imageBase64, filename: file.name };
@@ -400,6 +422,7 @@ $('surface-toggle').addEventListener('click', () => {
 $('compare-source').addEventListener('click', compareSource);
 $('inspect-source').addEventListener('click', compareSource);
 document.querySelectorAll('[data-close]').forEach((button) => button.addEventListener('click', () => $(button.dataset.close).close()));
+$('retry-preview').addEventListener('click', () => changed(0));
 $('refresh').addEventListener('click', refreshCollection);
 $('review-filter').addEventListener('change', drawCollection);
 $('compare-saved').addEventListener('click', () => {
@@ -420,20 +443,33 @@ $('review-form').addEventListener('submit', async (event) => {
 
 async function start() {
   try {
+    if (publicMode) {
+      $('connection').textContent = 'Connecting to the maker…';
+      $('upload-guidance').textContent = 'Square PNG or JPEG, 512–1024px, up to 3 MB. Images are processed to generate your preview; saved originals stay in this browser.';
+      $('collection-label').textContent = 'Your private collection';
+      $('storage-note').textContent = 'Drafts stay in this browser. Clearing site data removes them, so download a package to keep a backup. Saving here does not add a gradient to the approved library.';
+    }
     const [presets, connection] = await Promise.all([
       fetch('./presets.json').then((response) => { if (!response.ok) throw new Error('Starting palettes could not be loaded. Reload the page.'); return response.json(); }),
       api('status'),
     ]);
-    state.presets = presets; state.online = connection.local === true;
+    state.presets = presets; state.online = connection.ok === true;
+    if (connection.maxUploadBytes) uploadLimit = connection.maxUploadBytes;
     $('starter').replaceChildren(...presets.presets.map((preset, i) => {
       const option = element('option', '', preset.name); option.value = i; return option;
     }));
-    $('connection').classList.add('ready'); useStarter(); await refreshCollection();
+    $('connection').classList.add('ready');
+    $('connection').textContent = publicMode ? 'Ready to create · Private browser drafts · No account needed' : 'Local maker connected · Saves on this computer';
+    useStarter(); await refreshCollection();
   } catch (error) {
     $('connection').classList.add('error');
-    $('connection').replaceChildren(document.createTextNode('This editor needs the updated local maker server. '));
+    $('connection').replaceChildren(document.createTextNode(publicMode ? 'The maker could not connect. ' : 'This editor needs the updated local maker server. '));
+    if (publicMode) {
+      const retry = element('button', 'quiet-button', 'Try again'); retry.type = 'button';
+      retry.addEventListener('click', () => location.reload()); $('connection').append(retry);
+    }
     const help = element('a', '', 'Open setup instructions'); help.href = './README.md'; $('connection').append(help);
-    status(error.message, true); $('stage-loading').textContent = 'Start the local maker to preview a gradient.';
+    status(error.message, true); $('stage-loading').textContent = publicMode ? 'Try connecting again to preview a gradient.' : 'Start the local maker to preview a gradient.';
     $('maker-form').querySelectorAll('input,button,select').forEach((input) => { input.disabled = true; });
   }
 }

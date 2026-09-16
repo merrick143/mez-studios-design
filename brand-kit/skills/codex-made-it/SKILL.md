@@ -42,7 +42,9 @@ Never import screenshots, WebP fallbacks, or rendered cores as source masters.
 
 ## Create a research candidate
 
-Use the local gradient maker for editable palettes and original-image upload:
+The public maker at `https://design.mez.studio/brand-kit/gradient-maker/` supports editable palettes and original-image upload with private browser drafts and ZIP downloads. Public drafts have UUID-based labels and do not allocate canonical MZ-G IDs. Read `brand-kit/gradient-maker/README.md` for storage, upload limits and the stateless API.
+
+For the local file-based workflow:
 
 ```bash
 .venv/bin/python brand-kit/server.py --port 8914

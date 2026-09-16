@@ -1,6 +1,20 @@
 # Gradient maker
 
-Compose colours or upload an original image, preview the result through the shared Living Core renderer, then save, compare, review and export local candidates.
+Compose colours or upload an original image, preview the result through the shared Living Core renderer, then save, compare, review and export private drafts.
+
+## Open on the web
+
+Use **https://design.mez.studio/brand-kit/gradient-maker/**. The homepage, Brand Kit console and gradient library link to it. No account or local server is needed.
+
+- Compose a 1024px source from the existing colour recipes, or upload an original square PNG/JPEG, 512–1024px and up to 3 MB.
+- The stateless generation function processes the recipe or image using the same pinned Python extractor. It does not persist uploads, drafts or review notes on the server.
+- Saved drafts and original uploads live in IndexedDB in this browser, on this website. Another person, browser, device or origin cannot see that collection. Clearing site data removes it; export ZIP packages as backups.
+- Saves are immutable versions with random `DRAFT-…` labels, not canonical MZ-G allocations. Reviews and comparison stay private. A saved preview URL works only in the browser that owns the draft.
+- Export includes the source PNG, lossless WebP twin, recipe or original upload, metadata, copied renderer/Wings, standalone preview, file hashes and any private review history. Serve the extracted folder over local HTTP to use its animated preview.
+
+Public generation is bounded to a 4.3 MB JSON body and 1024px images, with two concurrent jobs per function instance. Source PNG and binary WebP responses are separate to stay below the host's payload ceiling. Oversized or malformed uploads, cross-origin requests and public save/review API requests are rejected. A busy instance returns a retryable error. The frontend debounces public generation while retaining the last completed preview.
+
+This publishes an authoring tool, not a new identity decision. Private drafts never enter the approved library automatically.
 
 ## Open locally
 
@@ -10,7 +24,7 @@ From the repository root, use the pinned environment described in `brand-kit/STA
 .venv/bin/python brand-kit/server.py --port 8915
 ```
 
-Open <http://127.0.0.1:8915/brand-kit/gradient-maker/>. Any free port works. An already-running server needs a restart to load new Python routes; use a separate port when another task owns the existing preview. A static/public host can serve the page but cannot generate or save candidates. It shows setup guidance instead.
+Open <http://127.0.0.1:8915/brand-kit/gradient-maker/>. Any free port works. An already-running server needs a restart to load new Python routes; use a separate port when another task owns the existing preview. The local server keeps its existing file-based workflow. The public site uses the stateless Vercel function and private browser storage instead.
 
 ## Create and refine
 
@@ -21,7 +35,7 @@ Open <http://127.0.0.1:8915/brand-kit/gradient-maker/>. Any free port works. An 
 5. **Compare and review:** select two saved source twins to compare. Record Shortlist, Needs changes or Reject, with notes. Reviews are append-only history plus a current review record. A preference does not approve identity or promote a gradient.
 6. **Export package:** download the source, recipe or original upload, lossless static twin, extracted core, copied shared renderer and Wings, standalone preview and SHA-256 manifest. Serve the extracted folder over local HTTP to animate its preview. No external assets or services are required by the portable preview. It uses system fonts for portability.
 
-Uploaded versions reload their retained normalised source PNG. The earlier version keeps its untouched original upload. Closing or reloading the maker discards unsaved edits; saved candidates persist in the local workspace.
+Uploaded versions reload their retained normalised source PNG. The earlier version keeps its untouched original upload. Closing or reloading the maker discards unsaved edits. Public drafts persist in the current browser; local-server candidates persist in the local workspace.
 
 ## Authority and reproducibility
 
@@ -59,6 +73,17 @@ Claude Code and Codex use the same repository skill: `brand-kit/skills/codex-mad
 
 Use `--parent draft-<uuid>` to record lineage. Use `--request-id <uuid>` to safely retry one logical save. Recipe files are available in compose candidate exports. The original `source-pack/living-core/candidate.py` and legacy workbench remain available for older workflows; the maker is the source-preserving route for new work.
 
+## Public deployment and checks
+
+`api/gradient-maker.py` exposes `GET /api/gradient-maker?action=status`, `POST …?action=preview` and `POST …?action=static`. Only generation is hosted. The root requirements file references the canonical NumPy/Pillow pins; `.python-version` selects Python 3.12. No database credentials or public workspace are needed.
+
+```bash
+.venv/bin/python brand-kit/gradient-maker/test_public.py
+.venv/bin/python brand-kit/gradient-maker/serve_public.py --port 8916
+```
+
+Open `http://127.0.0.1:8916/brand-kit/gradient-maker/?public` to exercise the production storage and API path locally. This QA server only serves static files and the stateless function. `test_public.py` covers source/core parity, exact twins, bounded payloads, origin and route isolation, overload recovery and portable ZIP compatibility.
+
 ## Local API and checks
 
 All endpoints live under `/api/gradient-maker/`: GET `status`, `candidates`, `export?slug=…`; POST `preview`, `save`, `review`. POSTs use JSON, local Host validation and same-origin checks. The server binds to loopback. Preview generation has a bounded worker semaphore, input limits and actionable validation errors. The renderer honours the operating system's reduced-motion setting and falls back to the exact static twin when WebGL is unavailable.
@@ -75,3 +100,5 @@ Browser verification URLs: `?static` forces static; `?no-webgl` exercises WebGL 
 ## Work receipt
 
 Task: `TASK-GRAD-MAKER-01`, a bounded user-requested extension of the gradient candidate workflow. Direction authorised in this side conversation: both editable palettes and original-image upload. No canonical identity decision or release is implied. Scope: this folder, maker routes in `server.py`, entry link in the gradient library and shared skill guidance. See `round-01-feedback.json` for validation and visual review evidence.
+
+Public extension: `TASK-GRAD-MAKER-02-PUBLIC`. The user authorised public generation with private browser drafts and downloads on 16 September 2026. This does not authorise library promotion or product assignment. See `round-02-feedback.json` for the implementation receipt.

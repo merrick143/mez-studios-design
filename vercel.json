@@ -3,6 +3,12 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": ".",
+  "functions": {
+    "api/gradient-maker.py": {
+      "maxDuration": 30,
+      "excludeFiles": "{.venv/**,node_modules/**,reviews/**,play-orb/**,directory-previews/**,brand-kit/workspace/**,brand-kit/assets/**,brand-kit/history/**,brand-kit/releases/**,brand-kit/references/**,brand-kit/golden/**,brand-kit/components/**,brand-kit/expressions/**,brand-kit/foundations/**,brand-kit/channels/**}"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",

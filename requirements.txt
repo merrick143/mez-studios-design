@@ -1,0 +1,2 @@
+# Use exactly the same extractor dependencies on the public function and locally.
+-r brand-kit/source-pack/living-core/requirements.txt

@@ -197,6 +197,11 @@ function renderSidebar() {
       <a class="navlink" href="#/how" data-id="__how"><span>How this works</span></a>
       <a class="navlink" href="#/ingest" data-id="__ingest"><span>Consumers &amp; ingest</span></a>
     </section>
+    <section class="zone">
+      <div class="zone__head"><span class="zone__label">Tools</span></div>
+      <a class="navlink" href="../gradient-maker/" target="_blank" rel="noopener noreferrer"><span>Gradient maker ↗</span></a>
+      <a class="navlink" href="../gradient-library/" target="_blank" rel="noopener noreferrer"><span>All gradients ↗</span></a>
+    </section>
     ${zoneHtml}
     <p class="gen-note">registry generated ${esc(String(state.registry.generatedAt ?? '').slice(0, 16).replace('T', ' '))} ·
       <span class="mono">build_registry.py</span></p>

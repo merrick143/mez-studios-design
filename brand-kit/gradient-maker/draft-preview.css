@@ -1,0 +1,7 @@
+.draft-page { padding-block: var(--mz-space-8); }
+.draft-comparison { margin-top: var(--mz-space-8); }
+.draft-comparison figure { min-width: 0; background: var(--mz-surface-base); padding: var(--mz-space-6); border-radius: var(--mz-radius-panel); display: grid; justify-items: center; gap: var(--mz-space-6); }
+.draft-comparison figure > img { width: min(100%, 360px); }
+.draft-comparison .draft-material { width: min(100%, 360px); }
+.draft-material[data-mz-core-mode="live"] { background-image: none !important; }
+.draft-actions { display: flex; flex-wrap: wrap; gap: var(--mz-space-4); margin-top: var(--mz-space-8); }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gradient maker · Mez Systems</title>
-<meta name="description" content="Compose new gradient colours, compare the source with a Living Core and keep a local candidate library.">
+<meta name="description" content="Compose new gradient colours, compare the source with a Living Core and save private drafts and download complete source packages.">
 <link rel="icon" href="../../favicon.svg"><link rel="stylesheet" href="../releases/foundations/dist/index.css"><link rel="stylesheet" href="./maker.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 <header class="topbar"><a class="brand" href="../"><img src="../source-pack/design-system-export/assets/wings.svg" alt="" width="28" height="20"><span>Mez Systems <span>Gradient maker</span></span></a><a class="text-link" href="../gradient-library/">Gradient library <span aria-hidden="true">↗</span></a></header>
 <main>
 <div class="intro"><div><p class="mz-type-ui-label">Living Core studio</p><h1 class="mz-type-display-title">Make the colour.<br>See it come alive.</h1></div><p class="mz-type-body-default">Compose a palette or bring your own image.<br> Shape it, compare it and keep the versions you like.</p></div>
-<div class="notice" id="connection" role="status">Connecting to the local maker…</div>
+<div class="notice" id="connection" role="status">Connecting to the maker…</div>
 <noscript><p class="notice">The editor needs JavaScript. You can still <a href="../gradient-library/">browse the existing gradient library</a>. Source PNGs and static fallbacks remain available in saved candidate packages.</p></noscript>
 <section class="editor" id="editor" aria-label="Gradient editor">
 <nav class="mobile-jump" aria-label="Maker sections"><a href="#maker-form">Edit source</a><a href="#stage">Preview</a><a href="#saved-title">Collection</a></nav>
@@ -28,7 +28,7 @@
 <div class="seed-row"><label for="seed">Composition seed</label><input id="seed" type="number" required min="0" max="999999" step="1" value="7"><button type="button" id="remix" class="quiet-button">Remix</button></div>
 <p class="hint">Remix changes the flow while keeping your colours.</p>
 </div>
-<div id="upload-controls" hidden><label class="upload-label" for="source-upload"><strong>Choose a source image</strong><span>Square PNG or JPEG, 512–4096px.<br>Up to 12 MB. Stored only on this computer.</span><input id="source-upload" type="file" accept="image/png,image/jpeg"></label><p class="hint" id="upload-name">Use the original image, rather than an exported orb or WebP fallback.</p><p class="hint">The original upload is retained. Transparent areas are composited onto white in the source PNG.</p></div>
+<div id="upload-controls" hidden><label class="upload-label" for="source-upload"><strong>Choose a source image</strong><span id="upload-guidance">Square PNG or JPEG, 512–4096px.<br>Up to 12 MB. Stored only on this computer.</span><input id="source-upload" type="file" accept="image/png,image/jpeg"></label><p class="hint" id="upload-name">Use the original image, rather than an exported orb or WebP fallback.</p><p class="hint">The original upload is retained. Transparent areas are composited onto white in the source PNG.</p></div>
 <div class="save-area"><label class="field-label" for="candidate-name">Candidate name</label><input id="candidate-name" type="text" maxlength="80" minlength="2" value="Mineral blue exploration" required autocomplete="off"><button class="primary-button" type="submit" id="save" disabled>Save candidate <span aria-hidden="true">→</span></button><p id="save-context" class="hint">Saves a local version for review. Your approved library stays unchanged.</p></div>
 </form>
 <div class="preview-column">
@@ -38,12 +38,12 @@
 <div class="stage-footer"><label class="checkbox-label"><input id="show-wings" type="checkbox" checked> Wings</label><p class="mz-type-caption">Deep Mineral finish</p><button class="stage-button" type="button" id="surface-toggle">Light surface</button></div>
 </div>
 <div class="shape-bar" role="group" aria-label="Preview expression"><button data-shape="sphere" type="button" aria-pressed="true">Sphere</button><button data-shape="disc" type="button" aria-pressed="false">Disc</button><button data-shape="card" type="button" aria-pressed="false">Card</button><button data-shape="pill" type="button" aria-pressed="false">Pill</button><button data-shape="wings" type="button" aria-pressed="false">Wings</button></div>
-<div class="preview-status" id="preview-status" role="status">Preparing the source and extracting its colours.</div>
+<div class="preview-status" id="preview-status" role="status">Preparing the source and extracting its colours.</div><button type="button" class="quiet-button" id="retry-preview" hidden>Retry preview</button>
 <div class="source-strip"><button type="button" class="source-thumb" id="inspect-source" aria-label="Inspect source PNG" disabled><img id="source-image" alt="Authored source colour composition" hidden></button><div><p class="mz-type-body-compact">Source PNG</p><p class="hint" id="source-info">The source owns the colour. The animation is an approximation.</p><a id="download-source" class="text-link" hidden download="gradient-source.png">Download source <span aria-hidden="true">↓</span></a></div><button type="button" id="compare-source" class="quiet-button" disabled>Compare source</button></div>
 <details class="technical"><summary>Extracted colours &amp; source details</summary><div id="extracted-colours"></div><p class="hint" id="source-hash"></p></details>
 </div>
 </section>
-<section class="saved-section" aria-labelledby="saved-title"><div class="saved-heading"><div><p class="mz-type-ui-label">Your local collection</p><h2 class="mz-type-display-title" id="saved-title">Keep the good ones.</h2><p class="mz-type-body-default">Load a version to refine it, compare your shortlist or export the complete source package.</p></div><button id="refresh" type="button" class="quiet-button">Refresh collection</button></div><div class="collection-toolbar"><label for="review-filter">Show <select id="review-filter"><option value="all">All candidates</option><option value="unreviewed">Unreviewed</option><option value="shortlist">Shortlisted</option><option value="revise">Needs changes</option><option value="reject">Rejected</option></select></label><button class="quiet-button" type="button" id="compare-saved" disabled>Compare selected (0/2)</button></div><div id="collection" class="collection"><p class="empty">Your saved candidates will appear here.</p></div><p class="hint">Shortlisting records a preference. Library promotion and product assignments remain separate decisions.</p></section>
+<section class="saved-section" aria-labelledby="saved-title"><div class="saved-heading"><div><p class="mz-type-ui-label" id="collection-label">Your local collection</p><h2 class="mz-type-display-title" id="saved-title">Keep the good ones.</h2><p class="mz-type-body-default">Load a version to refine it, compare your shortlist or export the complete source package.</p></div><button id="refresh" type="button" class="quiet-button">Refresh collection</button></div><div class="collection-toolbar"><label for="review-filter">Show <select id="review-filter"><option value="all">All candidates</option><option value="unreviewed">Unreviewed</option><option value="shortlist">Shortlisted</option><option value="revise">Needs changes</option><option value="reject">Rejected</option></select></label><button class="quiet-button" type="button" id="compare-saved" disabled>Compare selected (0/2)</button></div><div id="collection" class="collection"><p class="empty">Your saved candidates will appear here.</p></div><p class="hint" id="storage-note">Shortlisting records a preference. Library promotion and product assignments remain separate decisions.</p></section>
 </main><footer><span>Mez Systems · Source first.</span><a href="./README.md">How the maker works <span aria-hidden="true">↗</span></a></footer>
 </div>
 <dialog id="compare-dialog" aria-labelledby="compare-title"><div class="dialog-head"><h2 id="compare-title" class="mz-type-heading-section">Compare</h2><button type="button" class="quiet-button" data-close="compare-dialog">Close</button></div><div id="compare-content" class="compare-content"></div></dialog>
