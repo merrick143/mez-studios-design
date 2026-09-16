@@ -26,9 +26,9 @@ From the repository root, use the pinned environment described in `brand-kit/STA
 
 Open <http://127.0.0.1:8915/brand-kit/gradient-maker/>. Any free port works. An already-running server needs a restart to load new Python routes; use a separate port when another task owns the existing preview. The local server keeps its existing file-based workflow. The public site uses the stateless Vercel function and private browser storage instead.
 
-## Create and refine
+## Create and refine locally
 
-1. **Compose colours:** choose a research starter, edit its five colours, then select a colour number to set its position and strength. Softness controls blending; flow controls the coordinate warp. Remix advances the seed while retaining the palette. Equal recipe + generator version + recorded environment produces equal source PNG bytes.
+1. **Compose colours:** choose a research starter, edit its five colours, then select a colour number to set its position and strength. Softness controls blending; flow controls the coordinate warp. Remix advances the seed while retaining the palette. Equal recipe + generator version + runtime produces equal source pixels. PNG compression can differ between operating systems even when the decoded pixels and extracted core match.
 2. **Upload image:** choose a square original PNG/JPEG, 512–4096px and at most 12 MB. The original bytes are retained; EXIF orientation is applied to the normalised RGB PNG and transparency is flattened onto white. WebP fallbacks are deliberately not accepted as palette sources.
 3. **Inspect:** switch between sphere, disc, card, pill and Wings, with or without the static Wings overlay, on light or dark surfaces. There is one live core, using the existing Deep Mineral finish. Compare source opens the source PNG beside a captured animation frame. The animation is a parametric approximation, not an exact reproduction of the image.
 4. **Save candidate:** name it and save an immutable local version. IDs are provisional, allocated above the highest known library/candidate ID under a cross-process lock. Retrying the same request does not duplicate a save. Loading and saving an earlier candidate creates a new version with a parent reference.
@@ -75,7 +75,7 @@ Use `--parent draft-<uuid>` to record lineage. Use `--request-id <uuid>` to safe
 
 ## Public deployment and checks
 
-`api/gradient-maker.py` exposes `GET /api/gradient-maker?action=status`, `POST …?action=preview` and `POST …?action=static`. Only generation is hosted. The root requirements file references the canonical NumPy/Pillow pins; `.python-version` selects Python 3.12. No database credentials or public workspace are needed.
+`api/gradient-maker.py` exposes `GET /api/gradient-maker?action=status`, `POST …?action=preview` and `POST …?action=static`. Only generation is hosted. The root requirements file mirrors the canonical NumPy/Pillow pins, with a test preventing drift; `.python-version` selects Python 3.12. No database credentials or public workspace are needed.
 
 ```bash
 .venv/bin/python brand-kit/gradient-maker/test_public.py

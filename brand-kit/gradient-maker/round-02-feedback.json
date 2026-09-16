@@ -1,0 +1,73 @@
+{
+  "taskId": "TASK-GRAD-MAKER-02-PUBLIC",
+  "round": 2,
+  "date": "2026-09-16",
+  "reviewer": "Codex agent self-review",
+  "productionAuthority": false,
+  "status": "Public authoring tool validated on Vercel preview; main publication authorised",
+  "authorisation": "User requested a live gradient maker inside the design system and selected private browser drafts plus downloads. Public release to main is authorised. No identity, library or product assignment is promoted.",
+  "scope": [
+    "Stateless Vercel generation using unchanged canonical extractor",
+    "Private IndexedDB drafts, lineage, reviews and ZIP exports",
+    "Normal HTTP private preview route",
+    "Homepage and Brand Kit console entry links"
+  ],
+  "checks": {
+    "publicTests": "7 pass",
+    "localEngineTests": "11 pass",
+    "javascriptSyntax": "pass",
+    "diffWhitespace": "pass",
+    "canonicalValidators": "6 pass",
+    "workbenchValidator": "Existing failure: expects legacy comparison markup in brand-kit/index.html, which already redirects to the console. Neither file changed.",
+    "unrelatedWork": "All 7 pre-existing asset files match preserved SHA-256 hashes"
+  },
+  "browserChecks": [
+    "Compose, save, reload, load version, export ZIP and private HTTP preview verified in Chrome.",
+    "ZIP read by Python zipfile; all 9 files present and manifest hashes match. PNG and lossless WebP pixels match; packaged renderer matches canonical bytes.",
+    "Separate in-app browser starts with an empty collection; mobile save and private review survive reload. QA review explicitly labelled agent test, not user preference.",
+    "No horizontal overflow at 320, 375, 390, 768, 920, 1280 and 1440. Mobile editing and collection inspected at 375, desktop inspected at 1440.",
+    "Actual shared renderer draws in live mode. Reduced-motion simulation and WebGL-unavailable switch both select exact static fallback. No browser console errors observed."
+  ],
+  "hostedChecks": {
+    "deployment": "dpl_GaUdK5unmk84qY3EiH5B3bJq3mgY",
+    "gitCommit": "f5e7733",
+    "state": "READY",
+    "compose": "HTTP 200, source pixels and extracted core match local pipeline exactly",
+    "upload": "HTTP 200 for synthetic 512px PNG; source pixels and extracted core match local pipeline exactly",
+    "static": "HTTP 200, decoded WebP pixels exactly equal hosted source PNG",
+    "environment": {
+      "python": "3.12",
+      "numpy": "2.3.5",
+      "pillow": "12.2.0"
+    },
+    "encodingNote": "PNG byte hashes differ between local macOS and hosted Linux encoders; decoded pixels and canonical core are identical. Each export hashes its actual immutable source bytes."
+  },
+  "designReview": {
+    "assessment": "Functional public extension of the existing reviewed maker; visual structure and renderer unchanged. Desktop and mobile controls remain clear. Private-storage and download copy appears beside save and collection.",
+    "gateB": "No new complete Gate B claim. Round 1 contains the original layout and motion evidence. This round verifies responsive bounds, changed storage flows and fallbacks.",
+    "blockingFindings": []
+  },
+  "evidence": {
+    "directory": "brand-kit/workspace/gradient-maker-public-review/",
+    "files": [
+      "responsive.json",
+      "validators.json",
+      "1440-viewport.png",
+      "375-controls.png",
+      "375-collection.png",
+      "375-reduced.png"
+    ],
+    "captureLimit": "Rapid resize captures can show the previous viewport. Only stable desktop/mobile captures are relied on visually; seven breakpoint overflow results come from current DOM geometry."
+  },
+  "limitations": [
+    "Drafts belong to the current browser and origin; clearing site data removes them. Download packages for backup.",
+    "Public uploads are square PNG/JPEG, 512\u20131024px and up to 3 MB.",
+    "Automated Chrome file chooser was blocked by extension file-access permission. Hosted upload API verified with synthetic PNG; existing local upload flow had prior browser verification.",
+    "Generation processes the source remotely without persistent collection storage. A function instance accepts two simultaneous jobs and returns retryable overload errors.",
+    "Canonical assets, renderer, extraction algorithm, registries and releases are unchanged."
+  ],
+  "handoff": {
+    "url": "https://design.mez.studio/brand-kit/gradient-maker/",
+    "publication": "Push tested commits to main, then verify public generation and browser saving on the production domain."
+  }
+}
