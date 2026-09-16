@@ -7,6 +7,7 @@ Compose colours or upload an original image, preview the result through the shar
 Use **https://design.mez.studio/brand-kit/gradient-maker/**. The homepage, Brand Kit console and gradient library link to it. No account or local server is needed.
 
 - Compose a 1024px source from the existing colour recipes, or upload an original square PNG/JPEG, 512–1024px and up to 3 MB.
+- **Random palette** draws five independent RGB colours and a new composition seed on every click. It does not cycle through presets. **Remix** keeps those colours and changes the flow; **Reset palette** restores the current starting recipe. Saved packages retain the generated recipe.
 - The stateless generation function processes the recipe or image using the same pinned Python extractor. It does not persist uploads, drafts or review notes on the server.
 - Saved drafts and original uploads live in IndexedDB in this browser, on this website. Another person, browser, device or origin cannot see that collection. Clearing site data removes it; export ZIP packages as backups.
 - Saves are immutable versions with random `DRAFT-…` labels, not canonical MZ-G allocations. Reviews and comparison stay private. A saved preview URL works only in the browser that owns the draft.

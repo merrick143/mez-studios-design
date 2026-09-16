@@ -20,6 +20,8 @@
 <div class="mode-switch" role="group" aria-label="Source method"><button type="button" data-mode="compose" aria-pressed="true">Compose colours</button><button type="button" data-mode="upload" aria-pressed="false">Upload image</button></div>
 <div id="compose-controls">
 <label class="field-label" for="starter">Starting palette</label><select id="starter"><option>Loading palettes…</option></select>
+<button type="button" id="random-palette" class="quiet-button random-palette" aria-describedby="random-palette-hint" disabled>Random palette</button>
+<p class="hint" id="random-palette-hint">Five fresh colours from the full colour range.</p>
 <div class="field-heading"><h2 class="mz-type-body-compact">Colour points</h2><button type="button" class="small-link" id="reset-palette">Reset palette</button></div>
 <div class="colours" id="colours" aria-label="Colour points"></div>
 <fieldset class="point-controls"><legend id="point-title">Selected colour</legend><p class="hint">Move its position or change how much space it takes.</p><div class="axis-inputs"><label>Across <input id="point-x" type="number" required min="0" max="100" step="1" value="16"><span>%</span></label><label>Down <input id="point-y" type="number" required min="0" max="100" step="1" value="18"><span>%</span></label></div><label class="range-label" for="point-weight">Colour strength <output id="weight-value">1.00</output></label><input id="point-weight" type="range" min="0.3" max="2" step="0.05" value="1"></fieldset>

@@ -97,6 +97,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   font-weight:600;
   margin:var(--mz-space-5) 0 var(--mz-space-2)}
 .field-label:first-child{margin-top:0}
+.random-palette{width:100%;margin-top:var(--mz-space-2)}
 select,input[type=text],input[type=number],textarea{width:100%;
   min-width:0;
   background:var(--mz-surface-base);

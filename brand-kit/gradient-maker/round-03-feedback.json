@@ -1,0 +1,42 @@
+{
+  "taskId": "TASK-GRAD-MAKER-03-RANDOM",
+  "round": 3,
+  "date": "2026-09-16",
+  "productionAuthority": false,
+  "authorisation": "User requested fully random starting palettes for the live maker; existing release authorisation continues for this bounded update.",
+  "scope": "Add Random palette control using five independent 24-bit RGB samples and a fresh composition seed. Preserve reset, saved recipe and Remix behaviour. No canonical colour, extractor or renderer changes.",
+  "filesChanged": [
+    "brand-kit/gradient-maker/index.html",
+    "brand-kit/gradient-maker/maker.css",
+    "brand-kit/gradient-maker/maker.js",
+    "brand-kit/gradient-maker/README.md",
+    "brand-kit/gradient-maker/round-03-feedback.json"
+  ],
+  "browserChecks": [
+    "Two random clicks produced different five-colour palettes and seeds.",
+    "Remix kept all five colours and advanced the seed.",
+    "Reset restored the exact current random colours and original seed.",
+    "Saved random draft reloaded its exact colours and seed after choosing a preset. Saved palette reset restored that recipe.",
+    "Random source generated through public-mode API with live shared-renderer drawing and no console errors.",
+    "No horizontal overflow or clipped random button at 320,375,390,768,920,1280,1440. Control visually inspected at 375 and 1440."
+  ],
+  "checks": {
+    "engineTests": "11 pass",
+    "javascriptSyntax": "pass",
+    "diffWhitespace": "pass",
+    "sharedValidators": "6 pass; known unchanged legacy workbench verifier mismatch remains",
+    "preservedAssets": "All 7 unrelated files retain original SHA-256 hashes"
+  },
+  "designReview": {
+    "assessment": "Existing full-width secondary control placed directly below Starting palette, above colour editing. Clear distinction from existing Remix action. Typography, tokens and minimum touch size match the editor.",
+    "scope": "Delta review; no claim of a new full Gate B assessment. Original layout and motion evidence remain in round 1.",
+    "blockingFindings": []
+  },
+  "evidence": [
+    "brand-kit/workspace/gradient-maker-public-review/random-palette-behaviour.json",
+    "brand-kit/workspace/gradient-maker-public-review/random-palette-checks.json",
+    "brand-kit/workspace/gradient-maker-public-review/random-palette-375.png",
+    "brand-kit/workspace/gradient-maker-public-review/random-palette-1440.png"
+  ],
+  "output": "Private research recipes; saving does not promote gradients. Release through main to the existing public maker."
+}

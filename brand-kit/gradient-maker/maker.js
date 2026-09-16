@@ -21,7 +21,7 @@ if (params.has('qa-reduced')) {
   };
 }
 const state = {
-  mode: 'compose', recipe: null, selectedPoint: 0, upload: null, presets: null,
+  mode: 'compose', recipe: null, selectedPoint: 0, upload: null, presets: null, customStarter: null,
   renderer: null, preview: null, revision: 0, renderedRevision: -1,
   timer: null, controller: null, online: false, saving: false,
   requestId: crypto.randomUUID(), parentSlug: null, saved: false,
@@ -228,14 +228,36 @@ function drawControls() {
 }
 
 function useStarter() {
+  if (!state.presets) return;
   const preset = state.presets.presets[Number($('starter').value)];
-  state.recipe = { version: state.presets.version, seed: 7, softness: 0.45, flow: 0.35,
+  const custom = $('starter').value === 'custom' ? state.customStarter : null;
+  state.recipe = custom ? structuredClone(custom.recipe) : {
+    version: state.presets.version, seed: 7, softness: 0.45, flow: 0.35,
     points: preset.colours.map((hex, i) => ({ hex, x: state.presets.positions[i][0], y: state.presets.positions[i][1], weight: 1 })) };
   state.parentSlug = null;
-  $('candidate-name').value = `${preset.name} exploration`;
+  $('candidate-name').value = custom ? custom.name : `${preset.name} exploration`;
   $('preview-name').textContent = $('candidate-name').value;
   $('save-context').textContent = publicMode ? 'Saves a private draft in this browser. Download a package to keep a backup.' : 'Saves a local version for review. Your approved library stays unchanged.';
   drawControls(); changed();
+}
+
+function setCustomStarter(recipe, name, label) {
+  state.customStarter = { recipe: structuredClone(recipe), name };
+  $('custom-starter').textContent = label;
+  $('custom-starter').hidden = false;
+  $('starter').value = 'custom';
+}
+
+function randomPalette() {
+  if (!state.presets) return;
+  // Sample RGB directly: this is not a rotation through the curated presets.
+  const random = crypto.getRandomValues(new Uint32Array(6));
+  const recipe = { version: state.presets.version, seed: random[5] % 1000000, softness: 0.45, flow: 0.35,
+    points: state.presets.positions.map(([x, y], i) => ({
+      hex: '#' + (random[i] & 0xFFFFFF).toString(16).padStart(6, '0').toUpperCase(), x, y, weight: 1,
+    })) };
+  setCustomStarter(recipe, 'Random colour exploration', 'Random palette');
+  useStarter();
 }
 
 function switchMode(mode) {
@@ -331,6 +353,7 @@ async function loadCandidate(row, button) {
   button.disabled = true;
   try {
     if (row.recipe) {
+      setCustomStarter(row.recipe, row.name, 'Saved palette');
       state.recipe = structuredClone(row.recipe); drawControls(); switchMode('compose');
     } else {
       const response = await fetch(row.sourceUrl, { cache: 'no-store' });
@@ -376,6 +399,7 @@ $('candidate-name').addEventListener('input', () => {
 document.querySelectorAll('[data-mode]').forEach((button) => button.addEventListener('click', () => switchMode(button.dataset.mode)));
 $('starter').addEventListener('change', useStarter);
 $('reset-palette').addEventListener('click', useStarter);
+$('random-palette').addEventListener('click', randomPalette);
 for (const axis of ['x', 'y']) $('point-' + axis).addEventListener('input', (event) => {
   if (event.target.value !== '' && event.target.checkValidity()) state.recipe.points[state.selectedPoint][axis] = Number(event.target.value) / 100;
   changed();
@@ -458,6 +482,10 @@ async function start() {
     $('starter').replaceChildren(...presets.presets.map((preset, i) => {
       const option = element('option', '', preset.name); option.value = i; return option;
     }));
+    const custom = element('option', '', 'Custom palette');
+    custom.id = 'custom-starter'; custom.value = 'custom'; custom.disabled = true; custom.hidden = true;
+    $('starter').append(custom);
+    $('random-palette').disabled = false;
     $('connection').classList.add('ready');
     $('connection').textContent = publicMode ? 'Ready to create · Private browser drafts · No account needed' : 'Local maker connected · Saves on this computer';
     useStarter(); await refreshCollection();
